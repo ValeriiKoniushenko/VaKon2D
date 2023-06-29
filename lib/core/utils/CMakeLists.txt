@@ -10,8 +10,12 @@ add_library(
 
 set_target_properties(Utils PROPERTIES LINKER_LANGUAGE CXX)
 
-target_include_directories(Utils
-	PUBLIC
+target_include_directories(
+	Utils PUBLIC
 	include
-	${GLM_PATH}
-	)
+)
+
+target_link_libraries(
+	Utils PUBLIC
+	Glm
+)
