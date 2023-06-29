@@ -20,10 +20,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "NotCopyableAndNotMovable.h"
+namespace Utils
+{
 
-class VaKon2D : public Utils::NotCopyableAndNotMovable<VaKon2D>
+template <class T>
+class NotCopyableAndNotMovable
 {
 public:
-	void start();
+	NotCopyableAndNotMovable() = default;
+	virtual ~NotCopyableAndNotMovable() = default;
+	NotCopyableAndNotMovable(NotCopyableAndNotMovable&&) = delete;
+	NotCopyableAndNotMovable& operator=(NotCopyableAndNotMovable&&) = delete;
+	NotCopyableAndNotMovable(const NotCopyableAndNotMovable&) = delete;
+	NotCopyableAndNotMovable& operator=(const NotCopyableAndNotMovable&) = delete;
 };
+
+}	 // namespace Utils

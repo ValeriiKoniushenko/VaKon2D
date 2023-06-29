@@ -13,4 +13,5 @@ target_include_directories(
 
 target_link_libraries(
 	VaKon2D PUBLIC
+	Utils
 )

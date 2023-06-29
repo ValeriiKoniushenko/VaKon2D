@@ -42,6 +42,8 @@ include_directories(
 )
 
 add_subdirectory(lib/boost)
+add_subdirectory(lib/glm)
+
 add_subdirectory(lib/core/utils)
 add_subdirectory(lib/core/programs)
 

@@ -1,5 +1,6 @@
 add_library(
 	Utils
+	include/NotCopyableAndNotMovable.h
 	include/Rect.h
 	include/Size.h
 	include/Singleton.h
