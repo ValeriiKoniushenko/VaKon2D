@@ -22,6 +22,10 @@
 
 #include "VaKon2D.h"
 
+#include "Logger.h"
+
 void VaKon2D::start()
 {
+	Logger::InitLogger();
+
 }

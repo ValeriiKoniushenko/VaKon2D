@@ -20,29 +20,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include <memory>
-#include <mutex>
+#include "spdlog/sinks/basic_file_sink.h"
+#include "spdlog/spdlog.h"
 
-template <class T>
-class Singleton
+namespace Logger
 {
-public:
-	static T& instance();
-};
-
-template <class T>
-T& Singleton<T>::instance()
-{
-	static std::unique_ptr<T> object;
-	static std::mutex mutex;
-	if (!object)
-	{
-		std::lock_guard<decltype(mutex)> lockGuard(mutex);
-		if (!object)
-		{
-			object = std::unique_ptr<T>(new T);
-		}
-	}
-
-	return *object.get();
+void InitLogger();
 }

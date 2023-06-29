@@ -20,29 +20,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include <memory>
-#include <mutex>
+#include "Logger.h"
 
-template <class T>
-class Singleton
+void Logger::InitLogger()
 {
-public:
-	static T& instance();
-};
-
-template <class T>
-T& Singleton<T>::instance()
-{
-	static std::unique_ptr<T> object;
-	static std::mutex mutex;
-	if (!object)
-	{
-		std::lock_guard<decltype(mutex)> lockGuard(mutex);
-		if (!object)
-		{
-			object = std::unique_ptr<T>(new T);
-		}
-	}
-
-	return *object.get();
+	static auto Core = spdlog::basic_logger_mt("core", "logs/core-log.txt");
 }

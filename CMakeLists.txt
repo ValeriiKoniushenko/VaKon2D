@@ -18,5 +18,10 @@ add_subdirectory(dependencies/googlebenchmark)
 add_subdirectory(dependencies/googletest)
 
 add_subdirectory(lib/boost)
+add_subdirectory(lib/glad)
+add_subdirectory(lib/glew)
 add_subdirectory(lib/glm)
+add_subdirectory(lib/misc)
+
 add_subdirectory(lib/core/utils)
+add_subdirectory(lib/core/logger)
