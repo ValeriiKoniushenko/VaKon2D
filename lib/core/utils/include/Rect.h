@@ -20,3 +20,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#include "Size.h"
+
+#include "glm/glm.hpp"
+#include <type_traits>
+
+namespace Utils {
+
+    template<Sizeable T>
+    struct Rect {
+        glm::vec2 position;
+        Size2D<T> size;
+    };
+
+} // namespace Utils
