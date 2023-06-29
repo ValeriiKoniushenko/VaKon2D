@@ -22,7 +22,7 @@
 
 #include "NotCopyableAndNotMovable.h"
 
-class VaKon2D : public Utils::NotCopyableAndNotMovable<VaKon2D>
+class VaKon2D : public Utils::NotCopyableAndNotMovable
 {
 public:
 	void start();

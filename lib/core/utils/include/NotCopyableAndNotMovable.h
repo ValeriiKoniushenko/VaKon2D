@@ -23,7 +23,6 @@
 namespace Utils
 {
 
-template <class T>
 class NotCopyableAndNotMovable
 {
 public:
