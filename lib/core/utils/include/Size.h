@@ -22,30 +22,33 @@
 
 #include <type_traits>
 
-namespace Utils {
+namespace Utils
+{
 
-    template<class T>
-    concept Sizeable = std::is_arithmetic_v<T>;
+template <class T>
+concept Sizeable = std::is_arithmetic_v<T>;
 
-    template<Sizeable T>
-    struct Size2D {
-        T width{};
-        T height{};
-    };
+template <Sizeable T>
+struct Size2D
+{
+	T width{};
+	T height{};
+};
 
-    using DSize2D = Size2D<double>;
-    using FSize2D = Size2D<float>;
-    using ISize2D = Size2D<int>;
+using DSize2D = Size2D<double>;
+using FSize2D = Size2D<float>;
+using ISize2D = Size2D<int>;
 
-    template<Sizeable T>
-    struct Size3D {
-        T width{};
-        T height{};
-        T deep{};
-    };
+template <Sizeable T>
+struct Size3D
+{
+	T width{};
+	T height{};
+	T deep{};
+};
 
-    using DSize3D = Size2D<double>;
-    using FSize3D = Size2D<float>;
-    using ISize3D = Size2D<int>;
+using DSize3D = Size2D<double>;
+using FSize3D = Size2D<float>;
+using ISize3D = Size2D<int>;
 
-} // namespace Utils
+}	 // namespace Utils

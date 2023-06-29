@@ -20,19 +20,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "Size.h"
-#include "glm/glm.hpp"
+#include <memory>
+#include <mutex>
 
-#include <type_traits>
-
-namespace Utils
+template <class T>
+class Singleton
 {
-
-template <Sizeable T>
-struct Rect
-{
-	glm::vec2 position;
-	Size2D<T> size;
+public:
+	T& instance();
 };
 
-}	 // namespace Utils
+template <class T>
+T& Singleton<T>::instance()
+{
+	static std::unique_ptr<T> object;
+	static std::mutex mutex;
+	if (!object)
+	{
+		std::lock_guard<decltype(mutex)> lockGuard(mutex);
+		if (!object)
+		{
+			object = std::unique_ptr<T>(new T);
+		}
+	}
+
+	return *object.get();
+}

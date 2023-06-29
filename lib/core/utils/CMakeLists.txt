@@ -2,6 +2,7 @@ add_library(
 	Utils
 	include/Rect.h
 	include/Size.h
+	include/Singleton.h
 
 	source/Rect.cpp
 	source/Size.cpp
