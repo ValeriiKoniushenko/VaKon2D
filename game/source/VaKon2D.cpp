@@ -22,9 +22,6 @@
 
 #include "VaKon2D.h"
 
-#include <iostream>
-
 void VaKon2D::start()
 {
-
 }
