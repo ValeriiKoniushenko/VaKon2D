@@ -26,5 +26,5 @@
 
 void VaKon2D::start()
 {
-	std::cout << "hello world" << std::endl;
+
 }
