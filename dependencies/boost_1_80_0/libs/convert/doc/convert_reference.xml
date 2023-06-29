@@ -1,0 +1,244 @@
+<?xml version="1.0" standalone="yes"?>
+<library-reference id="boost_convert_c___reference"><title>Boost.Convert C++ Reference</title><header name="boost/convert.hpp">
+<namespace name="boost">
+<namespace name="cnv">
+<struct name="reference"><template>
+      <template-type-parameter name="Converter"/>
+      <template-type-parameter name="TypeOut"/>
+      <template-type-parameter name="TypeIn"/>
+    </template><typedef name="this_type"><type><classname>reference</classname></type></typedef>
+<method-group name="public member functions">
+<method name="value_or"><type><classname>this_type</classname> &amp;</type><parameter name="fallback"><paramtype>TypeOut const &amp;</paramtype></parameter></method>
+<method name="operator()" cv="const"><type>TypeOut</type><parameter name="value_in"><paramtype>TypeIn const &amp;</paramtype></parameter></method>
+</method-group>
+<constructor><parameter name="cnv"><paramtype>Converter const &amp;</paramtype></parameter></constructor>
+<constructor><parameter name="cnv"><paramtype>Converter &amp;&amp;</paramtype></parameter></constructor>
+</struct><struct-specialization name="reference"><template>
+      <template-type-parameter name="Converter"/>
+      <template-type-parameter name="TypeOut"/>
+    </template><specialization><template-arg>Converter</template-arg><template-arg>TypeOut</template-arg><template-arg>void</template-arg></specialization><typedef name="this_type"><type><classname>reference</classname></type></typedef>
+<method-group name="public member functions">
+<method name="value_or"><type><classname>this_type</classname> &amp;</type><parameter name="fallback"><paramtype>TypeOut const &amp;</paramtype></parameter></method>
+<method name="operator()" cv="const"><type>TypeOut</type><template>
+          <template-type-parameter name="TypeIn"/>
+        </template><parameter name="value_in"><paramtype>TypeIn const &amp;</paramtype></parameter></method>
+</method-group>
+<constructor><parameter name="cnv"><paramtype>Converter const &amp;</paramtype></parameter></constructor>
+<constructor><parameter name="cnv"><paramtype>Converter &amp;&amp;</paramtype></parameter></constructor>
+</struct-specialization><function name="apply"><type><classname>reference</classname>&lt; Converter, TypeOut, TypeIn &gt;</type><template>
+          <template-type-parameter name="TypeOut"/>
+          <template-type-parameter name="TypeIn"/>
+          <template-type-parameter name="Converter"/>
+        </template><parameter name="cnv"><paramtype>Converter const &amp;</paramtype></parameter><purpose>Boost.Convert deployment interface with algorithms. </purpose><description><para>For example, <programlisting language="c++">std::array&lt;char const*, 3&gt; strs = {{ " 5", "0XF", "not an int" }};
+std::vector&lt;int&gt;           ints;
+boost::cnv::cstream         cnv;
+
+cnv(std::hex)(std::skipws);
+
+std::transform(
+    strs.begin(),
+    strs.end(),
+    std::back_inserter(ints),
+    boost::cnv::apply&lt;int&gt;(std::cref(cnv)).value_or(-1));
+</programlisting> </para></description></function>
+<function name="apply"><type><classname>reference</classname>&lt; Converter, TypeOut, void &gt;</type><template>
+          <template-type-parameter name="TypeOut"/>
+          <template-type-parameter name="Converter"/>
+        </template><parameter name="cnv"><paramtype>Converter const &amp;</paramtype></parameter></function>
+</namespace>
+<data-member name="throw_on_failure"><type><emphasis>unspecified</emphasis></type><description><para>boost::throw_on_failure is the 'tag' object to request the exception-throwing behavior. </para></description></data-member>
+<function name="convert"><type>boost::optional&lt; TypeOut &gt;</type><template>
+          <template-type-parameter name="TypeOut"/>
+          <template-type-parameter name="TypeIn"/>
+          <template-type-parameter name="Converter"/>
+        </template><parameter name="value_in"><paramtype>TypeIn const &amp;</paramtype><description><para>Value of the TypeIn type to be converted to the TypeOut type </para></description></parameter><parameter name="converter"><paramtype>Converter const &amp;</paramtype><description><para>Converter to be used for conversion </para></description></parameter><purpose>Boost.Convert main deployment interface. </purpose><description><para>
+
+For example, <programlisting language="c++">boost::cnv::cstream cnv;
+
+boost::optional&lt;int&gt;    i = boost::convert&lt;int&gt;("12", cnv);
+boost::optional&lt;string&gt; s = boost::convert&lt;string&gt;(123.456, cnv);
+</programlisting> </para></description><returns><para>boost::optional&lt;TypeOut&gt; result of conversion together with the indication of success or failure of the conversion request.</para>
+</returns></function>
+<function name="convert"><type>boost::optional&lt; TypeOut &gt;</type><template>
+          <template-type-parameter name="TypeOut"/>
+          <template-type-parameter name="TypeIn"/>
+        </template><parameter name="value_in"><paramtype>TypeIn const &amp;</paramtype></parameter><purpose>Boost.Convert deployment interface with the default converter. </purpose><description><para>For example, <programlisting language="c++">struct boost::cnv::by_default : boost::cnv::cstream {};
+
+// boost::cnv::cstream (through boost::cnv::by_default) is deployed
+// as the default converter when no converter is provided explicitly.
+boost::optional&lt;int&gt;    i = boost::convert&lt;int&gt;("12");
+boost::optional&lt;string&gt; s = boost::convert&lt;string&gt;(123.456);
+</programlisting> </para></description></function>
+<function name="convert"><type>TypeOut</type><template>
+          <template-type-parameter name="TypeOut"/>
+          <template-type-parameter name="TypeIn"/>
+          <template-type-parameter name="Converter"/>
+        </template><parameter name="value_in"><paramtype>TypeIn const &amp;</paramtype></parameter><parameter name="converter"><paramtype>Converter const &amp;</paramtype></parameter><parameter name=""><paramtype><emphasis>unspecified</emphasis></paramtype></parameter><purpose>Boost.Convert non-optional deployment interface. </purpose></function>
+<function name="convert"><type>std::enable_if&lt; is_convertible&lt; Fallback, TypeOut &gt;::value, TypeOut &gt;::type</type><template>
+          <template-type-parameter name="TypeOut"/>
+          <template-type-parameter name="TypeIn"/>
+          <template-type-parameter name="Converter"/>
+          <template-type-parameter name="Fallback"/>
+        </template><parameter name="value_in"><paramtype>TypeIn const &amp;</paramtype></parameter><parameter name="converter"><paramtype>Converter const &amp;</paramtype></parameter><parameter name="fallback"><paramtype>Fallback const &amp;</paramtype></parameter></function>
+<function name="convert"><type>std::enable_if&lt; cnv::is_fun&lt; Fallback, TypeOut &gt;::value, TypeOut &gt;::type</type><template>
+          <template-type-parameter name="TypeOut"/>
+          <template-type-parameter name="TypeIn"/>
+          <template-type-parameter name="Converter"/>
+          <template-type-parameter name="Fallback"/>
+        </template><parameter name="value_in"><paramtype>TypeIn const &amp;</paramtype></parameter><parameter name="converter"><paramtype>Converter const &amp;</paramtype></parameter><parameter name="fallback"><paramtype>Fallback</paramtype></parameter></function>
+
+</namespace>
+</header>
+<header name="boost/convert/base.hpp">
+<namespace name="boost">
+<namespace name="cnv">
+<struct name="cnvbase"><template>
+      <template-type-parameter name=""/>
+    </template></struct>
+
+</namespace>
+
+
+
+
+
+
+</namespace>
+<macro name="BOOST_CNV_TO_STRING"/>
+<macro name="BOOST_CNV_STRING_TO"/>
+<macro name="BOOST_CNV_PARAM_SET" kind="functionlike"><macro-parameter name="param_name"/></macro>
+<macro name="BOOST_CNV_PARAM_TRY" kind="functionlike"><macro-parameter name="param_name"/></macro>
+</header>
+<header name="boost/convert/charconv.hpp">
+<namespace name="boost">
+<namespace name="cnv">
+
+
+</namespace>
+
+
+
+
+
+
+</namespace>
+</header>
+<header name="boost/convert/lexical_cast.hpp">
+<namespace name="boost">
+<namespace name="cnv">
+
+
+</namespace>
+
+
+
+
+
+
+</namespace>
+</header>
+<header name="boost/convert/parameters.hpp">
+<namespace name="boost">
+<namespace name="cnv">
+<namespace name="parameter">
+</namespace>
+<enum name="adjust"><enumvalue name="left"/><enumvalue name="right"/><enumvalue name="center"/></enum>
+<enum name="base"><enumvalue name="bin"><default>=2</default></enumvalue><enumvalue name="oct"><default>=8</default></enumvalue><enumvalue name="dec"><default>=10</default></enumvalue><enumvalue name="hex"><default>=16</default></enumvalue></enum>
+<enum name="notation"><enumvalue name="fixed"/><enumvalue name="scientific"/><enumvalue name="hex"/></enum>
+
+
+</namespace>
+
+
+
+
+
+
+</namespace>
+</header>
+<header name="boost/convert/printf.hpp">
+<namespace name="boost">
+<namespace name="cnv">
+
+
+</namespace>
+
+
+
+
+
+
+</namespace>
+</header>
+<header name="boost/convert/spirit.hpp">
+<namespace name="boost">
+<namespace name="cnv">
+
+
+</namespace>
+
+
+
+
+
+
+</namespace>
+</header>
+<header name="boost/convert/stream.hpp">
+<namespace name="boost">
+<namespace name="cnv">
+<struct name="basic_stream"><template>
+      <template-type-parameter name="Char"/>
+    </template></struct><typedef name="cstream"><type><classname>boost::cnv::basic_stream</classname>&lt; char &gt;</type></typedef>
+<typedef name="wstream"><type><classname>boost::cnv::basic_stream</classname>&lt; wchar_t &gt;</type></typedef>
+
+
+</namespace>
+
+
+
+
+
+
+</namespace>
+<macro name="BOOST_CNV_STRING_ENABLE"/>
+<macro name="BOOST_CNV_PARAM_SET" kind="functionlike"><macro-parameter name="param_name"/></macro>
+<macro name="BOOST_CNV_PARAM_TRY" kind="functionlike"><macro-parameter name="param_name"/></macro>
+</header>
+<header name="boost/convert/strtol.hpp">
+<namespace name="boost">
+<namespace name="cnv">
+
+
+</namespace>
+
+
+
+
+
+
+</namespace>
+</header>
+<header name="boost/make_default.hpp">
+<namespace name="boost">
+
+
+
+
+
+<function name="make_default"><type>T</type><template>
+          <template-type-parameter name="T"/>
+        </template><description><para>A considerable number of libraries require an instance of a class provided (storage created and initialized). For example, <programlisting language="c++">Type result;
+...
+istream &gt;&gt; result;
+</programlisting> In generic code that results in the Default Constructibility requirement imposed on every type 'Type' to be used with the respective code. Inevitably, that requirement a) either excludes all the classes that for various reasons do not meet that requirement or b) imposes certain (not necessarily desirable) design/implementation onto respective classes.</para><para>Deployment of boost::make_default() eliminates the Default Constructibility requirement with <programlisting language="c++">Type result = boost::make_default&lt;Type&gt;();
+...
+istream &gt;&gt; result;
+</programlisting> Classes with no default constructor can now be included via a boost::make_default() specialization: <programlisting language="c++">namespace boost
+{
+    template&lt;&gt; inline Type make_default&lt;Type&gt;() { return Type(parameters); }
+}
+</programlisting> </para></description></function>
+</namespace>
+</header>
+</library-reference>
