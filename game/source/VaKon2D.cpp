@@ -28,4 +28,5 @@ void VaKon2D::start()
 {
 	Logger::InitLogger();
 
+	spdlog::get("core")->info("sdfffffdfsdfssdffds");
 }

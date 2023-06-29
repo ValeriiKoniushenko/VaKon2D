@@ -22,7 +22,18 @@
 
 #include "Logger.h"
 
+#include <ctime>
+#include <format>
+
 void Logger::InitLogger()
 {
-	static auto Core = spdlog::basic_logger_mt("core", "logs/core-log.txt");
+	tm newtime;
+	time_t now = time(nullptr);
+	localtime_s(&newtime, &now);
+
+	std::ostringstream oss;
+	oss << std::put_time(&newtime, "%d-%m-%Y %H.%M.%S");
+	auto currentTimeString = oss.str();
+
+	spdlog::basic_logger_mt("core", std::format("logs/core-{}.log", currentTimeString));
 }
