@@ -1,8 +1,6 @@
 add_library(
 	GoogleTests STATIC
 	src/gtest.cc
-	src/gtest_main.cc
-	src/gtest-all.cc
 	src/gtest-death-test.cc
 	src/gtest-filepath.cc
 	src/gtest-matchers.cc
