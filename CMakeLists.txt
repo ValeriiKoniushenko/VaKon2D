@@ -45,7 +45,7 @@ add_subdirectory(lib/boost)
 add_subdirectory(lib/glm)
 
 add_subdirectory(lib/core/utils)
-add_subdirectory(lib/core/programs)
+add_subdirectory(game)
 
 add_subdirectory(dependencies/freetype-2.10.0)
 add_subdirectory(dependencies/glfw-3.3.7)

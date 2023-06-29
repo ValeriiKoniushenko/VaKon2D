@@ -35,7 +35,19 @@ int main()
 	}
 	catch (std::runtime_error& error)
 	{
-		MessageBoxA(nullptr, error.what(), "Error", MB_OK);
+		MessageBoxA(nullptr, error.what(), "STD Error", MB_OK);
+		return 1;
 	}
+	catch (std::exception& error)
+	{
+		MessageBoxA(nullptr, error.what(), "Unknown STD Error", MB_OK);
+		return 2;
+	}
+	catch (...)
+	{
+		MessageBoxA(nullptr, "An unknown error. To know details go to log.", "Unknown Error", MB_OK);
+		return 3;
+	}
+
 	return 0;
 }
