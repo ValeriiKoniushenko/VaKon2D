@@ -20,17 +20,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "VaKon2D.h"
-
 #include "GladWrapper.h"
-#include "GlfwWrapper.h"
-#include "Logger.h"
-#include "Window.h"
 
-void VaKon2D::start()
+void GladWrapper::initialize()
 {
-	Logger::initLogger();
-	GlfwWrapper::initGlfw(3, 3);
-	Window::instance().create({800, 600}, "Game name");
-	GladWrapper::initGlad();
+	if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
+	{
+		throw std::runtime_error("Failed to initialize GLAD");
+	}
+}
+
+void GladWrapper::initGlad()
+{
+	GladWrapper::instance().initialize();
 }

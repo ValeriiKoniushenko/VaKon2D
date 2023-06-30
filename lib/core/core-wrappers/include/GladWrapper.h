@@ -20,17 +20,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "VaKon2D.h"
+#pragma once
 
-#include "GladWrapper.h"
-#include "GlfwWrapper.h"
-#include "Logger.h"
-#include "Window.h"
+#include "Singleton.h"
 
-void VaKon2D::start()
+// clang-format off
+#include "glad.h"
+#include "GLFW/glfw3.h"
+
+// clang-format on
+
+class GladWrapper : public Singleton<GladWrapper>
 {
-	Logger::initLogger();
-	GlfwWrapper::initGlfw(3, 3);
-	Window::instance().create({800, 600}, "Game name");
-	GladWrapper::initGlad();
-}
+public:
+	void initialize();
+	static void initGlad();
+};

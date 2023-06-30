@@ -18,4 +18,5 @@ target_link_libraries(
 	glfw
 	Glad
 	Core-Wrappers
+	Window
 )

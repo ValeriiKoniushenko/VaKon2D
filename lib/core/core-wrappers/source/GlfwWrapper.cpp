@@ -53,3 +53,13 @@ void GlfwWrapper::initGlfw(int majorVersion, int minorVersion)
 {
 	GlfwWrapper::instance().initialize(majorVersion, minorVersion);
 }
+
+void GlfwWrapper::terminate()
+{
+	glfwTerminate();
+}
+
+GlfwWrapper::~GlfwWrapper()
+{
+	terminate();
+}
