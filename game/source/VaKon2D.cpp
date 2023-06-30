@@ -29,8 +29,15 @@
 
 void VaKon2D::start()
 {
+	initCore();
+}
+
+void VaKon2D::initCore()
+{
+	// !!!!!! don't change an order !!!!!! -->
 	Logger::initLogger();
-	GlfwWrapper::initGlfw(3, 3);
-	Window::instance().create({800, 600}, "Game name");
+	GlfwWrapper::initGlfw(3, 3);						   // TODO: get versions from a config file
+	Window::instance().create({800, 600}, "Game name");	   // TODO: get size & title from a config file
 	GladWrapper::initGlad();
+	// <---------------------------------------
 }
