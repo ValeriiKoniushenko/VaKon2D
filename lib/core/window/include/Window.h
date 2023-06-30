@@ -34,3 +34,5 @@ public:
 protected:
 	GLFWwindow* window{};
 };
+
+Window& GetWindow();

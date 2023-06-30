@@ -28,5 +28,7 @@ class VaKon2D : public Utils::NotCopyableAndNotMovable
 {
 public:
 	void start();
+
+private:
 	void initCore();
 };

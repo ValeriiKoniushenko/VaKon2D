@@ -31,3 +31,8 @@ void Window::create(Utils::ISize2D Size, const std::string& Title)
 	}
 	glfwMakeContextCurrent(window);
 }
+
+Window& GetWindow()
+{
+	return Window::instance();
+}
