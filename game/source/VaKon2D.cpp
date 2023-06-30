@@ -31,10 +31,93 @@ void VaKon2D::start()
 {
 	initCore();
 
+	glViewport(0, 0, 800, 600);
+
+	float vertices[] = {-0.5f, -0.5f, 0.0f, 0.5f, -0.5f, 0.0f, 0.0f, 0.5f, 0.0f};
+	unsigned int VBO;
+	glGenBuffers(1, &VBO);
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+	const char* vertexShaderSource =
+		"#version 330 core\n"
+		"layout (location = 0) in vec3 aPos;\n"
+		"void main()\n"
+		"{\n"
+		"   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+		"}\0";
+
+	unsigned int vertexShader;
+	vertexShader = glCreateShader(GL_VERTEX_SHADER);
+
+	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+	glCompileShader(vertexShader);
+
+	int success;
+	char infoLog[512];
+	glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
+
+	if (!success)
+	{
+		glGetShaderInfoLog(vertexShader, 512, nullptr, infoLog);
+		throw std::runtime_error("ERROR::SHADER::VERTEX::COMPILATION_FAILED\nDetails: " + std::string(infoLog));
+	}
+
+	const char* fragmentShaderSource = R"(
+	#version 330 core
+	out vec4 FragColor;
+	void main()
+	{
+		FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);
+	};)";
+
+	unsigned int fragmentShader;
+	fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+	glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
+	glCompileShader(fragmentShader);
+
+	unsigned int shaderProgram;
+	shaderProgram = glCreateProgram();
+
+	glAttachShader(shaderProgram, vertexShader);
+	glAttachShader(shaderProgram, fragmentShader);
+	glLinkProgram(shaderProgram);
+
+	glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
+	if (!success)
+	{
+		glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
+		throw std::runtime_error("ERROR::SHADER-PROGRAM::COMPILATION_FAILED\nDetails: " + std::string(infoLog));
+	}
+
+	glUseProgram(shaderProgram);
+
+	glDeleteShader(vertexShader);
+	glDeleteShader(fragmentShader);
+
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*) 0);
+	glEnableVertexAttribArray(0);
+
+	unsigned int VAO;
+	glGenVertexArrays(1, &VAO);
+	// ..:: Initialization code (done once (unless your object frequently changes)) :: ..
+	// 1. bind Vertex Array Object
+	glBindVertexArray(VAO);
+	// 2. copy our vertices array in a buffer for OpenGL to use
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	// 3. then set our vertex attributes pointers
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*) 0);
+	glEnableVertexAttribArray(0);
+
 	while (!GetWindow().shouldClose())
 	{
 		GetWindow().clearColor(0.2f, 0.3f, 0.3f, 1.0f);	   // TODO: create class Color
-		GetWindow().clear(GL_COLOR_BUFFER_BIT);			   // TOOD: change to enum class
+		GetWindow().clear(GL_COLOR_BUFFER_BIT);			   // TODO: change to enum class
+
+		glUseProgram(shaderProgram);
+		glBindVertexArray(VAO);
+		glDrawArrays(GL_TRIANGLES, 0, 3);
 
 		GetWindow().swapBuffers();
 		GetWindow().pollEvent();
