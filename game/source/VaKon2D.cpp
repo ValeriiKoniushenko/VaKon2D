@@ -31,15 +31,19 @@ void VaKon2D::start()
 {
 	initCore();
 
-
+	while (!GetWindow().shouldClose())
+	{
+		GetWindow().swapBuffers();
+		GetWindow().pollEvent();
+	}
 }
 
 void VaKon2D::initCore()
 {
 	// !!!!!! don't change an order !!!!!! -->
 	Logger::initLogger();
-	GlfwWrapper::initGlfw(3, 3);						   // TODO: get versions from a config file
-	GetWindow().create({800, 600}, "Game name");	   // TODO: get size & title from a config file
+	GlfwWrapper::initGlfw(3, 3);					// TODO: get versions from a config file
+	GetWindow().create({800, 600}, "Game name");	// TODO: get size & title from a config file
 	GladWrapper::initGlad();
 	// <---------------------------------------
 }

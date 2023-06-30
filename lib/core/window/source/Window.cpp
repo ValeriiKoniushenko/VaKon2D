@@ -32,6 +32,21 @@ void Window::create(Utils::ISize2D Size, const std::string& Title)
 	glfwMakeContextCurrent(window);
 }
 
+bool Window::shouldClose() const
+{
+	return glfwWindowShouldClose(window);
+}
+
+void Window::swapBuffers()
+{
+	glfwSwapBuffers(window);
+}
+
+void Window::pollEvent()
+{
+	glfwPollEvents();
+}
+
 Window& GetWindow()
 {
 	return Window::instance();
