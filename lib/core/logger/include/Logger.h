@@ -25,5 +25,5 @@
 
 namespace Logger
 {
-void InitLogger();
+void initLogger();
 }

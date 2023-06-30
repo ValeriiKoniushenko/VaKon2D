@@ -25,7 +25,7 @@
 #include <ctime>
 #include <format>
 
-void Logger::InitLogger()
+void Logger::initLogger()
 {
 	tm newtime;
 	time_t now = time(nullptr);

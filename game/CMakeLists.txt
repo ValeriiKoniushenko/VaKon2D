@@ -15,4 +15,7 @@ target_link_libraries(
 	VaKon2D PUBLIC
 	Utils
 	Logger
+	glfw
+	Glad
+	Core-Wrappers
 )

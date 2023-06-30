@@ -20,13 +20,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "VaKon2D.h"
+#include "Singleton.h"
 
-#include "GlfwWrapper.h"
-#include "Logger.h"
-
-void VaKon2D::start()
+class GlfwWrapper : public Singleton<GlfwWrapper>
 {
-	Logger::initLogger();
-	GlfwWrapper::InitGlfw(3, 3);
-}
+public:
+	void initialize(int majorVersion, int minorVersion);
+	static void InitGlfw(int majorVersion, int minorVersion);
+};

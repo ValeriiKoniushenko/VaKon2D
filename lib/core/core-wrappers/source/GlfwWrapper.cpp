@@ -20,13 +20,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "VaKon2D.h"
-
 #include "GlfwWrapper.h"
+
+// clang-format off
+#include "glad.h"
+#include "GLFW/glfw3.h"
+// clang-format on
+
 #include "Logger.h"
 
-void VaKon2D::start()
+void GlfwWrapper::initialize(int majorVersion, int minorVersion)
 {
-	Logger::initLogger();
-	GlfwWrapper::InitGlfw(3, 3);
+	if (glfwInit() == GLFW_FALSE)
+	{
+		throw std::runtime_error("Cant initialize GLFW");
+	}
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, majorVersion);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, minorVersion);
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+}
+
+void GlfwWrapper::InitGlfw(int majorVersion, int minorVersion)
+{
+	GlfwWrapper::instance().initialize(majorVersion, minorVersion);
 }

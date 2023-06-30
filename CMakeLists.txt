@@ -23,5 +23,6 @@ add_subdirectory(lib/glew)
 add_subdirectory(lib/glm)
 add_subdirectory(lib/misc)
 
-add_subdirectory(lib/core/utils)
+add_subdirectory(lib/core/core-wrappers)
 add_subdirectory(lib/core/logger)
+add_subdirectory(lib/core/utils)

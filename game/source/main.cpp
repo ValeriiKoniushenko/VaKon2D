@@ -20,6 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#include "Logger.h"
 #include "VaKon2D.h"
 
 #include <Windows.h>
@@ -35,16 +36,19 @@ int main()
 	}
 	catch (std::runtime_error& error)
 	{
+		spdlog::get("core")->critical("STD Error: {}", error.what());
 		MessageBoxA(nullptr, error.what(), "STD Error", MB_OK);
 		return 1;
 	}
 	catch (std::exception& error)
 	{
+		spdlog::get("core")->critical("Unknown STD Error");
 		MessageBoxA(nullptr, error.what(), "Unknown STD Error", MB_OK);
 		return 2;
 	}
 	catch (...)
 	{
+		spdlog::get("core")->critical("Unknown Error");
 		MessageBoxA(nullptr, "An unknown error. To know details go to log.", "Unknown Error", MB_OK);
 		return 3;
 	}
