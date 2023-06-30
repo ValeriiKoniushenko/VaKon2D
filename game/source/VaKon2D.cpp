@@ -33,6 +33,9 @@ void VaKon2D::start()
 
 	while (!GetWindow().shouldClose())
 	{
+		GetWindow().clearColor(0.2f, 0.3f, 0.3f, 1.0f);	   // TODO: create class Color
+		GetWindow().clear(GL_COLOR_BUFFER_BIT);			   // TOOD: change to enum class
+
 		GetWindow().swapBuffers();
 		GetWindow().pollEvent();
 	}

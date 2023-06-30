@@ -22,9 +22,9 @@
 
 #include "Window.h"
 
-void Window::create(Utils::ISize2D Size, const std::string& Title)
+void Window::create(Utils::ISize2D size, const std::string& title)
 {
-	if (!(window = glfwCreateWindow(Size.width, Size.height, Title.c_str(), NULL, NULL)))
+	if (!(window = glfwCreateWindow(size.width, size.height, title.c_str(), NULL, NULL)))
 	{
 		glfwTerminate();
 		throw std::runtime_error("Failed to create GLFW window");
@@ -45,6 +45,16 @@ void Window::swapBuffers()
 void Window::pollEvent()
 {
 	glfwPollEvents();
+}
+
+void Window::clearColor(float r, float g, float b, float a)
+{
+	glClearColor(r, g, b, a);
+}
+
+void Window::clear(int code)
+{
+	glClear(code);
 }
 
 Window& GetWindow()

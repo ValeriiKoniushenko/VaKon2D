@@ -29,10 +29,12 @@
 class Window : public Singleton<Window>
 {
 public:
-	void create(Utils::ISize2D Size, const std::string& Title);
+	void create(Utils::ISize2D size, const std::string& title);
 	_NODISCARD bool shouldClose() const;
 	void swapBuffers();
 	void pollEvent();
+	void clearColor(float r, float g, float b, float a);
+	void clear(int code);
 
 protected:
 	GLFWwindow* window{};
