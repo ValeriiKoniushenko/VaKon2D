@@ -22,15 +22,21 @@
 
 #include "GlfwWrapper.h"
 
-// clang-format off
-#include "glad.h"
-#include "GLFW/glfw3.h"
-// clang-format on
-
 #include "Logger.h"
+
+namespace
+{
+
+void ErrorCallback(int, const char* errorMessage)
+{
+	spdlog::get("core")->critical(errorMessage);
+}
+
+}	 // namespace
 
 void GlfwWrapper::initialize(int majorVersion, int minorVersion)
 {
+	glfwSetErrorCallback(ErrorCallback);
 	if (glfwInit() == GLFW_FALSE)
 	{
 		throw std::runtime_error("Cant initialize GLFW");
@@ -43,7 +49,7 @@ void GlfwWrapper::initialize(int majorVersion, int minorVersion)
 #endif
 }
 
-void GlfwWrapper::InitGlfw(int majorVersion, int minorVersion)
+void GlfwWrapper::initGlfw(int majorVersion, int minorVersion)
 {
 	GlfwWrapper::instance().initialize(majorVersion, minorVersion);
 }

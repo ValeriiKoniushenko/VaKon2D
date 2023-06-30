@@ -20,11 +20,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#pragma once
+
 #include "Singleton.h"
+
+// clang-format off
+#include "glad.h"
+#include "GLFW/glfw3.h"
+
+// clang-format on
 
 class GlfwWrapper : public Singleton<GlfwWrapper>
 {
 public:
 	void initialize(int majorVersion, int minorVersion);
-	static void InitGlfw(int majorVersion, int minorVersion);
+	static void initGlfw(int majorVersion, int minorVersion);
 };

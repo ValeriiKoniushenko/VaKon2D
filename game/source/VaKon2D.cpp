@@ -28,5 +28,5 @@
 void VaKon2D::start()
 {
 	Logger::initLogger();
-	GlfwWrapper::InitGlfw(3, 3);
+	GlfwWrapper::initGlfw(3, 3);
 }
