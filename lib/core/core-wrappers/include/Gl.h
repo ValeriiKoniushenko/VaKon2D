@@ -72,8 +72,18 @@ public:
 		_NODISCARD static GLuint createAndLoadShaderFromFile(const std::filesystem::path& path, Type type);
 		_NODISCARD static GLint getShaderiv(GLuint shader, GLenum pname);
 		_NODISCARD static std::string getShaderInfoLog(GLuint shader);
+		static void deleteShader(GLuint shader);
+		static void compile(GLuint shader);
+	};
 
-	private:
+	class Program
+	{
+	public:
+		_NODISCARD static GLint getProgramiv(GLuint program, GLenum pname);
+		_NODISCARD static GLuint create();
+		static void attachShader(GLuint program, GLuint shader);
+		static void link(GLuint program);
+		_NODISCARD static std::string getProgramInfoLog(GLuint program);
 	};
 
 	static void enableVertexAttribArray(GLuint index);

@@ -175,3 +175,59 @@ std::string Gl::Shader::getShaderInfoLog(GLuint shader)
 	glGetShaderInfoLog(shader, logLength, nullptr, infoLog);
 	return std::string(infoLog);
 }
+
+void Gl::Shader::deleteShader(GLuint shader)
+{
+	glDeleteShader(shader);
+}
+
+void Gl::Shader::compile(GLuint shader)
+{
+	glCompileShader(shader);
+
+	if (!getShaderiv(shader, GL_COMPILE_STATUS))
+	{
+		throw std::runtime_error("Shader - compilation failed.\nDetails: " + getShaderInfoLog(shader));
+	}
+}
+
+GLuint Gl::Program::create()
+{
+	const GLuint program = glCreateProgram();
+	if (program == 0)
+	{
+		throw std::runtime_error("The shader program couldn't be created by undefined reasons");
+	}
+
+	return program;
+}
+
+void Gl::Program::attachShader(GLuint program, GLuint shader)
+{
+	glAttachShader(program, shader);
+}
+
+void Gl::Program::link(GLuint program)
+{
+	glLinkProgram(program);
+
+	if (!getProgramiv(program, GL_LINK_STATUS))
+	{
+		throw std::runtime_error("Shader program compilation was failed.\nDetails: " + getProgramInfoLog(program));
+	}
+}
+
+GLint Gl::Program::getProgramiv(GLuint program, GLenum pname)
+{
+	int status{};
+	glGetProgramiv(program, pname, &status);
+	return status;
+}
+
+std::string Gl::Program::getProgramInfoLog(GLuint program)
+{
+	constexpr std::size_t logLength = 1024;
+	char infoLog[logLength];
+	glGetProgramInfoLog(program, logLength, nullptr, infoLog);
+	return std::string(infoLog);
+}

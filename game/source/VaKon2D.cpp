@@ -35,41 +35,33 @@ void VaKon2D::start()
 	glViewport(0, 0, 800, 600);
 
 	auto vertexShader = Gl::Shader::createAndLoadShaderFromFile("assets/shaders/main-vertex.glsl", Gl::Shader::Type::Vertex);
-	glCompileShader(vertexShader);
-
-	if (!Gl::Shader::getShaderiv(vertexShader, GL_COMPILE_STATUS))
-	{
-		throw std::runtime_error("Vertex shader - compilation failed.\nDetails: " + std::string(Gl::Shader::getShaderInfoLog(vertexShader)));
-	}
+	Gl::Shader::compile(vertexShader);
 
 	auto fragmentShader = Gl::Shader::createAndLoadShaderFromFile("assets/shaders/main-fragment.glsl", Gl::Shader::Type::Fragment);
-	glCompileShader(fragmentShader);
+	Gl::Shader::compile(fragmentShader);
 
-	if (!Gl::Shader::getShaderiv(fragmentShader, GL_COMPILE_STATUS))
-	{
-		throw std::runtime_error("Fragment shader - compilation failed.\nDetails: " + std::string(Gl::Shader::getShaderInfoLog(fragmentShader)));
-	}
+	unsigned int shaderProgram = Gl::Program::create();
 
-	unsigned int shaderProgram;
-	shaderProgram = glCreateProgram();
+	Gl::Program::attachShader(shaderProgram, vertexShader);
+	Gl::Program::attachShader(shaderProgram, fragmentShader);
 
-	glAttachShader(shaderProgram, vertexShader);
-	glAttachShader(shaderProgram, fragmentShader);
-	glLinkProgram(shaderProgram);
-
-	int success;
-	glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
-	if (!success)
-	{
-		char infoLog[512];
-		glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
-		throw std::runtime_error("ERROR::SHADER-PROGRAM::COMPILATION_FAILED\nDetails: " + std::string(infoLog));
-	}
+	Gl::Program::link(shaderProgram);
 
 	glUseProgram(shaderProgram);
 
-	glDeleteShader(vertexShader);
-	glDeleteShader(fragmentShader);
+	Gl::Shader::deleteShader(fragmentShader);
+	if (!Gl::Shader::getShaderiv(fragmentShader, GL_DELETE_STATUS))
+	{
+		throw std::runtime_error(
+			"Fragment shader - deletion was failed.\nDetails: " + std::string(Gl::Shader::getShaderInfoLog(fragmentShader)));
+	}
+
+	Gl::Shader::deleteShader(vertexShader);
+	if (!Gl::Shader::getShaderiv(vertexShader, GL_DELETE_STATUS))
+	{
+		throw std::runtime_error(
+			"Vertex shader - deletion was failed.\nDetails: " + std::string(Gl::Shader::getShaderInfoLog(fragmentShader)));
+	}
 
 	float vertices[] = {-0.5f, -0.5f, 0.0f, 0.5f, -0.5f, 0.0f, 0.0f, 0.5f, 0.0f};
 	unsigned int VBO;
