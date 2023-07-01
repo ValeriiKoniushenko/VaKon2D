@@ -20,3 +20,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#include "Size.h"
+
+#include <filesystem>
+#include <string>
+#include <vector>
+
+namespace Utils
+{
+
+_NODISCARD std::string getFileContent(const std::filesystem::path& path);
+void setFileContent(const std::filesystem::path& path, const std::string& data);
+void setFileContent(const std::filesystem::path& path, void* p, size_t size);
+_NODISCARD std::vector<ISize2D> getAllSupportedWndSizes();
+_NODISCARD std::ifstream readFile(const std::filesystem::path& path);
+_NODISCARD bool isEqual(float n1, float n2, float E = std::numeric_limits<float>::epsilon());
+_NODISCARD bool isZero(float n, float E = std::numeric_limits<float>::epsilon());
+
+}	 // namespace Utils
