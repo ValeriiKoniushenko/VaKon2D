@@ -22,6 +22,7 @@
 
 #include "VaKon2D.h"
 
+#include "Gl.h"
 #include "GladWrapper.h"
 #include "GlfwWrapper.h"
 #include "Logger.h"
@@ -32,12 +33,6 @@ void VaKon2D::start()
 	initCore();
 
 	glViewport(0, 0, 800, 600);
-
-	float vertices[] = {-0.5f, -0.5f, 0.0f, 0.5f, -0.5f, 0.0f, 0.0f, 0.5f, 0.0f};
-	unsigned int VBO;
-	glGenBuffers(1, &VBO);
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
 	const char* vertexShaderSource =
 		"#version 330 core\n"
@@ -95,20 +90,17 @@ void VaKon2D::start()
 	glDeleteShader(vertexShader);
 	glDeleteShader(fragmentShader);
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*) 0);
-	glEnableVertexAttribArray(0);
+	float vertices[] = {-0.5f, -0.5f, 0.0f, 0.5f, -0.5f, 0.0f, 0.0f, 0.5f, 0.0f};
+	unsigned int VBO;
+	Gl::Vbo::generate(1, &VBO);
+	Gl::Vbo::bind(GL_ARRAY_BUFFER, VBO);
+	Gl::Vbo::data(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
 	unsigned int VAO;
-	glGenVertexArrays(1, &VAO);
-	// ..:: Initialization code (done once (unless your object frequently changes)) :: ..
-	// 1. bind Vertex Array Object
-	glBindVertexArray(VAO);
-	// 2. copy our vertices array in a buffer for OpenGL to use
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-	// 3. then set our vertex attributes pointers
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*) 0);
-	glEnableVertexAttribArray(0);
+	Gl::Vao::generate(1, &VAO);
+	Gl::Vao::bind(VAO);
+	Gl::vertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*) 0);
+	Gl::enableVertexAttribArray(0);
 
 	while (!GetWindow().shouldClose())
 	{
