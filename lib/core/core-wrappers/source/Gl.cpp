@@ -22,6 +22,8 @@
 
 #include "Gl.h"
 
+#include "UtilsFunctions.h"
+
 void Gl::Vao::generate(GLsizei n, GLuint* arrays)
 {
 	if (isBind())
@@ -134,4 +136,42 @@ void Gl::vertexAttribPointer(GLuint index, GLint size, GLenum type, GLboolean no
 	}
 
 	glVertexAttribPointer(index, size, type, normalized, stride, pointer);
+}
+
+GLuint Gl::Shader::createAndLoadShaderFromFile(const std::filesystem::path& path, Gl::Shader::Type type)
+{
+	const std::string shaderSources = Utils::getFileContent(path);
+	const char* shaderSourcesP = shaderSources.c_str();
+
+	GLuint shader = create(type);
+
+	glShaderSource(shader, 1, &shaderSourcesP, nullptr);
+	return shader;
+}
+
+GLuint Gl::Shader::create(Gl::Shader::Type type)
+{
+	GLuint shader = glCreateShader(static_cast<GLenum>(type));
+
+	if (shader == 0)
+	{
+		throw std::runtime_error("The shader can't be created by undefined reason.");
+	}
+
+	return shader;
+}
+
+GLint Gl::Shader::getShaderiv(GLuint shader, GLenum pname)
+{
+	int value{};
+	glGetShaderiv(shader, pname, &value);
+	return value;
+}
+
+std::string Gl::Shader::getShaderInfoLog(GLuint shader)
+{
+	constexpr std::size_t logLength = 1024;
+	char infoLog[logLength];
+	glGetShaderInfoLog(shader, logLength, nullptr, infoLog);
+	return std::string(infoLog);
 }

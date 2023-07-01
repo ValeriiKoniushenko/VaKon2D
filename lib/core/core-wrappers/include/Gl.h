@@ -26,6 +26,8 @@
 #include "Vao.h"
 #include "Vbo.h"
 
+#include <filesystem>
+
 class Gl
 {
 public:
@@ -55,6 +57,23 @@ public:
 
 	private:
 		inline static GLuint id_ = ::Vbo::invalidId;
+	};
+
+	class Shader
+	{
+	public:
+		enum class Type
+		{
+			Fragment = GL_FRAGMENT_SHADER,
+			Geometry = GL_GEOMETRY_SHADER,
+			Vertex = GL_VERTEX_SHADER
+		};
+		_NODISCARD static GLuint create(Type type);
+		_NODISCARD static GLuint createAndLoadShaderFromFile(const std::filesystem::path& path, Type type);
+		_NODISCARD static GLint getShaderiv(GLuint shader, GLenum pname);
+		_NODISCARD static std::string getShaderInfoLog(GLuint shader);
+
+	private:
 	};
 
 	static void enableVertexAttribArray(GLuint index);

@@ -34,42 +34,21 @@ void VaKon2D::start()
 
 	glViewport(0, 0, 800, 600);
 
-	const char* vertexShaderSource =
-		"#version 330 core\n"
-		"layout (location = 0) in vec3 aPos;\n"
-		"void main()\n"
-		"{\n"
-		"   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-		"}\0";
-
-	unsigned int vertexShader;
-	vertexShader = glCreateShader(GL_VERTEX_SHADER);
-
-	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+	auto vertexShader = Gl::Shader::createAndLoadShaderFromFile("assets/shaders/main-vertex.glsl", Gl::Shader::Type::Vertex);
 	glCompileShader(vertexShader);
 
-	int success;
-	char infoLog[512];
-	glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
-
-	if (!success)
+	if (!Gl::Shader::getShaderiv(vertexShader, GL_COMPILE_STATUS))
 	{
-		glGetShaderInfoLog(vertexShader, 512, nullptr, infoLog);
-		throw std::runtime_error("ERROR::SHADER::VERTEX::COMPILATION_FAILED\nDetails: " + std::string(infoLog));
+		throw std::runtime_error("Vertex shader - compilation failed.\nDetails: " + std::string(Gl::Shader::getShaderInfoLog(vertexShader)));
 	}
 
-	const char* fragmentShaderSource = R"(
-	#version 330 core
-	out vec4 FragColor;
-	void main()
-	{
-		FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);
-	};)";
-
-	unsigned int fragmentShader;
-	fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-	glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
+	auto fragmentShader = Gl::Shader::createAndLoadShaderFromFile("assets/shaders/main-fragment.glsl", Gl::Shader::Type::Fragment);
 	glCompileShader(fragmentShader);
+
+	if (!Gl::Shader::getShaderiv(fragmentShader, GL_COMPILE_STATUS))
+	{
+		throw std::runtime_error("Fragment shader - compilation failed.\nDetails: " + std::string(Gl::Shader::getShaderInfoLog(fragmentShader)));
+	}
 
 	unsigned int shaderProgram;
 	shaderProgram = glCreateProgram();
@@ -78,9 +57,11 @@ void VaKon2D::start()
 	glAttachShader(shaderProgram, fragmentShader);
 	glLinkProgram(shaderProgram);
 
+	int success;
 	glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
 	if (!success)
 	{
+		char infoLog[512];
 		glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
 		throw std::runtime_error("ERROR::SHADER-PROGRAM::COMPILATION_FAILED\nDetails: " + std::string(infoLog));
 	}
