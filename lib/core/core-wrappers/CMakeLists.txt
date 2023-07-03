@@ -4,6 +4,7 @@ add_library(
 	include/GlfwWrapper.h
 	include/GladWrapper.h
 	include/Shader.h
+	include/ShaderProgram.h
 	include/Vao.h
 	include/Vbo.h
 
@@ -11,6 +12,7 @@ add_library(
 	source/GlfwWrapper.cpp
 	source/GladWrapper.cpp
 	source/Shader.cpp
+	source/ShaderProgram.cpp
 	source/Vao.cpp
 	source/Vbo.cpp
 )

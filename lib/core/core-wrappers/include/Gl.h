@@ -94,6 +94,8 @@ public:
 	class Program
 	{
 	public:
+		inline static const GLuint invalidId = 0;
+
 		_NODISCARD static GLint getProgramiv(GLuint program, GLenum pname);
 		_NODISCARD static GLuint create();
 		static void attachShader(GLuint program, GLuint shader);

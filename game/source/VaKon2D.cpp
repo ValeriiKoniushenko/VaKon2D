@@ -26,6 +26,7 @@
 #include "GladWrapper.h"
 #include "Logger.h"
 #include "Shader.h"
+#include "ShaderProgram.h"
 #include "Vao.h"
 #include "Vbo.h"
 #include "Window.h"
@@ -38,6 +39,9 @@ void VaKon2D::start()
 
 	Shader vertex("assets/shaders/main-vertex.glsl", Gl::Shader::Type::Vertex);
 	Shader fragment("assets/shaders/main-fragment.glsl", Gl::Shader::Type::Fragment);
+
+	ShaderProgram program(fragment, vertex);
+	program.use();
 
 	unsigned int shaderProgram = Gl::Program::create();
 	Gl::Program::attachShader(shaderProgram, vertex.data());
