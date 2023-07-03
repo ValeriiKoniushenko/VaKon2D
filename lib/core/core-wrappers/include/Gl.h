@@ -40,6 +40,10 @@ public:
 		static void bind(GLuint array);
 		static void reset();
 		static bool isBind();
+		static void vertexAttribPointer(
+			GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void* pointer);
+		static void enableVertexAttribArray(GLuint index);
+		static void disableVertexAttribArray(GLuint index);
 
 	private:
 		inline static GLuint id_ = ::Vao::invalidId;
@@ -84,10 +88,9 @@ public:
 		static void attachShader(GLuint program, GLuint shader);
 		static void link(GLuint program);
 		_NODISCARD static std::string getProgramInfoLog(GLuint program);
+		static void use(GLuint program);
 	};
 
-	static void enableVertexAttribArray(GLuint index);
-	static void disableVertexAttribArray(GLuint index);
-	static void vertexAttribPointer(
-		GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void* pointer);
+	static void viewport(GLint x, GLint y, GLsizei width, GLsizei height);
+	static void drawArrays(GLenum mode, GLint first, GLsizei count);
 };

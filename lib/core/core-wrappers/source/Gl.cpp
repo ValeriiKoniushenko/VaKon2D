@@ -36,12 +36,6 @@ void Gl::Vao::generate(GLsizei n, GLuint* arrays)
 
 void Gl::Vao::bind(GLuint array)
 {
-	if (isBind())
-	{
-		throw std::runtime_error(
-			"You try to bind a VAO again. The best way is to unbind a VAO after the last using or shader setting up.");
-	}
-
 	glBindVertexArray(array);
 
 	Gl::Vao::id_ = array;
@@ -108,7 +102,7 @@ void Gl::Vbo::subData(GLenum target, GLintptr offset, GLsizeiptr size, const voi
 	glBufferSubData(target, offset, size, data);
 }
 
-void Gl::enableVertexAttribArray(GLuint index)
+void Gl::Vao::enableVertexAttribArray(GLuint index)
 {
 	if (!Gl::Vao::isBind())
 	{
@@ -118,7 +112,7 @@ void Gl::enableVertexAttribArray(GLuint index)
 	glEnableVertexAttribArray(index);
 }
 
-void Gl::disableVertexAttribArray(GLuint index)
+void Gl::Vao::disableVertexAttribArray(GLuint index)
 {
 	if (!Gl::Vao::isBind())
 	{
@@ -128,7 +122,7 @@ void Gl::disableVertexAttribArray(GLuint index)
 	glDisableVertexAttribArray(index);
 }
 
-void Gl::vertexAttribPointer(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void* pointer)
+void Gl::Vao::vertexAttribPointer(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void* pointer)
 {
 	if (!Gl::Vao::isBind())
 	{
@@ -230,4 +224,19 @@ std::string Gl::Program::getProgramInfoLog(GLuint program)
 	char infoLog[logLength];
 	glGetProgramInfoLog(program, logLength, nullptr, infoLog);
 	return std::string(infoLog);
+}
+
+void Gl::Program::use(GLuint program)
+{
+	glUseProgram(program);
+}
+
+void Gl::viewport(GLint x, GLint y, GLsizei width, GLsizei height)
+{
+	glViewport(x, y, width, height);
+}
+
+void Gl::drawArrays(GLenum mode, GLint first, GLsizei count)
+{
+	glDrawArrays(mode, first, count);
 }

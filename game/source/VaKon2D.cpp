@@ -32,7 +32,7 @@ void VaKon2D::start()
 {
 	initCore();
 
-	glViewport(0, 0, 800, 600);
+	Gl::viewport(0, 0, 800, 600);
 
 	auto vertexShader = Gl::Shader::createAndLoadShaderFromFile("assets/shaders/main-vertex.glsl", Gl::Shader::Type::Vertex);
 	Gl::Shader::compile(vertexShader);
@@ -47,7 +47,7 @@ void VaKon2D::start()
 
 	Gl::Program::link(shaderProgram);
 
-	glUseProgram(shaderProgram);
+	Gl::Program::use(shaderProgram);
 
 	Gl::Shader::deleteShader(fragmentShader);
 	if (!Gl::Shader::getShaderiv(fragmentShader, GL_DELETE_STATUS))
@@ -72,17 +72,17 @@ void VaKon2D::start()
 	unsigned int VAO;
 	Gl::Vao::generate(1, &VAO);
 	Gl::Vao::bind(VAO);
-	Gl::vertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*) 0);
-	Gl::enableVertexAttribArray(0);
+	Gl::Vao::vertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*) 0);
+	Gl::Vao::enableVertexAttribArray(0);
 
 	while (!GetWindow().shouldClose())
 	{
 		GetWindow().clearColor(0.2f, 0.3f, 0.3f, 1.0f);	   // TODO: create class Color
 		GetWindow().clear(GL_COLOR_BUFFER_BIT);			   // TODO: change to enum class
 
-		glUseProgram(shaderProgram);
-		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		Gl::Program::use((shaderProgram);
+		Gl::Vao::bind(VAO);
+		Gl::drawArrays(GL_TRIANGLES, 0, 3);
 
 		GetWindow().swapBuffers();
 		GetWindow().pollEvent();
