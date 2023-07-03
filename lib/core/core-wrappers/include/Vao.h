@@ -24,13 +24,14 @@
 
 #include "GlfwWrapper.h"
 
-class Vao final
+class Vao
 {
 public:
 	inline static const GLuint invalidId = 0;
 
 	Vao() = default;
 	Vao(bool isGenerate, bool isBind);
+	Vao(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void* pointer);
 
 	Vao(const Vao&) = default;
 	Vao(Vao&& other);
@@ -41,10 +42,9 @@ public:
 
 	void generate();
 	void bind();
-	static void bind(GLuint id);
 	void unbind();
 	void destroy();
-	bool isEmpty() const;
+	bool isGenerated() const;
 	bool isBind() const;
 
 private:

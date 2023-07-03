@@ -24,8 +24,8 @@
 
 #include "Gl.h"
 #include "GladWrapper.h"
-#include "GlfwWrapper.h"
 #include "Logger.h"
+#include "Vao.h"
 #include "Window.h"
 
 void VaKon2D::start()
@@ -46,7 +46,6 @@ void VaKon2D::start()
 	Gl::Program::attachShader(shaderProgram, fragmentShader);
 
 	Gl::Program::link(shaderProgram);
-
 	Gl::Program::use(shaderProgram);
 
 	Gl::Shader::deleteShader(fragmentShader);
@@ -69,11 +68,7 @@ void VaKon2D::start()
 	Gl::Vbo::bind(GL_ARRAY_BUFFER, VBO);
 	Gl::Vbo::data(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-	unsigned int VAO;
-	Gl::Vao::generate(1, &VAO);
-	Gl::Vao::bind(VAO);
-	Gl::Vao::vertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*) 0);
-	Gl::Vao::enableVertexAttribArray(0);
+	Vao vao(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*) 0);
 
 	while (!GetWindow().shouldClose())
 	{
@@ -81,7 +76,7 @@ void VaKon2D::start()
 		GetWindow().clear(GL_COLOR_BUFFER_BIT);			   // TODO: change to enum class
 
 		Gl::Program::use(shaderProgram);
-		Gl::Vao::bind(VAO);
+		vao.bind();
 		Gl::drawArrays(GL_TRIANGLES, 0, 3);
 
 		GetWindow().swapBuffers();
