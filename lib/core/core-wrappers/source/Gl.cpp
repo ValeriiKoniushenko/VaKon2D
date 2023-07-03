@@ -78,17 +78,17 @@ void Gl::Vao::bind(GLuint array)
 
 void Gl::Vao::reset()
 {
-	glBindVertexArray(::Vao::invalidId);
+	glBindVertexArray(invalidId);
 #ifdef OPENGL_DEBUG
 	Gl::debugTraces();
 #endif
 
-	Gl::Vao::id_ = ::Vao::invalidId;
+	Gl::Vao::id_ = invalidId;
 }
 
 bool Gl::Vao::isBind()
 {
-	return Gl::Vao::id_ != ::Vao::invalidId;
+	return Gl::Vao::id_ != invalidId;
 }
 
 void Gl::Vbo::generate(GLsizei n, GLuint* arrays)
@@ -116,12 +116,12 @@ void Gl::Vbo::reset(GLenum target)
 	Gl::debugTraces();
 #endif
 
-	Gl::Vbo::id_ = ::Vbo::invalidId;
+	Gl::Vbo::id_ = invalidId;
 }
 
 bool Gl::Vbo::isBind()
 {
-	return Gl::Vbo::id_ != ::Vbo::invalidId;
+	return Gl::Vbo::id_ != invalidId;
 }
 
 void Gl::Vbo::data(GLenum target, GLsizeiptr size, const void* data, GLenum usage)
@@ -197,14 +197,8 @@ void Gl::Vao::vertexAttribPointer(GLuint index, GLint size, GLenum type, GLboole
 GLuint Gl::Shader::createAndLoadShaderFromFile(const std::filesystem::path& path, Gl::Shader::Type type)
 {
 	const std::string shaderSources = Utils::getFileContent(path);
-	const char* shaderSourcesP = shaderSources.c_str();
-
 	GLuint shader = create(type);
-
-	glShaderSource(shader, 1, &shaderSourcesP, nullptr);
-#ifdef OPENGL_DEBUG
-	Gl::debugTraces();
-#endif
+	source(shader, shaderSources.c_str());
 	return shader;
 }
 
@@ -260,6 +254,14 @@ void Gl::Shader::compile(GLuint shader)
 	{
 		throw std::runtime_error("Shader - compilation failed.\nDetails: " + getShaderInfoLog(shader));
 	}
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Shader::source(GLuint shader, const char* sources)
+{
+	glShaderSource(shader, 1, &sources, nullptr);
 #ifdef OPENGL_DEBUG
 	Gl::debugTraces();
 #endif

@@ -22,6 +22,7 @@
 
 #pragma once
 
+#include "Gl.h"
 #include "GlfwWrapper.h"
 
 #include <vector>
@@ -29,8 +30,6 @@
 class Vbo
 {
 public:
-	inline static const GLuint invalidId = 0;
-
 	Vbo() = default;
 	virtual ~Vbo();
 
@@ -53,5 +52,5 @@ public:
 
 private:
 	bool isBind_ = false;
-	GLuint id_ = Vbo::invalidId;
+	GLuint id_ = Gl::Vbo::invalidId;
 };

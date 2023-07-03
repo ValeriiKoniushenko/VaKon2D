@@ -52,7 +52,7 @@ Vbo& Vbo::operator=(Vbo&& other)
 	isBind_ = other.isBind_;
 
 	other.isBind_ = false;
-	other.id_ = Vbo::invalidId;
+	other.id_ = Gl::Vbo::invalidId;
 
 	return *this;
 }
@@ -89,12 +89,12 @@ void Vbo::unbind()
 void Vbo::destroy()
 {
 	glDeleteBuffers(1, &id_);
-	id_ = invalidId;
+	id_ = Gl::Vbo::invalidId;
 }
 
 bool Vbo::isGenerated() const
 {
-	return id_ != invalidId;
+	return id_ != Gl::Vbo::invalidId;
 }
 
 bool Vbo::isBind() const

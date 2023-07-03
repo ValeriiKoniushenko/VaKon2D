@@ -23,30 +23,29 @@
 #pragma once
 
 #include "Gl.h"
-#include "GlfwWrapper.h"
+#include "NotCopyableAndNotMovable.h"
 
-class Vao
+#include <filesystem>
+
+class Shader : public Utils::NotCopyableAndNotMovable
 {
 public:
-	Vao() = default;
-	Vao(bool isGenerate, bool isBind);
-	Vao(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void* pointer);
+	explicit Shader(Gl::Shader::Type type, bool shouldCreate = true);
+	Shader(const std::filesystem::path& path, Gl::Shader::Type type);
+	~Shader() override;
 
-	Vao(const Vao&) = default;
-	Vao(Vao&& other);
-	Vao& operator=(const Vao&) = default;
-	Vao& operator=(Vao&& other);
-
-	~Vao();
-
-	void generate();
-	void bind();
-	void unbind();
-	void destroy();
-	_NODISCARD bool isGenerated() const;
-	_NODISCARD bool isBind() const;
+	void create();
+	void loadFromFile(const std::filesystem::path& path);
+	void setType(Gl::Shader::Type type);
+	_NODISCARD Gl::Shader::Type getType() const;
+	void compile() const;
+	void setSource(const std::string& source);
+	_NODISCARD const std::string& getSource();
+	void deleteShader();
+	GLuint data();
 
 private:
-	bool isBind_ = false;
-	GLuint id_ = Gl::Vao::invalidId;
+	std::string source_;
+	Gl::Shader::Type type_ = Gl::Shader::Type::Fragment;
+	GLuint data_ = Gl::Shader::invalidId;
 };

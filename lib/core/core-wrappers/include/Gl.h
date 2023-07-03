@@ -23,8 +23,6 @@
 #pragma once
 
 #include "GlfwWrapper.h"
-#include "Vao.h"
-#include "Vbo.h"
 
 #include <filesystem>
 
@@ -39,6 +37,8 @@ public:
 	class Vao
 	{
 	public:
+		inline static const GLuint invalidId = 0;
+
 		static void generate(GLsizei n, GLuint* arrays);
 		static void bind(GLuint array);
 		static void reset();
@@ -49,12 +49,14 @@ public:
 		static void disableVertexAttribArray(GLuint index);
 
 	private:
-		inline static GLuint id_ = ::Vao::invalidId;
+		inline static GLuint id_ = invalidId;
 	};
 
 	class Vbo
 	{
 	public:
+		inline static const GLuint invalidId = 0;
+
 		static void generate(GLsizei n, GLuint* arrays);
 		static void bind(GLenum target, GLuint buffer);
 		static void reset(GLenum target);
@@ -62,13 +64,15 @@ public:
 		static void data(GLenum target, GLsizeiptr size, const void* data, GLenum usage);
 		static void subData(GLenum target, GLintptr offset, GLsizeiptr size, const void* data);
 
-	private:
-		inline static GLuint id_ = ::Vbo::invalidId;
+	public:
+		inline static GLuint id_ = invalidId;
 	};
 
 	class Shader
 	{
 	public:
+		inline static const GLuint invalidId = 0;
+
 		enum class Type
 		{
 			Fragment = GL_FRAGMENT_SHADER,
@@ -81,6 +85,10 @@ public:
 		_NODISCARD static std::string getShaderInfoLog(GLuint shader);
 		static void deleteShader(GLuint shader);
 		static void compile(GLuint shader);
+		static void source(GLuint shader, const char* sources);
+
+	private:
+		inline static GLuint id_ = invalidId;
 	};
 
 	class Program
