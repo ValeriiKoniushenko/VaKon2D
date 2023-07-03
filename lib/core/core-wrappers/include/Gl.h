@@ -33,6 +33,9 @@ class Gl
 public:
 	Gl() = delete;
 
+	static void requireNoErrors();
+	static void debugTraces();
+
 	class Vao
 	{
 	public:

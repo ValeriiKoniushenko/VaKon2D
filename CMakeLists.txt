@@ -8,6 +8,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED true)
 set(DEPENDENCIES_DIR_NAME dependencies)
 set(DEPENDENCIES_PATH ${CMAKE_CURRENT_SOURCE_DIR}/${DEPENDENCIES_DIR_NAME})
 
+
+if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+	add_compile_definitions(OPENGL_DEBUG)
+endif ()
+
 add_subdirectory(game)
 add_subdirectory(tests)
 add_subdirectory(benchmark)

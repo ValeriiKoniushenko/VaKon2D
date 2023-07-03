@@ -24,6 +24,35 @@
 
 #include "UtilsFunctions.h"
 
+void Gl::requireNoErrors()
+{
+	switch (glGetError())
+	{
+		case GL_INVALID_ENUM:
+			throw std::runtime_error("GL_INVALID_ENUM: Set when an enumeration parameter is not legal");
+		case GL_INVALID_VALUE:
+			throw std::runtime_error("GL_INVALID_VALUE: Set when a value parameter is not legal");
+		case GL_INVALID_OPERATION:
+			throw std::runtime_error(
+				"GL_INVALID_OPERATION: Set when the state for a command is not legal for its given parameters");
+		case GL_STACK_OVERFLOW:
+			throw std::runtime_error("GL_STACK_OVERFLOW: Set when a stack pushing operation causes a stack overflow");
+		case GL_STACK_UNDERFLOW:
+			throw std::runtime_error(
+				"GL_STACK_UNDERFLOW: Set when a stack popping operation occurs while the stack is at its lowest point");
+		case GL_OUT_OF_MEMORY:
+			throw std::runtime_error("GL_OUT_OF_MEMORY: Set when a memory allocation operation cannot allocate (enough) memory");
+		case GL_INVALID_FRAMEBUFFER_OPERATION:
+			throw std::runtime_error(
+				"GL_INVALID_FRAMEBUFFER_OPERATION: Set when reading or writing to a framebuffer that is not complete");
+	}
+}
+
+void Gl::debugTraces()
+{
+	Gl::requireNoErrors();
+}
+
 void Gl::Vao::generate(GLsizei n, GLuint* arrays)
 {
 	if (isBind())
@@ -32,11 +61,17 @@ void Gl::Vao::generate(GLsizei n, GLuint* arrays)
 	}
 
 	glGenVertexArrays(n, arrays);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 }
 
 void Gl::Vao::bind(GLuint array)
 {
 	glBindVertexArray(array);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 
 	Gl::Vao::id_ = array;
 }
@@ -44,6 +79,9 @@ void Gl::Vao::bind(GLuint array)
 void Gl::Vao::reset()
 {
 	glBindVertexArray(::Vao::invalidId);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 
 	Gl::Vao::id_ = ::Vao::invalidId;
 }
@@ -56,11 +94,17 @@ bool Gl::Vao::isBind()
 void Gl::Vbo::generate(GLsizei n, GLuint* arrays)
 {
 	glGenBuffers(n, arrays);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 }
 
 void Gl::Vbo::bind(GLenum target, GLuint buffer)
 {
 	glBindBuffer(target, buffer);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 
 	Gl::Vbo::id_ = buffer;
 }
@@ -68,6 +112,9 @@ void Gl::Vbo::bind(GLenum target, GLuint buffer)
 void Gl::Vbo::reset(GLenum target)
 {
 	glBindBuffer(target, 0u);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 
 	Gl::Vbo::id_ = ::Vbo::invalidId;
 }
@@ -85,6 +132,9 @@ void Gl::Vbo::data(GLenum target, GLsizeiptr size, const void* data, GLenum usag
 	}
 
 	glBufferData(target, size, data, usage);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 }
 
 void Gl::Vbo::subData(GLenum target, GLintptr offset, GLsizeiptr size, const void* data)
@@ -100,6 +150,9 @@ void Gl::Vbo::subData(GLenum target, GLintptr offset, GLsizeiptr size, const voi
 	}
 
 	glBufferSubData(target, offset, size, data);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 }
 
 void Gl::Vao::enableVertexAttribArray(GLuint index)
@@ -110,6 +163,9 @@ void Gl::Vao::enableVertexAttribArray(GLuint index)
 	}
 
 	glEnableVertexAttribArray(index);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 }
 
 void Gl::Vao::disableVertexAttribArray(GLuint index)
@@ -120,6 +176,9 @@ void Gl::Vao::disableVertexAttribArray(GLuint index)
 	}
 
 	glDisableVertexAttribArray(index);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 }
 
 void Gl::Vao::vertexAttribPointer(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void* pointer)
@@ -130,6 +189,9 @@ void Gl::Vao::vertexAttribPointer(GLuint index, GLint size, GLenum type, GLboole
 	}
 
 	glVertexAttribPointer(index, size, type, normalized, stride, pointer);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 }
 
 GLuint Gl::Shader::createAndLoadShaderFromFile(const std::filesystem::path& path, Gl::Shader::Type type)
@@ -140,6 +202,9 @@ GLuint Gl::Shader::createAndLoadShaderFromFile(const std::filesystem::path& path
 	GLuint shader = create(type);
 
 	glShaderSource(shader, 1, &shaderSourcesP, nullptr);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 	return shader;
 }
 
@@ -151,6 +216,9 @@ GLuint Gl::Shader::create(Gl::Shader::Type type)
 	{
 		throw std::runtime_error("The shader can't be created by undefined reason.");
 	}
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 
 	return shader;
 }
@@ -159,6 +227,9 @@ GLint Gl::Shader::getShaderiv(GLuint shader, GLenum pname)
 {
 	int value{};
 	glGetShaderiv(shader, pname, &value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 	return value;
 }
 
@@ -167,12 +238,18 @@ std::string Gl::Shader::getShaderInfoLog(GLuint shader)
 	constexpr std::size_t logLength = 1024;
 	char infoLog[logLength];
 	glGetShaderInfoLog(shader, logLength, nullptr, infoLog);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 	return std::string(infoLog);
 }
 
 void Gl::Shader::deleteShader(GLuint shader)
 {
 	glDeleteShader(shader);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 }
 
 void Gl::Shader::compile(GLuint shader)
@@ -183,6 +260,9 @@ void Gl::Shader::compile(GLuint shader)
 	{
 		throw std::runtime_error("Shader - compilation failed.\nDetails: " + getShaderInfoLog(shader));
 	}
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 }
 
 GLuint Gl::Program::create()
@@ -192,6 +272,9 @@ GLuint Gl::Program::create()
 	{
 		throw std::runtime_error("The shader program couldn't be created by undefined reasons");
 	}
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 
 	return program;
 }
@@ -199,6 +282,9 @@ GLuint Gl::Program::create()
 void Gl::Program::attachShader(GLuint program, GLuint shader)
 {
 	glAttachShader(program, shader);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 }
 
 void Gl::Program::link(GLuint program)
@@ -209,12 +295,18 @@ void Gl::Program::link(GLuint program)
 	{
 		throw std::runtime_error("Shader program compilation was failed.\nDetails: " + getProgramInfoLog(program));
 	}
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 }
 
 GLint Gl::Program::getProgramiv(GLuint program, GLenum pname)
 {
 	int status{};
 	glGetProgramiv(program, pname, &status);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 	return status;
 }
 
@@ -223,20 +315,32 @@ std::string Gl::Program::getProgramInfoLog(GLuint program)
 	constexpr std::size_t logLength = 1024;
 	char infoLog[logLength];
 	glGetProgramInfoLog(program, logLength, nullptr, infoLog);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 	return std::string(infoLog);
 }
 
 void Gl::Program::use(GLuint program)
 {
 	glUseProgram(program);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 }
 
 void Gl::viewport(GLint x, GLint y, GLsizei width, GLsizei height)
 {
 	glViewport(x, y, width, height);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 }
 
 void Gl::drawArrays(GLenum mode, GLint first, GLsizei count)
 {
 	glDrawArrays(mode, first, count);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 }

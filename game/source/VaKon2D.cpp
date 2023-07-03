@@ -80,7 +80,7 @@ void VaKon2D::start()
 		GetWindow().clearColor(0.2f, 0.3f, 0.3f, 1.0f);	   // TODO: create class Color
 		GetWindow().clear(GL_COLOR_BUFFER_BIT);			   // TODO: change to enum class
 
-		Gl::Program::use((shaderProgram);
+		Gl::Program::use(shaderProgram);
 		Gl::Vao::bind(VAO);
 		Gl::drawArrays(GL_TRIANGLES, 0, 3);
 
