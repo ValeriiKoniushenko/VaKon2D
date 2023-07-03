@@ -44,8 +44,8 @@ public:
 	void bind();
 	void unbind();
 	void destroy();
-	bool isGenerated() const;
-	bool isBind() const;
+	_NODISCARD bool isGenerated() const;
+	_NODISCARD bool isBind() const;
 
 private:
 	bool isBind_ = false;

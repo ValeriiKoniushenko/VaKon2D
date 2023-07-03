@@ -26,6 +26,7 @@
 #include "GladWrapper.h"
 #include "Logger.h"
 #include "Vao.h"
+#include "Vbo.h"
 #include "Window.h"
 
 void VaKon2D::start()
@@ -62,12 +63,9 @@ void VaKon2D::start()
 			"Vertex shader - deletion was failed.\nDetails: " + std::string(Gl::Shader::getShaderInfoLog(fragmentShader)));
 	}
 
-	float vertices[] = {-0.5f, -0.5f, 0.0f, 0.5f, -0.5f, 0.0f, 0.0f, 0.5f, 0.0f};
-	unsigned int VBO;
-	Gl::Vbo::generate(1, &VBO);
-	Gl::Vbo::bind(GL_ARRAY_BUFFER, VBO);
-	Gl::Vbo::data(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	std::vector<float> vertices = {-0.5f, -0.5f, 0.0f, 0.5f, -0.5f, 0.0f, 0.0f, 0.5f, 0.0f};
 
+	Vbo vbo(vertices);
 	Vao vao(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*) 0);
 
 	while (!GetWindow().shouldClose())

@@ -36,6 +36,11 @@ Vbo::Vbo(bool shouldGenerate, bool shouldBind)
 	}
 }
 
+Vbo::Vbo(const std::vector<float>& vertices, GLenum usage) : Vbo(true, true)
+{
+	data(vertices, usage);
+}
+
 Vbo::Vbo(Vbo&& other)
 {
 	*this = std::move(other);
@@ -59,10 +64,10 @@ Vbo::~Vbo()
 
 void Vbo::generate()
 {
-	if (isEmpty())
+	if (!isGenerated())
 	{
 		glGenBuffers(1, &id_);
-		if (isEmpty())
+		if (!isGenerated())
 		{
 			throw std::runtime_error("VBO can't be generate by not defined reasons");
 		}
@@ -71,27 +76,12 @@ void Vbo::generate()
 
 void Vbo::bind()
 {
-	if (isEmpty())
-	{
-		throw std::runtime_error("VBO is empty. Try to regenerate and try again.");
-	}
-
 	Gl::Vbo::bind(GL_ARRAY_BUFFER, id_);
 	isBind_ = true;
 }
 
-void Vbo::bind(GLuint id)
-{
-	Gl::Vbo::bind(GL_ARRAY_BUFFER, id);
-}
-
 void Vbo::unbind()
 {
-	if (!isEmpty())
-	{
-		throw std::runtime_error("VBO is empty. Try to regenerate and try again.");
-	}
-
 	Gl::Vbo::reset(GL_ARRAY_BUFFER);
 	isBind_ = false;
 }
@@ -102,9 +92,9 @@ void Vbo::destroy()
 	id_ = invalidId;
 }
 
-bool Vbo::isEmpty() const
+bool Vbo::isGenerated() const
 {
-	return id_ == invalidId;
+	return id_ != invalidId;
 }
 
 bool Vbo::isBind() const
@@ -112,16 +102,16 @@ bool Vbo::isBind() const
 	return isBind_;
 }
 
-void Vbo::setData(const std::vector<float>& data, GLenum usage)
+void Vbo::data(const std::vector<float>& data, GLenum usage)
 {
-	if (isEmpty())
+	if (!isGenerated())
 	{
 		throw std::runtime_error("VBO is empty. Try to regenerate and try again.");
 	}
 
 	if (!isBind())
 	{
-		throw std::runtime_error("You try to put data to unbinded VBO. Bind it and try again");
+		throw std::runtime_error("You try to put data to unbound VBO. Bind it and try again");
 	}
 
 	Gl::Vbo::data(GL_ARRAY_BUFFER, sizeof(float) * data.size(), data.data(), GL_STATIC_DRAW);

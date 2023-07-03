@@ -35,6 +35,7 @@ public:
 	virtual ~Vbo();
 
 	Vbo(bool shouldGenerate, bool shouldBind);
+	explicit Vbo(const std::vector<float>& data, GLenum usage = GL_STATIC_DRAW);
 
 	Vbo(const Vbo&) = default;
 	Vbo(Vbo&& Other);
@@ -43,13 +44,12 @@ public:
 
 	void generate();
 	void bind();
-	static void bind(GLuint id);
 	void unbind();
 	void destroy();
-	_NODISCARD bool isEmpty() const;
+	_NODISCARD bool isGenerated() const;
 	_NODISCARD bool isBind() const;
 
-	void setData(const std::vector<float>& data, GLenum usage = GL_STATIC_DRAW);
+	void data(const std::vector<float>& vertices, GLenum usage = GL_STATIC_DRAW);
 
 private:
 	bool isBind_ = false;
