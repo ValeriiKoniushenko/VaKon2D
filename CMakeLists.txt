@@ -8,7 +8,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED true)
 set(DEPENDENCIES_DIR_NAME dependencies)
 set(DEPENDENCIES_PATH ${CMAKE_CURRENT_SOURCE_DIR}/${DEPENDENCIES_DIR_NAME})
 
-
 if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
 	add_compile_definitions(OPENGL_DEBUG)
 endif ()
@@ -29,6 +28,7 @@ add_subdirectory(lib/glm)
 add_subdirectory(lib/misc)
 
 add_subdirectory(lib/core/core-wrappers)
+add_subdirectory(lib/core/delegate)
 add_subdirectory(lib/core/logger)
 add_subdirectory(lib/core/utils)
 add_subdirectory(lib/core/window)

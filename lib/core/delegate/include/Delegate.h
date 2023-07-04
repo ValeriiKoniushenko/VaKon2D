@@ -22,23 +22,36 @@
 
 #pragma once
 
-#include "GlfwWrapper.h"
-#include "Singleton.h"
-#include "Size.h"
+#include "CopyableAndMoveable.h"
 
-class Window : public Singleton<Window>
+#include <functional>
+
+template <class T, class CallbackT>
+class Delegate : public Utils::CopyableAndMoveable
 {
 public:
-	void create(Utils::ISize2D size, const std::string& title);
-	_NODISCARD bool shouldClose() const;
-	void swapBuffers();
-	void pollEvent();
-	void clearColor(float r, float g, float b, float a);
-	void clear(int code);
-	void viewport(GLint x, GLint y, GLsizei width, GLsizei height);
+	template <class... TArgs>
+	void trigger(TArgs&&... args)
+	{
+		if (callback_ && objP)
+		{
+			std::invoke(callback_, objP, std::forward<TArgs...>(args...));
+		}
+	}
 
-protected:
-	GLFWwindow* window{};
+	void subscribe(T* obj, CallbackT&& callback)
+	{
+		callback_ = callback;
+		objP = obj;
+	}
+
+	void reset()
+	{
+		callback_ = {};
+		objP = {};
+	}
+
+private:
+	CallbackT callback_{};
+	T* objP{};
 };
-
-Window& GetWindow();

@@ -19,9 +19,11 @@ target_link_libraries(
 	Glad
 	Core-Wrappers
 	Window
+	Delegate
 )
 
 add_custom_command(TARGET VaKon2D PRE_LINK
+	COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_CURRENT_BINARY_DIR}/assets
 	COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/assets
 	COMMAND ${CMAKE_COMMAND} -E copy_directory
 	${CMAKE_CURRENT_SOURCE_DIR}/assets

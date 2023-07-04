@@ -22,6 +22,7 @@
 
 #include "VaKon2D.h"
 
+#include "Delegate.h"
 #include "Gl.h"
 #include "GladWrapper.h"
 #include "Logger.h"
@@ -30,6 +31,8 @@
 #include "Vao.h"
 #include "Vbo.h"
 #include "Window.h"
+
+#include <iostream>
 
 void VaKon2D::start()
 {
@@ -69,4 +72,9 @@ void VaKon2D::initCore()
 	GetWindow().create({800, 600}, "Game name");	// TODO: get size & title from a config file
 	GladWrapper::initGlad();
 	// <---------------------------------------
+}
+
+void VaKon2D::hello(int world)
+{
+	std::cout << "World: " << world << std::endl;
 }

@@ -28,4 +28,5 @@ target_link_libraries(
 	glfw
 	Glad
 	Logger
+	Delegate
 )

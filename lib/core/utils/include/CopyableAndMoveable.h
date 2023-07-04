@@ -20,25 +20,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
+namespace Utils
+{
 
-#include "GlfwWrapper.h"
-#include "Singleton.h"
-#include "Size.h"
-
-class Window : public Singleton<Window>
+class CopyableAndMoveable
 {
 public:
-	void create(Utils::ISize2D size, const std::string& title);
-	_NODISCARD bool shouldClose() const;
-	void swapBuffers();
-	void pollEvent();
-	void clearColor(float r, float g, float b, float a);
-	void clear(int code);
-	void viewport(GLint x, GLint y, GLsizei width, GLsizei height);
-
-protected:
-	GLFWwindow* window{};
+	CopyableAndMoveable() = default;
+	virtual ~CopyableAndMoveable() = default;
+	CopyableAndMoveable(CopyableAndMoveable&&) = default;
+	CopyableAndMoveable& operator=(CopyableAndMoveable&&) = default;
+	CopyableAndMoveable(const CopyableAndMoveable&) = default;
+	CopyableAndMoveable& operator=(const CopyableAndMoveable&) = default;
 };
 
-Window& GetWindow();
+}	 // namespace Utils
