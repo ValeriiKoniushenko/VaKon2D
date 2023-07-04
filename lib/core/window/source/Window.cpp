@@ -24,6 +24,16 @@
 
 #include "Gl.h"
 
+namespace
+{
+
+void KeyHandler(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+	GetWindow().onKeyPressed.trigger(key, scancode, action, mods);
+}
+
+}	 // namespace
+
 void Window::create(Utils::ISize2D size, const std::string& title)
 {
 	if (!(window = glfwCreateWindow(size.width, size.height, title.c_str(), NULL, NULL)))
@@ -32,6 +42,7 @@ void Window::create(Utils::ISize2D size, const std::string& title)
 		throw std::runtime_error("Failed to create GLFW window");
 	}
 	glfwMakeContextCurrent(window);
+	glfwSetKeyCallback(window, KeyHandler);
 }
 
 bool Window::shouldClose() const
@@ -62,6 +73,11 @@ void Window::clear(int code)
 void Window::viewport(GLint x, GLint y, GLsizei width, GLsizei height)
 {
 	Gl::viewport(x, y, width, height);
+}
+
+HWND Window::getHwnd()
+{
+	return glfwGetWin32Window(window);
 }
 
 Window& GetWindow()

@@ -29,6 +29,7 @@ add_subdirectory(lib/misc)
 
 add_subdirectory(lib/core/core-wrappers)
 add_subdirectory(lib/core/delegate)
+add_subdirectory(lib/core/input-devices)
 add_subdirectory(lib/core/logger)
 add_subdirectory(lib/core/utils)
 add_subdirectory(lib/core/window)

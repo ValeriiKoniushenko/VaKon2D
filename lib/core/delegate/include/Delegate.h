@@ -25,6 +25,7 @@
 #include "CopyableAndMoveable.h"
 
 #include <functional>
+#include <utility>
 
 template <class T, class CallbackT>
 class Delegate : public Utils::CopyableAndMoveable
@@ -56,16 +57,18 @@ private:
 	T* objP{};
 };
 
+template <class F>
 class LambdaDelegate : public Utils::CopyableAndMoveable
 {
 public:
-	using CallbackT = std::function<void()>;
+	using CallbackT = std::function<F>;
 
-	void trigger()
+	template <class... TArgs>
+	void trigger(TArgs&&... args)
 	{
 		if (callback_)
 		{
-			callback_();
+			std::invoke(callback_, std::forward<TArgs>(args)...);
 		}
 	}
 

@@ -22,10 +22,12 @@
 
 #pragma once
 
+#include "Delegate.h"
 #include "GlfwWrapper.h"
 #include "Singleton.h"
 #include "Size.h"
-#include "Delegate.h"
+
+#include <Windows.h>
 
 class Window : public Singleton<Window>
 {
@@ -37,6 +39,9 @@ public:
 	void clearColor(float r, float g, float b, float a);
 	void clear(int code);
 	void viewport(GLint x, GLint y, GLsizei width, GLsizei height);
+	_NODISCARD HWND getHwnd();
+
+	LambdaDelegate<void(int, int, int, int)> onKeyPressed;
 
 protected:
 	GLFWwindow* window{};
