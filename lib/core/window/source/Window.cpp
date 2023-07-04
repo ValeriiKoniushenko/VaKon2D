@@ -27,9 +27,19 @@
 namespace
 {
 
-void KeyHandler(GLFWwindow* window, int key, int scancode, int action, int mods)
+void KeyPressHandler(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
 	GetWindow().onKeyPressed.trigger(key, scancode, action, mods);
+}
+
+void TextInputHandler(GLFWwindow* window, unsigned int scancode)
+{
+	GetWindow().onTextInput.trigger(scancode);
+}
+
+void CursorEnterHandler(GLFWwindow* window, int entered)
+{
+	GetWindow().onCursorEntered.trigger(entered);
 }
 
 }	 // namespace
@@ -41,8 +51,12 @@ void Window::create(Utils::ISize2D size, const std::string& title)
 		glfwTerminate();
 		throw std::runtime_error("Failed to create GLFW window");
 	}
+
 	glfwMakeContextCurrent(window);
-	glfwSetKeyCallback(window, KeyHandler);
+
+	glfwSetKeyCallback(window, KeyPressHandler);
+	glfwSetCharCallback(window, TextInputHandler);
+	glfwSetCursorEnterCallback(window, CursorEnterHandler);
 }
 
 bool Window::shouldClose() const

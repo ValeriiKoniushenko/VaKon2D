@@ -42,6 +42,8 @@ public:
 	_NODISCARD HWND getHwnd();
 
 	LambdaDelegate<void(int, int, int, int)> onKeyPressed;
+	LambdaDelegate<void(unsigned int)> onTextInput;
+	LambdaDelegate<void(int)> onCursorEntered;
 
 protected:
 	GLFWwindow* window{};
