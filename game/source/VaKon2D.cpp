@@ -24,6 +24,7 @@
 
 #include "Gl.h"
 #include "GladWrapper.h"
+#include "Image.h"
 #include "Keyboard.h"
 #include "Logger.h"
 #include "Shader.h"
@@ -32,8 +33,6 @@
 #include "Vbo.h"
 #include "Window.h"
 #include "World.h"
-#define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
 
 #include <iostream>
 
@@ -58,7 +57,7 @@ void VaKon2D::start()
 	glEnable(GL_CULL_FACE);
 	glDisable(GL_DEPTH_TEST);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	
+
 	// clang-format off
 	const std::vector<float> vertices = {
 	    0.f, 0.f,  0.f, 0.f,
@@ -79,28 +78,16 @@ void VaKon2D::start()
 	Gl::Vao::vertexAttribPointer(1, 2, Gl::Type::Float, false, 4 * sizeof(float), reinterpret_cast<const void*>(2 * sizeof(float)));
 	Gl::Vao::enableVertexAttribArray(1);
 
-	unsigned int texture;
-	glGenTextures(1, &texture);
-	glBindTexture(GL_TEXTURE_2D, texture);
+	GLuint texture = Gl::Texture::generate();
+	Gl::Texture::bind(Gl::Texture::Target::Texture2D, texture);
+	Gl::Texture::setWrapS(Gl::Texture::Wrap::Clamp2Edge);
+	Gl::Texture::setWrapT(Gl::Texture::Wrap::Clamp2Edge);
+	Gl::Texture::setMinFilter(Gl::Texture::MinFilter::LinearMipmapLinear);
+	Gl::Texture::setMagFilter(Gl::Texture::MagFilter::Linear);
 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	// load and generate the texture
-	int width, height, nrChannels;
-	stbi_set_flip_vertically_on_load(true);
-	unsigned char* data = stbi_load("assets/textures/apple.png", &width, &height, &nrChannels, 0);
-	if (data)
-	{
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-		glGenerateMipmap(GL_TEXTURE_2D);
-	}
-	else
-	{
-		std::cout << "Failed to load texture" << std::endl;
-	}
-	stbi_image_free(data);
+	Image image("assets/textures/apple.png");
+	image.loadToGpu();
+	Gl::Texture::generateMipmap(Gl::Texture::Target::Texture2D);
 
 	while (!GetWindow().shouldClose())
 	{

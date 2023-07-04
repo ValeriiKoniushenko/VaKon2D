@@ -354,3 +354,196 @@ void Gl::drawArrays(GLenum mode, GLint first, GLsizei count)
 	Gl::debugTraces();
 #endif
 }
+
+Gl::Texture::MagFilter Gl::Texture::stringToMagFilter(const std::string& filter)
+{
+	if (filter == "None")
+	{
+		return MagFilter::None;
+	}
+	else if (filter == "Linear")
+	{
+		return MagFilter::Linear;
+	}
+	else if (filter == "Nearest")
+	{
+		return MagFilter::Nearest;
+	}
+
+	return MagFilter::None;
+}
+
+Gl::Texture::MinFilter Gl::Texture::stringToMinFilter(const std::string& filter)
+{
+	if (filter == "None")
+	{
+		return MinFilter::None;
+	}
+	else if (filter == "Linear")
+	{
+		return MinFilter::Linear;
+	}
+	else if (filter == "Nearest")
+	{
+		return MinFilter::Nearest;
+	}
+	else if (filter == "NearestMipmapNearest")
+	{
+		return MinFilter::NearestMipmapNearest;
+	}
+	else if (filter == "LinearMipmapNearest")
+	{
+		return MinFilter::LinearMipmapNearest;
+	}
+	else if (filter == "NearestMipmapLinear")
+	{
+		return MinFilter::NearestMipmapLinear;
+	}
+	else if (filter == "LinearMipmapLinear")
+	{
+		return MinFilter::LinearMipmapLinear;
+	}
+
+	return MinFilter::None;
+}
+
+void Gl::Texture::setMinFilter(MinFilter filter, Target target)
+{
+	if (filter == MinFilter::None)
+	{
+		throw std::runtime_error("Min filter is none. Try to use correct filter value.");
+	}
+	if (target == Target::None)
+	{
+		throw std::runtime_error("Target is none. Try to use correct target value.");
+	}
+
+	glTexParameteri(static_cast<GLenum>(target), GL_TEXTURE_MIN_FILTER, static_cast<GLint>(filter));
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Texture::setMagFilter(MagFilter filter, Target target)
+{
+	if (filter == MagFilter::None)
+	{
+		throw std::runtime_error("Mag filter is none. Try to use correct filter value.");
+	}
+	if (target == Target::None)
+	{
+		throw std::runtime_error("Target is none. Try to use correct target value.");
+	}
+
+	glTexParameteri(static_cast<GLenum>(target), GL_TEXTURE_MAG_FILTER, static_cast<GLint>(filter));
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Texture::setWrapS(Wrap wrap, Target target)
+{
+	if (wrap == Wrap::None)
+	{
+		throw std::runtime_error("Wrap is none. Try to use correct wrap value.");
+	}
+	if (target == Target::None)
+	{
+		throw std::runtime_error("Target is none. Try to use correct target value.");
+	}
+
+	glTexParameteri(static_cast<GLenum>(target), GL_TEXTURE_WRAP_S, static_cast<GLint>(wrap));
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Texture::setWrapT(Wrap wrap, Target target)
+{
+	if (wrap == Wrap::None)
+	{
+		throw std::runtime_error("Wrap is none. Try to use correct wrap value.");
+	}
+	if (target == Target::None)
+	{
+		throw std::runtime_error("Target is none. Try to use correct target value.");
+	}
+
+	glTexParameteri(static_cast<GLenum>(target), GL_TEXTURE_WRAP_T, static_cast<GLint>(wrap));
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Texture::setWrapR(Wrap wrap, Target target)
+{
+	if (wrap == Wrap::None)
+	{
+		throw std::runtime_error("Wrap is none. Try to use correct wrap value.");
+	}
+	if (target == Target::None)
+	{
+		throw std::runtime_error("Target is none. Try to use correct target value.");
+	}
+
+	glTexParameteri(static_cast<GLenum>(target), GL_TEXTURE_WRAP_R, static_cast<GLint>(wrap));
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Texture::active(GLenum num)
+{
+	static const size_t maxCountActiveTextures = Texture::getMaxCountActiveTextures();
+	using namespace std::string_literals;
+	if (num >= maxCountActiveTextures)
+	{
+		throw std::runtime_error(
+			"Your device does not support such count of textures. Impossible to active "s + std::to_string(num) + "th texture.");
+	}
+
+	glActiveTexture(GL_TEXTURE0 + num);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+size_t Gl::Texture::getMaxCountActiveTextures()
+{
+	int total_units{};
+	glGetIntegerv(GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS, &total_units);
+	return static_cast<size_t>(total_units);
+}
+
+GLuint Gl::Texture::generate()
+{
+	GLuint id;
+	glGenTextures(1, &id);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+	return id;
+}
+
+void Gl::Texture::bind(Gl::Texture::Target target, GLuint texture)
+{
+	glBindTexture(static_cast<GLenum>(target), texture);
+	boundTexture = texture;
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Texture::texImage2D(Target target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border,
+	GLenum format, GLenum type, const void* pixels)
+{
+	glTexImage2D(static_cast<GLenum>(target), level, internalformat, width, height, border, format, type, pixels);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Texture::generateMipmap(Gl::Texture::Target target)
+{
+	glGenerateMipmap(static_cast<GLenum>(target));
+}
