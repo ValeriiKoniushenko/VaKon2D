@@ -20,6 +20,7 @@ target_link_libraries(
 	Core-Wrappers
 	Window
 	Delegate
+	World
 )
 
 add_custom_command(TARGET VaKon2D PRE_LINK

@@ -22,33 +22,22 @@
 
 #pragma once
 
-#include <memory>
-#include <mutex>
+#include "Singleton.h"
+#include "Timer.h"
 
-template <class T>
-class Singleton
+#include <list>
+
+class World : public Singleton<World>
 {
 public:
-	static T& instance();
+	void init();
+	void update();
+	unsigned long long addTimer(Timer&& timer);
+	void removeTimer(unsigned long long id);
+	void removeTimer(const Timer& timer);
 
-protected:
-	Singleton() = default;
-	virtual ~Singleton() = default;
+private:
+	std::list<Timer> timers_;
 };
 
-template <class T>
-T& Singleton<T>::instance()
-{
-	static std::unique_ptr<T> object;
-	static std::mutex mutex;
-	if (!object)
-	{
-		std::lock_guard<decltype(mutex)> lockGuard(mutex);
-		if (!object)
-		{
-			object = std::unique_ptr<T>(new T);
-		}
-	}
-
-	return *object.get();
-}
+[[maybe_unused]] World& GetWorld();

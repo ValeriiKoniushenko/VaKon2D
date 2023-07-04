@@ -28,15 +28,23 @@
 #include "Logger.h"
 #include "Shader.h"
 #include "ShaderProgram.h"
+#include "Timer.h"
 #include "Vao.h"
 #include "Vbo.h"
 #include "Window.h"
+#include "World.h"
 
 #include <iostream>
 
 void VaKon2D::start()
 {
 	initCore();
+
+	Timer timer;
+	timer.setFrequency(Timer::Unit(500));
+	timer.setMode(Timer::Mode::Infinity);
+	timer.setCallback([]() { std::cout << "hello world "; });
+	GetWorld().addTimer(std::move(timer));
 
 	GetWindow().viewport(0, 0, 800, 600);
 
@@ -61,6 +69,8 @@ void VaKon2D::start()
 
 		GetWindow().swapBuffers();
 		GetWindow().pollEvent();
+
+		GetWorld().update();
 	}
 }
 
@@ -71,6 +81,7 @@ void VaKon2D::initCore()
 	GlfwWrapper::initGlfw(3, 3);					// TODO: get versions from a config file
 	GetWindow().create({800, 600}, "Game name");	// TODO: get size & title from a config file
 	GladWrapper::initGlad();
+	GetWorld().init();
 	// <---------------------------------------
 }
 

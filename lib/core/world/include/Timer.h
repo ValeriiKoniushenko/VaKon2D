@@ -22,33 +22,48 @@
 
 #pragma once
 
-#include <memory>
-#include <mutex>
+#include "CopyableAndMoveable.h"
 
-template <class T>
-class Singleton
+#include <chrono>
+#include <functional>
+
+class Timer : public Utils::CopyableAndMoveable
 {
 public:
-	static T& instance();
+	Timer();
 
-protected:
-	Singleton() = default;
-	virtual ~Singleton() = default;
-};
+	bool operator==(const Timer& other) const;
 
-template <class T>
-T& Singleton<T>::instance()
-{
-	static std::unique_ptr<T> object;
-	static std::mutex mutex;
-	if (!object)
+	using Unit = std::chrono::milliseconds;
+
+	enum class Mode : __int8
 	{
-		std::lock_guard<decltype(mutex)> lockGuard(mutex);
-		if (!object)
-		{
-			object = std::unique_ptr<T>(new T);
-		}
-	}
+		Infinity,
+		Finite
+	};
 
-	return *object.get();
-}
+	void setMode(Mode mode);
+	_NODISCARD Mode getMode() const;
+
+	void setFrequency(Unit&& frequency);
+	_NODISCARD const Unit& getFrequency() const;
+
+	void setCallback(std::function<void()> callback);
+	void resetCallback();
+
+	void update();
+
+	void start();
+	void reset();
+
+	unsigned long long getId() const;
+
+private:
+	Mode mode_ = Mode::Finite;
+	Unit frequency_;
+	std::chrono::system_clock::time_point lastUpdate_;
+	std::function<void()> callback_;
+	bool wasCalled_ = false;
+	unsigned long long id_ = 0;
+	inline static unsigned long long lastGeneratedId = 0;
+};

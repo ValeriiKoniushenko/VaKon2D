@@ -20,35 +20,41 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
+#include "World.h"
 
-#include <memory>
-#include <mutex>
+#include "Logger.h"
 
-template <class T>
-class Singleton
+void World::init()
 {
-public:
-	static T& instance();
+	spdlog::get("core")->info("World initializing...");
+}
 
-protected:
-	Singleton() = default;
-	virtual ~Singleton() = default;
-};
-
-template <class T>
-T& Singleton<T>::instance()
+void World::update()
 {
-	static std::unique_ptr<T> object;
-	static std::mutex mutex;
-	if (!object)
+	for (Timer& timer : timers_)
 	{
-		std::lock_guard<decltype(mutex)> lockGuard(mutex);
-		if (!object)
-		{
-			object = std::unique_ptr<T>(new T);
-		}
+		timer.update();
 	}
+}
 
-	return *object.get();
+unsigned long long World::addTimer(Timer&& timer)
+{
+	const unsigned long long lastId = timer.getId();
+	timers_.push_back(std::forward<Timer>(timer));
+	return lastId;
+}
+
+void World::removeTimer(unsigned long long int id)
+{
+	timers_.remove_if([id](const Timer& timer) { return timer.getId() == id; });
+}
+
+void World::removeTimer(const Timer& timer)
+{
+	timers_.remove(timer);
+}
+
+World& GetWorld()
+{
+	return World::instance();
 }
