@@ -331,6 +331,14 @@ void Gl::Program::use(GLuint program)
 #endif
 }
 
+void Gl::Program::deleteProgram(GLuint program)
+{
+	glDeleteProgram(program);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
 void Gl::viewport(GLint x, GLint y, GLsizei width, GLsizei height)
 {
 	glViewport(x, y, width, height);

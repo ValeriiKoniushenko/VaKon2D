@@ -116,6 +116,7 @@ public:
 		static void link(GLuint program);
 		_NODISCARD static std::string getProgramInfoLog(GLuint program);
 		static void use(GLuint program);
+		static void deleteProgram(GLuint program);
 	};
 
 	static void viewport(GLint x, GLint y, GLsizei width, GLsizei height);

@@ -2,7 +2,11 @@
 
 out vec4 FragColor;
 
+in vec2 ioCv;
+
+uniform sampler2D uTexture;
+
 void main()
 {
-    FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);
+    FragColor = texture(uTexture, ioCv);
 }

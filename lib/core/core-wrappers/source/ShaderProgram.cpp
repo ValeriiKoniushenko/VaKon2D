@@ -84,3 +84,18 @@ bool ShaderProgram::wasLinked() const
 {
 	return wasLinked_;
 }
+
+void ShaderProgram::deleteProgram()
+{
+	Gl::Program::deleteProgram(data_);
+	data_ = Gl::Program::invalidId;
+}
+
+void ShaderProgram::recreateAndLink(Shader& frag, Shader& vert)
+{
+	deleteProgram();
+	create();
+	attachShader(frag);
+	attachShader(vert);
+	link();
+}

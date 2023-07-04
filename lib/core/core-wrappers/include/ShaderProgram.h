@@ -33,6 +33,7 @@ public:
 	ShaderProgram(bool shouldCreate);
 	ShaderProgram(Shader& frag, Shader& vert);
 
+	void recreateAndLink(Shader& frag, Shader& vert);
 	void create();
 	void attachShader(Shader& shader);
 	void link();
@@ -40,6 +41,7 @@ public:
 	_NODISCARD bool wasCreated() const;
 	_NODISCARD GLuint data();
 	_NODISCARD bool wasLinked() const;
+	void deleteProgram();
 
 private:
 	GLuint data_ = Gl::Program::invalidId;
