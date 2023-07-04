@@ -36,7 +36,7 @@ Vao::Vao(bool isGenerate, bool isBind)
 	}
 }
 
-Vao::Vao(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void* pointer) : Vao(true, true)
+Vao::Vao(GLuint index, GLint size, Gl::Type type, bool normalized, GLsizei stride, const void* pointer) : Vao(true, true)
 {
 	Gl::Vao::vertexAttribPointer(index, size, type, normalized, stride, pointer);
 	Gl::Vao::enableVertexAttribArray(index);

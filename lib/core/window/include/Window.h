@@ -35,7 +35,8 @@ public:
 	void pollEvent();
 	void clearColor(float r, float g, float b, float a);
 	void clear(int code);
-
+	void viewport(GLint x, GLint y, GLsizei width, GLsizei height);
+	
 protected:
 	GLFWwindow* window{};
 };

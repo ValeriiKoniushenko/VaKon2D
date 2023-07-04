@@ -22,6 +22,8 @@
 
 #include "Window.h"
 
+#include "Gl.h"
+
 void Window::create(Utils::ISize2D size, const std::string& title)
 {
 	if (!(window = glfwCreateWindow(size.width, size.height, title.c_str(), NULL, NULL)))
@@ -55,6 +57,11 @@ void Window::clearColor(float r, float g, float b, float a)
 void Window::clear(int code)
 {
 	glClear(code);
+}
+
+void Window::viewport(GLint x, GLint y, GLsizei width, GLsizei height)
+{
+	Gl::viewport(x, y, width, height);
 }
 
 Window& GetWindow()

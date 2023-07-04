@@ -30,7 +30,7 @@ class Vao
 public:
 	Vao() = default;
 	Vao(bool isGenerate, bool isBind);
-	Vao(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void* pointer);
+	Vao(GLuint index, GLint size, Gl::Type type, bool normalized, GLsizei stride, const void* pointer);
 
 	Vao(const Vao&) = default;
 	Vao(Vao&& other);

@@ -35,7 +35,7 @@ void VaKon2D::start()
 {
 	initCore();
 
-	Gl::viewport(0, 0, 800, 600);
+	GetWindow().viewport(0, 0, 800, 600);
 
 	Shader vertex("assets/shaders/main-vertex.glsl", Gl::Shader::Type::Vertex);
 	Shader fragment("assets/shaders/main-fragment.glsl", Gl::Shader::Type::Fragment);
@@ -43,23 +43,16 @@ void VaKon2D::start()
 	ShaderProgram program(fragment, vertex);
 	program.use();
 
-	unsigned int shaderProgram = Gl::Program::create();
-	Gl::Program::attachShader(shaderProgram, vertex.data());
-	Gl::Program::attachShader(shaderProgram, fragment.data());
-
-	Gl::Program::link(shaderProgram);
-	Gl::Program::use(shaderProgram);
-
 	const std::vector<float> vertices = {-0.5f, -0.5f, 0.0f, 0.5f, -0.5f, 0.0f, 0.0f, 0.5f, 0.0f};
 	Vbo vbo(vertices);
-	Vao vao(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*) 0);
+	Vao vao(0, 3, Gl::Type::Float, false, 3 * sizeof(float), (void*) 0);
 
 	while (!GetWindow().shouldClose())
 	{
 		GetWindow().clearColor(0.2f, 0.3f, 0.3f, 1.0f);	   // TODO: create class Color
 		GetWindow().clear(GL_COLOR_BUFFER_BIT);			   // TODO: change to enum class
 
-		Gl::Program::use(shaderProgram);
+		program.use();
 		vao.bind();
 		Gl::drawArrays(GL_TRIANGLES, 0, 3);
 

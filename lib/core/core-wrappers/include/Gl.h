@@ -29,6 +29,20 @@
 class Gl
 {
 public:
+	enum class Type
+	{
+		Float = GL_FLOAT,
+		Double = GL_DOUBLE,
+		Byte = GL_BYTE,
+		UByte = GL_UNSIGNED_BYTE,
+		Short = GL_SHORT,
+		UShort = GL_UNSIGNED_SHORT,
+		Int = GL_INT,
+		UInt = GL_UNSIGNED_INT,
+		Fixed = GL_FIXED
+	};
+
+public:
 	Gl() = delete;
 
 	static void requireNoErrors();
@@ -44,7 +58,7 @@ public:
 		static void reset();
 		static bool isBind();
 		static void vertexAttribPointer(
-			GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void* pointer);
+			GLuint index, GLint size, Gl::Type type, bool normalized, GLsizei stride, const void* pointer);
 		static void enableVertexAttribArray(GLuint index);
 		static void disableVertexAttribArray(GLuint index);
 

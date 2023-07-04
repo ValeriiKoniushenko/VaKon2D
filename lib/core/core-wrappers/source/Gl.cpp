@@ -181,14 +181,14 @@ void Gl::Vao::disableVertexAttribArray(GLuint index)
 #endif
 }
 
-void Gl::Vao::vertexAttribPointer(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void* pointer)
+void Gl::Vao::vertexAttribPointer(GLuint index, GLint size, Gl::Type type, bool normalized, GLsizei stride, const void* pointer)
 {
 	if (!Gl::Vao::isBind())
 	{
 		throw std::runtime_error("You try to set up a shader using a zero VAO. Try to bind a VAO and try again.");
 	}
 
-	glVertexAttribPointer(index, size, type, normalized, stride, pointer);
+	glVertexAttribPointer(index, size, static_cast<GLenum>(type), normalized, stride, pointer);
 #ifdef OPENGL_DEBUG
 	Gl::debugTraces();
 #endif
