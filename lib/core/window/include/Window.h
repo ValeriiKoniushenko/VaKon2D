@@ -25,6 +25,7 @@
 #include "GlfwWrapper.h"
 #include "Singleton.h"
 #include "Size.h"
+#include "Delegate.h"
 
 class Window : public Singleton<Window>
 {

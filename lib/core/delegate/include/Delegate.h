@@ -41,7 +41,7 @@ public:
 
 	void subscribe(T* obj, CallbackT&& callback)
 	{
-		callback_ = callback;
+		callback_ = std::forward<CallbackT>(callback);
 		objP = obj;
 	}
 
@@ -54,4 +54,31 @@ public:
 private:
 	CallbackT callback_{};
 	T* objP{};
+};
+
+class LambdaDelegate : public Utils::CopyableAndMoveable
+{
+public:
+	using CallbackT = std::function<void()>;
+
+	void trigger()
+	{
+		if (callback_)
+		{
+			callback_();
+		}
+	}
+
+	void subscribe(CallbackT&& callback)
+	{
+		callback_ = std::forward<CallbackT>(callback);
+	}
+
+	void reset()
+	{
+		callback_ = {};
+	}
+
+private:
+	CallbackT callback_{};
 };
