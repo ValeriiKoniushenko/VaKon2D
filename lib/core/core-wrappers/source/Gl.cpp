@@ -546,4 +546,15 @@ void Gl::Texture::texImage2D(Target target, GLint level, GLint internalformat, G
 void Gl::Texture::generateMipmap(Gl::Texture::Target target)
 {
 	glGenerateMipmap(static_cast<GLenum>(target));
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Texture::deleteTexture(GLuint texture)
+{
+	glDeleteTextures(1, &texture);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
 }

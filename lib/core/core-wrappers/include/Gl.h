@@ -180,6 +180,7 @@ public:
 		static void texImage2D(Target target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border,
 			GLenum format, GLenum type, const void* pixels);
 		static void generateMipmap(Target target);
+		static void deleteTexture(GLuint texture);
 
 	private:
 		inline static GLuint boundTexture = invalidId;

@@ -22,10 +22,18 @@
 
 #include "Texture.h"
 
-Texture::Texture(Gl::Texture::Target target) : target_(target)
+#include "Image.h"
+
+Texture::Texture(Gl::Texture::Target target, bool shouldGenerate, bool shouldBind) : target_(target)
 {
-	generate();
-	bind();
+	if (shouldGenerate)
+	{
+		generate();
+	}
+	if (shouldBind)
+	{
+		bind();
+	}
 }
 
 Texture::~Texture()
@@ -43,7 +51,15 @@ void Texture::bind() const
 		throw std::runtime_error("You should generate a texture before binding");
 	}
 
-	glBindTexture(static_cast<GLenum>(target_), id_);
+	Gl::Texture::bind(target_, id_);
+	if (minFilter_ != Gl::Texture::MinFilter::None)
+	{
+		Gl::Texture::setMinFilter(minFilter_, target_);
+	}
+	if (magFilter_ != Gl::Texture::MagFilter::None)
+	{
+		Gl::Texture::setMagFilter(magFilter_, target_);
+	}
 }
 
 void Texture::unbind() const
@@ -53,12 +69,12 @@ void Texture::unbind() const
 		throw std::runtime_error("You should generate a texture before unbinding");
 	}
 
-	glBindTexture(static_cast<GLenum>(target_), 0);
+	Gl::Texture::bind(target_, Gl::Texture::invalidId);
 }
 
 void Texture::destroy()
 {
-	glDeleteTextures(1, &id_);
+	Gl::Texture::deleteTexture(id_);
 	id_ = Gl::Texture::invalidId;
 	target_ = Gl::Texture::Target::None;
 	isDestroyAtEnd_ = true;
@@ -66,7 +82,7 @@ void Texture::destroy()
 
 bool Texture::wasGenerated() const
 {
-	return id_ == Gl::Texture::invalidId;
+	return id_ != Gl::Texture::invalidId;
 }
 
 GLuint Texture::data()
@@ -86,5 +102,62 @@ void Texture::setIsDestroyAtEnd(bool is)
 
 void Texture::generate()
 {
-	glGenTextures(1, &id_);
+	id_ = Gl::Texture::generate();
+}
+
+void Texture::generateMipMap()
+{
+	if (!ignoreMipMap_)
+	{
+		Gl::Texture::generateMipmap(target_);
+	}
+}
+
+void Texture::setImage(Image& image)
+{
+	image_ = &image;
+}
+
+Image* Texture::getImage()
+{
+	return image_;
+}
+
+void Texture::ignoreMipMapGeneration(bool ignore)
+{
+	ignoreMipMap_ = ignore;
+}
+
+void Texture::loadToGpu()
+{
+	image_->loadToGpu();
+	generateMipMap();
+	Gl::Texture::setMinFilter(minFilter_, target_);
+	Gl::Texture::setMagFilter(magFilter_, target_);
+}
+
+void Texture::setMagFilter(Gl::Texture::MagFilter filter)
+{
+	magFilter_ = filter;
+}
+
+Gl::Texture::MagFilter Texture::getMagFilter() const
+{
+	return magFilter_;
+}
+
+void Texture::setMinFilter(Gl::Texture::MinFilter filter)
+{
+	minFilter_ = filter;
+}
+
+Gl::Texture::MinFilter Texture::getMinFilter() const
+{
+	return minFilter_;
+}
+
+void Texture::setMagAndMinFilter(Gl::Texture::MagFilter magFilter, Gl::Texture::MinFilter minFilter)
+{
+	setMagFilter(magFilter);
+	setMinFilter(minFilter);
 }

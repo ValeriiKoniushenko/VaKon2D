@@ -29,6 +29,7 @@
 #include "Logger.h"
 #include "Shader.h"
 #include "ShaderProgram.h"
+#include "Texture.h"
 #include "Vao.h"
 #include "Vbo.h"
 #include "Window.h"
@@ -78,16 +79,11 @@ void VaKon2D::start()
 	Gl::Vao::vertexAttribPointer(1, 2, Gl::Type::Float, false, 4 * sizeof(float), reinterpret_cast<const void*>(2 * sizeof(float)));
 	Gl::Vao::enableVertexAttribArray(1);
 
-	GLuint texture = Gl::Texture::generate();
-	Gl::Texture::bind(Gl::Texture::Target::Texture2D, texture);
-	Gl::Texture::setWrapS(Gl::Texture::Wrap::Clamp2Edge);
-	Gl::Texture::setWrapT(Gl::Texture::Wrap::Clamp2Edge);
-	Gl::Texture::setMinFilter(Gl::Texture::MinFilter::LinearMipmapLinear);
-	Gl::Texture::setMagFilter(Gl::Texture::MagFilter::Linear);
-
+	Texture texture(Gl::Texture::Target::Texture2D, true, true);
 	Image image("assets/textures/apple.png");
-	image.loadToGpu();
-	Gl::Texture::generateMipmap(Gl::Texture::Target::Texture2D);
+	texture.setImage(image);
+	texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
+	texture.loadToGpu();
 
 	while (!GetWindow().shouldClose())
 	{
@@ -95,7 +91,7 @@ void VaKon2D::start()
 		GetWindow().clear(GL_COLOR_BUFFER_BIT);			   // TODO: change to enum class
 
 		program.use();
-		glBindTexture(GL_TEXTURE_2D, texture);
+		texture.bind();
 		vao.bind();
 		Gl::drawArrays(GL_TRIANGLES, 0, 6);
 

@@ -22,17 +22,20 @@
 
 #pragma once
 
-#include "GlfwWrapper.h"
-#include "stb_image.h"
-#include "NotCopyableAndNotMovable.h"
 #include "Gl.h"
+#include "GlfwWrapper.h"
+#include "NotCopyableAndNotMovable.h"
+#include "stb_image.h"
 
 #include <string>
+
+class Image;
 
 class Texture : public Utils::NotCopyableAndNotMovable
 {
 public:
-	explicit Texture(Gl::Texture::Target target = Gl::Texture::Target::Texture2D);
+	explicit Texture(
+		Gl::Texture::Target target = Gl::Texture::Target::Texture2D, bool shouldGenerate = false, bool shouldBind = false);
 
 	~Texture() override;
 
@@ -41,9 +44,24 @@ public:
 	void destroy();
 	_NODISCARD bool wasGenerated() const;
 	_NODISCARD GLuint data();
+	void generateMipMap();
 
 	_NODISCARD bool isDestroyAtEnd() const;
 	void setIsDestroyAtEnd(bool is);
+
+	void setImage(Image& image);
+	_NODISCARD Image* getImage();
+
+	void ignoreMipMapGeneration(bool ignore);
+	void loadToGpu();
+
+	void setMagAndMinFilter(Gl::Texture::MagFilter magFilter, Gl::Texture::MinFilter minFilter);
+
+	void setMagFilter(Gl::Texture::MagFilter filter);
+	_NODISCARD Gl::Texture::MagFilter getMagFilter() const;
+
+	void setMinFilter(Gl::Texture::MinFilter filter);
+	_NODISCARD Gl::Texture::MinFilter getMinFilter() const;
 
 private:
 	void generate();
@@ -52,4 +70,8 @@ private:
 	GLuint id_ = Gl::Texture::invalidId;
 	Gl::Texture::Target target_ = Gl::Texture::Target::None;
 	bool isDestroyAtEnd_ = true;
+	Image* image_{};
+	bool ignoreMipMap_ = false;
+	Gl::Texture::MagFilter magFilter_ = Gl::Texture::MagFilter::None;
+	Gl::Texture::MinFilter minFilter_ = Gl::Texture::MinFilter::None;
 };
