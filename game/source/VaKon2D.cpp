@@ -62,11 +62,8 @@ void VaKon2D::start()
 	// clang-format off
 	const std::vector<float> vertices = {
 	    0.f, 0.f,  0.f, 0.f,
-	    1.f, 1.f,  1.f, 1.f,
-	    0.f, 1.f,  0.f, 1.f,
-
-	    0.f, 0.f,  0.f, 0.f,
 	    1.f, 0.f,  1.f, 0.f,
+	    0.f, 1.f,  0.f, 1.f,
 	    1.f, 1.f,  1.f, 1.f,
 	};
 	// clang-format on
@@ -93,7 +90,7 @@ void VaKon2D::start()
 		program.use();
 		texture.bind();
 		vao.bind();
-		Gl::drawArrays(GL_TRIANGLES, 0, 6);
+		Gl::drawArrays(GL_TRIANGLE_STRIP, 0, 4);
 
 		if (Keyboard::isKeyPressed(Keyboard::Key::F5))
 		{
