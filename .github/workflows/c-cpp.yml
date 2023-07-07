@@ -21,7 +21,7 @@ jobs:
           cd ${{ github.workspace }}
           mkdir build
           cd build
-          cmake ../
+          cmake ../ -DCMAKE_BUILD_TYPE="Debug"
       - name: Building the project
         run: |
           cd ${{ github.workspace }}
