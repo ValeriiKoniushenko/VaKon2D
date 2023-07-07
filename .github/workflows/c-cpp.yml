@@ -16,11 +16,14 @@ jobs:
         uses: actions/checkout@v1
         with:
           submodules: recursive
-      - name: Installing vcpkg (windows)
+      - name: Running cmake (windows)
         run: |
-          cd ..
-          git clone https://github.com/Microsoft/vcpkg.git
-          cd vcpkg
-          git checkout --force 2020.01
-          .\bootstrap-vcpkg.bat
-          .\vcpkg.exe install cppzmq:x64-windows
+          cd ${{ github.workspace }}
+          mkdir build
+          cd build
+          cmake ../
+      - name: Building the project
+        run: |
+          cd ${{ github.workspace }}
+          cd build
+          cmake --build .
