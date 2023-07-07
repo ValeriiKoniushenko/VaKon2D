@@ -1,0 +1,82 @@
+\doxysection{Gl\+::Vbo Class Reference}
+\hypertarget{class_gl_1_1_vbo}{}\label{class_gl_1_1_vbo}\index{Gl::Vbo@{Gl::Vbo}}
+
+
+{\ttfamily \#include $<$Gl.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_vbo_a839aef071042a02d3c6b686e52489cda}{generate}} (GLsizei n, GLuint \texorpdfstring{$\ast$}{*}arrays)
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_vbo_aabce871a38ab07b56b4b674977e27343}{bind}} (GLenum target, GLuint buffer)
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_vbo_a07eb89972fcfa73a2c07b0b25351e9a4}{reset}} (GLenum target)
+\item 
+static bool \mbox{\hyperlink{class_gl_1_1_vbo_ade2ebfa39578906a87a093f26ea14417}{is\+Bind}} ()
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_vbo_a545c9a22c60ba215bdbc95feb890deb7}{data}} (GLenum target, GLsizeiptr size, const void \texorpdfstring{$\ast$}{*}data, GLenum usage)
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_vbo_ada2b4e232c5146b7049ca2e41987f611}{sub\+Data}} (GLenum target, GLintptr offset, GLsizeiptr size, const void \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_gl_1_1_vbo_a545c9a22c60ba215bdbc95feb890deb7}{data}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const GLuint \mbox{\hyperlink{class_gl_1_1_vbo_aa564d4cb24b472b9734ff6ea1fd3c35f}{invalid\+Id}} = 0
+\item 
+static GLuint \mbox{\hyperlink{class_gl_1_1_vbo_af76ba7daefb660e857fd54fd8fa1dfb3}{id\+\_\+}} = \mbox{\hyperlink{class_gl_1_1_vbo_aa564d4cb24b472b9734ff6ea1fd3c35f}{invalid\+Id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gl_1_1_vbo_aabce871a38ab07b56b4b674977e27343}\label{class_gl_1_1_vbo_aabce871a38ab07b56b4b674977e27343} 
+\index{Gl::Vbo@{Gl::Vbo}!bind@{bind}}
+\index{bind@{bind}!Gl::Vbo@{Gl::Vbo}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily void Gl\+::\+Vbo\+::bind (\begin{DoxyParamCaption}\item[{GLenum}]{target,  }\item[{GLuint}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_vbo_a545c9a22c60ba215bdbc95feb890deb7}\label{class_gl_1_1_vbo_a545c9a22c60ba215bdbc95feb890deb7} 
+\index{Gl::Vbo@{Gl::Vbo}!data@{data}}
+\index{data@{data}!Gl::Vbo@{Gl::Vbo}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily void Gl\+::\+Vbo\+::data (\begin{DoxyParamCaption}\item[{GLenum}]{target,  }\item[{GLsizeiptr}]{size,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{data,  }\item[{GLenum}]{usage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_vbo_a839aef071042a02d3c6b686e52489cda}\label{class_gl_1_1_vbo_a839aef071042a02d3c6b686e52489cda} 
+\index{Gl::Vbo@{Gl::Vbo}!generate@{generate}}
+\index{generate@{generate}!Gl::Vbo@{Gl::Vbo}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily void Gl\+::\+Vbo\+::generate (\begin{DoxyParamCaption}\item[{GLsizei}]{n,  }\item[{GLuint \texorpdfstring{$\ast$}{*}}]{arrays }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_vbo_ade2ebfa39578906a87a093f26ea14417}\label{class_gl_1_1_vbo_ade2ebfa39578906a87a093f26ea14417} 
+\index{Gl::Vbo@{Gl::Vbo}!isBind@{isBind}}
+\index{isBind@{isBind}!Gl::Vbo@{Gl::Vbo}}
+\doxysubsubsection{\texorpdfstring{isBind()}{isBind()}}
+{\footnotesize\ttfamily bool Gl\+::\+Vbo\+::is\+Bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_vbo_a07eb89972fcfa73a2c07b0b25351e9a4}\label{class_gl_1_1_vbo_a07eb89972fcfa73a2c07b0b25351e9a4} 
+\index{Gl::Vbo@{Gl::Vbo}!reset@{reset}}
+\index{reset@{reset}!Gl::Vbo@{Gl::Vbo}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Gl\+::\+Vbo\+::reset (\begin{DoxyParamCaption}\item[{GLenum}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_vbo_ada2b4e232c5146b7049ca2e41987f611}\label{class_gl_1_1_vbo_ada2b4e232c5146b7049ca2e41987f611} 
+\index{Gl::Vbo@{Gl::Vbo}!subData@{subData}}
+\index{subData@{subData}!Gl::Vbo@{Gl::Vbo}}
+\doxysubsubsection{\texorpdfstring{subData()}{subData()}}
+{\footnotesize\ttfamily void Gl\+::\+Vbo\+::sub\+Data (\begin{DoxyParamCaption}\item[{GLenum}]{target,  }\item[{GLintptr}]{offset,  }\item[{GLsizeiptr}]{size,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_gl_1_1_vbo_af76ba7daefb660e857fd54fd8fa1dfb3}\label{class_gl_1_1_vbo_af76ba7daefb660e857fd54fd8fa1dfb3} 
+\index{Gl::Vbo@{Gl::Vbo}!id\_@{id\_}}
+\index{id\_@{id\_}!Gl::Vbo@{Gl::Vbo}}
+\doxysubsubsection{\texorpdfstring{id\_}{id\_}}
+{\footnotesize\ttfamily GLuint Gl\+::\+Vbo\+::id\+\_\+ = \mbox{\hyperlink{class_gl_1_1_vbo_aa564d4cb24b472b9734ff6ea1fd3c35f}{invalid\+Id}}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_vbo_aa564d4cb24b472b9734ff6ea1fd3c35f}\label{class_gl_1_1_vbo_aa564d4cb24b472b9734ff6ea1fd3c35f} 
+\index{Gl::Vbo@{Gl::Vbo}!invalidId@{invalidId}}
+\index{invalidId@{invalidId}!Gl::Vbo@{Gl::Vbo}}
+\doxysubsubsection{\texorpdfstring{invalidId}{invalidId}}
+{\footnotesize\ttfamily const GLuint Gl\+::\+Vbo\+::invalid\+Id = 0\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+

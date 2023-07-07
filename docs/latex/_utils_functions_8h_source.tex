@@ -1,0 +1,46 @@
+\doxysection{Utils\+Functions.\+h}
+\hypertarget{_utils_functions_8h_source}{}\label{_utils_functions_8h_source}\index{lib/core/utils/include/UtilsFunctions.h@{lib/core/utils/include/UtilsFunctions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ MIT\ License}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (c)\ 2023\ Valerii\ Koniushenko}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ in\ the\ Software\ without\ restriction,\ including\ without\ limitation\ the\ rights}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ SOFTWARE.}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}Size.h"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_utils}{Utils}}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \_NODISCARD\ std::string\ \mbox{\hyperlink{namespace_utils_a2d74380613b3476e9a37f6c90f621a78}{getFileContent}}(\textcolor{keyword}{const}\ std::filesystem::path\&\ path);}
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_utils_afa4e16661ce2e7e179ef413d50a1c07d}{setFileContent}}(\textcolor{keyword}{const}\ std::filesystem::path\&\ path,\ \textcolor{keyword}{const}\ std::string\&\ data);}
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_utils_afa4e16661ce2e7e179ef413d50a1c07d}{setFileContent}}(\textcolor{keyword}{const}\ std::filesystem::path\&\ path,\ \textcolor{keywordtype}{void}*\ p,\ \textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{00035\ \_NODISCARD\ std::vector<ISize2D>\ \mbox{\hyperlink{namespace_utils_ace72a4e40e752a1f051123baf8552953}{getAllSupportedWndSizes}}();}
+\DoxyCodeLine{00036\ \_NODISCARD\ std::ifstream\ \mbox{\hyperlink{namespace_utils_ab87d6f2eb65d583b706df37ac67c12c7}{readFile}}(\textcolor{keyword}{const}\ std::filesystem::path\&\ path);}
+\DoxyCodeLine{00037\ \_NODISCARD\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespace_utils_aada1f1d5896ad9952b86088c2f374764}{isEqual}}(\textcolor{keywordtype}{float}\ n1,\ \textcolor{keywordtype}{float}\ n2,\ \textcolor{keywordtype}{float}\ E\ =\ std::numeric\_limits<float>::epsilon());}
+\DoxyCodeLine{00038\ \_NODISCARD\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespace_utils_ad1d64f8fa3f338df62994f318dfda9e9}{isZero}}(\textcolor{keywordtype}{float}\ n,\ \textcolor{keywordtype}{float}\ E\ =\ std::numeric\_limits<float>::epsilon());}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \}\ \ \ \ \textcolor{comment}{//\ namespace\ Utils}}
+
+\end{DoxyCode}

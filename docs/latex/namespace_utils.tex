@@ -1,0 +1,138 @@
+\doxysection{Utils Namespace Reference}
+\hypertarget{namespace_utils}{}\label{namespace_utils}\index{Utils@{Utils}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Copyable\+And\+Moveable}}
+\item 
+class \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable}{Not\+Copyable\+And\+Not\+Movable}}
+\item 
+class \mbox{\hyperlink{class_utils_1_1_not_copyable_but_movable}{Not\+Copyable\+But\+Movable}}
+\item 
+struct \mbox{\hyperlink{struct_utils_1_1_rect}{Rect}}
+\item 
+struct \mbox{\hyperlink{struct_utils_1_1_size2_d}{Size2D}}
+\item 
+struct \mbox{\hyperlink{struct_utils_1_1_size3_d}{Size3D}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Concepts}
+\begin{DoxyCompactItemize}
+\item 
+concept \mbox{\hyperlink{concept_utils_1_1_sizeable}{Sizeable}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespace_utils_ab7532cdc2afdcc0b65bdc52b83d2cca5}{DSize2D}} = \mbox{\hyperlink{struct_utils_1_1_size2_d}{Size2D}}$<$ double $>$
+\item 
+using \mbox{\hyperlink{namespace_utils_aafb5e8bb86bfd3e4b178ed45c9d3d8c0}{FSize2D}} = \mbox{\hyperlink{struct_utils_1_1_size2_d}{Size2D}}$<$ float $>$
+\item 
+using \mbox{\hyperlink{namespace_utils_aa81b8f34f06cea4a8139492c0e1ad5da}{ISize2D}} = \mbox{\hyperlink{struct_utils_1_1_size2_d}{Size2D}}$<$ int $>$
+\item 
+using \mbox{\hyperlink{namespace_utils_a8a3cb492b5b7377a983157a079f0699d}{DSize3D}} = \mbox{\hyperlink{struct_utils_1_1_size2_d}{Size2D}}$<$ double $>$
+\item 
+using \mbox{\hyperlink{namespace_utils_a0678a1a28cc4e2a23e7cd23606ba4fa2}{FSize3D}} = \mbox{\hyperlink{struct_utils_1_1_size2_d}{Size2D}}$<$ float $>$
+\item 
+using \mbox{\hyperlink{namespace_utils_af63f9c6d53b4bab5329e681e091f6e9a}{ISize3D}} = \mbox{\hyperlink{struct_utils_1_1_size2_d}{Size2D}}$<$ int $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+NODISCARD std\+::string \mbox{\hyperlink{namespace_utils_a2d74380613b3476e9a37f6c90f621a78}{get\+File\+Content}} (const std\+::filesystem\+::path \&path)
+\item 
+void \mbox{\hyperlink{namespace_utils_afa4e16661ce2e7e179ef413d50a1c07d}{set\+File\+Content}} (const std\+::filesystem\+::path \&path, const std\+::string \&data)
+\item 
+void \mbox{\hyperlink{namespace_utils_ab74a463c922fbf79205a2dadf345a253}{set\+File\+Content}} (const std\+::filesystem\+::path \&path, void \texorpdfstring{$\ast$}{*}p, size\+\_\+t size)
+\item 
+\+\_\+\+NODISCARD std\+::vector$<$ \mbox{\hyperlink{namespace_utils_aa81b8f34f06cea4a8139492c0e1ad5da}{ISize2D}} $>$ \mbox{\hyperlink{namespace_utils_ace72a4e40e752a1f051123baf8552953}{get\+All\+Supported\+Wnd\+Sizes}} ()
+\item 
+\+\_\+\+NODISCARD std\+::ifstream \mbox{\hyperlink{namespace_utils_ab87d6f2eb65d583b706df37ac67c12c7}{read\+File}} (const std\+::filesystem\+::path \&path)
+\item 
+\+\_\+\+NODISCARD bool \mbox{\hyperlink{namespace_utils_aada1f1d5896ad9952b86088c2f374764}{is\+Equal}} (float n1, float n2, float E=std\+::numeric\+\_\+limits$<$ float $>$\+::epsilon())
+\item 
+\+\_\+\+NODISCARD bool \mbox{\hyperlink{namespace_utils_ad1d64f8fa3f338df62994f318dfda9e9}{is\+Zero}} (float n, float E=std\+::numeric\+\_\+limits$<$ float $>$\+::epsilon())
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespace_utils_ab7532cdc2afdcc0b65bdc52b83d2cca5}\label{namespace_utils_ab7532cdc2afdcc0b65bdc52b83d2cca5} 
+\index{Utils@{Utils}!DSize2D@{DSize2D}}
+\index{DSize2D@{DSize2D}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{DSize2D}{DSize2D}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_utils_ab7532cdc2afdcc0b65bdc52b83d2cca5}{Utils\+::\+DSize2D}} = typedef \mbox{\hyperlink{struct_utils_1_1_size2_d}{Size2D}}$<$double$>$}
+
+\Hypertarget{namespace_utils_a8a3cb492b5b7377a983157a079f0699d}\label{namespace_utils_a8a3cb492b5b7377a983157a079f0699d} 
+\index{Utils@{Utils}!DSize3D@{DSize3D}}
+\index{DSize3D@{DSize3D}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{DSize3D}{DSize3D}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_utils_a8a3cb492b5b7377a983157a079f0699d}{Utils\+::\+DSize3D}} = typedef \mbox{\hyperlink{struct_utils_1_1_size2_d}{Size2D}}$<$double$>$}
+
+\Hypertarget{namespace_utils_aafb5e8bb86bfd3e4b178ed45c9d3d8c0}\label{namespace_utils_aafb5e8bb86bfd3e4b178ed45c9d3d8c0} 
+\index{Utils@{Utils}!FSize2D@{FSize2D}}
+\index{FSize2D@{FSize2D}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{FSize2D}{FSize2D}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_utils_aafb5e8bb86bfd3e4b178ed45c9d3d8c0}{Utils\+::\+FSize2D}} = typedef \mbox{\hyperlink{struct_utils_1_1_size2_d}{Size2D}}$<$float$>$}
+
+\Hypertarget{namespace_utils_a0678a1a28cc4e2a23e7cd23606ba4fa2}\label{namespace_utils_a0678a1a28cc4e2a23e7cd23606ba4fa2} 
+\index{Utils@{Utils}!FSize3D@{FSize3D}}
+\index{FSize3D@{FSize3D}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{FSize3D}{FSize3D}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_utils_a0678a1a28cc4e2a23e7cd23606ba4fa2}{Utils\+::\+FSize3D}} = typedef \mbox{\hyperlink{struct_utils_1_1_size2_d}{Size2D}}$<$float$>$}
+
+\Hypertarget{namespace_utils_aa81b8f34f06cea4a8139492c0e1ad5da}\label{namespace_utils_aa81b8f34f06cea4a8139492c0e1ad5da} 
+\index{Utils@{Utils}!ISize2D@{ISize2D}}
+\index{ISize2D@{ISize2D}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{ISize2D}{ISize2D}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_utils_aa81b8f34f06cea4a8139492c0e1ad5da}{Utils\+::\+ISize2D}} = typedef \mbox{\hyperlink{struct_utils_1_1_size2_d}{Size2D}}$<$int$>$}
+
+\Hypertarget{namespace_utils_af63f9c6d53b4bab5329e681e091f6e9a}\label{namespace_utils_af63f9c6d53b4bab5329e681e091f6e9a} 
+\index{Utils@{Utils}!ISize3D@{ISize3D}}
+\index{ISize3D@{ISize3D}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{ISize3D}{ISize3D}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_utils_af63f9c6d53b4bab5329e681e091f6e9a}{Utils\+::\+ISize3D}} = typedef \mbox{\hyperlink{struct_utils_1_1_size2_d}{Size2D}}$<$int$>$}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespace_utils_ace72a4e40e752a1f051123baf8552953}\label{namespace_utils_ace72a4e40e752a1f051123baf8552953} 
+\index{Utils@{Utils}!getAllSupportedWndSizes@{getAllSupportedWndSizes}}
+\index{getAllSupportedWndSizes@{getAllSupportedWndSizes}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{getAllSupportedWndSizes()}{getAllSupportedWndSizes()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespace_utils_aa81b8f34f06cea4a8139492c0e1ad5da}{ISize2D}} $>$ Utils\+::get\+All\+Supported\+Wnd\+Sizes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_utils_a2d74380613b3476e9a37f6c90f621a78}\label{namespace_utils_a2d74380613b3476e9a37f6c90f621a78} 
+\index{Utils@{Utils}!getFileContent@{getFileContent}}
+\index{getFileContent@{getFileContent}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{getFileContent()}{getFileContent()}}
+{\footnotesize\ttfamily std\+::string Utils\+::get\+File\+Content (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{path }\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_utils_aada1f1d5896ad9952b86088c2f374764}\label{namespace_utils_aada1f1d5896ad9952b86088c2f374764} 
+\index{Utils@{Utils}!isEqual@{isEqual}}
+\index{isEqual@{isEqual}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{isEqual()}{isEqual()}}
+{\footnotesize\ttfamily bool Utils\+::is\+Equal (\begin{DoxyParamCaption}\item[{float}]{n1,  }\item[{float}]{n2,  }\item[{float}]{E = {\ttfamily std\+:\+:numeric\+\_\+limits$<$float$>$\+:\+:epsilon()} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_utils_ad1d64f8fa3f338df62994f318dfda9e9}\label{namespace_utils_ad1d64f8fa3f338df62994f318dfda9e9} 
+\index{Utils@{Utils}!isZero@{isZero}}
+\index{isZero@{isZero}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{isZero()}{isZero()}}
+{\footnotesize\ttfamily bool Utils\+::is\+Zero (\begin{DoxyParamCaption}\item[{float}]{n,  }\item[{float}]{E = {\ttfamily std\+:\+:numeric\+\_\+limits$<$float$>$\+:\+:epsilon()} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_utils_ab87d6f2eb65d583b706df37ac67c12c7}\label{namespace_utils_ab87d6f2eb65d583b706df37ac67c12c7} 
+\index{Utils@{Utils}!readFile@{readFile}}
+\index{readFile@{readFile}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{readFile()}{readFile()}}
+{\footnotesize\ttfamily std\+::ifstream Utils\+::read\+File (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{path }\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_utils_afa4e16661ce2e7e179ef413d50a1c07d}\label{namespace_utils_afa4e16661ce2e7e179ef413d50a1c07d} 
+\index{Utils@{Utils}!setFileContent@{setFileContent}}
+\index{setFileContent@{setFileContent}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{setFileContent()}{setFileContent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Utils\+::set\+File\+Content (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{path,  }\item[{const std\+::string \&}]{data }\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_utils_ab74a463c922fbf79205a2dadf345a253}\label{namespace_utils_ab74a463c922fbf79205a2dadf345a253} 
+\index{Utils@{Utils}!setFileContent@{setFileContent}}
+\index{setFileContent@{setFileContent}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{setFileContent()}{setFileContent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Utils\+::set\+File\+Content (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{path,  }\item[{void \texorpdfstring{$\ast$}{*}}]{p,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+

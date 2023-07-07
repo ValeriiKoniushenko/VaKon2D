@@ -1,0 +1,82 @@
+\doxysection{Gl\+::Vao Class Reference}
+\hypertarget{class_gl_1_1_vao}{}\label{class_gl_1_1_vao}\index{Gl::Vao@{Gl::Vao}}
+
+
+{\ttfamily \#include $<$Gl.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_vao_a7e06fa0c4fe006ae02cf26a84e213363}{generate}} (GLsizei n, GLuint \texorpdfstring{$\ast$}{*}arrays)
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_vao_afcf6f86e67ff3c503347b8c60aab2304}{bind}} (GLuint array)
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_vao_a660b2fbdb3b5b02328d9c2cb1b202db5}{reset}} ()
+\item 
+static bool \mbox{\hyperlink{class_gl_1_1_vao_a58c2047a67a66ceb77ecfd364242ccd2}{is\+Bind}} ()
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_vao_a99aae09ed573ab1e437ab965def91cad}{vertex\+Attrib\+Pointer}} (GLuint index, GLint size, \mbox{\hyperlink{class_gl_a531a4c376dc639d1cef19fa05d661ad0}{Gl\+::\+Type}} type, bool normalized, GLsizei stride, const void \texorpdfstring{$\ast$}{*}pointer)
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_vao_a977d11c3359637a6c30d0b44e7e763b6}{enable\+Vertex\+Attrib\+Array}} (GLuint index)
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_vao_a5998e3d4b81de2f11609a6ee331dd2e3}{disable\+Vertex\+Attrib\+Array}} (GLuint index)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const GLuint \mbox{\hyperlink{class_gl_1_1_vao_aa97c0933b0960757251961beb957051f}{invalid\+Id}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gl_1_1_vao_afcf6f86e67ff3c503347b8c60aab2304}\label{class_gl_1_1_vao_afcf6f86e67ff3c503347b8c60aab2304} 
+\index{Gl::Vao@{Gl::Vao}!bind@{bind}}
+\index{bind@{bind}!Gl::Vao@{Gl::Vao}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily void Gl\+::\+Vao\+::bind (\begin{DoxyParamCaption}\item[{GLuint}]{array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_vao_a5998e3d4b81de2f11609a6ee331dd2e3}\label{class_gl_1_1_vao_a5998e3d4b81de2f11609a6ee331dd2e3} 
+\index{Gl::Vao@{Gl::Vao}!disableVertexAttribArray@{disableVertexAttribArray}}
+\index{disableVertexAttribArray@{disableVertexAttribArray}!Gl::Vao@{Gl::Vao}}
+\doxysubsubsection{\texorpdfstring{disableVertexAttribArray()}{disableVertexAttribArray()}}
+{\footnotesize\ttfamily void Gl\+::\+Vao\+::disable\+Vertex\+Attrib\+Array (\begin{DoxyParamCaption}\item[{GLuint}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_vao_a977d11c3359637a6c30d0b44e7e763b6}\label{class_gl_1_1_vao_a977d11c3359637a6c30d0b44e7e763b6} 
+\index{Gl::Vao@{Gl::Vao}!enableVertexAttribArray@{enableVertexAttribArray}}
+\index{enableVertexAttribArray@{enableVertexAttribArray}!Gl::Vao@{Gl::Vao}}
+\doxysubsubsection{\texorpdfstring{enableVertexAttribArray()}{enableVertexAttribArray()}}
+{\footnotesize\ttfamily void Gl\+::\+Vao\+::enable\+Vertex\+Attrib\+Array (\begin{DoxyParamCaption}\item[{GLuint}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_vao_a7e06fa0c4fe006ae02cf26a84e213363}\label{class_gl_1_1_vao_a7e06fa0c4fe006ae02cf26a84e213363} 
+\index{Gl::Vao@{Gl::Vao}!generate@{generate}}
+\index{generate@{generate}!Gl::Vao@{Gl::Vao}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily void Gl\+::\+Vao\+::generate (\begin{DoxyParamCaption}\item[{GLsizei}]{n,  }\item[{GLuint \texorpdfstring{$\ast$}{*}}]{arrays }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_vao_a58c2047a67a66ceb77ecfd364242ccd2}\label{class_gl_1_1_vao_a58c2047a67a66ceb77ecfd364242ccd2} 
+\index{Gl::Vao@{Gl::Vao}!isBind@{isBind}}
+\index{isBind@{isBind}!Gl::Vao@{Gl::Vao}}
+\doxysubsubsection{\texorpdfstring{isBind()}{isBind()}}
+{\footnotesize\ttfamily bool Gl\+::\+Vao\+::is\+Bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_vao_a660b2fbdb3b5b02328d9c2cb1b202db5}\label{class_gl_1_1_vao_a660b2fbdb3b5b02328d9c2cb1b202db5} 
+\index{Gl::Vao@{Gl::Vao}!reset@{reset}}
+\index{reset@{reset}!Gl::Vao@{Gl::Vao}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Gl\+::\+Vao\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_vao_a99aae09ed573ab1e437ab965def91cad}\label{class_gl_1_1_vao_a99aae09ed573ab1e437ab965def91cad} 
+\index{Gl::Vao@{Gl::Vao}!vertexAttribPointer@{vertexAttribPointer}}
+\index{vertexAttribPointer@{vertexAttribPointer}!Gl::Vao@{Gl::Vao}}
+\doxysubsubsection{\texorpdfstring{vertexAttribPointer()}{vertexAttribPointer()}}
+{\footnotesize\ttfamily void Gl\+::\+Vao\+::vertex\+Attrib\+Pointer (\begin{DoxyParamCaption}\item[{GLuint}]{index,  }\item[{GLint}]{size,  }\item[{\mbox{\hyperlink{class_gl_a531a4c376dc639d1cef19fa05d661ad0}{Gl\+::\+Type}}}]{type,  }\item[{bool}]{normalized,  }\item[{GLsizei}]{stride,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{pointer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_gl_1_1_vao_aa97c0933b0960757251961beb957051f}\label{class_gl_1_1_vao_aa97c0933b0960757251961beb957051f} 
+\index{Gl::Vao@{Gl::Vao}!invalidId@{invalidId}}
+\index{invalidId@{invalidId}!Gl::Vao@{Gl::Vao}}
+\doxysubsubsection{\texorpdfstring{invalidId}{invalidId}}
+{\footnotesize\ttfamily const GLuint Gl\+::\+Vao\+::invalid\+Id = 0\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+

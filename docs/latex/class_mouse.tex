@@ -1,0 +1,137 @@
+\doxysection{Mouse Class Reference}
+\hypertarget{class_mouse}{}\label{class_mouse}\index{Mouse@{Mouse}}
+
+
+{\ttfamily \#include $<$Mouse.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_mouse_aeb3a0777eba26747039c8a13c17a40a0}{Key}} \{ \mbox{\hyperlink{class_mouse_aeb3a0777eba26747039c8a13c17a40a0a945d5e233cf7d6240f6b783b36a374ff}{Left}} = VK\+\_\+\+LBUTTON
+, \mbox{\hyperlink{class_mouse_aeb3a0777eba26747039c8a13c17a40a0a92b09c7c48c520c3c55e497875da437c}{Right}} = VK\+\_\+\+RBUTTON
+, \mbox{\hyperlink{class_mouse_aeb3a0777eba26747039c8a13c17a40a0a4f1f6016fc9f3f2353c0cc7c67b292bd}{Center}} = VK\+\_\+\+MBUTTON
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mouse_a46a6f1f50b5db915c64bfb318f0298d6}{Mouse}} ()=delete
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static glm\+::ivec2 \mbox{\hyperlink{class_mouse_af2badf36740929a980a9b1eab2346bfa}{get\+Position}} ()
+\item 
+static glm\+::ivec2 \mbox{\hyperlink{class_mouse_a6b62bf3687c7f2455dbaa16945f7151f}{get\+Position}} (\mbox{\hyperlink{class_window}{Window}} \&wnd)
+\item 
+static bool \mbox{\hyperlink{class_mouse_a9a9a758b94359fcb3d8a49e5f86a2175}{is\+Key\+Pressed}} (\mbox{\hyperlink{class_mouse_aeb3a0777eba26747039c8a13c17a40a0}{Key}} key)
+\item 
+static bool \mbox{\hyperlink{class_mouse_a0ca4082d55651d3dd829148542139015}{is\+Key\+Released}} (\mbox{\hyperlink{class_mouse_aeb3a0777eba26747039c8a13c17a40a0}{Key}} key)
+\item 
+static void \mbox{\hyperlink{class_mouse_a3cf28e364feb9182f5173504d403aac8}{update}} (\mbox{\hyperlink{class_window}{Window}} \&wnd)
+\item 
+static void \mbox{\hyperlink{class_mouse_a875e570d8179ef1d34665356b79dee2c}{set\+Mouse\+Move\+Delta\+Callback}} (std\+::function$<$ void(glm\+::fvec2)$>$ callback)
+\item 
+static void \mbox{\hyperlink{class_mouse_aa124e034445a2543670cf40cb7bca24d}{reset\+Mouse\+Move\+Delta\+Callback}} ()
+\item 
+static void \mbox{\hyperlink{class_mouse_a911e76e78c9bfc6a2f3b10b1e984370a}{set\+Mouse\+Sensitivity}} (float sensitivity)
+\item 
+static void \mbox{\hyperlink{class_mouse_aad44b3992d2fb6c78c19a7257d05391b}{show\+Cursor}} ()
+\item 
+static void \mbox{\hyperlink{class_mouse_a0bca6ee4118eb39fca4ba09e2488aeb4}{hide\+Cursor}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_mouse_aeb3a0777eba26747039c8a13c17a40a0}\label{class_mouse_aeb3a0777eba26747039c8a13c17a40a0} 
+\index{Mouse@{Mouse}!Key@{Key}}
+\index{Key@{Key}!Mouse@{Mouse}}
+\doxysubsubsection{\texorpdfstring{Key}{Key}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_mouse_aeb3a0777eba26747039c8a13c17a40a0}{Mouse\+::\+Key}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!Mouse@{Mouse}}\index{Mouse@{Mouse}!Left@{Left}}}\Hypertarget{class_mouse_aeb3a0777eba26747039c8a13c17a40a0a945d5e233cf7d6240f6b783b36a374ff}\label{class_mouse_aeb3a0777eba26747039c8a13c17a40a0a945d5e233cf7d6240f6b783b36a374ff} 
+Left&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!Mouse@{Mouse}}\index{Mouse@{Mouse}!Right@{Right}}}\Hypertarget{class_mouse_aeb3a0777eba26747039c8a13c17a40a0a92b09c7c48c520c3c55e497875da437c}\label{class_mouse_aeb3a0777eba26747039c8a13c17a40a0a92b09c7c48c520c3c55e497875da437c} 
+Right&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Center@{Center}!Mouse@{Mouse}}\index{Mouse@{Mouse}!Center@{Center}}}\Hypertarget{class_mouse_aeb3a0777eba26747039c8a13c17a40a0a4f1f6016fc9f3f2353c0cc7c67b292bd}\label{class_mouse_aeb3a0777eba26747039c8a13c17a40a0a4f1f6016fc9f3f2353c0cc7c67b292bd} 
+Center&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mouse_a46a6f1f50b5db915c64bfb318f0298d6}\label{class_mouse_a46a6f1f50b5db915c64bfb318f0298d6} 
+\index{Mouse@{Mouse}!Mouse@{Mouse}}
+\index{Mouse@{Mouse}!Mouse@{Mouse}}
+\doxysubsubsection{\texorpdfstring{Mouse()}{Mouse()}}
+{\footnotesize\ttfamily Mouse\+::\+Mouse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mouse_af2badf36740929a980a9b1eab2346bfa}\label{class_mouse_af2badf36740929a980a9b1eab2346bfa} 
+\index{Mouse@{Mouse}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Mouse@{Mouse}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily glm\+::ivec2 Mouse\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_mouse_a6b62bf3687c7f2455dbaa16945f7151f}\label{class_mouse_a6b62bf3687c7f2455dbaa16945f7151f} 
+\index{Mouse@{Mouse}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Mouse@{Mouse}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily glm\+::ivec2 Mouse\+::get\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_window}{Window}} \&}]{wnd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_mouse_a0bca6ee4118eb39fca4ba09e2488aeb4}\label{class_mouse_a0bca6ee4118eb39fca4ba09e2488aeb4} 
+\index{Mouse@{Mouse}!hideCursor@{hideCursor}}
+\index{hideCursor@{hideCursor}!Mouse@{Mouse}}
+\doxysubsubsection{\texorpdfstring{hideCursor()}{hideCursor()}}
+{\footnotesize\ttfamily void Mouse\+::hide\+Cursor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_mouse_a9a9a758b94359fcb3d8a49e5f86a2175}\label{class_mouse_a9a9a758b94359fcb3d8a49e5f86a2175} 
+\index{Mouse@{Mouse}!isKeyPressed@{isKeyPressed}}
+\index{isKeyPressed@{isKeyPressed}!Mouse@{Mouse}}
+\doxysubsubsection{\texorpdfstring{isKeyPressed()}{isKeyPressed()}}
+{\footnotesize\ttfamily bool Mouse\+::is\+Key\+Pressed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mouse_aeb3a0777eba26747039c8a13c17a40a0}{Key}}}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_mouse_a0ca4082d55651d3dd829148542139015}\label{class_mouse_a0ca4082d55651d3dd829148542139015} 
+\index{Mouse@{Mouse}!isKeyReleased@{isKeyReleased}}
+\index{isKeyReleased@{isKeyReleased}!Mouse@{Mouse}}
+\doxysubsubsection{\texorpdfstring{isKeyReleased()}{isKeyReleased()}}
+{\footnotesize\ttfamily bool Mouse\+::is\+Key\+Released (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mouse_aeb3a0777eba26747039c8a13c17a40a0}{Key}}}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_mouse_aa124e034445a2543670cf40cb7bca24d}\label{class_mouse_aa124e034445a2543670cf40cb7bca24d} 
+\index{Mouse@{Mouse}!resetMouseMoveDeltaCallback@{resetMouseMoveDeltaCallback}}
+\index{resetMouseMoveDeltaCallback@{resetMouseMoveDeltaCallback}!Mouse@{Mouse}}
+\doxysubsubsection{\texorpdfstring{resetMouseMoveDeltaCallback()}{resetMouseMoveDeltaCallback()}}
+{\footnotesize\ttfamily void Mouse\+::reset\+Mouse\+Move\+Delta\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_mouse_a875e570d8179ef1d34665356b79dee2c}\label{class_mouse_a875e570d8179ef1d34665356b79dee2c} 
+\index{Mouse@{Mouse}!setMouseMoveDeltaCallback@{setMouseMoveDeltaCallback}}
+\index{setMouseMoveDeltaCallback@{setMouseMoveDeltaCallback}!Mouse@{Mouse}}
+\doxysubsubsection{\texorpdfstring{setMouseMoveDeltaCallback()}{setMouseMoveDeltaCallback()}}
+{\footnotesize\ttfamily void Mouse\+::set\+Mouse\+Move\+Delta\+Callback (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(glm\+::fvec2)$>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_mouse_a911e76e78c9bfc6a2f3b10b1e984370a}\label{class_mouse_a911e76e78c9bfc6a2f3b10b1e984370a} 
+\index{Mouse@{Mouse}!setMouseSensitivity@{setMouseSensitivity}}
+\index{setMouseSensitivity@{setMouseSensitivity}!Mouse@{Mouse}}
+\doxysubsubsection{\texorpdfstring{setMouseSensitivity()}{setMouseSensitivity()}}
+{\footnotesize\ttfamily void Mouse\+::set\+Mouse\+Sensitivity (\begin{DoxyParamCaption}\item[{float}]{sensitivity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_mouse_aad44b3992d2fb6c78c19a7257d05391b}\label{class_mouse_aad44b3992d2fb6c78c19a7257d05391b} 
+\index{Mouse@{Mouse}!showCursor@{showCursor}}
+\index{showCursor@{showCursor}!Mouse@{Mouse}}
+\doxysubsubsection{\texorpdfstring{showCursor()}{showCursor()}}
+{\footnotesize\ttfamily void Mouse\+::show\+Cursor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_mouse_a3cf28e364feb9182f5173504d403aac8}\label{class_mouse_a3cf28e364feb9182f5173504d403aac8} 
+\index{Mouse@{Mouse}!update@{update}}
+\index{update@{update}!Mouse@{Mouse}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Mouse\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_window}{Window}} \&}]{wnd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+

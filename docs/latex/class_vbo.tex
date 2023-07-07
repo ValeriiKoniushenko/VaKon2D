@@ -1,0 +1,135 @@
+\doxysection{Vbo Class Reference}
+\hypertarget{class_vbo}{}\label{class_vbo}\index{Vbo@{Vbo}}
+
+
+{\ttfamily \#include $<$Vbo.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vbo_a22c55da11b9b0570e96260585c428503}{Vbo}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_vbo_a128094133d7bf1b83628ed5880d18c08}{\texorpdfstring{$\sim$}{\string~}\+Vbo}} ()
+\item 
+\mbox{\hyperlink{class_vbo_a8cff9b4abcbe4cab3166c03c0c813fcb}{Vbo}} (bool should\+Generate, bool should\+Bind)
+\item 
+\mbox{\hyperlink{class_vbo_a460a2426297dd5969d8f51fc8e096a6e}{Vbo}} (const std\+::vector$<$ float $>$ \&\mbox{\hyperlink{class_vbo_a6a05d1084d342159b24aa7087de0f255}{data}}, GLenum usage=GL\+\_\+\+STATIC\+\_\+\+DRAW)
+\item 
+\mbox{\hyperlink{class_vbo_a3ff9406c359beedd0bcab073057daced}{Vbo}} (const \mbox{\hyperlink{class_vbo}{Vbo}} \&)=default
+\item 
+\mbox{\hyperlink{class_vbo_a070aa0e93a63e5a16257ce15d99eca36}{Vbo}} (\mbox{\hyperlink{class_vbo}{Vbo}} \&\&Other)
+\item 
+\mbox{\hyperlink{class_vbo}{Vbo}} \& \mbox{\hyperlink{class_vbo_a58ab8a4463e2eb8fb10d339e6c4def60}{operator=}} (const \mbox{\hyperlink{class_vbo}{Vbo}} \&)=default
+\item 
+\mbox{\hyperlink{class_vbo}{Vbo}} \& \mbox{\hyperlink{class_vbo_a22fc33f15c6e6e75028897d27bba3d23}{operator=}} (\mbox{\hyperlink{class_vbo}{Vbo}} \&\&Other)
+\item 
+void \mbox{\hyperlink{class_vbo_ae7f9013a2ad3e0d317bf273cd29f0425}{generate}} ()
+\item 
+void \mbox{\hyperlink{class_vbo_a919bf11f2dda8d8a3e78ab8873dc13c0}{bind}} ()
+\item 
+void \mbox{\hyperlink{class_vbo_a23531b4cf6a7751163e2b370ba9be619}{unbind}} ()
+\item 
+void \mbox{\hyperlink{class_vbo_a8ab872a5b0b430d12a122692c5e706b9}{destroy}} ()
+\item 
+\+\_\+\+NODISCARD bool \mbox{\hyperlink{class_vbo_ad13a7a6ba44295eddec14a902996a03d}{is\+Generated}} () const
+\item 
+\+\_\+\+NODISCARD bool \mbox{\hyperlink{class_vbo_a1ef0528345a61aa78df2cfb15a754741}{is\+Bind}} () const
+\item 
+void \mbox{\hyperlink{class_vbo_a6a05d1084d342159b24aa7087de0f255}{data}} (const std\+::vector$<$ float $>$ \&vertices, GLenum usage=GL\+\_\+\+STATIC\+\_\+\+DRAW)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_vbo_a22c55da11b9b0570e96260585c428503}\label{class_vbo_a22c55da11b9b0570e96260585c428503} 
+\index{Vbo@{Vbo}!Vbo@{Vbo}}
+\index{Vbo@{Vbo}!Vbo@{Vbo}}
+\doxysubsubsection{\texorpdfstring{Vbo()}{Vbo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Vbo\+::\+Vbo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_vbo_a128094133d7bf1b83628ed5880d18c08}\label{class_vbo_a128094133d7bf1b83628ed5880d18c08} 
+\index{Vbo@{Vbo}!````~Vbo@{\texorpdfstring{$\sim$}{\string~}Vbo}}
+\index{````~Vbo@{\texorpdfstring{$\sim$}{\string~}Vbo}!Vbo@{Vbo}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Vbo()}{\string~Vbo()}}
+{\footnotesize\ttfamily Vbo\+::\texorpdfstring{$\sim$}{\string~}\+Vbo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\Hypertarget{class_vbo_a8cff9b4abcbe4cab3166c03c0c813fcb}\label{class_vbo_a8cff9b4abcbe4cab3166c03c0c813fcb} 
+\index{Vbo@{Vbo}!Vbo@{Vbo}}
+\index{Vbo@{Vbo}!Vbo@{Vbo}}
+\doxysubsubsection{\texorpdfstring{Vbo()}{Vbo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Vbo\+::\+Vbo (\begin{DoxyParamCaption}\item[{bool}]{should\+Generate,  }\item[{bool}]{should\+Bind }\end{DoxyParamCaption})}
+
+\Hypertarget{class_vbo_a460a2426297dd5969d8f51fc8e096a6e}\label{class_vbo_a460a2426297dd5969d8f51fc8e096a6e} 
+\index{Vbo@{Vbo}!Vbo@{Vbo}}
+\index{Vbo@{Vbo}!Vbo@{Vbo}}
+\doxysubsubsection{\texorpdfstring{Vbo()}{Vbo()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Vbo\+::\+Vbo (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{data,  }\item[{GLenum}]{usage = {\ttfamily GL\+\_\+STATIC\+\_\+DRAW} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\Hypertarget{class_vbo_a3ff9406c359beedd0bcab073057daced}\label{class_vbo_a3ff9406c359beedd0bcab073057daced} 
+\index{Vbo@{Vbo}!Vbo@{Vbo}}
+\index{Vbo@{Vbo}!Vbo@{Vbo}}
+\doxysubsubsection{\texorpdfstring{Vbo()}{Vbo()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Vbo\+::\+Vbo (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vbo}{Vbo}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_vbo_a070aa0e93a63e5a16257ce15d99eca36}\label{class_vbo_a070aa0e93a63e5a16257ce15d99eca36} 
+\index{Vbo@{Vbo}!Vbo@{Vbo}}
+\index{Vbo@{Vbo}!Vbo@{Vbo}}
+\doxysubsubsection{\texorpdfstring{Vbo()}{Vbo()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Vbo\+::\+Vbo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vbo}{Vbo}} \&\&}]{Other }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_vbo_a919bf11f2dda8d8a3e78ab8873dc13c0}\label{class_vbo_a919bf11f2dda8d8a3e78ab8873dc13c0} 
+\index{Vbo@{Vbo}!bind@{bind}}
+\index{bind@{bind}!Vbo@{Vbo}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily void Vbo\+::bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_vbo_a6a05d1084d342159b24aa7087de0f255}\label{class_vbo_a6a05d1084d342159b24aa7087de0f255} 
+\index{Vbo@{Vbo}!data@{data}}
+\index{data@{data}!Vbo@{Vbo}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily void Vbo\+::data (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{vertices,  }\item[{GLenum}]{usage = {\ttfamily GL\+\_\+STATIC\+\_\+DRAW} }\end{DoxyParamCaption})}
+
+\Hypertarget{class_vbo_a8ab872a5b0b430d12a122692c5e706b9}\label{class_vbo_a8ab872a5b0b430d12a122692c5e706b9} 
+\index{Vbo@{Vbo}!destroy@{destroy}}
+\index{destroy@{destroy}!Vbo@{Vbo}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily void Vbo\+::destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_vbo_ae7f9013a2ad3e0d317bf273cd29f0425}\label{class_vbo_ae7f9013a2ad3e0d317bf273cd29f0425} 
+\index{Vbo@{Vbo}!generate@{generate}}
+\index{generate@{generate}!Vbo@{Vbo}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily void Vbo\+::generate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_vbo_a1ef0528345a61aa78df2cfb15a754741}\label{class_vbo_a1ef0528345a61aa78df2cfb15a754741} 
+\index{Vbo@{Vbo}!isBind@{isBind}}
+\index{isBind@{isBind}!Vbo@{Vbo}}
+\doxysubsubsection{\texorpdfstring{isBind()}{isBind()}}
+{\footnotesize\ttfamily bool Vbo\+::is\+Bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_vbo_ad13a7a6ba44295eddec14a902996a03d}\label{class_vbo_ad13a7a6ba44295eddec14a902996a03d} 
+\index{Vbo@{Vbo}!isGenerated@{isGenerated}}
+\index{isGenerated@{isGenerated}!Vbo@{Vbo}}
+\doxysubsubsection{\texorpdfstring{isGenerated()}{isGenerated()}}
+{\footnotesize\ttfamily bool Vbo\+::is\+Generated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_vbo_a58ab8a4463e2eb8fb10d339e6c4def60}\label{class_vbo_a58ab8a4463e2eb8fb10d339e6c4def60} 
+\index{Vbo@{Vbo}!operator=@{operator=}}
+\index{operator=@{operator=}!Vbo@{Vbo}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vbo}{Vbo}} \& Vbo\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vbo}{Vbo}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_vbo_a22fc33f15c6e6e75028897d27bba3d23}\label{class_vbo_a22fc33f15c6e6e75028897d27bba3d23} 
+\index{Vbo@{Vbo}!operator=@{operator=}}
+\index{operator=@{operator=}!Vbo@{Vbo}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vbo}{Vbo}} \& Vbo\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vbo}{Vbo}} \&\&}]{Other }\end{DoxyParamCaption})}
+
+\Hypertarget{class_vbo_a23531b4cf6a7751163e2b370ba9be619}\label{class_vbo_a23531b4cf6a7751163e2b370ba9be619} 
+\index{Vbo@{Vbo}!unbind@{unbind}}
+\index{unbind@{unbind}!Vbo@{Vbo}}
+\doxysubsubsection{\texorpdfstring{unbind()}{unbind()}}
+{\footnotesize\ttfamily void Vbo\+::unbind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

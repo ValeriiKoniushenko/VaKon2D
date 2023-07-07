@@ -1,0 +1,113 @@
+\doxysection{Gl\+::Shader Class Reference}
+\hypertarget{class_gl_1_1_shader}{}\label{class_gl_1_1_shader}\index{Gl::Shader@{Gl::Shader}}
+
+
+{\ttfamily \#include $<$Gl.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019}{Type}} \{ \mbox{\hyperlink{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019a37d01b98065725fe3a1d30acf3a0064a}{Fragment}} = GL\+\_\+\+FRAGMENT\+\_\+\+SHADER
+, \mbox{\hyperlink{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019ad9c6333623e6357515fcbf17be806273}{Geometry}} = GL\+\_\+\+GEOMETRY\+\_\+\+SHADER
+, \mbox{\hyperlink{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019ab22b929ba52471a02d18bb3a4e4472e6}{Vertex}} = GL\+\_\+\+VERTEX\+\_\+\+SHADER
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \+\_\+\+NODISCARD GLuint \mbox{\hyperlink{class_gl_1_1_shader_ac0dc8a6e0f93a0af3ed31c610b0df827}{create}} (\mbox{\hyperlink{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019}{Type}} type)
+\item 
+static \+\_\+\+NODISCARD GLuint \mbox{\hyperlink{class_gl_1_1_shader_a67e68e13f2cbc691e8d65c51f4a9512e}{create\+And\+Load\+Shader\+From\+File}} (const std\+::filesystem\+::path \&path, \mbox{\hyperlink{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019}{Type}} type)
+\item 
+static \+\_\+\+NODISCARD GLint \mbox{\hyperlink{class_gl_1_1_shader_ade26a962c04f84a7d70e8c08f4bab8c2}{get\+Shaderiv}} (GLuint shader, GLenum pname)
+\item 
+static \+\_\+\+NODISCARD std\+::string \mbox{\hyperlink{class_gl_1_1_shader_a076efc6d3f855c5844d3e51d4daea292}{get\+Shader\+Info\+Log}} (GLuint shader)
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_shader_acefd73ccf7630026d4a5a2e0ba1523bf}{delete\+Shader}} (GLuint shader)
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_shader_a444ec94bdbe144ccdf53a230d37adeda}{compile}} (GLuint shader)
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_shader_a12e5bdf34c7625b32cb969314148d594}{source}} (GLuint shader, const char \texorpdfstring{$\ast$}{*}sources)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const GLuint \mbox{\hyperlink{class_gl_1_1_shader_a71bb2f32884cff06a7a4da2057a200e2}{invalid\+Id}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019}\label{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019} 
+\index{Gl::Shader@{Gl::Shader}!Type@{Type}}
+\index{Type@{Type}!Gl::Shader@{Gl::Shader}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019}{Gl\+::\+Shader\+::\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fragment@{Fragment}!Gl::Shader@{Gl::Shader}}\index{Gl::Shader@{Gl::Shader}!Fragment@{Fragment}}}\Hypertarget{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019a37d01b98065725fe3a1d30acf3a0064a}\label{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019a37d01b98065725fe3a1d30acf3a0064a} 
+Fragment&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Geometry@{Geometry}!Gl::Shader@{Gl::Shader}}\index{Gl::Shader@{Gl::Shader}!Geometry@{Geometry}}}\Hypertarget{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019ad9c6333623e6357515fcbf17be806273}\label{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019ad9c6333623e6357515fcbf17be806273} 
+Geometry&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Vertex@{Vertex}!Gl::Shader@{Gl::Shader}}\index{Gl::Shader@{Gl::Shader}!Vertex@{Vertex}}}\Hypertarget{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019ab22b929ba52471a02d18bb3a4e4472e6}\label{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019ab22b929ba52471a02d18bb3a4e4472e6} 
+Vertex&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gl_1_1_shader_a444ec94bdbe144ccdf53a230d37adeda}\label{class_gl_1_1_shader_a444ec94bdbe144ccdf53a230d37adeda} 
+\index{Gl::Shader@{Gl::Shader}!compile@{compile}}
+\index{compile@{compile}!Gl::Shader@{Gl::Shader}}
+\doxysubsubsection{\texorpdfstring{compile()}{compile()}}
+{\footnotesize\ttfamily void Gl\+::\+Shader\+::compile (\begin{DoxyParamCaption}\item[{GLuint}]{shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_shader_ac0dc8a6e0f93a0af3ed31c610b0df827}\label{class_gl_1_1_shader_ac0dc8a6e0f93a0af3ed31c610b0df827} 
+\index{Gl::Shader@{Gl::Shader}!create@{create}}
+\index{create@{create}!Gl::Shader@{Gl::Shader}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily GLuint Gl\+::\+Shader\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019}{Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_shader_a67e68e13f2cbc691e8d65c51f4a9512e}\label{class_gl_1_1_shader_a67e68e13f2cbc691e8d65c51f4a9512e} 
+\index{Gl::Shader@{Gl::Shader}!createAndLoadShaderFromFile@{createAndLoadShaderFromFile}}
+\index{createAndLoadShaderFromFile@{createAndLoadShaderFromFile}!Gl::Shader@{Gl::Shader}}
+\doxysubsubsection{\texorpdfstring{createAndLoadShaderFromFile()}{createAndLoadShaderFromFile()}}
+{\footnotesize\ttfamily GLuint Gl\+::\+Shader\+::create\+And\+Load\+Shader\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{path,  }\item[{\mbox{\hyperlink{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019}{Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_shader_acefd73ccf7630026d4a5a2e0ba1523bf}\label{class_gl_1_1_shader_acefd73ccf7630026d4a5a2e0ba1523bf} 
+\index{Gl::Shader@{Gl::Shader}!deleteShader@{deleteShader}}
+\index{deleteShader@{deleteShader}!Gl::Shader@{Gl::Shader}}
+\doxysubsubsection{\texorpdfstring{deleteShader()}{deleteShader()}}
+{\footnotesize\ttfamily void Gl\+::\+Shader\+::delete\+Shader (\begin{DoxyParamCaption}\item[{GLuint}]{shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_shader_a076efc6d3f855c5844d3e51d4daea292}\label{class_gl_1_1_shader_a076efc6d3f855c5844d3e51d4daea292} 
+\index{Gl::Shader@{Gl::Shader}!getShaderInfoLog@{getShaderInfoLog}}
+\index{getShaderInfoLog@{getShaderInfoLog}!Gl::Shader@{Gl::Shader}}
+\doxysubsubsection{\texorpdfstring{getShaderInfoLog()}{getShaderInfoLog()}}
+{\footnotesize\ttfamily std\+::string Gl\+::\+Shader\+::get\+Shader\+Info\+Log (\begin{DoxyParamCaption}\item[{GLuint}]{shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_shader_ade26a962c04f84a7d70e8c08f4bab8c2}\label{class_gl_1_1_shader_ade26a962c04f84a7d70e8c08f4bab8c2} 
+\index{Gl::Shader@{Gl::Shader}!getShaderiv@{getShaderiv}}
+\index{getShaderiv@{getShaderiv}!Gl::Shader@{Gl::Shader}}
+\doxysubsubsection{\texorpdfstring{getShaderiv()}{getShaderiv()}}
+{\footnotesize\ttfamily GLint Gl\+::\+Shader\+::get\+Shaderiv (\begin{DoxyParamCaption}\item[{GLuint}]{shader,  }\item[{GLenum}]{pname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_shader_a12e5bdf34c7625b32cb969314148d594}\label{class_gl_1_1_shader_a12e5bdf34c7625b32cb969314148d594} 
+\index{Gl::Shader@{Gl::Shader}!source@{source}}
+\index{source@{source}!Gl::Shader@{Gl::Shader}}
+\doxysubsubsection{\texorpdfstring{source()}{source()}}
+{\footnotesize\ttfamily void Gl\+::\+Shader\+::source (\begin{DoxyParamCaption}\item[{GLuint}]{shader,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{sources }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_gl_1_1_shader_a71bb2f32884cff06a7a4da2057a200e2}\label{class_gl_1_1_shader_a71bb2f32884cff06a7a4da2057a200e2} 
+\index{Gl::Shader@{Gl::Shader}!invalidId@{invalidId}}
+\index{invalidId@{invalidId}!Gl::Shader@{Gl::Shader}}
+\doxysubsubsection{\texorpdfstring{invalidId}{invalidId}}
+{\footnotesize\ttfamily const GLuint Gl\+::\+Shader\+::invalid\+Id = 0\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+

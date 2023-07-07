@@ -1,0 +1,187 @@
+\doxysection{Image Class Reference}
+\hypertarget{class_image}{}\label{class_image}\index{Image@{Image}}
+
+
+{\ttfamily \#include $<$Image.\+h$>$}
+
+Inheritance diagram for Image\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_image}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eb}{Channel}} \{ \newline
+\mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eba6adf97f83acf6453d4a6a4b1070f3754}{None}} = 0
+, \mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5ebacaf3a042a037c064b7513ed640c22f77}{Grey}} = 1
+, \mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eba23b7c8292fe01bd7cb207f6beb79e47a}{GreyA}} = 2
+, \mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eba889574aebacda6bfd3e534e2b49b8028}{RGB}} = 3
+, \newline
+\mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5ebaea3495a278957dc58165e48a8945469f}{RGBA}} = 4
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_image_ae7bcc652878e757eca345ce21d06c57c}{Image}} (std\+::filesystem\+::path \&\&path=\"{}\"{})
+\item 
+\mbox{\hyperlink{class_image_a5f94bbc294a64909eb83d7dc5417417e}{Image}} (\mbox{\hyperlink{class_image}{Image}} \&\&obj) noexcept
+\item 
+\mbox{\hyperlink{class_image}{Image}} \& \mbox{\hyperlink{class_image_a4d2ee0f0f35824abd031bfa62782c174}{operator=}} (\mbox{\hyperlink{class_image}{Image}} \&\&obj)
+\item 
+\mbox{\hyperlink{class_image_a7b0235b2b5784ae92262dc7fd6c84c84}{\texorpdfstring{$\sim$}{\string~}\+Image}} () override
+\item 
+\+\_\+\+NODISCARD int \mbox{\hyperlink{class_image_a36bcae4838228d574738249a87dc4464}{get\+Width}} () const
+\item 
+\+\_\+\+NODISCARD int \mbox{\hyperlink{class_image_a1cd7587f88b6932b5269051d1ba08ff9}{get\+Height}} () const
+\item 
+\+\_\+\+NODISCARD glm\+::ivec2 \mbox{\hyperlink{class_image_a5b7a1ce5c8a1effcbd2921709b4261fe}{get\+Size}} () const
+\item 
+\+\_\+\+NODISCARD \mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eb}{Channel}} \mbox{\hyperlink{class_image_aadf22a378598ecc93de197b4a6a0a753}{get\+Channel}} () const
+\item 
+\+\_\+\+NODISCARD unsigned char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_image_a64cd9e2772df6b18627d8b37a3d362fd}{data}} ()
+\item 
+\+\_\+\+NODISCARD const unsigned char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_image_a70a32d813a2abc6731ed27ef091240fa}{data}} () const
+\item 
+void \mbox{\hyperlink{class_image_a690d3e9bb96d4f516240fa60415afd67}{load\+Image}} (std\+::filesystem\+::path \&\&, bool is\+Flip\+Vertically=true)
+\item 
+void \mbox{\hyperlink{class_image_aff0f823cc016683dcbc768813aed65d8}{load\+To\+Gpu}} ()
+\item 
+void \mbox{\hyperlink{class_image_a3a233515eb3a5f83917dc634c778db5a}{clear}} ()
+\item 
+\+\_\+\+NODISCARD bool \mbox{\hyperlink{class_image_ad9b9016c9e5b309b338b12d76a09aa5f}{is\+Empty}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \+\_\+\+NODISCARD GLenum \mbox{\hyperlink{class_image_a74419c0e79623ce3602905fc6ed7650c}{convert\+Channel\+To\+Gl\+Channel}} (\mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eb}{Channel}} channel)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_image_afe74defc826aae605cb2214cbf34c5eb}\label{class_image_afe74defc826aae605cb2214cbf34c5eb} 
+\index{Image@{Image}!Channel@{Channel}}
+\index{Channel@{Channel}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{Channel}{Channel}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eb}{Image\+::\+Channel}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!Image@{Image}}\index{Image@{Image}!None@{None}}}\Hypertarget{class_image_afe74defc826aae605cb2214cbf34c5eba6adf97f83acf6453d4a6a4b1070f3754}\label{class_image_afe74defc826aae605cb2214cbf34c5eba6adf97f83acf6453d4a6a4b1070f3754} 
+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Grey@{Grey}!Image@{Image}}\index{Image@{Image}!Grey@{Grey}}}\Hypertarget{class_image_afe74defc826aae605cb2214cbf34c5ebacaf3a042a037c064b7513ed640c22f77}\label{class_image_afe74defc826aae605cb2214cbf34c5ebacaf3a042a037c064b7513ed640c22f77} 
+Grey&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GreyA@{GreyA}!Image@{Image}}\index{Image@{Image}!GreyA@{GreyA}}}\Hypertarget{class_image_afe74defc826aae605cb2214cbf34c5eba23b7c8292fe01bd7cb207f6beb79e47a}\label{class_image_afe74defc826aae605cb2214cbf34c5eba23b7c8292fe01bd7cb207f6beb79e47a} 
+GreyA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RGB@{RGB}!Image@{Image}}\index{Image@{Image}!RGB@{RGB}}}\Hypertarget{class_image_afe74defc826aae605cb2214cbf34c5eba889574aebacda6bfd3e534e2b49b8028}\label{class_image_afe74defc826aae605cb2214cbf34c5eba889574aebacda6bfd3e534e2b49b8028} 
+RGB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RGBA@{RGBA}!Image@{Image}}\index{Image@{Image}!RGBA@{RGBA}}}\Hypertarget{class_image_afe74defc826aae605cb2214cbf34c5ebaea3495a278957dc58165e48a8945469f}\label{class_image_afe74defc826aae605cb2214cbf34c5ebaea3495a278957dc58165e48a8945469f} 
+RGBA&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_image_ae7bcc652878e757eca345ce21d06c57c}\label{class_image_ae7bcc652878e757eca345ce21d06c57c} 
+\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Image\+::\+Image (\begin{DoxyParamCaption}\item[{std\+::filesystem\+::path \&\&}]{path = {\ttfamily \"{}\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\Hypertarget{class_image_a5f94bbc294a64909eb83d7dc5417417e}\label{class_image_a5f94bbc294a64909eb83d7dc5417417e} 
+\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Image\+::\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&\&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\Hypertarget{class_image_a7b0235b2b5784ae92262dc7fd6c84c84}\label{class_image_a7b0235b2b5784ae92262dc7fd6c84c84} 
+\index{Image@{Image}!````~Image@{\texorpdfstring{$\sim$}{\string~}Image}}
+\index{````~Image@{\texorpdfstring{$\sim$}{\string~}Image}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Image()}{\string~Image()}}
+{\footnotesize\ttfamily Image\+::\texorpdfstring{$\sim$}{\string~}\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_image_a3a233515eb3a5f83917dc634c778db5a}\label{class_image_a3a233515eb3a5f83917dc634c778db5a} 
+\index{Image@{Image}!clear@{clear}}
+\index{clear@{clear}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Image\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_image_a74419c0e79623ce3602905fc6ed7650c}\label{class_image_a74419c0e79623ce3602905fc6ed7650c} 
+\index{Image@{Image}!convertChannelToGlChannel@{convertChannelToGlChannel}}
+\index{convertChannelToGlChannel@{convertChannelToGlChannel}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{convertChannelToGlChannel()}{convertChannelToGlChannel()}}
+{\footnotesize\ttfamily GLenum Image\+::convert\+Channel\+To\+Gl\+Channel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eb}{Image\+::\+Channel}}}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_image_a64cd9e2772df6b18627d8b37a3d362fd}\label{class_image_a64cd9e2772df6b18627d8b37a3d362fd} 
+\index{Image@{Image}!data@{data}}
+\index{data@{data}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned char \texorpdfstring{$\ast$}{*} Image\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_image_a70a32d813a2abc6731ed27ef091240fa}\label{class_image_a70a32d813a2abc6731ed27ef091240fa} 
+\index{Image@{Image}!data@{data}}
+\index{data@{data}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const unsigned char \texorpdfstring{$\ast$}{*} Image\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_image_aadf22a378598ecc93de197b4a6a0a753}\label{class_image_aadf22a378598ecc93de197b4a6a0a753} 
+\index{Image@{Image}!getChannel@{getChannel}}
+\index{getChannel@{getChannel}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{getChannel()}{getChannel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eb}{Image\+::\+Channel}} Image\+::get\+Channel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_image_a1cd7587f88b6932b5269051d1ba08ff9}\label{class_image_a1cd7587f88b6932b5269051d1ba08ff9} 
+\index{Image@{Image}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily int Image\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_image_a5b7a1ce5c8a1effcbd2921709b4261fe}\label{class_image_a5b7a1ce5c8a1effcbd2921709b4261fe} 
+\index{Image@{Image}!getSize@{getSize}}
+\index{getSize@{getSize}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily glm\+::ivec2 Image\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_image_a36bcae4838228d574738249a87dc4464}\label{class_image_a36bcae4838228d574738249a87dc4464} 
+\index{Image@{Image}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily int Image\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_image_ad9b9016c9e5b309b338b12d76a09aa5f}\label{class_image_ad9b9016c9e5b309b338b12d76a09aa5f} 
+\index{Image@{Image}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool Image\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_image_a690d3e9bb96d4f516240fa60415afd67}\label{class_image_a690d3e9bb96d4f516240fa60415afd67} 
+\index{Image@{Image}!loadImage@{loadImage}}
+\index{loadImage@{loadImage}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{loadImage()}{loadImage()}}
+{\footnotesize\ttfamily void Image\+::load\+Image (\begin{DoxyParamCaption}\item[{std\+::filesystem\+::path \&\&}]{path,  }\item[{bool}]{is\+Flip\+Vertically = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\Hypertarget{class_image_aff0f823cc016683dcbc768813aed65d8}\label{class_image_aff0f823cc016683dcbc768813aed65d8} 
+\index{Image@{Image}!loadToGpu@{loadToGpu}}
+\index{loadToGpu@{loadToGpu}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{loadToGpu()}{loadToGpu()}}
+{\footnotesize\ttfamily void Image\+::load\+To\+Gpu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_image_a4d2ee0f0f35824abd031bfa62782c174}\label{class_image_a4d2ee0f0f35824abd031bfa62782c174} 
+\index{Image@{Image}!operator=@{operator=}}
+\index{operator=@{operator=}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image}{Image}} \& Image\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&\&}]{obj }\end{DoxyParamCaption})}
+

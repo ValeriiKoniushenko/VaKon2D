@@ -1,0 +1,140 @@
+\doxysection{Keyboard.\+h}
+\hypertarget{_keyboard_8h_source}{}\label{_keyboard_8h_source}\index{lib/core/input-\/devices/include/Keyboard.h@{lib/core/input-\/devices/include/Keyboard.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ MIT\ License}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (c)\ 2023\ Valerii\ Koniushenko}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ in\ the\ Software\ without\ restriction,\ including\ without\ limitation\ the\ rights}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ SOFTWARE.}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <Windows.h>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_keyboard}{Keyboard}}\ final}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1}{Key}}}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a6adf97f83acf6453d4a6a4b1070f3754}{None}},}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a7fc56270e7a70fa81a5935b72eacbe29}{A}}\ =\ \textcolor{charliteral}{'A'},}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a9d5ed678fe57bcca610140957afab571}{B}}\ =\ \textcolor{charliteral}{'B'},}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a0d61f8370cad1d412f80b84d143e1257}{C}}\ =\ \textcolor{charliteral}{'C'},}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1af623e75af30e62bbd73d6df5b50bb7b5}{D}}\ =\ \textcolor{charliteral}{'D'},}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a3a3ea00cfc35332cedf6e5e9a32e94da}{E}}\ =\ \textcolor{charliteral}{'E'},}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a800618943025315f869e4e1f09471012}{F}}\ =\ \textcolor{charliteral}{'F'},}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1adfcf28d0734569a6a693bc8194de62bf}{G}}\ =\ \textcolor{charliteral}{'G'},}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1ac1d9f50f86825a1a2302ec2449c17196}{H}}\ =\ \textcolor{charliteral}{'H'},}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1add7536794b63bf90eccfd37f9b147d7f}{I}}\ =\ \textcolor{charliteral}{'I'},}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1aff44570aca8241914870afbc310cdb85}{J}}\ =\ \textcolor{charliteral}{'J'},}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1aa5f3c6a11b03839d46af9fb43c97c188}{K}}\ =\ \textcolor{charliteral}{'K'},}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1ad20caec3b48a1eef164cb4ca81ba2587}{L}}\ =\ \textcolor{charliteral}{'L'},}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a69691c7bdcc3ce6d5d8a1361f22d04ac}{M}}\ =\ \textcolor{charliteral}{'M'},}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a8d9c307cb7f3c4a32822a51922d1ceaa}{N}}\ =\ \textcolor{charliteral}{'N'},}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1af186217753c37b9b9f958d906208506e}{O}}\ =\ \textcolor{charliteral}{'O'},}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a44c29edb103a2872f519ad0c9a0fdaaa}{P}}\ =\ \textcolor{charliteral}{'P'},}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1af09564c9ca56850d4cd6b3319e541aee}{Q}}\ =\ \textcolor{charliteral}{'Q'},}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1ae1e1d3d40573127e9ee0480caf1283d6}{R}}\ =\ \textcolor{charliteral}{'R'},}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a5dbc98dcc983a70728bd082d1a47546e}{S}}\ =\ \textcolor{charliteral}{'S'},}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1ab9ece18c950afbfa6b0fdbfa4ff731d3}{T}}\ =\ \textcolor{charliteral}{'T'},}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a4c614360da93c0a041b22e537de151eb}{U}}\ =\ \textcolor{charliteral}{'U'},}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a5206560a306a2e085a437fd258eb57ce}{V}}\ =\ \textcolor{charliteral}{'V'},}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a61e9c06ea9a85a5088a499df6458d276}{W}}\ =\ \textcolor{charliteral}{'W'},}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a02129bb861061d1a052c592e2dc6b383}{X}}\ =\ \textcolor{charliteral}{'X'},}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a57cec4137b614c87cb4e24a3d003a3e0}{Y}}\ =\ \textcolor{charliteral}{'Y'},}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a21c2e59531c8710156d34a3c30ac81d5}{Z}}\ =\ \textcolor{charliteral}{'Z'},}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a91f4253ca587ca8ac4e63b9ceb351f5d}{Esc}}\ =\ VK\_ESCAPE,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1ad511f8439ecde36647437fbba67a4394}{Space}}\ =\ VK\_SPACE,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1ae3d5e88745fd884d551c7f25237a5b5e}{Prior}}\ =\ VK\_PRIOR,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a10ac3d04253ef7e1ddc73e6091c0cd55}{Next}}\ =\ VK\_NEXT,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a87557f11575c0ad78e4e28abedc13b6e}{End}}\ =\ VK\_END,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a8cf04a9734132302f96da8e113e80ce5}{Home}}\ =\ VK\_HOME,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a945d5e233cf7d6240f6b783b36a374ff}{Left}}\ =\ VK\_LEFT,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a258f49887ef8d14ac268c92b02503aaa}{Up}}\ =\ VK\_UP,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a92b09c7c48c520c3c55e497875da437c}{Right}}\ =\ VK\_RIGHT,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a08a38277b0309070706f6652eeae9a53}{Down}}\ =\ VK\_DOWN,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1ae0626222614bdee31951d84c64e5e9ff}{Select}}\ =\ VK\_SELECT,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a13dba24862cf9128167a59100e154c8d}{Print}}\ =\ VK\_PRINT,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a40cd014b7b6251e3a22e6a45a73a64e1}{Execute}}\ =\ VK\_EXECUTE,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1ad4e2713d1b1725a1592f9268589f990d}{Snapshot}}\ =\ VK\_SNAPSHOT,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1aa458be0f08b7e4ff3c0f633c100176c0}{Insert}}\ =\ VK\_INSERT,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1af2a6c498fb90ee345d997f888fce3b18}{Delete}}\ =\ VK\_DELETE,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a6a26f548831e6a8c26bfbbd9f6ec61e0}{Help}}\ =\ VK\_HELP,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a1b1118fbe9aecd479f93d37449578365}{Numpad0}}\ =\ VK\_NUMPAD0,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1ac8e841f6b917061dd15aedb19a80cb77}{Numpad1}}\ =\ VK\_NUMPAD1,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1af7303042267ef3576930c1f4cd79348a}{Numpad2}}\ =\ VK\_NUMPAD2,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a5e23a433a108a85788894b705ec11cdd}{Numpad3}}\ =\ VK\_NUMPAD3,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a50b622a0442de23f15effc7fc46f3892}{Numpad4}}\ =\ VK\_NUMPAD4,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a6252c5b171a2982612e31042b953f558}{Numpad5}}\ =\ VK\_NUMPAD5,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a4d9afa3da3cc40661d50a925dd3010ad}{Numpad6}}\ =\ VK\_NUMPAD6,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a4314bbf1a297c4b03a5246a71c9c93b6}{Numpad7}}\ =\ VK\_NUMPAD7,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a8bf3a062ba0e0fa6ef21508d15e7820e}{Numpad8}}\ =\ VK\_NUMPAD8,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a15f7ca721fe2b648a34d498084f70919}{Numpad9}}\ =\ VK\_NUMPAD9,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1ae257376d913f3b53cbb4a9b19d770648}{Multiply}}\ =\ VK\_MULTIPLY,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1aec211f7c20af43e742bf2570c3cb84f9}{Add}}\ =\ VK\_ADD,}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a04b2e4188d4ef8051e4699da8af01335}{Separator}}\ =\ VK\_SEPARATOR,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a1d9baf077ee87921f57a8fe42d510b65}{Subtract}}\ =\ VK\_SUBTRACT,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a937504f318f04eaf0f1d701df4c4d7f3}{Decimal}}\ =\ VK\_DECIMAL,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a0b914e196182d02615487e9793ecff3d}{Divide}}\ =\ VK\_DIVIDE,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1ae1dffc8709f31a4987c8a88334107e89}{F1}}\ =\ VK\_F1,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1afe5c3684dce76cdd9f7f42430868aa74}{F2}}\ =\ VK\_F2,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a4b6bf4b531770872d4328ce69bef5627}{F3}}\ =\ VK\_F3,}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1ae7e0e72401a9f2718ed0f39f2861d702}{F4}}\ =\ VK\_F4,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a37f438df6a6d5ba4c17ef8ca58562f00}{F5}}\ =\ VK\_F5,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a1faf42f2823f184eb2c9f0dffe5d73f2}{F6}}\ =\ VK\_F6,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a47489eb597b7db34caa24b1fc78fc839}{F7}}\ =\ VK\_F7,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a4787509ad9f9d747a81a30e9dde3d4a7}{F8}}\ =\ VK\_F8,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a892a245e287c163080b23db737d3c4c9}{F9}}\ =\ VK\_F9,}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1ab213ce22ca6ad4eda8db82966b9b6e5a}{F10}}\ =\ VK\_F10,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a643b0662422d1d0dffa3fca2e2bf28a8}{F11}}\ =\ VK\_F11,}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1ae902674982fc99aa343cdd94da7476c3}{F12}}\ =\ VK\_F12,}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a95dfde4807d4d6a9eec499203b3c24a0}{F13}}\ =\ VK\_F13,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a2468649b6215c4cdd2aef5095b3f5932}{F14}}\ =\ VK\_F14,}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1ae53b55851b9ff4979f2c3ff434a4a138}{F15}}\ =\ VK\_F15,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a56d8353718e6fdc78b8d69078a2cdb94}{F16}}\ =\ VK\_F16,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1affa5882d1ddcf903bf0d0dbc30bfc604}{F17}}\ =\ VK\_F17,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a810b30cdfc07fd7fff553a94b828ff78}{F18}}\ =\ VK\_F18,}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1acd7c2a221ef5d0a34acc0bcd679b2054}{F19}}\ =\ VK\_F19,}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1afc335adb3d69d3d8270769e1923ea4dc}{F20}}\ =\ VK\_F20,}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a77e9eee7c579eef5f3731ecf1053c02e}{F21}}\ =\ VK\_F21,}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a7fa06ead699fcbd63132370ffe13335a}{F22}}\ =\ VK\_F22,}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a889645d530078147e7dc69a9caadc31e}{F23}}\ =\ VK\_F23,}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1aebd7820c520d05eca2d775c37d141273}{F24}}\ =\ VK\_F24,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a667d08af6165c1cb6e72970036a9f7d7}{LShift}}\ =\ VK\_LSHIFT,}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a8e707c0a523c7ec2179a6b6821d6eba8}{RShift}}\ =\ VK\_RSHIFT,}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a9e6bbb54b2d06e4a49ebcea834724afd}{LControl}}\ =\ VK\_LCONTROL,}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1ab06196a3bdf600db4088d5ac34132d58}{RControl}}\ =\ VK\_RCONTROL,}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1acaf17324ad1adb9bbc4f7148c26e9b02}{LMenu}}\ =\ VK\_LMENU,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a3e3218f904dbf9458d9d17eb11592961}{RMenu}}\ =\ VK\_RMENU,}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a0557fa923dcee4d0f86b1409f5c2167f}{Back}}\ =\ VK\_BACK,}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1a5c6ba25104401c9ee0650230fc6ba413}{Tab}}\ =\ VK\_TAB}
+\DoxyCodeLine{00126\ \ \ \ \ \};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1}{Key}}\ \mbox{\hyperlink{class_keyboard_a2d1baf4e6d287b257405398d1f3397c2}{stringToKey}}(\textcolor{keyword}{const}\ std::string\&\ key);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{class_keyboard_aca313b140a3b9b5cfd87d0ec85a70b4b}{Keyboard}}()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_keyboard_a677f97703df7bad21f3854416c633282}{isKeyPressed}}(\mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1}{Key}}\ key);}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_keyboard_a6ada6b831d5285c387cd35ece0cfb6f0}{isKeyReleased}}(\mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1}{Key}}\ key);}
+\DoxyCodeLine{00134\ \};}
+
+\end{DoxyCode}

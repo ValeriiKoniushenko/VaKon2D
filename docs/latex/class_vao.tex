@@ -1,0 +1,127 @@
+\doxysection{Vao Class Reference}
+\hypertarget{class_vao}{}\label{class_vao}\index{Vao@{Vao}}
+
+
+{\ttfamily \#include $<$Vao.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vao_ab3afdf9e19eb1d5f851d41b73379f39f}{Vao}} ()=default
+\item 
+\mbox{\hyperlink{class_vao_a05fafb6eadba292a610f76d620c4facd}{Vao}} (bool is\+Generate, bool \mbox{\hyperlink{class_vao_a1faf367c6333495860304e22971edd0e}{is\+Bind}})
+\item 
+\mbox{\hyperlink{class_vao_a824e405a2061b111c1d0e08c488fe332}{Vao}} (GLuint index, GLint size, \mbox{\hyperlink{class_gl_a531a4c376dc639d1cef19fa05d661ad0}{Gl\+::\+Type}} type, bool normalized, GLsizei stride, const void \texorpdfstring{$\ast$}{*}pointer)
+\item 
+\mbox{\hyperlink{class_vao_aec45f5a58046b675d1c603debcbe2aa2}{Vao}} (const \mbox{\hyperlink{class_vao}{Vao}} \&)=default
+\item 
+\mbox{\hyperlink{class_vao_a3d0c394f1bd7ebf9ee9a91bb9db70445}{Vao}} (\mbox{\hyperlink{class_vao}{Vao}} \&\&other)
+\item 
+\mbox{\hyperlink{class_vao}{Vao}} \& \mbox{\hyperlink{class_vao_aafcd390624d020fbac8e9e0f765b312a}{operator=}} (const \mbox{\hyperlink{class_vao}{Vao}} \&)=default
+\item 
+\mbox{\hyperlink{class_vao}{Vao}} \& \mbox{\hyperlink{class_vao_ad2548f492ebe18c3fda323ee5c3c28a3}{operator=}} (\mbox{\hyperlink{class_vao}{Vao}} \&\&other)
+\item 
+\mbox{\hyperlink{class_vao_a79f27cbf00ba87623a2d1b8909bc9325}{\texorpdfstring{$\sim$}{\string~}\+Vao}} ()
+\item 
+void \mbox{\hyperlink{class_vao_a65b51778197c231e8b9262af1d84f87b}{generate}} ()
+\item 
+void \mbox{\hyperlink{class_vao_a62fdf04ca6fa1b128c1929c8e42b266e}{bind}} ()
+\item 
+void \mbox{\hyperlink{class_vao_ad75236fe022e2431d76d55067accb43e}{unbind}} ()
+\item 
+void \mbox{\hyperlink{class_vao_a678c8c84cdb0f9b5de4a52d8ac7d723b}{destroy}} ()
+\item 
+\+\_\+\+NODISCARD bool \mbox{\hyperlink{class_vao_ae9ab92efdf60a0b453ee4fe1856aa52c}{is\+Generated}} () const
+\item 
+\+\_\+\+NODISCARD bool \mbox{\hyperlink{class_vao_a1faf367c6333495860304e22971edd0e}{is\+Bind}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_vao_ab3afdf9e19eb1d5f851d41b73379f39f}\label{class_vao_ab3afdf9e19eb1d5f851d41b73379f39f} 
+\index{Vao@{Vao}!Vao@{Vao}}
+\index{Vao@{Vao}!Vao@{Vao}}
+\doxysubsubsection{\texorpdfstring{Vao()}{Vao()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Vao\+::\+Vao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_vao_a05fafb6eadba292a610f76d620c4facd}\label{class_vao_a05fafb6eadba292a610f76d620c4facd} 
+\index{Vao@{Vao}!Vao@{Vao}}
+\index{Vao@{Vao}!Vao@{Vao}}
+\doxysubsubsection{\texorpdfstring{Vao()}{Vao()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Vao\+::\+Vao (\begin{DoxyParamCaption}\item[{bool}]{is\+Generate,  }\item[{bool}]{is\+Bind }\end{DoxyParamCaption})}
+
+\Hypertarget{class_vao_a824e405a2061b111c1d0e08c488fe332}\label{class_vao_a824e405a2061b111c1d0e08c488fe332} 
+\index{Vao@{Vao}!Vao@{Vao}}
+\index{Vao@{Vao}!Vao@{Vao}}
+\doxysubsubsection{\texorpdfstring{Vao()}{Vao()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Vao\+::\+Vao (\begin{DoxyParamCaption}\item[{GLuint}]{index,  }\item[{GLint}]{size,  }\item[{\mbox{\hyperlink{class_gl_a531a4c376dc639d1cef19fa05d661ad0}{Gl\+::\+Type}}}]{type,  }\item[{bool}]{normalized,  }\item[{GLsizei}]{stride,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{pointer }\end{DoxyParamCaption})}
+
+\Hypertarget{class_vao_aec45f5a58046b675d1c603debcbe2aa2}\label{class_vao_aec45f5a58046b675d1c603debcbe2aa2} 
+\index{Vao@{Vao}!Vao@{Vao}}
+\index{Vao@{Vao}!Vao@{Vao}}
+\doxysubsubsection{\texorpdfstring{Vao()}{Vao()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Vao\+::\+Vao (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vao}{Vao}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_vao_a3d0c394f1bd7ebf9ee9a91bb9db70445}\label{class_vao_a3d0c394f1bd7ebf9ee9a91bb9db70445} 
+\index{Vao@{Vao}!Vao@{Vao}}
+\index{Vao@{Vao}!Vao@{Vao}}
+\doxysubsubsection{\texorpdfstring{Vao()}{Vao()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Vao\+::\+Vao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vao}{Vao}} \&\&}]{other }\end{DoxyParamCaption})}
+
+\Hypertarget{class_vao_a79f27cbf00ba87623a2d1b8909bc9325}\label{class_vao_a79f27cbf00ba87623a2d1b8909bc9325} 
+\index{Vao@{Vao}!````~Vao@{\texorpdfstring{$\sim$}{\string~}Vao}}
+\index{````~Vao@{\texorpdfstring{$\sim$}{\string~}Vao}!Vao@{Vao}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Vao()}{\string~Vao()}}
+{\footnotesize\ttfamily Vao\+::\texorpdfstring{$\sim$}{\string~}\+Vao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_vao_a62fdf04ca6fa1b128c1929c8e42b266e}\label{class_vao_a62fdf04ca6fa1b128c1929c8e42b266e} 
+\index{Vao@{Vao}!bind@{bind}}
+\index{bind@{bind}!Vao@{Vao}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily void Vao\+::bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_vao_a678c8c84cdb0f9b5de4a52d8ac7d723b}\label{class_vao_a678c8c84cdb0f9b5de4a52d8ac7d723b} 
+\index{Vao@{Vao}!destroy@{destroy}}
+\index{destroy@{destroy}!Vao@{Vao}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily void Vao\+::destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_vao_a65b51778197c231e8b9262af1d84f87b}\label{class_vao_a65b51778197c231e8b9262af1d84f87b} 
+\index{Vao@{Vao}!generate@{generate}}
+\index{generate@{generate}!Vao@{Vao}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily void Vao\+::generate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_vao_a1faf367c6333495860304e22971edd0e}\label{class_vao_a1faf367c6333495860304e22971edd0e} 
+\index{Vao@{Vao}!isBind@{isBind}}
+\index{isBind@{isBind}!Vao@{Vao}}
+\doxysubsubsection{\texorpdfstring{isBind()}{isBind()}}
+{\footnotesize\ttfamily bool Vao\+::is\+Bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_vao_ae9ab92efdf60a0b453ee4fe1856aa52c}\label{class_vao_ae9ab92efdf60a0b453ee4fe1856aa52c} 
+\index{Vao@{Vao}!isGenerated@{isGenerated}}
+\index{isGenerated@{isGenerated}!Vao@{Vao}}
+\doxysubsubsection{\texorpdfstring{isGenerated()}{isGenerated()}}
+{\footnotesize\ttfamily bool Vao\+::is\+Generated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_vao_aafcd390624d020fbac8e9e0f765b312a}\label{class_vao_aafcd390624d020fbac8e9e0f765b312a} 
+\index{Vao@{Vao}!operator=@{operator=}}
+\index{operator=@{operator=}!Vao@{Vao}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vao}{Vao}} \& Vao\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vao}{Vao}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_vao_ad2548f492ebe18c3fda323ee5c3c28a3}\label{class_vao_ad2548f492ebe18c3fda323ee5c3c28a3} 
+\index{Vao@{Vao}!operator=@{operator=}}
+\index{operator=@{operator=}!Vao@{Vao}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vao}{Vao}} \& Vao\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vao}{Vao}} \&\&}]{other }\end{DoxyParamCaption})}
+
+\Hypertarget{class_vao_ad75236fe022e2431d76d55067accb43e}\label{class_vao_ad75236fe022e2431d76d55067accb43e} 
+\index{Vao@{Vao}!unbind@{unbind}}
+\index{unbind@{unbind}!Vao@{Vao}}
+\doxysubsubsection{\texorpdfstring{unbind()}{unbind()}}
+{\footnotesize\ttfamily void Vao\+::unbind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

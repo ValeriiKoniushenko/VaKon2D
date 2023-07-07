@@ -1,0 +1,135 @@
+\doxysection{Gl Class Reference}
+\hypertarget{class_gl}{}\label{class_gl}\index{Gl@{Gl}}
+
+
+{\ttfamily \#include $<$Gl.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_gl_1_1_program}{Program}}
+\item 
+class \mbox{\hyperlink{class_gl_1_1_shader}{Shader}}
+\item 
+class \mbox{\hyperlink{class_gl_1_1_texture}{Texture}}
+\item 
+class \mbox{\hyperlink{class_gl_1_1_vao}{Vao}}
+\item 
+class \mbox{\hyperlink{class_gl_1_1_vbo}{Vbo}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_gl_a531a4c376dc639d1cef19fa05d661ad0}{Type}} \{ \newline
+\mbox{\hyperlink{class_gl_a531a4c376dc639d1cef19fa05d661ad0a22ae0e2b89e5e3d477f988cc36d3272b}{Float}} = GL\+\_\+\+FLOAT
+, \mbox{\hyperlink{class_gl_a531a4c376dc639d1cef19fa05d661ad0ad909d38d705ce75386dd86e611a82f5b}{Double}} = GL\+\_\+\+DOUBLE
+, \mbox{\hyperlink{class_gl_a531a4c376dc639d1cef19fa05d661ad0aa245c3230debe5c956484ecc6fa93877}{Byte}} = GL\+\_\+\+BYTE
+, \mbox{\hyperlink{class_gl_a531a4c376dc639d1cef19fa05d661ad0a4b4ba765b750d5836bfeb2213cc3caea}{UByte}} = GL\+\_\+\+UNSIGNED\+\_\+\+BYTE
+, \newline
+\mbox{\hyperlink{class_gl_a531a4c376dc639d1cef19fa05d661ad0a30bb747c98bccdd11b3f89e644c4d0ad}{Short}} = GL\+\_\+\+SHORT
+, \mbox{\hyperlink{class_gl_a531a4c376dc639d1cef19fa05d661ad0adfe785f133347f9b473f99009732b1bc}{UShort}} = GL\+\_\+\+UNSIGNED\+\_\+\+SHORT
+, \mbox{\hyperlink{class_gl_a531a4c376dc639d1cef19fa05d661ad0a1686a6c336b71b36d77354cea19a8b52}{Int}} = GL\+\_\+\+INT
+, \mbox{\hyperlink{class_gl_a531a4c376dc639d1cef19fa05d661ad0a0b1291eded63143ac04709711274785a}{UInt}} = GL\+\_\+\+UNSIGNED\+\_\+\+INT
+, \newline
+\mbox{\hyperlink{class_gl_a531a4c376dc639d1cef19fa05d661ad0a4457d440870ad6d42bab9082d9bf9b61}{Fixed}} = GL\+\_\+\+FIXED
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gl_aa984ad13b2d71453f86ce518b6de76bc}{Gl}} ()=delete
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_gl_a262877f80aac968389e284a2f42f501e}{require\+No\+Errors}} ()
+\item 
+static void \mbox{\hyperlink{class_gl_aa524229a641fb70dca89793d6653f372}{debug\+Traces}} ()
+\item 
+static void \mbox{\hyperlink{class_gl_a99507392876681741549a0bf91770f65}{viewport}} (GLint x, GLint y, GLsizei width, GLsizei height)
+\item 
+static void \mbox{\hyperlink{class_gl_ad9b9ca7ab469694c2f5adb367c96b5c1}{draw\+Arrays}} (GLenum mode, GLint first, GLsizei count)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_gl_a531a4c376dc639d1cef19fa05d661ad0}\label{class_gl_a531a4c376dc639d1cef19fa05d661ad0} 
+\index{Gl@{Gl}!Type@{Type}}
+\index{Type@{Type}!Gl@{Gl}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_gl_a531a4c376dc639d1cef19fa05d661ad0}{Gl\+::\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Float@{Float}!Gl@{Gl}}\index{Gl@{Gl}!Float@{Float}}}\Hypertarget{class_gl_a531a4c376dc639d1cef19fa05d661ad0a22ae0e2b89e5e3d477f988cc36d3272b}\label{class_gl_a531a4c376dc639d1cef19fa05d661ad0a22ae0e2b89e5e3d477f988cc36d3272b} 
+Float&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Double@{Double}!Gl@{Gl}}\index{Gl@{Gl}!Double@{Double}}}\Hypertarget{class_gl_a531a4c376dc639d1cef19fa05d661ad0ad909d38d705ce75386dd86e611a82f5b}\label{class_gl_a531a4c376dc639d1cef19fa05d661ad0ad909d38d705ce75386dd86e611a82f5b} 
+Double&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Byte@{Byte}!Gl@{Gl}}\index{Gl@{Gl}!Byte@{Byte}}}\Hypertarget{class_gl_a531a4c376dc639d1cef19fa05d661ad0aa245c3230debe5c956484ecc6fa93877}\label{class_gl_a531a4c376dc639d1cef19fa05d661ad0aa245c3230debe5c956484ecc6fa93877} 
+Byte&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UByte@{UByte}!Gl@{Gl}}\index{Gl@{Gl}!UByte@{UByte}}}\Hypertarget{class_gl_a531a4c376dc639d1cef19fa05d661ad0a4b4ba765b750d5836bfeb2213cc3caea}\label{class_gl_a531a4c376dc639d1cef19fa05d661ad0a4b4ba765b750d5836bfeb2213cc3caea} 
+UByte&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Short@{Short}!Gl@{Gl}}\index{Gl@{Gl}!Short@{Short}}}\Hypertarget{class_gl_a531a4c376dc639d1cef19fa05d661ad0a30bb747c98bccdd11b3f89e644c4d0ad}\label{class_gl_a531a4c376dc639d1cef19fa05d661ad0a30bb747c98bccdd11b3f89e644c4d0ad} 
+Short&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UShort@{UShort}!Gl@{Gl}}\index{Gl@{Gl}!UShort@{UShort}}}\Hypertarget{class_gl_a531a4c376dc639d1cef19fa05d661ad0adfe785f133347f9b473f99009732b1bc}\label{class_gl_a531a4c376dc639d1cef19fa05d661ad0adfe785f133347f9b473f99009732b1bc} 
+UShort&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Int@{Int}!Gl@{Gl}}\index{Gl@{Gl}!Int@{Int}}}\Hypertarget{class_gl_a531a4c376dc639d1cef19fa05d661ad0a1686a6c336b71b36d77354cea19a8b52}\label{class_gl_a531a4c376dc639d1cef19fa05d661ad0a1686a6c336b71b36d77354cea19a8b52} 
+Int&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UInt@{UInt}!Gl@{Gl}}\index{Gl@{Gl}!UInt@{UInt}}}\Hypertarget{class_gl_a531a4c376dc639d1cef19fa05d661ad0a0b1291eded63143ac04709711274785a}\label{class_gl_a531a4c376dc639d1cef19fa05d661ad0a0b1291eded63143ac04709711274785a} 
+UInt&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fixed@{Fixed}!Gl@{Gl}}\index{Gl@{Gl}!Fixed@{Fixed}}}\Hypertarget{class_gl_a531a4c376dc639d1cef19fa05d661ad0a4457d440870ad6d42bab9082d9bf9b61}\label{class_gl_a531a4c376dc639d1cef19fa05d661ad0a4457d440870ad6d42bab9082d9bf9b61} 
+Fixed&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gl_aa984ad13b2d71453f86ce518b6de76bc}\label{class_gl_aa984ad13b2d71453f86ce518b6de76bc} 
+\index{Gl@{Gl}!Gl@{Gl}}
+\index{Gl@{Gl}!Gl@{Gl}}
+\doxysubsubsection{\texorpdfstring{Gl()}{Gl()}}
+{\footnotesize\ttfamily Gl\+::\+Gl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gl_aa524229a641fb70dca89793d6653f372}\label{class_gl_aa524229a641fb70dca89793d6653f372} 
+\index{Gl@{Gl}!debugTraces@{debugTraces}}
+\index{debugTraces@{debugTraces}!Gl@{Gl}}
+\doxysubsubsection{\texorpdfstring{debugTraces()}{debugTraces()}}
+{\footnotesize\ttfamily void Gl\+::debug\+Traces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_ad9b9ca7ab469694c2f5adb367c96b5c1}\label{class_gl_ad9b9ca7ab469694c2f5adb367c96b5c1} 
+\index{Gl@{Gl}!drawArrays@{drawArrays}}
+\index{drawArrays@{drawArrays}!Gl@{Gl}}
+\doxysubsubsection{\texorpdfstring{drawArrays()}{drawArrays()}}
+{\footnotesize\ttfamily void Gl\+::draw\+Arrays (\begin{DoxyParamCaption}\item[{GLenum}]{mode,  }\item[{GLint}]{first,  }\item[{GLsizei}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_a262877f80aac968389e284a2f42f501e}\label{class_gl_a262877f80aac968389e284a2f42f501e} 
+\index{Gl@{Gl}!requireNoErrors@{requireNoErrors}}
+\index{requireNoErrors@{requireNoErrors}!Gl@{Gl}}
+\doxysubsubsection{\texorpdfstring{requireNoErrors()}{requireNoErrors()}}
+{\footnotesize\ttfamily void Gl\+::require\+No\+Errors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_a99507392876681741549a0bf91770f65}\label{class_gl_a99507392876681741549a0bf91770f65} 
+\index{Gl@{Gl}!viewport@{viewport}}
+\index{viewport@{viewport}!Gl@{Gl}}
+\doxysubsubsection{\texorpdfstring{viewport()}{viewport()}}
+{\footnotesize\ttfamily void Gl\+::viewport (\begin{DoxyParamCaption}\item[{GLint}]{x,  }\item[{GLint}]{y,  }\item[{GLsizei}]{width,  }\item[{GLsizei}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+

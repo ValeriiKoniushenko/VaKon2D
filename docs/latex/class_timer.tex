@@ -1,0 +1,169 @@
+\doxysection{Timer Class Reference}
+\hypertarget{class_timer}{}\label{class_timer}\index{Timer@{Timer}}
+
+
+{\ttfamily \#include $<$Timer.\+h$>$}
+
+Inheritance diagram for Timer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_timer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_timer_aa4b2e0bfcfba8ba46688fd1a37c2aa4b}{Mode}} \+: \+\_\+\+\_\+int8 \{ \mbox{\hyperlink{class_timer_aa4b2e0bfcfba8ba46688fd1a37c2aa4baeb2ac5b04180d8d6011a016aeb8f75b3}{Infinity}}
+, \mbox{\hyperlink{class_timer_aa4b2e0bfcfba8ba46688fd1a37c2aa4ba409ac3d4c1bc0daea43e1243a0f8d72a}{Finite}}
+ \}
+\item 
+using \mbox{\hyperlink{class_timer_ab9cf496a02ed86e09ec1c98d858bccd4}{Unit}} = std\+::chrono\+::milliseconds
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_timer_a5f16e8da27d2a5a5242dead46de05d97}{Timer}} ()
+\item 
+bool \mbox{\hyperlink{class_timer_acd437b1e783a26efaa6f68a5b9ea2a2e}{operator==}} (const \mbox{\hyperlink{class_timer}{Timer}} \&other) const
+\item 
+void \mbox{\hyperlink{class_timer_a696f19b4227ef320096bd89965141b78}{set\+Mode}} (\mbox{\hyperlink{class_timer_aa4b2e0bfcfba8ba46688fd1a37c2aa4b}{Mode}} mode)
+\item 
+\+\_\+\+NODISCARD \mbox{\hyperlink{class_timer_aa4b2e0bfcfba8ba46688fd1a37c2aa4b}{Mode}} \mbox{\hyperlink{class_timer_aab50139dd599c763f4c4877f58954120}{get\+Mode}} () const
+\item 
+void \mbox{\hyperlink{class_timer_ac22fbf29a9708e0cd8cf0b1576fdba5e}{set\+Frequency}} (\mbox{\hyperlink{class_timer_ab9cf496a02ed86e09ec1c98d858bccd4}{Unit}} \&\&frequency)
+\item 
+\+\_\+\+NODISCARD const \mbox{\hyperlink{class_timer_ab9cf496a02ed86e09ec1c98d858bccd4}{Unit}} \& \mbox{\hyperlink{class_timer_ade7d14d9e97e85b4d0bbaf369d43defc}{get\+Frequency}} () const
+\item 
+void \mbox{\hyperlink{class_timer_a7a8cc5f49024b9d34d078f681a9cf93f}{set\+Callback}} (std\+::function$<$ void()$>$ callback)
+\item 
+void \mbox{\hyperlink{class_timer_a7f2d7eed11fbe22bf602ec4e66bdead5}{reset\+Callback}} ()
+\item 
+void \mbox{\hyperlink{class_timer_a745ad59b5a46744cd871a1129a25d74f}{update}} ()
+\item 
+void \mbox{\hyperlink{class_timer_a3a8b5272198d029779dc9302a54305a8}{start}} ()
+\item 
+void \mbox{\hyperlink{class_timer_a9020542d73357a4eef512eefaf57524b}{reset}} ()
+\item 
+unsigned long long \mbox{\hyperlink{class_timer_aa0e2761654a15156924b86b231a6130c}{get\+Id}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Utils\+::\+Copyable\+And\+Moveable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable_ad7445ae6ca6d9c801f79ac34608dddd0}{Copyable\+And\+Moveable}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable_aa0f3cdfee10b73097be37e2a9fc8ae12}{\texorpdfstring{$\sim$}{\string~}\+Copyable\+And\+Moveable}} ()=default
+\item 
+\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable_a258acf892b4983a0da3c20baf6366b7e}{Copyable\+And\+Moveable}} (\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Copyable\+And\+Moveable}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Copyable\+And\+Moveable}} \& \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable_ac4e5e5ced4b661444cf2c56bd5ba016f}{operator=}} (\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Copyable\+And\+Moveable}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable_a39fc86feb60e5517334655cf5ad80001}{Copyable\+And\+Moveable}} (const \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Copyable\+And\+Moveable}} \&)=default
+\item 
+\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Copyable\+And\+Moveable}} \& \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable_a7f769b2aba3ec5461ac6d33cf16f898f}{operator=}} (const \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Copyable\+And\+Moveable}} \&)=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_timer_ab9cf496a02ed86e09ec1c98d858bccd4}\label{class_timer_ab9cf496a02ed86e09ec1c98d858bccd4} 
+\index{Timer@{Timer}!Unit@{Unit}}
+\index{Unit@{Unit}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{Unit}{Unit}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{class_timer_ab9cf496a02ed86e09ec1c98d858bccd4}{Timer\+::\+Unit}} =  std\+::chrono\+::milliseconds}
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_timer_aa4b2e0bfcfba8ba46688fd1a37c2aa4b}\label{class_timer_aa4b2e0bfcfba8ba46688fd1a37c2aa4b} 
+\index{Timer@{Timer}!Mode@{Mode}}
+\index{Mode@{Mode}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{Mode}{Mode}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_timer_aa4b2e0bfcfba8ba46688fd1a37c2aa4b}{Timer\+::\+Mode}} \+: \+\_\+\+\_\+int8\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Infinity@{Infinity}!Timer@{Timer}}\index{Timer@{Timer}!Infinity@{Infinity}}}\Hypertarget{class_timer_aa4b2e0bfcfba8ba46688fd1a37c2aa4baeb2ac5b04180d8d6011a016aeb8f75b3}\label{class_timer_aa4b2e0bfcfba8ba46688fd1a37c2aa4baeb2ac5b04180d8d6011a016aeb8f75b3} 
+Infinity&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Finite@{Finite}!Timer@{Timer}}\index{Timer@{Timer}!Finite@{Finite}}}\Hypertarget{class_timer_aa4b2e0bfcfba8ba46688fd1a37c2aa4ba409ac3d4c1bc0daea43e1243a0f8d72a}\label{class_timer_aa4b2e0bfcfba8ba46688fd1a37c2aa4ba409ac3d4c1bc0daea43e1243a0f8d72a} 
+Finite&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_timer_a5f16e8da27d2a5a5242dead46de05d97}\label{class_timer_a5f16e8da27d2a5a5242dead46de05d97} 
+\index{Timer@{Timer}!Timer@{Timer}}
+\index{Timer@{Timer}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{Timer()}{Timer()}}
+{\footnotesize\ttfamily Timer\+::\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_timer_ade7d14d9e97e85b4d0bbaf369d43defc}\label{class_timer_ade7d14d9e97e85b4d0bbaf369d43defc} 
+\index{Timer@{Timer}!getFrequency@{getFrequency}}
+\index{getFrequency@{getFrequency}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{getFrequency()}{getFrequency()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_timer_ab9cf496a02ed86e09ec1c98d858bccd4}{Timer\+::\+Unit}} \& Timer\+::get\+Frequency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_timer_aa0e2761654a15156924b86b231a6130c}\label{class_timer_aa0e2761654a15156924b86b231a6130c} 
+\index{Timer@{Timer}!getId@{getId}}
+\index{getId@{getId}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily unsigned long long Timer\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_timer_aab50139dd599c763f4c4877f58954120}\label{class_timer_aab50139dd599c763f4c4877f58954120} 
+\index{Timer@{Timer}!getMode@{getMode}}
+\index{getMode@{getMode}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{getMode()}{getMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_timer_aa4b2e0bfcfba8ba46688fd1a37c2aa4b}{Timer\+::\+Mode}} Timer\+::get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_timer_acd437b1e783a26efaa6f68a5b9ea2a2e}\label{class_timer_acd437b1e783a26efaa6f68a5b9ea2a2e} 
+\index{Timer@{Timer}!operator==@{operator==}}
+\index{operator==@{operator==}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Timer\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_timer}{Timer}} \&}]{other }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_timer_a9020542d73357a4eef512eefaf57524b}\label{class_timer_a9020542d73357a4eef512eefaf57524b} 
+\index{Timer@{Timer}!reset@{reset}}
+\index{reset@{reset}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Timer\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_timer_a7f2d7eed11fbe22bf602ec4e66bdead5}\label{class_timer_a7f2d7eed11fbe22bf602ec4e66bdead5} 
+\index{Timer@{Timer}!resetCallback@{resetCallback}}
+\index{resetCallback@{resetCallback}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{resetCallback()}{resetCallback()}}
+{\footnotesize\ttfamily void Timer\+::reset\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_timer_a7a8cc5f49024b9d34d078f681a9cf93f}\label{class_timer_a7a8cc5f49024b9d34d078f681a9cf93f} 
+\index{Timer@{Timer}!setCallback@{setCallback}}
+\index{setCallback@{setCallback}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{setCallback()}{setCallback()}}
+{\footnotesize\ttfamily void Timer\+::set\+Callback (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$}]{callback }\end{DoxyParamCaption})}
+
+\Hypertarget{class_timer_ac22fbf29a9708e0cd8cf0b1576fdba5e}\label{class_timer_ac22fbf29a9708e0cd8cf0b1576fdba5e} 
+\index{Timer@{Timer}!setFrequency@{setFrequency}}
+\index{setFrequency@{setFrequency}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{setFrequency()}{setFrequency()}}
+{\footnotesize\ttfamily void Timer\+::set\+Frequency (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_timer_ab9cf496a02ed86e09ec1c98d858bccd4}{Unit}} \&\&}]{frequency }\end{DoxyParamCaption})}
+
+\Hypertarget{class_timer_a696f19b4227ef320096bd89965141b78}\label{class_timer_a696f19b4227ef320096bd89965141b78} 
+\index{Timer@{Timer}!setMode@{setMode}}
+\index{setMode@{setMode}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{setMode()}{setMode()}}
+{\footnotesize\ttfamily void Timer\+::set\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_timer_aa4b2e0bfcfba8ba46688fd1a37c2aa4b}{Mode}}}]{mode }\end{DoxyParamCaption})}
+
+\Hypertarget{class_timer_a3a8b5272198d029779dc9302a54305a8}\label{class_timer_a3a8b5272198d029779dc9302a54305a8} 
+\index{Timer@{Timer}!start@{start}}
+\index{start@{start}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Timer\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_timer_a745ad59b5a46744cd871a1129a25d74f}\label{class_timer_a745ad59b5a46744cd871a1129a25d74f} 
+\index{Timer@{Timer}!update@{update}}
+\index{update@{update}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Timer\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

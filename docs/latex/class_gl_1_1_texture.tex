@@ -1,0 +1,316 @@
+\doxysection{Gl\+::Texture Class Reference}
+\hypertarget{class_gl_1_1_texture}{}\label{class_gl_1_1_texture}\index{Gl::Texture@{Gl::Texture}}
+
+
+{\ttfamily \#include $<$Gl.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}} \{ \newline
+\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa6adf97f83acf6453d4a6a4b1070f3754}{None}}
+, \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Texture2D}} = GL\+\_\+\+TEXTURE\+\_\+2D
+, \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa1168ae5c761e6f30ebeb5d44a29c0f0}{Cube\+Map\+PositiveX}} = GL\+\_\+\+TEXTURE\+\_\+\+CUBE\+\_\+\+MAP\+\_\+\+POSITIVE\+\_\+X
+, \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa85409274e6f1044d5794b21ac55ef56e}{Cube\+Map\+NegativeX}} = GL\+\_\+\+TEXTURE\+\_\+\+CUBE\+\_\+\+MAP\+\_\+\+NEGATIVE\+\_\+X
+, \newline
+\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa7e40f99ae3df7613bd94609c8153019b}{Cube\+Map\+PositiveY}} = GL\+\_\+\+TEXTURE\+\_\+\+CUBE\+\_\+\+MAP\+\_\+\+POSITIVE\+\_\+Y
+, \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefad2c3bed6281015a3df5de036da39f5a0}{Cube\+Map\+NegativeY}} = GL\+\_\+\+TEXTURE\+\_\+\+CUBE\+\_\+\+MAP\+\_\+\+NEGATIVE\+\_\+Y
+, \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa9b94e73c8ded4d453c3dc439fb9796e}{Cube\+Map\+PositiveZ}} = GL\+\_\+\+TEXTURE\+\_\+\+CUBE\+\_\+\+MAP\+\_\+\+POSITIVE\+\_\+Z
+, \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa0c43718e05258a8818cc736fcc2efac7}{Cube\+Map\+NegativeZ}} = GL\+\_\+\+TEXTURE\+\_\+\+CUBE\+\_\+\+MAP\+\_\+\+NEGATIVE\+\_\+Z
+, \newline
+\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa6c4765d2cb592dcc2f21f311db02f43b}{Cube\+Map}} = GL\+\_\+\+TEXTURE\+\_\+\+CUBE\+\_\+\+MAP
+ \}
+\item 
+enum class \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2}{Mag\+Filter}} \{ \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2a6adf97f83acf6453d4a6a4b1070f3754}{None}}
+, \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2a32a843da6ea40ab3b17a3421ccdf671b}{Linear}} = GL\+\_\+\+LINEAR
+, \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2a60494f02d440f316319dd0fad40ad007}{Nearest}} = GL\+\_\+\+NEAREST
+ \}
+\item 
+enum class \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}{Min\+Filter}} \{ \newline
+\mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a6adf97f83acf6453d4a6a4b1070f3754}{None}}
+, \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a32a843da6ea40ab3b17a3421ccdf671b}{Linear}} = GL\+\_\+\+LINEAR
+, \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a60494f02d440f316319dd0fad40ad007}{Nearest}} = GL\+\_\+\+NEAREST
+, \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a35d97e4a37fa3a0d76c692f3e318599b}{Nearest\+Mipmap\+Nearest}} = GL\+\_\+\+NEAREST\+\_\+\+MIPMAP\+\_\+\+NEAREST
+, \newline
+\mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61ac164897273ad7f6d61626f5610d86425}{Linear\+Mipmap\+Nearest}} = GL\+\_\+\+LINEAR\+\_\+\+MIPMAP\+\_\+\+NEAREST
+, \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a9a79df5c07e4d2a2875689f608b50529}{Nearest\+Mipmap\+Linear}} = GL\+\_\+\+NEAREST\+\_\+\+MIPMAP\+\_\+\+LINEAR
+, \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a1173bd3987b1e185d86b9c3fe1b8bd72}{Linear\+Mipmap\+Linear}} = GL\+\_\+\+LINEAR\+\_\+\+MIPMAP\+\_\+\+LINEAR
+ \}
+\item 
+enum class \mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47}{Wrap}} \{ \newline
+\mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a6adf97f83acf6453d4a6a4b1070f3754}{None}}
+, \mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a4d563bcd510a32c242ba3357ce786579}{Clamp2\+Edge}} = GL\+\_\+\+CLAMP\+\_\+\+TO\+\_\+\+EDGE
+, \mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a419de8dc70341019c7d52f76e10956c2}{Clamp2\+Border}} = GL\+\_\+\+CLAMP\+\_\+\+TO\+\_\+\+BORDER
+, \mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a12ce4a5977988214a6b098b8cb0bf695}{Mirrored\+Repeat}} = GL\+\_\+\+MIRRORED\+\_\+\+REPEAT
+, \newline
+\mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a7020426cfb0a204051be4b3053d2acc8}{Repeat}} = GL\+\_\+\+REPEAT
+, \mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a0187015a2c32fb414dfd77055ac8c2b2}{Mirror\+Clamp2\+Edge}} = GL\+\_\+\+MIRROR\+\_\+\+CLAMP\+\_\+\+TO\+\_\+\+EDGE
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \+\_\+\+NODISCARD \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2}{Mag\+Filter}} \mbox{\hyperlink{class_gl_1_1_texture_a652910a35a36d33e356258168246423c}{string\+To\+Mag\+Filter}} (const std\+::string \&filter)
+\item 
+static \+\_\+\+NODISCARD \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}{Min\+Filter}} \mbox{\hyperlink{class_gl_1_1_texture_a1d71c52579d6b5b495366c9f59bd31fd}{string\+To\+Min\+Filter}} (const std\+::string \&filter)
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_texture_a8bac52e75287b1d570c77ef2a57081ef}{set\+Min\+Filter}} (\mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}{Min\+Filter}} filter, \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}} target=\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target\+::\+Texture2D}})
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_texture_a6955eafd3b4aa5fac71dd127d199302e}{set\+Mag\+Filter}} (\mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2}{Mag\+Filter}} filter, \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}} target=\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target\+::\+Texture2D}})
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_texture_ab46649078b93c82e73d651cdca7a06b7}{set\+WrapS}} (\mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47}{Wrap}} wrap, \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}} target=\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target\+::\+Texture2D}})
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_texture_a7f0ed602d6ced51a227bc050aa27bea4}{set\+WrapT}} (\mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47}{Wrap}} wrap, \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}} target=\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target\+::\+Texture2D}})
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_texture_addbd305c74b2130dab34bb323fe2deed}{set\+WrapR}} (\mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47}{Wrap}} wrap, \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}} target=\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target\+::\+Texture2D}})
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_texture_a92f4561bb3eb90054a6d64abe439600c}{active}} (GLenum num)
+\item 
+static \+\_\+\+NODISCARD size\+\_\+t \mbox{\hyperlink{class_gl_1_1_texture_a5ad3987a904b41df87a42f1ae2674d2c}{get\+Max\+Count\+Active\+Textures}} ()
+\item 
+static \+\_\+\+NODISCARD GLuint \mbox{\hyperlink{class_gl_1_1_texture_a33ba79574900a3817e0a4613e35e13e1}{generate}} ()
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_texture_a94499882c04792d705a2f4d90b9a3b28}{bind}} (\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}} target, GLuint texture)
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_texture_af9c2e03d18cd8a1e977b0bb4a92b7ef9}{tex\+Image2D}} (\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}} target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const void \texorpdfstring{$\ast$}{*}pixels)
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_texture_a3f8e713fcc80f9cf1248ceb3399ba086}{generate\+Mipmap}} (\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}} target)
+\item 
+static void \mbox{\hyperlink{class_gl_1_1_texture_aba34f99c0539049e5b74be647e43f474}{delete\+Texture}} (GLuint texture)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const GLuint \mbox{\hyperlink{class_gl_1_1_texture_aebc6623470c4cb08cd9da4207b9b77ab}{invalid\+Id}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2}\label{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2} 
+\index{Gl::Texture@{Gl::Texture}!MagFilter@{MagFilter}}
+\index{MagFilter@{MagFilter}!Gl::Texture@{Gl::Texture}}
+\doxysubsubsection{\texorpdfstring{MagFilter}{MagFilter}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2}{Gl\+::\+Texture\+::\+Mag\+Filter}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!None@{None}}}\Hypertarget{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2a6adf97f83acf6453d4a6a4b1070f3754}\label{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2a6adf97f83acf6453d4a6a4b1070f3754} 
+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Linear@{Linear}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!Linear@{Linear}}}\Hypertarget{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2a32a843da6ea40ab3b17a3421ccdf671b}\label{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2a32a843da6ea40ab3b17a3421ccdf671b} 
+Linear&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Nearest@{Nearest}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!Nearest@{Nearest}}}\Hypertarget{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2a60494f02d440f316319dd0fad40ad007}\label{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2a60494f02d440f316319dd0fad40ad007} 
+Nearest&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}\label{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61} 
+\index{Gl::Texture@{Gl::Texture}!MinFilter@{MinFilter}}
+\index{MinFilter@{MinFilter}!Gl::Texture@{Gl::Texture}}
+\doxysubsubsection{\texorpdfstring{MinFilter}{MinFilter}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}{Gl\+::\+Texture\+::\+Min\+Filter}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!None@{None}}}\Hypertarget{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a6adf97f83acf6453d4a6a4b1070f3754}\label{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a6adf97f83acf6453d4a6a4b1070f3754} 
+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Linear@{Linear}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!Linear@{Linear}}}\Hypertarget{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a32a843da6ea40ab3b17a3421ccdf671b}\label{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a32a843da6ea40ab3b17a3421ccdf671b} 
+Linear&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Nearest@{Nearest}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!Nearest@{Nearest}}}\Hypertarget{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a60494f02d440f316319dd0fad40ad007}\label{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a60494f02d440f316319dd0fad40ad007} 
+Nearest&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NearestMipmapNearest@{NearestMipmapNearest}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!NearestMipmapNearest@{NearestMipmapNearest}}}\Hypertarget{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a35d97e4a37fa3a0d76c692f3e318599b}\label{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a35d97e4a37fa3a0d76c692f3e318599b} 
+Nearest\+Mipmap\+Nearest&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LinearMipmapNearest@{LinearMipmapNearest}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!LinearMipmapNearest@{LinearMipmapNearest}}}\Hypertarget{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61ac164897273ad7f6d61626f5610d86425}\label{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61ac164897273ad7f6d61626f5610d86425} 
+Linear\+Mipmap\+Nearest&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NearestMipmapLinear@{NearestMipmapLinear}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!NearestMipmapLinear@{NearestMipmapLinear}}}\Hypertarget{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a9a79df5c07e4d2a2875689f608b50529}\label{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a9a79df5c07e4d2a2875689f608b50529} 
+Nearest\+Mipmap\+Linear&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LinearMipmapLinear@{LinearMipmapLinear}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!LinearMipmapLinear@{LinearMipmapLinear}}}\Hypertarget{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a1173bd3987b1e185d86b9c3fe1b8bd72}\label{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a1173bd3987b1e185d86b9c3fe1b8bd72} 
+Linear\+Mipmap\+Linear&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}\label{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef} 
+\index{Gl::Texture@{Gl::Texture}!Target@{Target}}
+\index{Target@{Target}!Gl::Texture@{Gl::Texture}}
+\doxysubsubsection{\texorpdfstring{Target}{Target}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Gl\+::\+Texture\+::\+Target}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!None@{None}}}\Hypertarget{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa6adf97f83acf6453d4a6a4b1070f3754}\label{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa6adf97f83acf6453d4a6a4b1070f3754} 
+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Texture2D@{Texture2D}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!Texture2D@{Texture2D}}}\Hypertarget{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}\label{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995} 
+Texture2D&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CubeMapPositiveX@{CubeMapPositiveX}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!CubeMapPositiveX@{CubeMapPositiveX}}}\Hypertarget{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa1168ae5c761e6f30ebeb5d44a29c0f0}\label{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa1168ae5c761e6f30ebeb5d44a29c0f0} 
+Cube\+Map\+PositiveX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CubeMapNegativeX@{CubeMapNegativeX}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!CubeMapNegativeX@{CubeMapNegativeX}}}\Hypertarget{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa85409274e6f1044d5794b21ac55ef56e}\label{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa85409274e6f1044d5794b21ac55ef56e} 
+Cube\+Map\+NegativeX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CubeMapPositiveY@{CubeMapPositiveY}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!CubeMapPositiveY@{CubeMapPositiveY}}}\Hypertarget{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa7e40f99ae3df7613bd94609c8153019b}\label{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa7e40f99ae3df7613bd94609c8153019b} 
+Cube\+Map\+PositiveY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CubeMapNegativeY@{CubeMapNegativeY}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!CubeMapNegativeY@{CubeMapNegativeY}}}\Hypertarget{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefad2c3bed6281015a3df5de036da39f5a0}\label{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefad2c3bed6281015a3df5de036da39f5a0} 
+Cube\+Map\+NegativeY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CubeMapPositiveZ@{CubeMapPositiveZ}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!CubeMapPositiveZ@{CubeMapPositiveZ}}}\Hypertarget{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa9b94e73c8ded4d453c3dc439fb9796e}\label{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa9b94e73c8ded4d453c3dc439fb9796e} 
+Cube\+Map\+PositiveZ&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CubeMapNegativeZ@{CubeMapNegativeZ}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!CubeMapNegativeZ@{CubeMapNegativeZ}}}\Hypertarget{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa0c43718e05258a8818cc736fcc2efac7}\label{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa0c43718e05258a8818cc736fcc2efac7} 
+Cube\+Map\+NegativeZ&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CubeMap@{CubeMap}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!CubeMap@{CubeMap}}}\Hypertarget{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa6c4765d2cb592dcc2f21f311db02f43b}\label{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa6c4765d2cb592dcc2f21f311db02f43b} 
+Cube\+Map&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47}\label{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47} 
+\index{Gl::Texture@{Gl::Texture}!Wrap@{Wrap}}
+\index{Wrap@{Wrap}!Gl::Texture@{Gl::Texture}}
+\doxysubsubsection{\texorpdfstring{Wrap}{Wrap}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47}{Gl\+::\+Texture\+::\+Wrap}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!None@{None}}}\Hypertarget{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a6adf97f83acf6453d4a6a4b1070f3754}\label{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a6adf97f83acf6453d4a6a4b1070f3754} 
+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Clamp2Edge@{Clamp2Edge}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!Clamp2Edge@{Clamp2Edge}}}\Hypertarget{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a4d563bcd510a32c242ba3357ce786579}\label{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a4d563bcd510a32c242ba3357ce786579} 
+Clamp2\+Edge&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Clamp2Border@{Clamp2Border}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!Clamp2Border@{Clamp2Border}}}\Hypertarget{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a419de8dc70341019c7d52f76e10956c2}\label{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a419de8dc70341019c7d52f76e10956c2} 
+Clamp2\+Border&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MirroredRepeat@{MirroredRepeat}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!MirroredRepeat@{MirroredRepeat}}}\Hypertarget{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a12ce4a5977988214a6b098b8cb0bf695}\label{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a12ce4a5977988214a6b098b8cb0bf695} 
+Mirrored\+Repeat&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Repeat@{Repeat}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!Repeat@{Repeat}}}\Hypertarget{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a7020426cfb0a204051be4b3053d2acc8}\label{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a7020426cfb0a204051be4b3053d2acc8} 
+Repeat&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MirrorClamp2Edge@{MirrorClamp2Edge}!Gl::Texture@{Gl::Texture}}\index{Gl::Texture@{Gl::Texture}!MirrorClamp2Edge@{MirrorClamp2Edge}}}\Hypertarget{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a0187015a2c32fb414dfd77055ac8c2b2}\label{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a0187015a2c32fb414dfd77055ac8c2b2} 
+Mirror\+Clamp2\+Edge&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gl_1_1_texture_a92f4561bb3eb90054a6d64abe439600c}\label{class_gl_1_1_texture_a92f4561bb3eb90054a6d64abe439600c} 
+\index{Gl::Texture@{Gl::Texture}!active@{active}}
+\index{active@{active}!Gl::Texture@{Gl::Texture}}
+\doxysubsubsection{\texorpdfstring{active()}{active()}}
+{\footnotesize\ttfamily void Gl\+::\+Texture\+::active (\begin{DoxyParamCaption}\item[{GLenum}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_texture_a94499882c04792d705a2f4d90b9a3b28}\label{class_gl_1_1_texture_a94499882c04792d705a2f4d90b9a3b28} 
+\index{Gl::Texture@{Gl::Texture}!bind@{bind}}
+\index{bind@{bind}!Gl::Texture@{Gl::Texture}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily void Gl\+::\+Texture\+::bind (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}}]{target,  }\item[{GLuint}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_texture_aba34f99c0539049e5b74be647e43f474}\label{class_gl_1_1_texture_aba34f99c0539049e5b74be647e43f474} 
+\index{Gl::Texture@{Gl::Texture}!deleteTexture@{deleteTexture}}
+\index{deleteTexture@{deleteTexture}!Gl::Texture@{Gl::Texture}}
+\doxysubsubsection{\texorpdfstring{deleteTexture()}{deleteTexture()}}
+{\footnotesize\ttfamily void Gl\+::\+Texture\+::delete\+Texture (\begin{DoxyParamCaption}\item[{GLuint}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_texture_a33ba79574900a3817e0a4613e35e13e1}\label{class_gl_1_1_texture_a33ba79574900a3817e0a4613e35e13e1} 
+\index{Gl::Texture@{Gl::Texture}!generate@{generate}}
+\index{generate@{generate}!Gl::Texture@{Gl::Texture}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily GLuint Gl\+::\+Texture\+::generate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_texture_a3f8e713fcc80f9cf1248ceb3399ba086}\label{class_gl_1_1_texture_a3f8e713fcc80f9cf1248ceb3399ba086} 
+\index{Gl::Texture@{Gl::Texture}!generateMipmap@{generateMipmap}}
+\index{generateMipmap@{generateMipmap}!Gl::Texture@{Gl::Texture}}
+\doxysubsubsection{\texorpdfstring{generateMipmap()}{generateMipmap()}}
+{\footnotesize\ttfamily void Gl\+::\+Texture\+::generate\+Mipmap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_texture_a5ad3987a904b41df87a42f1ae2674d2c}\label{class_gl_1_1_texture_a5ad3987a904b41df87a42f1ae2674d2c} 
+\index{Gl::Texture@{Gl::Texture}!getMaxCountActiveTextures@{getMaxCountActiveTextures}}
+\index{getMaxCountActiveTextures@{getMaxCountActiveTextures}!Gl::Texture@{Gl::Texture}}
+\doxysubsubsection{\texorpdfstring{getMaxCountActiveTextures()}{getMaxCountActiveTextures()}}
+{\footnotesize\ttfamily size\+\_\+t Gl\+::\+Texture\+::get\+Max\+Count\+Active\+Textures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_texture_a6955eafd3b4aa5fac71dd127d199302e}\label{class_gl_1_1_texture_a6955eafd3b4aa5fac71dd127d199302e} 
+\index{Gl::Texture@{Gl::Texture}!setMagFilter@{setMagFilter}}
+\index{setMagFilter@{setMagFilter}!Gl::Texture@{Gl::Texture}}
+\doxysubsubsection{\texorpdfstring{setMagFilter()}{setMagFilter()}}
+{\footnotesize\ttfamily void Gl\+::\+Texture\+::set\+Mag\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2}{Mag\+Filter}}}]{filter,  }\item[{\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}}]{target = {\ttfamily \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target\+::\+Texture2D}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_texture_a8bac52e75287b1d570c77ef2a57081ef}\label{class_gl_1_1_texture_a8bac52e75287b1d570c77ef2a57081ef} 
+\index{Gl::Texture@{Gl::Texture}!setMinFilter@{setMinFilter}}
+\index{setMinFilter@{setMinFilter}!Gl::Texture@{Gl::Texture}}
+\doxysubsubsection{\texorpdfstring{setMinFilter()}{setMinFilter()}}
+{\footnotesize\ttfamily void Gl\+::\+Texture\+::set\+Min\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}{Min\+Filter}}}]{filter,  }\item[{\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}}]{target = {\ttfamily \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target\+::\+Texture2D}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_texture_addbd305c74b2130dab34bb323fe2deed}\label{class_gl_1_1_texture_addbd305c74b2130dab34bb323fe2deed} 
+\index{Gl::Texture@{Gl::Texture}!setWrapR@{setWrapR}}
+\index{setWrapR@{setWrapR}!Gl::Texture@{Gl::Texture}}
+\doxysubsubsection{\texorpdfstring{setWrapR()}{setWrapR()}}
+{\footnotesize\ttfamily void Gl\+::\+Texture\+::set\+WrapR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47}{Wrap}}}]{wrap,  }\item[{\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}}]{target = {\ttfamily \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target\+::\+Texture2D}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_texture_ab46649078b93c82e73d651cdca7a06b7}\label{class_gl_1_1_texture_ab46649078b93c82e73d651cdca7a06b7} 
+\index{Gl::Texture@{Gl::Texture}!setWrapS@{setWrapS}}
+\index{setWrapS@{setWrapS}!Gl::Texture@{Gl::Texture}}
+\doxysubsubsection{\texorpdfstring{setWrapS()}{setWrapS()}}
+{\footnotesize\ttfamily void Gl\+::\+Texture\+::set\+WrapS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47}{Wrap}}}]{wrap,  }\item[{\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}}]{target = {\ttfamily \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target\+::\+Texture2D}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_texture_a7f0ed602d6ced51a227bc050aa27bea4}\label{class_gl_1_1_texture_a7f0ed602d6ced51a227bc050aa27bea4} 
+\index{Gl::Texture@{Gl::Texture}!setWrapT@{setWrapT}}
+\index{setWrapT@{setWrapT}!Gl::Texture@{Gl::Texture}}
+\doxysubsubsection{\texorpdfstring{setWrapT()}{setWrapT()}}
+{\footnotesize\ttfamily void Gl\+::\+Texture\+::set\+WrapT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47}{Wrap}}}]{wrap,  }\item[{\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}}]{target = {\ttfamily \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target\+::\+Texture2D}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_texture_a652910a35a36d33e356258168246423c}\label{class_gl_1_1_texture_a652910a35a36d33e356258168246423c} 
+\index{Gl::Texture@{Gl::Texture}!stringToMagFilter@{stringToMagFilter}}
+\index{stringToMagFilter@{stringToMagFilter}!Gl::Texture@{Gl::Texture}}
+\doxysubsubsection{\texorpdfstring{stringToMagFilter()}{stringToMagFilter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2}{Gl\+::\+Texture\+::\+Mag\+Filter}} Gl\+::\+Texture\+::string\+To\+Mag\+Filter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_texture_a1d71c52579d6b5b495366c9f59bd31fd}\label{class_gl_1_1_texture_a1d71c52579d6b5b495366c9f59bd31fd} 
+\index{Gl::Texture@{Gl::Texture}!stringToMinFilter@{stringToMinFilter}}
+\index{stringToMinFilter@{stringToMinFilter}!Gl::Texture@{Gl::Texture}}
+\doxysubsubsection{\texorpdfstring{stringToMinFilter()}{stringToMinFilter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}{Gl\+::\+Texture\+::\+Min\+Filter}} Gl\+::\+Texture\+::string\+To\+Min\+Filter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_gl_1_1_texture_af9c2e03d18cd8a1e977b0bb4a92b7ef9}\label{class_gl_1_1_texture_af9c2e03d18cd8a1e977b0bb4a92b7ef9} 
+\index{Gl::Texture@{Gl::Texture}!texImage2D@{texImage2D}}
+\index{texImage2D@{texImage2D}!Gl::Texture@{Gl::Texture}}
+\doxysubsubsection{\texorpdfstring{texImage2D()}{texImage2D()}}
+{\footnotesize\ttfamily void Gl\+::\+Texture\+::tex\+Image2D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}}]{target,  }\item[{GLint}]{level,  }\item[{GLint}]{internalformat,  }\item[{GLsizei}]{width,  }\item[{GLsizei}]{height,  }\item[{GLint}]{border,  }\item[{GLenum}]{format,  }\item[{GLenum}]{type,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{pixels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_gl_1_1_texture_aebc6623470c4cb08cd9da4207b9b77ab}\label{class_gl_1_1_texture_aebc6623470c4cb08cd9da4207b9b77ab} 
+\index{Gl::Texture@{Gl::Texture}!invalidId@{invalidId}}
+\index{invalidId@{invalidId}!Gl::Texture@{Gl::Texture}}
+\doxysubsubsection{\texorpdfstring{invalidId}{invalidId}}
+{\footnotesize\ttfamily const GLuint Gl\+::\+Texture\+::invalid\+Id = 0\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+

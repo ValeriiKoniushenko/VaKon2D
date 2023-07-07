@@ -1,0 +1,124 @@
+\doxysection{Shader\+Program Class Reference}
+\hypertarget{class_shader_program}{}\label{class_shader_program}\index{ShaderProgram@{ShaderProgram}}
+
+
+{\ttfamily \#include $<$Shader\+Program.\+h$>$}
+
+Inheritance diagram for Shader\+Program\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_shader_program}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_shader_program_a8f0b34d44b3dadc941922d7ae678eb18}{Shader\+Program}} (bool should\+Create)
+\item 
+\mbox{\hyperlink{class_shader_program_aa28e24e87cb0c798d4d3a0914b32abcb}{Shader\+Program}} (\mbox{\hyperlink{class_shader}{Shader}} \&frag, \mbox{\hyperlink{class_shader}{Shader}} \&vert)
+\item 
+void \mbox{\hyperlink{class_shader_program_a6006856ea179b8603cfbc6570a8971a8}{recreate\+And\+Link}} (\mbox{\hyperlink{class_shader}{Shader}} \&frag, \mbox{\hyperlink{class_shader}{Shader}} \&vert)
+\item 
+void \mbox{\hyperlink{class_shader_program_a5191cdd556d4d46a64e2875f399ffd40}{create}} ()
+\item 
+void \mbox{\hyperlink{class_shader_program_a46334cfefeef06baccdd22314d70f2a0}{attach\+Shader}} (\mbox{\hyperlink{class_shader}{Shader}} \&shader)
+\item 
+void \mbox{\hyperlink{class_shader_program_ade9890eb840126bd3f9b9db42389253c}{link}} ()
+\item 
+void \mbox{\hyperlink{class_shader_program_aa3860ee49bab09ae3fc117da165ea73a}{use}} () const
+\item 
+\+\_\+\+NODISCARD bool \mbox{\hyperlink{class_shader_program_a6723c3585560fa5cfc469d7f21ff0d0c}{was\+Created}} () const
+\item 
+\+\_\+\+NODISCARD GLuint \mbox{\hyperlink{class_shader_program_a8bd9ffa4076385d6431e0c648221ba81}{data}} ()
+\item 
+\+\_\+\+NODISCARD bool \mbox{\hyperlink{class_shader_program_adb9dccc4b80e484f05804d8b11afc59b}{was\+Linked}} () const
+\item 
+void \mbox{\hyperlink{class_shader_program_a519ab85627a6656c69ac6a2c05362904}{delete\+Program}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable}{Utils\+::\+Not\+Copyable\+And\+Not\+Movable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable_a758fa487b40911a9f3866bc8e364e66c}{Not\+Copyable\+And\+Not\+Movable}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable_a1d95e7e9d475af7e40b179d06b00bf02}{\texorpdfstring{$\sim$}{\string~}\+Not\+Copyable\+And\+Not\+Movable}} ()=default
+\item 
+\mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable_a32cdbb32ab1c2f28d8f6e91ce886f23f}{Not\+Copyable\+And\+Not\+Movable}} (\mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable}{Not\+Copyable\+And\+Not\+Movable}} \&\&)=delete
+\item 
+\mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable}{Not\+Copyable\+And\+Not\+Movable}} \& \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable_a762cef71c1bb9398e2e49b83a1f11592}{operator=}} (\mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable}{Not\+Copyable\+And\+Not\+Movable}} \&\&)=delete
+\item 
+\mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable_a8a4815cc7ea7ec827b886e5615276209}{Not\+Copyable\+And\+Not\+Movable}} (const \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable}{Not\+Copyable\+And\+Not\+Movable}} \&)=delete
+\item 
+\mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable}{Not\+Copyable\+And\+Not\+Movable}} \& \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable_a16b89a0e5ec6acaede01528436dd15d8}{operator=}} (const \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable}{Not\+Copyable\+And\+Not\+Movable}} \&)=delete
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_shader_program_a8f0b34d44b3dadc941922d7ae678eb18}\label{class_shader_program_a8f0b34d44b3dadc941922d7ae678eb18} 
+\index{ShaderProgram@{ShaderProgram}!ShaderProgram@{ShaderProgram}}
+\index{ShaderProgram@{ShaderProgram}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{ShaderProgram()}{ShaderProgram()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Shader\+Program\+::\+Shader\+Program (\begin{DoxyParamCaption}\item[{bool}]{should\+Create }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_aa28e24e87cb0c798d4d3a0914b32abcb}\label{class_shader_program_aa28e24e87cb0c798d4d3a0914b32abcb} 
+\index{ShaderProgram@{ShaderProgram}!ShaderProgram@{ShaderProgram}}
+\index{ShaderProgram@{ShaderProgram}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{ShaderProgram()}{ShaderProgram()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Shader\+Program\+::\+Shader\+Program (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shader}{Shader}} \&}]{frag,  }\item[{\mbox{\hyperlink{class_shader}{Shader}} \&}]{vert }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_shader_program_a46334cfefeef06baccdd22314d70f2a0}\label{class_shader_program_a46334cfefeef06baccdd22314d70f2a0} 
+\index{ShaderProgram@{ShaderProgram}!attachShader@{attachShader}}
+\index{attachShader@{attachShader}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{attachShader()}{attachShader()}}
+{\footnotesize\ttfamily void Shader\+Program\+::attach\+Shader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shader}{Shader}} \&}]{shader }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_a5191cdd556d4d46a64e2875f399ffd40}\label{class_shader_program_a5191cdd556d4d46a64e2875f399ffd40} 
+\index{ShaderProgram@{ShaderProgram}!create@{create}}
+\index{create@{create}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily void Shader\+Program\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_a8bd9ffa4076385d6431e0c648221ba81}\label{class_shader_program_a8bd9ffa4076385d6431e0c648221ba81} 
+\index{ShaderProgram@{ShaderProgram}!data@{data}}
+\index{data@{data}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily GLuint Shader\+Program\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_a519ab85627a6656c69ac6a2c05362904}\label{class_shader_program_a519ab85627a6656c69ac6a2c05362904} 
+\index{ShaderProgram@{ShaderProgram}!deleteProgram@{deleteProgram}}
+\index{deleteProgram@{deleteProgram}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{deleteProgram()}{deleteProgram()}}
+{\footnotesize\ttfamily void Shader\+Program\+::delete\+Program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_ade9890eb840126bd3f9b9db42389253c}\label{class_shader_program_ade9890eb840126bd3f9b9db42389253c} 
+\index{ShaderProgram@{ShaderProgram}!link@{link}}
+\index{link@{link}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{link()}{link()}}
+{\footnotesize\ttfamily void Shader\+Program\+::link (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_a6006856ea179b8603cfbc6570a8971a8}\label{class_shader_program_a6006856ea179b8603cfbc6570a8971a8} 
+\index{ShaderProgram@{ShaderProgram}!recreateAndLink@{recreateAndLink}}
+\index{recreateAndLink@{recreateAndLink}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{recreateAndLink()}{recreateAndLink()}}
+{\footnotesize\ttfamily void Shader\+Program\+::recreate\+And\+Link (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shader}{Shader}} \&}]{frag,  }\item[{\mbox{\hyperlink{class_shader}{Shader}} \&}]{vert }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_aa3860ee49bab09ae3fc117da165ea73a}\label{class_shader_program_aa3860ee49bab09ae3fc117da165ea73a} 
+\index{ShaderProgram@{ShaderProgram}!use@{use}}
+\index{use@{use}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily void Shader\+Program\+::use (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_shader_program_a6723c3585560fa5cfc469d7f21ff0d0c}\label{class_shader_program_a6723c3585560fa5cfc469d7f21ff0d0c} 
+\index{ShaderProgram@{ShaderProgram}!wasCreated@{wasCreated}}
+\index{wasCreated@{wasCreated}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{wasCreated()}{wasCreated()}}
+{\footnotesize\ttfamily bool Shader\+Program\+::was\+Created (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_shader_program_adb9dccc4b80e484f05804d8b11afc59b}\label{class_shader_program_adb9dccc4b80e484f05804d8b11afc59b} 
+\index{ShaderProgram@{ShaderProgram}!wasLinked@{wasLinked}}
+\index{wasLinked@{wasLinked}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{wasLinked()}{wasLinked()}}
+{\footnotesize\ttfamily bool Shader\+Program\+::was\+Linked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+

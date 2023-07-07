@@ -1,0 +1,58 @@
+\doxysection{Vao.\+h}
+\hypertarget{_vao_8h_source}{}\label{_vao_8h_source}\index{lib/core/core-\/wrappers/include/Vao.h@{lib/core/core-\/wrappers/include/Vao.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ MIT\ License}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (c)\ 2023\ Valerii\ Koniushenko}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ in\ the\ Software\ without\ restriction,\ including\ without\ limitation\ the\ rights}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ SOFTWARE.}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}Gl.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}GlfwWrapper.h"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_vao}{Vao}}}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_vao_ab3afdf9e19eb1d5f851d41b73379f39f}{Vao}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_vao_ab3afdf9e19eb1d5f851d41b73379f39f}{Vao}}(\textcolor{keywordtype}{bool}\ isGenerate,\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_vao_a1faf367c6333495860304e22971edd0e}{isBind}});}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_vao_ab3afdf9e19eb1d5f851d41b73379f39f}{Vao}}(GLuint\ index,\ GLint\ size,\ \mbox{\hyperlink{class_gl_a531a4c376dc639d1cef19fa05d661ad0}{Gl::Type}}\ type,\ \textcolor{keywordtype}{bool}\ normalized,\ GLsizei\ stride,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ pointer);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_vao_aec45f5a58046b675d1c603debcbe2aa2}{Vao}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vao}{Vao}}\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_vao_ab3afdf9e19eb1d5f851d41b73379f39f}{Vao}}(\mbox{\hyperlink{class_vao}{Vao}}\&\&\ other);}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_vao}{Vao}}\&\ \mbox{\hyperlink{class_vao_aafcd390624d020fbac8e9e0f765b312a}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vao}{Vao}}\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_vao}{Vao}}\&\ \mbox{\hyperlink{class_vao_aafcd390624d020fbac8e9e0f765b312a}{operator=}}(\mbox{\hyperlink{class_vao}{Vao}}\&\&\ other);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_vao_a79f27cbf00ba87623a2d1b8909bc9325}{\string~Vao}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vao_a65b51778197c231e8b9262af1d84f87b}{generate}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vao_a62fdf04ca6fa1b128c1929c8e42b266e}{bind}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vao_ad75236fe022e2431d76d55067accb43e}{unbind}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vao_a678c8c84cdb0f9b5de4a52d8ac7d723b}{destroy}}();}
+\DoxyCodeLine{00046\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_vao_ae9ab92efdf60a0b453ee4fe1856aa52c}{isGenerated}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_vao_a1faf367c6333495860304e22971edd0e}{isBind}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ isBind\_\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00051\ \ \ \ \ GLuint\ id\_\ =\ \mbox{\hyperlink{class_gl_1_1_vao_aa97c0933b0960757251961beb957051f}{Gl::Vao::invalidId}};}
+\DoxyCodeLine{00052\ \};}
+
+\end{DoxyCode}

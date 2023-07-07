@@ -1,0 +1,79 @@
+\doxysection{Image.\+h}
+\hypertarget{_image_8h_source}{}\label{_image_8h_source}\index{lib/core/core-\/wrappers/include/Image.h@{lib/core/core-\/wrappers/include/Image.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ MIT\ License}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (c)\ 2023\ Valerii\ Koniushenko}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ in\ the\ Software\ without\ restriction,\ including\ without\ limitation\ the\ rights}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ SOFTWARE.}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}Gl.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}NotCopyableButMovable.h"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}glm.hpp"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_image}{Image}}\ :\ \mbox{\hyperlink{class_utils_1_1_not_copyable_but_movable}{Utils::NotCopyableButMovable}}}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eb}{Channel}}}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Next\ values\ were\ taken\ from\ the\ stb\_image.h\ documentation.}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eba6adf97f83acf6453d4a6a4b1070f3754}{None}}\ =\ 0,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5ebacaf3a042a037c064b7513ed640c22f77}{Grey}}\ =\ 1,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eba23b7c8292fe01bd7cb207f6beb79e47a}{GreyA}}\ =\ 2,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eba889574aebacda6bfd3e534e2b49b8028}{RGB}}\ =\ 3,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5ebaea3495a278957dc58165e48a8945469f}{RGBA}}\ =\ 4}
+\DoxyCodeLine{00043\ \ \ \ \ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{static}\ GLenum\ \mbox{\hyperlink{class_image_a74419c0e79623ce3602905fc6ed7650c}{convertChannelToGlChannel}}(\mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eb}{Channel}}\ channel);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_image}{Image}}(std::filesystem::path\&\&\ path\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}(\mbox{\hyperlink{class_image}{Image}}\&\&\ obj)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\&\ \mbox{\hyperlink{class_image_a4d2ee0f0f35824abd031bfa62782c174}{operator=}}(\mbox{\hyperlink{class_image}{Image}}\&\&\ obj);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_image_a7b0235b2b5784ae92262dc7fd6c84c84}{\string~Image}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_image_a36bcae4838228d574738249a87dc4464}{getWidth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_image_a1cd7587f88b6932b5269051d1ba08ff9}{getHeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ \ \ \ \ \_NODISCARD\ glm::ivec2\ \mbox{\hyperlink{class_image_a5b7a1ce5c8a1effcbd2921709b4261fe}{getSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ \ \ \ \ \_NODISCARD\ \mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eb}{Channel}}\ \mbox{\hyperlink{class_image_aadf22a378598ecc93de197b4a6a0a753}{getChannel}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00059\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_image_a64cd9e2772df6b18627d8b37a3d362fd}{data}}();}
+\DoxyCodeLine{00060\ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_image_a64cd9e2772df6b18627d8b37a3d362fd}{data}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_image_a690d3e9bb96d4f516240fa60415afd67}{loadImage}}(std::filesystem::path\&\&,\ \textcolor{keywordtype}{bool}\ isFlipVertically\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_image_aff0f823cc016683dcbc768813aed65d8}{loadToGpu}}();}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_image_a3a233515eb3a5f83917dc634c778db5a}{clear}}();}
+\DoxyCodeLine{00064\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_image_ad9b9016c9e5b309b338b12d76a09aa5f}{isEmpty}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ init\_();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ data\_\{\};}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ width\_\{\},\ height\_\{\};}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eb}{Channel}}\ channel\_\ =\ \mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eba6adf97f83acf6453d4a6a4b1070f3754}{Channel::None}};}
+\DoxyCodeLine{00073\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,136 @@
+\doxysection{Window Class Reference}
+\hypertarget{class_window}{}\label{class_window}\index{Window@{Window}}
+
+
+{\ttfamily \#include $<$Window.\+h$>$}
+
+Inheritance diagram for Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_window}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_window_a05e6957ecc6f3d66c2bd183b583e9905}{create}} (\mbox{\hyperlink{namespace_utils_aa81b8f34f06cea4a8139492c0e1ad5da}{Utils\+::\+ISize2D}} size, const std\+::string \&title)
+\item 
+\+\_\+\+NODISCARD bool \mbox{\hyperlink{class_window_a1caaf150558c0c35a8811f19ccac817d}{should\+Close}} () const
+\item 
+void \mbox{\hyperlink{class_window_af6ffedb8d12d5551bdb4c298de87ed56}{swap\+Buffers}} ()
+\item 
+void \mbox{\hyperlink{class_window_a5abb541ee62c814dc7a7037140af7e8f}{poll\+Event}} ()
+\item 
+void \mbox{\hyperlink{class_window_a9cbb416a1ebaa3ecbc9271b1ec0858f4}{clear\+Color}} (float r, float g, float b, float a)
+\item 
+void \mbox{\hyperlink{class_window_af64a20e4e611ac92f8b4ea45da167a4f}{clear}} (int code)
+\item 
+void \mbox{\hyperlink{class_window_a73012932887c6ab3a5547b7eb84a3045}{viewport}} (GLint x, GLint y, GLsizei width, GLsizei height)
+\item 
+\+\_\+\+NODISCARD HWND \mbox{\hyperlink{class_window_a6355a2192781ddc99770864bc1b1e0b9}{get\+Hwnd}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_lambda_delegate}{Lambda\+Delegate}}$<$ void(int, int, int, int)$>$ \mbox{\hyperlink{class_window_abfe6946d21b114ba000695c79cbd8f30}{on\+Key\+Pressed}}
+\item 
+\mbox{\hyperlink{class_lambda_delegate}{Lambda\+Delegate}}$<$ void(unsigned int)$>$ \mbox{\hyperlink{class_window_a1050014132a5d244974194d8d3cd8353}{on\+Text\+Input}}
+\item 
+\mbox{\hyperlink{class_lambda_delegate}{Lambda\+Delegate}}$<$ void(int)$>$ \mbox{\hyperlink{class_window_a04201e6f1fd95c41f547a0dd7fa74b3d}{on\+Cursor\+Entered}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+GLFWwindow \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window_a9957db4afdad3d57e5c5b6626b44b6d0}{window}} \{\}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_singleton}{Singleton$<$ Window $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_window}{Window}} \& \mbox{\hyperlink{class_singleton_ad486cf51d0a40bec83b6a5ee40b7857c}{instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_singleton}{Singleton$<$ Window $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_singleton_adb1b554fec7ae6065fe0e09111f3581f}{Singleton}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_singleton_a9349b42bad14a8e86c56229175acfba4}{\texorpdfstring{$\sim$}{\string~}\+Singleton}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_window_af64a20e4e611ac92f8b4ea45da167a4f}\label{class_window_af64a20e4e611ac92f8b4ea45da167a4f} 
+\index{Window@{Window}!clear@{clear}}
+\index{clear@{clear}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Window\+::clear (\begin{DoxyParamCaption}\item[{int}]{code }\end{DoxyParamCaption})}
+
+\Hypertarget{class_window_a9cbb416a1ebaa3ecbc9271b1ec0858f4}\label{class_window_a9cbb416a1ebaa3ecbc9271b1ec0858f4} 
+\index{Window@{Window}!clearColor@{clearColor}}
+\index{clearColor@{clearColor}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{clearColor()}{clearColor()}}
+{\footnotesize\ttfamily void Window\+::clear\+Color (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float}]{a }\end{DoxyParamCaption})}
+
+\Hypertarget{class_window_a05e6957ecc6f3d66c2bd183b583e9905}\label{class_window_a05e6957ecc6f3d66c2bd183b583e9905} 
+\index{Window@{Window}!create@{create}}
+\index{create@{create}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily void Window\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_utils_aa81b8f34f06cea4a8139492c0e1ad5da}{Utils\+::\+ISize2D}}}]{size,  }\item[{const std\+::string \&}]{title }\end{DoxyParamCaption})}
+
+\Hypertarget{class_window_a6355a2192781ddc99770864bc1b1e0b9}\label{class_window_a6355a2192781ddc99770864bc1b1e0b9} 
+\index{Window@{Window}!getHwnd@{getHwnd}}
+\index{getHwnd@{getHwnd}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{getHwnd()}{getHwnd()}}
+{\footnotesize\ttfamily HWND Window\+::get\+Hwnd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_window_a5abb541ee62c814dc7a7037140af7e8f}\label{class_window_a5abb541ee62c814dc7a7037140af7e8f} 
+\index{Window@{Window}!pollEvent@{pollEvent}}
+\index{pollEvent@{pollEvent}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{pollEvent()}{pollEvent()}}
+{\footnotesize\ttfamily void Window\+::poll\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_window_a1caaf150558c0c35a8811f19ccac817d}\label{class_window_a1caaf150558c0c35a8811f19ccac817d} 
+\index{Window@{Window}!shouldClose@{shouldClose}}
+\index{shouldClose@{shouldClose}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{shouldClose()}{shouldClose()}}
+{\footnotesize\ttfamily bool Window\+::should\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_window_af6ffedb8d12d5551bdb4c298de87ed56}\label{class_window_af6ffedb8d12d5551bdb4c298de87ed56} 
+\index{Window@{Window}!swapBuffers@{swapBuffers}}
+\index{swapBuffers@{swapBuffers}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{swapBuffers()}{swapBuffers()}}
+{\footnotesize\ttfamily void Window\+::swap\+Buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_window_a73012932887c6ab3a5547b7eb84a3045}\label{class_window_a73012932887c6ab3a5547b7eb84a3045} 
+\index{Window@{Window}!viewport@{viewport}}
+\index{viewport@{viewport}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{viewport()}{viewport()}}
+{\footnotesize\ttfamily void Window\+::viewport (\begin{DoxyParamCaption}\item[{GLint}]{x,  }\item[{GLint}]{y,  }\item[{GLsizei}]{width,  }\item[{GLsizei}]{height }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_window_a04201e6f1fd95c41f547a0dd7fa74b3d}\label{class_window_a04201e6f1fd95c41f547a0dd7fa74b3d} 
+\index{Window@{Window}!onCursorEntered@{onCursorEntered}}
+\index{onCursorEntered@{onCursorEntered}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{onCursorEntered}{onCursorEntered}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_lambda_delegate}{Lambda\+Delegate}}$<$void(int)$>$ Window\+::on\+Cursor\+Entered}
+
+\Hypertarget{class_window_abfe6946d21b114ba000695c79cbd8f30}\label{class_window_abfe6946d21b114ba000695c79cbd8f30} 
+\index{Window@{Window}!onKeyPressed@{onKeyPressed}}
+\index{onKeyPressed@{onKeyPressed}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{onKeyPressed}{onKeyPressed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_lambda_delegate}{Lambda\+Delegate}}$<$void(int, int, int, int)$>$ Window\+::on\+Key\+Pressed}
+
+\Hypertarget{class_window_a1050014132a5d244974194d8d3cd8353}\label{class_window_a1050014132a5d244974194d8d3cd8353} 
+\index{Window@{Window}!onTextInput@{onTextInput}}
+\index{onTextInput@{onTextInput}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{onTextInput}{onTextInput}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_lambda_delegate}{Lambda\+Delegate}}$<$void(unsigned int)$>$ Window\+::on\+Text\+Input}
+
+\Hypertarget{class_window_a9957db4afdad3d57e5c5b6626b44b6d0}\label{class_window_a9957db4afdad3d57e5c5b6626b44b6d0} 
+\index{Window@{Window}!window@{window}}
+\index{window@{window}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily GLFWwindow\texorpdfstring{$\ast$}{*} Window\+::window \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+

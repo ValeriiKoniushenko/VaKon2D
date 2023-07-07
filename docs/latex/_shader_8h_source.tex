@@ -1,0 +1,57 @@
+\doxysection{Shader.\+h}
+\hypertarget{_shader_8h_source}{}\label{_shader_8h_source}\index{lib/core/core-\/wrappers/include/Shader.h@{lib/core/core-\/wrappers/include/Shader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ MIT\ License}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (c)\ 2023\ Valerii\ Koniushenko}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ in\ the\ Software\ without\ restriction,\ including\ without\ limitation\ the\ rights}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ SOFTWARE.}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}Gl.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}NotCopyableAndNotMovable.h"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_shader}{Shader}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable}{Utils::NotCopyableAndNotMovable}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_shader}{Shader}}(\mbox{\hyperlink{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019}{Gl::Shader::Type}}\ type,\ \textcolor{keywordtype}{bool}\ shouldCreate\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_shader}{Shader}}(\textcolor{keyword}{const}\ std::filesystem::path\&\ path,\ \mbox{\hyperlink{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019}{Gl::Shader::Type}}\ type);}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_shader_ad3825ce04340dcb4c3fe7eea5a1c46d2}{\string~Shader}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_a982c86af8600ee7c5efa5ac8576c8f04}{create}}();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_a55e1e103de4e343a5c6ec45190726986}{loadFromFile}}(\textcolor{keyword}{const}\ std::filesystem::path\&\ path);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_af99241d5f9d2eb3a38517d5ee90ad095}{setType}}(\mbox{\hyperlink{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019}{Gl::Shader::Type}}\ type);}
+\DoxyCodeLine{00040\ \ \ \ \ \_NODISCARD\ \mbox{\hyperlink{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019}{Gl::Shader::Type}}\ \mbox{\hyperlink{class_shader_add449d58cbc3b44812ee5af1afb7b5bb}{getType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_a0eda07a84d959f5e917d99e3e17f0c12}{compile}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_ad0f1f49beb817f77cd93357aab7f296f}{setSource}}(\textcolor{keyword}{const}\ std::string\&\ source);}
+\DoxyCodeLine{00043\ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_shader_a6a9b05dded7dbda0739b020296b0841b}{getSource}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_ada1a50480f9d9a2e7aed86fb96467ab2}{deleteShader}}();}
+\DoxyCodeLine{00045\ \ \ \ \ GLuint\ \mbox{\hyperlink{class_shader_a8e1c8848d0a65ecd4a402d1f435a3f0e}{data}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ \ \ std::string\ source\_;}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019}{Gl::Shader::Type}}\ type\_\ =\ \mbox{\hyperlink{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019a37d01b98065725fe3a1d30acf3a0064a}{Gl::Shader::Type::Fragment}};}
+\DoxyCodeLine{00050\ \ \ \ \ GLuint\ data\_\ =\ \mbox{\hyperlink{class_gl_1_1_shader_a71bb2f32884cff06a7a4da2057a200e2}{Gl::Shader::invalidId}};}
+\DoxyCodeLine{00051\ \};}
+
+\end{DoxyCode}
