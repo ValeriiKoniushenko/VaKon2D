@@ -1,5 +1,5 @@
 name: C/C++ CI
-
+# Workflow file for windows
 on:
   push:
     branches: [ "develop" ]
@@ -7,14 +7,12 @@ on:
     branches: [ "develop" ]
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
+  Windows:
+    name: build-windows
+    runs-on: [ self-hosted, windows ]
 
     steps:
-    - name: ls
-      run: ls -la
-    - name: cmake-configuring
-      run: cmake ../
-    - name: cmake-build
-      run: cmake --build .
+      - name: Checkout
+        uses: actions/checkout@v1
+        with:
+          submodules: recursive
