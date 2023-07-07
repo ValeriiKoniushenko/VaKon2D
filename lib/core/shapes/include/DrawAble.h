@@ -20,54 +20,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
-
-#include "Gl.h"
-#include "NotCopyableButMovable.h"
 #include "glm/glm.hpp"
 
-#include <filesystem>
-#include <string>
+#include <cstdlib>
 
-class Image : Utils::NotCopyableButMovable
+class ShaderProgram;
+
+class DrawAble
 {
 public:
-	enum class Channel
-	{
-		// Next values were taken from the stb_image.h documentation.
-		None = 0,
-		Grey = 1,
-		GreyA = 2,
-		RGB = 3,
-		RGBA = 4
-	};
+	virtual void draw(ShaderProgram& shaderProgram);
+	_NODISCARD virtual std::size_t getVerticesCount() const;
 
-public:
-	_NODISCARD static GLenum convertChannelToGlChannel(Channel channel);
+	void setPosition(const glm::vec3& newPosition);
+	void move(const glm::vec3& offset);
+	_NODISCARD const glm::vec3& getPosition() const;
 
-	explicit Image(std::filesystem::path&& path = "");
+	void setRotation(float newRotation);
+	void rotate(float offset);
+	_NODISCARD float getRotation() const;
 
-	Image(Image&& obj) noexcept;
-	Image& operator=(Image&& obj);
-
-	~Image() override;
-
-	_NODISCARD int getWidth() const;
-	_NODISCARD int getHeight() const;
-	_NODISCARD glm::ivec2 getSize() const;
-	_NODISCARD Channel getChannel() const;
-	_NODISCARD unsigned char* data();
-	_NODISCARD const unsigned char* data() const;
-	void loadImage(std::filesystem::path&&, bool isFlipVertically = true);
-	void loadToGpu();
-	void clear();
-	_NODISCARD bool isEmpty() const;
-
-private:
-	void init_();
-
-private:
-	unsigned char* data_{};
-	int width_{}, height_{};
-	Channel channel_ = Channel::None;
+protected:
+	glm::vec3 position_{};
+	float rotation_{};
 };

@@ -1,12 +1,12 @@
+file(
+	GLOB Sources
+	"include/*.h"
+	"source/*.cpp"
+)
+
 add_library(
 	Utils
-	include/NotCopyableAndNotMovable.h
-	include/Rect.h
-	include/Singleton.h
-	include/Size.h
-	include/UtilsFunctions.h
-
-	source/UtilsFunctions.cpp
+	${Sources}
 )
 
 set_target_properties(Utils PROPERTIES LINKER_LANGUAGE CXX)

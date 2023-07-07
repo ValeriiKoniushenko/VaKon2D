@@ -31,6 +31,4 @@ public:
 
 private:
 	void initCore();
-
-	void hello(int world);
 };

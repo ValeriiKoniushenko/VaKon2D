@@ -1,10 +1,12 @@
+file(
+	GLOB Sources
+	"include/*.h"
+	"source/*.cpp"
+)
+
 add_library(
 	World STATIC
-	include/Timer.h
-	include/World.h
-
-	source/Timer.cpp
-	source/World.cpp
+	${Sources}
 )
 
 target_include_directories(

@@ -23,6 +23,7 @@ target_link_libraries(
 	World
 	Input-Devices
 	Misc
+	Shapes
 )
 
 add_custom_command(TARGET VaKon2D PRE_BUILD

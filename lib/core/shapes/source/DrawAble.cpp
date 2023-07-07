@@ -20,54 +20,46 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
+#include "DrawAble.h"
 
 #include "Gl.h"
-#include "NotCopyableButMovable.h"
-#include "glm/glm.hpp"
 
-#include <filesystem>
-#include <string>
-
-class Image : Utils::NotCopyableButMovable
+void DrawAble::draw(ShaderProgram& shaderProgram)
 {
-public:
-	enum class Channel
-	{
-		// Next values were taken from the stb_image.h documentation.
-		None = 0,
-		Grey = 1,
-		GreyA = 2,
-		RGB = 3,
-		RGBA = 4
-	};
+	Gl::drawArrays(GL_TRIANGLE_STRIP, 0, getVerticesCount());
+}
 
-public:
-	_NODISCARD static GLenum convertChannelToGlChannel(Channel channel);
+std::size_t DrawAble::getVerticesCount() const
+{
+	return 0;
+}
 
-	explicit Image(std::filesystem::path&& path = "");
+void DrawAble::setPosition(const glm::vec3& newPosition)
+{
+	position_ = newPosition;
+}
 
-	Image(Image&& obj) noexcept;
-	Image& operator=(Image&& obj);
+void DrawAble::move(const glm::vec3& offset)
+{
+	position_ += offset;
+}
 
-	~Image() override;
+const glm::vec3& DrawAble::getPosition() const
+{
+	return position_;
+}
 
-	_NODISCARD int getWidth() const;
-	_NODISCARD int getHeight() const;
-	_NODISCARD glm::ivec2 getSize() const;
-	_NODISCARD Channel getChannel() const;
-	_NODISCARD unsigned char* data();
-	_NODISCARD const unsigned char* data() const;
-	void loadImage(std::filesystem::path&&, bool isFlipVertically = true);
-	void loadToGpu();
-	void clear();
-	_NODISCARD bool isEmpty() const;
+void DrawAble::setRotation(float newRotation)
+{
+	rotation_ = newRotation;
+}
 
-private:
-	void init_();
+void DrawAble::rotate(float offset)
+{
+	rotation_ += offset;
+}
 
-private:
-	unsigned char* data_{};
-	int width_{}, height_{};
-	Channel channel_ = Channel::None;
-};
+float DrawAble::getRotation() const
+{
+	return rotation_;
+}

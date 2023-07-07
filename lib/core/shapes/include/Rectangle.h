@@ -20,54 +20,36 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
+#include "DrawAble.h"
+#include "Vao.h"
+#include "Vbo.h"
 
-#include "Gl.h"
-#include "NotCopyableButMovable.h"
-#include "glm/glm.hpp"
+#include <vector>
 
-#include <filesystem>
-#include <string>
+class Texture;
 
-class Image : Utils::NotCopyableButMovable
+class Rectangle : public DrawAble
 {
 public:
-	enum class Channel
-	{
-		// Next values were taken from the stb_image.h documentation.
-		None = 0,
-		Grey = 1,
-		GreyA = 2,
-		RGB = 3,
-		RGBA = 4
+	void draw(ShaderProgram& shaderProgram) override;
+	_NODISCARD std::size_t getVerticesCount() const override;
+
+	void setTexture(Texture& texture);
+	_NODISCARD Texture& getTexture();
+
+	void prepare();
+
+private:
+	// clang-format off
+	const std::vector<float> vertices = {
+		0.f, 0.f,  0.f, 0.f,
+		1.f, 0.f,  1.f, 0.f,
+		0.f, 1.f,  0.f, 1.f,
+		1.f, 1.f,  1.f, 1.f,
 	};
+	// clang-format on
 
-public:
-	_NODISCARD static GLenum convertChannelToGlChannel(Channel channel);
-
-	explicit Image(std::filesystem::path&& path = "");
-
-	Image(Image&& obj) noexcept;
-	Image& operator=(Image&& obj);
-
-	~Image() override;
-
-	_NODISCARD int getWidth() const;
-	_NODISCARD int getHeight() const;
-	_NODISCARD glm::ivec2 getSize() const;
-	_NODISCARD Channel getChannel() const;
-	_NODISCARD unsigned char* data();
-	_NODISCARD const unsigned char* data() const;
-	void loadImage(std::filesystem::path&&, bool isFlipVertically = true);
-	void loadToGpu();
-	void clear();
-	_NODISCARD bool isEmpty() const;
-
-private:
-	void init_();
-
-private:
-	unsigned char* data_{};
-	int width_{}, height_{};
-	Channel channel_ = Channel::None;
+	Texture* texture_{};
+	Vbo vbo_;
+	Vao vao_;
 };

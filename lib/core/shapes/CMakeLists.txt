@@ -4,18 +4,16 @@ file(
 	"source/*.cpp"
 )
 
-add_library(
-	Input-Devices STATIC
-	${Sources}
-)
+add_library(Shapes STATIC ${Sources})
 
 target_include_directories(
-	Input-Devices PUBLIC
+	Shapes PUBLIC
 	include
 )
 
 target_link_libraries(
-	Input-Devices PUBLIC
+	Shapes PUBLIC
+	Utils
+	Core-Wrappers
 	Glm
-	Window
 )

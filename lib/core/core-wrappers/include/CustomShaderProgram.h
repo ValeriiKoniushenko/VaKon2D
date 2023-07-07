@@ -22,52 +22,13 @@
 
 #pragma once
 
-#include "Gl.h"
-#include "NotCopyableButMovable.h"
-#include "glm/glm.hpp"
+#include "ShaderProgram.h"
 
-#include <filesystem>
-#include <string>
-
-class Image : Utils::NotCopyableButMovable
+class CustomShaderProgram : public ShaderProgram
 {
 public:
-	enum class Channel
-	{
-		// Next values were taken from the stb_image.h documentation.
-		None = 0,
-		Grey = 1,
-		GreyA = 2,
-		RGB = 3,
-		RGBA = 4
-	};
+	explicit CustomShaderProgram(bool shouldCreate);
+	CustomShaderProgram(Shader& frag, Shader& vert);
 
-public:
-	_NODISCARD static GLenum convertChannelToGlChannel(Channel channel);
-
-	explicit Image(std::filesystem::path&& path = "");
-
-	Image(Image&& obj) noexcept;
-	Image& operator=(Image&& obj);
-
-	~Image() override;
-
-	_NODISCARD int getWidth() const;
-	_NODISCARD int getHeight() const;
-	_NODISCARD glm::ivec2 getSize() const;
-	_NODISCARD Channel getChannel() const;
-	_NODISCARD unsigned char* data();
-	_NODISCARD const unsigned char* data() const;
-	void loadImage(std::filesystem::path&&, bool isFlipVertically = true);
-	void loadToGpu();
-	void clear();
-	_NODISCARD bool isEmpty() const;
-
-private:
-	void init_();
-
-private:
-	unsigned char* data_{};
-	int width_{}, height_{};
-	Channel channel_ = Channel::None;
+	void OnAfterLink() override;
 };

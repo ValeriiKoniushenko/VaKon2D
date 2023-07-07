@@ -22,20 +22,16 @@
 
 #include "VaKon2D.h"
 
-#include "Gl.h"
+#include "CustomShaderProgram.h"
 #include "GladWrapper.h"
 #include "Image.h"
 #include "Keyboard.h"
 #include "Logger.h"
+#include "Rectangle.h"
 #include "Shader.h"
-#include "ShaderProgram.h"
 #include "Texture.h"
-#include "Vao.h"
-#include "Vbo.h"
 #include "Window.h"
 #include "World.h"
-
-#include <iostream>
 
 void VaKon2D::start()
 {
@@ -43,62 +39,31 @@ void VaKon2D::start()
 
 	GetWindow().viewport(0, 0, 800, 600);
 
-	ShaderProgram program(true);
+	CustomShaderProgram program(true);
 	{
 		Shader vertex("assets/shaders/main-vertex.glsl", Gl::Shader::Type::Vertex);
 		Shader fragment("assets/shaders/main-fragment.glsl", Gl::Shader::Type::Fragment);
 		program.attachShader(vertex);
 		program.attachShader(fragment);
 	}
-
 	program.link();
 	program.use();
-
-	glEnable(GL_BLEND);
-	glEnable(GL_CULL_FACE);
-	glDisable(GL_DEPTH_TEST);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-	// clang-format off
-	const std::vector<float> vertices = {
-	    0.f, 0.f,  0.f, 0.f,
-	    1.f, 0.f,  1.f, 0.f,
-	    0.f, 1.f,  0.f, 1.f,
-	    1.f, 1.f,  1.f, 1.f,
-	};
-	// clang-format on
-
-	Vbo vbo(vertices);
-	Vao vao(true, true);
-	Gl::Vao::vertexAttribPointer(0, 2, Gl::Type::Float, false, 4 * sizeof(float), (void*) 0);
-	Gl::Vao::enableVertexAttribArray(0);
-
-	Gl::Vao::vertexAttribPointer(1, 2, Gl::Type::Float, false, 4 * sizeof(float), reinterpret_cast<const void*>(2 * sizeof(float)));
-	Gl::Vao::enableVertexAttribArray(1);
 
 	Texture texture(Gl::Texture::Target::Texture2D, true, true);
 	Image image("assets/textures/apple.png");
 	texture.setImage(image);
 	texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
-	texture.loadToGpu();
+
+	class Rectangle rect;
+	rect.setTexture(texture);
+	rect.prepare();
 
 	while (!GetWindow().shouldClose())
 	{
 		GetWindow().clearColor(0.2f, 0.3f, 0.3f, 1.0f);	   // TODO: create class Color
 		GetWindow().clear(GL_COLOR_BUFFER_BIT);			   // TODO: change to enum class
 
-		program.use();
-		texture.bind();
-		vao.bind();
-		Gl::drawArrays(GL_TRIANGLE_STRIP, 0, 4);
-
-		if (Keyboard::isKeyPressed(Keyboard::Key::F5))
-		{
-			Shader vertex("assets/shaders/main-vertex.glsl", Gl::Shader::Type::Vertex);
-			Shader fragment("assets/shaders/main-fragment.glsl", Gl::Shader::Type::Fragment);
-			program.recreateAndLink(vertex, fragment);
-			program.use();
-		}
+		rect.draw(program);
 
 		GetWindow().swapBuffers();
 		GetWindow().pollEvent();
@@ -116,9 +81,4 @@ void VaKon2D::initCore()
 	GladWrapper::initGlad();
 	GetWorld().init();
 	// <---------------------------------------
-}
-
-void VaKon2D::hello(int world)
-{
-	std::cout << "World: " << world << std::endl;
 }

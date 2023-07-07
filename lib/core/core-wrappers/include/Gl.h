@@ -117,6 +117,44 @@ public:
 		_NODISCARD static std::string getProgramInfoLog(GLuint program);
 		static void use(GLuint program);
 		static void deleteProgram(GLuint program);
+		_NODISCARD static const GLint getUniformLocation(GLuint program, const std::string& name);
+
+		static void uniform1f(GLint location, GLfloat v0);
+		static void uniform2f(GLint location, GLfloat v0, GLfloat v1);
+		static void uniform3f(GLint location, GLfloat v0, GLfloat v1, GLfloat v2);
+		static void uniform4f(GLint location, GLfloat v0, GLfloat v1, GLfloat v2, GLfloat v3);
+		static void uniform1i(GLint location, GLint v0);
+		static void uniform2i(GLint location, GLint v0, GLint v1);
+		static void uniform3i(GLint location, GLint v0, GLint v1, GLint v2);
+		static void uniform4i(GLint location, GLint v0, GLint v1, GLint v2, GLint v3);
+		static void uniform1ui(GLint location, GLuint v0);
+		static void uniform2ui(GLint location, GLuint v0, GLuint v1);
+		static void uniform3ui(GLint location, GLuint v0, GLuint v1, GLuint v2);
+		static void uniform4ui(GLint location, GLuint v0, GLuint v1, GLuint v2, GLuint v3);
+		static void uniform1fv(GLint location, GLsizei count, const GLfloat* value);
+		static void uniform2fv(GLint location, GLsizei count, const GLfloat* value);
+		static void uniform3fv(GLint location, GLsizei count, const GLfloat* value);
+		static void uniform4fv(GLint location, GLsizei count, const GLfloat* value);
+		static void uniform1iv(GLint location, GLsizei count, const GLint* value);
+		static void uniform2iv(GLint location, GLsizei count, const GLint* value);
+		static void uniform3iv(GLint location, GLsizei count, const GLint* value);
+		static void uniform4iv(GLint location, GLsizei count, const GLint* value);
+		static void uniform1uiv(GLint location, GLsizei count, const GLuint* value);
+		static void uniform2uiv(GLint location, GLsizei count, const GLuint* value);
+		static void uniform3uiv(GLint location, GLsizei count, const GLuint* value);
+		static void uniform4uiv(GLint location, GLsizei count, const GLuint* value);
+		static void uniformMatrix2fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat* value);
+		static void uniformMatrix3fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat* value);
+		static void uniformMatrix4fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat* value);
+		static void uniformMatrix2x3fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat* value);
+		static void uniformMatrix3x2fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat* value);
+		static void uniformMatrix2x4fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat* value);
+		static void uniformMatrix4x2fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat* value);
+		static void uniformMatrix3x4fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat* value);
+		static void uniformMatrix4x3fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat* value);
+
+	private:
+		inline static GLuint usedShaderProgram = invalidId;
 	};
 
 	class Texture

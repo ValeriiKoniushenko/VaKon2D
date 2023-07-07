@@ -1,6 +1,6 @@
 #pragma once
 #include "Windows.h"
-#include "glm.hpp"
+#include "glm/glm.hpp"
 
 #include <functional>
 

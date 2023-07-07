@@ -326,6 +326,7 @@ std::string Gl::Program::getProgramInfoLog(GLuint program)
 void Gl::Program::use(GLuint program)
 {
 	glUseProgram(program);
+	usedShaderProgram = program;
 #ifdef OPENGL_DEBUG
 	Gl::debugTraces();
 #endif
@@ -337,6 +338,19 @@ void Gl::Program::deleteProgram(GLuint program)
 #ifdef OPENGL_DEBUG
 	Gl::debugTraces();
 #endif
+}
+
+const GLint Gl::Program::getUniformLocation(GLuint program, const std::string& basicString)
+{
+	const GLint location = glGetUniformLocation(program, basicString.c_str());
+	if (location == -1)
+	{
+		throw std::runtime_error("Invalid uniform name: " + basicString);
+	}
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+	return location;
 }
 
 void Gl::viewport(GLint x, GLint y, GLsizei width, GLsizei height)
@@ -554,6 +568,411 @@ void Gl::Texture::generateMipmap(Gl::Texture::Target target)
 void Gl::Texture::deleteTexture(GLuint texture)
 {
 	glDeleteTextures(1, &texture);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform1f(GLint location, GLfloat v0)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform1f(location, v0);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform2f(GLint location, GLfloat v0, GLfloat v1)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform2f(location, v0, v1);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform3f(GLint location, GLfloat v0, GLfloat v1, GLfloat v2)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform3f(location, v0, v1, v2);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform4f(GLint location, GLfloat v0, GLfloat v1, GLfloat v2, GLfloat v3)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform4f(location, v0, v1, v2, v3);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform1i(GLint location, GLint v0)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform1i(location, v0);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform2i(GLint location, GLint v0, GLint v1)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform2i(location, v0, v1);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform3i(GLint location, GLint v0, GLint v1, GLint v2)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform3i(location, v0, v1, v2);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform4i(GLint location, GLint v0, GLint v1, GLint v2, GLint v3)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform4i(location, v0, v1, v2, v3);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform1ui(GLint location, GLuint v0)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform1ui(location, v0);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform2ui(GLint location, GLuint v0, GLuint v1)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform2ui(location, v0, v1);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform3ui(GLint location, GLuint v0, GLuint v1, GLuint v2)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform3ui(location, v0, v1, v2);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform4ui(GLint location, GLuint v0, GLuint v1, GLuint v2, GLuint v3)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform4ui(location, v0, v1, v2, v3);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform1fv(GLint location, GLsizei count, const GLfloat* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform1fv(location, count, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform2fv(GLint location, GLsizei count, const GLfloat* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform2fv(location, count, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform3fv(GLint location, GLsizei count, const GLfloat* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform3fv(location, count, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform4fv(GLint location, GLsizei count, const GLfloat* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform4fv(location, count, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform1iv(GLint location, GLsizei count, const GLint* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform1iv(location, count, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform2iv(GLint location, GLsizei count, const GLint* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform2iv(location, count, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform3iv(GLint location, GLsizei count, const GLint* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform3iv(location, count, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform4iv(GLint location, GLsizei count, const GLint* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform4iv(location, count, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform1uiv(GLint location, GLsizei count, const GLuint* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform1uiv(location, count, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform2uiv(GLint location, GLsizei count, const GLuint* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform2uiv(location, count, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform3uiv(GLint location, GLsizei count, const GLuint* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform3uiv(location, count, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniform4uiv(GLint location, GLsizei count, const GLuint* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniform4uiv(location, count, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniformMatrix2fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniformMatrix2fv(location, count, transpose, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniformMatrix3fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniformMatrix3fv(location, count, transpose, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniformMatrix4fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniformMatrix4fv(location, count, transpose, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniformMatrix2x3fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniformMatrix2x3fv(location, count, transpose, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniformMatrix3x2fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniformMatrix3x2fv(location, count, transpose, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniformMatrix2x4fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniformMatrix2x4fv(location, count, transpose, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniformMatrix4x2fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniformMatrix4x2fv(location, count, transpose, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniformMatrix3x4fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniformMatrix3x4fv(location, count, transpose, value);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
+void Gl::Program::uniformMatrix4x3fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat* value)
+{
+	if (usedShaderProgram == invalidId)
+	{
+		throw std::runtime_error("You can't set uniform without using the shader program");
+	}
+	glUniformMatrix4x3fv(location, count, transpose, value);
 #ifdef OPENGL_DEBUG
 	Gl::debugTraces();
 #endif

@@ -20,54 +20,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
+#include "CustomShaderProgram.h"
 
-#include "Gl.h"
-#include "NotCopyableButMovable.h"
-#include "glm/glm.hpp"
-
-#include <filesystem>
-#include <string>
-
-class Image : Utils::NotCopyableButMovable
+void CustomShaderProgram::OnAfterLink()
 {
-public:
-	enum class Channel
-	{
-		// Next values were taken from the stb_image.h documentation.
-		None = 0,
-		Grey = 1,
-		GreyA = 2,
-		RGB = 3,
-		RGBA = 4
-	};
+	ShaderProgram::OnAfterLink();
 
-public:
-	_NODISCARD static GLenum convertChannelToGlChannel(Channel channel);
+	glEnable(GL_BLEND);
+	glEnable(GL_CULL_FACE);
+	glDisable(GL_DEPTH_TEST);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+}
 
-	explicit Image(std::filesystem::path&& path = "");
+CustomShaderProgram::CustomShaderProgram(bool shouldCreate) : ShaderProgram(shouldCreate)
+{
+}
 
-	Image(Image&& obj) noexcept;
-	Image& operator=(Image&& obj);
-
-	~Image() override;
-
-	_NODISCARD int getWidth() const;
-	_NODISCARD int getHeight() const;
-	_NODISCARD glm::ivec2 getSize() const;
-	_NODISCARD Channel getChannel() const;
-	_NODISCARD unsigned char* data();
-	_NODISCARD const unsigned char* data() const;
-	void loadImage(std::filesystem::path&&, bool isFlipVertically = true);
-	void loadToGpu();
-	void clear();
-	_NODISCARD bool isEmpty() const;
-
-private:
-	void init_();
-
-private:
-	unsigned char* data_{};
-	int width_{}, height_{};
-	Channel channel_ = Channel::None;
-};
+CustomShaderProgram::CustomShaderProgram(Shader& frag, Shader& vert) : ShaderProgram(frag, vert)
+{
+}

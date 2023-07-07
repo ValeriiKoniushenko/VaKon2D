@@ -1,7 +1,12 @@
+file(
+	GLOB Sources
+	"include/*.h"
+	"source/*.cpp"
+)
+
 add_library(
 	Window STATIC
-	include/Window.h
-	source/Window.cpp
+	${Sources}
 )
 
 target_include_directories(
