@@ -120,127 +120,127 @@ GLint ShaderProgram::getUniformLocation(const std::string& name)
 	return it->second;
 }
 
-void ShaderProgram::uniform1f(const std::string& name, GLfloat v0)
+void ShaderProgram::uniform(const std::string& name, GLfloat v0)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniform1f(location, v0);
 }
 
-void ShaderProgram::uniform2f(const std::string& name, GLfloat v0, GLfloat v1)
+void ShaderProgram::uniform(const std::string& name, GLfloat v0, GLfloat v1)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniform2f(location, v0, v1);
 }
 
-void ShaderProgram::uniform3f(const std::string& name, GLfloat v0, GLfloat v1, GLfloat v2)
+void ShaderProgram::uniform(const std::string& name, GLfloat v0, GLfloat v1, GLfloat v2)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniform3f(location, v0, v1, v2);
 }
 
-void ShaderProgram::uniform4f(const std::string& name, GLfloat v0, GLfloat v1, GLfloat v2, GLfloat v3)
+void ShaderProgram::uniform(const std::string& name, GLfloat v0, GLfloat v1, GLfloat v2, GLfloat v3)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniform4f(location, v0, v1, v2, v3);
 }
 
-void ShaderProgram::uniform1i(const std::string& name, GLint v0)
+void ShaderProgram::uniform(const std::string& name, GLint v0)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniform1i(location, v0);
 }
 
-void ShaderProgram::uniform2i(const std::string& name, GLint v0, GLint v1)
+void ShaderProgram::uniform(const std::string& name, GLint v0, GLint v1)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniform2i(location, v0, v1);
 }
 
-void ShaderProgram::uniform3i(const std::string& name, GLint v0, GLint v1, GLint v2)
+void ShaderProgram::uniform(const std::string& name, GLint v0, GLint v1, GLint v2)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniform3i(location, v0, v1, v2);
 }
 
-void ShaderProgram::uniform4i(const std::string& name, GLint v0, GLint v1, GLint v2, GLint v3)
+void ShaderProgram::uniform(const std::string& name, GLint v0, GLint v1, GLint v2, GLint v3)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniform4i(location, v0, v1, v2, v3);
 }
 
-void ShaderProgram::uniform1ui(const std::string& name, GLuint v0)
+void ShaderProgram::uniform(const std::string& name, GLuint v0)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniform1ui(location, v0);
 }
 
-void ShaderProgram::uniform2ui(const std::string& name, GLuint v0, GLuint v1)
+void ShaderProgram::uniform(const std::string& name, GLuint v0, GLuint v1)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniform2ui(location, v0, v1);
 }
 
-void ShaderProgram::uniform3ui(const std::string& name, GLuint v0, GLuint v1, GLuint v2)
+void ShaderProgram::uniform(const std::string& name, GLuint v0, GLuint v1, GLuint v2)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniform3ui(location, v0, v1, v2);
 }
 
-void ShaderProgram::uniform4ui(const std::string& name, GLuint v0, GLuint v1, GLuint v2, GLuint v3)
+void ShaderProgram::uniform(const std::string& name, GLuint v0, GLuint v1, GLuint v2, GLuint v3)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniform4ui(location, v0, v1, v2, v3);
 }
 
-void ShaderProgram::uniformMatrix2fv(const std::string& name, bool transpose, const glm::mat2& value)
+void ShaderProgram::uniform(const std::string& name, bool transpose, const glm::mat2& value)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniformMatrix2fv(location, 1, transpose, glm::value_ptr(value));
 }
 
-void ShaderProgram::uniformMatrix3fv(const std::string& name, bool transpose, const glm::mat3& value)
+void ShaderProgram::uniform(const std::string& name, bool transpose, const glm::mat3& value)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniformMatrix3fv(location, 1, transpose, glm::value_ptr(value));
 }
 
-void ShaderProgram::uniformMatrix4fv(const std::string& name, bool transpose, const glm::mat4& value)
+void ShaderProgram::uniform(const std::string& name, bool transpose, const glm::mat4& value)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniformMatrix4fv(location, 1, transpose, glm::value_ptr(value));
 }
 
-void ShaderProgram::uniformMatrix2x3fv(const std::string& name, bool transpose, const glm::mat2x3& value)
+void ShaderProgram::uniform(const std::string& name, bool transpose, const glm::mat2x3& value)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniformMatrix2x3fv(location, 1, transpose, glm::value_ptr(value));
 }
 
-void ShaderProgram::uniformMatrix3x2fv(const std::string& name, bool transpose, const glm::mat3x2& value)
+void ShaderProgram::uniform(const std::string& name, bool transpose, const glm::mat3x2& value)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniformMatrix3x2fv(location, 1, transpose, glm::value_ptr(value));
 }
 
-void ShaderProgram::uniformMatrix2x4fv(const std::string& name, bool transpose, const glm::mat2x4& value)
+void ShaderProgram::uniform(const std::string& name, bool transpose, const glm::mat2x4& value)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniformMatrix2x4fv(location, 1, transpose, glm::value_ptr(value));
 }
 
-void ShaderProgram::uniformMatrix4x2fv(const std::string& name, bool transpose, const glm::mat4x2& value)
+void ShaderProgram::uniform(const std::string& name, bool transpose, const glm::mat4x2& value)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniformMatrix4x2fv(location, 1, transpose, glm::value_ptr(value));
 }
 
-void ShaderProgram::uniformMatrix3x4fv(const std::string& name, bool transpose, const glm::mat3x4& value)
+void ShaderProgram::uniform(const std::string& name, bool transpose, const glm::mat3x4& value)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniformMatrix3x4fv(location, 1, transpose, glm::value_ptr(value));
 }
 
-void ShaderProgram::uniformMatrix4x3fv(const std::string& name, bool transpose, const glm::mat4x3& value)
+void ShaderProgram::uniform(const std::string& name, bool transpose, const glm::mat4x3& value)
 {
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniformMatrix4x3fv(location, 1, transpose, glm::value_ptr(value));

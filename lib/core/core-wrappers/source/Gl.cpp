@@ -715,9 +715,6 @@ void Gl::Program::uniform4ui(GLint location, GLuint v0, GLuint v1, GLuint v2, GL
 #ifdef OPENGL_DEBUG
 	Gl::debugTraces();
 #endif
-#ifdef OPENGL_DEBUG
-	Gl::debugTraces();
-#endif
 }
 
 void Gl::Program::uniform1fv(GLint location, GLsizei count, const GLfloat* value)
@@ -730,9 +727,6 @@ void Gl::Program::uniform1fv(GLint location, GLsizei count, const GLfloat* value
 #ifdef OPENGL_DEBUG
 	Gl::debugTraces();
 #endif
-#ifdef OPENGL_DEBUG
-	Gl::debugTraces();
-#endif
 }
 
 void Gl::Program::uniform2fv(GLint location, GLsizei count, const GLfloat* value)
@@ -742,9 +736,6 @@ void Gl::Program::uniform2fv(GLint location, GLsizei count, const GLfloat* value
 		throw std::runtime_error("You can't set uniform without using the shader program");
 	}
 	glUniform2fv(location, count, value);
-#ifdef OPENGL_DEBUG
-	Gl::debugTraces();
-#endif
 #ifdef OPENGL_DEBUG
 	Gl::debugTraces();
 #endif

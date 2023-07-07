@@ -42,7 +42,7 @@ void Rectangle::draw(ShaderProgram& shaderProgram)
 	trans = glm::rotate(trans, rotation_, glm::vec3(0.0f, 0.0f, 1.0f));
 
 	shaderProgram.use();
-	shaderProgram.uniformMatrix4fv("uTransform", false, trans);
+	shaderProgram.uniform("uTransform", false, trans);
 
 	DrawAble::draw(shaderProgram);
 }
