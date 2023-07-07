@@ -13,6 +13,6 @@ jobs:
 
     steps:
     - name: cmake-configuring
-      run: cmake .
+      run: cmake ../
     - name: cmake-build
       run: cmake --build .
