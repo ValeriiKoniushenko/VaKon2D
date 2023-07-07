@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.27.0)
+cmake_minimum_required(VERSION 3.0.0)
 
 project(VaKon2D-project VERSION 1.0)
 
