@@ -57,6 +57,7 @@ void VaKon2D::start()
 	class Rectangle rect;
 	rect.setTexture(texture);
 	rect.prepare();
+
 	while (!GetWindow().shouldClose())
 	{
 		GetWindow().clearColor(0.2f, 0.3f, 0.3f, 1.0f);	   // TODO: create class Color
