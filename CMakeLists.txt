@@ -8,8 +8,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED true)
 set(DEPENDENCIES_DIR_NAME dependencies)
 set(DEPENDENCIES_PATH ${CMAKE_CURRENT_SOURCE_DIR}/${DEPENDENCIES_DIR_NAME})
 
-if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
-	add_compile_definitions(OPENGL_DEBUG)
+if (DEFINED CMAKE_BUILD_TYPE)
+	if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+		message(STATUS "Project build type: DEBUG")
+		add_compile_definitions(OPENGL_DEBUG)
+	endif ()
 endif ()
 
 add_subdirectory(game)

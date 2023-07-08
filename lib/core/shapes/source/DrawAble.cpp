@@ -34,17 +34,17 @@ std::size_t DrawAble::getVerticesCount() const
 	return 0;
 }
 
-void DrawAble::setPosition(const glm::vec3& newPosition)
+void DrawAble::setPosition(const glm::vec2& newPosition)
 {
 	position_ = newPosition;
 }
 
-void DrawAble::move(const glm::vec3& offset)
+void DrawAble::move(const glm::vec2& offset)
 {
 	position_ += offset;
 }
 
-const glm::vec3& DrawAble::getPosition() const
+const glm::vec2& DrawAble::getPosition() const
 {
 	return position_;
 }

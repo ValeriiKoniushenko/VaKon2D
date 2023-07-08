@@ -38,7 +38,7 @@ void Rectangle::draw(ShaderProgram& shaderProgram)
 	vao_.bind();
 
 	glm::mat4 trans = glm::mat4(1.0f);
-	trans = glm::translate(trans, position_);
+	trans = glm::translate(trans, glm::vec3(position_, 0.f));
 	trans = glm::rotate(trans, rotation_, glm::vec3(0.0f, 0.0f, 1.0f));
 
 	shaderProgram.use();
@@ -65,11 +65,17 @@ Texture& Rectangle::getTexture()
 
 void Rectangle::prepare()
 {
-	vbo_.generate();
+	if (!vbo_.isGenerated())
+	{
+		vbo_.generate();
+	}
 	vbo_.bind();
 	vbo_.data(vertices);
 
-	vao_.generate();
+	if (!vao_.isGenerated())
+	{
+		vao_.generate();
+	}
 	vao_.bind();
 	Gl::Vao::vertexAttribPointer(0, 2, Gl::Type::Float, false, 4 * sizeof(float), (void*) 0);
 	Gl::Vao::enableVertexAttribArray(0);

@@ -55,11 +55,6 @@ void Gl::debugTraces()
 
 void Gl::Vao::generate(GLsizei n, GLuint* arrays)
 {
-	if (isBind())
-	{
-		throw std::runtime_error("You can not to generate new VAO buffer with a bound VAO. Reset VAO and try again.");
-	}
-
 	glGenVertexArrays(n, arrays);
 #ifdef OPENGL_DEBUG
 	Gl::debugTraces();

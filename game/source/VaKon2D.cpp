@@ -58,6 +58,13 @@ void VaKon2D::start()
 	rect.setTexture(texture);
 	rect.prepare();
 
+	Timer timer;
+	timer.setFrequency(Timer::Unit(1000));
+	timer.setMode(Timer::Mode::Infinity);
+	timer.setCallback([&](){ rect.move({-0.1f, 0.f}); });
+
+	GetWorld().addTimer(std::move(timer));
+
 	while (!GetWindow().shouldClose())
 	{
 		GetWindow().clearColor(0.2f, 0.3f, 0.3f, 1.0f);	   // TODO: create class Color

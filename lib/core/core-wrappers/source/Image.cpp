@@ -161,9 +161,9 @@ GLenum Image::convertChannelToGlChannel(Image::Channel channel)
 			return GL_RGB;
 		case Channel::RGBA:
 			return GL_RGBA;
+		default:
+			throw std::runtime_error("OpenGL does not such type of the channel or was passed an invalid type of the channel");
 	}
-
-	throw std::runtime_error("OpenGL does not such type of the channel or was passed an invalid type of the channel");
 
 	return {};
 }

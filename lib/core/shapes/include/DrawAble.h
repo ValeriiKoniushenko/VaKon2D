@@ -32,15 +32,15 @@ public:
 	virtual void draw(ShaderProgram& shaderProgram);
 	_NODISCARD virtual std::size_t getVerticesCount() const;
 
-	void setPosition(const glm::vec3& newPosition);
-	void move(const glm::vec3& offset);
-	_NODISCARD const glm::vec3& getPosition() const;
+	void setPosition(const glm::vec2& newPosition);
+	void move(const glm::vec2& offset);
+	_NODISCARD const glm::vec2& getPosition() const;
 
 	void setRotation(float newRotation);
 	void rotate(float offset);
 	_NODISCARD float getRotation() const;
 
 protected:
-	glm::vec3 position_{};
+	glm::vec2 position_{};
 	float rotation_{};
 };
