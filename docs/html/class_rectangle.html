@@ -91,8 +91,8 @@ Inheritance diagram for Rectangle:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8339715d8e96e6968e8c25977199271d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rectangle.html#a8339715d8e96e6968e8c25977199271d">draw</a> () override</td></tr>
-<tr class="separator:a8339715d8e96e6968e8c25977199271d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1a128d94d1b032f86d31e9252c11d5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rectangle.html#ac1a128d94d1b032f86d31e9252c11d5d">draw</a> (<a class="el" href="class_shader_program.html">ShaderProgram</a> &amp;shaderProgram) override</td></tr>
+<tr class="separator:ac1a128d94d1b032f86d31e9252c11d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ababaee75ab41b27adb77cf56d4ebd6bc"><td class="memItemLeft" align="right" valign="top">_NODISCARD std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rectangle.html#ababaee75ab41b27adb77cf56d4ebd6bc">getVerticesCount</a> () const override</td></tr>
 <tr class="separator:ababaee75ab41b27adb77cf56d4ebd6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac113b72a8a69c25ad31d244de55256d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rectangle.html#ac113b72a8a69c25ad31d244de55256d3">setTexture</a> (<a class="el" href="class_texture.html">Texture</a> &amp;texture)</td></tr>
@@ -101,14 +101,35 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab1725c3a07ae05dfd03a4d2aa2589721"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3d907be78e1573b19761b2febdb5be2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rectangle.html#ab3d907be78e1573b19761b2febdb5be2">prepare</a> ()</td></tr>
 <tr class="separator:ab3d907be78e1573b19761b2febdb5be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14968b67b1ed974bbd91d9be6530fc3b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#a14968b67b1ed974bbd91d9be6530fc3b">draw</a> ()</td></tr>
-<tr class="separator:a14968b67b1ed974bbd91d9be6530fc3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfbef64637f9cf7d68d6e04a62667baf"><td class="memItemLeft" align="right" valign="top">virtual _NODISCARD std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#acfbef64637f9cf7d68d6e04a62667baf">getVerticesCount</a> () const</td></tr>
-<tr class="separator:acfbef64637f9cf7d68d6e04a62667baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_draw_able"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_draw_able')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_draw_able.html">DrawAble</a></td></tr>
+<tr class="memitem:a5e9d8acfb5dde1b7a275b67ff38795e2 inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#a5e9d8acfb5dde1b7a275b67ff38795e2">draw</a> (<a class="el" href="class_shader_program.html">ShaderProgram</a> &amp;shaderProgram)</td></tr>
+<tr class="separator:a5e9d8acfb5dde1b7a275b67ff38795e2 inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfbef64637f9cf7d68d6e04a62667baf inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">virtual _NODISCARD std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#acfbef64637f9cf7d68d6e04a62667baf">getVerticesCount</a> () const</td></tr>
+<tr class="separator:acfbef64637f9cf7d68d6e04a62667baf inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd55542436a5f844085d1fd164e3d203 inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#acd55542436a5f844085d1fd164e3d203">setPosition</a> (const glm::vec2 &amp;newPosition)</td></tr>
+<tr class="separator:acd55542436a5f844085d1fd164e3d203 inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6da3581efe2b09c6ba7ba09d2248833b inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#a6da3581efe2b09c6ba7ba09d2248833b">move</a> (const glm::vec2 &amp;offset)</td></tr>
+<tr class="separator:a6da3581efe2b09c6ba7ba09d2248833b inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ece9c226314b8dd7caae8003ed3703 inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">_NODISCARD const glm::vec2 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#aa5ece9c226314b8dd7caae8003ed3703">getPosition</a> () const</td></tr>
+<tr class="separator:aa5ece9c226314b8dd7caae8003ed3703 inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf5d4190394676b99e6ecef0a6956bf4 inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#acf5d4190394676b99e6ecef0a6956bf4">setRotation</a> (float newRotation)</td></tr>
+<tr class="separator:acf5d4190394676b99e6ecef0a6956bf4 inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5ab7e8690ec97edf8a717372c3cbaf7 inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#ab5ab7e8690ec97edf8a717372c3cbaf7">rotate</a> (float offset)</td></tr>
+<tr class="separator:ab5ab7e8690ec97edf8a717372c3cbaf7 inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a2e5ca6279fe6d549df0d7647a3aa6c inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">_NODISCARD float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#a6a2e5ca6279fe6d549df0d7647a3aa6c">getRotation</a> () const</td></tr>
+<tr class="separator:a6a2e5ca6279fe6d549df0d7647a3aa6c inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_class_draw_able"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_draw_able')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_draw_able.html">DrawAble</a></td></tr>
+<tr class="memitem:a1d12fd9119ad5a5026d53cc5490a0c9f inherit pro_attribs_class_draw_able"><td class="memItemLeft" align="right" valign="top">glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#a1d12fd9119ad5a5026d53cc5490a0c9f">position_</a> {}</td></tr>
+<tr class="separator:a1d12fd9119ad5a5026d53cc5490a0c9f inherit pro_attribs_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ae6ed0e957eeeb4223ee73d85c29e28 inherit pro_attribs_class_draw_able"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#a3ae6ed0e957eeeb4223ee73d85c29e28">rotation_</a> {}</td></tr>
+<tr class="separator:a3ae6ed0e957eeeb4223ee73d85c29e28 inherit pro_attribs_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8339715d8e96e6968e8c25977199271d" name="a8339715d8e96e6968e8c25977199271d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8339715d8e96e6968e8c25977199271d">&#9670;&#160;</a></span>draw()</h2>
+<a id="ac1a128d94d1b032f86d31e9252c11d5d" name="ac1a128d94d1b032f86d31e9252c11d5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1a128d94d1b032f86d31e9252c11d5d">&#9670;&#160;</a></span>draw()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -119,7 +140,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void Rectangle::draw </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_shader_program.html">ShaderProgram</a> &amp;&#160;</td>
+          <td class="paramname"><em>shaderProgram</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -130,7 +152,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="class_draw_able.html#a14968b67b1ed974bbd91d9be6530fc3b">DrawAble</a>.</p>
+<p>Reimplemented from <a class="el" href="class_draw_able.html#a5e9d8acfb5dde1b7a275b67ff38795e2">DrawAble</a>.</p>
 
 </div>
 </div>

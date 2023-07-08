@@ -3,5 +3,370 @@
 \label{index_md__r_e_a_d_m_e}%
 \Hypertarget{index_md__r_e_a_d_m_e}%
  \hypertarget{index_autotoc_md13}{}\doxysection{\texorpdfstring{⭐ Intro}{⭐ Intro}}\label{index_autotoc_md13}
-I have been creating a game engine using raw Open\+GL and my wrappings of its.\hypertarget{index_autotoc_md14}{}\doxysection{\texorpdfstring{📞 Feedback \& Contacts}{📞 Feedback \& Contacts}}\label{index_autotoc_md14}
+I have been creating a game engine using raw Open\+GL and my wrappings of its. You can use it to write your own game. It\textquotesingle{}s easier than writing on raw Open\+GL, and it gives more abilities than SFML. For example, you can create a game like a Terraria, or some RPG game. {\bfseries{Accomplishment of this engine, that all possible calculations will process your GPU.}} ~\newline
+ Also, you can use this engine as an Open\+GL wrapper for the usual code of Open\+GL. It has an MIT license, so use it everywhere!\hypertarget{index_autotoc_md14}{}\doxysection{\texorpdfstring{Table of Contents}{Table of Contents}}\label{index_autotoc_md14}
+\begin{quote}
+
+\begin{DoxyEnumerate}
+\item Getting started
+\begin{DoxyEnumerate}
+\item At first, let\textquotesingle{}s install it
+\item How to write your own game?
+\item Where to find binaries and how to build a \texorpdfstring{$<$}{<}u\texorpdfstring{$>$}{>}game\texorpdfstring{$<$}{<}/u\texorpdfstring{$>$}{>}?
+\item At first, let\textquotesingle{}s install it
+\end{DoxyEnumerate}
+\item Game-\/template
+\item If you want to rewrite game-\/template
+\item How to generate a docs(doxygen)
+\item Docs
+\item Code-\/tutorial \& classes \& examples
+\begin{DoxyEnumerate}
+\item Init your game environment
+\item Write your shader
+\item Create your own shader-\/program
+\item Load textures
+\item Creating the first rectangle
+\item Main Loop
+\item Timers
+\item Using Open\+GL wrappers
+\end{DoxyEnumerate}
+\item What in the future?
+\item Feedback \& Contacts 
+\end{DoxyEnumerate}\end{quote}
+\hypertarget{index_autotoc_md15}{}\doxysection{\texorpdfstring{🎉 Getting started}{🎉 Getting started}}\label{index_autotoc_md15}
+\hypertarget{index_autotoc_md16}{}\doxysubsection{\texorpdfstring{At first, let\textquotesingle{}s install it}{At first, let's install it}}\label{index_autotoc_md16}
+
+\begin{DoxyEnumerate}
+\item Download and install 
+\begin{DoxyCode}{0}
+
+\end{DoxyCode}
+ (\href{https://git-scm.com/downloads}{\texttt{ download}}, \href{https://github.com/git-guides/install-git}{\texttt{ how to install it}})
+\item Download and install some compiler or {\ttfamily IDE}. I.\+e. 
+\begin{DoxyCode}{0}
+
+\end{DoxyCode}
+ (\href{https://visualstudio.microsoft.com/downloads/}{\texttt{ download}}, \href{https://learn.microsoft.com/en-us/cpp/build/vscpp-step-0-installation?view=msvc-170}{\texttt{ how to install VS}})
+\item Download and install the last version of {\ttfamily Cmake}(\href{https://cmake.org/download/}{\texttt{ download}})
+\item Clone the repository(\href{https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository}{\texttt{ how to do it}})
+\item Open a {\ttfamily CMD}({\ttfamily console}/{\ttfamily terminal}) inside the \uline{cloned directory}(\href{https://www.youtube.com/watch?v=8gUvxU7EoNE}{\texttt{ how to open CMD}})
+\item In the CMD run\+: {\ttfamily mkdir build}
+\item In the CMD run\+: {\ttfamily cd build}
+\item In the CMD run\+: {\ttfamily cmake ../ -\/DCMAKE\+\_\+\+BUILD\+\_\+\+TYPE=Debug}. If you want to build a Release version, type {\ttfamily Release} instead of {\ttfamily Debug}. Also, if you have a custom compiler, you need to write a path to this compiler.
+\item In the CMD run\+: {\ttfamily cmake -\/-\/build .}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md17}{}\doxysubsection{\texorpdfstring{How to write your own game?}{How to write your own game?}}\label{index_autotoc_md17}
+
+\begin{DoxyEnumerate}
+\item After a successful build (previous point), you can write your own game
+\item Go to folder /game/
+\item There you\textquotesingle{}ll find three folder\+: {\ttfamily assets}, {\ttfamily include}, {\ttfamily source}
+\begin{DoxyEnumerate}
+\item What to store in the folder {\ttfamily asset}\+: you can create your own directories to store your game data(i.\+e. textures, audio files, shaders, etc.)
+\item What to store in the folder {\ttfamily include}\+: you can store your include files(.h/.hpp) for your own game
+\item What to store in the folder {\ttfamily source}\+: you can store your include files(.c/.cpp/.cxx) for your own game
+\end{DoxyEnumerate}
+\item Put your sources into {\ttfamily source} directory and your headers to {\ttfamily include} directory
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md18}{}\doxysubsection{\texorpdfstring{Where to find binaries and how to build a $<$u$>$game$<$/u$>$?}{Where to find binaries and how to build a <u>game</u>?}}\label{index_autotoc_md18}
+After previous points, you can say\+: {\itshape How to get an {\ttfamily .exe} file of my game?} -\/ it\textquotesingle{}s easy! Let\textquotesingle{}s do it\+:
+
+
+\begin{DoxyEnumerate}
+\item Make this point
+\item Go to {\ttfamily /build/game/}
+\item Looking at your compiler, you can find in this folder(or sub-\/folders){\ttfamily Va\+Kon2\+D.\+exe} file -\/ it\textquotesingle{}s your game
+\item You\textquotesingle{}ll need a folder {\ttfamily assets} and a file {\ttfamily Va\+Kon2\+D.\+exe} for successful launching of a game. Just pack your game with these two items -\/ that\textquotesingle{}s all!
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md19}{}\doxysection{\texorpdfstring{📑 Game-\/template}{📑 Game-template}}\label{index_autotoc_md19}
+Basic game template, just an example of a game, you can find in the folder {\ttfamily /game/}\hypertarget{index_autotoc_md20}{}\doxysection{\texorpdfstring{📑 If you want to rewrite game-\/template}{📑 If you want to rewrite game-template}}\label{index_autotoc_md20}
+
+\begin{DoxyEnumerate}
+\item You can edit {\ttfamily /game/source/main.cpp} and remove all needed files from the directory {\ttfamily /game}
+\item One rule\+: don\textquotesingle{}t forget the next rows at the start of your game\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{\textcolor{comment}{//\ !!!!!!\ don't\ change\ an\ order\ !!!!!!\ -\/-\/>}}
+\DoxyCodeLine{\mbox{\hyperlink{namespace_logger_a96a194700a9ee08f34260ee6a7dd5a5f}{Logger::initLogger}}();}
+\DoxyCodeLine{\mbox{\hyperlink{class_glfw_wrapper_a21fc9162a53ab511982e81fb156cffbf}{GlfwWrapper::initGlfw}}(3,\ 3);}
+\DoxyCodeLine{GetWindow().\mbox{\hyperlink{class_window_a05e6957ecc6f3d66c2bd183b583e9905}{create}}(\{800,\ 600\},\ \textcolor{stringliteral}{"{}Game\ name"{}});}
+\DoxyCodeLine{\mbox{\hyperlink{class_glad_wrapper_a62d3a840bad357835a3883e804748ef9}{GladWrapper::initGlad}}();}
+\DoxyCodeLine{GetWorld().\mbox{\hyperlink{class_world_a0150607a49c2400d5c848159dd02d533}{init}}();}
+\DoxyCodeLine{\textcolor{comment}{//\ <-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md21}{}\doxysection{\texorpdfstring{📄 How to generate a docs(doxygen)}{📄 How to generate a docs(doxygen)}}\label{index_autotoc_md21}
+
+\begin{DoxyEnumerate}
+\item Download and install doxygen(\href{https://www.doxygen.nl/download.html}{\texttt{ download}})
+\item Add doxygen.\+exe to the Environment Variable(\href{https://docs.oracle.com/en/database/oracle/machine-learning/oml4r/1.5.1/oread/creating-and-modifying-environment-variables-on-windows.html\#GUID-DD6F9982-60D5-48F6-8270-A27EC53807D0}{\texttt{ how to do it}})
+\item Open a {\ttfamily CMD}({\ttfamily console}/{\ttfamily terminal}) inside the \uline{cloned directory}(\href{https://www.youtube.com/watch?v=8gUvxU7EoNE}{\texttt{ how to open CMD}})
+\item Run the next command\+: {\ttfamily doxygen}
+\item Go to {\ttfamily docs/html/index.\+html} -\/ it\textquotesingle{}s your doc!
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md22}{}\doxysection{\texorpdfstring{📃 Docs}{📃 Docs}}\label{index_autotoc_md22}
+You can find docs by engine classes in the next directory\+: {\ttfamily /docs/html/index.html}\hypertarget{index_autotoc_md23}{}\doxysection{\texorpdfstring{📌 Code-\/tutorial \& classes \& examples\+:}{📌 Code-tutorial \& classes \& examples:}}\label{index_autotoc_md23}
+\hypertarget{index_autotoc_md24}{}\doxysubsection{\texorpdfstring{Init your game environment}{Init your game environment}}\label{index_autotoc_md24}
+Add the next lines to your code to init game-\/env\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{\mbox{\hyperlink{namespace_logger_a96a194700a9ee08f34260ee6a7dd5a5f}{Logger::initLogger}}();}
+\DoxyCodeLine{\mbox{\hyperlink{class_glfw_wrapper_a21fc9162a53ab511982e81fb156cffbf}{GlfwWrapper::initGlfw}}(3,\ 3);}
+\DoxyCodeLine{GetWindow().\mbox{\hyperlink{class_window_a05e6957ecc6f3d66c2bd183b583e9905}{create}}(\{800,\ 600\},\ \textcolor{stringliteral}{"{}Game\ name"{}});}
+\DoxyCodeLine{\mbox{\hyperlink{class_glad_wrapper_a62d3a840bad357835a3883e804748ef9}{GladWrapper::initGlad}}();}
+\DoxyCodeLine{GetWorld().\mbox{\hyperlink{class_world_a0150607a49c2400d5c848159dd02d533}{init}}();}
+
+\end{DoxyCode}
+
+
+First, you should initialize the game logger. It will write some logs to /game/logs folder. The logger be used in all places of the next code, so you should initialize it first. After that, initialize \doxylink{class_glfw_wrapper}{Glfw\+Wrapper} to get the ability to work with a window, window-\/event. If you want, you can change the major and minor versions. You can\textquotesingle{}t create a window or initialize a GLAD without initializing GLFW. Let\textquotesingle{}s initialize your window\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{GetWindow().\mbox{\hyperlink{class_window_a05e6957ecc6f3d66c2bd183b583e9905}{create}}(\{800,\ 600\},\ \textcolor{stringliteral}{"{}Game\ name"{}});\ }
+
+\end{DoxyCode}
+
+
+You can pass your values to the window\textquotesingle{}s size or window\textquotesingle{}s title. After that going forward GLAD initialization and \doxylink{class_world}{World} initialization.\hypertarget{index_autotoc_md25}{}\doxysubsection{\texorpdfstring{Write your shader}{Write your shader}}\label{index_autotoc_md25}
+How to include it\+: {\ttfamily \#include \"{}\+Shader.\+h\"{}} and don\textquotesingle{}t forget to add {\ttfamily Core-\/\+Wrappers} to your CMake-\/game At the first you can write simple shader, like the next\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{//\ ======FRAGMENT\ SHADER=======}
+\DoxyCodeLine{\#version\ 330\ core}
+\DoxyCodeLine{out\ vec4\ FragColor;}
+\DoxyCodeLine{in\ vec2\ ioCv;}
+\DoxyCodeLine{uniform\ sampler2D\ uTexture;}
+\DoxyCodeLine{void\ main()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ FragColor\ =\ texture(uTexture,\ ioCv);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+And such like next too\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{//\ ======VERTEX\ SHADER=======}
+\DoxyCodeLine{\#version\ 330\ core}
+\DoxyCodeLine{layout\ (location\ =\ 0)\ in\ vec2\ aPos;}
+\DoxyCodeLine{layout\ (location\ =\ 1)\ in\ vec2\ aCv;}
+\DoxyCodeLine{out\ vec2\ ioCv;}
+\DoxyCodeLine{uniform\ mat4\ uTransform;}
+\DoxyCodeLine{void\ main()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ ioCv\ =\ aCv;}
+\DoxyCodeLine{\ \ \ \ gl\_Position\ =\ uTransform\ *\ vec4(aPos.x,\ aPos.y,\ 0.0,\ 1.0);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Afet that load them to the shader class {\ttfamily \doxylink{class_shader}{Shader}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{\mbox{\hyperlink{class_shader}{Shader}}\ vertex(\textcolor{stringliteral}{"{}assets/shaders/main-\/vertex.glsl"{}},\ \mbox{\hyperlink{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019ab22b929ba52471a02d18bb3a4e4472e6}{Gl::Shader::Type::Vertex}});}
+\DoxyCodeLine{\mbox{\hyperlink{class_shader}{Shader}}\ fragment(\textcolor{stringliteral}{"{}assets/shaders/main-\/fragment.glsl"{}},\ \mbox{\hyperlink{class_gl_1_1_shader_a39b65e35816cebb4c1f32694d3925019a37d01b98065725fe3a1d30acf3a0064a}{Gl::Shader::Type::Fragment}});}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md26}{}\doxysubsection{\texorpdfstring{Create your own shader-\/program}{Create your own shader-program}}\label{index_autotoc_md26}
+\doxylink{class_shader}{Shader} program will save and transfer the shader\mbox{[}s\mbox{]} to the GPU How to include it\+: {\ttfamily \#include \"{}\+Custom\+Shader\+Program.\+h\"{}} and don\textquotesingle{}t forget to add {\ttfamily Core-\/\+Wrappers} to your CMake-\/game dependencies({\ttfamily target\+\_\+link\+\_\+libraries(You\+Game\+Target PRIVATE Core-\/wrappers)} Create the first shader-\/program and attach shaders to it.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{\mbox{\hyperlink{class_custom_shader_program}{CustomShaderProgram}}\ program(\textcolor{keyword}{true});}
+\DoxyCodeLine{program.attachShader(vertex);}
+\DoxyCodeLine{program.attachShader(fragment);}
+
+\end{DoxyCode}
+
+
+To create and bind shader program we can pass {\ttfamily true} like an argument to the {\ttfamily \doxylink{class_custom_shader_program}{Custom\+Shader\+Program}} constructor. After that we are attaching shaders to the shader-\/program.
+
+And now you can use your shader program. Just write
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{program.use();}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md27}{}\doxysubsection{\texorpdfstring{Load textures}{Load textures}}\label{index_autotoc_md27}
+To load texture we should use a class \doxylink{class_texture}{Texture}({\ttfamily \#include \"{}\+Texture.\+h\"{}} and don\textquotesingle{}t forget to add {\ttfamily Core-\/\+Wrappers} to your CMake-\/game dependencies({\ttfamily target\+\_\+link\+\_\+libraries(You\+Game\+Target PRIVATE Core-\/wrappers)})) and use class {\ttfamily \doxylink{class_image}{Image}} too({\ttfamily \#include \"{}\+Image.\+h\"{}})
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{\mbox{\hyperlink{class_texture}{Texture}}\ texture(\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Gl::Texture::Target::Texture2D}},\ \textcolor{keyword}{true},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\mbox{\hyperlink{class_image}{Image}}\ image(\textcolor{stringliteral}{"{}assets/textures/apple.png"{}});}
+\DoxyCodeLine{texture.setImage(image);}
+\DoxyCodeLine{texture.setMagAndMinFilter(\mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2a32a843da6ea40ab3b17a3421ccdf671b}{Gl::Texture::MagFilter::Linear}},\ \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a1173bd3987b1e185d86b9c3fe1b8bd72}{Gl::Texture::MinFilter::LinearMipmapLinear}});}
+
+\end{DoxyCode}
+
+
+We want to render texture 2D, so in the \doxylink{class_texture}{Texture}\textquotesingle{}s constructor we should pass {\ttfamily \doxylink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Gl\+::\+Texture\+::\+Target\+::\+Texture2D}}. Also, if you want to generate and bind a texture \textquotesingle{}in-\/place\textquotesingle{}, we can pass {\ttfamily true} and {\ttfamily true} like the 2nd and 3rd argument of this class. After that we are loading an image\+: {\ttfamily \doxylink{class_image}{Image} image(\"{}assets/textures/apple.\+png\"{})} The class \doxylink{class_image}{Image} provides more convenient interface for loading an images and getting some data about it for you or fot the textures. Don\textquotesingle{}t forget to set image to your texture\+: {\ttfamily texture.\+set\+Image(image);} If you want to set mag \& min filter, you can use the next functions to do it\+: {\ttfamily Texture\+::ste\+Min\+Filter} \& {\ttfamily \doxylink{class_texture_a345a432339c7c9c8aec9f90dbff0c6c7}{Texture\+::set\+Mag\+Filter}}\hypertarget{index_autotoc_md28}{}\doxysubsection{\texorpdfstring{Creating the first rectangle}{Creating the first rectangle}}\label{index_autotoc_md28}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{\textcolor{keyword}{class\ }\mbox{\hyperlink{class_rectangle}{Rectangle}}\ rect;}
+\DoxyCodeLine{rect.\mbox{\hyperlink{class_rectangle_ac113b72a8a69c25ad31d244de55256d3}{setTexture}}(texture);}
+\DoxyCodeLine{rect.prepare();}
+
+\end{DoxyCode}
+
+
+We should create our class \doxylink{class_rectangle}{Rectangle} and set a texture to it. After that don\textquotesingle{}t forget to call function {\ttfamily \doxylink{class_rectangle_ab3d907be78e1573b19761b2febdb5be2}{Rectangle\+::prepare}} -\/ to prepare all Open\+GL data. This function you should call only one time.\hypertarget{index_autotoc_md29}{}\doxysubsection{\texorpdfstring{Main Loop}{Main Loop}}\label{index_autotoc_md29}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{\textcolor{keywordflow}{while}\ (!GetWindow().shouldClose())}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ GetWindow().\mbox{\hyperlink{class_window_a9cbb416a1ebaa3ecbc9271b1ec0858f4}{clearColor}}(0.2f,\ 0.3f,\ 0.3f,\ 1.0f);}
+\DoxyCodeLine{\ \ \ \ GetWindow().\mbox{\hyperlink{class_window_af64a20e4e611ac92f8b4ea45da167a4f}{clear}}(GL\_COLOR\_BUFFER\_BIT);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ rect.draw(program);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ GetWindow().\mbox{\hyperlink{class_window_af6ffedb8d12d5551bdb4c298de87ed56}{swapBuffers}}();}
+\DoxyCodeLine{\ \ \ \ GetWindow().\mbox{\hyperlink{class_window_a5abb541ee62c814dc7a7037140af7e8f}{pollEvent}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ GetWorld().\mbox{\hyperlink{class_world_aac8c1fde63c06577ffc648aaefdb37f0}{update}}();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+At the start of main loop, we should work while the window is open. After that need to clear background color and clear Color\+Buffer\+Bit.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{GetWindow().\mbox{\hyperlink{class_window_a9cbb416a1ebaa3ecbc9271b1ec0858f4}{clearColor}}(0.2f,\ 0.3f,\ 0.3f,\ 1.0f);}
+\DoxyCodeLine{GetWindow().\mbox{\hyperlink{class_window_af64a20e4e611ac92f8b4ea45da167a4f}{clear}}(GL\_COLOR\_BUFFER\_BIT);}
+
+\end{DoxyCode}
+
+
+Don\textquotesingle{}t forget to draw your rectangle\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{rect.draw(program);}
+
+\end{DoxyCode}
+
+
+And don\textquotesingle{}t forget to process buffers and events. It needs for correct working of all window events.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{GetWindow().\mbox{\hyperlink{class_window_af6ffedb8d12d5551bdb4c298de87ed56}{swapBuffers}}();}
+\DoxyCodeLine{GetWindow().\mbox{\hyperlink{class_window_a5abb541ee62c814dc7a7037140af7e8f}{pollEvent}}();}
+
+\end{DoxyCode}
+
+
+Also, we have a world data. For example, timers -\/ it\textquotesingle{}s a part of a world. You should update all this data. So, write\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{GetWorld().\mbox{\hyperlink{class_world_aac8c1fde63c06577ffc648aaefdb37f0}{update}}();}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md30}{}\doxysubsection{\texorpdfstring{Timers}{Timers}}\label{index_autotoc_md30}
+If you want work with timers you should add a target {\ttfamily \doxylink{class_world}{World}} to you {\ttfamily target\+\_\+link\+\_\+libraries} of a game. Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{target\_link\_libraries(VaKon2D\ PUBLIC\ World)}
+
+\end{DoxyCode}
+
+
+After that include {\ttfamily Timers.\+h} to your code.
+
+Now you can use timers in your code. At first, let\textquotesingle{}s create new timer\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{\mbox{\hyperlink{class_timer}{Timer}}\ timer;}
+
+\end{DoxyCode}
+
+
+And let\textquotesingle{}s set mode Infinity and set frequency one time per second. Also, don\textquotesingle{}t forget to set a callback. This lambda will be called one time per 1000ms(1s).
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{timer.\mbox{\hyperlink{class_timer_ac22fbf29a9708e0cd8cf0b1576fdba5e}{setFrequency}}(\mbox{\hyperlink{class_timer_ab9cf496a02ed86e09ec1c98d858bccd4}{Timer::Unit}}(1000));}
+\DoxyCodeLine{timer.\mbox{\hyperlink{class_timer_a696f19b4227ef320096bd89965141b78}{setMode}}(\mbox{\hyperlink{class_timer_aa4b2e0bfcfba8ba46688fd1a37c2aa4baeb2ac5b04180d8d6011a016aeb8f75b3}{Timer::Mode::Infinity}});}
+\DoxyCodeLine{timer.\mbox{\hyperlink{class_timer_a7a8cc5f49024b9d34d078f681a9cf93f}{setCallback}}([\&]()\{\ rect.move(\{-\/0.1f,\ 0.f\});\ \});}
+
+\end{DoxyCode}
+
+
+Therefore, move this timer to world timer manager\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{GetWorld().\mbox{\hyperlink{class_world_a7c6b4218c9533ee00713fe4840623aee}{addTimer}}(std::move(timer));}
+
+\end{DoxyCode}
+
+
+After that your timer will be invalid. But you can get timer ID from a function {\ttfamily \doxylink{class_world_a7c6b4218c9533ee00713fe4840623aee}{World\+::add\+Timer}}. You can use this id to delete(like an example) your timer in the future.\hypertarget{index_autotoc_md31}{}\doxysubsection{\texorpdfstring{Using Open\+GL wrappers}{Using OpenGL wrappers}}\label{index_autotoc_md31}
+You can connect to your game Core-\/\+Wrappers and use Open\+GL wrappers. You should add a target {\ttfamily Core-\/\+Wrappers} to you {\ttfamily target\+\_\+link\+\_\+libraries} of a game. Example\+: Open\+GL wrappers take off a chance to get a mistake while you working with Open\+GL. Just use it! For example, you can create your own VBO/\+VAO\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}Gl.h"{}}}
+\DoxyCodeLine{...}
+\DoxyCodeLine{auto\ vbo\ =\ \mbox{\hyperlink{class_gl_1_1_vbo_a839aef071042a02d3c6b686e52489cda}{Gl::Vbo::generate}}();}
+\DoxyCodeLine{\textcolor{keyword}{auto}\ vao\ =\ \mbox{\hyperlink{class_gl_1_1_vao_a7e06fa0c4fe006ae02cf26a84e213363}{Gl::Vao::generate}}();}
+
+\end{DoxyCode}
+
+
+Others function will be available in the class {\ttfamily \doxylink{class_gl}{Gl}}, {\ttfamily \doxylink{class_gl_1_1_program}{Gl\+::\+Program}}, {\ttfamily \doxylink{class_gl_1_1_shader}{Gl\+::\+Shader}}, {\ttfamily \doxylink{class_gl_1_1_vao}{Gl\+::\+Vao}}, {\ttfamily \doxylink{class_gl_1_1_vbo}{Gl\+::\+Vbo}}, {\ttfamily \doxylink{class_gl_1_1_texture}{Gl\+::\+Texture}}\hypertarget{index_autotoc_md32}{}\doxysection{\texorpdfstring{💭 What in the future?}{💭 What in the future?}}\label{index_autotoc_md32}
+I want to implement more and more things to give abilities like\+:
+
+
+\begin{DoxyItemize}
+\item Working with network, like in Unreal\+Engine 4\textbackslash{}5\+:
+\begin{DoxyItemize}
+\item real-\/time replications
+\item different types of replications
+\item write my own UDP protocol for data transferring
+\end{DoxyItemize}
+\item Improve working with lightning\+:
+\begin{DoxyItemize}
+\item Give an ability to create different types of lighting\+: global, point
+\item Working with gamma and post-\/processing
+\end{DoxyItemize}
+\item Pick up all the best things from an SFML(and plugins to it) in one Engine(\+Va\+Kon2\+D)
+\item Easy working with se\textbackslash{}deserializing of game data
+\item Adding an ability to integrate own DLC to a game
+\item Supporting of all new compilers\+: GCC, G++, Clang, MSVC
+\item The engine will be cross-\/platform
+\item Easy working with textures and shaders
+\item Custom shader integration
+\item \doxylink{class_shader}{Shader} builder for PRO users
+\item Add working with audio
+\item Working with a camera
+\end{DoxyItemize}\hypertarget{index_autotoc_md33}{}\doxysection{\texorpdfstring{📞 Feedback \& Contacts}{📞 Feedback \& Contacts}}\label{index_autotoc_md33}
 You can send me e-\/mail\+: \href{mailto:Valerii.Koniushenko@gmail.com}{\texttt{ Valerii.\+Koniushenko@gmail.\+com}} or try to find me in telegram\+: @markmoran24 

@@ -13,22 +13,53 @@ Inheritance diagram for Draw\+Able\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{class_draw_able_a14968b67b1ed974bbd91d9be6530fc3b}{draw}} ()
+virtual void \mbox{\hyperlink{class_draw_able_a5e9d8acfb5dde1b7a275b67ff38795e2}{draw}} (\mbox{\hyperlink{class_shader_program}{Shader\+Program}} \&shader\+Program)
 \item 
 virtual \+\_\+\+NODISCARD std\+::size\+\_\+t \mbox{\hyperlink{class_draw_able_acfbef64637f9cf7d68d6e04a62667baf}{get\+Vertices\+Count}} () const
+\item 
+void \mbox{\hyperlink{class_draw_able_acd55542436a5f844085d1fd164e3d203}{set\+Position}} (const glm\+::vec2 \&new\+Position)
+\item 
+void \mbox{\hyperlink{class_draw_able_a6da3581efe2b09c6ba7ba09d2248833b}{move}} (const glm\+::vec2 \&offset)
+\item 
+\+\_\+\+NODISCARD const glm\+::vec2 \& \mbox{\hyperlink{class_draw_able_aa5ece9c226314b8dd7caae8003ed3703}{get\+Position}} () const
+\item 
+void \mbox{\hyperlink{class_draw_able_acf5d4190394676b99e6ecef0a6956bf4}{set\+Rotation}} (float new\+Rotation)
+\item 
+void \mbox{\hyperlink{class_draw_able_ab5ab7e8690ec97edf8a717372c3cbaf7}{rotate}} (float offset)
+\item 
+\+\_\+\+NODISCARD float \mbox{\hyperlink{class_draw_able_a6a2e5ca6279fe6d549df0d7647a3aa6c}{get\+Rotation}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec2 \mbox{\hyperlink{class_draw_able_a1d12fd9119ad5a5026d53cc5490a0c9f}{position\+\_\+}} \{\}
+\item 
+float \mbox{\hyperlink{class_draw_able_a3ae6ed0e957eeeb4223ee73d85c29e28}{rotation\+\_\+}} \{\}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_draw_able_a14968b67b1ed974bbd91d9be6530fc3b}\label{class_draw_able_a14968b67b1ed974bbd91d9be6530fc3b} 
+\Hypertarget{class_draw_able_a5e9d8acfb5dde1b7a275b67ff38795e2}\label{class_draw_able_a5e9d8acfb5dde1b7a275b67ff38795e2} 
 \index{DrawAble@{DrawAble}!draw@{draw}}
 \index{draw@{draw}!DrawAble@{DrawAble}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
-{\footnotesize\ttfamily void Draw\+Able\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Draw\+Able\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shader_program}{Shader\+Program}} \&}]{shader\+Program }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-Reimplemented in \mbox{\hyperlink{class_rectangle_a8339715d8e96e6968e8c25977199271d}{Rectangle}}.
+Reimplemented in \mbox{\hyperlink{class_rectangle_ac1a128d94d1b032f86d31e9252c11d5d}{Rectangle}}.
+
+\Hypertarget{class_draw_able_aa5ece9c226314b8dd7caae8003ed3703}\label{class_draw_able_aa5ece9c226314b8dd7caae8003ed3703} 
+\index{DrawAble@{DrawAble}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!DrawAble@{DrawAble}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily const glm\+::vec2 \& Draw\+Able\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_draw_able_a6a2e5ca6279fe6d549df0d7647a3aa6c}\label{class_draw_able_a6a2e5ca6279fe6d549df0d7647a3aa6c} 
+\index{DrawAble@{DrawAble}!getRotation@{getRotation}}
+\index{getRotation@{getRotation}!DrawAble@{DrawAble}}
+\doxysubsubsection{\texorpdfstring{getRotation()}{getRotation()}}
+{\footnotesize\ttfamily float Draw\+Able\+::get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 \Hypertarget{class_draw_able_acfbef64637f9cf7d68d6e04a62667baf}\label{class_draw_able_acfbef64637f9cf7d68d6e04a62667baf} 
 \index{DrawAble@{DrawAble}!getVerticesCount@{getVerticesCount}}
@@ -39,4 +70,43 @@ Reimplemented in \mbox{\hyperlink{class_rectangle_a8339715d8e96e6968e8c259771992
 
 
 Reimplemented in \mbox{\hyperlink{class_rectangle_ababaee75ab41b27adb77cf56d4ebd6bc}{Rectangle}}.
+
+\Hypertarget{class_draw_able_a6da3581efe2b09c6ba7ba09d2248833b}\label{class_draw_able_a6da3581efe2b09c6ba7ba09d2248833b} 
+\index{DrawAble@{DrawAble}!move@{move}}
+\index{move@{move}!DrawAble@{DrawAble}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Draw\+Able\+::move (\begin{DoxyParamCaption}\item[{const glm\+::vec2 \&}]{offset }\end{DoxyParamCaption})}
+
+\Hypertarget{class_draw_able_ab5ab7e8690ec97edf8a717372c3cbaf7}\label{class_draw_able_ab5ab7e8690ec97edf8a717372c3cbaf7} 
+\index{DrawAble@{DrawAble}!rotate@{rotate}}
+\index{rotate@{rotate}!DrawAble@{DrawAble}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void Draw\+Able\+::rotate (\begin{DoxyParamCaption}\item[{float}]{offset }\end{DoxyParamCaption})}
+
+\Hypertarget{class_draw_able_acd55542436a5f844085d1fd164e3d203}\label{class_draw_able_acd55542436a5f844085d1fd164e3d203} 
+\index{DrawAble@{DrawAble}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!DrawAble@{DrawAble}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Draw\+Able\+::set\+Position (\begin{DoxyParamCaption}\item[{const glm\+::vec2 \&}]{new\+Position }\end{DoxyParamCaption})}
+
+\Hypertarget{class_draw_able_acf5d4190394676b99e6ecef0a6956bf4}\label{class_draw_able_acf5d4190394676b99e6ecef0a6956bf4} 
+\index{DrawAble@{DrawAble}!setRotation@{setRotation}}
+\index{setRotation@{setRotation}!DrawAble@{DrawAble}}
+\doxysubsubsection{\texorpdfstring{setRotation()}{setRotation()}}
+{\footnotesize\ttfamily void Draw\+Able\+::set\+Rotation (\begin{DoxyParamCaption}\item[{float}]{new\+Rotation }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_draw_able_a1d12fd9119ad5a5026d53cc5490a0c9f}\label{class_draw_able_a1d12fd9119ad5a5026d53cc5490a0c9f} 
+\index{DrawAble@{DrawAble}!position\_@{position\_}}
+\index{position\_@{position\_}!DrawAble@{DrawAble}}
+\doxysubsubsection{\texorpdfstring{position\_}{position\_}}
+{\footnotesize\ttfamily glm\+::vec2 Draw\+Able\+::position\+\_\+ \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_draw_able_a3ae6ed0e957eeeb4223ee73d85c29e28}\label{class_draw_able_a3ae6ed0e957eeeb4223ee73d85c29e28} 
+\index{DrawAble@{DrawAble}!rotation\_@{rotation\_}}
+\index{rotation\_@{rotation\_}!DrawAble@{DrawAble}}
+\doxysubsubsection{\texorpdfstring{rotation\_}{rotation\_}}
+{\footnotesize\ttfamily float Draw\+Able\+::rotation\+\_\+ \{\}\hspace{0.3cm}{\ttfamily [protected]}}
 

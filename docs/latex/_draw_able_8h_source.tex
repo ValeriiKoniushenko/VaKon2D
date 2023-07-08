@@ -24,13 +24,29 @@
 \DoxyCodeLine{00020\ \textcolor{comment}{//\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE}}
 \DoxyCodeLine{00021\ \textcolor{comment}{//\ SOFTWARE.}}
 \DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}glm/glm.hpp"{}}}
 \DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_draw_able}{DrawAble}}}
-\DoxyCodeLine{00026\ \{}
-\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draw_able_a14968b67b1ed974bbd91d9be6530fc3b}{draw}}();}
-\DoxyCodeLine{00029\ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{virtual}\ std::size\_t\ \mbox{\hyperlink{class_draw_able_acfbef64637f9cf7d68d6e04a62667baf}{getVerticesCount}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_shader_program}{ShaderProgram}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_draw_able}{DrawAble}}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draw_able_a5e9d8acfb5dde1b7a275b67ff38795e2}{draw}}(\mbox{\hyperlink{class_shader_program}{ShaderProgram}}\&\ shaderProgram);}
+\DoxyCodeLine{00033\ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{virtual}\ std::size\_t\ \mbox{\hyperlink{class_draw_able_acfbef64637f9cf7d68d6e04a62667baf}{getVerticesCount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draw_able_acd55542436a5f844085d1fd164e3d203}{setPosition}}(\textcolor{keyword}{const}\ glm::vec2\&\ newPosition);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draw_able_a6da3581efe2b09c6ba7ba09d2248833b}{move}}(\textcolor{keyword}{const}\ glm::vec2\&\ offset);}
+\DoxyCodeLine{00037\ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{const}\ glm::vec2\&\ \mbox{\hyperlink{class_draw_able_aa5ece9c226314b8dd7caae8003ed3703}{getPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draw_able_acf5d4190394676b99e6ecef0a6956bf4}{setRotation}}(\textcolor{keywordtype}{float}\ newRotation);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draw_able_ab5ab7e8690ec97edf8a717372c3cbaf7}{rotate}}(\textcolor{keywordtype}{float}\ offset);}
+\DoxyCodeLine{00041\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_draw_able_a6a2e5ca6279fe6d549df0d7647a3aa6c}{getRotation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00044\ \ \ \ \ glm::vec2\ \mbox{\hyperlink{class_draw_able_a1d12fd9119ad5a5026d53cc5490a0c9f}{position\_}}\{\};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_draw_able_a3ae6ed0e957eeeb4223ee73d85c29e28}{rotation\_}}\{\};}
+\DoxyCodeLine{00046\ \};}
 
 \end{DoxyCode}

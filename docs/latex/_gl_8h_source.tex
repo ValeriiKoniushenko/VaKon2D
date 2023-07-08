@@ -121,77 +121,115 @@
 \DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{class_gl_1_1_program_a249b836e683235bb85a7978f724828a9}{getProgramInfoLog}}(GLuint\ program);}
 \DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_a8dc40873d56e73719e02e222af46e674}{use}}(GLuint\ program);}
 \DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_a19d275e877bad77dff73a66f8cabb6f6}{deleteProgram}}(GLuint\ program);}
-\DoxyCodeLine{00120\ \ \ \ \ \};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ GLint\ \mbox{\hyperlink{class_gl_1_1_program_a282906caac5630f3f45ef2007e35b62d}{getUniformLocation}}(GLuint\ program,\ \textcolor{keyword}{const}\ std::string\&\ name);}
 \DoxyCodeLine{00121\ }
-\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gl_1_1_texture}{Texture}}}
-\DoxyCodeLine{00123\ \ \ \ \ \{}
-\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ GLuint\ \mbox{\hyperlink{class_gl_1_1_texture_aebc6623470c4cb08cd9da4207b9b77ab}{invalidId}}\ =\ 0;}
-\DoxyCodeLine{00126\ }
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa6adf97f83acf6453d4a6a4b1070f3754}{None}},}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Texture2D}}\ =\ GL\_TEXTURE\_2D,}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa1168ae5c761e6f30ebeb5d44a29c0f0}{CubeMapPositiveX}}\ =\ GL\_TEXTURE\_CUBE\_MAP\_POSITIVE\_X,}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa85409274e6f1044d5794b21ac55ef56e}{CubeMapNegativeX}}\ =\ GL\_TEXTURE\_CUBE\_MAP\_NEGATIVE\_X,}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa7e40f99ae3df7613bd94609c8153019b}{CubeMapPositiveY}}\ =\ GL\_TEXTURE\_CUBE\_MAP\_POSITIVE\_Y,}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefad2c3bed6281015a3df5de036da39f5a0}{CubeMapNegativeY}}\ =\ GL\_TEXTURE\_CUBE\_MAP\_NEGATIVE\_Y,}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa9b94e73c8ded4d453c3dc439fb9796e}{CubeMapPositiveZ}}\ =\ GL\_TEXTURE\_CUBE\_MAP\_POSITIVE\_Z,}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa0c43718e05258a8818cc736fcc2efac7}{CubeMapNegativeZ}}\ =\ GL\_TEXTURE\_CUBE\_MAP\_NEGATIVE\_Z,}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa6c4765d2cb592dcc2f21f311db02f43b}{CubeMap}}\ =\ GL\_TEXTURE\_CUBE\_MAP}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00139\ }
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2}{MagFilter}}}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa6adf97f83acf6453d4a6a4b1070f3754}{None}},}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2a32a843da6ea40ab3b17a3421ccdf671b}{Linear}}\ =\ GL\_LINEAR,}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2a60494f02d440f316319dd0fad40ad007}{Nearest}}\ =\ GL\_NEAREST,}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00146\ }
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}{MinFilter}}}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa6adf97f83acf6453d4a6a4b1070f3754}{None}},}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2a32a843da6ea40ab3b17a3421ccdf671b}{Linear}}\ =\ GL\_LINEAR,}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2a60494f02d440f316319dd0fad40ad007}{Nearest}}\ =\ GL\_NEAREST,}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a35d97e4a37fa3a0d76c692f3e318599b}{NearestMipmapNearest}}\ =\ GL\_NEAREST\_MIPMAP\_NEAREST,}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61ac164897273ad7f6d61626f5610d86425}{LinearMipmapNearest}}\ =\ GL\_LINEAR\_MIPMAP\_NEAREST,}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a9a79df5c07e4d2a2875689f608b50529}{NearestMipmapLinear}}\ =\ GL\_NEAREST\_MIPMAP\_LINEAR,}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a1173bd3987b1e185d86b9c3fe1b8bd72}{LinearMipmapLinear}}\ =\ GL\_LINEAR\_MIPMAP\_LINEAR}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00157\ }
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47}{Wrap}}}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa6adf97f83acf6453d4a6a4b1070f3754}{None}},}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a4d563bcd510a32c242ba3357ce786579}{Clamp2Edge}}\ =\ GL\_CLAMP\_TO\_EDGE,}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a419de8dc70341019c7d52f76e10956c2}{Clamp2Border}}\ =\ GL\_CLAMP\_TO\_BORDER,}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a12ce4a5977988214a6b098b8cb0bf695}{MirroredRepeat}}\ =\ GL\_MIRRORED\_REPEAT,}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a7020426cfb0a204051be4b3053d2acc8}{Repeat}}\ =\ GL\_REPEAT,}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a0187015a2c32fb414dfd77055ac8c2b2}{MirrorClamp2Edge}}\ =\ GL\_MIRROR\_CLAMP\_TO\_EDGE}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00167\ }
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2}{MagFilter}}\ \mbox{\hyperlink{class_gl_1_1_texture_a652910a35a36d33e356258168246423c}{stringToMagFilter}}(\textcolor{keyword}{const}\ std::string\&\ filter);}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}{MinFilter}}\ \mbox{\hyperlink{class_gl_1_1_texture_a1d71c52579d6b5b495366c9f59bd31fd}{stringToMinFilter}}(\textcolor{keyword}{const}\ std::string\&\ filter);}
-\DoxyCodeLine{00170\ }
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_a8bac52e75287b1d570c77ef2a57081ef}{setMinFilter}}(\mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}{MinFilter}}\ filter,\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}\ target\ =\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target::Texture2D}});}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_a6955eafd3b4aa5fac71dd127d199302e}{setMagFilter}}(\mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2}{MagFilter}}\ filter,\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}\ target\ =\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target::Texture2D}});}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_ab46649078b93c82e73d651cdca7a06b7}{setWrapS}}(\mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47}{Wrap}}\ wrap,\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}\ target\ =\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target::Texture2D}});}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_a7f0ed602d6ced51a227bc050aa27bea4}{setWrapT}}(\mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47}{Wrap}}\ wrap,\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}\ target\ =\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target::Texture2D}});}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_addbd305c74b2130dab34bb323fe2deed}{setWrapR}}(\mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47}{Wrap}}\ wrap,\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}\ target\ =\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target::Texture2D}});}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_a92f4561bb3eb90054a6d64abe439600c}{active}}(GLenum\ num);}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_gl_1_1_texture_a5ad3987a904b41df87a42f1ae2674d2c}{getMaxCountActiveTextures}}();}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{static}\ GLuint\ \mbox{\hyperlink{class_gl_1_1_texture_a33ba79574900a3817e0a4613e35e13e1}{generate}}();}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_a94499882c04792d705a2f4d90b9a3b28}{bind}}(\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}\ target,\ GLuint\ texture);}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_af9c2e03d18cd8a1e977b0bb4a92b7ef9}{texImage2D}}(\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}\ target,\ GLint\ level,\ GLint\ internalformat,\ GLsizei\ width,\ GLsizei\ height,\ GLint\ border,}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ GLenum\ format,\ GLenum\ type,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ pixels);}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_a3f8e713fcc80f9cf1248ceb3399ba086}{generateMipmap}}(\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}\ target);}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_aba34f99c0539049e5b74be647e43f474}{deleteTexture}}(GLuint\ texture);}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_ac7f7aa7e6c8b76fc56d6e22f9cc4b616}{uniform1f}}(GLint\ location,\ GLfloat\ v0);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_ab4694cd553482acf3c05b82068cb8407}{uniform2f}}(GLint\ location,\ GLfloat\ v0,\ GLfloat\ v1);}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_a780dde2f0cd514920ee686c6a82b3546}{uniform3f}}(GLint\ location,\ GLfloat\ v0,\ GLfloat\ v1,\ GLfloat\ v2);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_a8665e875f30dadfd9faaa34d2f2ae35d}{uniform4f}}(GLint\ location,\ GLfloat\ v0,\ GLfloat\ v1,\ GLfloat\ v2,\ GLfloat\ v3);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_a663bfa688ff5fa30df92e1b50e12b22f}{uniform1i}}(GLint\ location,\ GLint\ v0);}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_a54366ad05932edcacdbd3087a607fe4f}{uniform2i}}(GLint\ location,\ GLint\ v0,\ GLint\ v1);}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_ae8118cd40e5d7756e0f6fe1b7ead20c2}{uniform3i}}(GLint\ location,\ GLint\ v0,\ GLint\ v1,\ GLint\ v2);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_a083204ef6675a92f3e21885003e66d87}{uniform4i}}(GLint\ location,\ GLint\ v0,\ GLint\ v1,\ GLint\ v2,\ GLint\ v3);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_aeeef5a8746ed44d03fb8a64f34f5e8fa}{uniform1ui}}(GLint\ location,\ GLuint\ v0);}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_ab30221e76bf4621bf398464417a698d1}{uniform2ui}}(GLint\ location,\ GLuint\ v0,\ GLuint\ v1);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_ad02fe9341891ee9914178a4c2a8fc063}{uniform3ui}}(GLint\ location,\ GLuint\ v0,\ GLuint\ v1,\ GLuint\ v2);}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_a723b4500b5d070abd30e7c36afb3b135}{uniform4ui}}(GLint\ location,\ GLuint\ v0,\ GLuint\ v1,\ GLuint\ v2,\ GLuint\ v3);}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_ad2119d372fd25745029f485bbcacdc2f}{uniform1fv}}(GLint\ location,\ GLsizei\ count,\ \textcolor{keyword}{const}\ GLfloat*\ value);}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_a890bbe7716d7e4a021f841a1ec87e609}{uniform2fv}}(GLint\ location,\ GLsizei\ count,\ \textcolor{keyword}{const}\ GLfloat*\ value);}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_a3886e54602444fd69c94254563ee8923}{uniform3fv}}(GLint\ location,\ GLsizei\ count,\ \textcolor{keyword}{const}\ GLfloat*\ value);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_ab501f4d05e8b51016823f3e30a2233ee}{uniform4fv}}(GLint\ location,\ GLsizei\ count,\ \textcolor{keyword}{const}\ GLfloat*\ value);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_a349d718399912f46faf7bd4b354f00fe}{uniform1iv}}(GLint\ location,\ GLsizei\ count,\ \textcolor{keyword}{const}\ GLint*\ value);}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_aca6892812d75b2ad6e762cc58bcddc73}{uniform2iv}}(GLint\ location,\ GLsizei\ count,\ \textcolor{keyword}{const}\ GLint*\ value);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_ad0c593d917dadea5676b3e667a04d137}{uniform3iv}}(GLint\ location,\ GLsizei\ count,\ \textcolor{keyword}{const}\ GLint*\ value);}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_a44e7a2b830b264416fa2b57aed81e031}{uniform4iv}}(GLint\ location,\ GLsizei\ count,\ \textcolor{keyword}{const}\ GLint*\ value);}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_af3ab039ecb34a4144f295de2432e4768}{uniform1uiv}}(GLint\ location,\ GLsizei\ count,\ \textcolor{keyword}{const}\ GLuint*\ value);}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_abea880c747b645a195c75ec4fa409102}{uniform2uiv}}(GLint\ location,\ GLsizei\ count,\ \textcolor{keyword}{const}\ GLuint*\ value);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_a2e111e39db20781f1cc6e9b59cc6645e}{uniform3uiv}}(GLint\ location,\ GLsizei\ count,\ \textcolor{keyword}{const}\ GLuint*\ value);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_a4eaafae10ebea07e19754513eba485d3}{uniform4uiv}}(GLint\ location,\ GLsizei\ count,\ \textcolor{keyword}{const}\ GLuint*\ value);}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_a43fc7f1733b5337a9610a4a2581b396e}{uniformMatrix2fv}}(GLint\ location,\ GLsizei\ count,\ GLboolean\ transpose,\ \textcolor{keyword}{const}\ GLfloat*\ value);}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_a511b36a63e06bbc4726fc2243fadb445}{uniformMatrix3fv}}(GLint\ location,\ GLsizei\ count,\ GLboolean\ transpose,\ \textcolor{keyword}{const}\ GLfloat*\ value);}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_ad6e2e3875f30a214ababafd4473d25f4}{uniformMatrix4fv}}(GLint\ location,\ GLsizei\ count,\ GLboolean\ transpose,\ \textcolor{keyword}{const}\ GLfloat*\ value);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_a856b33712a91251aefa2bac7071a4b2e}{uniformMatrix2x3fv}}(GLint\ location,\ GLsizei\ count,\ GLboolean\ transpose,\ \textcolor{keyword}{const}\ GLfloat*\ value);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_a5e68a17fd5016bf0505970a573c6e2f4}{uniformMatrix3x2fv}}(GLint\ location,\ GLsizei\ count,\ GLboolean\ transpose,\ \textcolor{keyword}{const}\ GLfloat*\ value);}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_af0ef9f1e0f3a1c8f3c6934d9c3f7182e}{uniformMatrix2x4fv}}(GLint\ location,\ GLsizei\ count,\ GLboolean\ transpose,\ \textcolor{keyword}{const}\ GLfloat*\ value);}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_acad00a437d5b294eadbebb97d246e95b}{uniformMatrix4x2fv}}(GLint\ location,\ GLsizei\ count,\ GLboolean\ transpose,\ \textcolor{keyword}{const}\ GLfloat*\ value);}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_a6816955b7fc730bf29c882defbfbed35}{uniformMatrix3x4fv}}(GLint\ location,\ GLsizei\ count,\ GLboolean\ transpose,\ \textcolor{keyword}{const}\ GLfloat*\ value);}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_program_af9f5d901a38433bb7cc7e2cf1a154112}{uniformMatrix4x3fv}}(GLint\ location,\ GLsizei\ count,\ GLboolean\ transpose,\ \textcolor{keyword}{const}\ GLfloat*\ value);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ GLuint\ usedShaderProgram\ =\ \mbox{\hyperlink{class_gl_1_1_program_abd7234eb7f51e44aa20eea9edd40ea63}{invalidId}};}
+\DoxyCodeLine{00158\ \ \ \ \ \};}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gl_1_1_texture}{Texture}}}
+\DoxyCodeLine{00161\ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ GLuint\ \mbox{\hyperlink{class_gl_1_1_texture_aebc6623470c4cb08cd9da4207b9b77ab}{invalidId}}\ =\ 0;}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa6adf97f83acf6453d4a6a4b1070f3754}{None}},}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Texture2D}}\ =\ GL\_TEXTURE\_2D,}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa1168ae5c761e6f30ebeb5d44a29c0f0}{CubeMapPositiveX}}\ =\ GL\_TEXTURE\_CUBE\_MAP\_POSITIVE\_X,}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa85409274e6f1044d5794b21ac55ef56e}{CubeMapNegativeX}}\ =\ GL\_TEXTURE\_CUBE\_MAP\_NEGATIVE\_X,}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa7e40f99ae3df7613bd94609c8153019b}{CubeMapPositiveY}}\ =\ GL\_TEXTURE\_CUBE\_MAP\_POSITIVE\_Y,}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefad2c3bed6281015a3df5de036da39f5a0}{CubeMapNegativeY}}\ =\ GL\_TEXTURE\_CUBE\_MAP\_NEGATIVE\_Y,}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa9b94e73c8ded4d453c3dc439fb9796e}{CubeMapPositiveZ}}\ =\ GL\_TEXTURE\_CUBE\_MAP\_POSITIVE\_Z,}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa0c43718e05258a8818cc736fcc2efac7}{CubeMapNegativeZ}}\ =\ GL\_TEXTURE\_CUBE\_MAP\_NEGATIVE\_Z,}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa6c4765d2cb592dcc2f21f311db02f43b}{CubeMap}}\ =\ GL\_TEXTURE\_CUBE\_MAP}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2}{MagFilter}}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa6adf97f83acf6453d4a6a4b1070f3754}{None}},}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2a32a843da6ea40ab3b17a3421ccdf671b}{Linear}}\ =\ GL\_LINEAR,}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2a60494f02d440f316319dd0fad40ad007}{Nearest}}\ =\ GL\_NEAREST,}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \};}
 \DoxyCodeLine{00184\ }
-\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ GLuint\ boundTexture\ =\ \mbox{\hyperlink{class_gl_1_1_texture_aebc6623470c4cb08cd9da4207b9b77ab}{invalidId}};}
-\DoxyCodeLine{00187\ \ \ \ \ \};}
-\DoxyCodeLine{00188\ }
-\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_a99507392876681741549a0bf91770f65}{viewport}}(GLint\ x,\ GLint\ y,\ GLsizei\ width,\ GLsizei\ height);}
-\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_ad9b9ca7ab469694c2f5adb367c96b5c1}{drawArrays}}(GLenum\ mode,\ GLint\ first,\ GLsizei\ count);}
-\DoxyCodeLine{00191\ \};}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}{MinFilter}}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa6adf97f83acf6453d4a6a4b1070f3754}{None}},}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2a32a843da6ea40ab3b17a3421ccdf671b}{Linear}}\ =\ GL\_LINEAR,}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2a60494f02d440f316319dd0fad40ad007}{Nearest}}\ =\ GL\_NEAREST,}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a35d97e4a37fa3a0d76c692f3e318599b}{NearestMipmapNearest}}\ =\ GL\_NEAREST\_MIPMAP\_NEAREST,}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61ac164897273ad7f6d61626f5610d86425}{LinearMipmapNearest}}\ =\ GL\_LINEAR\_MIPMAP\_NEAREST,}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a9a79df5c07e4d2a2875689f608b50529}{NearestMipmapLinear}}\ =\ GL\_NEAREST\_MIPMAP\_LINEAR,}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61a1173bd3987b1e185d86b9c3fe1b8bd72}{LinearMipmapLinear}}\ =\ GL\_LINEAR\_MIPMAP\_LINEAR}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47}{Wrap}}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefa6adf97f83acf6453d4a6a4b1070f3754}{None}},}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a4d563bcd510a32c242ba3357ce786579}{Clamp2Edge}}\ =\ GL\_CLAMP\_TO\_EDGE,}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a419de8dc70341019c7d52f76e10956c2}{Clamp2Border}}\ =\ GL\_CLAMP\_TO\_BORDER,}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a12ce4a5977988214a6b098b8cb0bf695}{MirroredRepeat}}\ =\ GL\_MIRRORED\_REPEAT,}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a7020426cfb0a204051be4b3053d2acc8}{Repeat}}\ =\ GL\_REPEAT,}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47a0187015a2c32fb414dfd77055ac8c2b2}{MirrorClamp2Edge}}\ =\ GL\_MIRROR\_CLAMP\_TO\_EDGE}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2}{MagFilter}}\ \mbox{\hyperlink{class_gl_1_1_texture_a652910a35a36d33e356258168246423c}{stringToMagFilter}}(\textcolor{keyword}{const}\ std::string\&\ filter);}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}{MinFilter}}\ \mbox{\hyperlink{class_gl_1_1_texture_a1d71c52579d6b5b495366c9f59bd31fd}{stringToMinFilter}}(\textcolor{keyword}{const}\ std::string\&\ filter);}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_a8bac52e75287b1d570c77ef2a57081ef}{setMinFilter}}(\mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}{MinFilter}}\ filter,\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}\ target\ =\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target::Texture2D}});}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_a6955eafd3b4aa5fac71dd127d199302e}{setMagFilter}}(\mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2}{MagFilter}}\ filter,\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}\ target\ =\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target::Texture2D}});}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_ab46649078b93c82e73d651cdca7a06b7}{setWrapS}}(\mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47}{Wrap}}\ wrap,\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}\ target\ =\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target::Texture2D}});}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_a7f0ed602d6ced51a227bc050aa27bea4}{setWrapT}}(\mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47}{Wrap}}\ wrap,\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}\ target\ =\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target::Texture2D}});}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_addbd305c74b2130dab34bb323fe2deed}{setWrapR}}(\mbox{\hyperlink{class_gl_1_1_texture_a141ede84077cf1d1e73a5d05a0e3bd47}{Wrap}}\ wrap,\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}\ target\ =\ \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Target::Texture2D}});}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_a92f4561bb3eb90054a6d64abe439600c}{active}}(GLenum\ num);}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_gl_1_1_texture_a5ad3987a904b41df87a42f1ae2674d2c}{getMaxCountActiveTextures}}();}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{static}\ GLuint\ \mbox{\hyperlink{class_gl_1_1_texture_a33ba79574900a3817e0a4613e35e13e1}{generate}}();}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_a94499882c04792d705a2f4d90b9a3b28}{bind}}(\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}\ target,\ GLuint\ texture);}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_af9c2e03d18cd8a1e977b0bb4a92b7ef9}{texImage2D}}(\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}\ target,\ GLint\ level,\ GLint\ internalformat,\ GLsizei\ width,\ GLsizei\ height,\ GLint\ border,}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ GLenum\ format,\ GLenum\ type,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ pixels);}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_a3f8e713fcc80f9cf1248ceb3399ba086}{generateMipmap}}(\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Target}}\ target);}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_1_1_texture_aba34f99c0539049e5b74be647e43f474}{deleteTexture}}(GLuint\ texture);}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ GLuint\ boundTexture\ =\ \mbox{\hyperlink{class_gl_1_1_texture_aebc6623470c4cb08cd9da4207b9b77ab}{invalidId}};}
+\DoxyCodeLine{00225\ \ \ \ \ \};}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_a99507392876681741549a0bf91770f65}{viewport}}(GLint\ x,\ GLint\ y,\ GLsizei\ width,\ GLsizei\ height);}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_ad9b9ca7ab469694c2f5adb367c96b5c1}{drawArrays}}(GLenum\ mode,\ GLint\ first,\ GLsizei\ count);}
+\DoxyCodeLine{00229\ \};}
 
 \end{DoxyCode}

@@ -28,28 +28,56 @@
 \DoxyCodeLine{00024\ }
 \DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}Gl.h"{}}}
 \DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}NotCopyableAndNotMovable.h"{}}}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_shader}{Shader}};}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_shader_program}{ShaderProgram}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable}{Utils::NotCopyableAndNotMovable}}}
-\DoxyCodeLine{00031\ \{}
-\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_shader_program}{ShaderProgram}}(\textcolor{keywordtype}{bool}\ shouldCreate);}
-\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_shader_program}{ShaderProgram}}(\mbox{\hyperlink{class_shader}{Shader}}\&\ frag,\ \mbox{\hyperlink{class_shader}{Shader}}\&\ vert);}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a6006856ea179b8603cfbc6570a8971a8}{recreateAndLink}}(\mbox{\hyperlink{class_shader}{Shader}}\&\ frag,\ \mbox{\hyperlink{class_shader}{Shader}}\&\ vert);}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a5191cdd556d4d46a64e2875f399ffd40}{create}}();}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a46334cfefeef06baccdd22314d70f2a0}{attachShader}}(\mbox{\hyperlink{class_shader}{Shader}}\&\ shader);}
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_ade9890eb840126bd3f9b9db42389253c}{link}}();}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_aa3860ee49bab09ae3fc117da165ea73a}{use}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00041\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_shader_program_a6723c3585560fa5cfc469d7f21ff0d0c}{wasCreated}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00042\ \ \ \ \ \_NODISCARD\ GLuint\ \mbox{\hyperlink{class_shader_program_a8bd9ffa4076385d6431e0c648221ba81}{data}}();}
-\DoxyCodeLine{00043\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_shader_program_adb9dccc4b80e484f05804d8b11afc59b}{wasLinked}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a519ab85627a6656c69ac6a2c05362904}{deleteProgram}}();}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00047\ \ \ \ \ GLuint\ data\_\ =\ \mbox{\hyperlink{class_gl_1_1_program_abd7234eb7f51e44aa20eea9edd40ea63}{Gl::Program::invalidId}};}
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ wasLinked\_\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}glm/glm.hpp"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_shader}{Shader}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_shader_program}{ShaderProgram}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable}{Utils::NotCopyableAndNotMovable}}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_shader_program}{ShaderProgram}}(\textcolor{keywordtype}{bool}\ shouldCreate);}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_shader_program}{ShaderProgram}}(\mbox{\hyperlink{class_shader}{Shader}}\&\ frag,\ \mbox{\hyperlink{class_shader}{Shader}}\&\ vert);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a6006856ea179b8603cfbc6570a8971a8}{recreateAndLink}}(\mbox{\hyperlink{class_shader}{Shader}}\&\ frag,\ \mbox{\hyperlink{class_shader}{Shader}}\&\ vert);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a5191cdd556d4d46a64e2875f399ffd40}{create}}();}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a46334cfefeef06baccdd22314d70f2a0}{attachShader}}(\mbox{\hyperlink{class_shader}{Shader}}\&\ shader);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_ade9890eb840126bd3f9b9db42389253c}{link}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_aa3860ee49bab09ae3fc117da165ea73a}{use}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_shader_program_a6723c3585560fa5cfc469d7f21ff0d0c}{wasCreated}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ \ \ \ \ \_NODISCARD\ GLuint\ \mbox{\hyperlink{class_shader_program_a8bd9ffa4076385d6431e0c648221ba81}{data}}();}
+\DoxyCodeLine{00046\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_shader_program_adb9dccc4b80e484f05804d8b11afc59b}{wasLinked}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a519ab85627a6656c69ac6a2c05362904}{deleteProgram}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a68b740437f9922e8ad82be4d74442b5b}{OnAfterLink}}();}
+\DoxyCodeLine{00049\ \ \ \ \ \_NODISCARD\ GLint\ \mbox{\hyperlink{class_shader_program_aced0669c0c6d295ff56c239e8753a58b}{getUniformLocation}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ GLfloat\ v0);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ GLfloat\ v0,\ GLfloat\ v1);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ GLfloat\ v0,\ GLfloat\ v1,\ GLfloat\ v2);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ GLfloat\ v0,\ GLfloat\ v1,\ GLfloat\ v2,\ GLfloat\ v3);}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ GLint\ v0);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ GLint\ v0,\ GLint\ v1);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ GLint\ v0,\ GLint\ v1,\ GLint\ v2);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ GLint\ v0,\ GLint\ v1,\ GLint\ v2,\ GLint\ v3);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ GLuint\ v0);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ GLuint\ v0,\ GLuint\ v1);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ GLuint\ v0,\ GLuint\ v1,\ GLuint\ v2);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ GLuint\ v0,\ GLuint\ v1,\ GLuint\ v2,\ GLuint\ v3);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{bool}\ transpose,\ \textcolor{keyword}{const}\ glm::mat2\&\ value);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{bool}\ transpose,\ \textcolor{keyword}{const}\ glm::mat3\&\ value);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{bool}\ transpose,\ \textcolor{keyword}{const}\ glm::mat4\&\ value);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{bool}\ transpose,\ \textcolor{keyword}{const}\ glm::mat2x3\&\ value);}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{bool}\ transpose,\ \textcolor{keyword}{const}\ glm::mat3x2\&\ value);}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{bool}\ transpose,\ \textcolor{keyword}{const}\ glm::mat2x4\&\ value);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{bool}\ transpose,\ \textcolor{keyword}{const}\ glm::mat4x2\&\ value);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{bool}\ transpose,\ \textcolor{keyword}{const}\ glm::mat3x4\&\ value);}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{bool}\ transpose,\ \textcolor{keyword}{const}\ glm::mat4x3\&\ value);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00074\ \ \ \ \ GLuint\ data\_\ =\ \mbox{\hyperlink{class_gl_1_1_program_abd7234eb7f51e44aa20eea9edd40ea63}{Gl::Program::invalidId}};}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{bool}\ wasLinked\_\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00076\ \ \ \ \ std::unordered\_map<std::string,\ GLint>\ uniforms\_;}
+\DoxyCodeLine{00077\ \};}
 
 \end{DoxyCode}

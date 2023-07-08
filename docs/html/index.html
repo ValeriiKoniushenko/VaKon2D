@@ -77,8 +77,286 @@ $(function() {
 <div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a> </p>
 <h1><a class="anchor" id="autotoc_md13"></a>
 ⭐ Intro</h1>
-<p>I have been creating a game engine using raw OpenGL and my wrappings of its.</p>
+<p>I have been creating a game engine using raw OpenGL and my wrappings of its. You can use it to write your own game. It's easier than writing on raw OpenGL, and it gives more abilities than SFML. For example, you can create a game like a Terraria, or some RPG game. <b>Accomplishment of this engine, that all possible calculations will process your GPU.</b> <br  />
+ Also, you can use this engine as an OpenGL wrapper for the usual code of OpenGL. It has an MIT license, so use it everywhere!</p>
 <h1><a class="anchor" id="autotoc_md14"></a>
+Table of Contents</h1>
+<blockquote class="doxtable">
+<p>&zwj;</p><ol type="1">
+<li>Getting started<ol type="a">
+<li>At first, let's install it</li>
+<li>How to write your own game?</li>
+<li>Where to find binaries and how to build a &lt;u&gt;game&lt;/u&gt;?</li>
+<li>At first, let's install it</li>
+</ol>
+</li>
+<li>Game-template</li>
+<li>If you want to rewrite game-template</li>
+<li>How to generate a docs(doxygen)</li>
+<li>Docs</li>
+<li>Code-tutorial &amp; classes &amp; examples<ol type="a">
+<li>Init your game environment</li>
+<li>Write your shader</li>
+<li>Create your own shader-program</li>
+<li>Load textures</li>
+<li>Creating the first rectangle</li>
+<li>Main Loop</li>
+<li>Timers</li>
+<li>Using OpenGL wrappers</li>
+</ol>
+</li>
+<li>What in the future?</li>
+<li>Feedback &amp; Contacts </li>
+</ol>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md15"></a>
+🎉 Getting started</h1>
+<h2><a class="anchor" id="autotoc_md16"></a>
+At first, let's install it</h2>
+<ol type="1">
+<li>Download and install <div class="fragment"></div><!-- fragment --> (<a href="https://git-scm.com/downloads">download</a>, <a href="https://github.com/git-guides/install-git">how to install it</a>)</li>
+<li>Download and install some compiler or <code>IDE</code>. I.e. <div class="fragment"></div><!-- fragment --> (<a href="https://visualstudio.microsoft.com/downloads/">download</a>, <a href="https://learn.microsoft.com/en-us/cpp/build/vscpp-step-0-installation?view=msvc-170">how to install VS</a>)</li>
+<li>Download and install the last version of <code>Cmake</code>(<a href="https://cmake.org/download/">download</a>)</li>
+<li>Clone the repository(<a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository">how to do it</a>)</li>
+<li>Open a <code>CMD</code>(<code>console</code>/<code>terminal</code>) inside the <u>cloned directory</u>(<a href="https://www.youtube.com/watch?v=8gUvxU7EoNE">how to open CMD</a>)</li>
+<li>In the CMD run: <code>mkdir build</code></li>
+<li>In the CMD run: <code>cd build</code></li>
+<li>In the CMD run: <code>cmake ../ -DCMAKE_BUILD_TYPE=Debug</code>. If you want to build a Release version, type <code>Release</code> instead of <code>Debug</code>. Also, if you have a custom compiler, you need to write a path to this compiler.</li>
+<li>In the CMD run: <code>cmake --build .</code></li>
+</ol>
+<h2><a class="anchor" id="autotoc_md17"></a>
+How to write your own game?</h2>
+<ol type="1">
+<li>After a successful build (previous point), you can write your own game</li>
+<li>Go to folder /game/</li>
+<li>There you'll find three folder: <code>assets</code>, <code>include</code>, <code>source</code><ol type="a">
+<li>What to store in the folder <code>asset</code>: you can create your own directories to store your game data(i.e. textures, audio files, shaders, etc.)</li>
+<li>What to store in the folder <code>include</code>: you can store your include files(.h/.hpp) for your own game</li>
+<li>What to store in the folder <code>source</code>: you can store your include files(.c/.cpp/.cxx) for your own game</li>
+</ol>
+</li>
+<li>Put your sources into <code>source</code> directory and your headers to <code>include</code> directory</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md18"></a>
+Where to find binaries and how to build a &lt;u&gt;game&lt;/u&gt;?</h2>
+<p>After previous points, you can say: <em>How to get an <code>.exe</code> file of my game?</em> - it's easy! Let's do it:</p>
+<ol type="1">
+<li>Make this point</li>
+<li>Go to <code>/build/game/</code></li>
+<li>Looking at your compiler, you can find in this folder(or sub-folders)<code>VaKon2D.exe</code> file - it's your game</li>
+<li>You'll need a folder <code>assets</code> and a file <code>VaKon2D.exe</code> for successful launching of a game. Just pack your game with these two items - that's all!</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md19"></a>
+📑 Game-template</h1>
+<p>Basic game template, just an example of a game, you can find in the folder <code>/game/</code></p>
+<h1><a class="anchor" id="autotoc_md20"></a>
+📑 If you want to rewrite game-template</h1>
+<ol type="1">
+<li>You can edit <code>/game/source/main.cpp</code> and remove all needed files from the directory <code>/game</code></li>
+<li>One rule: don't forget the next rows at the start of your game:</li>
+</ol>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line"><span class="comment">// !!!!!! don&#39;t change an order !!!!!! --&gt;</span></div>
+<div class="line"><a class="code hl_function" href="namespace_logger.html#a96a194700a9ee08f34260ee6a7dd5a5f">Logger::initLogger</a>();</div>
+<div class="line"><a class="code hl_function" href="class_glfw_wrapper.html#a21fc9162a53ab511982e81fb156cffbf">GlfwWrapper::initGlfw</a>(3, 3);</div>
+<div class="line">GetWindow().<a class="code hl_function" href="class_window.html#a05e6957ecc6f3d66c2bd183b583e9905">create</a>({800, 600}, <span class="stringliteral">&quot;Game name&quot;</span>);</div>
+<div class="line"><a class="code hl_function" href="class_glad_wrapper.html#a62d3a840bad357835a3883e804748ef9">GladWrapper::initGlad</a>();</div>
+<div class="line">GetWorld().<a class="code hl_function" href="class_world.html#a0150607a49c2400d5c848159dd02d533">init</a>();</div>
+<div class="line"><span class="comment">// &lt;---------------------------------------</span></div>
+<div class="ttc" id="aclass_glad_wrapper_html_a62d3a840bad357835a3883e804748ef9"><div class="ttname"><a href="class_glad_wrapper.html#a62d3a840bad357835a3883e804748ef9">GladWrapper::initGlad</a></div><div class="ttdeci">static void initGlad()</div><div class="ttdef"><b>Definition</b> GladWrapper.cpp:33</div></div>
+<div class="ttc" id="aclass_glfw_wrapper_html_a21fc9162a53ab511982e81fb156cffbf"><div class="ttname"><a href="class_glfw_wrapper.html#a21fc9162a53ab511982e81fb156cffbf">GlfwWrapper::initGlfw</a></div><div class="ttdeci">static void initGlfw(int majorVersion, int minorVersion)</div><div class="ttdef"><b>Definition</b> GlfwWrapper.cpp:52</div></div>
+<div class="ttc" id="aclass_window_html_a05e6957ecc6f3d66c2bd183b583e9905"><div class="ttname"><a href="class_window.html#a05e6957ecc6f3d66c2bd183b583e9905">Window::create</a></div><div class="ttdeci">void create(Utils::ISize2D size, const std::string &amp;title)</div><div class="ttdef"><b>Definition</b> Window.cpp:47</div></div>
+<div class="ttc" id="aclass_world_html_a0150607a49c2400d5c848159dd02d533"><div class="ttname"><a href="class_world.html#a0150607a49c2400d5c848159dd02d533">World::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition</b> World.cpp:27</div></div>
+<div class="ttc" id="anamespace_logger_html_a96a194700a9ee08f34260ee6a7dd5a5f"><div class="ttname"><a href="namespace_logger.html#a96a194700a9ee08f34260ee6a7dd5a5f">Logger::initLogger</a></div><div class="ttdeci">void initLogger()</div><div class="ttdef"><b>Definition</b> Logger.cpp:28</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md21"></a>
+📄 How to generate a docs(doxygen)</h1>
+<ol type="1">
+<li>Download and install doxygen(<a href="https://www.doxygen.nl/download.html">download</a>)</li>
+<li>Add doxygen.exe to the Environment Variable(<a href="https://docs.oracle.com/en/database/oracle/machine-learning/oml4r/1.5.1/oread/creating-and-modifying-environment-variables-on-windows.html#GUID-DD6F9982-60D5-48F6-8270-A27EC53807D0">how to do it</a>)</li>
+<li>Open a <code>CMD</code>(<code>console</code>/<code>terminal</code>) inside the <u>cloned directory</u>(<a href="https://www.youtube.com/watch?v=8gUvxU7EoNE">how to open CMD</a>)</li>
+<li>Run the next command: <code>doxygen</code></li>
+<li>Go to <code>docs/html/index.html</code> - it's your doc!</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md22"></a>
+📃 Docs</h1>
+<p>You can find docs by engine classes in the next directory: <code>/docs/html/index.html</code></p>
+<h1><a class="anchor" id="autotoc_md23"></a>
+📌 Code-tutorial &amp; classes &amp; examples:</h1>
+<h2><a class="anchor" id="autotoc_md24"></a>
+Init your game environment</h2>
+<p>Add the next lines to your code to init game-env:</p>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line"><a class="code hl_function" href="namespace_logger.html#a96a194700a9ee08f34260ee6a7dd5a5f">Logger::initLogger</a>();</div>
+<div class="line"><a class="code hl_function" href="class_glfw_wrapper.html#a21fc9162a53ab511982e81fb156cffbf">GlfwWrapper::initGlfw</a>(3, 3);</div>
+<div class="line">GetWindow().<a class="code hl_function" href="class_window.html#a05e6957ecc6f3d66c2bd183b583e9905">create</a>({800, 600}, <span class="stringliteral">&quot;Game name&quot;</span>);</div>
+<div class="line"><a class="code hl_function" href="class_glad_wrapper.html#a62d3a840bad357835a3883e804748ef9">GladWrapper::initGlad</a>();</div>
+<div class="line">GetWorld().<a class="code hl_function" href="class_world.html#a0150607a49c2400d5c848159dd02d533">init</a>();</div>
+</div><!-- fragment --><p>First, you should initialize the game logger. It will write some logs to /game/logs folder. The logger be used in all places of the next code, so you should initialize it first. After that, initialize <a class="el" href="class_glfw_wrapper.html">GlfwWrapper</a> to get the ability to work with a window, window-event. If you want, you can change the major and minor versions. You can't create a window or initialize a GLAD without initializing GLFW. Let's initialize your window:</p>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line">GetWindow().<a class="code hl_function" href="class_window.html#a05e6957ecc6f3d66c2bd183b583e9905">create</a>({800, 600}, <span class="stringliteral">&quot;Game name&quot;</span>); </div>
+</div><!-- fragment --><p>You can pass your values to the window's size or window's title. After that going forward GLAD initialization and <a class="el" href="class_world.html">World</a> initialization.</p>
+<h2><a class="anchor" id="autotoc_md25"></a>
+Write your shader</h2>
+<p>How to include it: <code>#include "Shader.h"</code> and don't forget to add <code>Core-Wrappers</code> to your CMake-game At the first you can write simple shader, like the next:</p>
+<div class="fragment"><div class="line">// ======FRAGMENT SHADER=======</div>
+<div class="line">#version 330 core</div>
+<div class="line">out vec4 FragColor;</div>
+<div class="line">in vec2 ioCv;</div>
+<div class="line">uniform sampler2D uTexture;</div>
+<div class="line">void main()</div>
+<div class="line">{</div>
+<div class="line">    FragColor = texture(uTexture, ioCv);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>And such like next too:</p>
+<div class="fragment"><div class="line">// ======VERTEX SHADER=======</div>
+<div class="line">#version 330 core</div>
+<div class="line">layout (location = 0) in vec2 aPos;</div>
+<div class="line">layout (location = 1) in vec2 aCv;</div>
+<div class="line">out vec2 ioCv;</div>
+<div class="line">uniform mat4 uTransform;</div>
+<div class="line">void main()</div>
+<div class="line">{</div>
+<div class="line">    ioCv = aCv;</div>
+<div class="line">    gl_Position = uTransform * vec4(aPos.x, aPos.y, 0.0, 1.0);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Afet that load them to the shader class <code><a class="el" href="class_shader.html">Shader</a></code>.</p>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line"><a class="code hl_class" href="class_shader.html">Shader</a> vertex(<span class="stringliteral">&quot;assets/shaders/main-vertex.glsl&quot;</span>, <a class="code hl_enumvalue" href="class_gl_1_1_shader.html#a39b65e35816cebb4c1f32694d3925019ab22b929ba52471a02d18bb3a4e4472e6">Gl::Shader::Type::Vertex</a>);</div>
+<div class="line"><a class="code hl_class" href="class_shader.html">Shader</a> fragment(<span class="stringliteral">&quot;assets/shaders/main-fragment.glsl&quot;</span>, <a class="code hl_enumvalue" href="class_gl_1_1_shader.html#a39b65e35816cebb4c1f32694d3925019a37d01b98065725fe3a1d30acf3a0064a">Gl::Shader::Type::Fragment</a>);</div>
+<div class="ttc" id="aclass_gl_1_1_shader_html_a39b65e35816cebb4c1f32694d3925019a37d01b98065725fe3a1d30acf3a0064a"><div class="ttname"><a href="class_gl_1_1_shader.html#a39b65e35816cebb4c1f32694d3925019a37d01b98065725fe3a1d30acf3a0064a">Gl::Shader::Type::Fragment</a></div><div class="ttdeci">@ Fragment</div></div>
+<div class="ttc" id="aclass_gl_1_1_shader_html_a39b65e35816cebb4c1f32694d3925019ab22b929ba52471a02d18bb3a4e4472e6"><div class="ttname"><a href="class_gl_1_1_shader.html#a39b65e35816cebb4c1f32694d3925019ab22b929ba52471a02d18bb3a4e4472e6">Gl::Shader::Type::Vertex</a></div><div class="ttdeci">@ Vertex</div></div>
+<div class="ttc" id="aclass_shader_html"><div class="ttname"><a href="class_shader.html">Shader</a></div><div class="ttdef"><b>Definition</b> Shader.h:31</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md26"></a>
+Create your own shader-program</h2>
+<p><a class="el" href="class_shader.html">Shader</a> program will save and transfer the shader[s] to the GPU How to include it: <code>#include "CustomShaderProgram.h"</code> and don't forget to add <code>Core-Wrappers</code> to your CMake-game dependencies(<code>target_link_libraries(YouGameTarget PRIVATE Core-wrappers)</code> Create the first shader-program and attach shaders to it.</p>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line"><a class="code hl_class" href="class_custom_shader_program.html">CustomShaderProgram</a> program(<span class="keyword">true</span>);</div>
+<div class="line">program.attachShader(vertex);</div>
+<div class="line">program.attachShader(fragment);</div>
+<div class="ttc" id="aclass_custom_shader_program_html"><div class="ttname"><a href="class_custom_shader_program.html">CustomShaderProgram</a></div><div class="ttdef"><b>Definition</b> CustomShaderProgram.h:28</div></div>
+</div><!-- fragment --><p>To create and bind shader program we can pass <code>true</code> like an argument to the <code><a class="el" href="class_custom_shader_program.html">CustomShaderProgram</a></code> constructor. After that we are attaching shaders to the shader-program.</p>
+<p>And now you can use your shader program. Just write</p>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line">program.use();</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md27"></a>
+Load textures</h2>
+<p>To load texture we should use a class <a class="el" href="class_texture.html">Texture</a>(<code>#include "Texture.h"</code> and don't forget to add <code>Core-Wrappers</code> to your CMake-game dependencies(<code>target_link_libraries(YouGameTarget PRIVATE Core-wrappers)</code>)) and use class <code><a class="el" href="class_image.html">Image</a></code> too(<code>#include "Image.h"</code>)</p>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line"><a class="code hl_class" href="class_texture.html">Texture</a> texture(<a class="code hl_enumvalue" href="class_gl_1_1_texture.html#ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995">Gl::Texture::Target::Texture2D</a>, <span class="keyword">true</span>, <span class="keyword">true</span>);</div>
+<div class="line"><a class="code hl_class" href="class_image.html">Image</a> image(<span class="stringliteral">&quot;assets/textures/apple.png&quot;</span>);</div>
+<div class="line">texture.setImage(image);</div>
+<div class="line">texture.setMagAndMinFilter(<a class="code hl_enumvalue" href="class_gl_1_1_texture.html#a450982982a0ea4f5f5618ffe2ad921d2a32a843da6ea40ab3b17a3421ccdf671b">Gl::Texture::MagFilter::Linear</a>, <a class="code hl_enumvalue" href="class_gl_1_1_texture.html#afb25ed64d375b7fed86b87d91d045a61a1173bd3987b1e185d86b9c3fe1b8bd72">Gl::Texture::MinFilter::LinearMipmapLinear</a>);</div>
+<div class="ttc" id="aclass_gl_1_1_texture_html_a450982982a0ea4f5f5618ffe2ad921d2a32a843da6ea40ab3b17a3421ccdf671b"><div class="ttname"><a href="class_gl_1_1_texture.html#a450982982a0ea4f5f5618ffe2ad921d2a32a843da6ea40ab3b17a3421ccdf671b">Gl::Texture::MagFilter::Linear</a></div><div class="ttdeci">@ Linear</div></div>
+<div class="ttc" id="aclass_gl_1_1_texture_html_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995"><div class="ttname"><a href="class_gl_1_1_texture.html#ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995">Gl::Texture::Target::Texture2D</a></div><div class="ttdeci">@ Texture2D</div></div>
+<div class="ttc" id="aclass_gl_1_1_texture_html_afb25ed64d375b7fed86b87d91d045a61a1173bd3987b1e185d86b9c3fe1b8bd72"><div class="ttname"><a href="class_gl_1_1_texture.html#afb25ed64d375b7fed86b87d91d045a61a1173bd3987b1e185d86b9c3fe1b8bd72">Gl::Texture::MinFilter::LinearMipmapLinear</a></div><div class="ttdeci">@ LinearMipmapLinear</div></div>
+<div class="ttc" id="aclass_image_html"><div class="ttname"><a href="class_image.html">Image</a></div><div class="ttdef"><b>Definition</b> Image.h:33</div></div>
+<div class="ttc" id="aclass_texture_html"><div class="ttname"><a href="class_texture.html">Texture</a></div><div class="ttdef"><b>Definition</b> Texture.h:35</div></div>
+</div><!-- fragment --><p>We want to render texture 2D, so in the <a class="el" href="class_texture.html">Texture</a>'s constructor we should pass <code><a class="el" href="class_gl_1_1_texture.html#ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995">Gl::Texture::Target::Texture2D</a></code>. Also, if you want to generate and bind a texture 'in-place', we can pass <code>true</code> and <code>true</code> like the 2nd and 3rd argument of this class. After that we are loading an image: <code><a class="el" href="class_image.html">Image</a> image("assets/textures/apple.png")</code> The class <a class="el" href="class_image.html">Image</a> provides more convenient interface for loading an images and getting some data about it for you or fot the textures. Don't forget to set image to your texture: <code>texture.setImage(image);</code> If you want to set mag &amp; min filter, you can use the next functions to do it: <code>Texture::steMinFilter</code> &amp; <code><a class="el" href="class_texture.html#a345a432339c7c9c8aec9f90dbff0c6c7">Texture::setMagFilter</a></code></p>
+<h2><a class="anchor" id="autotoc_md28"></a>
+Creating the first rectangle</h2>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line"><span class="keyword">class </span><a class="code hl_class" href="class_rectangle.html">Rectangle</a> rect;</div>
+<div class="line">rect.<a class="code hl_function" href="class_rectangle.html#ac113b72a8a69c25ad31d244de55256d3">setTexture</a>(texture);</div>
+<div class="line">rect.prepare();</div>
+<div class="ttc" id="aclass_rectangle_html"><div class="ttname"><a href="class_rectangle.html">Rectangle</a></div><div class="ttdef"><b>Definition</b> Rectangle.h:32</div></div>
+<div class="ttc" id="aclass_rectangle_html_ac113b72a8a69c25ad31d244de55256d3"><div class="ttname"><a href="class_rectangle.html#ac113b72a8a69c25ad31d244de55256d3">Rectangle::setTexture</a></div><div class="ttdeci">void setTexture(Texture &amp;texture)</div><div class="ttdef"><b>Definition</b> Rectangle.cpp:56</div></div>
+</div><!-- fragment --><p>We should create our class <a class="el" href="class_rectangle.html">Rectangle</a> and set a texture to it. After that don't forget to call function <code><a class="el" href="class_rectangle.html#ab3d907be78e1573b19761b2febdb5be2">Rectangle::prepare</a></code> - to prepare all OpenGL data. This function you should call only one time.</p>
+<h2><a class="anchor" id="autotoc_md29"></a>
+Main Loop</h2>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line"><span class="keywordflow">while</span> (!GetWindow().shouldClose())</div>
+<div class="line">{</div>
+<div class="line">    GetWindow().<a class="code hl_function" href="class_window.html#a9cbb416a1ebaa3ecbc9271b1ec0858f4">clearColor</a>(0.2f, 0.3f, 0.3f, 1.0f);</div>
+<div class="line">    GetWindow().<a class="code hl_function" href="class_window.html#af64a20e4e611ac92f8b4ea45da167a4f">clear</a>(GL_COLOR_BUFFER_BIT);</div>
+<div class="line"> </div>
+<div class="line">    rect.draw(program);</div>
+<div class="line"> </div>
+<div class="line">    GetWindow().<a class="code hl_function" href="class_window.html#af6ffedb8d12d5551bdb4c298de87ed56">swapBuffers</a>();</div>
+<div class="line">    GetWindow().<a class="code hl_function" href="class_window.html#a5abb541ee62c814dc7a7037140af7e8f">pollEvent</a>();</div>
+<div class="line"> </div>
+<div class="line">    GetWorld().<a class="code hl_function" href="class_world.html#aac8c1fde63c06577ffc648aaefdb37f0">update</a>();</div>
+<div class="line">}</div>
+<div class="ttc" id="aclass_window_html_a5abb541ee62c814dc7a7037140af7e8f"><div class="ttname"><a href="class_window.html#a5abb541ee62c814dc7a7037140af7e8f">Window::pollEvent</a></div><div class="ttdeci">void pollEvent()</div><div class="ttdef"><b>Definition</b> Window.cpp:72</div></div>
+<div class="ttc" id="aclass_window_html_a9cbb416a1ebaa3ecbc9271b1ec0858f4"><div class="ttname"><a href="class_window.html#a9cbb416a1ebaa3ecbc9271b1ec0858f4">Window::clearColor</a></div><div class="ttdeci">void clearColor(float r, float g, float b, float a)</div><div class="ttdef"><b>Definition</b> Window.cpp:77</div></div>
+<div class="ttc" id="aclass_window_html_af64a20e4e611ac92f8b4ea45da167a4f"><div class="ttname"><a href="class_window.html#af64a20e4e611ac92f8b4ea45da167a4f">Window::clear</a></div><div class="ttdeci">void clear(int code)</div><div class="ttdef"><b>Definition</b> Window.cpp:82</div></div>
+<div class="ttc" id="aclass_window_html_af6ffedb8d12d5551bdb4c298de87ed56"><div class="ttname"><a href="class_window.html#af6ffedb8d12d5551bdb4c298de87ed56">Window::swapBuffers</a></div><div class="ttdeci">void swapBuffers()</div><div class="ttdef"><b>Definition</b> Window.cpp:67</div></div>
+<div class="ttc" id="aclass_world_html_aac8c1fde63c06577ffc648aaefdb37f0"><div class="ttname"><a href="class_world.html#aac8c1fde63c06577ffc648aaefdb37f0">World::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition</b> World.cpp:32</div></div>
+</div><!-- fragment --><p>At the start of main loop, we should work while the window is open. After that need to clear background color and clear ColorBufferBit.</p>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line">GetWindow().<a class="code hl_function" href="class_window.html#a9cbb416a1ebaa3ecbc9271b1ec0858f4">clearColor</a>(0.2f, 0.3f, 0.3f, 1.0f);</div>
+<div class="line">GetWindow().<a class="code hl_function" href="class_window.html#af64a20e4e611ac92f8b4ea45da167a4f">clear</a>(GL_COLOR_BUFFER_BIT);</div>
+</div><!-- fragment --><p>Don't forget to draw your rectangle:</p>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line">rect.draw(program);</div>
+</div><!-- fragment --><p>And don't forget to process buffers and events. It needs for correct working of all window events.</p>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line">GetWindow().<a class="code hl_function" href="class_window.html#af6ffedb8d12d5551bdb4c298de87ed56">swapBuffers</a>();</div>
+<div class="line">GetWindow().<a class="code hl_function" href="class_window.html#a5abb541ee62c814dc7a7037140af7e8f">pollEvent</a>();</div>
+</div><!-- fragment --><p>Also, we have a world data. For example, timers - it's a part of a world. You should update all this data. So, write:</p>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line">GetWorld().<a class="code hl_function" href="class_world.html#aac8c1fde63c06577ffc648aaefdb37f0">update</a>();</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md30"></a>
+Timers</h2>
+<p>If you want work with timers you should add a target <code><a class="el" href="class_world.html">World</a></code> to you <code>target_link_libraries</code> of a game. Example:</p>
+<div class="fragment"><div class="line">target_link_libraries(VaKon2D PUBLIC World)</div>
+</div><!-- fragment --><p>After that include <code>Timers.h</code> to your code.</p>
+<p>Now you can use timers in your code. At first, let's create new timer:</p>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line"><a class="code hl_class" href="class_timer.html">Timer</a> timer;</div>
+<div class="ttc" id="aclass_timer_html"><div class="ttname"><a href="class_timer.html">Timer</a></div><div class="ttdef"><b>Definition</b> Timer.h:31</div></div>
+</div><!-- fragment --><p>And let's set mode Infinity and set frequency one time per second. Also, don't forget to set a callback. This lambda will be called one time per 1000ms(1s).</p>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line">timer.<a class="code hl_function" href="class_timer.html#ac22fbf29a9708e0cd8cf0b1576fdba5e">setFrequency</a>(<a class="code hl_typedef" href="class_timer.html#ab9cf496a02ed86e09ec1c98d858bccd4">Timer::Unit</a>(1000));</div>
+<div class="line">timer.<a class="code hl_function" href="class_timer.html#a696f19b4227ef320096bd89965141b78">setMode</a>(<a class="code hl_enumvalue" href="class_timer.html#aa4b2e0bfcfba8ba46688fd1a37c2aa4baeb2ac5b04180d8d6011a016aeb8f75b3">Timer::Mode::Infinity</a>);</div>
+<div class="line">timer.<a class="code hl_function" href="class_timer.html#a7a8cc5f49024b9d34d078f681a9cf93f">setCallback</a>([&amp;](){ rect.move({-0.1f, 0.f}); });</div>
+<div class="ttc" id="aclass_timer_html_a696f19b4227ef320096bd89965141b78"><div class="ttname"><a href="class_timer.html#a696f19b4227ef320096bd89965141b78">Timer::setMode</a></div><div class="ttdeci">void setMode(Mode mode)</div><div class="ttdef"><b>Definition</b> Timer.cpp:25</div></div>
+<div class="ttc" id="aclass_timer_html_a7a8cc5f49024b9d34d078f681a9cf93f"><div class="ttname"><a href="class_timer.html#a7a8cc5f49024b9d34d078f681a9cf93f">Timer::setCallback</a></div><div class="ttdeci">void setCallback(std::function&lt; void()&gt; callback)</div><div class="ttdef"><b>Definition</b> Timer.cpp:45</div></div>
+<div class="ttc" id="aclass_timer_html_aa4b2e0bfcfba8ba46688fd1a37c2aa4baeb2ac5b04180d8d6011a016aeb8f75b3"><div class="ttname"><a href="class_timer.html#aa4b2e0bfcfba8ba46688fd1a37c2aa4baeb2ac5b04180d8d6011a016aeb8f75b3">Timer::Mode::Infinity</a></div><div class="ttdeci">@ Infinity</div></div>
+<div class="ttc" id="aclass_timer_html_ab9cf496a02ed86e09ec1c98d858bccd4"><div class="ttname"><a href="class_timer.html#ab9cf496a02ed86e09ec1c98d858bccd4">Timer::Unit</a></div><div class="ttdeci">std::chrono::milliseconds Unit</div><div class="ttdef"><b>Definition</b> Timer.h:37</div></div>
+<div class="ttc" id="aclass_timer_html_ac22fbf29a9708e0cd8cf0b1576fdba5e"><div class="ttname"><a href="class_timer.html#ac22fbf29a9708e0cd8cf0b1576fdba5e">Timer::setFrequency</a></div><div class="ttdeci">void setFrequency(Unit &amp;&amp;frequency)</div><div class="ttdef"><b>Definition</b> Timer.cpp:35</div></div>
+</div><!-- fragment --><p>Therefore, move this timer to world timer manager:</p>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line">GetWorld().<a class="code hl_function" href="class_world.html#a7c6b4218c9533ee00713fe4840623aee">addTimer</a>(std::move(timer));</div>
+<div class="ttc" id="aclass_world_html_a7c6b4218c9533ee00713fe4840623aee"><div class="ttname"><a href="class_world.html#a7c6b4218c9533ee00713fe4840623aee">World::addTimer</a></div><div class="ttdeci">unsigned long long addTimer(Timer &amp;&amp;timer)</div><div class="ttdef"><b>Definition</b> World.cpp:40</div></div>
+</div><!-- fragment --><p>After that your timer will be invalid. But you can get timer ID from a function <code><a class="el" href="class_world.html#a7c6b4218c9533ee00713fe4840623aee">World::addTimer</a></code>. You can use this id to delete(like an example) your timer in the future.</p>
+<h2><a class="anchor" id="autotoc_md31"></a>
+Using OpenGL wrappers</h2>
+<p>You can connect to your game Core-Wrappers and use OpenGL wrappers. You should add a target <code>Core-Wrappers</code> to you <code>target_link_libraries</code> of a game. Example: OpenGL wrappers take off a chance to get a mistake while you working with OpenGL. Just use it! For example, you can create your own VBO/VAO:</p>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line"><span class="preprocessor">#include &quot;Gl.h&quot;</span></div>
+<div class="line">...</div>
+<div class="line">auto vbo = <a class="code hl_function" href="class_gl_1_1_vbo.html#a839aef071042a02d3c6b686e52489cda">Gl::Vbo::generate</a>();</div>
+<div class="line"><span class="keyword">auto</span> vao = <a class="code hl_function" href="class_gl_1_1_vao.html#a7e06fa0c4fe006ae02cf26a84e213363">Gl::Vao::generate</a>();</div>
+<div class="ttc" id="aclass_gl_1_1_vao_html_a7e06fa0c4fe006ae02cf26a84e213363"><div class="ttname"><a href="class_gl_1_1_vao.html#a7e06fa0c4fe006ae02cf26a84e213363">Gl::Vao::generate</a></div><div class="ttdeci">static void generate(GLsizei n, GLuint *arrays)</div><div class="ttdef"><b>Definition</b> Gl.cpp:56</div></div>
+<div class="ttc" id="aclass_gl_1_1_vbo_html_a839aef071042a02d3c6b686e52489cda"><div class="ttname"><a href="class_gl_1_1_vbo.html#a839aef071042a02d3c6b686e52489cda">Gl::Vbo::generate</a></div><div class="ttdeci">static void generate(GLsizei n, GLuint *arrays)</div><div class="ttdef"><b>Definition</b> Gl.cpp:89</div></div>
+</div><!-- fragment --><p>Others function will be available in the class <code><a class="el" href="class_gl.html">Gl</a></code>, <code><a class="el" href="class_gl_1_1_program.html">Gl::Program</a></code>, <code><a class="el" href="class_gl_1_1_shader.html">Gl::Shader</a></code>, <code><a class="el" href="class_gl_1_1_vao.html">Gl::Vao</a></code>, <code><a class="el" href="class_gl_1_1_vbo.html">Gl::Vbo</a></code>, <code><a class="el" href="class_gl_1_1_texture.html">Gl::Texture</a></code></p>
+<h1><a class="anchor" id="autotoc_md32"></a>
+💭 What in the future?</h1>
+<p>I want to implement more and more things to give abilities like:</p>
+<ul>
+<li>Working with network, like in UnrealEngine 4\5:<ul>
+<li>real-time replications</li>
+<li>different types of replications</li>
+<li>write my own UDP protocol for data transferring</li>
+</ul>
+</li>
+<li>Improve working with lightning:<ul>
+<li>Give an ability to create different types of lighting: global, point</li>
+<li>Working with gamma and post-processing</li>
+</ul>
+</li>
+<li>Pick up all the best things from an SFML(and plugins to it) in one Engine(VaKon2D)</li>
+<li>Easy working with se\deserializing of game data</li>
+<li>Adding an ability to integrate own DLC to a game</li>
+<li>Supporting of all new compilers: GCC, G++, Clang, MSVC</li>
+<li>The engine will be cross-platform</li>
+<li>Easy working with textures and shaders</li>
+<li>Custom shader integration</li>
+<li><a class="el" href="class_shader.html">Shader</a> builder for PRO users</li>
+<li>Add working with audio</li>
+<li>Working with a camera</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md33"></a>
 📞 Feedback &amp; Contacts</h1>
 <p>You can send me e-mail: <a href="#" onclick="location.href='mai'+'lto:'+'Val'+'er'+'ii.'+'Ko'+'niu'+'sh'+'enk'+'o@'+'gma'+'il'+'.co'+'m'; return false;">Valer<span class="obfuscator">.nosp@m.</span>ii.K<span class="obfuscator">.nosp@m.</span>onius<span class="obfuscator">.nosp@m.</span>henk<span class="obfuscator">.nosp@m.</span>o@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> or try to find me in telegram: @markmoran24 </p>
 </div></div><!-- PageDoc -->

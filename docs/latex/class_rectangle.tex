@@ -13,7 +13,7 @@ Inheritance diagram for Rectangle\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_rectangle_a8339715d8e96e6968e8c25977199271d}{draw}} () override
+void \mbox{\hyperlink{class_rectangle_ac1a128d94d1b032f86d31e9252c11d5d}{draw}} (\mbox{\hyperlink{class_shader_program}{Shader\+Program}} \&shader\+Program) override
 \item 
 \+\_\+\+NODISCARD std\+::size\+\_\+t \mbox{\hyperlink{class_rectangle_ababaee75ab41b27adb77cf56d4ebd6bc}{get\+Vertices\+Count}} () const override
 \item 
@@ -23,24 +23,45 @@ void \mbox{\hyperlink{class_rectangle_ac113b72a8a69c25ad31d244de55256d3}{set\+Te
 \item 
 void \mbox{\hyperlink{class_rectangle_ab3d907be78e1573b19761b2febdb5be2}{prepare}} ()
 \end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_draw_able}{Draw\+Able}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{class_draw_able_a14968b67b1ed974bbd91d9be6530fc3b}{draw}} ()
+virtual void \mbox{\hyperlink{class_draw_able_a5e9d8acfb5dde1b7a275b67ff38795e2}{draw}} (\mbox{\hyperlink{class_shader_program}{Shader\+Program}} \&shader\+Program)
 \item 
 virtual \+\_\+\+NODISCARD std\+::size\+\_\+t \mbox{\hyperlink{class_draw_able_acfbef64637f9cf7d68d6e04a62667baf}{get\+Vertices\+Count}} () const
+\item 
+void \mbox{\hyperlink{class_draw_able_acd55542436a5f844085d1fd164e3d203}{set\+Position}} (const glm\+::vec2 \&new\+Position)
+\item 
+void \mbox{\hyperlink{class_draw_able_a6da3581efe2b09c6ba7ba09d2248833b}{move}} (const glm\+::vec2 \&offset)
+\item 
+\+\_\+\+NODISCARD const glm\+::vec2 \& \mbox{\hyperlink{class_draw_able_aa5ece9c226314b8dd7caae8003ed3703}{get\+Position}} () const
+\item 
+void \mbox{\hyperlink{class_draw_able_acf5d4190394676b99e6ecef0a6956bf4}{set\+Rotation}} (float new\+Rotation)
+\item 
+void \mbox{\hyperlink{class_draw_able_ab5ab7e8690ec97edf8a717372c3cbaf7}{rotate}} (float offset)
+\item 
+\+\_\+\+NODISCARD float \mbox{\hyperlink{class_draw_able_a6a2e5ca6279fe6d549df0d7647a3aa6c}{get\+Rotation}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_draw_able}{Draw\+Able}}}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec2 \mbox{\hyperlink{class_draw_able_a1d12fd9119ad5a5026d53cc5490a0c9f}{position\+\_\+}} \{\}
+\item 
+float \mbox{\hyperlink{class_draw_able_a3ae6ed0e957eeeb4223ee73d85c29e28}{rotation\+\_\+}} \{\}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_rectangle_a8339715d8e96e6968e8c25977199271d}\label{class_rectangle_a8339715d8e96e6968e8c25977199271d} 
+\Hypertarget{class_rectangle_ac1a128d94d1b032f86d31e9252c11d5d}\label{class_rectangle_ac1a128d94d1b032f86d31e9252c11d5d} 
 \index{Rectangle@{Rectangle}!draw@{draw}}
 \index{draw@{draw}!Rectangle@{Rectangle}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
-{\footnotesize\ttfamily void Rectangle\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Rectangle\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shader_program}{Shader\+Program}} \&}]{shader\+Program }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-Reimplemented from \mbox{\hyperlink{class_draw_able_a14968b67b1ed974bbd91d9be6530fc3b}{Draw\+Able}}.
+Reimplemented from \mbox{\hyperlink{class_draw_able_a5e9d8acfb5dde1b7a275b67ff38795e2}{Draw\+Able}}.
 
 \Hypertarget{class_rectangle_ab1725c3a07ae05dfd03a4d2aa2589721}\label{class_rectangle_ab1725c3a07ae05dfd03a4d2aa2589721} 
 \index{Rectangle@{Rectangle}!getTexture@{getTexture}}

@@ -7,7 +7,7 @@
 Inheritance diagram for Shader\+Program\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_shader_program}
+\includegraphics[height=3.000000cm]{class_shader_program}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -34,6 +34,52 @@ void \mbox{\hyperlink{class_shader_program_aa3860ee49bab09ae3fc117da165ea73a}{us
 \+\_\+\+NODISCARD bool \mbox{\hyperlink{class_shader_program_adb9dccc4b80e484f05804d8b11afc59b}{was\+Linked}} () const
 \item 
 void \mbox{\hyperlink{class_shader_program_a519ab85627a6656c69ac6a2c05362904}{delete\+Program}} ()
+\item 
+virtual void \mbox{\hyperlink{class_shader_program_a68b740437f9922e8ad82be4d74442b5b}{On\+After\+Link}} ()
+\item 
+\+\_\+\+NODISCARD GLint \mbox{\hyperlink{class_shader_program_aced0669c0c6d295ff56c239e8753a58b}{get\+Uniform\+Location}} (const std\+::string \&name)
+\item 
+void \mbox{\hyperlink{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}{uniform}} (const std\+::string \&name, GLfloat v0)
+\item 
+void \mbox{\hyperlink{class_shader_program_a1bb35eef76c10c98783f658f0a704829}{uniform}} (const std\+::string \&name, GLfloat v0, GLfloat v1)
+\item 
+void \mbox{\hyperlink{class_shader_program_a2fd9aa33d7d1111c918c25be997c5b5d}{uniform}} (const std\+::string \&name, GLfloat v0, GLfloat v1, GLfloat v2)
+\item 
+void \mbox{\hyperlink{class_shader_program_adfd60f52bac7bfdc091f80ca2de00a35}{uniform}} (const std\+::string \&name, GLfloat v0, GLfloat v1, GLfloat v2, GLfloat v3)
+\item 
+void \mbox{\hyperlink{class_shader_program_ac38e02a842fb0df81b75265b173c5cc1}{uniform}} (const std\+::string \&name, GLint v0)
+\item 
+void \mbox{\hyperlink{class_shader_program_a9e05191a55d4f7fb18c4438b009f7f27}{uniform}} (const std\+::string \&name, GLint v0, GLint v1)
+\item 
+void \mbox{\hyperlink{class_shader_program_ac7bf9db8dc0fc99763e3add9d6655135}{uniform}} (const std\+::string \&name, GLint v0, GLint v1, GLint v2)
+\item 
+void \mbox{\hyperlink{class_shader_program_ab1990b42f01f0b6cf8175b4c2e13fac6}{uniform}} (const std\+::string \&name, GLint v0, GLint v1, GLint v2, GLint v3)
+\item 
+void \mbox{\hyperlink{class_shader_program_ac9890df8d8838d8f67049dc6361ac76a}{uniform}} (const std\+::string \&name, GLuint v0)
+\item 
+void \mbox{\hyperlink{class_shader_program_a862405793dd879d2c6d55ab67c027bc7}{uniform}} (const std\+::string \&name, GLuint v0, GLuint v1)
+\item 
+void \mbox{\hyperlink{class_shader_program_aed3fa98a7a790e1fc2e65b95a09ff0e7}{uniform}} (const std\+::string \&name, GLuint v0, GLuint v1, GLuint v2)
+\item 
+void \mbox{\hyperlink{class_shader_program_a4090ebd80c52e15196c9e1571075aacc}{uniform}} (const std\+::string \&name, GLuint v0, GLuint v1, GLuint v2, GLuint v3)
+\item 
+void \mbox{\hyperlink{class_shader_program_ad533912fa06b1f41da8aee2c17471c04}{uniform}} (const std\+::string \&name, bool transpose, const glm\+::mat2 \&value)
+\item 
+void \mbox{\hyperlink{class_shader_program_aa1758a425068ccae138038b6c150366d}{uniform}} (const std\+::string \&name, bool transpose, const glm\+::mat3 \&value)
+\item 
+void \mbox{\hyperlink{class_shader_program_a4bd02da21d74ef414ec4e98ef5053c9b}{uniform}} (const std\+::string \&name, bool transpose, const glm\+::mat4 \&value)
+\item 
+void \mbox{\hyperlink{class_shader_program_a5ea7e2de9643268d0dcd40c6e5da9f52}{uniform}} (const std\+::string \&name, bool transpose, const glm\+::mat2x3 \&value)
+\item 
+void \mbox{\hyperlink{class_shader_program_ad9c750c162c10ab35736d20c71805479}{uniform}} (const std\+::string \&name, bool transpose, const glm\+::mat3x2 \&value)
+\item 
+void \mbox{\hyperlink{class_shader_program_ad39e0d51a076b089ef27024d0eedce13}{uniform}} (const std\+::string \&name, bool transpose, const glm\+::mat2x4 \&value)
+\item 
+void \mbox{\hyperlink{class_shader_program_a2dc0898dde6431bcff502315dc007c6b}{uniform}} (const std\+::string \&name, bool transpose, const glm\+::mat4x2 \&value)
+\item 
+void \mbox{\hyperlink{class_shader_program_ae103c37ad18dd2e47a4a350a9966a17f}{uniform}} (const std\+::string \&name, bool transpose, const glm\+::mat3x4 \&value)
+\item 
+void \mbox{\hyperlink{class_shader_program_a8d4e2440b768be7f6ee54108706ab1ec}{uniform}} (const std\+::string \&name, bool transpose, const glm\+::mat4x3 \&value)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable}{Utils\+::\+Not\+Copyable\+And\+Not\+Movable}}}
 \begin{DoxyCompactItemize}
@@ -92,17 +138,159 @@ virtual \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable_a1d95e7e9d
 \doxysubsubsection{\texorpdfstring{deleteProgram()}{deleteProgram()}}
 {\footnotesize\ttfamily void Shader\+Program\+::delete\+Program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\Hypertarget{class_shader_program_aced0669c0c6d295ff56c239e8753a58b}\label{class_shader_program_aced0669c0c6d295ff56c239e8753a58b} 
+\index{ShaderProgram@{ShaderProgram}!getUniformLocation@{getUniformLocation}}
+\index{getUniformLocation@{getUniformLocation}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{getUniformLocation()}{getUniformLocation()}}
+{\footnotesize\ttfamily GLint Shader\+Program\+::get\+Uniform\+Location (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
 \Hypertarget{class_shader_program_ade9890eb840126bd3f9b9db42389253c}\label{class_shader_program_ade9890eb840126bd3f9b9db42389253c} 
 \index{ShaderProgram@{ShaderProgram}!link@{link}}
 \index{link@{link}!ShaderProgram@{ShaderProgram}}
 \doxysubsubsection{\texorpdfstring{link()}{link()}}
 {\footnotesize\ttfamily void Shader\+Program\+::link (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\Hypertarget{class_shader_program_a68b740437f9922e8ad82be4d74442b5b}\label{class_shader_program_a68b740437f9922e8ad82be4d74442b5b} 
+\index{ShaderProgram@{ShaderProgram}!OnAfterLink@{OnAfterLink}}
+\index{OnAfterLink@{OnAfterLink}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{OnAfterLink()}{OnAfterLink()}}
+{\footnotesize\ttfamily void Shader\+Program\+::\+On\+After\+Link (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_custom_shader_program_a8d42e81d3e2c625471a7177fd5ca6c8c}{Custom\+Shader\+Program}}.
+
 \Hypertarget{class_shader_program_a6006856ea179b8603cfbc6570a8971a8}\label{class_shader_program_a6006856ea179b8603cfbc6570a8971a8} 
 \index{ShaderProgram@{ShaderProgram}!recreateAndLink@{recreateAndLink}}
 \index{recreateAndLink@{recreateAndLink}!ShaderProgram@{ShaderProgram}}
 \doxysubsubsection{\texorpdfstring{recreateAndLink()}{recreateAndLink()}}
 {\footnotesize\ttfamily void Shader\+Program\+::recreate\+And\+Link (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shader}{Shader}} \&}]{frag,  }\item[{\mbox{\hyperlink{class_shader}{Shader}} \&}]{vert }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_ad533912fa06b1f41da8aee2c17471c04}\label{class_shader_program_ad533912fa06b1f41da8aee2c17471c04} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{bool}]{transpose,  }\item[{const glm\+::mat2 \&}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_a5ea7e2de9643268d0dcd40c6e5da9f52}\label{class_shader_program_a5ea7e2de9643268d0dcd40c6e5da9f52} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{bool}]{transpose,  }\item[{const glm\+::mat2x3 \&}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_ad39e0d51a076b089ef27024d0eedce13}\label{class_shader_program_ad39e0d51a076b089ef27024d0eedce13} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [3/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{bool}]{transpose,  }\item[{const glm\+::mat2x4 \&}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_aa1758a425068ccae138038b6c150366d}\label{class_shader_program_aa1758a425068ccae138038b6c150366d} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [4/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{bool}]{transpose,  }\item[{const glm\+::mat3 \&}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_ad9c750c162c10ab35736d20c71805479}\label{class_shader_program_ad9c750c162c10ab35736d20c71805479} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [5/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{bool}]{transpose,  }\item[{const glm\+::mat3x2 \&}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_ae103c37ad18dd2e47a4a350a9966a17f}\label{class_shader_program_ae103c37ad18dd2e47a4a350a9966a17f} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [6/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{bool}]{transpose,  }\item[{const glm\+::mat3x4 \&}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_a4bd02da21d74ef414ec4e98ef5053c9b}\label{class_shader_program_a4bd02da21d74ef414ec4e98ef5053c9b} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [7/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{bool}]{transpose,  }\item[{const glm\+::mat4 \&}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_a2dc0898dde6431bcff502315dc007c6b}\label{class_shader_program_a2dc0898dde6431bcff502315dc007c6b} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [8/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{bool}]{transpose,  }\item[{const glm\+::mat4x2 \&}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_a8d4e2440b768be7f6ee54108706ab1ec}\label{class_shader_program_a8d4e2440b768be7f6ee54108706ab1ec} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [9/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{bool}]{transpose,  }\item[{const glm\+::mat4x3 \&}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_a04df0431b4d3a742de0f5f825a41579b}\label{class_shader_program_a04df0431b4d3a742de0f5f825a41579b} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [10/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{GLfloat}]{v0 }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_a1bb35eef76c10c98783f658f0a704829}\label{class_shader_program_a1bb35eef76c10c98783f658f0a704829} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [11/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{GLfloat}]{v0,  }\item[{GLfloat}]{v1 }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_a2fd9aa33d7d1111c918c25be997c5b5d}\label{class_shader_program_a2fd9aa33d7d1111c918c25be997c5b5d} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [12/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{GLfloat}]{v0,  }\item[{GLfloat}]{v1,  }\item[{GLfloat}]{v2 }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_adfd60f52bac7bfdc091f80ca2de00a35}\label{class_shader_program_adfd60f52bac7bfdc091f80ca2de00a35} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [13/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{GLfloat}]{v0,  }\item[{GLfloat}]{v1,  }\item[{GLfloat}]{v2,  }\item[{GLfloat}]{v3 }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_ac38e02a842fb0df81b75265b173c5cc1}\label{class_shader_program_ac38e02a842fb0df81b75265b173c5cc1} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [14/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{GLint}]{v0 }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_a9e05191a55d4f7fb18c4438b009f7f27}\label{class_shader_program_a9e05191a55d4f7fb18c4438b009f7f27} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [15/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{GLint}]{v0,  }\item[{GLint}]{v1 }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_ac7bf9db8dc0fc99763e3add9d6655135}\label{class_shader_program_ac7bf9db8dc0fc99763e3add9d6655135} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [16/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{GLint}]{v0,  }\item[{GLint}]{v1,  }\item[{GLint}]{v2 }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_ab1990b42f01f0b6cf8175b4c2e13fac6}\label{class_shader_program_ab1990b42f01f0b6cf8175b4c2e13fac6} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [17/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{GLint}]{v0,  }\item[{GLint}]{v1,  }\item[{GLint}]{v2,  }\item[{GLint}]{v3 }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_ac9890df8d8838d8f67049dc6361ac76a}\label{class_shader_program_ac9890df8d8838d8f67049dc6361ac76a} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [18/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{GLuint}]{v0 }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_a862405793dd879d2c6d55ab67c027bc7}\label{class_shader_program_a862405793dd879d2c6d55ab67c027bc7} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [19/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{GLuint}]{v0,  }\item[{GLuint}]{v1 }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_aed3fa98a7a790e1fc2e65b95a09ff0e7}\label{class_shader_program_aed3fa98a7a790e1fc2e65b95a09ff0e7} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [20/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{GLuint}]{v0,  }\item[{GLuint}]{v1,  }\item[{GLuint}]{v2 }\end{DoxyParamCaption})}
+
+\Hypertarget{class_shader_program_a4090ebd80c52e15196c9e1571075aacc}\label{class_shader_program_a4090ebd80c52e15196c9e1571075aacc} 
+\index{ShaderProgram@{ShaderProgram}!uniform@{uniform}}
+\index{uniform@{uniform}!ShaderProgram@{ShaderProgram}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [21/21]}}
+{\footnotesize\ttfamily void Shader\+Program\+::uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{GLuint}]{v0,  }\item[{GLuint}]{v1,  }\item[{GLuint}]{v2,  }\item[{GLuint}]{v3 }\end{DoxyParamCaption})}
 
 \Hypertarget{class_shader_program_aa3860ee49bab09ae3fc117da165ea73a}\label{class_shader_program_aa3860ee49bab09ae3fc117da165ea73a} 
 \index{ShaderProgram@{ShaderProgram}!use@{use}}
