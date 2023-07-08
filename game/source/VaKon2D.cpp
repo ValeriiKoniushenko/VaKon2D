@@ -56,14 +56,8 @@ void VaKon2D::start()
 
 	class Rectangle rect;
 	rect.setTexture(texture);
+	rect.setPosition({-0.5f, 0.f});
 	rect.prepare();
-
-	Timer timer;
-	timer.setFrequency(Timer::Unit(1000));
-	timer.setMode(Timer::Mode::Infinity);
-	timer.setCallback([&](){ rect.move({-0.1f, 0.f}); });
-
-	GetWorld().addTimer(std::move(timer));
 
 	while (!GetWindow().shouldClose())
 	{
