@@ -56,8 +56,13 @@ void VaKon2D::start()
 
 	class Rectangle rect;
 	rect.setTexture(texture);
-	rect.setPosition({-0.5f, 0.f});
+	rect.setPosition({-0.66f, 0.f});
 	rect.prepare();
+
+	class Rectangle rect1;
+	rect1.setTexture(texture);
+	rect1.setPosition({0.f, 0.f});
+	rect1.prepare();
 
 	while (!GetWindow().shouldClose())
 	{
@@ -65,6 +70,7 @@ void VaKon2D::start()
 		GetWindow().clear(GL_COLOR_BUFFER_BIT);			   // TODO: change to enum class
 
 		rect.draw(program);
+		rect1.draw(program);
 
 		GetWindow().swapBuffers();
 		GetWindow().pollEvent();
