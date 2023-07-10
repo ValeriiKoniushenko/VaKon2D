@@ -21,6 +21,7 @@
 // SOFTWARE.
 
 #include "DrawAble.h"
+#include "Size.h"
 #include "Vao.h"
 #include "Vbo.h"
 
@@ -37,19 +38,26 @@ public:
 	void setTexture(Texture& texture);
 	_NODISCARD Texture& getTexture();
 
+	void setSize(Utils::FSize2D newSize);
+	_NODISCARD Utils::FSize2D getSize() const;
+
+	void setScale(Utils::FSize2D newScale);
+	_NODISCARD Utils::FSize2D getScale() const;
+
 	void prepare();
 
 private:
 	// clang-format off
-	const std::vector<float> vertices = {
-		0.f,   0.f,    0.f, 0.f,
-		500.f, 0.f,    1.f, 0.f,
-		0.f,   500.f,  0.f, 1.f,
-		500.f, 500.f,  1.f, 1.f,
+	inline static const std::vector<float> templateVertices_ = {
+		 0.f, 0.f,  0.f, 1.f,
+		 0.f,-1.f,  0.f, 0.f,
+		 1.f, 0.f,  1.f, 1.f,
+		 1.f,-1.f,  1.f, 0.f,
 	};
 	// clang-format on
-
 	Texture* texture_{};
 	Vbo vbo_;
 	Vao vao_;
+	Utils::FSize2D size_ = {.width = 500.f, .height = 500.f};
+	Utils::FSize2D scale_ = {.width = 1.f, .height = 1.f};
 };

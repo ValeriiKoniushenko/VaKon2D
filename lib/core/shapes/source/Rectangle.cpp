@@ -53,7 +53,7 @@ void Rectangle::draw(ShaderProgram& shaderProgram)
 std::size_t Rectangle::getVerticesCount() const
 {
 	constexpr std::size_t countOfParts = 4;
-	return vertices.size() / countOfParts;
+	return templateVertices_.size() / countOfParts;
 }
 
 void Rectangle::setTexture(Texture& texture)
@@ -72,6 +72,13 @@ void Rectangle::prepare()
 	{
 		vbo_.generate();
 	}
+
+	std::vector<float> vertices = templateVertices_;
+	vertices.at(5) *= size_.height * scale_.height;
+	vertices.at(8) *= size_.width * scale_.width;
+	vertices.at(12) *= size_.width * scale_.width;
+	vertices.at(13) *= size_.height * scale_.height;
+
 	vbo_.bind();
 	vbo_.data(vertices);
 
@@ -90,4 +97,24 @@ void Rectangle::prepare()
 	{
 		texture_->loadToGpu();
 	}
+}
+
+void Rectangle::setSize(Utils::FSize2D newSize)
+{
+	size_ = newSize;
+}
+
+Utils::FSize2D Rectangle::getSize() const
+{
+	return size_;
+}
+
+void Rectangle::setScale(Utils::FSize2D newScale)
+{
+	scale_ = newScale;
+}
+
+Utils::FSize2D Rectangle::getScale() const
+{
+	return scale_;
 }
