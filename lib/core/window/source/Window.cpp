@@ -51,6 +51,8 @@ void Window::create(Utils::ISize2D size, const std::string& title)
 		glfwTerminate();
 		throw std::runtime_error("Failed to create GLFW window");
 	}
+	size_ = size;
+	title_ = title;
 
 	glfwMakeContextCurrent(window);
 
@@ -92,6 +94,11 @@ void Window::viewport(GLint x, GLint y, GLsizei width, GLsizei height)
 HWND Window::getHwnd()
 {
 	return glfwGetWin32Window(window);
+}
+
+Utils::ISize2D Window::getSize() const
+{
+	return size_;
 }
 
 Window& GetWindow()

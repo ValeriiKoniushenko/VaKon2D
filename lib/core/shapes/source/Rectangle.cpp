@@ -24,6 +24,7 @@
 
 #include "ShaderProgram.h"
 #include "Texture.h"
+#include "Window.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -43,6 +44,8 @@ void Rectangle::draw(ShaderProgram& shaderProgram)
 
 	shaderProgram.use();
 	shaderProgram.uniform("uTransform", false, trans);
+	shaderProgram.uniform(
+		"uResolution", static_cast<float>(GetWindow().getSize().width), static_cast<float>(GetWindow().getSize().height));
 
 	DrawAble::draw(shaderProgram);
 }

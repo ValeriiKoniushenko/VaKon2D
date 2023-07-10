@@ -40,6 +40,7 @@ public:
 	void clear(int code);
 	void viewport(GLint x, GLint y, GLsizei width, GLsizei height);
 	_NODISCARD HWND getHwnd();
+	Utils::ISize2D getSize() const;
 
 	LambdaDelegate<void(int, int, int, int)> onKeyPressed;
 	LambdaDelegate<void(unsigned int)> onTextInput;
@@ -47,6 +48,8 @@ public:
 
 protected:
 	GLFWwindow* window{};
+	Utils::ISize2D size_{};
+	std::string title_;
 };
 
 Window& GetWindow();

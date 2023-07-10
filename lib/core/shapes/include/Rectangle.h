@@ -42,10 +42,10 @@ public:
 private:
 	// clang-format off
 	const std::vector<float> vertices = {
-		0.f, 0.f,  0.f, 0.f,
-		1.f, 0.f,  1.f, 0.f,
-		0.f, 1.f,  0.f, 1.f,
-		1.f, 1.f,  1.f, 1.f,
+		0.f,   0.f,    0.f, 0.f,
+		500.f, 0.f,    1.f, 0.f,
+		0.f,   500.f,  0.f, 1.f,
+		500.f, 500.f,  1.f, 1.f,
 	};
 	// clang-format on
 

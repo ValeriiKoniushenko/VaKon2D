@@ -16,4 +16,5 @@ target_link_libraries(
 	Utils
 	Core-Wrappers
 	Glm
+	Window
 )
