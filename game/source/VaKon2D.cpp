@@ -25,6 +25,7 @@
 #include "CustomShaderProgram.h"
 #include "GladWrapper.h"
 #include "Image.h"
+#include "Keyboard.h"
 #include "Logger.h"
 #include "Rectangle.h"
 #include "Shader.h"
