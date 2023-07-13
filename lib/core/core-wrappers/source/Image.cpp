@@ -170,6 +170,16 @@ GLenum Image::convertChannelToGlChannel(Image::Channel channel)
 
 void Image::loadToGpu()
 {
-	Gl::Texture::texImage2D(Gl::Texture::Target::Texture2D, 0, convertChannelToGlChannel(channel_), width_, height_, 0,
+	Gl::Texture::texImage2D(Gl::Texture::Target::Texture2D, 0, static_cast<GLenum>(internalChannel_), width_, height_, 0,
 		convertChannelToGlChannel(channel_), GL_UNSIGNED_BYTE, data_);
+}
+
+void Image::setInternalChannel(Gl::Texture::Channel channel)
+{
+	internalChannel_ = channel;
+}
+
+Gl::Texture::Channel Image::getInternalChannel() const
+{
+	return internalChannel_;
 }

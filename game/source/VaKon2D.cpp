@@ -50,6 +50,7 @@ void VaKon2D::start()
 
 	Texture texture(Gl::Texture::Target::Texture2D, true, true);
 	Image image("assets/textures/apple.png");
+	image.setInternalChannel(Gl::Texture::Channel::SRGBA);
 	texture.setImage(image);
 	texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
 

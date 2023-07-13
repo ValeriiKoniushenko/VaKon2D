@@ -24,12 +24,12 @@
 
 #include <cstdlib>
 
-class ShaderProgram;
+class CustomShaderProgram;
 
 class DrawAble
 {
 public:
-	virtual void draw(ShaderProgram& shaderProgram);
+	virtual void draw(CustomShaderProgram& shaderProgram);
 	_NODISCARD virtual std::size_t getVerticesCount() const;
 
 	void setPosition(const glm::vec2& newPosition);

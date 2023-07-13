@@ -31,4 +31,12 @@ public:
 	CustomShaderProgram(Shader& frag, Shader& vert);
 
 	void OnAfterLink() override;
+
+	struct Lightning
+	{
+		float gamma = 2.2f;
+		float brightness = 0.05f;
+		float contrast = 1.2f;
+		float saturation = 1.f;
+	} lightning;
 };

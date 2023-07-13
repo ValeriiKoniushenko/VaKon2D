@@ -22,7 +22,7 @@
 
 #include "Rectangle.h"
 
-#include "ShaderProgram.h"
+#include "CustomShaderProgram.h"
 #include "Texture.h"
 #include "Window.h"
 
@@ -30,7 +30,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-void Rectangle::draw(ShaderProgram& shaderProgram)
+void Rectangle::draw(CustomShaderProgram& shaderProgram)
 {
 	if (texture_)
 	{
@@ -46,7 +46,11 @@ void Rectangle::draw(ShaderProgram& shaderProgram)
 	shaderProgram.uniform("uTransform", false, trans);
 	shaderProgram.uniform(
 		"uResolution", static_cast<float>(GetWindow().getSize().width), static_cast<float>(GetWindow().getSize().height));
-
+	shaderProgram.uniform("uGamma", shaderProgram.lightning.gamma);
+	shaderProgram.uniform("uBrightness", shaderProgram.lightning.brightness);
+	shaderProgram.uniform("uContrast", shaderProgram.lightning.contrast);
+	shaderProgram.uniform("uSaturation", shaderProgram.lightning.saturation);
+	
 	DrawAble::draw(shaderProgram);
 }
 

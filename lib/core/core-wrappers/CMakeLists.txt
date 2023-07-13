@@ -22,4 +22,5 @@ target_link_libraries(
 	Logger
 	Delegate
 	Misc
+	Window
 )

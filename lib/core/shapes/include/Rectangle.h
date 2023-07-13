@@ -32,7 +32,7 @@ class Texture;
 class Rectangle : public DrawAble
 {
 public:
-	void draw(ShaderProgram& shaderProgram) override;
+	void draw(CustomShaderProgram& shaderProgram) override;
 	_NODISCARD std::size_t getVerticesCount() const override;
 
 	void setTexture(Texture& texture);

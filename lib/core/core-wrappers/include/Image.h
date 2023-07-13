@@ -58,6 +58,8 @@ public:
 	_NODISCARD Channel getChannel() const;
 	_NODISCARD unsigned char* data();
 	_NODISCARD const unsigned char* data() const;
+	void setInternalChannel(Gl::Texture::Channel channel);
+	_NODISCARD Gl::Texture::Channel getInternalChannel() const;
 	void loadImage(std::filesystem::path&&, bool isFlipVertically = true);
 	void loadToGpu();
 	void clear();
@@ -70,4 +72,5 @@ private:
 	unsigned char* data_{};
 	int width_{}, height_{};
 	Channel channel_ = Channel::None;
+	Gl::Texture::Channel internalChannel_ = Gl::Texture::Channel::RGB;
 };

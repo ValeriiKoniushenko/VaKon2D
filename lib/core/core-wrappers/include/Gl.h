@@ -203,6 +203,14 @@ public:
 			MirrorClamp2Edge = GL_MIRROR_CLAMP_TO_EDGE
 		};
 
+		enum class Channel
+		{
+			SRGB = GL_SRGB,
+			RGB = GL_RGB,
+			RGBA = GL_RGBA,
+			SRGBA = GL_SRGB_ALPHA
+		};
+
 		_NODISCARD static MagFilter stringToMagFilter(const std::string& filter);
 		_NODISCARD static MinFilter stringToMinFilter(const std::string& filter);
 

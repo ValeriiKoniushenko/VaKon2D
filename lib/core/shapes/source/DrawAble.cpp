@@ -24,7 +24,7 @@
 
 #include "Gl.h"
 
-void DrawAble::draw(ShaderProgram& shaderProgram)
+void DrawAble::draw(CustomShaderProgram& shaderProgram)
 {
 	Gl::drawArrays(GL_TRIANGLE_STRIP, 0, getVerticesCount());
 }
