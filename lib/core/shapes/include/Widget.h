@@ -38,6 +38,9 @@ public:
 	inline static constexpr glm::vec4 borderColor = {1.f, 1.f, 0.f, 1.f};
 	inline static constexpr float borderWidth = 0.01f;
 
+	Widget();
+	~Widget();
+
 	void draw(CustomShaderProgram& shaderProgram) override;
 	_NODISCARD std::size_t getVerticesCount() const override;
 

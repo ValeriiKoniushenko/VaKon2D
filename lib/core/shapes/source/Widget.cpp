@@ -25,12 +25,23 @@
 #include "CustomShaderProgram.h"
 #include "Mouse.h"
 #include "Texture.h"
+#include "WidgetCollector.h"
 #include "Window.h"
 #include "WorldVariables.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+
+Widget::Widget()
+{
+	getWidgetCollector().add(this);
+}
+
+Widget::~Widget()
+{
+	getWidgetCollector().remove(this);
+}
 
 void Widget::draw(CustomShaderProgram& shaderProgram)
 {
