@@ -27,8 +27,8 @@
 #include "Image.h"
 #include "Logger.h"
 #include "Shader.h"
-#include "Sprite.h"
 #include "Texture.h"
+#include "Widget.h"
 #include "Window.h"
 #include "World.h"
 #include "WorldVariables.h"
@@ -57,7 +57,7 @@ void VaKon2D::start()
 	texture.setImage(image);
 	texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
 
-	Sprite rect;
+	Widget rect;
 	rect.setTexture(texture);
 	rect.prepare();
 	rect.onMouseLeftClick.subscribe([]() { std::cout << "Hello world "; });

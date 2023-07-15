@@ -36,11 +36,11 @@ void ErrorCallback(int, const char* errorMessage)
 
 void GlfwWrapper::initialize(int majorVersion, int minorVersion)
 {
-	glfwSetErrorCallback(ErrorCallback);
 	if (glfwInit() == GLFW_FALSE)
 	{
 		throw std::runtime_error("Cant initialize GLFW");
 	}
+	glfwSetErrorCallback(ErrorCallback);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, majorVersion);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, minorVersion);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
@@ -51,11 +51,13 @@ void GlfwWrapper::initialize(int majorVersion, int minorVersion)
 
 void GlfwWrapper::initGlfw(int majorVersion, int minorVersion)
 {
+	spdlog::get("core")->info(std::format("GLFW was initialized with version: {}:{}", majorVersion, minorVersion));
 	GlfwWrapper::instance().initialize(majorVersion, minorVersion);
 }
 
 void GlfwWrapper::terminate()
 {
+	spdlog::get("core")->info("GLFW was terminated");
 	glfwTerminate();
 }
 

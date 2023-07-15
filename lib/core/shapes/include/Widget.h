@@ -32,9 +32,12 @@
 
 class Texture;
 
-class Sprite : public DrawAble
+class Widget : public DrawAble
 {
 public:
+	inline static constexpr glm::vec4 borderColor = {1.f, 1.f, 0.f, 1.f};
+	inline static constexpr float borderWidth = 0.01f;
+
 	void draw(CustomShaderProgram& shaderProgram) override;
 	_NODISCARD std::size_t getVerticesCount() const override;
 
@@ -48,6 +51,9 @@ public:
 	_NODISCARD Utils::FSize2D getScale() const;
 
 	_NODISCARD Utils::FRect getRect() const;
+
+	void setIsDrawBorder(bool isDraw);
+	_NODISCARD bool isDrawBorder() const;
 
 	void prepare();
 
@@ -74,4 +80,5 @@ private:
 	Vao vao_;
 	Utils::FSize2D size_ = {.width = 500.f, .height = 500.f};
 	Utils::FSize2D scale_ = {.width = 1.f, .height = 1.f};
+	bool isDrawBorder_ = false;
 };

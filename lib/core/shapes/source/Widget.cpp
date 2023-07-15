@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "Sprite.h"
+#include "Widget.h"
 
 #include "CustomShaderProgram.h"
 #include "Mouse.h"
@@ -32,7 +32,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-void Sprite::draw(CustomShaderProgram& shaderProgram)
+void Widget::draw(CustomShaderProgram& shaderProgram)
 {
 	if (texture_)
 	{
@@ -52,27 +52,30 @@ void Sprite::draw(CustomShaderProgram& shaderProgram)
 	shaderProgram.uniform("uBrightness", shaderProgram.lightning.brightness);
 	shaderProgram.uniform("uContrast", shaderProgram.lightning.contrast);
 	shaderProgram.uniform("uSaturation", shaderProgram.lightning.saturation);
+	shaderProgram.uniform("uBorderColor", borderColor.r, borderColor.g, borderColor.b, borderColor.a);
+	shaderProgram.uniform("uBorderWidth", borderWidth);
+	shaderProgram.uniform("uIsDrawBorder", isDrawBorder_);
 
 	DrawAble::draw(shaderProgram);
 }
 
-std::size_t Sprite::getVerticesCount() const
+std::size_t Widget::getVerticesCount() const
 {
 	constexpr std::size_t countOfParts = 4;
 	return templateVertices_.size() / countOfParts;
 }
 
-void Sprite::setTexture(Texture& texture)
+void Widget::setTexture(Texture& texture)
 {
 	texture_ = &texture;
 }
 
-Texture& Sprite::getTexture()
+Texture& Widget::getTexture()
 {
 	return *texture_;
 }
 
-void Sprite::prepare()
+void Widget::prepare()
 {
 	if (!vbo_.isGenerated())
 	{
@@ -105,27 +108,27 @@ void Sprite::prepare()
 	}
 }
 
-void Sprite::setSize(Utils::FSize2D newSize)
+void Widget::setSize(Utils::FSize2D newSize)
 {
 	size_ = newSize;
 }
 
-Utils::FSize2D Sprite::getSize() const
+Utils::FSize2D Widget::getSize() const
 {
 	return size_;
 }
 
-void Sprite::setScale(Utils::FSize2D newScale)
+void Widget::setScale(Utils::FSize2D newScale)
 {
 	scale_ = newScale;
 }
 
-Utils::FSize2D Sprite::getScale() const
+Utils::FSize2D Widget::getScale() const
 {
 	return scale_;
 }
 
-void Sprite::update()
+void Widget::update()
 {
 	if (getRect().isCollision(Mouse::getPosition(GetWindow())))
 	{
@@ -166,7 +169,17 @@ void Sprite::update()
 	}
 }
 
-Utils::FRect Sprite::getRect() const
+Utils::FRect Widget::getRect() const
 {
 	return {position_, size_};
+}
+
+void Widget::setIsDrawBorder(bool isDraw)
+{
+	isDrawBorder_ = isDraw;
+}
+
+bool Widget::isDrawBorder() const
+{
+	return isDrawBorder_;
 }

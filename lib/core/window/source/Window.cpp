@@ -24,6 +24,7 @@
 
 #include "Gl.h"
 #include "WorldVariables.h"
+#include "Logger.h"
 
 namespace
 {
@@ -62,6 +63,8 @@ void Window::create(Utils::ISize2D size, const std::string& title)
 	}
 	size_ = size;
 	title_ = title;
+
+	spdlog::get("core")->info("The window was created");
 
 	glfwMakeContextCurrent(window);
 

@@ -22,12 +22,15 @@
 
 #include "GladWrapper.h"
 
+#include "Logger.h"
+
 void GladWrapper::initialize()
 {
 	if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
 	{
 		throw std::runtime_error("Failed to initialize GLAD");
 	}
+	spdlog::get("core")->info("GLAD was initialized");
 }
 
 void GladWrapper::initGlad()
