@@ -20,17 +20,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "Rectangle.h"
+#include "Sprite.h"
 
 #include "CustomShaderProgram.h"
+#include "Mouse.h"
 #include "Texture.h"
 #include "Window.h"
+#include "WorldVariables.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-void Rectangle::draw(CustomShaderProgram& shaderProgram)
+void Sprite::draw(CustomShaderProgram& shaderProgram)
 {
 	if (texture_)
 	{
@@ -50,27 +52,27 @@ void Rectangle::draw(CustomShaderProgram& shaderProgram)
 	shaderProgram.uniform("uBrightness", shaderProgram.lightning.brightness);
 	shaderProgram.uniform("uContrast", shaderProgram.lightning.contrast);
 	shaderProgram.uniform("uSaturation", shaderProgram.lightning.saturation);
-	
+
 	DrawAble::draw(shaderProgram);
 }
 
-std::size_t Rectangle::getVerticesCount() const
+std::size_t Sprite::getVerticesCount() const
 {
 	constexpr std::size_t countOfParts = 4;
 	return templateVertices_.size() / countOfParts;
 }
 
-void Rectangle::setTexture(Texture& texture)
+void Sprite::setTexture(Texture& texture)
 {
 	texture_ = &texture;
 }
 
-Texture& Rectangle::getTexture()
+Texture& Sprite::getTexture()
 {
 	return *texture_;
 }
 
-void Rectangle::prepare()
+void Sprite::prepare()
 {
 	if (!vbo_.isGenerated())
 	{
@@ -103,22 +105,68 @@ void Rectangle::prepare()
 	}
 }
 
-void Rectangle::setSize(Utils::FSize2D newSize)
+void Sprite::setSize(Utils::FSize2D newSize)
 {
 	size_ = newSize;
 }
 
-Utils::FSize2D Rectangle::getSize() const
+Utils::FSize2D Sprite::getSize() const
 {
 	return size_;
 }
 
-void Rectangle::setScale(Utils::FSize2D newScale)
+void Sprite::setScale(Utils::FSize2D newScale)
 {
 	scale_ = newScale;
 }
 
-Utils::FSize2D Rectangle::getScale() const
+Utils::FSize2D Sprite::getScale() const
 {
 	return scale_;
+}
+
+void Sprite::update()
+{
+	if (getRect().isCollision(Mouse::getPosition(GetWindow())))
+	{
+		onMouseHover.trigger();
+
+		if (Mouse::isKeyPressed(Mouse::Key::Left))
+		{
+			onMouseLeftClick.trigger();
+		}
+		if (Mouse::isKeyPressed(Mouse::Key::Right))
+		{
+			onMouseRightClick.trigger();
+		}
+		if (Mouse::isKeyPressed(Mouse::Key::Middle))
+		{
+			onMouseMiddleClick.trigger();
+		}
+		try
+		{
+			if (get<double>(GetWorldVariables()["mouse-wheel-y"]) != 0.)
+			{
+				onMouseWheel.trigger(get<double>(GetWorldVariables()["mouse-wheel-y"]));
+			}
+		}
+		catch (...)
+		{
+		}
+		try
+		{
+			if (get<unsigned int>(GetWorldVariables()["inputted-text"]) != 0.)
+			{
+				onTextInput.trigger(get<unsigned int>(GetWorldVariables()["inputted-text"]));
+			}
+		}
+		catch (...)
+		{
+		}
+	}
+}
+
+Utils::FRect Sprite::getRect() const
+{
+	return {position_, size_};
 }

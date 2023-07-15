@@ -23,6 +23,7 @@
 #include "Window.h"
 
 #include "Gl.h"
+#include "WorldVariables.h"
 
 namespace
 {
@@ -35,11 +36,19 @@ void KeyPressHandler(GLFWwindow* window, int key, int scancode, int action, int 
 void TextInputHandler(GLFWwindow* window, unsigned int scancode)
 {
 	GetWindow().onTextInput.trigger(scancode);
+	GetWorldVariables().set("inputted-text", scancode);
 }
 
 void CursorEnterHandler(GLFWwindow* window, int entered)
 {
 	GetWindow().onCursorEntered.trigger(entered);
+}
+
+void MouseScrollHandler(GLFWwindow* window, double xOffset, double yOffset)
+{
+	GetWindow().onMouseWheel.trigger(xOffset, yOffset);
+	GetWorldVariables().set("mouse-wheel-x", xOffset);
+	GetWorldVariables().set("mouse-wheel-y", yOffset);
 }
 
 }	 // namespace
@@ -59,6 +68,7 @@ void Window::create(Utils::ISize2D size, const std::string& title)
 	glfwSetKeyCallback(window, KeyPressHandler);
 	glfwSetCharCallback(window, TextInputHandler);
 	glfwSetCursorEnterCallback(window, CursorEnterHandler);
+	glfwSetScrollCallback(window, MouseScrollHandler);
 }
 
 bool Window::shouldClose() const

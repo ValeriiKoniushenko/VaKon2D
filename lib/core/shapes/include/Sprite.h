@@ -20,37 +20,58 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
-
 #include "Delegate.h"
-#include "GlfwWrapper.h"
-#include "Singleton.h"
+#include "DrawAble.h"
+#include "Keyboard.h"
+#include "Rect.h"
 #include "Size.h"
+#include "Vao.h"
+#include "Vbo.h"
 
-#include <Windows.h>
+#include <vector>
 
-class Window : public Singleton<Window>
+class Texture;
+
+class Sprite : public DrawAble
 {
 public:
-	void create(Utils::ISize2D size, const std::string& title);
-	_NODISCARD bool shouldClose() const;
-	void swapBuffers();
-	void pollEvent();
-	void clearColor(float r, float g, float b, float a);
-	void clear(int code);
-	void viewport(GLint x, GLint y, GLsizei width, GLsizei height);
-	_NODISCARD HWND getHwnd();
-	Utils::ISize2D getSize() const;
+	void draw(CustomShaderProgram& shaderProgram) override;
+	_NODISCARD std::size_t getVerticesCount() const override;
 
-	LambdaMulticastDelegate<void(int, int, int, int)> onKeyPressed;
+	void setTexture(Texture& texture);
+	_NODISCARD Texture& getTexture();
+
+	void setSize(Utils::FSize2D newSize);
+	_NODISCARD Utils::FSize2D getSize() const;
+
+	void setScale(Utils::FSize2D newScale);
+	_NODISCARD Utils::FSize2D getScale() const;
+
+	_NODISCARD Utils::FRect getRect() const;
+
+	void prepare();
+
+	void update() override;
+
+	LambdaMulticastDelegate<void()> onMouseHover;
+	LambdaMulticastDelegate<void()> onMouseLeftClick;
+	LambdaMulticastDelegate<void()> onMouseRightClick;
+	LambdaMulticastDelegate<void()> onMouseMiddleClick;
+	LambdaMulticastDelegate<void(double)> onMouseWheel;
 	LambdaMulticastDelegate<void(unsigned int)> onTextInput;
-	LambdaMulticastDelegate<void(int)> onCursorEntered;
-	LambdaMulticastDelegate<void(double, double)> onMouseWheel;
 
-protected:
-	GLFWwindow* window{};
-	Utils::ISize2D size_{};
-	std::string title_;
+private:
+	// clang-format off
+	inline static const std::vector<float> templateVertices_ = {
+		 0.f, 0.f,  0.f, 1.f,
+		 0.f,-1.f,  0.f, 0.f,
+		 1.f, 0.f,  1.f, 1.f,
+		 1.f,-1.f,  1.f, 0.f,
+	};
+	// clang-format on
+	Texture* texture_{};
+	Vbo vbo_;
+	Vao vao_;
+	Utils::FSize2D size_ = {.width = 500.f, .height = 500.f};
+	Utils::FSize2D scale_ = {.width = 1.f, .height = 1.f};
 };
-
-Window& GetWindow();

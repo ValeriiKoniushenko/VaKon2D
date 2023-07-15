@@ -26,6 +26,7 @@
 
 #include <functional>
 #include <utility>
+#include <vector>
 
 template <class T, class CallbackT>
 class Delegate : public Utils::CopyableAndMoveable
@@ -84,4 +85,33 @@ public:
 
 private:
 	CallbackT callback_{};
+};
+
+template <class F>
+class LambdaMulticastDelegate : public Utils::CopyableAndMoveable
+{
+public:
+	using CallbackT = std::function<F>;
+
+	template <class... TArgs>
+	void trigger(TArgs&&... args)
+	{
+		for (auto& callback : callbacks_)
+		{
+			std::invoke(callback, std::forward<TArgs>(args)...);
+		}
+	}
+
+	void subscribe(CallbackT&& callback)
+	{
+		callbacks_.emplace_back(std::forward<CallbackT>(callback));
+	}
+
+	void reset()
+	{
+		callbacks_.clear();
+	}
+
+private:
+	std::vector<CallbackT> callbacks_{};
 };

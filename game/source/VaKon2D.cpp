@@ -26,11 +26,14 @@
 #include "GladWrapper.h"
 #include "Image.h"
 #include "Logger.h"
-#include "Rectangle.h"
 #include "Shader.h"
+#include "Sprite.h"
 #include "Texture.h"
 #include "Window.h"
 #include "World.h"
+#include "WorldVariables.h"
+
+#include <iostream>
 
 void VaKon2D::start()
 {
@@ -54,9 +57,10 @@ void VaKon2D::start()
 	texture.setImage(image);
 	texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
 
-	class Rectangle rect;
+	Sprite rect;
 	rect.setTexture(texture);
 	rect.prepare();
+	rect.onMouseLeftClick.subscribe([]() { std::cout << "Hello world "; });
 
 	while (!GetWindow().shouldClose())
 	{
@@ -64,8 +68,10 @@ void VaKon2D::start()
 		GetWindow().clear(GL_COLOR_BUFFER_BIT);			   // TODO: change to enum class
 
 		rect.draw(program);
+		rect.update();
 
 		GetWindow().swapBuffers();
+		GetWorldVariables().forceClear({"mouse-wheel-x", "mouse-wheel-y", "inputted-text"});
 		GetWindow().pollEvent();
 
 		GetWorld().update();

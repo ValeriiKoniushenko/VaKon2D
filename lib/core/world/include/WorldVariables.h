@@ -20,28 +20,32 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#pragma once
+
+#include "Singleton.h"
+#include "Size.h"
 #include "glm/glm.hpp"
 
-#include <cstdlib>
+#include <unordered_map>
+#include <variant>
 
-class CustomShaderProgram;
-
-class DrawAble
+class WorldVariables : public Singleton<WorldVariables>
 {
 public:
-	virtual void draw(CustomShaderProgram& shaderProgram);
-	_NODISCARD virtual std::size_t getVerticesCount() const;
+	using VariantT =
+		std::variant<int, unsigned int, float, double, glm::vec2, glm::vec3, glm::vec4, glm::mat3, glm::mat4, Utils::FSize2D>;
 
-	void setPosition(const glm::vec2& newPosition);
-	void move(const glm::vec2& offset);
-	_NODISCARD const glm::vec2& getPosition() const;
+	void set(const std::string& key, const VariantT& value);
+	_NODISCARD const VariantT& get(const std::string& key) const;
+	_NODISCARD VariantT& get(const std::string& key);
 
-	void setRotation(float newRotation);
-	void rotate(float offset);
-	_NODISCARD float getRotation() const;
-	virtual void update() = 0;
+	_NODISCARD const VariantT& operator[](const std::string& key) const;
+	_NODISCARD VariantT& operator[](const std::string& key);
 
-protected:
-	glm::vec2 position_{};
-	float rotation_{};
+	void forceClear(std::vector<std::string> keys);
+
+private:
+	std::unordered_map<std::string, VariantT> data_;
 };
+
+WorldVariables& GetWorldVariables();

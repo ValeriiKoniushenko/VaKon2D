@@ -20,44 +20,66 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "DrawAble.h"
-#include "Size.h"
-#include "Vao.h"
-#include "Vbo.h"
+#include "WorldVariables.h"
 
-#include <vector>
-
-class Texture;
-
-class Rectangle : public DrawAble
+void WorldVariables::set(const std::string& key, const VariantT& value)
 {
-public:
-	void draw(CustomShaderProgram& shaderProgram) override;
-	_NODISCARD std::size_t getVerticesCount() const override;
+	auto it = data_.find(key);
+	if (it == data_.end())
+	{
+		data_.emplace(key, value);
+	}
+	else
+	{
+		it->second = value;
+	}
+}
 
-	void setTexture(Texture& texture);
-	_NODISCARD Texture& getTexture();
+const WorldVariables::VariantT& WorldVariables::get(const std::string& key) const
+{
+	auto it = data_.find(key);
+	if (it == data_.end())
+	{
+		throw std::runtime_error("WorldVariables: no such key: " + key);
+	}
 
-	void setSize(Utils::FSize2D newSize);
-	_NODISCARD Utils::FSize2D getSize() const;
+	return it->second;
+}
 
-	void setScale(Utils::FSize2D newScale);
-	_NODISCARD Utils::FSize2D getScale() const;
+WorldVariables::VariantT& WorldVariables::get(const std::string& key)
+{
+	auto it = data_.find(key);
+	if (it == data_.end())
+	{
+		data_.emplace(key, VariantT{});
+		it = data_.find(key);
+	}
 
-	void prepare();
+	return it->second;
+}
 
-private:
-	// clang-format off
-	inline static const std::vector<float> templateVertices_ = {
-		 0.f, 0.f,  0.f, 1.f,
-		 0.f,-1.f,  0.f, 0.f,
-		 1.f, 0.f,  1.f, 1.f,
-		 1.f,-1.f,  1.f, 0.f,
-	};
-	// clang-format on
-	Texture* texture_{};
-	Vbo vbo_;
-	Vao vao_;
-	Utils::FSize2D size_ = {.width = 500.f, .height = 500.f};
-	Utils::FSize2D scale_ = {.width = 1.f, .height = 1.f};
-};
+const WorldVariables::VariantT& WorldVariables::operator[](const std::string& key) const
+{
+	return get(key);
+}
+
+WorldVariables::VariantT& WorldVariables::operator[](const std::string& key)
+{
+	return get(key);
+}
+
+void WorldVariables::forceClear(std::vector<std::string> keys)
+{
+	for (auto& key : keys)
+	{
+		if (auto it = data_.find(key); it != data_.end())
+		{
+			it->second = {};
+		}
+	}
+}
+
+WorldVariables& GetWorldVariables()
+{
+	return WorldVariables::instance();
+}

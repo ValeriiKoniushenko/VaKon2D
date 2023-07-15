@@ -21,4 +21,5 @@ target_link_libraries(
 	Glad
 	Logger
 	Core-Wrappers
+	World
 )

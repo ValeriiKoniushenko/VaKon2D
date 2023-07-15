@@ -13,7 +13,7 @@ public:
 	{
 		Left = VK_LBUTTON,
 		Right = VK_RBUTTON,
-		Center = VK_MBUTTON
+		Middle = VK_MBUTTON
 	};
 
 	Mouse() = delete;

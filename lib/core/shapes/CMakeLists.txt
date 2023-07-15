@@ -17,4 +17,5 @@ target_link_libraries(
 	Core-Wrappers
 	Glm
 	Window
+	Input-Devices
 )
