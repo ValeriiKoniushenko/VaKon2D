@@ -57,18 +57,19 @@ void VaKon2D::start()
 	texture.setImage(image);
 	texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
 
-	Widget rect;
-	rect.setTexture(texture);
-	rect.prepare();
-	rect.onMouseLeftClick.subscribe([]() { std::cout << "Hello world "; });
+	Widget widget;
+	widget.setTexture(texture);
+	widget.prepare();
+	widget.onMouseHover.subscribe([&]() { widget.setIsDrawBorder(true); });
+	widget.onMouseUnHover.subscribe([&]() { widget.setIsDrawBorder(false); });
 
 	while (!GetWindow().shouldClose())
 	{
 		GetWindow().clearColor(0.2f, 0.3f, 0.3f, 1.0f);	   // TODO: create class Color
 		GetWindow().clear(GL_COLOR_BUFFER_BIT);			   // TODO: change to enum class
 
-		rect.draw(program);
-		rect.update();
+		widget.draw(program);
+		widget.update();
 
 		GetWindow().swapBuffers();
 		GetWorldVariables().forceClear({"mouse-wheel-x", "mouse-wheel-y", "inputted-text"});

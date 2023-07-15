@@ -36,7 +36,7 @@ class Widget : public DrawAble
 {
 public:
 	inline static constexpr glm::vec4 borderColor = {1.f, 1.f, 0.f, 1.f};
-	inline static constexpr float borderWidth = 0.01f;
+	inline static constexpr float borderWidth = 0.05f;
 
 	Widget();
 	~Widget();
@@ -63,6 +63,7 @@ public:
 	void update() override;
 
 	LambdaMulticastDelegate<void()> onMouseHover;
+	LambdaMulticastDelegate<void()> onMouseUnHover;
 	LambdaMulticastDelegate<void()> onMouseLeftClick;
 	LambdaMulticastDelegate<void()> onMouseRightClick;
 	LambdaMulticastDelegate<void()> onMouseMiddleClick;
@@ -81,7 +82,8 @@ private:
 	Texture* texture_{};
 	Vbo vbo_;
 	Vao vao_;
-	Utils::FSize2D size_ = {.width = 500.f, .height = 500.f};
+	Utils::FSize2D size_ = {.width = 100.f, .height = 100.f};
 	Utils::FSize2D scale_ = {.width = 1.f, .height = 1.f};
 	bool isDrawBorder_ = false;
+	bool wasHover_ = false;
 };

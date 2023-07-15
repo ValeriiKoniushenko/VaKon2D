@@ -58,7 +58,7 @@ mat4 saturationMatrix(float saturation)
 
 void main()
 {
-    if (uIsDrawBorder && (ioCv.x < uBorderWidth || ioCv.y < uBorderWidth || 1.f - ioCv.x < uBorderWidth || 1.f - ioCv.y < uBorderWidth))
+    if (uIsDrawBorder && (ioCv.x <= uBorderWidth || ioCv.y <= uBorderWidth || 1.f - ioCv.x <= uBorderWidth || 1.f - ioCv.y <= uBorderWidth))
     {
         FragColor = uBorderColor;
     }

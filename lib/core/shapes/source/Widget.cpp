@@ -94,10 +94,10 @@ void Widget::prepare()
 	}
 
 	std::vector<float> vertices = templateVertices_;
-	vertices.at(5) *= size_.height * scale_.height;
-	vertices.at(8) *= size_.width * scale_.width;
-	vertices.at(12) *= size_.width * scale_.width;
-	vertices.at(13) *= size_.height * scale_.height;
+	vertices.at(5) *= size_.height * 2.f * scale_.height;
+	vertices.at(8) *= size_.width * 2.f * scale_.width;
+	vertices.at(12) *= size_.width * 2.f * scale_.width;
+	vertices.at(13) *= size_.height * 2.f * scale_.height;
 
 	vbo_.bind();
 	vbo_.data(vertices);
@@ -177,6 +177,13 @@ void Widget::update()
 		catch (...)
 		{
 		}
+
+		wasHover_ = true;
+	}
+	else if (wasHover_)
+	{
+		onMouseUnHover.trigger();
+		wasHover_ = false;
 	}
 }
 
