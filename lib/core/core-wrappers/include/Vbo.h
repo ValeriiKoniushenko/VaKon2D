@@ -50,6 +50,8 @@ public:
 
 	void data(const std::vector<float>& vertices, GLenum usage = GL_STATIC_DRAW);
 
+	_NODISCARD GLuint getId() const;
+
 private:
 	bool isBind_ = false;
 	GLuint id_ = Gl::Vbo::invalidId;

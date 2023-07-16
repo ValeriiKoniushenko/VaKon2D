@@ -135,6 +135,7 @@ void Image::loadImage(std::filesystem::path&& path, bool isFlipVertically)
 	}
 
 	channel_ = static_cast<Channel>(channel);
+	name_ = path.stem().string();
 }
 
 void Image::clear()
@@ -182,4 +183,23 @@ void Image::setInternalChannel(Gl::Texture::Channel channel)
 Gl::Texture::Channel Image::getInternalChannel() const
 {
 	return internalChannel_;
+}
+
+std::string Image::getName() const
+{
+	return name_;
+}
+
+std::string Image::channelToString(Image::Channel channel)
+{
+	if (channel == Channel::RGB)
+		return "RGB";
+	else if (channel == Channel::Grey)
+		return "Grey";
+	else if (channel == Channel::GreyA)
+		return "GreyA";
+	else if (channel == Channel::RGBA)
+		return "RGBA";
+
+	return "none";
 }

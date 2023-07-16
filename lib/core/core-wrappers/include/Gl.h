@@ -211,8 +211,12 @@ public:
 			SRGBA = GL_SRGB_ALPHA
 		};
 
+		_NODISCARD static std::string channelToString(Channel channel);
+
 		_NODISCARD static MagFilter stringToMagFilter(const std::string& filter);
 		_NODISCARD static MinFilter stringToMinFilter(const std::string& filter);
+		_NODISCARD static std::string magFilterToString(MagFilter filter);
+		_NODISCARD static std::string minFilterToString(MinFilter filter);
 
 		static void setMinFilter(MinFilter filter, Target target = Target::Texture2D);
 		static void setMagFilter(MagFilter filter, Target target = Target::Texture2D);

@@ -43,6 +43,7 @@ public:
 	};
 
 public:
+	_NODISCARD static std::string channelToString(Channel channel);
 	_NODISCARD static GLenum convertChannelToGlChannel(Channel channel);
 
 	explicit Image(std::filesystem::path&& path = "");
@@ -64,6 +65,7 @@ public:
 	void loadToGpu();
 	void clear();
 	_NODISCARD bool isEmpty() const;
+	_NODISCARD std::string getName() const;
 
 private:
 	void init_();
@@ -73,4 +75,5 @@ private:
 	int width_{}, height_{};
 	Channel channel_ = Channel::None;
 	Gl::Texture::Channel internalChannel_ = Gl::Texture::Channel::RGB;
+	std::string name_;
 };

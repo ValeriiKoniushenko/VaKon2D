@@ -364,6 +364,28 @@ void Gl::drawArrays(GLenum mode, GLint first, GLsizei count)
 #endif
 }
 
+std::string Gl::Texture::channelToString(Channel channel)
+{
+	if (channel == Channel::SRGB)
+	{
+		return "SRGB";
+	}
+	else if (channel == Channel::RGB)
+	{
+		return "RGB";
+	}
+	else if (channel == Channel::RGBA)
+	{
+		return "RGBA";
+	}
+	else if (channel == Channel::SRGBA)
+	{
+		return "SRGBA";
+	}
+
+	return "";
+}
+
 Gl::Texture::MagFilter Gl::Texture::stringToMagFilter(const std::string& filter)
 {
 	if (filter == "None")
@@ -414,6 +436,33 @@ Gl::Texture::MinFilter Gl::Texture::stringToMinFilter(const std::string& filter)
 	}
 
 	return MinFilter::None;
+}
+
+std::string Gl::Texture::magFilterToString(MagFilter filter)
+{
+	if (filter == MagFilter::Linear)
+		return "Linear";
+	else if (filter == MagFilter::Nearest)
+		return "Nearest";
+	return "None";
+}
+
+std::string Gl::Texture::minFilterToString(MinFilter filter)
+{
+	if (filter == MinFilter::Nearest)
+		return "Nearest";
+	else if (filter == MinFilter::Linear)
+		return "Linear";
+	else if (filter == MinFilter::NearestMipmapNearest)
+		return "NearestMipmapNearest";
+	else if (filter == MinFilter::LinearMipmapNearest)
+		return "LinearMipmapNearest";
+	else if (filter == MinFilter::NearestMipmapLinear)
+		return "NearestMipmapLinear";
+	else if (filter == MinFilter::LinearMipmapLinear)
+		return "LinearMipmapLinear";
+
+	return "None";
 }
 
 void Gl::Texture::setMinFilter(MinFilter filter, Target target)

@@ -107,3 +107,8 @@ bool Vao::isBind() const
 {
 	return isBind_;
 }
+
+GLuint Vao::getId() const
+{
+	return id_;
+}

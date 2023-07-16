@@ -63,6 +63,8 @@ public:
 	void setMinFilter(Gl::Texture::MinFilter filter);
 	_NODISCARD Gl::Texture::MinFilter getMinFilter() const;
 
+	_NODISCARD std::string getName() const;
+
 private:
 	void generate();
 

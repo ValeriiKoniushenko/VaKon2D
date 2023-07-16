@@ -23,6 +23,7 @@
 #include "Widget.h"
 
 #include "CustomShaderProgram.h"
+#include "Image.h"
 #include "Mouse.h"
 #include "Texture.h"
 #include "WidgetCollector.h"
@@ -200,4 +201,39 @@ void Widget::setIsDrawBorder(bool isDraw)
 bool Widget::isDrawBorder() const
 {
 	return isDrawBorder_;
+}
+
+boost::property_tree::ptree Widget::toJson() const
+{
+	boost::property_tree::ptree ptree;
+	ptree.put("component", getComponentName());
+	ptree.put("verticies-count", templateVertices_.size());
+	ptree.put("vbo", vbo_.getId());
+	ptree.put("vao", vao_.getId());
+	ptree.put("width", size_.width);
+	ptree.put("height", size_.height);
+	ptree.put("scale-width", scale_.width);
+	ptree.put("scale-height", scale_.height);
+	ptree.put("position-x", position_.x);
+	ptree.put("position-y", position_.y);
+	if (texture_)
+	{
+		boost::property_tree::ptree texture;
+		texture.put("name", texture_->getName());
+		texture.put("mag-filter", Gl::Texture::magFilterToString(texture_->getMagFilter()));
+		texture.put("min-filter", Gl::Texture::minFilterToString(texture_->getMinFilter()));
+		texture.put("width", texture_->getImage()->getWidth());
+		texture.put("height", texture_->getImage()->getHeight());
+		texture.put("channel", Image::channelToString(texture_->getImage()->getChannel()));
+		texture.put("internal-channel", Gl::Texture::channelToString(texture_->getImage()->getInternalChannel()));
+
+		ptree.add_child("texture", texture);
+	}
+
+	return ptree;
+}
+
+std::string Widget::getComponentName() const
+{
+	return componentName;
 }

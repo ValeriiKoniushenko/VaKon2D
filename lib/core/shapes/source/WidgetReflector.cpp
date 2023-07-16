@@ -20,35 +20,57 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
+#include "WidgetReflector.h"
 
-#include "Gl.h"
-#include "GlfwWrapper.h"
+#include "Widget.h"
+#include "WidgetCollector.h"
 
-class Vao
+#include <iostream>
+#include <sstream>
+
+void WidgetReflector::activate()
 {
-public:
-	Vao() = default;
-	Vao(bool isGenerate, bool isBind);
-	Vao(GLuint index, GLint size, Gl::Type type, bool normalized, GLsizei stride, const void* pointer);
+	getWidgetCollector().foreach(
+		[](Widget* widget)
+		{
+			widget->onMouseHover.subscribe([widget]() { widget->setIsDrawBorder(true); });
+			widget->onMouseLeftClick.subscribe(
+				[widget]()
+				{
+					std::stringstream ss;
+					boost::property_tree::json_parser::write_json(ss, widget->toJson());
+					std::cout << ss.str() << std::endl;
+				});
+			widget->onMouseUnHover.subscribe([widget]() { widget->setIsDrawBorder(false); });
+		});
+	isActivated_ = true;
+}
 
-	Vao(const Vao&) = default;
-	Vao(Vao&& other);
-	Vao& operator=(const Vao&) = default;
-	Vao& operator=(Vao&& other);
+void WidgetReflector::deactivate()
+{
+	getWidgetCollector().foreach(
+		[](Widget* widget)
+		{
+			widget->onMouseHover.reset();
+			widget->onMouseUnHover.reset();
+			widget->setIsDrawBorder(false);
+		});
+	isActivated_ = false;
+}
 
-	~Vao();
+void WidgetReflector::toggle()
+{
+	if (isActivated_)
+	{
+		deactivate();
+	}
+	else
+	{
+		activate();
+	}
+}
 
-	void generate();
-	void bind();
-	void unbind();
-	void destroy();
-	_NODISCARD bool isGenerated() const;
-	_NODISCARD bool isBind() const;
-
-	_NODISCARD GLuint getId() const;
-
-private:
-	bool isBind_ = false;
-	GLuint id_ = Gl::Vao::invalidId;
-};
+WidgetReflector& getWidgetReflector()
+{
+	return WidgetReflector::instance();
+}

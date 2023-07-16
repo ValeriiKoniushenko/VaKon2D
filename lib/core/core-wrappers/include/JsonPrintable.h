@@ -20,35 +20,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
+#include "boost/property_tree/json_parser.hpp"
+#include "boost/property_tree/ptree.hpp"
 
-#include "Gl.h"
-#include "GlfwWrapper.h"
-
-class Vao
+class JsonPrintable
 {
 public:
-	Vao() = default;
-	Vao(bool isGenerate, bool isBind);
-	Vao(GLuint index, GLint size, Gl::Type type, bool normalized, GLsizei stride, const void* pointer);
-
-	Vao(const Vao&) = default;
-	Vao(Vao&& other);
-	Vao& operator=(const Vao&) = default;
-	Vao& operator=(Vao&& other);
-
-	~Vao();
-
-	void generate();
-	void bind();
-	void unbind();
-	void destroy();
-	_NODISCARD bool isGenerated() const;
-	_NODISCARD bool isBind() const;
-
-	_NODISCARD GLuint getId() const;
-
-private:
-	bool isBind_ = false;
-	GLuint id_ = Gl::Vao::invalidId;
+	_NODISCARD virtual boost::property_tree::ptree toJson() const = 0;
 };

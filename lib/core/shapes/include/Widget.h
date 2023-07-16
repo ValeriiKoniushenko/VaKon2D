@@ -22,6 +22,7 @@
 
 #include "Delegate.h"
 #include "DrawAble.h"
+#include "JsonPrintable.h"
 #include "Keyboard.h"
 #include "Rect.h"
 #include "Size.h"
@@ -32,11 +33,12 @@
 
 class Texture;
 
-class Widget : public DrawAble
+class Widget : public DrawAble, public JsonPrintable
 {
 public:
 	inline static constexpr glm::vec4 borderColor = {1.f, 1.f, 0.f, 1.f};
 	inline static constexpr float borderWidth = 0.05f;
+	inline static constexpr const char* componentName = "widget";
 
 	Widget();
 	~Widget();
@@ -62,6 +64,8 @@ public:
 
 	void update() override;
 
+	_NODISCARD virtual std::string getComponentName() const;
+
 	LambdaMulticastDelegate<void()> onMouseHover;
 	LambdaMulticastDelegate<void()> onMouseUnHover;
 	LambdaMulticastDelegate<void()> onMouseLeftClick;
@@ -69,6 +73,8 @@ public:
 	LambdaMulticastDelegate<void()> onMouseMiddleClick;
 	LambdaMulticastDelegate<void(double)> onMouseWheel;
 	LambdaMulticastDelegate<void(unsigned int)> onTextInput;
+
+	_NODISCARD boost::property_tree::ptree toJson() const override;
 
 private:
 	// clang-format off

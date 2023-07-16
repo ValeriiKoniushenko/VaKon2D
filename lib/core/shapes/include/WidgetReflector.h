@@ -22,33 +22,17 @@
 
 #pragma once
 
-#include "Gl.h"
-#include "GlfwWrapper.h"
+#include "Singleton.h"
 
-class Vao
+class WidgetReflector : public Singleton<WidgetReflector>
 {
 public:
-	Vao() = default;
-	Vao(bool isGenerate, bool isBind);
-	Vao(GLuint index, GLint size, Gl::Type type, bool normalized, GLsizei stride, const void* pointer);
-
-	Vao(const Vao&) = default;
-	Vao(Vao&& other);
-	Vao& operator=(const Vao&) = default;
-	Vao& operator=(Vao&& other);
-
-	~Vao();
-
-	void generate();
-	void bind();
-	void unbind();
-	void destroy();
-	_NODISCARD bool isGenerated() const;
-	_NODISCARD bool isBind() const;
-
-	_NODISCARD GLuint getId() const;
+	void activate();
+	void deactivate();
+	void toggle();
 
 private:
-	bool isBind_ = false;
-	GLuint id_ = Gl::Vao::invalidId;
+	bool isActivated_ = false;
 };
+
+WidgetReflector& getWidgetReflector();

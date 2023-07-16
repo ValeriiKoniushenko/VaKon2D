@@ -161,3 +161,12 @@ void Texture::setMagAndMinFilter(Gl::Texture::MagFilter magFilter, Gl::Texture::
 	setMagFilter(magFilter);
 	setMinFilter(minFilter);
 }
+
+std::string Texture::getName() const
+{
+	if (image_)
+	{
+		return image_->getName();
+	}
+	return "";
+}
