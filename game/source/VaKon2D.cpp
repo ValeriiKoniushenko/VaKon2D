@@ -25,10 +25,12 @@
 #include "CustomShaderProgram.h"
 #include "GladWrapper.h"
 #include "Image.h"
+#include "InputAction.h"
 #include "Keyboard.h"
 #include "Logger.h"
 #include "Shader.h"
 #include "Texture.h"
+#include "UpdateableCollector.h"
 #include "Widget.h"
 #include "WidgetReflector.h"
 #include "Window.h"
@@ -63,25 +65,23 @@ void VaKon2D::start()
 	widget.setTexture(texture);
 	widget.prepare();
 
+	KeyboardInputAction iaWidgetReflector("WidgetReflector", Keyboard::Key::F1);
+	iaWidgetReflector.setFrequency(KeyboardInputAction::TimeT(100));
+	iaWidgetReflector.onAction.subscribe([]() { getWidgetReflector().toggle(); });
+
 	while (!GetWindow().shouldClose())
 	{
 		GetWindow().clearColor(0.2f, 0.3f, 0.3f, 1.0f);	   // TODO: create class Color
 		GetWindow().clear(GL_COLOR_BUFFER_BIT);			   // TODO: change to enum class
 
-		widget.update();
 		widget.draw(program);
-
-		if (Keyboard::isKeyPressed(Keyboard::Key::F1))
-		{
-			getWidgetReflector().toggle();
-			Sleep(1000);
-		}
 
 		GetWindow().swapBuffers();
 		GetWorldVariables().forceClear({"mouse-wheel-x", "mouse-wheel-y", "inputted-text"});
 		GetWindow().pollEvent();
 
 		GetWorld().update();
+		getUpdateableCollector().updateAll();
 	}
 }
 

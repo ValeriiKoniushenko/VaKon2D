@@ -26,6 +26,7 @@
 #include "Keyboard.h"
 #include "Rect.h"
 #include "Size.h"
+#include "Updateable.h"
 #include "Vao.h"
 #include "Vbo.h"
 
@@ -33,7 +34,7 @@
 
 class Texture;
 
-class Widget : public DrawAble, public JsonPrintable
+class Widget : public DrawAble, public JsonPrintable, public Updateable
 {
 public:
 	inline static constexpr glm::vec4 borderColor = {1.f, 1.f, 0.f, 1.f};
