@@ -1,10 +1,8 @@
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/ValeriiKoniushenko/VaKon2D/c-cpp.yml)
 ![GitHub](https://img.shields.io/github/license/ValeriiKoniushenko/VaKon2D)
 ![Static Badge](https://img.shields.io/badge/c%2B%2B-20-brightgreen)
 ![Static Badge](https://img.shields.io/badge/boost-1.8-red)
 ![Static Badge](https://img.shields.io/badge/OpenGL-3.x-red)
-<br>
-<br>
-![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/ValeriiKoniushenko/VaKon2D/c-cpp.yml)
 
 # VaKon2D
 
