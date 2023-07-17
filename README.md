@@ -1,3 +1,11 @@
+![GitHub](https://img.shields.io/github/license/ValeriiKoniushenko/VaKon2D)
+![Static Badge](https://img.shields.io/badge/c%2B%2B-20-brightgreen)
+![Static Badge](https://img.shields.io/badge/boost-1.8-red)
+![Static Badge](https://img.shields.io/badge/OpenGL-3.x-red)
+<br>
+<br>
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/ValeriiKoniushenko/VaKon2D/c-cpp.yml)
+
 # VaKon2D
 
 ## ⭐ Intro
@@ -25,7 +33,7 @@ everywhere!
 > 6. [Code-tutorial & classes & examples](#-code-tutorial--classes--examples-)
 >    1. [Init your game environment](#init-your-game-environment)
 >    2. [Write your shader](#write-your-shader)
->    3. [Create your own shader-program](#create-your-own-shader-program)
+>    3. [Create your own shader program](#create-your-own-shader-program)
 >    4. [Load textures](#load-textures)
 >    5. [Creating the first rectangle](#creating-the-first-rectangle)
 >    6. [Main Loop](#main-loop)
