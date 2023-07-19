@@ -25,6 +25,7 @@ target_link_libraries(
 	Misc
 	Shapes
 	freetype
+	FreeType-Wrapper
 )
 
 add_custom_command(TARGET VaKon2D PRE_BUILD
