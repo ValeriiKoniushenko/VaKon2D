@@ -77,9 +77,8 @@ void RenderText(ShaderProgram& shader, std::string text, float x, float y, float
 		float w = ch.Size.x * scale;
 		float h = ch.Size.y * scale;
 		// update VBO for each character
-		float vertices[6][4] = {{xpos, ypos + h, 0.0f, 0.0f}, {xpos, ypos, 0.0f, 1.0f}, {xpos + w, ypos, 1.0f, 1.0f},
-
-			{xpos, ypos + h, 0.0f, 0.0f}, {xpos + w, ypos, 1.0f, 1.0f}, {xpos + w, ypos + h, 1.0f, 0.0f}};
+		float vertices[24] = {xpos, ypos + h, 0.0f, 0.0f, xpos, ypos, 0.0f, 1.0f, xpos + w, ypos, 1.0f, 1.0f, xpos, ypos + h, 0.0f,
+			0.0f, xpos + w, ypos, 1.0f, 1.0, xpos + w, ypos + h, 1.0f, 0.0f};
 		// render glyph texture over quad
 		glBindTexture(GL_TEXTURE_2D, ch.TextureID);
 		// update content of VBO memory
@@ -170,7 +169,9 @@ void VaKon2D::start()
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 6 * 4, NULL, GL_DYNAMIC_DRAW);
 	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*) (2 * sizeof(float)));
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
 
