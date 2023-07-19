@@ -1,4 +1,3 @@
-
 // MIT License
 //
 // Copyright (c) 2023 Valerii Koniushenko
@@ -21,32 +20,33 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#pragma once
+
 #include "FreeTypeLibrary.h"
+#include "Gl.h"
+#include "glm/glm.hpp"
 
-void FreeTypeLibrary::init()
+#include <filesystem>
+#include <unordered_map>
+
+class Font
 {
-	if (FT_Init_FreeType(&ft))
+public:
+	struct Character
 	{
-		throw std::runtime_error("Couldn't initialize freetype library");
-	}
-}
+		unsigned int TextureID;	   // ID handle of the glyph texture
+		glm::ivec2 Size;		   // Size of glyph
+		glm::ivec2 Bearing;		   // Offset from baseline to left/top of glyph
+		unsigned int Advance;	   // Horizontal offset to advance to next glyph
+	};
 
-void FreeTypeLibrary::destroy()
-{
-	FT_Done_FreeType(ft);
-}
+	~Font();
+	void loadFromFile(std::filesystem::path path);
+	void destroy();
+	const Character& getCharacter(GLchar ch) const;
 
-bool FreeTypeLibrary::generateFace(std::filesystem::path path, FT_Long faceIndex, FT_Face& face)
-{
-	return FT_New_Face(ft, path.string().c_str(), faceIndex, &face);
-}
-
-FreeTypeLibrary::~FreeTypeLibrary()
-{
-	destroy();
-}
-
-FreeTypeLibrary& GetFreeTypeLibrary()
-{
-	return FreeTypeLibrary::instance();
-}
+private:
+	std::unordered_map<GLchar, Character> characters_;
+	FT_Face face;
+	std::string fontName_;
+};

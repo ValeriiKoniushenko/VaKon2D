@@ -31,6 +31,8 @@
 class FreeTypeLibrary : public Singleton<FreeTypeLibrary>
 {
 public:
+	~FreeTypeLibrary();
+
 	void init();
 	void destroy();
 	bool generateFace(std::filesystem::path path, FT_Long faceIndex, FT_Face& face);
