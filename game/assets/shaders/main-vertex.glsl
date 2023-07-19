@@ -11,6 +11,5 @@ uniform vec2 uResolution;
 void main()
 {
     ioCv = aCv;
-    vec2 newPosition = vec2(aPos.x / uResolution.x, aPos.y / uResolution.y);
-    gl_Position = uTransform * vec4(newPosition.x, newPosition.y, 0.0, 1.0);
+    gl_Position = uTransform * vec4(aPos / uResolution, 0.0, 1.0);
 }

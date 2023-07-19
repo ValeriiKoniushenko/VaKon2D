@@ -24,6 +24,7 @@ target_link_libraries(
 	Input-Devices
 	Misc
 	Shapes
+	freetype
 )
 
 add_custom_command(TARGET VaKon2D PRE_BUILD
