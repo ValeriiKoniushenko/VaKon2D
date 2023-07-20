@@ -48,20 +48,18 @@
 
 /// Holds all state information relevant to a character as loaded using FreeType
 
-unsigned int VAO, VBO;
+unsigned int VAO;
 
-void RenderText(Font& font, ShaderProgram& shader, std::string text, float x, float y, float scale, glm::vec3 color)
+void RenderText(Font& font, ShaderProgram& shader, std::string text, float x, float y, float size, glm::vec3 color, Vbo& vbo, Vao& vao)
 {
-	// activate corresponding render state
 	shader.use();
 	shader.uniform(
 		"uResolution", static_cast<float>(GetWindow().getSize().width), static_cast<float>(GetWindow().getSize().height));
 	glActiveTexture(GL_TEXTURE0);
-	glBindVertexArray(VAO);
+	vao.bind();
 
-	// iterate through all characters
-	std::string::const_iterator c;
-	for (c = text.begin(); c != text.end(); c++)
+	const float scale = size / Font::defaultRenderSize * 2.f;
+	for (auto c = text.begin(); c != text.end(); c++)
 	{
 		Font::Character ch = font.getCharacter(*c);
 
@@ -70,21 +68,26 @@ void RenderText(Font& font, ShaderProgram& shader, std::string text, float x, fl
 
 		float w = ch.Size.x * scale;
 		float h = ch.Size.y * scale;
-		// update VBO for each character
-		float vertices[24] = {xpos, ypos + h, 0.0f, 0.0f, xpos, ypos, 0.0f, 1.0f, xpos + w, ypos, 1.0f, 1.0f, xpos, ypos + h, 0.0f,
-			0.0f, xpos + w, ypos, 1.0f, 1.0, xpos + w, ypos + h, 1.0f, 0.0f};
-		// render glyph texture over quad
-		glBindTexture(GL_TEXTURE_2D, ch.TextureID);
-		// update content of VBO memory
-		glBindBuffer(GL_ARRAY_BUFFER, VBO);
-		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices);	// be sure to use glBufferSubData and not glBufferData
 
+		// clang-format off
+		float vertices[24] = {
+			xpos, ypos + h, 0.0f, 0.0f,
+			xpos, ypos, 0.0f, 1.0f,
+			xpos + w, ypos, 1.0f, 1.0f,
+			xpos, ypos + h, 0.0f, 0.0f,
+			xpos + w, ypos, 1.0f, 1.0,
+			xpos + w, ypos + h, 1.0f, 0.0f
+		};
+		// clang-format on
+
+		glBindTexture(GL_TEXTURE_2D, ch.TextureID);
+		vbo.bind();
+		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices);	// be sure to use glBufferSubData and not glBufferData
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
-		// render quad
+
 		glDrawArrays(GL_TRIANGLES, 0, 6);
-		// now advance cursors for next glyph (note that advance is number of 1/64 pixels)
-		x += (ch.Advance >> 6) * scale;	   // bitshift by 6 to get value in pixels (2^6 = 64 (divide amount of 1/64th pixels by 64
-										   // to get amount of pixels))
+
+		x += (ch.Advance >> 6) * scale;
 	}
 	glBindVertexArray(0);
 	glBindTexture(GL_TEXTURE_2D, 0);
@@ -109,25 +112,19 @@ void VaKon2D::start()
 	Font font;
 	font.loadFromFile("assets/fonts/Roboto-Medium.ttf");
 
-	glGenVertexArrays(1, &VAO);
-	glGenBuffers(1, &VBO);
-	glBindVertexArray(VAO);
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 6 * 4, NULL, GL_DYNAMIC_DRAW);
-	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
-	glEnableVertexAttribArray(1);
-	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*) (2 * sizeof(float)));
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
-	glBindVertexArray(0);
+	Vao vao(true, true);
+	Vbo vbo(true, true);
+	vbo.data(std::vector<float>(24), GL_DYNAMIC_DRAW);
+	Gl::Vao::vertexAttribPointer(0, 2, Gl::Type::Float, false, 4 * sizeof(float), reinterpret_cast<void*>(0 * sizeof(float)));
+	Gl::Vao::vertexAttribPointer(1, 2, Gl::Type::Float, false, 4 * sizeof(float), reinterpret_cast<void*>(2 * sizeof(float)));
 
 	while (!GetWindow().shouldClose())
 	{
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		RenderText(font, textProgram, "This is sample text", 25.0f, 25.0f, 1.0f, glm::vec3(0.5, 0.8f, 0.2f));
-		RenderText(font, textProgram, "(C) LearnOpenGL.com", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+		RenderText(font, textProgram, "This is sample text", 25.0f, -25.0f, 32.f, glm::vec3(0.5, 0.8f, 0.2f), vbo, vao);
+		RenderText(font, textProgram, "(C) LearnOpenGL.com", 20.0f, 20.0f, 16.f, glm::vec3(0.3, 0.7f, 0.9f), vbo, vao);
 
 		GetWindow().swapBuffers();
 		GetWindow().pollEvent();

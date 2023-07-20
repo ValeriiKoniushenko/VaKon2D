@@ -183,6 +183,7 @@ void Gl::Vao::vertexAttribPointer(GLuint index, GLint size, Gl::Type type, bool 
 		throw std::runtime_error("You try to set up a shader using a zero VAO. Try to bind a VAO and try again.");
 	}
 
+	enableVertexAttribArray(index);
 	glVertexAttribPointer(index, size, static_cast<GLenum>(type), normalized, stride, pointer);
 #ifdef OPENGL_DEBUG
 	Gl::debugTraces();
@@ -441,26 +442,42 @@ Gl::Texture::MinFilter Gl::Texture::stringToMinFilter(const std::string& filter)
 std::string Gl::Texture::magFilterToString(MagFilter filter)
 {
 	if (filter == MagFilter::Linear)
+	{
 		return "Linear";
+	}
 	else if (filter == MagFilter::Nearest)
+	{
 		return "Nearest";
+	}
 	return "None";
 }
 
 std::string Gl::Texture::minFilterToString(MinFilter filter)
 {
 	if (filter == MinFilter::Nearest)
+	{
 		return "Nearest";
+	}
 	else if (filter == MinFilter::Linear)
+	{
 		return "Linear";
+	}
 	else if (filter == MinFilter::NearestMipmapNearest)
+	{
 		return "NearestMipmapNearest";
+	}
 	else if (filter == MinFilter::LinearMipmapNearest)
+	{
 		return "LinearMipmapNearest";
+	}
 	else if (filter == MinFilter::NearestMipmapLinear)
+	{
 		return "NearestMipmapLinear";
+	}
 	else if (filter == MinFilter::LinearMipmapLinear)
+	{
 		return "LinearMipmapLinear";
+	}
 
 	return "None";
 }

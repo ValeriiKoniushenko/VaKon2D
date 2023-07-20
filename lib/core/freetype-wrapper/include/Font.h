@@ -40,10 +40,12 @@ public:
 		unsigned int Advance;	   // Horizontal offset to advance to next glyph
 	};
 
+	inline static constexpr float defaultRenderSize = 500.f;
+
 	~Font();
 	void loadFromFile(std::filesystem::path path);
 	void destroy();
-	const Character& getCharacter(GLchar ch) const;
+	_NODISCARD const Character& getCharacter(GLchar ch) const;
 
 private:
 	std::unordered_map<GLchar, Character> characters_;

@@ -33,7 +33,7 @@ void Font::loadFromFile(std::filesystem::path path)
 
 	fontName_ = path.stem().string();
 
-	FT_Set_Pixel_Sizes(face, 0, 100);
+	FT_Set_Pixel_Sizes(face, 0, defaultRenderSize);
 
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
