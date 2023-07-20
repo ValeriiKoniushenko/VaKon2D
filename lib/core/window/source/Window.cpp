@@ -23,8 +23,8 @@
 #include "Window.h"
 
 #include "Gl.h"
-#include "WorldVariables.h"
 #include "Logger.h"
+#include "WorldVariables.h"
 
 namespace
 {
@@ -67,11 +67,11 @@ void Window::create(Utils::ISize2D size, const std::string& title)
 	spdlog::get("core")->info("The window was created");
 
 	glfwMakeContextCurrent(window);
-
 	glfwSetKeyCallback(window, KeyPressHandler);
 	glfwSetCharCallback(window, TextInputHandler);
 	glfwSetCursorEnterCallback(window, CursorEnterHandler);
 	glfwSetScrollCallback(window, MouseScrollHandler);
+	glfwSwapInterval(0);
 }
 
 bool Window::shouldClose() const
