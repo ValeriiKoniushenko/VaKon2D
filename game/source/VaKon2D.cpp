@@ -71,22 +71,19 @@ void RenderText(
 		float h = ch.Size.y * scale;
 
 		// clang-format off
-		float vertices[24] = {
-			xpos, ypos + h, 0.0f, 0.0f,
+		const float vertices[] = {
 			xpos, ypos, 0.0f, 1.0f,
-			xpos + w, ypos, 1.0f, 1.0f,
-			xpos, ypos + h, 0.0f, 0.0f,
 			xpos + w, ypos, 1.0f, 1.0,
-			xpos + w, ypos + h, 1.0f, 0.0f
+			xpos, ypos + h, 0.0f, 0.0f,
+			xpos + w, ypos + h, 1.0f, 0.0f,
 		};
 		// clang-format on
 
 		glBindTexture(GL_TEXTURE_2D, ch.TextureID);
 		vbo.bind();
-		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices);	// be sure to use glBufferSubData and not glBufferData
-		glBindBuffer(GL_ARRAY_BUFFER, 0);
+		Gl::Vbo::subData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices);
 
-		glDrawArrays(GL_TRIANGLES, 0, 6);
+		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 
 		x += (ch.Advance >> 6) * scale;
 	}
