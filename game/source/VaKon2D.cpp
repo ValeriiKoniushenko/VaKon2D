@@ -50,7 +50,8 @@
 
 unsigned int VAO;
 
-void RenderText(Font& font, ShaderProgram& shader, std::string text, float x, float y, float size, glm::vec3 color, Vbo& vbo, Vao& vao)
+void RenderText(
+	Font& font, ShaderProgram& shader, std::string text, float x, float y, float size, glm::vec3 color, Vbo& vbo, Vao& vao)
 {
 	shader.use();
 	shader.uniform(
@@ -120,8 +121,8 @@ void VaKon2D::start()
 
 	while (!GetWindow().shouldClose())
 	{
-		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
+		GetWindow().clearColor(0.2f, 0.3f, 0.3f, 1.0f);
+		GetWindow().clear(GL_COLOR_BUFFER_BIT);
 
 		RenderText(font, textProgram, "This is sample text", 25.0f, -25.0f, 32.f, glm::vec3(0.5, 0.8f, 0.2f), vbo, vao);
 		RenderText(font, textProgram, "(C) LearnOpenGL.com", 20.0f, 20.0f, 16.f, glm::vec3(0.3, 0.7f, 0.9f), vbo, vao);
