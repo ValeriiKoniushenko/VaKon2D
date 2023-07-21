@@ -28,6 +28,7 @@ class CustomShaderProgram : public ShaderProgram
 {
 public:
 	explicit CustomShaderProgram(bool shouldCreate);
+	CustomShaderProgram(std::filesystem::path pathToVertex, std::filesystem::path pathToFragment);
 	CustomShaderProgram(Shader& frag, Shader& vert);
 
 	void OnAfterLink() override;

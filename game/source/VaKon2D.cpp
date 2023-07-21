@@ -48,19 +48,10 @@ void VaKon2D::start()
 
 	GetWindow().viewport(0, 0, 800, 600);
 
-	CustomShaderProgram textProgram(true);
-	{
-		Shader vertex("assets/shaders/text.vert", Gl::Shader::Type::Vertex);
-		Shader fragment("assets/shaders/text.frag", Gl::Shader::Type::Fragment);
-		textProgram.attachShader(vertex);
-		textProgram.attachShader(fragment);
-	}
-	textProgram.link();
-	textProgram.use();
+	CustomShaderProgram textProgram("assets/shaders/text.vert", "assets/shaders/text.frag");
 
 	Font font("assets/fonts/Roboto-Medium.ttf");
 	LineText text(font, "Hello world");
-	text.setFontSize(100.f);
 
 	while (!GetWindow().shouldClose())
 	{

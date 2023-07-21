@@ -22,6 +22,7 @@
 
 #include "CustomShaderProgram.h"
 
+#include "Shader.h"
 #include "Window.h"
 
 void CustomShaderProgram::OnAfterLink()
@@ -41,4 +42,15 @@ CustomShaderProgram::CustomShaderProgram(bool shouldCreate) : ShaderProgram(shou
 
 CustomShaderProgram::CustomShaderProgram(Shader& frag, Shader& vert) : ShaderProgram(frag, vert)
 {
+}
+
+CustomShaderProgram::CustomShaderProgram(std::filesystem::path pathToVertex, std::filesystem::path pathToFragment)
+	: ShaderProgram(true)
+{
+	Shader frag(pathToVertex, Gl::Shader::Type::Vertex);
+	Shader vert(pathToFragment, Gl::Shader::Type::Fragment);
+	attachShader(frag);
+	attachShader(vert);
+	link();
+	use();
 }

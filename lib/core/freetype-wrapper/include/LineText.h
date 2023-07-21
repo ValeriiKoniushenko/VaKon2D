@@ -53,6 +53,7 @@ public:
 	_NODISCARD const glm::vec2& getPosition() const;
 	void setPosition(const glm::vec2& position);
 
+	_NODISCARD float getTextWidth();
 	_NODISCARD float getFontSize() const;
 	void setFontSize(float size);
 
@@ -69,6 +70,8 @@ private:
 private:
 	Font* font_;
 	std::string text_;
+	std::string lastSavedText_;
+	float textWidth_ = -1.f;
 	glm::vec2 position_;
 	Vbo vbo_;
 	Vao vao_;

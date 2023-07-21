@@ -218,3 +218,29 @@ float LineText::getHeightOfTheBiggestLetter()
 
 	return maxSize;
 }
+
+float LineText::getTextWidth()
+{
+	if (lastSavedText_ == text_)
+	{
+		return textWidth_;
+	}
+
+	textWidth_ = 0;
+	const float scale = fontSize_ / Font::defaultRenderSize;
+
+	for (auto ch : text_)
+	{
+		if (!font_)
+		{
+			spdlog::get("core")->warn("Can't get character without font");
+			BOOST_ASSERT_MSG(false, "Can't get character without font");
+			break;
+		}
+
+		const auto& oneChar = font_->getCharacter(ch);
+		textWidth_ += oneChar.advance * scale;
+	}
+
+	return textWidth_;
+}
