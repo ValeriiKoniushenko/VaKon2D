@@ -65,6 +65,7 @@ const std::string& LineText::getText() const
 void LineText::setText(const std::string& text)
 {
 	text_ = text;
+	updateCache();
 }
 
 const glm::vec2& LineText::getPosition() const
@@ -80,6 +81,40 @@ void LineText::setPosition(const glm::vec2& position)
 void LineText::updateCache()
 {
 	cache_.resize(text_.size());
+	auto vert = cache_.begin();
+
+	glm::vec2 position = position_;
+
+	const float scale = fontSize_ / Font::defaultRenderSize * 2.f;
+	for (auto c = text_.begin(); c != text_.end(); ++c)
+	{
+		if (!font_)
+		{
+			spdlog::get("core")->warn("Can't render a text without font. The font wasn't found");
+			break;
+		}
+		const Font::Character& ch = font_->getCharacter(*c);
+
+		const float xpos = position.x + static_cast<float>(ch.bearing.x) * scale;
+		const float ypos = position.y - static_cast<float>(ch.size.y - ch.bearing.y) * scale;
+		const float w = ch.size.x * scale;
+		const float h = ch.size.y * scale;
+
+		// clang-format off
+		std::vector<float> vertices = {
+            xpos + w, ypos,       1.0f, 1.0f,
+            xpos + w, ypos + h,   1.0f, 0.0f,
+            xpos,     ypos,       0.0f, 1.0f,
+			xpos,     ypos + h,   0.0f, 0.0f,
+		};
+		// clang-format on
+
+		*vert = std::move(vertices);
+		position.x += ch.advance * scale;
+		++vert;
+	}
+
+	BOOST_ASSERT_MSG(cache_.size() == text_.size(), "Invalid count of cache data");
 }
 
 void LineText::prepare()
@@ -113,37 +148,26 @@ void LineText::draw(CustomShaderProgram& shader)
 
 	glm::vec2 position = position_;
 
-	const float scale = fontSize_ / Font::defaultRenderSize * 2.f;
-	for (auto c = text_.begin(); c != text_.end(); ++c)
+	auto ch = text_.begin();
+	auto vert = cache_.begin();
+
+	while (ch != text_.end())
 	{
 		if (!font_)
 		{
-			spdlog::get("core")->warn("Can't render a text without font. The font wasn't found");
+			spdlog::get("core")->warn("Can't draw without font");
+			BOOST_ASSERT_MSG(false, "Can't draw without font");
 			break;
 		}
-		const Font::Character& ch = font_->getCharacter(*c);
 
-		const float xpos = position.x + static_cast<float>(ch.bearing.x) * scale;
-		const float ypos = position.y - static_cast<float>(ch.size.y - ch.bearing.y) * scale;
-		const float w = ch.size.x * scale;
-		const float h = ch.size.y * scale;
-
-		// clang-format off
-		float vertices[] = {
-            xpos + w, ypos,       1.0f, 1.0f,
-            xpos + w, ypos + h,   1.0f, 0.0f,
-            xpos,     ypos,       0.0f, 1.0f,
-			xpos,     ypos + h,   0.0f, 0.0f,
-		};
-		// clang-format on
-
-		ch.texture.bind();
+		const Font::Character& oneChar = font_->getCharacter(*ch);
+		oneChar.texture.bind();
 		vbo_.bind();
-		Gl::Vbo::subData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices);
+		Gl::Vbo::subData(GL_ARRAY_BUFFER, 0, sizeof(float) * vert->size(), vert->data());
 
 		Gl::drawArrays(GL_TRIANGLE_STRIP, 0, 4);
 
-		position.x += ch.advance * scale;
+		++ch, ++vert;
 	}
 }
 
