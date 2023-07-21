@@ -64,11 +64,10 @@ void RenderText(
 	{
 		const Font::Character& ch = font.getCharacter(*c);
 
-		float xpos = x + ch.Bearing.x * scale;
-		float ypos = y - (ch.Size.y - ch.Bearing.y) * scale;
-
-		float w = ch.Size.x * scale;
-		float h = ch.Size.y * scale;
+		const float xpos = x + static_cast<float>(ch.bearing.x) * scale;
+		const float ypos = y - static_cast<float>(ch.size.y - ch.bearing.y) * scale;
+		const float w = ch.size.x * scale;
+		const float h = ch.size.y * scale;
 
 		// clang-format off
 		float vertices[24] = {
@@ -88,7 +87,7 @@ void RenderText(
 
 		Gl::drawArrays(GL_TRIANGLES, 0, 6);
 
-		x += (ch.Advance >> 6) * scale;
+		x += (ch.advance >> 6) * scale;
 	}
 }
 
