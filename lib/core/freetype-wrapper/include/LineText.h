@@ -62,6 +62,7 @@ public:
 
 private:
 	void updateCache();
+	float getHeightOfTheBiggestLetter();
 
 	inline static constexpr std::size_t dataPerFrame = 16;
 

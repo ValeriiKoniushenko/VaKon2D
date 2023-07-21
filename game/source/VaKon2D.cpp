@@ -60,6 +60,7 @@ void VaKon2D::start()
 
 	Font font("assets/fonts/Roboto-Medium.ttf");
 	LineText text(font, "Hello world");
+	text.setFontSize(100.f);
 
 	while (!GetWindow().shouldClose())
 	{

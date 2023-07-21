@@ -86,6 +86,7 @@ void LineText::updateCache()
 	glm::vec2 position = position_;
 
 	const float scale = fontSize_ / Font::defaultRenderSize * 2.f;
+	const float offsetY = getHeightOfTheBiggestLetter();
 	for (auto c = text_.begin(); c != text_.end(); ++c)
 	{
 		if (!font_)
@@ -96,7 +97,7 @@ void LineText::updateCache()
 		const Font::Character& ch = font_->getCharacter(*c);
 
 		const float xpos = position.x + static_cast<float>(ch.bearing.x) * scale;
-		const float ypos = position.y - static_cast<float>(ch.size.y - ch.bearing.y) * scale;
+		const float ypos = position.y - static_cast<float>(ch.size.y - ch.bearing.y) * scale - offsetY * scale;
 		const float w = ch.size.x * scale;
 		const float h = ch.size.y * scale;
 
@@ -185,6 +186,7 @@ void LineText::setFontSize(float size)
 	}
 
 	fontSize_ = size;
+	updateCache();
 }
 
 LineText::LineText(Font& font, const std::string& text)
@@ -192,4 +194,26 @@ LineText::LineText(Font& font, const std::string& text)
 	prepare();
 	setFont(font);
 	setText(text);
+}
+
+float LineText::getHeightOfTheBiggestLetter()
+{
+	float maxSize = -fontSize_;
+	for (auto ch : text_)
+	{
+		if (!font_)
+		{
+			spdlog::get("core")->warn("Can't get character without font");
+			BOOST_ASSERT_MSG(false, "Can't get character without font");
+			break;
+		}
+
+		const auto& oneChar = font_->getCharacter(ch);
+		if (static_cast<float>(oneChar.size.y) > maxSize)
+		{
+			maxSize = static_cast<float>(oneChar.size.y);
+		}
+	}
+
+	return maxSize;
 }
