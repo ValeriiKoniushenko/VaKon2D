@@ -24,20 +24,22 @@
 
 #include "Gl.h"
 #include "GlfwWrapper.h"
-#include "NotCopyableAndNotMovable.h"
+#include "NotCopyableButMovable.h"
 #include "stb_image.h"
 
 #include <string>
 
 class Image;
 
-class Texture : public Utils::NotCopyableAndNotMovable
+class Texture : public Utils::NotCopyableButMovable
 {
 public:
 	explicit Texture(
 		Gl::Texture::Target target = Gl::Texture::Target::Texture2D, bool shouldGenerate = false, bool shouldBind = false);
 
 	~Texture() override;
+	Texture(Texture&& other) noexcept;
+	Texture& operator=(Texture&& other) noexcept;
 
 	void bind() const;
 	void unbind() const;

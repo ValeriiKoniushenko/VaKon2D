@@ -24,6 +24,7 @@
 
 #include "FreeTypeLibrary.h"
 #include "Gl.h"
+#include "Texture.h"
 #include "glm/glm.hpp"
 
 #include <filesystem>
@@ -34,10 +35,10 @@ class Font
 public:
 	struct Character
 	{
-		unsigned int TextureID;	   // ID handle of the glyph texture
-		glm::ivec2 Size;		   // Size of glyph
-		glm::ivec2 Bearing;		   // Offset from baseline to left/top of glyph
-		unsigned int Advance;	   // Horizontal offset to advance to next glyph
+		Texture texture;		 // ID handle of the glyph texture
+		glm::ivec2 Size;		 // Size of glyph
+		glm::ivec2 Bearing;		 // Offset from baseline to left/top of glyph
+		unsigned int Advance;	 // Horizontal offset to advance to next glyph
 	};
 
 	inline static constexpr float defaultRenderSize = 500.f;

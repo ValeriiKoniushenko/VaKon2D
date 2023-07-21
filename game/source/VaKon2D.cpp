@@ -56,13 +56,13 @@ void RenderText(
 	shader.use();
 	shader.uniform(
 		"uResolution", static_cast<float>(GetWindow().getSize().width), static_cast<float>(GetWindow().getSize().height));
-	glActiveTexture(GL_TEXTURE0);
+	Gl::Texture::active(0);
 	vao.bind();
 
 	const float scale = size / Font::defaultRenderSize * 2.f;
 	for (auto c = text.begin(); c != text.end(); c++)
 	{
-		Font::Character ch = font.getCharacter(*c);
+		const Font::Character& ch = font.getCharacter(*c);
 
 		float xpos = x + ch.Bearing.x * scale;
 		float ypos = y - (ch.Size.y - ch.Bearing.y) * scale;
@@ -82,7 +82,7 @@ void RenderText(
 		};
 		// clang-format on
 
-		glBindTexture(GL_TEXTURE_2D, ch.TextureID);
+		ch.texture.bind();
 		vbo.bind();
 		Gl::Vbo::subData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices);
 

@@ -170,3 +170,29 @@ std::string Texture::getName() const
 	}
 	return "";
 }
+
+Texture::Texture(Texture&& other) noexcept
+{
+	*this = std::move(other);
+}
+
+Texture& Texture::operator=(Texture&& other) noexcept
+{
+	id_ = other.id_;
+	target_ = other.target_;
+	isDestroyAtEnd_ = other.isDestroyAtEnd_;
+	image_ = other.image_;
+	ignoreMipMap_ = other.ignoreMipMap_;
+	magFilter_ = other.magFilter_;
+	minFilter_ = other.minFilter_;
+
+	other.id_ = {};
+	other.target_ = {};
+	other.isDestroyAtEnd_ = {};
+	other.image_ = {};
+	other.ignoreMipMap_ = {};
+	other.magFilter_ = Gl::Texture::MagFilter::None;
+	other.minFilter_ = Gl::Texture::MinFilter::None;
+
+	return *this;
+}
