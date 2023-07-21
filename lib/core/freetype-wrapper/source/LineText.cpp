@@ -55,6 +55,7 @@ Font* LineText::getFont() const
 void LineText::setFont(Font& font)
 {
 	font_ = &font;
+	updateCache();
 }
 
 const std::string& LineText::getText() const
