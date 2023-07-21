@@ -86,12 +86,10 @@ void RenderText(
 		vbo.bind();
 		Gl::Vbo::subData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices);
 
-		glDrawArrays(GL_TRIANGLES, 0, 6);
+		Gl::drawArrays(GL_TRIANGLES, 0, 6);
 
 		x += (ch.Advance >> 6) * scale;
 	}
-	glBindVertexArray(0);
-	glBindTexture(GL_TEXTURE_2D, 0);
 }
 
 void VaKon2D::start()

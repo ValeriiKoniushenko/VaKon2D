@@ -186,8 +186,8 @@ Texture& Texture::operator=(Texture&& other) noexcept
 	magFilter_ = other.magFilter_;
 	minFilter_ = other.minFilter_;
 
-	other.id_ = {};
-	other.target_ = {};
+	other.id_ = Gl::Texture::invalidId;
+	other.target_ = Gl::Texture::Target::None;
 	other.isDestroyAtEnd_ = {};
 	other.image_ = {};
 	other.ignoreMipMap_ = {};
