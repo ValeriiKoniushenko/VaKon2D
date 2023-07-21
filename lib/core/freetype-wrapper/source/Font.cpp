@@ -51,13 +51,13 @@ void Font::loadFromFile(std::filesystem::path path)
 		Gl::Texture::texImage2D(Gl::Texture::Target::Texture2D, 0, GL_RED, face->glyph->bitmap.width, face->glyph->bitmap.rows, 0,
 			GL_RED, GL_UNSIGNED_BYTE, face->glyph->bitmap.buffer);
 
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+		Gl::Texture::setWrapS(Gl::Texture::Wrap::Clamp2Border);
+		Gl::Texture::setWrapT(Gl::Texture::Wrap::Clamp2Border);
 		Gl::Texture::setMinFilter(Gl::Texture::MinFilter::Linear);
 		Gl::Texture::setMagFilter(Gl::Texture::MagFilter::Linear);
 
 		Character character = {std::move(texture), glm::ivec2(face->glyph->bitmap.width, face->glyph->bitmap.rows),
-			glm::ivec2(face->glyph->bitmap_left, face->glyph->bitmap_top), static_cast<unsigned int>(face->glyph->advance.x)};
+			glm::ivec2(face->glyph->bitmap_left, face->glyph->bitmap_top), static_cast<unsigned int>(face->glyph->advance.x) >> 6};
 		characters_.emplace(c, std::move(character));
 	}
 	glBindTexture(GL_TEXTURE_2D, 0);
@@ -76,4 +76,9 @@ Font::~Font()
 const Font::Character& Font::getCharacter(GLchar ch) const
 {
 	return characters_.at(ch);
+}
+
+Font::Font(std::filesystem::path path)
+{
+	loadFromFile(std::move(path));
 }

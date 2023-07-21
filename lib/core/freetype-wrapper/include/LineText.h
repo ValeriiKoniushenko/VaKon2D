@@ -23,36 +23,54 @@
 #pragma once
 
 #include "CopyableAndMoveable.h"
-#include "FreeTypeLibrary.h"
-#include "Gl.h"
-#include "Texture.h"
+#include "CustomShaderProgram.h"
+#include "Vao.h"
+#include "Vbo.h"
 #include "glm/glm.hpp"
 
-#include <filesystem>
-#include <unordered_map>
+#include <string>
 
-class Font : Utils::CopyableAndMoveable
+class Font;
+
+class LineText : public Utils::CopyableAndMoveable
 {
 public:
-	struct Character
-	{
-		Texture texture;
-		glm::ivec2 size;
-		glm::ivec2 bearing;
-		unsigned int advance;
-	};
+	LineText(bool autoPrepare);
+	LineText(Font& font, const std::string& text);
+	LineText() = default;
+	~LineText() = default;
+	LineText(const LineText& other);
+	LineText(LineText&& other);
+	LineText& operator=(const LineText& other);
+	LineText& operator=(LineText&& other);
 
-	inline static constexpr float defaultRenderSize = 500.f;
+	_NODISCARD Font* getFont() const;
+	void setFont(Font& font);
 
-	Font() = default;
-	Font(std::filesystem::path path);
-	~Font();
-	void loadFromFile(std::filesystem::path path);
-	void destroy();
-	_NODISCARD const Character& getCharacter(GLchar ch) const;
+	_NODISCARD const std::string& getText() const;
+	void setText(const std::string& text);
+
+	_NODISCARD const glm::vec2& getPosition() const;
+	void setPosition(const glm::vec2& position);
+
+	_NODISCARD float getFontSize() const;
+	void setFontSize(float size);
+
+	void prepare();
+
+	void draw(CustomShaderProgram& shader);
 
 private:
-	std::unordered_map<GLchar, Character> characters_;
-	FT_Face face;
-	std::string fontName_;
+	void updateCache();
+
+	inline static constexpr std::size_t dataPerFrame = 16;
+
+private:
+	Font* font_;
+	std::string text_;
+	glm::vec2 position_;
+	Vbo vbo_;
+	Vao vao_;
+	float fontSize_ = 24.f;
+	std::vector<std::vector<float>> cache_;
 };

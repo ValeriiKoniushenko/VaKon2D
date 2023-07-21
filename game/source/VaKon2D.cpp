@@ -31,8 +31,6 @@
 #include "Shader.h"
 #include "Texture.h"
 #include "UpdateableCollector.h"
-#include "Vao.h"
-#include "Vbo.h"
 #include "Widget.h"
 #include "WidgetReflector.h"
 #include "Window.h"
@@ -42,51 +40,7 @@
 #include FT_FREETYPE_H
 #include "Font.h"
 #include "FreeTypeLibrary.h"
-
-#include <iostream>
-#include <map>
-
-/// Holds all state information relevant to a character as loaded using FreeType
-
-unsigned int VAO;
-
-void RenderText(
-	Font& font, ShaderProgram& shader, std::string text, float x, float y, float size, glm::vec3 color, Vbo& vbo, Vao& vao)
-{
-	shader.use();
-	shader.uniform(
-		"uResolution", static_cast<float>(GetWindow().getSize().width), static_cast<float>(GetWindow().getSize().height));
-	Gl::Texture::active(0);
-	vao.bind();
-
-	const float scale = size / Font::defaultRenderSize * 2.f;
-	for (auto c = text.begin(); c != text.end(); c++)
-	{
-		const Font::Character& ch = font.getCharacter(*c);
-
-		const float xpos = x + static_cast<float>(ch.bearing.x) * scale;
-		const float ypos = y - static_cast<float>(ch.size.y - ch.bearing.y) * scale;
-		const float w = ch.size.x * scale;
-		const float h = ch.size.y * scale;
-
-		// clang-format off
-		float vertices[] = {
-            xpos + w, ypos,       1.0f, 1.0f,
-            xpos + w, ypos + h,   1.0f, 0.0f,
-            xpos,     ypos,       0.0f, 1.0f,
-			xpos,     ypos + h,   0.0f, 0.0f,
-		};
-		// clang-format on
-
-		ch.texture.bind();
-		vbo.bind();
-		Gl::Vbo::subData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices);
-
-		Gl::drawArrays(GL_TRIANGLE_STRIP, 0, 4);
-
-		x += (ch.advance >> 6) * scale;
-	}
-}
+#include "LineText.h"
 
 void VaKon2D::start()
 {
@@ -104,22 +58,15 @@ void VaKon2D::start()
 	textProgram.link();
 	textProgram.use();
 
-	Font font;
-	font.loadFromFile("assets/fonts/Roboto-Medium.ttf");
-
-	Vao vao(true, true);
-	Vbo vbo(true, true);
-	vbo.data(std::vector<float>(24), GL_DYNAMIC_DRAW);
-	Gl::Vao::vertexAttribPointer(0, 2, Gl::Type::Float, false, 4 * sizeof(float), reinterpret_cast<void*>(0 * sizeof(float)));
-	Gl::Vao::vertexAttribPointer(1, 2, Gl::Type::Float, false, 4 * sizeof(float), reinterpret_cast<void*>(2 * sizeof(float)));
+	Font font("assets/fonts/Roboto-Medium.ttf");
+	LineText text(font, "Hello world");
 
 	while (!GetWindow().shouldClose())
 	{
 		GetWindow().clearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		GetWindow().clear(GL_COLOR_BUFFER_BIT);
 
-		RenderText(font, textProgram, "This is sample text", 25.0f, -25.0f, 32.f, glm::vec3(0.5, 0.8f, 0.2f), vbo, vao);
-		RenderText(font, textProgram, "(C) LearnOpenGL.com", 20.0f, 20.0f, 16.f, glm::vec3(0.3, 0.7f, 0.9f), vbo, vao);
+		text.draw(textProgram);
 
 		GetWindow().swapBuffers();
 		GetWindow().pollEvent();

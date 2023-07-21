@@ -23,28 +23,26 @@
 #include "Gl.h"
 
 #include "UtilsFunctions.h"
+#include "boost/assert.hpp"
 
 void Gl::requireNoErrors()
 {
 	switch (glGetError())
 	{
 		case GL_INVALID_ENUM:
-			throw std::runtime_error("GL_INVALID_ENUM: Set when an enumeration parameter is not legal");
+			BOOST_ASSERT_MSG(false, "Set when an enumeration parameter is not legal");
 		case GL_INVALID_VALUE:
-			throw std::runtime_error("GL_INVALID_VALUE: Set when a value parameter is not legal");
+			BOOST_ASSERT_MSG(false, "Set when a value parameter is not legal");
 		case GL_INVALID_OPERATION:
-			throw std::runtime_error(
-				"GL_INVALID_OPERATION: Set when the state for a command is not legal for its given parameters");
+			BOOST_ASSERT_MSG(false, "Set when the state for a command is not legal for its given parameters");
 		case GL_STACK_OVERFLOW:
-			throw std::runtime_error("GL_STACK_OVERFLOW: Set when a stack pushing operation causes a stack overflow");
+			BOOST_ASSERT_MSG(false, "Set when a stack pushing operation causes a stack overflow");
 		case GL_STACK_UNDERFLOW:
-			throw std::runtime_error(
-				"GL_STACK_UNDERFLOW: Set when a stack popping operation occurs while the stack is at its lowest point");
+			BOOST_ASSERT_MSG(false, "Set when a stack popping operation occurs while the stack is at its lowest point");
 		case GL_OUT_OF_MEMORY:
-			throw std::runtime_error("GL_OUT_OF_MEMORY: Set when a memory allocation operation cannot allocate (enough) memory");
+			BOOST_ASSERT_MSG(false, "Set when a memory allocation operation cannot allocate (enough) memory");
 		case GL_INVALID_FRAMEBUFFER_OPERATION:
-			throw std::runtime_error(
-				"GL_INVALID_FRAMEBUFFER_OPERATION: Set when reading or writing to a framebuffer that is not complete");
+			BOOST_ASSERT_MSG(false, "Set when reading or writing to a framebuffer that is not complete");
 	}
 }
 
