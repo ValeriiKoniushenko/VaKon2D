@@ -70,14 +70,11 @@ void RenderText(
 		const float h = ch.size.y * scale;
 
 		// clang-format off
-		float vertices[24] = {
-			xpos,     ypos + h,   0.0f, 0.0f,
-            xpos,     ypos,       0.0f, 1.0f,
-            xpos + w, ypos,       1.0f, 1.0f,
-
-            xpos,     ypos + h,   0.0f, 0.0f,
+		float vertices[] = {
             xpos + w, ypos,       1.0f, 1.0f,
             xpos + w, ypos + h,   1.0f, 0.0f,
+            xpos,     ypos,       0.0f, 1.0f,
+			xpos,     ypos + h,   0.0f, 0.0f,
 		};
 		// clang-format on
 
@@ -85,7 +82,7 @@ void RenderText(
 		vbo.bind();
 		Gl::Vbo::subData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices);
 
-		Gl::drawArrays(GL_TRIANGLES, 0, 6);
+		Gl::drawArrays(GL_TRIANGLE_STRIP, 0, 4);
 
 		x += (ch.advance >> 6) * scale;
 	}
