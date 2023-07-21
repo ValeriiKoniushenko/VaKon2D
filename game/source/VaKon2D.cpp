@@ -49,9 +49,24 @@ void VaKon2D::start()
 	GetWindow().viewport(0, 0, 800, 600);
 
 	CustomShaderProgram textProgram("assets/shaders/text.vert", "assets/shaders/text.frag");
-
 	Font font("assets/fonts/Roboto-Medium.ttf");
 	LineText text(font, "Hello world");
+
+	CustomShaderProgram mainProgram("assets/shaders/main-vertex.glsl", "assets/shaders/main-fragment.glsl");
+
+	Texture texture(Gl::Texture::Target::Texture2D, true, true);
+	Image image("assets/textures/apple.png");
+	image.setInternalChannel(Gl::Texture::Channel::SRGBA);
+	texture.setImage(image);
+	texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
+
+	Widget widget;
+	widget.setTexture(texture);
+	widget.prepare();
+
+	KeyboardInputAction iaWidgetReflector("WidgetReflector", Keyboard::Key::F1);
+	iaWidgetReflector.setFrequency(KeyboardInputAction::TimeT(100));
+	iaWidgetReflector.onAction.subscribe([]() { getWidgetReflector().toggle(); });
 
 	while (!GetWindow().shouldClose())
 	{
@@ -59,6 +74,7 @@ void VaKon2D::start()
 		GetWindow().clear(GL_COLOR_BUFFER_BIT);
 
 		text.draw(textProgram);
+		widget.draw(mainProgram);
 
 		GetWindow().swapBuffers();
 		GetWindow().pollEvent();
