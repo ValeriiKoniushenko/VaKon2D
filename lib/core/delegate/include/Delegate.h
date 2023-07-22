@@ -37,7 +37,7 @@ public:
 	{
 		if (callback_ && objP)
 		{
-			std::invoke(callback_, objP, std::forward<TArgs...>(args...));
+			std::invoke(callback_, objP, std::forward<TArgs>(args)...);
 		}
 	}
 

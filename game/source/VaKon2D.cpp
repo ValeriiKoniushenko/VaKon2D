@@ -42,6 +42,8 @@
 #include "FreeTypeLibrary.h"
 #include "LineText.h"
 
+#include <iostream>
+
 void VaKon2D::start()
 {
 	initCore();
@@ -68,10 +70,22 @@ void VaKon2D::start()
 	iaWidgetReflector.setFrequency(KeyboardInputAction::TimeT(100));
 	iaWidgetReflector.onAction.subscribe([]() { getWidgetReflector().toggle(); });
 
+	Delegate<VaKon2D, void(VaKon2D::*)()> d;
+	d.subscribe(this, &VaKon2D::print);
+
+	LambdaMulticastDelegate<void()> d1;
+	d1.subscribe([](){ std::cout << "Hello world"; });
+
+	GetWorldVariables().set("hello", "world");
+
 	while (!GetWindow().shouldClose())
 	{
 		GetWindow().clearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		GetWindow().clear(GL_COLOR_BUFFER_BIT);
+
+		Mouse::isKeyReleased(Mouse::Key::Right);
+
+		d.trigger();
 
 		text.draw(textProgram);
 		widget.draw(mainProgram);
@@ -79,6 +93,11 @@ void VaKon2D::start()
 		GetWindow().swapBuffers();
 		GetWindow().pollEvent();
 	}
+}
+
+void VaKon2D::print()
+{
+	std::cout << "Hello world" << std::endl;
 }
 
 void VaKon2D::initCore()

@@ -32,8 +32,8 @@
 class WorldVariables : public Singleton<WorldVariables>
 {
 public:
-	using VariantT =
-		std::variant<int, unsigned int, float, double, glm::vec2, glm::vec3, glm::vec4, glm::mat3, glm::mat4, Utils::FSize2D>;
+	using VariantT = std::variant<int, unsigned int, float, double, glm::vec2, glm::vec3, glm::vec4, glm::mat3, glm::mat4,
+		Utils::FSize2D, const char*>;
 
 	void set(const std::string& key, const VariantT& value);
 	_NODISCARD const VariantT& get(const std::string& key) const;

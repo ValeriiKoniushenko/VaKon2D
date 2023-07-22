@@ -30,5 +30,6 @@ public:
 	void start();
 
 private:
+	void print();
 	void initCore();
 };
