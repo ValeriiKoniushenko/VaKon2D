@@ -22,36 +22,34 @@
 
 #pragma once
 
-#include "Color.h"
-#include "Delegate.h"
-#include "GlfwWrapper.h"
-#include "Singleton.h"
-#include "Size.h"
-
-#include <Windows.h>
-
-class Window : public Singleton<Window>
+struct GlColor
 {
-public:
-	void create(Utils::ISize2D size, const std::string& title);
-	_NODISCARD bool shouldClose() const;
-	void swapBuffers();
-	void pollEvent();
-	void clearColor(const GlColor& color);
-	void clear(int code);
-	void viewport(GLint x, GLint y, GLsizei width, GLsizei height);
-	_NODISCARD HWND getHwnd();
-	Utils::ISize2D getSize() const;
-
-	LambdaMulticastDelegate<void(int, int, int, int)> onKeyPressed;
-	LambdaMulticastDelegate<void(unsigned int)> onTextInput;
-	LambdaMulticastDelegate<void(int)> onCursorEntered;
-	LambdaMulticastDelegate<void(double, double)> onMouseWheel;
-
-protected:
-	GLFWwindow* window{};
-	Utils::ISize2D size_{};
-	std::string title_;
+	float r{};
+	float g{};
+	float b{};
+	float a{1.f};
 };
 
-Window& GetWindow();
+struct Color
+{
+	unsigned char r{};
+	unsigned char g{};
+	unsigned char b{};
+	unsigned char a{255};
+};
+
+inline GlColor toGlColor(const Color& color)
+{
+	return {.r = static_cast<float>(color.r) / 255.f,
+		.g = static_cast<float>(color.g) / 255.f,
+		.b = static_cast<float>(color.b) / 255.f,
+		.a = static_cast<float>(color.a) / 255.f};
+}
+
+inline Color toColor(const GlColor& color)
+{
+	return {.r = static_cast<unsigned char>(color.r * 255),
+		.g = static_cast<unsigned char>(color.g * 255),
+		.b = static_cast<unsigned char>(color.b * 255),
+		.a = static_cast<unsigned char>(color.a * 255)};
+}
