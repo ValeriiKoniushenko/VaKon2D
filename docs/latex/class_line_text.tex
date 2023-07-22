@@ -1,0 +1,188 @@
+\doxysection{Line\+Text Class Reference}
+\hypertarget{class_line_text}{}\label{class_line_text}\index{LineText@{LineText}}
+
+
+{\ttfamily \#include $<$Line\+Text.\+h$>$}
+
+Inheritance diagram for Line\+Text\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_line_text}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_line_text_a40f7f6d710ecd11e3f57fa0ffacb473f}{Line\+Text}} (bool auto\+Prepare)
+\item 
+\mbox{\hyperlink{class_line_text_aab0cbcd8847ac149df65f5d4b5ef0e0b}{Line\+Text}} (\mbox{\hyperlink{class_font}{Font}} \&font, const std\+::string \&text)
+\item 
+\mbox{\hyperlink{class_line_text_aac9b86bba08c6d2e7fc1e09a71b6189b}{Line\+Text}} ()=default
+\item 
+\mbox{\hyperlink{class_line_text_ae4ce8c160ba9d056352da8cd1402b4f8}{\texorpdfstring{$\sim$}{\string~}\+Line\+Text}} ()=default
+\item 
+\mbox{\hyperlink{class_line_text_a57cc2bf3cadcf73d5739f3cf83fddecd}{Line\+Text}} (const \mbox{\hyperlink{class_line_text}{Line\+Text}} \&other)
+\item 
+\mbox{\hyperlink{class_line_text_a074c72c421553a54bf4fdd14839e29b6}{Line\+Text}} (\mbox{\hyperlink{class_line_text}{Line\+Text}} \&\&other)
+\item 
+\mbox{\hyperlink{class_line_text}{Line\+Text}} \& \mbox{\hyperlink{class_line_text_aab99135ffd16c4d442f8eebd48e39de7}{operator=}} (const \mbox{\hyperlink{class_line_text}{Line\+Text}} \&other)
+\item 
+\mbox{\hyperlink{class_line_text}{Line\+Text}} \& \mbox{\hyperlink{class_line_text_a006b31af52d34bcb0421cbfaca15f990}{operator=}} (\mbox{\hyperlink{class_line_text}{Line\+Text}} \&\&other)
+\item 
+\+\_\+\+NODISCARD \mbox{\hyperlink{class_font}{Font}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_line_text_aee4db7626d4d15875d834af687296c59}{get\+Font}} () const
+\item 
+void \mbox{\hyperlink{class_line_text_ae53158c19c501d4fd0d65aa67bb6abfe}{set\+Font}} (\mbox{\hyperlink{class_font}{Font}} \&font)
+\item 
+\+\_\+\+NODISCARD const std\+::string \& \mbox{\hyperlink{class_line_text_afc8283e8e0d9a7628a67c71052e8a4fd}{get\+Text}} () const
+\item 
+void \mbox{\hyperlink{class_line_text_a1caf45e7ea9fe7bf748f96563dbf6baf}{set\+Text}} (const std\+::string \&text)
+\item 
+\+\_\+\+NODISCARD const glm\+::vec2 \& \mbox{\hyperlink{class_line_text_a50e0503807a0482c1ba80334e1d3413d}{get\+Position}} () const
+\item 
+void \mbox{\hyperlink{class_line_text_aa6a91e00f938a9daa065fbc0722e94b8}{set\+Position}} (const glm\+::vec2 \&position)
+\item 
+\+\_\+\+NODISCARD float \mbox{\hyperlink{class_line_text_a8a4566e86d199907472508e85c97990f}{get\+Text\+Width}} ()
+\item 
+\+\_\+\+NODISCARD float \mbox{\hyperlink{class_line_text_a656b655a1f35b02fb7bc6760e038303e}{get\+Font\+Size}} () const
+\item 
+void \mbox{\hyperlink{class_line_text_af78a17a01cf3a394d84a44d48caad338}{set\+Font\+Size}} (float size)
+\item 
+void \mbox{\hyperlink{class_line_text_aa97aed4ff3fd8399dd4e55fd80e32e89}{prepare}} ()
+\item 
+void \mbox{\hyperlink{class_line_text_a8223eac23779ee340e767db5b9a0af62}{draw}} (\mbox{\hyperlink{class_custom_shader_program}{Custom\+Shader\+Program}} \&shader)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Utils\+::\+Copyable\+And\+Moveable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable_ad7445ae6ca6d9c801f79ac34608dddd0}{Copyable\+And\+Moveable}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable_aa0f3cdfee10b73097be37e2a9fc8ae12}{\texorpdfstring{$\sim$}{\string~}\+Copyable\+And\+Moveable}} ()=default
+\item 
+\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable_a258acf892b4983a0da3c20baf6366b7e}{Copyable\+And\+Moveable}} (\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Copyable\+And\+Moveable}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Copyable\+And\+Moveable}} \& \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable_ac4e5e5ced4b661444cf2c56bd5ba016f}{operator=}} (\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Copyable\+And\+Moveable}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable_a39fc86feb60e5517334655cf5ad80001}{Copyable\+And\+Moveable}} (const \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Copyable\+And\+Moveable}} \&)=default
+\item 
+\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Copyable\+And\+Moveable}} \& \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable_a7f769b2aba3ec5461ac6d33cf16f898f}{operator=}} (const \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Copyable\+And\+Moveable}} \&)=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_line_text_a40f7f6d710ecd11e3f57fa0ffacb473f}\label{class_line_text_a40f7f6d710ecd11e3f57fa0ffacb473f} 
+\index{LineText@{LineText}!LineText@{LineText}}
+\index{LineText@{LineText}!LineText@{LineText}}
+\doxysubsubsection{\texorpdfstring{LineText()}{LineText()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Line\+Text\+::\+Line\+Text (\begin{DoxyParamCaption}\item[{bool}]{auto\+Prepare }\end{DoxyParamCaption})}
+
+\Hypertarget{class_line_text_aab0cbcd8847ac149df65f5d4b5ef0e0b}\label{class_line_text_aab0cbcd8847ac149df65f5d4b5ef0e0b} 
+\index{LineText@{LineText}!LineText@{LineText}}
+\index{LineText@{LineText}!LineText@{LineText}}
+\doxysubsubsection{\texorpdfstring{LineText()}{LineText()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Line\+Text\+::\+Line\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_font}{Font}} \&}]{font,  }\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})}
+
+\Hypertarget{class_line_text_aac9b86bba08c6d2e7fc1e09a71b6189b}\label{class_line_text_aac9b86bba08c6d2e7fc1e09a71b6189b} 
+\index{LineText@{LineText}!LineText@{LineText}}
+\index{LineText@{LineText}!LineText@{LineText}}
+\doxysubsubsection{\texorpdfstring{LineText()}{LineText()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Line\+Text\+::\+Line\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_line_text_ae4ce8c160ba9d056352da8cd1402b4f8}\label{class_line_text_ae4ce8c160ba9d056352da8cd1402b4f8} 
+\index{LineText@{LineText}!````~LineText@{\texorpdfstring{$\sim$}{\string~}LineText}}
+\index{````~LineText@{\texorpdfstring{$\sim$}{\string~}LineText}!LineText@{LineText}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}LineText()}{\string~LineText()}}
+{\footnotesize\ttfamily Line\+Text\+::\texorpdfstring{$\sim$}{\string~}\+Line\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_line_text_a57cc2bf3cadcf73d5739f3cf83fddecd}\label{class_line_text_a57cc2bf3cadcf73d5739f3cf83fddecd} 
+\index{LineText@{LineText}!LineText@{LineText}}
+\index{LineText@{LineText}!LineText@{LineText}}
+\doxysubsubsection{\texorpdfstring{LineText()}{LineText()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Line\+Text\+::\+Line\+Text (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_line_text}{Line\+Text}} \&}]{other }\end{DoxyParamCaption})}
+
+\Hypertarget{class_line_text_a074c72c421553a54bf4fdd14839e29b6}\label{class_line_text_a074c72c421553a54bf4fdd14839e29b6} 
+\index{LineText@{LineText}!LineText@{LineText}}
+\index{LineText@{LineText}!LineText@{LineText}}
+\doxysubsubsection{\texorpdfstring{LineText()}{LineText()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Line\+Text\+::\+Line\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_line_text}{Line\+Text}} \&\&}]{other }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_line_text_a8223eac23779ee340e767db5b9a0af62}\label{class_line_text_a8223eac23779ee340e767db5b9a0af62} 
+\index{LineText@{LineText}!draw@{draw}}
+\index{draw@{draw}!LineText@{LineText}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Line\+Text\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_custom_shader_program}{Custom\+Shader\+Program}} \&}]{shader }\end{DoxyParamCaption})}
+
+\Hypertarget{class_line_text_aee4db7626d4d15875d834af687296c59}\label{class_line_text_aee4db7626d4d15875d834af687296c59} 
+\index{LineText@{LineText}!getFont@{getFont}}
+\index{getFont@{getFont}!LineText@{LineText}}
+\doxysubsubsection{\texorpdfstring{getFont()}{getFont()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_font}{Font}} \texorpdfstring{$\ast$}{*} Line\+Text\+::get\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_line_text_a656b655a1f35b02fb7bc6760e038303e}\label{class_line_text_a656b655a1f35b02fb7bc6760e038303e} 
+\index{LineText@{LineText}!getFontSize@{getFontSize}}
+\index{getFontSize@{getFontSize}!LineText@{LineText}}
+\doxysubsubsection{\texorpdfstring{getFontSize()}{getFontSize()}}
+{\footnotesize\ttfamily float Line\+Text\+::get\+Font\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_line_text_a50e0503807a0482c1ba80334e1d3413d}\label{class_line_text_a50e0503807a0482c1ba80334e1d3413d} 
+\index{LineText@{LineText}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!LineText@{LineText}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily const glm\+::vec2 \& Line\+Text\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_line_text_afc8283e8e0d9a7628a67c71052e8a4fd}\label{class_line_text_afc8283e8e0d9a7628a67c71052e8a4fd} 
+\index{LineText@{LineText}!getText@{getText}}
+\index{getText@{getText}!LineText@{LineText}}
+\doxysubsubsection{\texorpdfstring{getText()}{getText()}}
+{\footnotesize\ttfamily const std\+::string \& Line\+Text\+::get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_line_text_a8a4566e86d199907472508e85c97990f}\label{class_line_text_a8a4566e86d199907472508e85c97990f} 
+\index{LineText@{LineText}!getTextWidth@{getTextWidth}}
+\index{getTextWidth@{getTextWidth}!LineText@{LineText}}
+\doxysubsubsection{\texorpdfstring{getTextWidth()}{getTextWidth()}}
+{\footnotesize\ttfamily float Line\+Text\+::get\+Text\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_line_text_aab99135ffd16c4d442f8eebd48e39de7}\label{class_line_text_aab99135ffd16c4d442f8eebd48e39de7} 
+\index{LineText@{LineText}!operator=@{operator=}}
+\index{operator=@{operator=}!LineText@{LineText}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_line_text}{Line\+Text}} \& Line\+Text\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_line_text}{Line\+Text}} \&}]{other }\end{DoxyParamCaption})}
+
+\Hypertarget{class_line_text_a006b31af52d34bcb0421cbfaca15f990}\label{class_line_text_a006b31af52d34bcb0421cbfaca15f990} 
+\index{LineText@{LineText}!operator=@{operator=}}
+\index{operator=@{operator=}!LineText@{LineText}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_line_text}{Line\+Text}} \& Line\+Text\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_line_text}{Line\+Text}} \&\&}]{other }\end{DoxyParamCaption})}
+
+\Hypertarget{class_line_text_aa97aed4ff3fd8399dd4e55fd80e32e89}\label{class_line_text_aa97aed4ff3fd8399dd4e55fd80e32e89} 
+\index{LineText@{LineText}!prepare@{prepare}}
+\index{prepare@{prepare}!LineText@{LineText}}
+\doxysubsubsection{\texorpdfstring{prepare()}{prepare()}}
+{\footnotesize\ttfamily void Line\+Text\+::prepare (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_line_text_ae53158c19c501d4fd0d65aa67bb6abfe}\label{class_line_text_ae53158c19c501d4fd0d65aa67bb6abfe} 
+\index{LineText@{LineText}!setFont@{setFont}}
+\index{setFont@{setFont}!LineText@{LineText}}
+\doxysubsubsection{\texorpdfstring{setFont()}{setFont()}}
+{\footnotesize\ttfamily void Line\+Text\+::set\+Font (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_font}{Font}} \&}]{font }\end{DoxyParamCaption})}
+
+\Hypertarget{class_line_text_af78a17a01cf3a394d84a44d48caad338}\label{class_line_text_af78a17a01cf3a394d84a44d48caad338} 
+\index{LineText@{LineText}!setFontSize@{setFontSize}}
+\index{setFontSize@{setFontSize}!LineText@{LineText}}
+\doxysubsubsection{\texorpdfstring{setFontSize()}{setFontSize()}}
+{\footnotesize\ttfamily void Line\+Text\+::set\+Font\+Size (\begin{DoxyParamCaption}\item[{float}]{size }\end{DoxyParamCaption})}
+
+\Hypertarget{class_line_text_aa6a91e00f938a9daa065fbc0722e94b8}\label{class_line_text_aa6a91e00f938a9daa065fbc0722e94b8} 
+\index{LineText@{LineText}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!LineText@{LineText}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Line\+Text\+::set\+Position (\begin{DoxyParamCaption}\item[{const glm\+::vec2 \&}]{position }\end{DoxyParamCaption})}
+
+\Hypertarget{class_line_text_a1caf45e7ea9fe7bf748f96563dbf6baf}\label{class_line_text_a1caf45e7ea9fe7bf748f96563dbf6baf} 
+\index{LineText@{LineText}!setText@{setText}}
+\index{setText@{setText}!LineText@{LineText}}
+\doxysubsubsection{\texorpdfstring{setText()}{setText()}}
+{\footnotesize\ttfamily void Line\+Text\+::set\+Text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})}
+

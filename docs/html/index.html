@@ -1,30 +1,67 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
 <title>VaKon2D: VaKon2D</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/ValeriiKoniushenko/VaKon2D" class="github-corner" title="View source on GitHub" target="_blank">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr id="projectrow">
+ <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="doxyicon.png"/></td>
-  <td id="projectalign">
-   <div id="projectname">VaKon2D<span id="projectnumber">&#160;1.0</span>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">VaKon2D
    </div>
-   <div id="projectbrief">Game engine</div>
   </td>
  </tr>
  </tbody>
@@ -49,6 +86,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -71,23 +124,24 @@ $(function() {
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title"><a class="el" href="class_va_kon2_d.html">VaKon2D</a> </div></div>
+  <div class="headertitle"><div class="title">VaKon2D </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a> </p>
-<h1><a class="anchor" id="autotoc_md13"></a>
-⭐ Intro</h1>
+<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a> <img src="https://img.shields.io/github/actions/workflow/status/ValeriiKoniushenko/VaKon2D/c-cpp.yml" alt="GitHub Workflow Status (with event)" class="inline"/> <img src="https://img.shields.io/github/license/ValeriiKoniushenko/VaKon2D" alt="GitHub" class="inline"/> <img src="https://img.shields.io/badge/c%2B%2B-20-brightgreen" alt="Static Badge" class="inline"/> <img src="https://img.shields.io/badge/boost-1.8-red" alt="Static Badge" class="inline"/> <img src="https://img.shields.io/badge/OpenGL-3.x-red" alt="Static Badge" class="inline"/></p>
+<h1><a class="anchor" id="autotoc_md0"></a>
+VaKon2D</h1>
+<h2><a class="anchor" id="autotoc_md1"></a>
+⭐ Intro</h2>
 <p>I have been creating a game engine using raw OpenGL and my wrappings of its. You can use it to write your own game. It's easier than writing on raw OpenGL, and it gives more abilities than SFML. For example, you can create a game like a Terraria, or some RPG game. <b>Accomplishment of this engine, that all possible calculations will process your GPU.</b> <br  />
  Also, you can use this engine as an OpenGL wrapper for the usual code of OpenGL. It has an MIT license, so use it everywhere!</p>
-<h1><a class="anchor" id="autotoc_md14"></a>
-Table of Contents</h1>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Table of Contents</h2>
 <blockquote class="doxtable">
 <p>&zwj;</p><ol type="1">
 <li>Getting started<ol type="a">
-<li>At first, let's install it</li>
-<li>How to write your own game?</li>
-<li>Where to find binaries and how to build a &lt;u&gt;game&lt;/u&gt;?</li>
-<li>At first, let's install it</li>
+<li>Let's install it</li>
+<li>Writing a game</li>
+<li>Getting binaries</li>
 </ol>
 </li>
 <li>Game-template</li>
@@ -97,11 +151,18 @@ Table of Contents</h1>
 <li>Code-tutorial &amp; classes &amp; examples<ol type="a">
 <li>Init your game environment</li>
 <li>Write your shader</li>
-<li>Create your own shader-program</li>
-<li>Load textures</li>
-<li>Creating the first rectangle</li>
+<li>Shader-program</li>
+<li>Textures</li>
+<li>First widget</li>
 <li>Main Loop</li>
 <li>Timers</li>
+<li>Keyboard</li>
+<li>Mouse</li>
+<li>Delegate</li>
+<li>World Variables</li>
+<li>Widget Reflector</li>
+<li>Input Actions</li>
+<li>Text</li>
 <li>Using OpenGL wrappers</li>
 </ol>
 </li>
@@ -109,10 +170,11 @@ Table of Contents</h1>
 <li>Feedback &amp; Contacts </li>
 </ol>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md15"></a>
-🎉 Getting started</h1>
-<h2><a class="anchor" id="autotoc_md16"></a>
-At first, let's install it</h2>
+<h2><a class="anchor" id="autotoc_md3"></a>
+🎉 Getting started</h2>
+<p>To start develop your own game you have to do the next steps:</p>
+<h3><a class="anchor" id="autotoc_md4"></a>
+Step #1: let's install it</h3>
 <ol type="1">
 <li>Download and install <div class="fragment"></div><!-- fragment --> (<a href="https://git-scm.com/downloads">download</a>, <a href="https://github.com/git-guides/install-git">how to install it</a>)</li>
 <li>Download and install some compiler or <code>IDE</code>. I.e. <div class="fragment"></div><!-- fragment --> (<a href="https://visualstudio.microsoft.com/downloads/">download</a>, <a href="https://learn.microsoft.com/en-us/cpp/build/vscpp-step-0-installation?view=msvc-170">how to install VS</a>)</li>
@@ -124,11 +186,11 @@ At first, let's install it</h2>
 <li>In the CMD run: <code>cmake ../ -DCMAKE_BUILD_TYPE=Debug</code>. If you want to build a Release version, type <code>Release</code> instead of <code>Debug</code>. Also, if you have a custom compiler, you need to write a path to this compiler.</li>
 <li>In the CMD run: <code>cmake --build .</code></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md17"></a>
-How to write your own game?</h2>
+<h3><a class="anchor" id="autotoc_md5"></a>
+Step #2: writing a game</h3>
 <ol type="1">
 <li>After a successful build (previous point), you can write your own game</li>
-<li>Go to folder /game/</li>
+<li>Go to folder <code>/game/</code></li>
 <li>There you'll find three folder: <code>assets</code>, <code>include</code>, <code>source</code><ol type="a">
 <li>What to store in the folder <code>asset</code>: you can create your own directories to store your game data(i.e. textures, audio files, shaders, etc.)</li>
 <li>What to store in the folder <code>include</code>: you can store your include files(.h/.hpp) for your own game</li>
@@ -137,20 +199,20 @@ How to write your own game?</h2>
 </li>
 <li>Put your sources into <code>source</code> directory and your headers to <code>include</code> directory</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md18"></a>
-Where to find binaries and how to build a &lt;u&gt;game&lt;/u&gt;?</h2>
-<p>After previous points, you can say: <em>How to get an <code>.exe</code> file of my game?</em> - it's easy! Let's do it:</p>
+<h3><a class="anchor" id="autotoc_md6"></a>
+Step #3: getting binaries</h3>
+<p>After previous points, you can say: "&lt;i&gt;How to get an ```.exe``` file of my game?&lt;/i&gt;" - it's easy! Let's do it:</p>
 <ol type="1">
-<li>Make this point</li>
+<li>Make step #1</li>
 <li>Go to <code>/build/game/</code></li>
 <li>Looking at your compiler, you can find in this folder(or sub-folders)<code>VaKon2D.exe</code> file - it's your game</li>
 <li>You'll need a folder <code>assets</code> and a file <code>VaKon2D.exe</code> for successful launching of a game. Just pack your game with these two items - that's all!</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md19"></a>
-📑 Game-template</h1>
+<h2><a class="anchor" id="autotoc_md7"></a>
+📑 Game-template</h2>
 <p>Basic game template, just an example of a game, you can find in the folder <code>/game/</code></p>
-<h1><a class="anchor" id="autotoc_md20"></a>
-📑 If you want to rewrite game-template</h1>
+<h2><a class="anchor" id="autotoc_md8"></a>
+📑 If you want to rewrite game-template</h2>
 <ol type="1">
 <li>You can edit <code>/game/source/main.cpp</code> and remove all needed files from the directory <code>/game</code></li>
 <li>One rule: don't forget the next rows at the start of your game:</li>
@@ -159,17 +221,19 @@ Where to find binaries and how to build a &lt;u&gt;game&lt;/u&gt;?</h2>
 <div class="line"><span class="comment">// !!!!!! don&#39;t change an order !!!!!! --&gt;</span></div>
 <div class="line"><a class="code hl_function" href="namespace_logger.html#a96a194700a9ee08f34260ee6a7dd5a5f">Logger::initLogger</a>();</div>
 <div class="line"><a class="code hl_function" href="class_glfw_wrapper.html#a21fc9162a53ab511982e81fb156cffbf">GlfwWrapper::initGlfw</a>(3, 3);</div>
-<div class="line">GetWindow().<a class="code hl_function" href="class_window.html#a05e6957ecc6f3d66c2bd183b583e9905">create</a>({800, 600}, <span class="stringliteral">&quot;Game name&quot;</span>);</div>
+<div class="line"><a class="code hl_function" href="_window_8h.html#ac8e1e878d504288e5a3a09cdefd176d0">GetWindow</a>().<a class="code hl_function" href="class_window.html#a05e6957ecc6f3d66c2bd183b583e9905">create</a>({800, 600}, <span class="stringliteral">&quot;Game name&quot;</span>);</div>
 <div class="line"><a class="code hl_function" href="class_glad_wrapper.html#a62d3a840bad357835a3883e804748ef9">GladWrapper::initGlad</a>();</div>
-<div class="line">GetWorld().<a class="code hl_function" href="class_world.html#a0150607a49c2400d5c848159dd02d533">init</a>();</div>
+<div class="line"><a class="code hl_function" href="_world_8h.html#aec2f3bad790c3ffedf70f63a0998016a">GetWorld</a>().<a class="code hl_function" href="class_world.html#a0150607a49c2400d5c848159dd02d533">init</a>();</div>
 <div class="line"><span class="comment">// &lt;---------------------------------------</span></div>
-<div class="ttc" id="aclass_glad_wrapper_html_a62d3a840bad357835a3883e804748ef9"><div class="ttname"><a href="class_glad_wrapper.html#a62d3a840bad357835a3883e804748ef9">GladWrapper::initGlad</a></div><div class="ttdeci">static void initGlad()</div><div class="ttdef"><b>Definition</b> GladWrapper.cpp:33</div></div>
+<div class="ttc" id="a_window_8h_html_ac8e1e878d504288e5a3a09cdefd176d0"><div class="ttname"><a href="_window_8h.html#ac8e1e878d504288e5a3a09cdefd176d0">GetWindow</a></div><div class="ttdeci">Window &amp; GetWindow()</div><div class="ttdef"><b>Definition</b> Window.cpp:117</div></div>
+<div class="ttc" id="a_world_8h_html_aec2f3bad790c3ffedf70f63a0998016a"><div class="ttname"><a href="_world_8h.html#aec2f3bad790c3ffedf70f63a0998016a">GetWorld</a></div><div class="ttdeci">World &amp; GetWorld()</div><div class="ttdef"><b>Definition</b> World.cpp:57</div></div>
+<div class="ttc" id="aclass_glad_wrapper_html_a62d3a840bad357835a3883e804748ef9"><div class="ttname"><a href="class_glad_wrapper.html#a62d3a840bad357835a3883e804748ef9">GladWrapper::initGlad</a></div><div class="ttdeci">static void initGlad()</div><div class="ttdef"><b>Definition</b> GladWrapper.cpp:36</div></div>
 <div class="ttc" id="aclass_glfw_wrapper_html_a21fc9162a53ab511982e81fb156cffbf"><div class="ttname"><a href="class_glfw_wrapper.html#a21fc9162a53ab511982e81fb156cffbf">GlfwWrapper::initGlfw</a></div><div class="ttdeci">static void initGlfw(int majorVersion, int minorVersion)</div><div class="ttdef"><b>Definition</b> GlfwWrapper.cpp:52</div></div>
-<div class="ttc" id="aclass_window_html_a05e6957ecc6f3d66c2bd183b583e9905"><div class="ttname"><a href="class_window.html#a05e6957ecc6f3d66c2bd183b583e9905">Window::create</a></div><div class="ttdeci">void create(Utils::ISize2D size, const std::string &amp;title)</div><div class="ttdef"><b>Definition</b> Window.cpp:47</div></div>
+<div class="ttc" id="aclass_window_html_a05e6957ecc6f3d66c2bd183b583e9905"><div class="ttname"><a href="class_window.html#a05e6957ecc6f3d66c2bd183b583e9905">Window::create</a></div><div class="ttdeci">void create(Utils::ISize2D size, const std::string &amp;title)</div><div class="ttdef"><b>Definition</b> Window.cpp:57</div></div>
 <div class="ttc" id="aclass_world_html_a0150607a49c2400d5c848159dd02d533"><div class="ttname"><a href="class_world.html#a0150607a49c2400d5c848159dd02d533">World::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition</b> World.cpp:27</div></div>
 <div class="ttc" id="anamespace_logger_html_a96a194700a9ee08f34260ee6a7dd5a5f"><div class="ttname"><a href="namespace_logger.html#a96a194700a9ee08f34260ee6a7dd5a5f">Logger::initLogger</a></div><div class="ttdeci">void initLogger()</div><div class="ttdef"><b>Definition</b> Logger.cpp:28</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md21"></a>
-📄 How to generate a docs(doxygen)</h1>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
+📄 How to generate a docs(doxygen)</h2>
 <ol type="1">
 <li>Download and install doxygen(<a href="https://www.doxygen.nl/download.html">download</a>)</li>
 <li>Add doxygen.exe to the Environment Variable(<a href="https://docs.oracle.com/en/database/oracle/machine-learning/oml4r/1.5.1/oread/creating-and-modifying-environment-variables-on-windows.html#GUID-DD6F9982-60D5-48F6-8270-A27EC53807D0">how to do it</a>)</li>
@@ -177,26 +241,39 @@ Where to find binaries and how to build a &lt;u&gt;game&lt;/u&gt;?</h2>
 <li>Run the next command: <code>doxygen</code></li>
 <li>Go to <code>docs/html/index.html</code> - it's your doc!</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md22"></a>
-📃 Docs</h1>
+<h2><a class="anchor" id="autotoc_md10"></a>
+📃 Docs</h2>
 <p>You can find docs by engine classes in the next directory: <code>/docs/html/index.html</code></p>
-<h1><a class="anchor" id="autotoc_md23"></a>
-📌 Code-tutorial &amp; classes &amp; examples:</h1>
-<h2><a class="anchor" id="autotoc_md24"></a>
-Init your game environment</h2>
+<h2><a class="anchor" id="autotoc_md11"></a>
+📌 Code-tutorial &amp; classes &amp; examples:</h2>
+<h3><a class="anchor" id="autotoc_md12"></a>
+Init your game environment</h3>
 <p>Add the next lines to your code to init game-env:</p>
 <div class="fragment"><div class="line"> ++</div>
 <div class="line"><a class="code hl_function" href="namespace_logger.html#a96a194700a9ee08f34260ee6a7dd5a5f">Logger::initLogger</a>();</div>
 <div class="line"><a class="code hl_function" href="class_glfw_wrapper.html#a21fc9162a53ab511982e81fb156cffbf">GlfwWrapper::initGlfw</a>(3, 3);</div>
-<div class="line">GetWindow().<a class="code hl_function" href="class_window.html#a05e6957ecc6f3d66c2bd183b583e9905">create</a>({800, 600}, <span class="stringliteral">&quot;Game name&quot;</span>);</div>
+<div class="line"><a class="code hl_function" href="_window_8h.html#ac8e1e878d504288e5a3a09cdefd176d0">GetWindow</a>().<a class="code hl_function" href="class_window.html#a05e6957ecc6f3d66c2bd183b583e9905">create</a>({800, 600}, <span class="stringliteral">&quot;Game name&quot;</span>);</div>
 <div class="line"><a class="code hl_function" href="class_glad_wrapper.html#a62d3a840bad357835a3883e804748ef9">GladWrapper::initGlad</a>();</div>
-<div class="line">GetWorld().<a class="code hl_function" href="class_world.html#a0150607a49c2400d5c848159dd02d533">init</a>();</div>
+<div class="line"><a class="code hl_function" href="_world_8h.html#aec2f3bad790c3ffedf70f63a0998016a">GetWorld</a>().<a class="code hl_function" href="class_world.html#a0150607a49c2400d5c848159dd02d533">init</a>();</div>
 </div><!-- fragment --><p>First, you should initialize the game logger. It will write some logs to /game/logs folder. The logger be used in all places of the next code, so you should initialize it first. After that, initialize <a class="el" href="class_glfw_wrapper.html">GlfwWrapper</a> to get the ability to work with a window, window-event. If you want, you can change the major and minor versions. You can't create a window or initialize a GLAD without initializing GLFW. Let's initialize your window:</p>
 <div class="fragment"><div class="line"> ++</div>
-<div class="line">GetWindow().<a class="code hl_function" href="class_window.html#a05e6957ecc6f3d66c2bd183b583e9905">create</a>({800, 600}, <span class="stringliteral">&quot;Game name&quot;</span>); </div>
+<div class="line"><a class="code hl_function" href="_window_8h.html#ac8e1e878d504288e5a3a09cdefd176d0">GetWindow</a>().<a class="code hl_function" href="class_window.html#a05e6957ecc6f3d66c2bd183b583e9905">create</a>({800, 600}, <span class="stringliteral">&quot;Game name&quot;</span>); </div>
 </div><!-- fragment --><p>You can pass your values to the window's size or window's title. After that going forward GLAD initialization and <a class="el" href="class_world.html">World</a> initialization.</p>
-<h2><a class="anchor" id="autotoc_md25"></a>
-Write your shader</h2>
+<p>PS: don't forget to connect dependencies to your <code>CMakeLists.txt</code> </p><div class="fragment"><div class="line"># /game/CMakeLists.txt</div>
+<div class="line">target_link_libraries(</div>
+<div class="line">    VaKon2D PUBLIC</div>
+<div class="line">    ...</div>
+<div class="line">        Core-Wrappers</div>
+<div class="line">        Glad</div>
+<div class="line">        Logger</div>
+<div class="line">        Misc</div>
+<div class="line">        World</div>
+<div class="line">        glfw</div>
+<div class="line">    ...</div>
+<div class="line">)</div>
+</div><!-- fragment --><hr  />
+<h3><a class="anchor" id="autotoc_md14"></a>
+Write your shader</h3>
 <p>How to include it: <code>#include "Shader.h"</code> and don't forget to add <code>Core-Wrappers</code> to your CMake-game At the first you can write simple shader, like the next:</p>
 <div class="fragment"><div class="line">// ======FRAGMENT SHADER=======</div>
 <div class="line">#version 330 core</div>
@@ -226,8 +303,16 @@ Write your shader</h2>
 <div class="ttc" id="aclass_gl_1_1_shader_html_a39b65e35816cebb4c1f32694d3925019a37d01b98065725fe3a1d30acf3a0064a"><div class="ttname"><a href="class_gl_1_1_shader.html#a39b65e35816cebb4c1f32694d3925019a37d01b98065725fe3a1d30acf3a0064a">Gl::Shader::Type::Fragment</a></div><div class="ttdeci">@ Fragment</div></div>
 <div class="ttc" id="aclass_gl_1_1_shader_html_a39b65e35816cebb4c1f32694d3925019ab22b929ba52471a02d18bb3a4e4472e6"><div class="ttname"><a href="class_gl_1_1_shader.html#a39b65e35816cebb4c1f32694d3925019ab22b929ba52471a02d18bb3a4e4472e6">Gl::Shader::Type::Vertex</a></div><div class="ttdeci">@ Vertex</div></div>
 <div class="ttc" id="aclass_shader_html"><div class="ttname"><a href="class_shader.html">Shader</a></div><div class="ttdef"><b>Definition</b> Shader.h:31</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md26"></a>
-Create your own shader-program</h2>
+</div><!-- fragment --><p>PS: don't forget to connect <code>Core-Wrappers</code> to your <code>CMakeLists.txt</code> </p><div class="fragment"><div class="line"># /game/CMakeLists.txt</div>
+<div class="line">target_link_libraries(</div>
+<div class="line">    VaKon2D PUBLIC</div>
+<div class="line">    ...</div>
+<div class="line">    Core-Wrappers</div>
+<div class="line">    ...</div>
+<div class="line">)</div>
+</div><!-- fragment --><hr  />
+<h3><a class="anchor" id="autotoc_md16"></a>
+Shader-program</h3>
 <p><a class="el" href="class_shader.html">Shader</a> program will save and transfer the shader[s] to the GPU How to include it: <code>#include "CustomShaderProgram.h"</code> and don't forget to add <code>Core-Wrappers</code> to your CMake-game dependencies(<code>target_link_libraries(YouGameTarget PRIVATE Core-wrappers)</code> Create the first shader-program and attach shaders to it.</p>
 <div class="fragment"><div class="line"> ++</div>
 <div class="line"><a class="code hl_class" href="class_custom_shader_program.html">CustomShaderProgram</a> program(<span class="keyword">true</span>);</div>
@@ -238,8 +323,16 @@ Create your own shader-program</h2>
 <p>And now you can use your shader program. Just write</p>
 <div class="fragment"><div class="line"> ++</div>
 <div class="line">program.use();</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md27"></a>
-Load textures</h2>
+</div><!-- fragment --><p>PS: don't forget to connect <code>Core-Wrappers</code> to your <code>CMakeLists.txt</code> </p><div class="fragment"><div class="line"># /game/CMakeLists.txt</div>
+<div class="line">target_link_libraries(</div>
+<div class="line">    VaKon2D PUBLIC</div>
+<div class="line">    ...</div>
+<div class="line">    Core-Wrappers</div>
+<div class="line">    ...</div>
+<div class="line">)</div>
+</div><!-- fragment --><hr  />
+<h3><a class="anchor" id="autotoc_md18"></a>
+Textures</h3>
 <p>To load texture we should use a class <a class="el" href="class_texture.html">Texture</a>(<code>#include "Texture.h"</code> and don't forget to add <code>Core-Wrappers</code> to your CMake-game dependencies(<code>target_link_libraries(YouGameTarget PRIVATE Core-wrappers)</code>)) and use class <code><a class="el" href="class_image.html">Image</a></code> too(<code>#include "Image.h"</code>)</p>
 <div class="fragment"><div class="line"> ++</div>
 <div class="line"><a class="code hl_class" href="class_texture.html">Texture</a> texture(<a class="code hl_enumvalue" href="class_gl_1_1_texture.html#ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995">Gl::Texture::Target::Texture2D</a>, <span class="keyword">true</span>, <span class="keyword">true</span>);</div>
@@ -252,53 +345,86 @@ Load textures</h2>
 <div class="ttc" id="aclass_image_html"><div class="ttname"><a href="class_image.html">Image</a></div><div class="ttdef"><b>Definition</b> Image.h:33</div></div>
 <div class="ttc" id="aclass_texture_html"><div class="ttname"><a href="class_texture.html">Texture</a></div><div class="ttdef"><b>Definition</b> Texture.h:35</div></div>
 </div><!-- fragment --><p>We want to render texture 2D, so in the <a class="el" href="class_texture.html">Texture</a>'s constructor we should pass <code><a class="el" href="class_gl_1_1_texture.html#ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995">Gl::Texture::Target::Texture2D</a></code>. Also, if you want to generate and bind a texture 'in-place', we can pass <code>true</code> and <code>true</code> like the 2nd and 3rd argument of this class. After that we are loading an image: <code><a class="el" href="class_image.html">Image</a> image("assets/textures/apple.png")</code> The class <a class="el" href="class_image.html">Image</a> provides more convenient interface for loading an images and getting some data about it for you or fot the textures. Don't forget to set image to your texture: <code>texture.setImage(image);</code> If you want to set mag &amp; min filter, you can use the next functions to do it: <code>Texture::steMinFilter</code> &amp; <code><a class="el" href="class_texture.html#a345a432339c7c9c8aec9f90dbff0c6c7">Texture::setMagFilter</a></code></p>
-<h2><a class="anchor" id="autotoc_md28"></a>
-Creating the first rectangle</h2>
+<p>PS: don't forget to connect <code>Core-Wrappers</code> to your <code>CMakeLists.txt</code> </p><div class="fragment"><div class="line"># /game/CMakeLists.txt</div>
+<div class="line">target_link_libraries(</div>
+<div class="line">    VaKon2D PUBLIC</div>
+<div class="line">    ...</div>
+<div class="line">    Core-Wrappers</div>
+<div class="line">    ...</div>
+<div class="line">)</div>
+</div><!-- fragment --><hr  />
+<h3><a class="anchor" id="autotoc_md20"></a>
+First widget</h3>
 <div class="fragment"><div class="line"> ++</div>
-<div class="line"><span class="keyword">class </span><a class="code hl_class" href="class_rectangle.html">Rectangle</a> rect;</div>
-<div class="line">rect.<a class="code hl_function" href="class_rectangle.html#ac113b72a8a69c25ad31d244de55256d3">setTexture</a>(texture);</div>
-<div class="line">rect.prepare();</div>
-<div class="ttc" id="aclass_rectangle_html"><div class="ttname"><a href="class_rectangle.html">Rectangle</a></div><div class="ttdef"><b>Definition</b> Rectangle.h:32</div></div>
-<div class="ttc" id="aclass_rectangle_html_ac113b72a8a69c25ad31d244de55256d3"><div class="ttname"><a href="class_rectangle.html#ac113b72a8a69c25ad31d244de55256d3">Rectangle::setTexture</a></div><div class="ttdeci">void setTexture(Texture &amp;texture)</div><div class="ttdef"><b>Definition</b> Rectangle.cpp:56</div></div>
-</div><!-- fragment --><p>We should create our class <a class="el" href="class_rectangle.html">Rectangle</a> and set a texture to it. After that don't forget to call function <code><a class="el" href="class_rectangle.html#ab3d907be78e1573b19761b2febdb5be2">Rectangle::prepare</a></code> - to prepare all OpenGL data. This function you should call only one time.</p>
-<h2><a class="anchor" id="autotoc_md29"></a>
-Main Loop</h2>
+<div class="line"><a class="code hl_class" href="class_widget.html">Widget</a> rect;</div>
+<div class="line">rect.<a class="code hl_function" href="class_widget.html#a97970440e5b29885de5cee559dc545af">setTexture</a>(texture);</div>
+<div class="line">rect.<a class="code hl_function" href="class_widget.html#aa4ffe18f3d118a05fc85bfdbf17e69f4">prepare</a>();</div>
+<div class="ttc" id="aclass_widget_html"><div class="ttname"><a href="class_widget.html">Widget</a></div><div class="ttdef"><b>Definition</b> Widget.h:38</div></div>
+<div class="ttc" id="aclass_widget_html_a97970440e5b29885de5cee559dc545af"><div class="ttname"><a href="class_widget.html#a97970440e5b29885de5cee559dc545af">Widget::setTexture</a></div><div class="ttdeci">void setTexture(Texture &amp;texture)</div><div class="ttdef"><b>Definition</b> Widget.cpp:80</div></div>
+<div class="ttc" id="aclass_widget_html_aa4ffe18f3d118a05fc85bfdbf17e69f4"><div class="ttname"><a href="class_widget.html#aa4ffe18f3d118a05fc85bfdbf17e69f4">Widget::prepare</a></div><div class="ttdeci">void prepare()</div><div class="ttdef"><b>Definition</b> Widget.cpp:90</div></div>
+</div><!-- fragment --><p>We should create our class Rectangle and set a texture to it. After that don't forget to call function <code>Rectangle::prepare</code> - to prepare all OpenGL data. This function you should call only one time.</p>
+<p>PS: don't forget to connect <code>Shapes</code> to your <code>CMakeLists.txt</code> </p><div class="fragment"><div class="line"># /game/CMakeLists.txt</div>
+<div class="line">target_link_libraries(</div>
+<div class="line">    VaKon2D PUBLIC</div>
+<div class="line">    ...</div>
+<div class="line">    Shapes</div>
+<div class="line">    ...</div>
+<div class="line">)</div>
+</div><!-- fragment --><hr  />
+<h3><a class="anchor" id="autotoc_md22"></a>
+Main Loop</h3>
 <div class="fragment"><div class="line"> ++</div>
-<div class="line"><span class="keywordflow">while</span> (!GetWindow().shouldClose())</div>
+<div class="line"><span class="keywordflow">while</span> (!<a class="code hl_function" href="_window_8h.html#ac8e1e878d504288e5a3a09cdefd176d0">GetWindow</a>().shouldClose())</div>
 <div class="line">{</div>
-<div class="line">    GetWindow().<a class="code hl_function" href="class_window.html#a9cbb416a1ebaa3ecbc9271b1ec0858f4">clearColor</a>(0.2f, 0.3f, 0.3f, 1.0f);</div>
-<div class="line">    GetWindow().<a class="code hl_function" href="class_window.html#af64a20e4e611ac92f8b4ea45da167a4f">clear</a>(GL_COLOR_BUFFER_BIT);</div>
+<div class="line">    <a class="code hl_function" href="_window_8h.html#ac8e1e878d504288e5a3a09cdefd176d0">GetWindow</a>().<a class="code hl_function" href="class_window.html#a9cbb416a1ebaa3ecbc9271b1ec0858f4">clearColor</a>(0.2f, 0.3f, 0.3f, 1.0f);</div>
+<div class="line">    <a class="code hl_function" href="_window_8h.html#ac8e1e878d504288e5a3a09cdefd176d0">GetWindow</a>().<a class="code hl_function" href="class_window.html#af64a20e4e611ac92f8b4ea45da167a4f">clear</a>(GL_COLOR_BUFFER_BIT);</div>
 <div class="line"> </div>
-<div class="line">    rect.draw(program);</div>
+<div class="line">    rect.<a class="code hl_function" href="class_widget.html#a80deec65bec85f16a0dc236e1e1439b6">draw</a>(program);</div>
 <div class="line"> </div>
-<div class="line">    GetWindow().<a class="code hl_function" href="class_window.html#af6ffedb8d12d5551bdb4c298de87ed56">swapBuffers</a>();</div>
-<div class="line">    GetWindow().<a class="code hl_function" href="class_window.html#a5abb541ee62c814dc7a7037140af7e8f">pollEvent</a>();</div>
+<div class="line">    <a class="code hl_function" href="_window_8h.html#ac8e1e878d504288e5a3a09cdefd176d0">GetWindow</a>().<a class="code hl_function" href="class_window.html#af6ffedb8d12d5551bdb4c298de87ed56">swapBuffers</a>();</div>
+<div class="line">    <a class="code hl_function" href="_window_8h.html#ac8e1e878d504288e5a3a09cdefd176d0">GetWindow</a>().<a class="code hl_function" href="class_window.html#a5abb541ee62c814dc7a7037140af7e8f">pollEvent</a>();</div>
 <div class="line"> </div>
-<div class="line">    GetWorld().<a class="code hl_function" href="class_world.html#aac8c1fde63c06577ffc648aaefdb37f0">update</a>();</div>
+<div class="line">    <a class="code hl_function" href="_world_8h.html#aec2f3bad790c3ffedf70f63a0998016a">GetWorld</a>().<a class="code hl_function" href="class_world.html#aac8c1fde63c06577ffc648aaefdb37f0">update</a>();</div>
 <div class="line">}</div>
-<div class="ttc" id="aclass_window_html_a5abb541ee62c814dc7a7037140af7e8f"><div class="ttname"><a href="class_window.html#a5abb541ee62c814dc7a7037140af7e8f">Window::pollEvent</a></div><div class="ttdeci">void pollEvent()</div><div class="ttdef"><b>Definition</b> Window.cpp:72</div></div>
-<div class="ttc" id="aclass_window_html_a9cbb416a1ebaa3ecbc9271b1ec0858f4"><div class="ttname"><a href="class_window.html#a9cbb416a1ebaa3ecbc9271b1ec0858f4">Window::clearColor</a></div><div class="ttdeci">void clearColor(float r, float g, float b, float a)</div><div class="ttdef"><b>Definition</b> Window.cpp:77</div></div>
-<div class="ttc" id="aclass_window_html_af64a20e4e611ac92f8b4ea45da167a4f"><div class="ttname"><a href="class_window.html#af64a20e4e611ac92f8b4ea45da167a4f">Window::clear</a></div><div class="ttdeci">void clear(int code)</div><div class="ttdef"><b>Definition</b> Window.cpp:82</div></div>
-<div class="ttc" id="aclass_window_html_af6ffedb8d12d5551bdb4c298de87ed56"><div class="ttname"><a href="class_window.html#af6ffedb8d12d5551bdb4c298de87ed56">Window::swapBuffers</a></div><div class="ttdeci">void swapBuffers()</div><div class="ttdef"><b>Definition</b> Window.cpp:67</div></div>
+<div class="ttc" id="aclass_widget_html_a80deec65bec85f16a0dc236e1e1439b6"><div class="ttname"><a href="class_widget.html#a80deec65bec85f16a0dc236e1e1439b6">Widget::draw</a></div><div class="ttdeci">void draw(CustomShaderProgram &amp;shaderProgram) override</div><div class="ttdef"><b>Definition</b> Widget.cpp:47</div></div>
+<div class="ttc" id="aclass_window_html_a5abb541ee62c814dc7a7037140af7e8f"><div class="ttname"><a href="class_window.html#a5abb541ee62c814dc7a7037140af7e8f">Window::pollEvent</a></div><div class="ttdeci">void pollEvent()</div><div class="ttdef"><b>Definition</b> Window.cpp:87</div></div>
+<div class="ttc" id="aclass_window_html_a9cbb416a1ebaa3ecbc9271b1ec0858f4"><div class="ttname"><a href="class_window.html#a9cbb416a1ebaa3ecbc9271b1ec0858f4">Window::clearColor</a></div><div class="ttdeci">void clearColor(float r, float g, float b, float a)</div><div class="ttdef"><b>Definition</b> Window.cpp:92</div></div>
+<div class="ttc" id="aclass_window_html_af64a20e4e611ac92f8b4ea45da167a4f"><div class="ttname"><a href="class_window.html#af64a20e4e611ac92f8b4ea45da167a4f">Window::clear</a></div><div class="ttdeci">void clear(int code)</div><div class="ttdef"><b>Definition</b> Window.cpp:97</div></div>
+<div class="ttc" id="aclass_window_html_af6ffedb8d12d5551bdb4c298de87ed56"><div class="ttname"><a href="class_window.html#af6ffedb8d12d5551bdb4c298de87ed56">Window::swapBuffers</a></div><div class="ttdeci">void swapBuffers()</div><div class="ttdef"><b>Definition</b> Window.cpp:82</div></div>
 <div class="ttc" id="aclass_world_html_aac8c1fde63c06577ffc648aaefdb37f0"><div class="ttname"><a href="class_world.html#aac8c1fde63c06577ffc648aaefdb37f0">World::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition</b> World.cpp:32</div></div>
 </div><!-- fragment --><p>At the start of main loop, we should work while the window is open. After that need to clear background color and clear ColorBufferBit.</p>
 <div class="fragment"><div class="line"> ++</div>
-<div class="line">GetWindow().<a class="code hl_function" href="class_window.html#a9cbb416a1ebaa3ecbc9271b1ec0858f4">clearColor</a>(0.2f, 0.3f, 0.3f, 1.0f);</div>
-<div class="line">GetWindow().<a class="code hl_function" href="class_window.html#af64a20e4e611ac92f8b4ea45da167a4f">clear</a>(GL_COLOR_BUFFER_BIT);</div>
+<div class="line"><a class="code hl_function" href="_window_8h.html#ac8e1e878d504288e5a3a09cdefd176d0">GetWindow</a>().<a class="code hl_function" href="class_window.html#a9cbb416a1ebaa3ecbc9271b1ec0858f4">clearColor</a>(0.2f, 0.3f, 0.3f, 1.0f);</div>
+<div class="line"><a class="code hl_function" href="_window_8h.html#ac8e1e878d504288e5a3a09cdefd176d0">GetWindow</a>().<a class="code hl_function" href="class_window.html#af64a20e4e611ac92f8b4ea45da167a4f">clear</a>(GL_COLOR_BUFFER_BIT);</div>
 </div><!-- fragment --><p>Don't forget to draw your rectangle:</p>
 <div class="fragment"><div class="line"> ++</div>
-<div class="line">rect.draw(program);</div>
+<div class="line">rect.<a class="code hl_function" href="class_widget.html#a80deec65bec85f16a0dc236e1e1439b6">draw</a>(program);</div>
 </div><!-- fragment --><p>And don't forget to process buffers and events. It needs for correct working of all window events.</p>
 <div class="fragment"><div class="line"> ++</div>
-<div class="line">GetWindow().<a class="code hl_function" href="class_window.html#af6ffedb8d12d5551bdb4c298de87ed56">swapBuffers</a>();</div>
-<div class="line">GetWindow().<a class="code hl_function" href="class_window.html#a5abb541ee62c814dc7a7037140af7e8f">pollEvent</a>();</div>
+<div class="line"><a class="code hl_function" href="_window_8h.html#ac8e1e878d504288e5a3a09cdefd176d0">GetWindow</a>().<a class="code hl_function" href="class_window.html#af6ffedb8d12d5551bdb4c298de87ed56">swapBuffers</a>();</div>
+<div class="line"><a class="code hl_function" href="_window_8h.html#ac8e1e878d504288e5a3a09cdefd176d0">GetWindow</a>().<a class="code hl_function" href="class_window.html#a5abb541ee62c814dc7a7037140af7e8f">pollEvent</a>();</div>
 </div><!-- fragment --><p>Also, we have a world data. For example, timers - it's a part of a world. You should update all this data. So, write:</p>
 <div class="fragment"><div class="line"> ++</div>
-<div class="line">GetWorld().<a class="code hl_function" href="class_world.html#aac8c1fde63c06577ffc648aaefdb37f0">update</a>();</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md30"></a>
-Timers</h2>
+<div class="line"><a class="code hl_function" href="_world_8h.html#aec2f3bad790c3ffedf70f63a0998016a">GetWorld</a>().<a class="code hl_function" href="class_world.html#aac8c1fde63c06577ffc648aaefdb37f0">update</a>();</div>
+</div><!-- fragment --><p>PS: don't forget to connect <code><a class="el" href="class_window.html">Window</a></code> &amp; <code>Core-Wrappers</code> to the game's <code>CMakeLists.txt</code> </p><div class="fragment"><div class="line"># /game/CMakeLists.txt</div>
+<div class="line">target_link_libraries(</div>
+<div class="line">    VaKon2D PUBLIC</div>
+<div class="line">    ...</div>
+<div class="line">    Window</div>
+<div class="line">    Core-Wrappers</div>
+<div class="line">    ...</div>
+<div class="line">)</div>
+</div><!-- fragment --><hr  />
+<h3><a class="anchor" id="autotoc_md24"></a>
+Timers</h3>
 <p>If you want work with timers you should add a target <code><a class="el" href="class_world.html">World</a></code> to you <code>target_link_libraries</code> of a game. Example:</p>
-<div class="fragment"><div class="line">target_link_libraries(VaKon2D PUBLIC World)</div>
+<div class="fragment"><div class="line"># /game/CMakeLists.txt</div>
+<div class="line">target_link_libraries(</div>
+<div class="line">    VaKon2D PUBLIC</div>
+<div class="line">    ...</div>
+<div class="line">    World</div>
+<div class="line">    ...</div>
+<div class="line">)</div>
 </div><!-- fragment --><p>After that include <code>Timers.h</code> to your code.</p>
 <p>Now you can use timers in your code. At first, let's create new timer:</p>
 <div class="fragment"><div class="line"> ++</div>
@@ -308,7 +434,8 @@ Timers</h2>
 <div class="fragment"><div class="line"> ++</div>
 <div class="line">timer.<a class="code hl_function" href="class_timer.html#ac22fbf29a9708e0cd8cf0b1576fdba5e">setFrequency</a>(<a class="code hl_typedef" href="class_timer.html#ab9cf496a02ed86e09ec1c98d858bccd4">Timer::Unit</a>(1000));</div>
 <div class="line">timer.<a class="code hl_function" href="class_timer.html#a696f19b4227ef320096bd89965141b78">setMode</a>(<a class="code hl_enumvalue" href="class_timer.html#aa4b2e0bfcfba8ba46688fd1a37c2aa4baeb2ac5b04180d8d6011a016aeb8f75b3">Timer::Mode::Infinity</a>);</div>
-<div class="line">timer.<a class="code hl_function" href="class_timer.html#a7a8cc5f49024b9d34d078f681a9cf93f">setCallback</a>([&amp;](){ rect.move({-0.1f, 0.f}); });</div>
+<div class="line">timer.<a class="code hl_function" href="class_timer.html#a7a8cc5f49024b9d34d078f681a9cf93f">setCallback</a>([&amp;](){ rect.<a class="code hl_function" href="class_draw_able.html#a6da3581efe2b09c6ba7ba09d2248833b">move</a>({-0.1f, 0.f}); });</div>
+<div class="ttc" id="aclass_draw_able_html_a6da3581efe2b09c6ba7ba09d2248833b"><div class="ttname"><a href="class_draw_able.html#a6da3581efe2b09c6ba7ba09d2248833b">DrawAble::move</a></div><div class="ttdeci">void move(const glm::vec2 &amp;offset)</div><div class="ttdef"><b>Definition</b> DrawAble.cpp:42</div></div>
 <div class="ttc" id="aclass_timer_html_a696f19b4227ef320096bd89965141b78"><div class="ttname"><a href="class_timer.html#a696f19b4227ef320096bd89965141b78">Timer::setMode</a></div><div class="ttdeci">void setMode(Mode mode)</div><div class="ttdef"><b>Definition</b> Timer.cpp:25</div></div>
 <div class="ttc" id="aclass_timer_html_a7a8cc5f49024b9d34d078f681a9cf93f"><div class="ttname"><a href="class_timer.html#a7a8cc5f49024b9d34d078f681a9cf93f">Timer::setCallback</a></div><div class="ttdeci">void setCallback(std::function&lt; void()&gt; callback)</div><div class="ttdef"><b>Definition</b> Timer.cpp:45</div></div>
 <div class="ttc" id="aclass_timer_html_aa4b2e0bfcfba8ba46688fd1a37c2aa4baeb2ac5b04180d8d6011a016aeb8f75b3"><div class="ttname"><a href="class_timer.html#aa4b2e0bfcfba8ba46688fd1a37c2aa4baeb2ac5b04180d8d6011a016aeb8f75b3">Timer::Mode::Infinity</a></div><div class="ttdeci">@ Infinity</div></div>
@@ -316,22 +443,194 @@ Timers</h2>
 <div class="ttc" id="aclass_timer_html_ac22fbf29a9708e0cd8cf0b1576fdba5e"><div class="ttname"><a href="class_timer.html#ac22fbf29a9708e0cd8cf0b1576fdba5e">Timer::setFrequency</a></div><div class="ttdeci">void setFrequency(Unit &amp;&amp;frequency)</div><div class="ttdef"><b>Definition</b> Timer.cpp:35</div></div>
 </div><!-- fragment --><p>Therefore, move this timer to world timer manager:</p>
 <div class="fragment"><div class="line"> ++</div>
-<div class="line">GetWorld().<a class="code hl_function" href="class_world.html#a7c6b4218c9533ee00713fe4840623aee">addTimer</a>(std::move(timer));</div>
+<div class="line"><a class="code hl_function" href="_world_8h.html#aec2f3bad790c3ffedf70f63a0998016a">GetWorld</a>().<a class="code hl_function" href="class_world.html#a7c6b4218c9533ee00713fe4840623aee">addTimer</a>(std::move(timer));</div>
 <div class="ttc" id="aclass_world_html_a7c6b4218c9533ee00713fe4840623aee"><div class="ttname"><a href="class_world.html#a7c6b4218c9533ee00713fe4840623aee">World::addTimer</a></div><div class="ttdeci">unsigned long long addTimer(Timer &amp;&amp;timer)</div><div class="ttdef"><b>Definition</b> World.cpp:40</div></div>
 </div><!-- fragment --><p>After that your timer will be invalid. But you can get timer ID from a function <code><a class="el" href="class_world.html#a7c6b4218c9533ee00713fe4840623aee">World::addTimer</a></code>. You can use this id to delete(like an example) your timer in the future.</p>
-<h2><a class="anchor" id="autotoc_md31"></a>
-Using OpenGL wrappers</h2>
+<hr  />
+<h3><a class="anchor" id="autotoc_md26"></a>
+Keyboard</h3>
+<p>If you want to work with a keyboard you can use class <a class="el" href="class_keyboard.html">Keyboard</a>. But if your target is to spy for key pressing, or you want to do something on key press better to use class InputActions. So, if you still want to use it you can check key state with two functions: </p><div class="fragment"><div class="line"> ++</div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_mouse_8h.html">Mouse.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">while</span> (!<a class="code hl_function" href="_window_8h.html#ac8e1e878d504288e5a3a09cdefd176d0">GetWindow</a>().shouldClose())</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="class_keyboard.html#a677f97703df7bad21f3854416c633282">Keyboard::isKeyPressed</a>(<a class="code hl_enumvalue" href="class_keyboard.html#a79a4b804a620cfbf3acd672dae2fb7a1a61e9c06ea9a85a5088a499df6458d276">Keyboard::Key::W</a>))</div>
+<div class="line">        goForward();</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="class_keyboard.html#a6ada6b831d5285c387cd35ece0cfb6f0">Keyboard::isKeyReleased</a>(<a class="code hl_enumvalue" href="class_keyboard.html#a79a4b804a620cfbf3acd672dae2fb7a1a91f4253ca587ca8ac4e63b9ceb351f5d">Keyboard::Key::Esc</a>))</div>
+<div class="line">        goToSettings();</div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line">}</div>
+<div class="ttc" id="a_mouse_8h_html"><div class="ttname"><a href="_mouse_8h.html">Mouse.h</a></div></div>
+<div class="ttc" id="aclass_keyboard_html_a677f97703df7bad21f3854416c633282"><div class="ttname"><a href="class_keyboard.html#a677f97703df7bad21f3854416c633282">Keyboard::isKeyPressed</a></div><div class="ttdeci">static bool isKeyPressed(Key key)</div><div class="ttdef"><b>Definition</b> Keyboard.cpp:403</div></div>
+<div class="ttc" id="aclass_keyboard_html_a6ada6b831d5285c387cd35ece0cfb6f0"><div class="ttname"><a href="class_keyboard.html#a6ada6b831d5285c387cd35ece0cfb6f0">Keyboard::isKeyReleased</a></div><div class="ttdeci">static bool isKeyReleased(Key key)</div><div class="ttdef"><b>Definition</b> Keyboard.cpp:412</div></div>
+<div class="ttc" id="aclass_keyboard_html_a79a4b804a620cfbf3acd672dae2fb7a1a61e9c06ea9a85a5088a499df6458d276"><div class="ttname"><a href="class_keyboard.html#a79a4b804a620cfbf3acd672dae2fb7a1a61e9c06ea9a85a5088a499df6458d276">Keyboard::Key::W</a></div><div class="ttdeci">@ W</div></div>
+<div class="ttc" id="aclass_keyboard_html_a79a4b804a620cfbf3acd672dae2fb7a1a91f4253ca587ca8ac4e63b9ceb351f5d"><div class="ttname"><a href="class_keyboard.html#a79a4b804a620cfbf3acd672dae2fb7a1a91f4253ca587ca8ac4e63b9ceb351f5d">Keyboard::Key::Esc</a></div><div class="ttdeci">@ Esc</div></div>
+</div><!-- fragment --><p>PS: don't forget to connect <code>Input-Devices</code> to your game's <code>target_link_libraries</code> </p><div class="fragment"><div class="line"># /game/CMakeLists.txt</div>
+<div class="line">target_link_libraries(</div>
+<div class="line">    VaKon2D PUBLIC</div>
+<div class="line">    ...</div>
+<div class="line">    Input-Devices</div>
+<div class="line">    ...</div>
+<div class="line">)</div>
+</div><!-- fragment --><hr  />
+<h3><a class="anchor" id="autotoc_md28"></a>
+Mouse</h3>
+<p>If you want to work with a mouse you can use class <a class="el" href="class_mouse.html">Mouse</a>. But if your target is to spy for key pressing, or you want to do something on key press better to use class InputActions. So, if you still want to use it you can check key state with two functions:</p>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_mouse_8h.html">Mouse.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">while</span> (!<a class="code hl_function" href="_window_8h.html#ac8e1e878d504288e5a3a09cdefd176d0">GetWindow</a>().shouldClose())</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="class_mouse.html#a0ca4082d55651d3dd829148542139015">Mouse::isKeyReleased</a>(<a class="code hl_enumvalue" href="class_mouse.html#aeb3a0777eba26747039c8a13c17a40a0a92b09c7c48c520c3c55e497875da437c">Mouse::Key::Right</a>))</div>
+<div class="line">        zoom();</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="class_keyboard.html#a677f97703df7bad21f3854416c633282">Keyboard::isKeyPressed</a>(<a class="code hl_enumvalue" href="class_keyboard.html#a79a4b804a620cfbf3acd672dae2fb7a1a945d5e233cf7d6240f6b783b36a374ff">Keyboard::Key::Left</a>))</div>
+<div class="line">        fire();</div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line">}</div>
+<div class="ttc" id="aclass_keyboard_html_a79a4b804a620cfbf3acd672dae2fb7a1a945d5e233cf7d6240f6b783b36a374ff"><div class="ttname"><a href="class_keyboard.html#a79a4b804a620cfbf3acd672dae2fb7a1a945d5e233cf7d6240f6b783b36a374ff">Keyboard::Key::Left</a></div><div class="ttdeci">@ Left</div></div>
+<div class="ttc" id="aclass_mouse_html_a0ca4082d55651d3dd829148542139015"><div class="ttname"><a href="class_mouse.html#a0ca4082d55651d3dd829148542139015">Mouse::isKeyReleased</a></div><div class="ttdeci">static bool isKeyReleased(Key key)</div><div class="ttdef"><b>Definition</b> Mouse.cpp:35</div></div>
+<div class="ttc" id="aclass_mouse_html_aeb3a0777eba26747039c8a13c17a40a0a92b09c7c48c520c3c55e497875da437c"><div class="ttname"><a href="class_mouse.html#aeb3a0777eba26747039c8a13c17a40a0a92b09c7c48c520c3c55e497875da437c">Mouse::Key::Right</a></div><div class="ttdeci">@ Right</div></div>
+</div><!-- fragment --><p>PS: don't forget to connect <code>Input-Devices</code> to your game's <code>target_link_libraries</code> </p><div class="fragment"><div class="line"># /game/CMakeLists.txt</div>
+<div class="line">target_link_libraries(</div>
+<div class="line">    VaKon2D PUBLIC</div>
+<div class="line">    ...</div>
+<div class="line">    Input-Devices</div>
+<div class="line">    ...</div>
+<div class="line">)</div>
+</div><!-- fragment --><hr  />
+<h3><a class="anchor" id="autotoc_md30"></a>
+Delegates</h3>
+<p>The best solution to program anything is to use delegates. <a class="el" href="class_delegate.html">Delegate</a> it's like a channel on YouTube, and you are subscriber of this channel. It's a delegates. You can create a listener(delegate) and wait for some event. At this time in the engine we have 3 types of delegates:</p><ol type="1">
+<li><code><a class="el" href="class_lambda_delegate.html">LambdaDelegate</a>\&lt;F&gt;</code></li>
+<li><code><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>\&lt;F&gt;</code></li>
+<li><code><a class="el" href="class_delegate.html">Delegate</a>&lt;F,CallbackT&gt;</code></li>
+</ol>
+<h4><a class="anchor" id="autotoc_md31"></a>
+LambdaDelegate</h4>
+<p>You can use it to call a lambda function on some event. It can have only one subscriber. To use it write the next code: </p><div class="fragment"><div class="line"> ++</div>
+<div class="line"><a class="code hl_class" href="class_lambda_delegate.html">LambdaDelegate</a>&lt;void()&gt; d;</div>
+<div class="line">d.<a class="code hl_function" href="class_lambda_delegate.html#a7f177ec1855f843649183915c7f48409">subscribe</a>([](){ std::cout &lt;&lt; <span class="stringliteral">&quot;Hello world&quot;</span>; });</div>
+<div class="line">...</div>
+<div class="line">d.trigger();</div>
+<div class="ttc" id="aclass_lambda_delegate_html"><div class="ttname"><a href="class_lambda_delegate.html">LambdaDelegate</a></div><div class="ttdef"><b>Definition</b> Delegate.h:63</div></div>
+<div class="ttc" id="aclass_lambda_delegate_html_a7f177ec1855f843649183915c7f48409"><div class="ttname"><a href="class_lambda_delegate.html#a7f177ec1855f843649183915c7f48409">LambdaDelegate::subscribe</a></div><div class="ttdeci">void subscribe(CallbackT &amp;&amp;callback)</div><div class="ttdef"><b>Definition</b> Delegate.h:76</div></div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md32"></a>
+LambdaMulticastDelegate</h4>
+<p>Almost the same as before, but it supports more than one subscriber. </p><div class="fragment"><div class="line"> ++</div>
+<div class="line"><a class="code hl_class" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt;void()&gt; d;</div>
+<div class="line">d.<a class="code hl_function" href="class_lambda_multicast_delegate.html#ab2a17053e915b6b6002958322f195d24">subscribe</a>([](){ std::cout &lt;&lt; <span class="stringliteral">&quot;Hello world1&quot;</span>; });</div>
+<div class="line">d.<a class="code hl_function" href="class_lambda_multicast_delegate.html#ab2a17053e915b6b6002958322f195d24">subscribe</a>([](){ std::cout &lt;&lt; <span class="stringliteral">&quot;Hello world2&quot;</span>; });</div>
+<div class="line">...</div>
+<div class="line">d.trigger();</div>
+<div class="ttc" id="aclass_lambda_multicast_delegate_html"><div class="ttname"><a href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a></div><div class="ttdef"><b>Definition</b> Delegate.h:92</div></div>
+<div class="ttc" id="aclass_lambda_multicast_delegate_html_ab2a17053e915b6b6002958322f195d24"><div class="ttname"><a href="class_lambda_multicast_delegate.html#ab2a17053e915b6b6002958322f195d24">LambdaMulticastDelegate::subscribe</a></div><div class="ttdeci">void subscribe(CallbackT &amp;&amp;callback)</div><div class="ttdef"><b>Definition</b> Delegate.h:105</div></div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md33"></a>
+Delegate</h4>
+<p>Almost the same as before, but it supports only one subscriber and can work with object's functions. </p><div class="fragment"><div class="line"> ++</div>
+<div class="line"><a class="code hl_class" href="class_delegate.html">Delegate</a>&lt;VaKon2D, void(VaKon2D::*)()&gt; d;</div>
+<div class="line">d.<a class="code hl_function" href="class_lambda_multicast_delegate.html#ab2a17053e915b6b6002958322f195d24">subscribe</a>(<span class="keyword">this</span>, &amp;VaKon2D::print);</div>
+<div class="line">...</div>
+<div class="line">d.trigger();</div>
+<div class="ttc" id="aclass_delegate_html"><div class="ttname"><a href="class_delegate.html">Delegate</a></div><div class="ttdef"><b>Definition</b> Delegate.h:33</div></div>
+</div><!-- fragment --><hr  />
+<h3><a class="anchor" id="autotoc_md35"></a>
+World variables</h3>
+<p><a class="el" href="class_world.html">World</a> variables it's replacement of global variables. You can exchange these variables between objects and apply them everywhere. At first, you can put some variable to the 'world': </p><div class="fragment"><div class="line"> ++</div>
+<div class="line"><a class="code hl_function" href="_world_variables_8h.html#a95ed3abf0a1bdb8fafbaad78407272ac">GetWorldVariables</a>().<a class="code hl_function" href="class_world_variables.html#a16cef9bb7f616ad08848d6ceba6bba27">set</a>(<span class="stringliteral">&quot;hello&quot;</span>, <span class="stringliteral">&quot;world&quot;</span>);</div>
+<div class="ttc" id="a_world_variables_8h_html_a95ed3abf0a1bdb8fafbaad78407272ac"><div class="ttname"><a href="_world_variables_8h.html#a95ed3abf0a1bdb8fafbaad78407272ac">GetWorldVariables</a></div><div class="ttdeci">WorldVariables &amp; GetWorldVariables()</div><div class="ttdef"><b>Definition</b> WorldVariables.cpp:82</div></div>
+<div class="ttc" id="aclass_world_variables_html_a16cef9bb7f616ad08848d6ceba6bba27"><div class="ttname"><a href="class_world_variables.html#a16cef9bb7f616ad08848d6ceba6bba27">WorldVariables::set</a></div><div class="ttdeci">void set(const std::string &amp;key, const VariantT &amp;value)</div><div class="ttdef"><b>Definition</b> WorldVariables.cpp:25</div></div>
+</div><!-- fragment --><p> or </p><div class="fragment"><div class="line"> ++</div>
+<div class="line"><a class="code hl_function" href="_world_variables_8h.html#a95ed3abf0a1bdb8fafbaad78407272ac">GetWorldVariables</a>()[<span class="stringliteral">&quot;hello&quot;</span>] = <span class="stringliteral">&quot;world&quot;</span>;</div>
+</div><!-- fragment --><p>Of course, you can get it back: </p><div class="fragment"><div class="line"> ++</div>
+<div class="line">cout &lt;&lt; <a class="code hl_function" href="_world_variables_8h.html#a95ed3abf0a1bdb8fafbaad78407272ac">GetWorldVariables</a>()[<span class="stringliteral">&quot;hello&quot;</span>]; <span class="comment">// &quot;world&quot;</span></div>
+</div><!-- fragment --><p>And also you can clear some keys if you don't need it: </p><div class="fragment"><div class="line"> ++</div>
+<div class="line"><a class="code hl_function" href="_world_variables_8h.html#a95ed3abf0a1bdb8fafbaad78407272ac">GetWorldVariables</a>().<a class="code hl_function" href="class_world_variables.html#a0cebf07058591d8508f786d7119c4ad2">forceClear</a>(<span class="stringliteral">&quot;hello&quot;</span>);</div>
+<div class="ttc" id="aclass_world_variables_html_a0cebf07058591d8508f786d7119c4ad2"><div class="ttname"><a href="class_world_variables.html#a0cebf07058591d8508f786d7119c4ad2">WorldVariables::forceClear</a></div><div class="ttdeci">void forceClear(std::vector&lt; std::string &gt; keys)</div><div class="ttdef"><b>Definition</b> WorldVariables.cpp:71</div></div>
+</div><!-- fragment --><hr  />
+<h3><a class="anchor" id="autotoc_md37"></a>
+Widget reflector</h3>
+<p>If you want to debug your widgets you can use widget reflector. At first, you have to activate it: </p><div class="fragment"><div class="line"> ++</div>
+<div class="line"><a class="code hl_function" href="_widget_reflector_8h.html#ac325c2e8279871d8b2f52d50cf10c1d1">getWidgetReflector</a>().<a class="code hl_function" href="class_widget_reflector.html#a0f4a6a61c55b89ba0f2f6fa35829963d">activate</a>();</div>
+<div class="ttc" id="a_widget_reflector_8h_html_ac325c2e8279871d8b2f52d50cf10c1d1"><div class="ttname"><a href="_widget_reflector_8h.html#ac325c2e8279871d8b2f52d50cf10c1d1">getWidgetReflector</a></div><div class="ttdeci">WidgetReflector &amp; getWidgetReflector()</div><div class="ttdef"><b>Definition</b> WidgetReflector.cpp:73</div></div>
+<div class="ttc" id="aclass_widget_reflector_html_a0f4a6a61c55b89ba0f2f6fa35829963d"><div class="ttname"><a href="class_widget_reflector.html#a0f4a6a61c55b89ba0f2f6fa35829963d">WidgetReflector::activate</a></div><div class="ttdeci">void activate()</div><div class="ttdef"><b>Definition</b> WidgetReflector.cpp:31</div></div>
+</div><!-- fragment --><p> After that you can click at the widget and get into <code>std::cout</code> needed info about your widget.</p>
+<p>More standard way to use it, it's using by pressing F1 key. </p><div class="fragment"><div class="line"> ++</div>
+<div class="line"><a class="code hl_class" href="class_keyboard_input_action.html">KeyboardInputAction</a> iaWidgetReflector(<span class="stringliteral">&quot;WidgetReflector&quot;</span>, <a class="code hl_enumvalue" href="class_keyboard.html#a79a4b804a620cfbf3acd672dae2fb7a1ae1dffc8709f31a4987c8a88334107e89">Keyboard::Key::F1</a>);</div>
+<div class="line">iaWidgetReflector.setFrequency(<a class="code hl_typedef" href="class_input_action.html#ad8d9bfec3d89d83aabd036ae611b03ca">KeyboardInputAction::TimeT</a>(100));</div>
+<div class="line">iaWidgetReflector.onAction.subscribe([]() { <a class="code hl_function" href="_widget_reflector_8h.html#ac325c2e8279871d8b2f52d50cf10c1d1">getWidgetReflector</a>().<a class="code hl_function" href="class_widget_reflector.html#ab980a25fd862b4af5f3f50f258d36e08">toggle</a>(); });</div>
+<div class="ttc" id="aclass_input_action_html_ad8d9bfec3d89d83aabd036ae611b03ca"><div class="ttname"><a href="class_input_action.html#ad8d9bfec3d89d83aabd036ae611b03ca">InputAction&lt; Keyboard::Key &gt;::TimeT</a></div><div class="ttdeci">std::chrono::milliseconds TimeT</div><div class="ttdef"><b>Definition</b> InputAction.h:44</div></div>
+<div class="ttc" id="aclass_keyboard_html_a79a4b804a620cfbf3acd672dae2fb7a1ae1dffc8709f31a4987c8a88334107e89"><div class="ttname"><a href="class_keyboard.html#a79a4b804a620cfbf3acd672dae2fb7a1ae1dffc8709f31a4987c8a88334107e89">Keyboard::Key::F1</a></div><div class="ttdeci">@ F1</div></div>
+<div class="ttc" id="aclass_keyboard_input_action_html"><div class="ttname"><a href="class_keyboard_input_action.html">KeyboardInputAction</a></div><div class="ttdef"><b>Definition</b> InputAction.h:125</div></div>
+<div class="ttc" id="aclass_widget_reflector_html_ab980a25fd862b4af5f3f50f258d36e08"><div class="ttname"><a href="class_widget_reflector.html#ab980a25fd862b4af5f3f50f258d36e08">WidgetReflector::toggle</a></div><div class="ttdeci">void toggle()</div><div class="ttdef"><b>Definition</b> WidgetReflector.cpp:61</div></div>
+</div><!-- fragment --><hr  />
+<h3><a class="anchor" id="autotoc_md39"></a>
+Input actions</h3>
+<p>Input actions its cool part of this engine. The simplest way to work with input it's using of class <code><a class="el" href="class_keyboard.html">Keyboard</a></code> and <code><a class="el" href="class_mouse.html">Mouse</a></code>, but it has no any controls, you can't set frequency of pressing, pressing mode and many others. You can work with <code><a class="el" href="class_keyboard_input_action.html">KeyboardInputAction</a></code> to get more control over your keyboard input, and class <code><a class="el" href="class_mouse_input_action.html">MouseInputAction</a></code> to get more control over your mouse. At start, let's create new instance of <code><a class="el" href="class_keyboard_input_action.html">KeyboardInputAction</a></code>: </p><div class="fragment"><div class="line"> ++</div>
+<div class="line"><a class="code hl_class" href="class_keyboard_input_action.html">KeyboardInputAction</a> input(<span class="stringliteral">&quot;input&quot;</span>, <a class="code hl_enumvalue" href="class_keyboard.html#a79a4b804a620cfbf3acd672dae2fb7a1a61e9c06ea9a85a5088a499df6458d276">Keyboard::Key::W</a>);</div>
+</div><!-- fragment --><p>After that you can set frequency of pressing using the function <code>setFrequency</code>. It uses units <code>ms</code>(1/1000s) to control the time, so you have to wrap a time into <code><a class="el" href="class_input_action.html#ad8d9bfec3d89d83aabd036ae611b03ca">KeyboardInputAction::TimeT</a></code>. </p><div class="fragment"><div class="line"> ++</div>
+<div class="line">input.setFrequency(<a class="code hl_typedef" href="class_input_action.html#ad8d9bfec3d89d83aabd036ae611b03ca">KeyboardInputAction::TimeT</a>(100));</div>
+</div><!-- fragment --><p>If you create an input for moving my a map, it should repeat a lot of times per second. So we have to set repeatable mode. </p><div class="fragment"><div class="line"> ++</div>
+<div class="line">input.setIsRepeatable(<span class="keyword">true</span>);</div>
+</div><!-- fragment --><p>And in the end let's subscribe at this action! </p><div class="fragment"><div class="line"> ++</div>
+<div class="line">input.onAction.subscribe([&amp;player]() { player.moveForward(); });</div>
+</div><!-- fragment --><hr  />
+<h3><a class="anchor" id="autotoc_md41"></a>
+Text</h3>
+<p>Working with text is pretty easy, at first you have to load font, after that set this font into your Text and that's all! </p><div class="fragment"><div class="line"> ++</div>
+<div class="line"><a class="code hl_class" href="class_font.html">Font</a> font(<span class="stringliteral">&quot;assets/fonts/Roboto-Medium.ttf&quot;</span>);</div>
+<div class="line"><a class="code hl_class" href="class_line_text.html">LineText</a> text(font, <span class="stringliteral">&quot;Hello world&quot;</span>);</div>
+<div class="ttc" id="aclass_font_html"><div class="ttname"><a href="class_font.html">Font</a></div><div class="ttdef"><b>Definition</b> Font.h:35</div></div>
+<div class="ttc" id="aclass_line_text_html"><div class="ttname"><a href="class_line_text.html">LineText</a></div><div class="ttdef"><b>Definition</b> LineText.h:36</div></div>
+</div><!-- fragment --><p>Also, don't forget to load a needed shaders for text: </p><div class="fragment"><div class="line">// ========FRAGMENT SHADER========</div>
+<div class="line">#version 330 core</div>
+<div class="line">in vec2 TexCoords;</div>
+<div class="line">out vec4 color;</div>
+<div class="line"> </div>
+<div class="line">uniform sampler2D text;</div>
+<div class="line">uniform vec3 textColor;</div>
+<div class="line"> </div>
+<div class="line">void main()</div>
+<div class="line">{</div>
+<div class="line">    vec4 sampled = vec4(1.0, 1.0, 1.0, texture(text, TexCoords).r);</div>
+<div class="line">    color = vec4(textColor, 1.0) * sampled;</div>
+<div class="line">}</div>
+</div><!-- fragment --><div class="fragment"><div class="line">// ========VERTEX SHADER========</div>
+<div class="line">#version 330 core</div>
+<div class="line">layout (location = 0) in vec2 aVertex;</div>
+<div class="line">layout (location = 1) in vec2 aUv;</div>
+<div class="line"> </div>
+<div class="line">out vec2 TexCoords;</div>
+<div class="line"> </div>
+<div class="line">uniform vec2 uResolution;</div>
+<div class="line"> </div>
+<div class="line">void main()</div>
+<div class="line">{</div>
+<div class="line">    gl_Position = vec4(aVertex / uResolution, 0.0, 1.0);</div>
+<div class="line">    TexCoords = aUv;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p> And let's create new shader program: </p><div class="fragment"><div class="line"> ++</div>
+<div class="line"><a class="code hl_class" href="class_custom_shader_program.html">CustomShaderProgram</a> textProgram(<span class="stringliteral">&quot;assets/shaders/text.vert&quot;</span>, <span class="stringliteral">&quot;assets/shaders/text.frag&quot;</span>);</div>
+</div><!-- fragment --><p>Now, you can print your text on the display: </p><div class="fragment"><div class="line"> ++</div>
+<div class="line">text.draw(textProgram);</div>
+</div><!-- fragment --><hr  />
+<h3><a class="anchor" id="autotoc_md43"></a>
+Using OpenGL wrappers</h3>
 <p>You can connect to your game Core-Wrappers and use OpenGL wrappers. You should add a target <code>Core-Wrappers</code> to you <code>target_link_libraries</code> of a game. Example: OpenGL wrappers take off a chance to get a mistake while you working with OpenGL. Just use it! For example, you can create your own VBO/VAO:</p>
 <div class="fragment"><div class="line"> ++</div>
-<div class="line"><span class="preprocessor">#include &quot;Gl.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_gl_8h.html">Gl.h</a>&quot;</span></div>
 <div class="line">...</div>
 <div class="line">auto vbo = <a class="code hl_function" href="class_gl_1_1_vbo.html#a839aef071042a02d3c6b686e52489cda">Gl::Vbo::generate</a>();</div>
 <div class="line"><span class="keyword">auto</span> vao = <a class="code hl_function" href="class_gl_1_1_vao.html#a7e06fa0c4fe006ae02cf26a84e213363">Gl::Vao::generate</a>();</div>
-<div class="ttc" id="aclass_gl_1_1_vao_html_a7e06fa0c4fe006ae02cf26a84e213363"><div class="ttname"><a href="class_gl_1_1_vao.html#a7e06fa0c4fe006ae02cf26a84e213363">Gl::Vao::generate</a></div><div class="ttdeci">static void generate(GLsizei n, GLuint *arrays)</div><div class="ttdef"><b>Definition</b> Gl.cpp:56</div></div>
-<div class="ttc" id="aclass_gl_1_1_vbo_html_a839aef071042a02d3c6b686e52489cda"><div class="ttname"><a href="class_gl_1_1_vbo.html#a839aef071042a02d3c6b686e52489cda">Gl::Vbo::generate</a></div><div class="ttdeci">static void generate(GLsizei n, GLuint *arrays)</div><div class="ttdef"><b>Definition</b> Gl.cpp:89</div></div>
+<div class="ttc" id="a_gl_8h_html"><div class="ttname"><a href="_gl_8h.html">Gl.h</a></div></div>
+<div class="ttc" id="aclass_gl_1_1_vao_html_a7e06fa0c4fe006ae02cf26a84e213363"><div class="ttname"><a href="class_gl_1_1_vao.html#a7e06fa0c4fe006ae02cf26a84e213363">Gl::Vao::generate</a></div><div class="ttdeci">static void generate(GLsizei n, GLuint *arrays)</div><div class="ttdef"><b>Definition</b> Gl.cpp:54</div></div>
+<div class="ttc" id="aclass_gl_1_1_vbo_html_a839aef071042a02d3c6b686e52489cda"><div class="ttname"><a href="class_gl_1_1_vbo.html#a839aef071042a02d3c6b686e52489cda">Gl::Vbo::generate</a></div><div class="ttdeci">static void generate(GLsizei n, GLuint *arrays)</div><div class="ttdef"><b>Definition</b> Gl.cpp:87</div></div>
 </div><!-- fragment --><p>Others function will be available in the class <code><a class="el" href="class_gl.html">Gl</a></code>, <code><a class="el" href="class_gl_1_1_program.html">Gl::Program</a></code>, <code><a class="el" href="class_gl_1_1_shader.html">Gl::Shader</a></code>, <code><a class="el" href="class_gl_1_1_vao.html">Gl::Vao</a></code>, <code><a class="el" href="class_gl_1_1_vbo.html">Gl::Vbo</a></code>, <code><a class="el" href="class_gl_1_1_texture.html">Gl::Texture</a></code></p>
-<h1><a class="anchor" id="autotoc_md32"></a>
-💭 What in the future?</h1>
+<h2><a class="anchor" id="autotoc_md44"></a>
+💭 What in the future?</h2>
 <p>I want to implement more and more things to give abilities like:</p>
 <ul>
 <li>Working with network, like in UnrealEngine 4\5:<ul>
@@ -350,20 +649,22 @@ Using OpenGL wrappers</h2>
 <li>Adding an ability to integrate own DLC to a game</li>
 <li>Supporting of all new compilers: GCC, G++, Clang, MSVC</li>
 <li>The engine will be cross-platform</li>
-<li>Easy working with textures and shaders</li>
-<li>Custom shader integration</li>
 <li><a class="el" href="class_shader.html">Shader</a> builder for PRO users</li>
 <li>Add working with audio</li>
 <li>Working with a camera</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md33"></a>
-📞 Feedback &amp; Contacts</h1>
+<hr  />
+<h2><a class="anchor" id="autotoc_md46"></a>
+📞 Feedback &amp; Contacts</h2>
 <p>You can send me e-mail: <a href="#" onclick="location.href='mai'+'lto:'+'Val'+'er'+'ii.'+'Ko'+'niu'+'sh'+'enk'+'o@'+'gma'+'il'+'.co'+'m'; return false;">Valer<span class="obfuscator">.nosp@m.</span>ii.K<span class="obfuscator">.nosp@m.</span>onius<span class="obfuscator">.nosp@m.</span>henk<span class="obfuscator">.nosp@m.</span>o@gma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> or try to find me in telegram: @markmoran24 </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -17,6 +17,10 @@ Inheritance diagram for Texture\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_texture_ac8942e677bb3b5c06a3be96568d89fa8}{\texorpdfstring{$\sim$}{\string~}\+Texture}} () override
 \item 
+\mbox{\hyperlink{class_texture_a084244d7cb78794849469aabd9c602ec}{Texture}} (\mbox{\hyperlink{class_texture}{Texture}} \&\&other) noexcept
+\item 
+\mbox{\hyperlink{class_texture}{Texture}} \& \mbox{\hyperlink{class_texture_aa68afb4cfb10e3b5f6f6f83cfbda20b9}{operator=}} (\mbox{\hyperlink{class_texture}{Texture}} \&\&other) noexcept
+\item 
 void \mbox{\hyperlink{class_texture_a4b85391c6e54686ec566ba38c62dde98}{bind}} () const
 \item 
 void \mbox{\hyperlink{class_texture_a451d7afac3848417bb1007d39ee7d545}{unbind}} () const
@@ -50,21 +54,23 @@ void \mbox{\hyperlink{class_texture_a345a432339c7c9c8aec9f90dbff0c6c7}{set\+Mag\
 void \mbox{\hyperlink{class_texture_abf486b492602d4c1e7b07fbde15fc529}{set\+Min\+Filter}} (\mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}{Gl\+::\+Texture\+::\+Min\+Filter}} filter)
 \item 
 \+\_\+\+NODISCARD \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}{Gl\+::\+Texture\+::\+Min\+Filter}} \mbox{\hyperlink{class_texture_a1c5e98bea9a687c9ab273ffe86bdc2ed}{get\+Min\+Filter}} () const
+\item 
+\+\_\+\+NODISCARD std\+::string \mbox{\hyperlink{class_texture_addc57f2fbd865359a644291b828ddfb7}{get\+Name}} () const
 \end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable}{Utils\+::\+Not\+Copyable\+And\+Not\+Movable}}}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_utils_1_1_not_copyable_but_movable}{Utils\+::\+Not\+Copyable\+But\+Movable}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable_a758fa487b40911a9f3866bc8e364e66c}{Not\+Copyable\+And\+Not\+Movable}} ()=default
+\mbox{\hyperlink{class_utils_1_1_not_copyable_but_movable_a183315c69121f8c08476d0ca84c84c1e}{Not\+Copyable\+But\+Movable}} ()=default
 \item 
-virtual \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable_a1d95e7e9d475af7e40b179d06b00bf02}{\texorpdfstring{$\sim$}{\string~}\+Not\+Copyable\+And\+Not\+Movable}} ()=default
+virtual \mbox{\hyperlink{class_utils_1_1_not_copyable_but_movable_a3ef937546e46dbfc851480f22c7f5a09}{\texorpdfstring{$\sim$}{\string~}\+Not\+Copyable\+But\+Movable}} ()=default
 \item 
-\mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable_a32cdbb32ab1c2f28d8f6e91ce886f23f}{Not\+Copyable\+And\+Not\+Movable}} (\mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable}{Not\+Copyable\+And\+Not\+Movable}} \&\&)=delete
+\mbox{\hyperlink{class_utils_1_1_not_copyable_but_movable_a59b7118966f8c92de43db4b0d35f186b}{Not\+Copyable\+But\+Movable}} (\mbox{\hyperlink{class_utils_1_1_not_copyable_but_movable}{Not\+Copyable\+But\+Movable}} \&\&)=default
 \item 
-\mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable}{Not\+Copyable\+And\+Not\+Movable}} \& \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable_a762cef71c1bb9398e2e49b83a1f11592}{operator=}} (\mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable}{Not\+Copyable\+And\+Not\+Movable}} \&\&)=delete
+\mbox{\hyperlink{class_utils_1_1_not_copyable_but_movable}{Not\+Copyable\+But\+Movable}} \& \mbox{\hyperlink{class_utils_1_1_not_copyable_but_movable_ad524bb1e2f7c98d33480a4c808a74d8e}{operator=}} (\mbox{\hyperlink{class_utils_1_1_not_copyable_but_movable}{Not\+Copyable\+But\+Movable}} \&\&)=default
 \item 
-\mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable_a8a4815cc7ea7ec827b886e5615276209}{Not\+Copyable\+And\+Not\+Movable}} (const \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable}{Not\+Copyable\+And\+Not\+Movable}} \&)=delete
+\mbox{\hyperlink{class_utils_1_1_not_copyable_but_movable_a1a0e37f5c567a6f25bb2edb3f1639005}{Not\+Copyable\+But\+Movable}} (const \mbox{\hyperlink{class_utils_1_1_not_copyable_but_movable}{Not\+Copyable\+But\+Movable}} \&)=delete
 \item 
-\mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable}{Not\+Copyable\+And\+Not\+Movable}} \& \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable_a16b89a0e5ec6acaede01528436dd15d8}{operator=}} (const \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable}{Not\+Copyable\+And\+Not\+Movable}} \&)=delete
+\mbox{\hyperlink{class_utils_1_1_not_copyable_but_movable}{Not\+Copyable\+But\+Movable}} \& \mbox{\hyperlink{class_utils_1_1_not_copyable_but_movable_a19a7f77dbe7d422aaed9a9163c6507f5}{operator=}} (const \mbox{\hyperlink{class_utils_1_1_not_copyable_but_movable}{Not\+Copyable\+But\+Movable}} \&)=delete
 \end{DoxyCompactItemize}
 
 
@@ -72,7 +78,7 @@ virtual \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable_a1d95e7e9d
 \Hypertarget{class_texture_a203f9dd9593797745f9f4d01d941b24f}\label{class_texture_a203f9dd9593797745f9f4d01d941b24f} 
 \index{Texture@{Texture}!Texture@{Texture}}
 \index{Texture@{Texture}!Texture@{Texture}}
-\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecef}{Gl\+::\+Texture\+::\+Target}}}]{target = {\ttfamily \mbox{\hyperlink{class_gl_1_1_texture_ab9af609d8033d4d5fd1bf8e3c154ecefaa6e2bae752d3bf4e34cb392bca789995}{Gl\+::\+Texture\+::\+Target\+::\+Texture2D}}},  }\item[{bool}]{should\+Generate = {\ttfamily false},  }\item[{bool}]{should\+Bind = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 \Hypertarget{class_texture_ac8942e677bb3b5c06a3be96568d89fa8}\label{class_texture_ac8942e677bb3b5c06a3be96568d89fa8} 
@@ -80,6 +86,12 @@ virtual \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable_a1d95e7e9d
 \index{````~Texture@{\texorpdfstring{$\sim$}{\string~}Texture}!Texture@{Texture}}
 \doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Texture()}{\string~Texture()}}
 {\footnotesize\ttfamily Texture\+::\texorpdfstring{$\sim$}{\string~}\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+\Hypertarget{class_texture_a084244d7cb78794849469aabd9c602ec}\label{class_texture_a084244d7cb78794849469aabd9c602ec} 
+\index{Texture@{Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_texture}{Texture}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 
 
@@ -126,6 +138,12 @@ virtual \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable_a1d95e7e9d
 \doxysubsubsection{\texorpdfstring{getMinFilter()}{getMinFilter()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}{Gl\+::\+Texture\+::\+Min\+Filter}} Texture\+::get\+Min\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+\Hypertarget{class_texture_addc57f2fbd865359a644291b828ddfb7}\label{class_texture_addc57f2fbd865359a644291b828ddfb7} 
+\index{Texture@{Texture}!getName@{getName}}
+\index{getName@{getName}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Texture\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
 \Hypertarget{class_texture_a76c918bb7c12179f26d2d745c486d94d}\label{class_texture_a76c918bb7c12179f26d2d745c486d94d} 
 \index{Texture@{Texture}!ignoreMipMapGeneration@{ignoreMipMapGeneration}}
 \index{ignoreMipMapGeneration@{ignoreMipMapGeneration}!Texture@{Texture}}
@@ -143,6 +161,12 @@ virtual \mbox{\hyperlink{class_utils_1_1_not_copyable_and_not_movable_a1d95e7e9d
 \index{loadToGpu@{loadToGpu}!Texture@{Texture}}
 \doxysubsubsection{\texorpdfstring{loadToGpu()}{loadToGpu()}}
 {\footnotesize\ttfamily void Texture\+::load\+To\+Gpu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_texture_aa68afb4cfb10e3b5f6f6f83cfbda20b9}\label{class_texture_aa68afb4cfb10e3b5f6f6f83cfbda20b9} 
+\index{Texture@{Texture}!operator=@{operator=}}
+\index{operator=@{operator=}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_texture}{Texture}} \& Texture\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_texture}{Texture}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 \Hypertarget{class_texture_aa3b69503543f1461d1b456d4a7fab59b}\label{class_texture_aa3b69503543f1461d1b456d4a7fab59b} 
 \index{Texture@{Texture}!setImage@{setImage}}

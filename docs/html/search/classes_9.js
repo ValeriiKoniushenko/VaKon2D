@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['rect_0',['Rect',['../struct_utils_1_1_rect.html',1,'Utils']]],
-  ['rectangle_1',['Rectangle',['../class_rectangle.html',1,'']]]
+  ['notcopyableandnotmovable_0',['NotCopyableAndNotMovable',['../class_utils_1_1_not_copyable_and_not_movable.html',1,'Utils']]],
+  ['notcopyablebutmovable_1',['NotCopyableButMovable',['../class_utils_1_1_not_copyable_but_movable.html',1,'Utils']]]
 ];

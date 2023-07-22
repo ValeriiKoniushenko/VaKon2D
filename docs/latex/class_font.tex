@@ -1,0 +1,88 @@
+\doxysection{Font Class Reference}
+\hypertarget{class_font}{}\label{class_font}\index{Font@{Font}}
+
+
+{\ttfamily \#include $<$Font.\+h$>$}
+
+Inheritance diagram for Font\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_font}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_font_1_1_character}{Character}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_font_accd072a5d9e5f74d11bcfc2af3f6d2c0}{Font}} ()=default
+\item 
+\mbox{\hyperlink{class_font_aead80e1b67bab4ba6a28fdc7d7a947a7}{Font}} (std\+::filesystem\+::path path)
+\item 
+\mbox{\hyperlink{class_font_a134aaa2f78af0c12d3ce504957169768}{\texorpdfstring{$\sim$}{\string~}\+Font}} ()
+\item 
+void \mbox{\hyperlink{class_font_a78bf39bdeeed140767fc4ae5a9b95a90}{load\+From\+File}} (std\+::filesystem\+::path path)
+\item 
+void \mbox{\hyperlink{class_font_a1ac5b289a150852ca58a069dd3f5845d}{destroy}} ()
+\item 
+\+\_\+\+NODISCARD const \mbox{\hyperlink{struct_font_1_1_character}{Character}} \& \mbox{\hyperlink{class_font_a1aa0a3fd746cebdfbc2aa38081ac4f6d}{get\+Character}} (GLchar ch) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr float \mbox{\hyperlink{class_font_aafe940de16faa2a14e8a88b0a48e38cf}{default\+Render\+Size}} = 500.f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_font_accd072a5d9e5f74d11bcfc2af3f6d2c0}\label{class_font_accd072a5d9e5f74d11bcfc2af3f6d2c0} 
+\index{Font@{Font}!Font@{Font}}
+\index{Font@{Font}!Font@{Font}}
+\doxysubsubsection{\texorpdfstring{Font()}{Font()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Font\+::\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_font_aead80e1b67bab4ba6a28fdc7d7a947a7}\label{class_font_aead80e1b67bab4ba6a28fdc7d7a947a7} 
+\index{Font@{Font}!Font@{Font}}
+\index{Font@{Font}!Font@{Font}}
+\doxysubsubsection{\texorpdfstring{Font()}{Font()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Font\+::\+Font (\begin{DoxyParamCaption}\item[{std\+::filesystem\+::path}]{path }\end{DoxyParamCaption})}
+
+\Hypertarget{class_font_a134aaa2f78af0c12d3ce504957169768}\label{class_font_a134aaa2f78af0c12d3ce504957169768} 
+\index{Font@{Font}!````~Font@{\texorpdfstring{$\sim$}{\string~}Font}}
+\index{````~Font@{\texorpdfstring{$\sim$}{\string~}Font}!Font@{Font}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Font()}{\string~Font()}}
+{\footnotesize\ttfamily Font\+::\texorpdfstring{$\sim$}{\string~}\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_font_a1ac5b289a150852ca58a069dd3f5845d}\label{class_font_a1ac5b289a150852ca58a069dd3f5845d} 
+\index{Font@{Font}!destroy@{destroy}}
+\index{destroy@{destroy}!Font@{Font}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily void Font\+::destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_font_a1aa0a3fd746cebdfbc2aa38081ac4f6d}\label{class_font_a1aa0a3fd746cebdfbc2aa38081ac4f6d} 
+\index{Font@{Font}!getCharacter@{getCharacter}}
+\index{getCharacter@{getCharacter}!Font@{Font}}
+\doxysubsubsection{\texorpdfstring{getCharacter()}{getCharacter()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_font_1_1_character}{Font\+::\+Character}} \& Font\+::get\+Character (\begin{DoxyParamCaption}\item[{GLchar}]{ch }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_font_a78bf39bdeeed140767fc4ae5a9b95a90}\label{class_font_a78bf39bdeeed140767fc4ae5a9b95a90} 
+\index{Font@{Font}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!Font@{Font}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily void Font\+::load\+From\+File (\begin{DoxyParamCaption}\item[{std\+::filesystem\+::path}]{path }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_font_aafe940de16faa2a14e8a88b0a48e38cf}\label{class_font_aafe940de16faa2a14e8a88b0a48e38cf} 
+\index{Font@{Font}!defaultRenderSize@{defaultRenderSize}}
+\index{defaultRenderSize@{defaultRenderSize}!Font@{Font}}
+\doxysubsubsection{\texorpdfstring{defaultRenderSize}{defaultRenderSize}}
+{\footnotesize\ttfamily constexpr float Font\+::default\+Render\+Size = 500.f\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+

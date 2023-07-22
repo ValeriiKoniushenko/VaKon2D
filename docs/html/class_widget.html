@@ -1,0 +1,765 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>VaKon2D: Widget Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/ValeriiKoniushenko/VaKon2D" class="github-corner" title="View source on GitHub" target="_blank">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="doxyicon.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">VaKon2D
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('class_widget.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="class_widget-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">Widget Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_widget_8h_source.html">Widget.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Widget:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ab0f05949f1fa8ca233137fc4119c7401"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#ab0f05949f1fa8ca233137fc4119c7401">Widget</a> ()</td></tr>
+<tr class="separator:ab0f05949f1fa8ca233137fc4119c7401"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa24f66bcbaaec6d458b0980e8c8eae65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#aa24f66bcbaaec6d458b0980e8c8eae65">~Widget</a> ()</td></tr>
+<tr class="separator:aa24f66bcbaaec6d458b0980e8c8eae65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80deec65bec85f16a0dc236e1e1439b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a80deec65bec85f16a0dc236e1e1439b6">draw</a> (<a class="el" href="class_custom_shader_program.html">CustomShaderProgram</a> &amp;shaderProgram) override</td></tr>
+<tr class="separator:a80deec65bec85f16a0dc236e1e1439b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73b15117c41fb9f5029b2e2d784bea12"><td class="memItemLeft" align="right" valign="top">_NODISCARD std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a73b15117c41fb9f5029b2e2d784bea12">getVerticesCount</a> () const override</td></tr>
+<tr class="separator:a73b15117c41fb9f5029b2e2d784bea12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97970440e5b29885de5cee559dc545af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a97970440e5b29885de5cee559dc545af">setTexture</a> (<a class="el" href="class_texture.html">Texture</a> &amp;texture)</td></tr>
+<tr class="separator:a97970440e5b29885de5cee559dc545af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05a47ddc6170fc68c8d456d1e854553b"><td class="memItemLeft" align="right" valign="top">_NODISCARD <a class="el" href="class_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a05a47ddc6170fc68c8d456d1e854553b">getTexture</a> ()</td></tr>
+<tr class="separator:a05a47ddc6170fc68c8d456d1e854553b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84027ff8c38eb28e93a90a71ce78bd87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a84027ff8c38eb28e93a90a71ce78bd87">setSize</a> (<a class="el" href="namespace_utils.html#aafb5e8bb86bfd3e4b178ed45c9d3d8c0">Utils::FSize2D</a> newSize)</td></tr>
+<tr class="separator:a84027ff8c38eb28e93a90a71ce78bd87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e39dbbdfdc8d40e8d73fc6a67a035d7"><td class="memItemLeft" align="right" valign="top">_NODISCARD <a class="el" href="namespace_utils.html#aafb5e8bb86bfd3e4b178ed45c9d3d8c0">Utils::FSize2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a0e39dbbdfdc8d40e8d73fc6a67a035d7">getSize</a> () const</td></tr>
+<tr class="separator:a0e39dbbdfdc8d40e8d73fc6a67a035d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7755d179f592cdeeceb25c6d60835a02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a7755d179f592cdeeceb25c6d60835a02">setScale</a> (<a class="el" href="namespace_utils.html#aafb5e8bb86bfd3e4b178ed45c9d3d8c0">Utils::FSize2D</a> newScale)</td></tr>
+<tr class="separator:a7755d179f592cdeeceb25c6d60835a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb2d9e92ddd25570c77992173933a107"><td class="memItemLeft" align="right" valign="top">_NODISCARD <a class="el" href="namespace_utils.html#aafb5e8bb86bfd3e4b178ed45c9d3d8c0">Utils::FSize2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#afb2d9e92ddd25570c77992173933a107">getScale</a> () const</td></tr>
+<tr class="separator:afb2d9e92ddd25570c77992173933a107"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea2eeadec569534db61281738d59f380"><td class="memItemLeft" align="right" valign="top">_NODISCARD <a class="el" href="namespace_utils.html#a73c8be21c2660f317f60d767cbbb169f">Utils::FRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#aea2eeadec569534db61281738d59f380">getRect</a> () const</td></tr>
+<tr class="separator:aea2eeadec569534db61281738d59f380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2259c919770dbbba63b985e18dbb85f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#af2259c919770dbbba63b985e18dbb85f">setIsDrawBorder</a> (bool isDraw)</td></tr>
+<tr class="separator:af2259c919770dbbba63b985e18dbb85f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a129679f366d3acb6d955b36fe2986ac7"><td class="memItemLeft" align="right" valign="top">_NODISCARD bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a129679f366d3acb6d955b36fe2986ac7">isDrawBorder</a> () const</td></tr>
+<tr class="separator:a129679f366d3acb6d955b36fe2986ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4ffe18f3d118a05fc85bfdbf17e69f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#aa4ffe18f3d118a05fc85bfdbf17e69f4">prepare</a> ()</td></tr>
+<tr class="separator:aa4ffe18f3d118a05fc85bfdbf17e69f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9febb21bc2470131d23b7dd1d940028a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a9febb21bc2470131d23b7dd1d940028a">update</a> () override</td></tr>
+<tr class="separator:a9febb21bc2470131d23b7dd1d940028a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29d812752a1d276ca6eac85118fd8b8c"><td class="memItemLeft" align="right" valign="top">virtual _NODISCARD std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a29d812752a1d276ca6eac85118fd8b8c">getComponentName</a> () const</td></tr>
+<tr class="separator:a29d812752a1d276ca6eac85118fd8b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae01e8ebb6235b6987ab451d3e649e440"><td class="memItemLeft" align="right" valign="top">_NODISCARD boost::property_tree::ptree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#ae01e8ebb6235b6987ab451d3e649e440">toJson</a> () const override</td></tr>
+<tr class="separator:ae01e8ebb6235b6987ab451d3e649e440"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_draw_able"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_draw_able')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_draw_able.html">DrawAble</a></td></tr>
+<tr class="memitem:ad5c435fe3b79f75d24622607f4c28270 inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#ad5c435fe3b79f75d24622607f4c28270">draw</a> (<a class="el" href="class_custom_shader_program.html">CustomShaderProgram</a> &amp;shaderProgram)</td></tr>
+<tr class="separator:ad5c435fe3b79f75d24622607f4c28270 inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfbef64637f9cf7d68d6e04a62667baf inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">virtual _NODISCARD std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#acfbef64637f9cf7d68d6e04a62667baf">getVerticesCount</a> () const</td></tr>
+<tr class="separator:acfbef64637f9cf7d68d6e04a62667baf inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd55542436a5f844085d1fd164e3d203 inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#acd55542436a5f844085d1fd164e3d203">setPosition</a> (const glm::vec2 &amp;newPosition)</td></tr>
+<tr class="separator:acd55542436a5f844085d1fd164e3d203 inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6da3581efe2b09c6ba7ba09d2248833b inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#a6da3581efe2b09c6ba7ba09d2248833b">move</a> (const glm::vec2 &amp;offset)</td></tr>
+<tr class="separator:a6da3581efe2b09c6ba7ba09d2248833b inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ece9c226314b8dd7caae8003ed3703 inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">_NODISCARD const glm::vec2 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#aa5ece9c226314b8dd7caae8003ed3703">getPosition</a> () const</td></tr>
+<tr class="separator:aa5ece9c226314b8dd7caae8003ed3703 inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf5d4190394676b99e6ecef0a6956bf4 inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#acf5d4190394676b99e6ecef0a6956bf4">setRotation</a> (float newRotation)</td></tr>
+<tr class="separator:acf5d4190394676b99e6ecef0a6956bf4 inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5ab7e8690ec97edf8a717372c3cbaf7 inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#ab5ab7e8690ec97edf8a717372c3cbaf7">rotate</a> (float offset)</td></tr>
+<tr class="separator:ab5ab7e8690ec97edf8a717372c3cbaf7 inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a2e5ca6279fe6d549df0d7647a3aa6c inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">_NODISCARD float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#a6a2e5ca6279fe6d549df0d7647a3aa6c">getRotation</a> () const</td></tr>
+<tr class="separator:a6a2e5ca6279fe6d549df0d7647a3aa6c inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acda9ee6421373cad1286c6b59c21f240 inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#acda9ee6421373cad1286c6b59c21f240">update</a> ()=0</td></tr>
+<tr class="separator:acda9ee6421373cad1286c6b59c21f240 inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad88ef7acc61ef1693a6fc7548f0ef693"><td class="memItemLeft" align="right" valign="top">virtual _NODISCARD boost::property_tree::ptree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_json_printable.html#ad88ef7acc61ef1693a6fc7548f0ef693">toJson</a> () const =0</td></tr>
+<tr class="separator:ad88ef7acc61ef1693a6fc7548f0ef693"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_updateable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_updateable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_updateable.html">Updateable</a></td></tr>
+<tr class="memitem:aa0034c151d688ccd7a24fc734a8a2bb5 inherit pub_methods_class_updateable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updateable.html#aa0034c151d688ccd7a24fc734a8a2bb5">Updateable</a> ()</td></tr>
+<tr class="separator:aa0034c151d688ccd7a24fc734a8a2bb5 inherit pub_methods_class_updateable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36b40dd091c316e268d2191639c4291c inherit pub_methods_class_updateable"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updateable.html#a36b40dd091c316e268d2191639c4291c">~Updateable</a> ()</td></tr>
+<tr class="separator:a36b40dd091c316e268d2191639c4291c inherit pub_methods_class_updateable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6496f7a41cefcb6f949557500aacd0e inherit pub_methods_class_updateable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updateable.html#ad6496f7a41cefcb6f949557500aacd0e">update</a> ()=0</td></tr>
+<tr class="separator:ad6496f7a41cefcb6f949557500aacd0e inherit pub_methods_class_updateable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:acec52fa49a51eec7f79a1ba9983815a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#acec52fa49a51eec7f79a1ba9983815a2">onMouseHover</a></td></tr>
+<tr class="separator:acec52fa49a51eec7f79a1ba9983815a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad95fb5392f071a7890f1190332ca53ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#ad95fb5392f071a7890f1190332ca53ba">onMouseUnHover</a></td></tr>
+<tr class="separator:ad95fb5392f071a7890f1190332ca53ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eb92fc82ee47c116f869fb469c0980e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a6eb92fc82ee47c116f869fb469c0980e">onMouseLeftClick</a></td></tr>
+<tr class="separator:a6eb92fc82ee47c116f869fb469c0980e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacdb362c9eb5017cf9863d4e93d209bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#aacdb362c9eb5017cf9863d4e93d209bd">onMouseRightClick</a></td></tr>
+<tr class="separator:aacdb362c9eb5017cf9863d4e93d209bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92d731b9eac92bf3a8a8bbca95e3ba49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a92d731b9eac92bf3a8a8bbca95e3ba49">onMouseMiddleClick</a></td></tr>
+<tr class="separator:a92d731b9eac92bf3a8a8bbca95e3ba49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77f878cfa21449ec6eb92d7bcf61189a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt; void(double)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a77f878cfa21449ec6eb92d7bcf61189a">onMouseWheel</a></td></tr>
+<tr class="separator:a77f878cfa21449ec6eb92d7bcf61189a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab88565c8fce2a7c058941030cd943445"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt; void(unsigned int)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#ab88565c8fce2a7c058941030cd943445">onTextInput</a></td></tr>
+<tr class="separator:ab88565c8fce2a7c058941030cd943445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a3abf765f48da6b169c7fcb1b4561f20b"><td class="memItemLeft" align="right" valign="top">static constexpr glm::vec4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a3abf765f48da6b169c7fcb1b4561f20b">borderColor</a> = {1.f, 1.f, 0.f, 1.f}</td></tr>
+<tr class="separator:a3abf765f48da6b169c7fcb1b4561f20b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2762746c9c4a59f2094030f0c4630591"><td class="memItemLeft" align="right" valign="top">static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a2762746c9c4a59f2094030f0c4630591">borderWidth</a> = 0.05f</td></tr>
+<tr class="separator:a2762746c9c4a59f2094030f0c4630591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0208272b52a46d937fd634957d8e45eb"><td class="memItemLeft" align="right" valign="top">static constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a0208272b52a46d937fd634957d8e45eb">componentName</a> = &quot;widget&quot;</td></tr>
+<tr class="separator:a0208272b52a46d937fd634957d8e45eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_class_draw_able"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_draw_able')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_draw_able.html">DrawAble</a></td></tr>
+<tr class="memitem:a1d12fd9119ad5a5026d53cc5490a0c9f inherit pro_attribs_class_draw_able"><td class="memItemLeft" align="right" valign="top">glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#a1d12fd9119ad5a5026d53cc5490a0c9f">position_</a> {}</td></tr>
+<tr class="separator:a1d12fd9119ad5a5026d53cc5490a0c9f inherit pro_attribs_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ae6ed0e957eeeb4223ee73d85c29e28 inherit pro_attribs_class_draw_able"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#a3ae6ed0e957eeeb4223ee73d85c29e28">rotation_</a> {}</td></tr>
+<tr class="separator:a3ae6ed0e957eeeb4223ee73d85c29e28 inherit pro_attribs_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab0f05949f1fa8ca233137fc4119c7401" name="ab0f05949f1fa8ca233137fc4119c7401"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0f05949f1fa8ca233137fc4119c7401">&#9670;&#160;</a></span>Widget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Widget::Widget </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa24f66bcbaaec6d458b0980e8c8eae65" name="aa24f66bcbaaec6d458b0980e8c8eae65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa24f66bcbaaec6d458b0980e8c8eae65">&#9670;&#160;</a></span>~Widget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Widget::~Widget </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a80deec65bec85f16a0dc236e1e1439b6" name="a80deec65bec85f16a0dc236e1e1439b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80deec65bec85f16a0dc236e1e1439b6">&#9670;&#160;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_custom_shader_program.html">CustomShaderProgram</a> &amp;&#160;</td>
+          <td class="paramname"><em>shaderProgram</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_draw_able.html#ad5c435fe3b79f75d24622607f4c28270">DrawAble</a>.</p>
+
+</div>
+</div>
+<a id="a29d812752a1d276ca6eac85118fd8b8c" name="a29d812752a1d276ca6eac85118fd8b8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29d812752a1d276ca6eac85118fd8b8c">&#9670;&#160;</a></span>getComponentName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Widget::getComponentName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea2eeadec569534db61281738d59f380" name="aea2eeadec569534db61281738d59f380"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea2eeadec569534db61281738d59f380">&#9670;&#160;</a></span>getRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_utils.html#a73c8be21c2660f317f60d767cbbb169f">Utils::FRect</a> Widget::getRect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afb2d9e92ddd25570c77992173933a107" name="afb2d9e92ddd25570c77992173933a107"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb2d9e92ddd25570c77992173933a107">&#9670;&#160;</a></span>getScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_utils.html#aafb5e8bb86bfd3e4b178ed45c9d3d8c0">Utils::FSize2D</a> Widget::getScale </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0e39dbbdfdc8d40e8d73fc6a67a035d7" name="a0e39dbbdfdc8d40e8d73fc6a67a035d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e39dbbdfdc8d40e8d73fc6a67a035d7">&#9670;&#160;</a></span>getSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_utils.html#aafb5e8bb86bfd3e4b178ed45c9d3d8c0">Utils::FSize2D</a> Widget::getSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a05a47ddc6170fc68c8d456d1e854553b" name="a05a47ddc6170fc68c8d456d1e854553b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05a47ddc6170fc68c8d456d1e854553b">&#9670;&#160;</a></span>getTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_texture.html">Texture</a> &amp; Widget::getTexture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a73b15117c41fb9f5029b2e2d784bea12" name="a73b15117c41fb9f5029b2e2d784bea12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73b15117c41fb9f5029b2e2d784bea12">&#9670;&#160;</a></span>getVerticesCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t Widget::getVerticesCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_draw_able.html#acfbef64637f9cf7d68d6e04a62667baf">DrawAble</a>.</p>
+
+</div>
+</div>
+<a id="a129679f366d3acb6d955b36fe2986ac7" name="a129679f366d3acb6d955b36fe2986ac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a129679f366d3acb6d955b36fe2986ac7">&#9670;&#160;</a></span>isDrawBorder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Widget::isDrawBorder </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa4ffe18f3d118a05fc85bfdbf17e69f4" name="aa4ffe18f3d118a05fc85bfdbf17e69f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4ffe18f3d118a05fc85bfdbf17e69f4">&#9670;&#160;</a></span>prepare()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::prepare </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af2259c919770dbbba63b985e18dbb85f" name="af2259c919770dbbba63b985e18dbb85f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2259c919770dbbba63b985e18dbb85f">&#9670;&#160;</a></span>setIsDrawBorder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::setIsDrawBorder </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isDraw</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7755d179f592cdeeceb25c6d60835a02" name="a7755d179f592cdeeceb25c6d60835a02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7755d179f592cdeeceb25c6d60835a02">&#9670;&#160;</a></span>setScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::setScale </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_utils.html#aafb5e8bb86bfd3e4b178ed45c9d3d8c0">Utils::FSize2D</a>&#160;</td>
+          <td class="paramname"><em>newScale</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a84027ff8c38eb28e93a90a71ce78bd87" name="a84027ff8c38eb28e93a90a71ce78bd87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84027ff8c38eb28e93a90a71ce78bd87">&#9670;&#160;</a></span>setSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::setSize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_utils.html#aafb5e8bb86bfd3e4b178ed45c9d3d8c0">Utils::FSize2D</a>&#160;</td>
+          <td class="paramname"><em>newSize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a97970440e5b29885de5cee559dc545af" name="a97970440e5b29885de5cee559dc545af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97970440e5b29885de5cee559dc545af">&#9670;&#160;</a></span>setTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::setTexture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_texture.html">Texture</a> &amp;&#160;</td>
+          <td class="paramname"><em>texture</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae01e8ebb6235b6987ab451d3e649e440" name="ae01e8ebb6235b6987ab451d3e649e440"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae01e8ebb6235b6987ab451d3e649e440">&#9670;&#160;</a></span>toJson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::property_tree::ptree Widget::toJson </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_json_printable.html#ad88ef7acc61ef1693a6fc7548f0ef693">JsonPrintable</a>.</p>
+
+</div>
+</div>
+<a id="a9febb21bc2470131d23b7dd1d940028a" name="a9febb21bc2470131d23b7dd1d940028a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9febb21bc2470131d23b7dd1d940028a">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_draw_able.html#acda9ee6421373cad1286c6b59c21f240">DrawAble</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a3abf765f48da6b169c7fcb1b4561f20b" name="a3abf765f48da6b169c7fcb1b4561f20b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3abf765f48da6b169c7fcb1b4561f20b">&#9670;&#160;</a></span>borderColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr glm::vec4 Widget::borderColor = {1.f, 1.f, 0.f, 1.f}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2762746c9c4a59f2094030f0c4630591" name="a2762746c9c4a59f2094030f0c4630591"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2762746c9c4a59f2094030f0c4630591">&#9670;&#160;</a></span>borderWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr float Widget::borderWidth = 0.05f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0208272b52a46d937fd634957d8e45eb" name="a0208272b52a46d937fd634957d8e45eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0208272b52a46d937fd634957d8e45eb">&#9670;&#160;</a></span>componentName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const char* Widget::componentName = &quot;widget&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acec52fa49a51eec7f79a1ba9983815a2" name="acec52fa49a51eec7f79a1ba9983815a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acec52fa49a51eec7f79a1ba9983815a2">&#9670;&#160;</a></span>onMouseHover</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt;void()&gt; Widget::onMouseHover</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6eb92fc82ee47c116f869fb469c0980e" name="a6eb92fc82ee47c116f869fb469c0980e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eb92fc82ee47c116f869fb469c0980e">&#9670;&#160;</a></span>onMouseLeftClick</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt;void()&gt; Widget::onMouseLeftClick</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a92d731b9eac92bf3a8a8bbca95e3ba49" name="a92d731b9eac92bf3a8a8bbca95e3ba49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92d731b9eac92bf3a8a8bbca95e3ba49">&#9670;&#160;</a></span>onMouseMiddleClick</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt;void()&gt; Widget::onMouseMiddleClick</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aacdb362c9eb5017cf9863d4e93d209bd" name="aacdb362c9eb5017cf9863d4e93d209bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacdb362c9eb5017cf9863d4e93d209bd">&#9670;&#160;</a></span>onMouseRightClick</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt;void()&gt; Widget::onMouseRightClick</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad95fb5392f071a7890f1190332ca53ba" name="ad95fb5392f071a7890f1190332ca53ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad95fb5392f071a7890f1190332ca53ba">&#9670;&#160;</a></span>onMouseUnHover</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt;void()&gt; Widget::onMouseUnHover</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a77f878cfa21449ec6eb92d7bcf61189a" name="a77f878cfa21449ec6eb92d7bcf61189a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77f878cfa21449ec6eb92d7bcf61189a">&#9670;&#160;</a></span>onMouseWheel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt;void(double)&gt; Widget::onMouseWheel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab88565c8fce2a7c058941030cd943445" name="ab88565c8fce2a7c058941030cd943445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab88565c8fce2a7c058941030cd943445">&#9670;&#160;</a></span>onTextInput</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt;void(unsigned int)&gt; Widget::onTextInput</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>lib/core/shapes/include/<a class="el" href="_widget_8h_source.html">Widget.h</a></li>
+<li>lib/core/shapes/source/<a class="el" href="_widget_8cpp.html">Widget.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_widget.html">Widget</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+var class_widget =
+[
+    [ "Widget", "class_widget.html#ab0f05949f1fa8ca233137fc4119c7401", null ],
+    [ "~Widget", "class_widget.html#aa24f66bcbaaec6d458b0980e8c8eae65", null ],
+    [ "draw", "class_widget.html#a80deec65bec85f16a0dc236e1e1439b6", null ],
+    [ "getComponentName", "class_widget.html#a29d812752a1d276ca6eac85118fd8b8c", null ],
+    [ "getRect", "class_widget.html#aea2eeadec569534db61281738d59f380", null ],
+    [ "getScale", "class_widget.html#afb2d9e92ddd25570c77992173933a107", null ],
+    [ "getSize", "class_widget.html#a0e39dbbdfdc8d40e8d73fc6a67a035d7", null ],
+    [ "getTexture", "class_widget.html#a05a47ddc6170fc68c8d456d1e854553b", null ],
+    [ "getVerticesCount", "class_widget.html#a73b15117c41fb9f5029b2e2d784bea12", null ],
+    [ "isDrawBorder", "class_widget.html#a129679f366d3acb6d955b36fe2986ac7", null ],
+    [ "prepare", "class_widget.html#aa4ffe18f3d118a05fc85bfdbf17e69f4", null ],
+    [ "setIsDrawBorder", "class_widget.html#af2259c919770dbbba63b985e18dbb85f", null ],
+    [ "setScale", "class_widget.html#a7755d179f592cdeeceb25c6d60835a02", null ],
+    [ "setSize", "class_widget.html#a84027ff8c38eb28e93a90a71ce78bd87", null ],
+    [ "setTexture", "class_widget.html#a97970440e5b29885de5cee559dc545af", null ],
+    [ "toJson", "class_widget.html#ae01e8ebb6235b6987ab451d3e649e440", null ],
+    [ "update", "class_widget.html#a9febb21bc2470131d23b7dd1d940028a", null ],
+    [ "onMouseHover", "class_widget.html#acec52fa49a51eec7f79a1ba9983815a2", null ],
+    [ "onMouseLeftClick", "class_widget.html#a6eb92fc82ee47c116f869fb469c0980e", null ],
+    [ "onMouseMiddleClick", "class_widget.html#a92d731b9eac92bf3a8a8bbca95e3ba49", null ],
+    [ "onMouseRightClick", "class_widget.html#aacdb362c9eb5017cf9863d4e93d209bd", null ],
+    [ "onMouseUnHover", "class_widget.html#ad95fb5392f071a7890f1190332ca53ba", null ],
+    [ "onMouseWheel", "class_widget.html#a77f878cfa21449ec6eb92d7bcf61189a", null ],
+    [ "onTextInput", "class_widget.html#ab88565c8fce2a7c058941030cd943445", null ]
+];

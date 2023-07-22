@@ -1,0 +1,304 @@
+\doxysection{Widget Class Reference}
+\hypertarget{class_widget}{}\label{class_widget}\index{Widget@{Widget}}
+
+
+{\ttfamily \#include $<$Widget.\+h$>$}
+
+Inheritance diagram for Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_widget}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_widget_ab0f05949f1fa8ca233137fc4119c7401}{Widget}} ()
+\item 
+\mbox{\hyperlink{class_widget_aa24f66bcbaaec6d458b0980e8c8eae65}{\texorpdfstring{$\sim$}{\string~}\+Widget}} ()
+\item 
+void \mbox{\hyperlink{class_widget_a80deec65bec85f16a0dc236e1e1439b6}{draw}} (\mbox{\hyperlink{class_custom_shader_program}{Custom\+Shader\+Program}} \&shader\+Program) override
+\item 
+\+\_\+\+NODISCARD std\+::size\+\_\+t \mbox{\hyperlink{class_widget_a73b15117c41fb9f5029b2e2d784bea12}{get\+Vertices\+Count}} () const override
+\item 
+void \mbox{\hyperlink{class_widget_a97970440e5b29885de5cee559dc545af}{set\+Texture}} (\mbox{\hyperlink{class_texture}{Texture}} \&texture)
+\item 
+\+\_\+\+NODISCARD \mbox{\hyperlink{class_texture}{Texture}} \& \mbox{\hyperlink{class_widget_a05a47ddc6170fc68c8d456d1e854553b}{get\+Texture}} ()
+\item 
+void \mbox{\hyperlink{class_widget_a84027ff8c38eb28e93a90a71ce78bd87}{set\+Size}} (\mbox{\hyperlink{namespace_utils_aafb5e8bb86bfd3e4b178ed45c9d3d8c0}{Utils\+::\+FSize2D}} new\+Size)
+\item 
+\+\_\+\+NODISCARD \mbox{\hyperlink{namespace_utils_aafb5e8bb86bfd3e4b178ed45c9d3d8c0}{Utils\+::\+FSize2D}} \mbox{\hyperlink{class_widget_a0e39dbbdfdc8d40e8d73fc6a67a035d7}{get\+Size}} () const
+\item 
+void \mbox{\hyperlink{class_widget_a7755d179f592cdeeceb25c6d60835a02}{set\+Scale}} (\mbox{\hyperlink{namespace_utils_aafb5e8bb86bfd3e4b178ed45c9d3d8c0}{Utils\+::\+FSize2D}} new\+Scale)
+\item 
+\+\_\+\+NODISCARD \mbox{\hyperlink{namespace_utils_aafb5e8bb86bfd3e4b178ed45c9d3d8c0}{Utils\+::\+FSize2D}} \mbox{\hyperlink{class_widget_afb2d9e92ddd25570c77992173933a107}{get\+Scale}} () const
+\item 
+\+\_\+\+NODISCARD \mbox{\hyperlink{namespace_utils_a73c8be21c2660f317f60d767cbbb169f}{Utils\+::\+FRect}} \mbox{\hyperlink{class_widget_aea2eeadec569534db61281738d59f380}{get\+Rect}} () const
+\item 
+void \mbox{\hyperlink{class_widget_af2259c919770dbbba63b985e18dbb85f}{set\+Is\+Draw\+Border}} (bool is\+Draw)
+\item 
+\+\_\+\+NODISCARD bool \mbox{\hyperlink{class_widget_a129679f366d3acb6d955b36fe2986ac7}{is\+Draw\+Border}} () const
+\item 
+void \mbox{\hyperlink{class_widget_aa4ffe18f3d118a05fc85bfdbf17e69f4}{prepare}} ()
+\item 
+void \mbox{\hyperlink{class_widget_a9febb21bc2470131d23b7dd1d940028a}{update}} () override
+\item 
+virtual \+\_\+\+NODISCARD std\+::string \mbox{\hyperlink{class_widget_a29d812752a1d276ca6eac85118fd8b8c}{get\+Component\+Name}} () const
+\item 
+\+\_\+\+NODISCARD boost\+::property\+\_\+tree\+::ptree \mbox{\hyperlink{class_widget_ae01e8ebb6235b6987ab451d3e649e440}{to\+Json}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_draw_able}{Draw\+Able}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_draw_able_ad5c435fe3b79f75d24622607f4c28270}{draw}} (\mbox{\hyperlink{class_custom_shader_program}{Custom\+Shader\+Program}} \&shader\+Program)
+\item 
+virtual \+\_\+\+NODISCARD std\+::size\+\_\+t \mbox{\hyperlink{class_draw_able_acfbef64637f9cf7d68d6e04a62667baf}{get\+Vertices\+Count}} () const
+\item 
+void \mbox{\hyperlink{class_draw_able_acd55542436a5f844085d1fd164e3d203}{set\+Position}} (const glm\+::vec2 \&new\+Position)
+\item 
+void \mbox{\hyperlink{class_draw_able_a6da3581efe2b09c6ba7ba09d2248833b}{move}} (const glm\+::vec2 \&offset)
+\item 
+\+\_\+\+NODISCARD const glm\+::vec2 \& \mbox{\hyperlink{class_draw_able_aa5ece9c226314b8dd7caae8003ed3703}{get\+Position}} () const
+\item 
+void \mbox{\hyperlink{class_draw_able_acf5d4190394676b99e6ecef0a6956bf4}{set\+Rotation}} (float new\+Rotation)
+\item 
+void \mbox{\hyperlink{class_draw_able_ab5ab7e8690ec97edf8a717372c3cbaf7}{rotate}} (float offset)
+\item 
+\+\_\+\+NODISCARD float \mbox{\hyperlink{class_draw_able_a6a2e5ca6279fe6d549df0d7647a3aa6c}{get\+Rotation}} () const
+\item 
+virtual void \mbox{\hyperlink{class_draw_able_acda9ee6421373cad1286c6b59c21f240}{update}} ()=0
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+virtual \+\_\+\+NODISCARD boost\+::property\+\_\+tree\+::ptree \mbox{\hyperlink{class_json_printable_ad88ef7acc61ef1693a6fc7548f0ef693}{to\+Json}} () const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_updateable}{Updateable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_updateable_aa0034c151d688ccd7a24fc734a8a2bb5}{Updateable}} ()
+\item 
+virtual \mbox{\hyperlink{class_updateable_a36b40dd091c316e268d2191639c4291c}{\texorpdfstring{$\sim$}{\string~}\+Updateable}} ()
+\item 
+virtual void \mbox{\hyperlink{class_updateable_ad6496f7a41cefcb6f949557500aacd0e}{update}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_lambda_multicast_delegate}{Lambda\+Multicast\+Delegate}}$<$ void()$>$ \mbox{\hyperlink{class_widget_acec52fa49a51eec7f79a1ba9983815a2}{on\+Mouse\+Hover}}
+\item 
+\mbox{\hyperlink{class_lambda_multicast_delegate}{Lambda\+Multicast\+Delegate}}$<$ void()$>$ \mbox{\hyperlink{class_widget_ad95fb5392f071a7890f1190332ca53ba}{on\+Mouse\+Un\+Hover}}
+\item 
+\mbox{\hyperlink{class_lambda_multicast_delegate}{Lambda\+Multicast\+Delegate}}$<$ void()$>$ \mbox{\hyperlink{class_widget_a6eb92fc82ee47c116f869fb469c0980e}{on\+Mouse\+Left\+Click}}
+\item 
+\mbox{\hyperlink{class_lambda_multicast_delegate}{Lambda\+Multicast\+Delegate}}$<$ void()$>$ \mbox{\hyperlink{class_widget_aacdb362c9eb5017cf9863d4e93d209bd}{on\+Mouse\+Right\+Click}}
+\item 
+\mbox{\hyperlink{class_lambda_multicast_delegate}{Lambda\+Multicast\+Delegate}}$<$ void()$>$ \mbox{\hyperlink{class_widget_a92d731b9eac92bf3a8a8bbca95e3ba49}{on\+Mouse\+Middle\+Click}}
+\item 
+\mbox{\hyperlink{class_lambda_multicast_delegate}{Lambda\+Multicast\+Delegate}}$<$ void(double)$>$ \mbox{\hyperlink{class_widget_a77f878cfa21449ec6eb92d7bcf61189a}{on\+Mouse\+Wheel}}
+\item 
+\mbox{\hyperlink{class_lambda_multicast_delegate}{Lambda\+Multicast\+Delegate}}$<$ void(unsigned int)$>$ \mbox{\hyperlink{class_widget_ab88565c8fce2a7c058941030cd943445}{on\+Text\+Input}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr glm\+::vec4 \mbox{\hyperlink{class_widget_a3abf765f48da6b169c7fcb1b4561f20b}{border\+Color}} = \{1.f, 1.f, 0.f, 1.f\}
+\item 
+static constexpr float \mbox{\hyperlink{class_widget_a2762746c9c4a59f2094030f0c4630591}{border\+Width}} = 0.\+05f
+\item 
+static constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_widget_a0208272b52a46d937fd634957d8e45eb}{component\+Name}} = \"{}widget\"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_draw_able}{Draw\+Able}}}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec2 \mbox{\hyperlink{class_draw_able_a1d12fd9119ad5a5026d53cc5490a0c9f}{position\+\_\+}} \{\}
+\item 
+float \mbox{\hyperlink{class_draw_able_a3ae6ed0e957eeeb4223ee73d85c29e28}{rotation\+\_\+}} \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_widget_ab0f05949f1fa8ca233137fc4119c7401}\label{class_widget_ab0f05949f1fa8ca233137fc4119c7401} 
+\index{Widget@{Widget}!Widget@{Widget}}
+\index{Widget@{Widget}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{Widget()}{Widget()}}
+{\footnotesize\ttfamily Widget\+::\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_widget_aa24f66bcbaaec6d458b0980e8c8eae65}\label{class_widget_aa24f66bcbaaec6d458b0980e8c8eae65} 
+\index{Widget@{Widget}!````~Widget@{\texorpdfstring{$\sim$}{\string~}Widget}}
+\index{````~Widget@{\texorpdfstring{$\sim$}{\string~}Widget}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Widget()}{\string~Widget()}}
+{\footnotesize\ttfamily Widget\+::\texorpdfstring{$\sim$}{\string~}\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_widget_a80deec65bec85f16a0dc236e1e1439b6}\label{class_widget_a80deec65bec85f16a0dc236e1e1439b6} 
+\index{Widget@{Widget}!draw@{draw}}
+\index{draw@{draw}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Widget\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_custom_shader_program}{Custom\+Shader\+Program}} \&}]{shader\+Program }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_draw_able_ad5c435fe3b79f75d24622607f4c28270}{Draw\+Able}}.
+
+\Hypertarget{class_widget_a29d812752a1d276ca6eac85118fd8b8c}\label{class_widget_a29d812752a1d276ca6eac85118fd8b8c} 
+\index{Widget@{Widget}!getComponentName@{getComponentName}}
+\index{getComponentName@{getComponentName}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{getComponentName()}{getComponentName()}}
+{\footnotesize\ttfamily std\+::string Widget\+::get\+Component\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\Hypertarget{class_widget_aea2eeadec569534db61281738d59f380}\label{class_widget_aea2eeadec569534db61281738d59f380} 
+\index{Widget@{Widget}!getRect@{getRect}}
+\index{getRect@{getRect}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{getRect()}{getRect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_utils_a73c8be21c2660f317f60d767cbbb169f}{Utils\+::\+FRect}} Widget\+::get\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_widget_afb2d9e92ddd25570c77992173933a107}\label{class_widget_afb2d9e92ddd25570c77992173933a107} 
+\index{Widget@{Widget}!getScale@{getScale}}
+\index{getScale@{getScale}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{getScale()}{getScale()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_utils_aafb5e8bb86bfd3e4b178ed45c9d3d8c0}{Utils\+::\+FSize2D}} Widget\+::get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_widget_a0e39dbbdfdc8d40e8d73fc6a67a035d7}\label{class_widget_a0e39dbbdfdc8d40e8d73fc6a67a035d7} 
+\index{Widget@{Widget}!getSize@{getSize}}
+\index{getSize@{getSize}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_utils_aafb5e8bb86bfd3e4b178ed45c9d3d8c0}{Utils\+::\+FSize2D}} Widget\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_widget_a05a47ddc6170fc68c8d456d1e854553b}\label{class_widget_a05a47ddc6170fc68c8d456d1e854553b} 
+\index{Widget@{Widget}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_texture}{Texture}} \& Widget\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_widget_a73b15117c41fb9f5029b2e2d784bea12}\label{class_widget_a73b15117c41fb9f5029b2e2d784bea12} 
+\index{Widget@{Widget}!getVerticesCount@{getVerticesCount}}
+\index{getVerticesCount@{getVerticesCount}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{getVerticesCount()}{getVerticesCount()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Widget\+::get\+Vertices\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_draw_able_acfbef64637f9cf7d68d6e04a62667baf}{Draw\+Able}}.
+
+\Hypertarget{class_widget_a129679f366d3acb6d955b36fe2986ac7}\label{class_widget_a129679f366d3acb6d955b36fe2986ac7} 
+\index{Widget@{Widget}!isDrawBorder@{isDrawBorder}}
+\index{isDrawBorder@{isDrawBorder}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{isDrawBorder()}{isDrawBorder()}}
+{\footnotesize\ttfamily bool Widget\+::is\+Draw\+Border (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_widget_aa4ffe18f3d118a05fc85bfdbf17e69f4}\label{class_widget_aa4ffe18f3d118a05fc85bfdbf17e69f4} 
+\index{Widget@{Widget}!prepare@{prepare}}
+\index{prepare@{prepare}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{prepare()}{prepare()}}
+{\footnotesize\ttfamily void Widget\+::prepare (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_widget_af2259c919770dbbba63b985e18dbb85f}\label{class_widget_af2259c919770dbbba63b985e18dbb85f} 
+\index{Widget@{Widget}!setIsDrawBorder@{setIsDrawBorder}}
+\index{setIsDrawBorder@{setIsDrawBorder}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{setIsDrawBorder()}{setIsDrawBorder()}}
+{\footnotesize\ttfamily void Widget\+::set\+Is\+Draw\+Border (\begin{DoxyParamCaption}\item[{bool}]{is\+Draw }\end{DoxyParamCaption})}
+
+\Hypertarget{class_widget_a7755d179f592cdeeceb25c6d60835a02}\label{class_widget_a7755d179f592cdeeceb25c6d60835a02} 
+\index{Widget@{Widget}!setScale@{setScale}}
+\index{setScale@{setScale}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}}
+{\footnotesize\ttfamily void Widget\+::set\+Scale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_utils_aafb5e8bb86bfd3e4b178ed45c9d3d8c0}{Utils\+::\+FSize2D}}}]{new\+Scale }\end{DoxyParamCaption})}
+
+\Hypertarget{class_widget_a84027ff8c38eb28e93a90a71ce78bd87}\label{class_widget_a84027ff8c38eb28e93a90a71ce78bd87} 
+\index{Widget@{Widget}!setSize@{setSize}}
+\index{setSize@{setSize}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}}
+{\footnotesize\ttfamily void Widget\+::set\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_utils_aafb5e8bb86bfd3e4b178ed45c9d3d8c0}{Utils\+::\+FSize2D}}}]{new\+Size }\end{DoxyParamCaption})}
+
+\Hypertarget{class_widget_a97970440e5b29885de5cee559dc545af}\label{class_widget_a97970440e5b29885de5cee559dc545af} 
+\index{Widget@{Widget}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{setTexture()}{setTexture()}}
+{\footnotesize\ttfamily void Widget\+::set\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_texture}{Texture}} \&}]{texture }\end{DoxyParamCaption})}
+
+\Hypertarget{class_widget_ae01e8ebb6235b6987ab451d3e649e440}\label{class_widget_ae01e8ebb6235b6987ab451d3e649e440} 
+\index{Widget@{Widget}!toJson@{toJson}}
+\index{toJson@{toJson}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily boost\+::property\+\_\+tree\+::ptree Widget\+::to\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_json_printable_ad88ef7acc61ef1693a6fc7548f0ef693}{Json\+Printable}}.
+
+\Hypertarget{class_widget_a9febb21bc2470131d23b7dd1d940028a}\label{class_widget_a9febb21bc2470131d23b7dd1d940028a} 
+\index{Widget@{Widget}!update@{update}}
+\index{update@{update}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Widget\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_draw_able_acda9ee6421373cad1286c6b59c21f240}{Draw\+Able}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_widget_a3abf765f48da6b169c7fcb1b4561f20b}\label{class_widget_a3abf765f48da6b169c7fcb1b4561f20b} 
+\index{Widget@{Widget}!borderColor@{borderColor}}
+\index{borderColor@{borderColor}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{borderColor}{borderColor}}
+{\footnotesize\ttfamily constexpr glm\+::vec4 Widget\+::border\+Color = \{1.f, 1.f, 0.f, 1.f\}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{class_widget_a2762746c9c4a59f2094030f0c4630591}\label{class_widget_a2762746c9c4a59f2094030f0c4630591} 
+\index{Widget@{Widget}!borderWidth@{borderWidth}}
+\index{borderWidth@{borderWidth}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{borderWidth}{borderWidth}}
+{\footnotesize\ttfamily constexpr float Widget\+::border\+Width = 0.\+05f\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{class_widget_a0208272b52a46d937fd634957d8e45eb}\label{class_widget_a0208272b52a46d937fd634957d8e45eb} 
+\index{Widget@{Widget}!componentName@{componentName}}
+\index{componentName@{componentName}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{componentName}{componentName}}
+{\footnotesize\ttfamily constexpr const char\texorpdfstring{$\ast$}{*} Widget\+::component\+Name = \"{}widget\"{}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{class_widget_acec52fa49a51eec7f79a1ba9983815a2}\label{class_widget_acec52fa49a51eec7f79a1ba9983815a2} 
+\index{Widget@{Widget}!onMouseHover@{onMouseHover}}
+\index{onMouseHover@{onMouseHover}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{onMouseHover}{onMouseHover}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_lambda_multicast_delegate}{Lambda\+Multicast\+Delegate}}$<$void()$>$ Widget\+::on\+Mouse\+Hover}
+
+\Hypertarget{class_widget_a6eb92fc82ee47c116f869fb469c0980e}\label{class_widget_a6eb92fc82ee47c116f869fb469c0980e} 
+\index{Widget@{Widget}!onMouseLeftClick@{onMouseLeftClick}}
+\index{onMouseLeftClick@{onMouseLeftClick}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{onMouseLeftClick}{onMouseLeftClick}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_lambda_multicast_delegate}{Lambda\+Multicast\+Delegate}}$<$void()$>$ Widget\+::on\+Mouse\+Left\+Click}
+
+\Hypertarget{class_widget_a92d731b9eac92bf3a8a8bbca95e3ba49}\label{class_widget_a92d731b9eac92bf3a8a8bbca95e3ba49} 
+\index{Widget@{Widget}!onMouseMiddleClick@{onMouseMiddleClick}}
+\index{onMouseMiddleClick@{onMouseMiddleClick}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{onMouseMiddleClick}{onMouseMiddleClick}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_lambda_multicast_delegate}{Lambda\+Multicast\+Delegate}}$<$void()$>$ Widget\+::on\+Mouse\+Middle\+Click}
+
+\Hypertarget{class_widget_aacdb362c9eb5017cf9863d4e93d209bd}\label{class_widget_aacdb362c9eb5017cf9863d4e93d209bd} 
+\index{Widget@{Widget}!onMouseRightClick@{onMouseRightClick}}
+\index{onMouseRightClick@{onMouseRightClick}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{onMouseRightClick}{onMouseRightClick}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_lambda_multicast_delegate}{Lambda\+Multicast\+Delegate}}$<$void()$>$ Widget\+::on\+Mouse\+Right\+Click}
+
+\Hypertarget{class_widget_ad95fb5392f071a7890f1190332ca53ba}\label{class_widget_ad95fb5392f071a7890f1190332ca53ba} 
+\index{Widget@{Widget}!onMouseUnHover@{onMouseUnHover}}
+\index{onMouseUnHover@{onMouseUnHover}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{onMouseUnHover}{onMouseUnHover}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_lambda_multicast_delegate}{Lambda\+Multicast\+Delegate}}$<$void()$>$ Widget\+::on\+Mouse\+Un\+Hover}
+
+\Hypertarget{class_widget_a77f878cfa21449ec6eb92d7bcf61189a}\label{class_widget_a77f878cfa21449ec6eb92d7bcf61189a} 
+\index{Widget@{Widget}!onMouseWheel@{onMouseWheel}}
+\index{onMouseWheel@{onMouseWheel}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{onMouseWheel}{onMouseWheel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_lambda_multicast_delegate}{Lambda\+Multicast\+Delegate}}$<$void(double)$>$ Widget\+::on\+Mouse\+Wheel}
+
+\Hypertarget{class_widget_ab88565c8fce2a7c058941030cd943445}\label{class_widget_ab88565c8fce2a7c058941030cd943445} 
+\index{Widget@{Widget}!onTextInput@{onTextInput}}
+\index{onTextInput@{onTextInput}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{onTextInput}{onTextInput}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_lambda_multicast_delegate}{Lambda\+Multicast\+Delegate}}$<$void(unsigned int)$>$ Widget\+::on\+Text\+Input}
+

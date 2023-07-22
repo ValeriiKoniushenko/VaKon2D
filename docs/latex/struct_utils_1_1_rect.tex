@@ -4,6 +4,21 @@
 
 {\ttfamily \#include $<$Rect.\+h$>$}
 
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+NODISCARD glm\+::vec2 \mbox{\hyperlink{struct_utils_1_1_rect_ab37c77e946de5013549d380945cc9cd2}{get\+Left\+Top\+Point}} () const
+\item 
+\+\_\+\+NODISCARD glm\+::vec2 \mbox{\hyperlink{struct_utils_1_1_rect_ae6c8b163e9576949310438efb23552e2}{get\+Left\+Bottom\+Point}} () const
+\item 
+\+\_\+\+NODISCARD glm\+::vec2 \mbox{\hyperlink{struct_utils_1_1_rect_a8123eeae2cb4beb9afd7a9c6fe94c001}{get\+Right\+Bottom\+Point}} () const
+\item 
+\+\_\+\+NODISCARD glm\+::vec2 \mbox{\hyperlink{struct_utils_1_1_rect_a882f1b62bc339350f8788e64da464deb}{get\+Right\+Top\+Point}} () const
+\item 
+\+\_\+\+NODISCARD bool \mbox{\hyperlink{struct_utils_1_1_rect_adee70c5b2df7754f3c8b2f53c244d57c}{is\+Collision}} (glm\+::vec2 point) const
+\item 
+\+\_\+\+NODISCARD bool \mbox{\hyperlink{struct_utils_1_1_rect_a3b9f25adb0cfe0e3e39258a12a35208c}{is\+Collision}} (const \mbox{\hyperlink{struct_utils_1_1_rect}{Rect}}$<$ T $>$ rect) const
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -11,6 +26,51 @@ glm\+::vec2 \mbox{\hyperlink{struct_utils_1_1_rect_a1deb13bc02d17e725417ae7a03c9
 \item 
 \mbox{\hyperlink{struct_utils_1_1_size2_d}{Size2D}}$<$ T $>$ \mbox{\hyperlink{struct_utils_1_1_rect_a73e6bd4640ae5d23614922bb5733b6d9}{size}}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_utils_1_1_rect_ae6c8b163e9576949310438efb23552e2}\label{struct_utils_1_1_rect_ae6c8b163e9576949310438efb23552e2} 
+\index{Utils::Rect$<$ T $>$@{Utils::Rect$<$ T $>$}!getLeftBottomPoint@{getLeftBottomPoint}}
+\index{getLeftBottomPoint@{getLeftBottomPoint}!Utils::Rect$<$ T $>$@{Utils::Rect$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getLeftBottomPoint()}{getLeftBottomPoint()}}
+{\footnotesize\ttfamily template$<$Sizeable T$>$ \\
+\+\_\+\+NODISCARD glm\+::vec2 \mbox{\hyperlink{struct_utils_1_1_rect}{Utils\+::\+Rect}}$<$ T $>$\+::get\+Left\+Bottom\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_utils_1_1_rect_ab37c77e946de5013549d380945cc9cd2}\label{struct_utils_1_1_rect_ab37c77e946de5013549d380945cc9cd2} 
+\index{Utils::Rect$<$ T $>$@{Utils::Rect$<$ T $>$}!getLeftTopPoint@{getLeftTopPoint}}
+\index{getLeftTopPoint@{getLeftTopPoint}!Utils::Rect$<$ T $>$@{Utils::Rect$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getLeftTopPoint()}{getLeftTopPoint()}}
+{\footnotesize\ttfamily template$<$Sizeable T$>$ \\
+\+\_\+\+NODISCARD glm\+::vec2 \mbox{\hyperlink{struct_utils_1_1_rect}{Utils\+::\+Rect}}$<$ T $>$\+::get\+Left\+Top\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_utils_1_1_rect_a8123eeae2cb4beb9afd7a9c6fe94c001}\label{struct_utils_1_1_rect_a8123eeae2cb4beb9afd7a9c6fe94c001} 
+\index{Utils::Rect$<$ T $>$@{Utils::Rect$<$ T $>$}!getRightBottomPoint@{getRightBottomPoint}}
+\index{getRightBottomPoint@{getRightBottomPoint}!Utils::Rect$<$ T $>$@{Utils::Rect$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getRightBottomPoint()}{getRightBottomPoint()}}
+{\footnotesize\ttfamily template$<$Sizeable T$>$ \\
+\+\_\+\+NODISCARD glm\+::vec2 \mbox{\hyperlink{struct_utils_1_1_rect}{Utils\+::\+Rect}}$<$ T $>$\+::get\+Right\+Bottom\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_utils_1_1_rect_a882f1b62bc339350f8788e64da464deb}\label{struct_utils_1_1_rect_a882f1b62bc339350f8788e64da464deb} 
+\index{Utils::Rect$<$ T $>$@{Utils::Rect$<$ T $>$}!getRightTopPoint@{getRightTopPoint}}
+\index{getRightTopPoint@{getRightTopPoint}!Utils::Rect$<$ T $>$@{Utils::Rect$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getRightTopPoint()}{getRightTopPoint()}}
+{\footnotesize\ttfamily template$<$Sizeable T$>$ \\
+\+\_\+\+NODISCARD glm\+::vec2 \mbox{\hyperlink{struct_utils_1_1_rect}{Utils\+::\+Rect}}$<$ T $>$\+::get\+Right\+Top\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_utils_1_1_rect_a3b9f25adb0cfe0e3e39258a12a35208c}\label{struct_utils_1_1_rect_a3b9f25adb0cfe0e3e39258a12a35208c} 
+\index{Utils::Rect$<$ T $>$@{Utils::Rect$<$ T $>$}!isCollision@{isCollision}}
+\index{isCollision@{isCollision}!Utils::Rect$<$ T $>$@{Utils::Rect$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{isCollision()}{isCollision()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$Sizeable T$>$ \\
+\+\_\+\+NODISCARD bool \mbox{\hyperlink{struct_utils_1_1_rect}{Utils\+::\+Rect}}$<$ T $>$\+::is\+Collision (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_utils_1_1_rect}{Rect}}$<$ T $>$}]{rect }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_utils_1_1_rect_adee70c5b2df7754f3c8b2f53c244d57c}\label{struct_utils_1_1_rect_adee70c5b2df7754f3c8b2f53c244d57c} 
+\index{Utils::Rect$<$ T $>$@{Utils::Rect$<$ T $>$}!isCollision@{isCollision}}
+\index{isCollision@{isCollision}!Utils::Rect$<$ T $>$@{Utils::Rect$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{isCollision()}{isCollision()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$Sizeable T$>$ \\
+\+\_\+\+NODISCARD bool \mbox{\hyperlink{struct_utils_1_1_rect}{Utils\+::\+Rect}}$<$ T $>$\+::is\+Collision (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 \doxysubsection{Member Data Documentation}

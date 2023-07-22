@@ -1,0 +1,86 @@
+\doxysection{Line\+Text.\+h}
+\hypertarget{_line_text_8h_source}{}\label{_line_text_8h_source}\index{lib/core/freetype-\/wrapper/include/LineText.h@{lib/core/freetype-\/wrapper/include/LineText.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ MIT\ License}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (c)\ 2023\ Valerii\ Koniushenko}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ in\ the\ Software\ without\ restriction,\ including\ without\ limitation\ the\ rights}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ SOFTWARE.}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}CopyableAndMoveable.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}CustomShaderProgram.h"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}Vao.h"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}Vbo.h"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}glm/glm.hpp"{}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_font}{Font}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_line_text}{LineText}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Utils::CopyableAndMoveable}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_line_text_aac9b86bba08c6d2e7fc1e09a71b6189b}{LineText}}(\textcolor{keywordtype}{bool}\ autoPrepare);}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_line_text_aac9b86bba08c6d2e7fc1e09a71b6189b}{LineText}}(\mbox{\hyperlink{class_font}{Font}}\&\ font,\ \textcolor{keyword}{const}\ std::string\&\ text);}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_line_text_aac9b86bba08c6d2e7fc1e09a71b6189b}{LineText}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_line_text_ae4ce8c160ba9d056352da8cd1402b4f8}{\string~LineText}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_line_text_aac9b86bba08c6d2e7fc1e09a71b6189b}{LineText}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_line_text}{LineText}}\&\ other);}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_line_text_aac9b86bba08c6d2e7fc1e09a71b6189b}{LineText}}(\mbox{\hyperlink{class_line_text}{LineText}}\&\&\ other);}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_line_text}{LineText}}\&\ \mbox{\hyperlink{class_line_text_aab99135ffd16c4d442f8eebd48e39de7}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_line_text}{LineText}}\&\ other);}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_line_text}{LineText}}\&\ \mbox{\hyperlink{class_line_text_aab99135ffd16c4d442f8eebd48e39de7}{operator=}}(\mbox{\hyperlink{class_line_text}{LineText}}\&\&\ other);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \_NODISCARD\ \mbox{\hyperlink{class_font}{Font}}*\ \mbox{\hyperlink{class_line_text_aee4db7626d4d15875d834af687296c59}{getFont}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_line_text_ae53158c19c501d4fd0d65aa67bb6abfe}{setFont}}(\mbox{\hyperlink{class_font}{Font}}\&\ font);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_line_text_afc8283e8e0d9a7628a67c71052e8a4fd}{getText}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_line_text_a1caf45e7ea9fe7bf748f96563dbf6baf}{setText}}(\textcolor{keyword}{const}\ std::string\&\ text);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{const}\ glm::vec2\&\ \mbox{\hyperlink{class_line_text_a50e0503807a0482c1ba80334e1d3413d}{getPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_line_text_aa6a91e00f938a9daa065fbc0722e94b8}{setPosition}}(\textcolor{keyword}{const}\ glm::vec2\&\ position);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_line_text_a8a4566e86d199907472508e85c97990f}{getTextWidth}}();}
+\DoxyCodeLine{00057\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_line_text_a656b655a1f35b02fb7bc6760e038303e}{getFontSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_line_text_af78a17a01cf3a394d84a44d48caad338}{setFontSize}}(\textcolor{keywordtype}{float}\ size);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_line_text_aa97aed4ff3fd8399dd4e55fd80e32e89}{prepare}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_line_text_a8223eac23779ee340e767db5b9a0af62}{draw}}(\mbox{\hyperlink{class_custom_shader_program}{CustomShaderProgram}}\&\ shader);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ updateCache();}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{float}\ getHeightOfTheBiggestLetter();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::size\_t\ dataPerFrame\ =\ 16;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{class_font}{Font}}*\ font\_;}
+\DoxyCodeLine{00072\ \ \ \ \ std::string\ text\_;}
+\DoxyCodeLine{00073\ \ \ \ \ std::string\ lastSavedText\_;}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{float}\ textWidth\_\ =\ -\/1.f;}
+\DoxyCodeLine{00075\ \ \ \ \ glm::vec2\ position\_;}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_vbo}{Vbo}}\ vbo\_;}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{class_vao}{Vao}}\ vao\_;}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{float}\ fontSize\_\ =\ 24.f;}
+\DoxyCodeLine{00079\ \ \ \ \ std::vector<std::vector<float>>\ cache\_;}
+\DoxyCodeLine{00080\ \};}
+
+\end{DoxyCode}

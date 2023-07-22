@@ -1,0 +1,26 @@
+var namespace_utils =
+[
+    [ "CopyableAndMoveable", "class_utils_1_1_copyable_and_moveable.html", "class_utils_1_1_copyable_and_moveable" ],
+    [ "NotCopyableAndNotMovable", "class_utils_1_1_not_copyable_and_not_movable.html", "class_utils_1_1_not_copyable_and_not_movable" ],
+    [ "NotCopyableButMovable", "class_utils_1_1_not_copyable_but_movable.html", "class_utils_1_1_not_copyable_but_movable" ],
+    [ "Rect", "struct_utils_1_1_rect.html", "struct_utils_1_1_rect" ],
+    [ "Size2D", "struct_utils_1_1_size2_d.html", "struct_utils_1_1_size2_d" ],
+    [ "Size3D", "struct_utils_1_1_size3_d.html", "struct_utils_1_1_size3_d" ],
+    [ "Sizeable", "concept_utils_1_1_sizeable.html", null ],
+    [ "DRect", "namespace_utils.html#a01a9d5a68d99e091e3c32c9e29538476", null ],
+    [ "DSize2D", "namespace_utils.html#ab7532cdc2afdcc0b65bdc52b83d2cca5", null ],
+    [ "DSize3D", "namespace_utils.html#a8a3cb492b5b7377a983157a079f0699d", null ],
+    [ "FRect", "namespace_utils.html#a73c8be21c2660f317f60d767cbbb169f", null ],
+    [ "FSize2D", "namespace_utils.html#aafb5e8bb86bfd3e4b178ed45c9d3d8c0", null ],
+    [ "FSize3D", "namespace_utils.html#a0678a1a28cc4e2a23e7cd23606ba4fa2", null ],
+    [ "IRect", "namespace_utils.html#aed00ededc33fcb096893fda68e4a5a02", null ],
+    [ "ISize2D", "namespace_utils.html#aa81b8f34f06cea4a8139492c0e1ad5da", null ],
+    [ "ISize3D", "namespace_utils.html#af63f9c6d53b4bab5329e681e091f6e9a", null ],
+    [ "getAllSupportedWndSizes", "namespace_utils.html#ace72a4e40e752a1f051123baf8552953", null ],
+    [ "getFileContent", "namespace_utils.html#a2d74380613b3476e9a37f6c90f621a78", null ],
+    [ "isEqual", "namespace_utils.html#aada1f1d5896ad9952b86088c2f374764", null ],
+    [ "isZero", "namespace_utils.html#ad1d64f8fa3f338df62994f318dfda9e9", null ],
+    [ "readFile", "namespace_utils.html#ab87d6f2eb65d583b706df37ac67c12c7", null ],
+    [ "setFileContent", "namespace_utils.html#afa4e16661ce2e7e179ef413d50a1c07d", null ],
+    [ "setFileContent", "namespace_utils.html#ab74a463c922fbf79205a2dadf345a253", null ]
+];

@@ -32,9 +32,18 @@
 \DoxyCodeLine{00028\ \{}
 \DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_custom_shader_program}{CustomShaderProgram}}(\textcolor{keywordtype}{bool}\ shouldCreate);}
-\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_custom_shader_program}{CustomShaderProgram}}(\mbox{\hyperlink{class_shader}{Shader}}\&\ frag,\ \mbox{\hyperlink{class_shader}{Shader}}\&\ vert);}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_custom_shader_program_a8d42e81d3e2c625471a7177fd5ca6c8c}{OnAfterLink}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_custom_shader_program}{CustomShaderProgram}}(std::filesystem::path\ pathToVertex,\ std::filesystem::path\ pathToFragment);}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_custom_shader_program}{CustomShaderProgram}}(\mbox{\hyperlink{class_shader}{Shader}}\&\ frag,\ \mbox{\hyperlink{class_shader}{Shader}}\&\ vert);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_custom_shader_program_a8d42e81d3e2c625471a7177fd5ca6c8c}{OnAfterLink}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_custom_shader_program_1_1_lightning}{Lightning}}}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_custom_shader_program_1_1_lightning_a00b0b38e033f2b1320a3b7a4a0422c93}{gamma}}\ =\ 2.2f;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_custom_shader_program_1_1_lightning_a551a65085692575daac3595900ceaa6f}{brightness}}\ =\ 0.05f;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_custom_shader_program_1_1_lightning_ab5ab1bf4ba3cf7e53d7db76b8337fcee}{contrast}}\ =\ 1.2f;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_custom_shader_program_1_1_lightning_a584a695a26fd69a4c048f6c1deb03abf}{saturation}}\ =\ 1.f;}
+\DoxyCodeLine{00042\ \ \ \ \ \}\ \mbox{\hyperlink{class_custom_shader_program_a44bbd16a02ee820318ace66d4dac06a4}{lightning}};}
+\DoxyCodeLine{00043\ \};}
 
 \end{DoxyCode}

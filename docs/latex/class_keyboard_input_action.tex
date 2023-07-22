@@ -1,0 +1,106 @@
+\doxysection{Keyboard\+Input\+Action Class Reference}
+\hypertarget{class_keyboard_input_action}{}\label{class_keyboard_input_action}\index{KeyboardInputAction@{KeyboardInputAction}}
+
+
+{\ttfamily \#include $<$Input\+Action.\+h$>$}
+
+Inheritance diagram for Keyboard\+Input\+Action\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_keyboard_input_action}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_keyboard_input_action_a671f8e30fddf78ffc98ed6c2ea639a5d}{Keyboard\+Input\+Action}} (const std\+::string \&name, \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1}{Keyboard\+::\+Key}} key)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_input_action}{Input\+Action$<$ Keyboard\+::\+Key $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_input_action_ab4ff1347e46188dfdcc2122319814a70}{Input\+Action}} (const std\+::string \&name, \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1}{Keyboard\+::\+Key}} key)
+\item 
+\+\_\+\+NODISCARD const std\+::string \& \mbox{\hyperlink{class_input_action_a44e86fee88cfe43741dfdd4d7d7345f9}{get\+Name}} () const
+\item 
+void \mbox{\hyperlink{class_input_action_a382a0d869d7a19e9e4a3a0b551e0d37f}{set\+Name}} (const std\+::string \&new\+Name)
+\item 
+void \mbox{\hyperlink{class_input_action_aacace27aa06a71867359536afa7eeab9}{set\+Frequency}} (\mbox{\hyperlink{class_input_action_ad8d9bfec3d89d83aabd036ae611b03ca}{TimeT}} value)
+\item 
+\+\_\+\+NODISCARD \mbox{\hyperlink{class_input_action_ad8d9bfec3d89d83aabd036ae611b03ca}{TimeT}} \mbox{\hyperlink{class_input_action_ab70b366a1e332855ed8f1ba8fb5ba0b5}{get\+Frequency}} () const
+\item 
+void \mbox{\hyperlink{class_input_action_af48c7e2fd515ece660e774c9abbce6a8}{update}} ()
+\item 
+void \mbox{\hyperlink{class_input_action_a4af8d046b0af2ee7fab0a7a1d5349a14}{set\+Key}} (\mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1}{Keyboard\+::\+Key}} key)
+\item 
+\+\_\+\+NODISCARD \mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1}{Keyboard\+::\+Key}} \mbox{\hyperlink{class_input_action_adf7a394f5c4fecf5a76956edddb1f9dd}{get\+Key}} () const
+\item 
+\+\_\+\+NODISCARD bool \mbox{\hyperlink{class_input_action_aa31aec2d587e7305464472e58d686857}{get\+Is\+Repeatable}} () const
+\item 
+void \mbox{\hyperlink{class_input_action_ac8e4bfb6f7e6843fced8e825ca27336b}{set\+Is\+Repeatable}} (bool is\+Repeatable)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_updateable}{Updateable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_updateable_aa0034c151d688ccd7a24fc734a8a2bb5}{Updateable}} ()
+\item 
+virtual \mbox{\hyperlink{class_updateable_a36b40dd091c316e268d2191639c4291c}{\texorpdfstring{$\sim$}{\string~}\+Updateable}} ()
+\item 
+virtual void \mbox{\hyperlink{class_updateable_ad6496f7a41cefcb6f949557500aacd0e}{update}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+NODISCARD bool \mbox{\hyperlink{class_keyboard_input_action_a521fff72783e28039659c8ca7de064f4}{is\+Key\+Pressed}} () const override
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+virtual \+\_\+\+NODISCARD bool \mbox{\hyperlink{class_input_action_a45a1bf6847c361fd8b4159c300f60ec1}{is\+Key\+Pressed}} () const=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_input_action}{Input\+Action$<$ Keyboard\+::\+Key $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_input_action_ad8d9bfec3d89d83aabd036ae611b03ca}{TimeT}} = std\+::chrono\+::milliseconds
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_input_action}{Input\+Action$<$ Keyboard\+::\+Key $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_lambda_multicast_delegate}{Lambda\+Multicast\+Delegate}}$<$ void()$>$ \mbox{\hyperlink{class_input_action_a23c673c1f19455325c920c56d8ff8625}{on\+Action}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_input_action}{Input\+Action$<$ Keyboard\+::\+Key $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_input_action_a1c137aea05e7109bd0079f4e2cc1fc33}{name\+\_\+}}
+\item 
+\mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1}{Keyboard\+::\+Key}} \mbox{\hyperlink{class_input_action_a173d4b88380e71bbc8edd0c815e4c65a}{key\+\_\+}}
+\item 
+\mbox{\hyperlink{class_input_action_ad8d9bfec3d89d83aabd036ae611b03ca}{TimeT}} \mbox{\hyperlink{class_input_action_a7377095cd633a908a7471f0f16292a65}{frequency\+\_\+}}
+\item 
+std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{class_input_action_a29179f7f262bb484ca466613ad73532e}{last\+Update\+\_\+}}
+\item 
+State \mbox{\hyperlink{class_input_action_a47318d6e834dfac13977f1f98271a930}{last\+State\+\_\+}}
+\item 
+bool \mbox{\hyperlink{class_input_action_aef96b77e3b30bfed7101d7499208224d}{is\+Repeatable\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_keyboard_input_action_a671f8e30fddf78ffc98ed6c2ea639a5d}\label{class_keyboard_input_action_a671f8e30fddf78ffc98ed6c2ea639a5d} 
+\index{KeyboardInputAction@{KeyboardInputAction}!KeyboardInputAction@{KeyboardInputAction}}
+\index{KeyboardInputAction@{KeyboardInputAction}!KeyboardInputAction@{KeyboardInputAction}}
+\doxysubsubsection{\texorpdfstring{KeyboardInputAction()}{KeyboardInputAction()}}
+{\footnotesize\ttfamily Keyboard\+Input\+Action\+::\+Keyboard\+Input\+Action (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{\mbox{\hyperlink{class_keyboard_a79a4b804a620cfbf3acd672dae2fb7a1}{Keyboard\+::\+Key}}}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_keyboard_input_action_a521fff72783e28039659c8ca7de064f4}\label{class_keyboard_input_action_a521fff72783e28039659c8ca7de064f4} 
+\index{KeyboardInputAction@{KeyboardInputAction}!isKeyPressed@{isKeyPressed}}
+\index{isKeyPressed@{isKeyPressed}!KeyboardInputAction@{KeyboardInputAction}}
+\doxysubsubsection{\texorpdfstring{isKeyPressed()}{isKeyPressed()}}
+{\footnotesize\ttfamily bool Keyboard\+Input\+Action\+::is\+Key\+Pressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_input_action_a45a1bf6847c361fd8b4159c300f60ec1}{Input\+Action$<$ Keyboard\+::\+Key $>$}}.
+

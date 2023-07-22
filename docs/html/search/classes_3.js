@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['image_0',['Image',['../class_image.html',1,'']]]
+  ['gl_0',['Gl',['../class_gl.html',1,'']]],
+  ['gladwrapper_1',['GladWrapper',['../class_glad_wrapper.html',1,'']]],
+  ['glfwwrapper_2',['GlfwWrapper',['../class_glfw_wrapper.html',1,'']]]
 ];

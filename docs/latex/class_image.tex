@@ -45,6 +45,10 @@ enum class \mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eb}{Chann
 \item 
 \+\_\+\+NODISCARD const unsigned char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_image_a70a32d813a2abc6731ed27ef091240fa}{data}} () const
 \item 
+void \mbox{\hyperlink{class_image_a9a862376b7877e9c1be48e91f65f923c}{set\+Internal\+Channel}} (\mbox{\hyperlink{class_gl_1_1_texture_a39dbf3d56868083269c050a317e143ff}{Gl\+::\+Texture\+::\+Channel}} channel)
+\item 
+\+\_\+\+NODISCARD \mbox{\hyperlink{class_gl_1_1_texture_a39dbf3d56868083269c050a317e143ff}{Gl\+::\+Texture\+::\+Channel}} \mbox{\hyperlink{class_image_a44302d2a32fc83a9c474c4b69fbd7a5e}{get\+Internal\+Channel}} () const
+\item 
 void \mbox{\hyperlink{class_image_a690d3e9bb96d4f516240fa60415afd67}{load\+Image}} (std\+::filesystem\+::path \&\&, bool is\+Flip\+Vertically=true)
 \item 
 void \mbox{\hyperlink{class_image_aff0f823cc016683dcbc768813aed65d8}{load\+To\+Gpu}} ()
@@ -52,9 +56,13 @@ void \mbox{\hyperlink{class_image_aff0f823cc016683dcbc768813aed65d8}{load\+To\+G
 void \mbox{\hyperlink{class_image_a3a233515eb3a5f83917dc634c778db5a}{clear}} ()
 \item 
 \+\_\+\+NODISCARD bool \mbox{\hyperlink{class_image_ad9b9016c9e5b309b338b12d76a09aa5f}{is\+Empty}} () const
+\item 
+\+\_\+\+NODISCARD std\+::string \mbox{\hyperlink{class_image_aa8ffac1bdc8684a303f790b63f389750}{get\+Name}} () const
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+static \+\_\+\+NODISCARD std\+::string \mbox{\hyperlink{class_image_a11dae2a9a490141b2349542ae4c50054}{channel\+To\+String}} (\mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eb}{Channel}} channel)
 \item 
 static \+\_\+\+NODISCARD GLenum \mbox{\hyperlink{class_image_a74419c0e79623ce3602905fc6ed7650c}{convert\+Channel\+To\+Gl\+Channel}} (\mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eb}{Channel}} channel)
 \end{DoxyCompactItemize}
@@ -113,6 +121,12 @@ RGBA&\\
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_image_a11dae2a9a490141b2349542ae4c50054}\label{class_image_a11dae2a9a490141b2349542ae4c50054} 
+\index{Image@{Image}!channelToString@{channelToString}}
+\index{channelToString@{channelToString}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{channelToString()}{channelToString()}}
+{\footnotesize\ttfamily std\+::string Image\+::channel\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image_afe74defc826aae605cb2214cbf34c5eb}{Image\+::\+Channel}}}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 \Hypertarget{class_image_a3a233515eb3a5f83917dc634c778db5a}\label{class_image_a3a233515eb3a5f83917dc634c778db5a} 
 \index{Image@{Image}!clear@{clear}}
 \index{clear@{clear}!Image@{Image}}
@@ -149,6 +163,18 @@ RGBA&\\
 \doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
 {\footnotesize\ttfamily int Image\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+\Hypertarget{class_image_a44302d2a32fc83a9c474c4b69fbd7a5e}\label{class_image_a44302d2a32fc83a9c474c4b69fbd7a5e} 
+\index{Image@{Image}!getInternalChannel@{getInternalChannel}}
+\index{getInternalChannel@{getInternalChannel}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{getInternalChannel()}{getInternalChannel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_gl_1_1_texture_a39dbf3d56868083269c050a317e143ff}{Gl\+::\+Texture\+::\+Channel}} Image\+::get\+Internal\+Channel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_image_aa8ffac1bdc8684a303f790b63f389750}\label{class_image_aa8ffac1bdc8684a303f790b63f389750} 
+\index{Image@{Image}!getName@{getName}}
+\index{getName@{getName}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Image\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
 \Hypertarget{class_image_a5b7a1ce5c8a1effcbd2921709b4261fe}\label{class_image_a5b7a1ce5c8a1effcbd2921709b4261fe} 
 \index{Image@{Image}!getSize@{getSize}}
 \index{getSize@{getSize}!Image@{Image}}
@@ -184,4 +210,10 @@ RGBA&\\
 \index{operator=@{operator=}!Image@{Image}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_image}{Image}} \& Image\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&\&}]{obj }\end{DoxyParamCaption})}
+
+\Hypertarget{class_image_a9a862376b7877e9c1be48e91f65f923c}\label{class_image_a9a862376b7877e9c1be48e91f65f923c} 
+\index{Image@{Image}!setInternalChannel@{setInternalChannel}}
+\index{setInternalChannel@{setInternalChannel}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{setInternalChannel()}{setInternalChannel()}}
+{\footnotesize\ttfamily void Image\+::set\+Internal\+Channel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gl_1_1_texture_a39dbf3d56868083269c050a317e143ff}{Gl\+::\+Texture\+::\+Channel}}}]{channel }\end{DoxyParamCaption})}
 

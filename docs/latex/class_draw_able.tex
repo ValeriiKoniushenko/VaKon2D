@@ -13,7 +13,7 @@ Inheritance diagram for Draw\+Able\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{class_draw_able_a5e9d8acfb5dde1b7a275b67ff38795e2}{draw}} (\mbox{\hyperlink{class_shader_program}{Shader\+Program}} \&shader\+Program)
+virtual void \mbox{\hyperlink{class_draw_able_ad5c435fe3b79f75d24622607f4c28270}{draw}} (\mbox{\hyperlink{class_custom_shader_program}{Custom\+Shader\+Program}} \&shader\+Program)
 \item 
 virtual \+\_\+\+NODISCARD std\+::size\+\_\+t \mbox{\hyperlink{class_draw_able_acfbef64637f9cf7d68d6e04a62667baf}{get\+Vertices\+Count}} () const
 \item 
@@ -28,6 +28,8 @@ void \mbox{\hyperlink{class_draw_able_acf5d4190394676b99e6ecef0a6956bf4}{set\+Ro
 void \mbox{\hyperlink{class_draw_able_ab5ab7e8690ec97edf8a717372c3cbaf7}{rotate}} (float offset)
 \item 
 \+\_\+\+NODISCARD float \mbox{\hyperlink{class_draw_able_a6a2e5ca6279fe6d549df0d7647a3aa6c}{get\+Rotation}} () const
+\item 
+virtual void \mbox{\hyperlink{class_draw_able_acda9ee6421373cad1286c6b59c21f240}{update}} ()=0
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -39,15 +41,15 @@ float \mbox{\hyperlink{class_draw_able_a3ae6ed0e957eeeb4223ee73d85c29e28}{rotati
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_draw_able_a5e9d8acfb5dde1b7a275b67ff38795e2}\label{class_draw_able_a5e9d8acfb5dde1b7a275b67ff38795e2} 
+\Hypertarget{class_draw_able_ad5c435fe3b79f75d24622607f4c28270}\label{class_draw_able_ad5c435fe3b79f75d24622607f4c28270} 
 \index{DrawAble@{DrawAble}!draw@{draw}}
 \index{draw@{draw}!DrawAble@{DrawAble}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
-{\footnotesize\ttfamily void Draw\+Able\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shader_program}{Shader\+Program}} \&}]{shader\+Program }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Draw\+Able\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_custom_shader_program}{Custom\+Shader\+Program}} \&}]{shader\+Program }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-Reimplemented in \mbox{\hyperlink{class_rectangle_ac1a128d94d1b032f86d31e9252c11d5d}{Rectangle}}.
+Reimplemented in \mbox{\hyperlink{class_widget_a80deec65bec85f16a0dc236e1e1439b6}{Widget}}.
 
 \Hypertarget{class_draw_able_aa5ece9c226314b8dd7caae8003ed3703}\label{class_draw_able_aa5ece9c226314b8dd7caae8003ed3703} 
 \index{DrawAble@{DrawAble}!getPosition@{getPosition}}
@@ -69,7 +71,7 @@ Reimplemented in \mbox{\hyperlink{class_rectangle_ac1a128d94d1b032f86d31e9252c11
 
 
 
-Reimplemented in \mbox{\hyperlink{class_rectangle_ababaee75ab41b27adb77cf56d4ebd6bc}{Rectangle}}.
+Reimplemented in \mbox{\hyperlink{class_widget_a73b15117c41fb9f5029b2e2d784bea12}{Widget}}.
 
 \Hypertarget{class_draw_able_a6da3581efe2b09c6ba7ba09d2248833b}\label{class_draw_able_a6da3581efe2b09c6ba7ba09d2248833b} 
 \index{DrawAble@{DrawAble}!move@{move}}
@@ -94,6 +96,16 @@ Reimplemented in \mbox{\hyperlink{class_rectangle_ababaee75ab41b27adb77cf56d4ebd
 \index{setRotation@{setRotation}!DrawAble@{DrawAble}}
 \doxysubsubsection{\texorpdfstring{setRotation()}{setRotation()}}
 {\footnotesize\ttfamily void Draw\+Able\+::set\+Rotation (\begin{DoxyParamCaption}\item[{float}]{new\+Rotation }\end{DoxyParamCaption})}
+
+\Hypertarget{class_draw_able_acda9ee6421373cad1286c6b59c21f240}\label{class_draw_able_acda9ee6421373cad1286c6b59c21f240} 
+\index{DrawAble@{DrawAble}!update@{update}}
+\index{update@{update}!DrawAble@{DrawAble}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void Draw\+Able\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_widget_a9febb21bc2470131d23b7dd1d940028a}{Widget}}.
 
 
 

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['program_0',['Program',['../class_gl_1_1_program.html',1,'Gl']]]
+  ['mouse_0',['Mouse',['../class_mouse.html',1,'']]],
+  ['mouseinputaction_1',['MouseInputAction',['../class_mouse_input_action.html',1,'']]]
 ];

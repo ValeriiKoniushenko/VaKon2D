@@ -1,0 +1,93 @@
+\doxysection{World\+Variables Class Reference}
+\hypertarget{class_world_variables}{}\label{class_world_variables}\index{WorldVariables@{WorldVariables}}
+
+
+{\ttfamily \#include $<$World\+Variables.\+h$>$}
+
+Inheritance diagram for World\+Variables\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_world_variables}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_world_variables_a3ff0b505ad235dccad2a6dfa498b149c}{VariantT}} = std\+::variant$<$ int, unsigned int, float, double, glm\+::vec2, glm\+::vec3, glm\+::vec4, glm\+::mat3, glm\+::mat4, \mbox{\hyperlink{namespace_utils_aafb5e8bb86bfd3e4b178ed45c9d3d8c0}{Utils\+::\+FSize2D}}, const char \texorpdfstring{$\ast$}{*} $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_world_variables_a16cef9bb7f616ad08848d6ceba6bba27}{set}} (const std\+::string \&key, const \mbox{\hyperlink{class_world_variables_a3ff0b505ad235dccad2a6dfa498b149c}{VariantT}} \&value)
+\item 
+\+\_\+\+NODISCARD const \mbox{\hyperlink{class_world_variables_a3ff0b505ad235dccad2a6dfa498b149c}{VariantT}} \& \mbox{\hyperlink{class_world_variables_a64d3fe9abada9d9788875e066eba1aa9}{get}} (const std\+::string \&key) const
+\item 
+\+\_\+\+NODISCARD \mbox{\hyperlink{class_world_variables_a3ff0b505ad235dccad2a6dfa498b149c}{VariantT}} \& \mbox{\hyperlink{class_world_variables_a183b0dd6c0668d7d72ecc7fc4efb2d64}{get}} (const std\+::string \&key)
+\item 
+\+\_\+\+NODISCARD const \mbox{\hyperlink{class_world_variables_a3ff0b505ad235dccad2a6dfa498b149c}{VariantT}} \& \mbox{\hyperlink{class_world_variables_a9567e6d7d500088ffb1383c68f9f58f6}{operator\mbox{[}$\,$\mbox{]}}} (const std\+::string \&key) const
+\item 
+\+\_\+\+NODISCARD \mbox{\hyperlink{class_world_variables_a3ff0b505ad235dccad2a6dfa498b149c}{VariantT}} \& \mbox{\hyperlink{class_world_variables_a2bffeb634a80d655a4bdff66faf82d33}{operator\mbox{[}$\,$\mbox{]}}} (const std\+::string \&key)
+\item 
+void \mbox{\hyperlink{class_world_variables_a0cebf07058591d8508f786d7119c4ad2}{force\+Clear}} (std\+::vector$<$ std\+::string $>$ keys)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_singleton}{Singleton$<$ World\+Variables $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_world_variables}{World\+Variables}} \& \mbox{\hyperlink{class_singleton_ad486cf51d0a40bec83b6a5ee40b7857c}{instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_singleton}{Singleton$<$ World\+Variables $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_singleton_adb1b554fec7ae6065fe0e09111f3581f}{Singleton}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_singleton_a9349b42bad14a8e86c56229175acfba4}{\texorpdfstring{$\sim$}{\string~}\+Singleton}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_world_variables_a3ff0b505ad235dccad2a6dfa498b149c}\label{class_world_variables_a3ff0b505ad235dccad2a6dfa498b149c} 
+\index{WorldVariables@{WorldVariables}!VariantT@{VariantT}}
+\index{VariantT@{VariantT}!WorldVariables@{WorldVariables}}
+\doxysubsubsection{\texorpdfstring{VariantT}{VariantT}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{class_world_variables_a3ff0b505ad235dccad2a6dfa498b149c}{World\+Variables\+::\+VariantT}} =  std\+::variant$<$int, unsigned int, float, double, glm\+::vec2, glm\+::vec3, glm\+::vec4, glm\+::mat3, glm\+::mat4, \mbox{\hyperlink{namespace_utils_aafb5e8bb86bfd3e4b178ed45c9d3d8c0}{Utils\+::\+FSize2D}}, const char\texorpdfstring{$\ast$}{*}$>$}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_world_variables_a0cebf07058591d8508f786d7119c4ad2}\label{class_world_variables_a0cebf07058591d8508f786d7119c4ad2} 
+\index{WorldVariables@{WorldVariables}!forceClear@{forceClear}}
+\index{forceClear@{forceClear}!WorldVariables@{WorldVariables}}
+\doxysubsubsection{\texorpdfstring{forceClear()}{forceClear()}}
+{\footnotesize\ttfamily void World\+Variables\+::force\+Clear (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{keys }\end{DoxyParamCaption})}
+
+\Hypertarget{class_world_variables_a183b0dd6c0668d7d72ecc7fc4efb2d64}\label{class_world_variables_a183b0dd6c0668d7d72ecc7fc4efb2d64} 
+\index{WorldVariables@{WorldVariables}!get@{get}}
+\index{get@{get}!WorldVariables@{WorldVariables}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_world_variables_a3ff0b505ad235dccad2a6dfa498b149c}{World\+Variables\+::\+VariantT}} \& World\+Variables\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+\Hypertarget{class_world_variables_a64d3fe9abada9d9788875e066eba1aa9}\label{class_world_variables_a64d3fe9abada9d9788875e066eba1aa9} 
+\index{WorldVariables@{WorldVariables}!get@{get}}
+\index{get@{get}!WorldVariables@{WorldVariables}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_world_variables_a3ff0b505ad235dccad2a6dfa498b149c}{World\+Variables\+::\+VariantT}} \& World\+Variables\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_world_variables_a2bffeb634a80d655a4bdff66faf82d33}\label{class_world_variables_a2bffeb634a80d655a4bdff66faf82d33} 
+\index{WorldVariables@{WorldVariables}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!WorldVariables@{WorldVariables}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_world_variables_a3ff0b505ad235dccad2a6dfa498b149c}{World\+Variables\+::\+VariantT}} \& World\+Variables\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+\Hypertarget{class_world_variables_a9567e6d7d500088ffb1383c68f9f58f6}\label{class_world_variables_a9567e6d7d500088ffb1383c68f9f58f6} 
+\index{WorldVariables@{WorldVariables}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!WorldVariables@{WorldVariables}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_world_variables_a3ff0b505ad235dccad2a6dfa498b149c}{World\+Variables\+::\+VariantT}} \& World\+Variables\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_world_variables_a16cef9bb7f616ad08848d6ceba6bba27}\label{class_world_variables_a16cef9bb7f616ad08848d6ceba6bba27} 
+\index{WorldVariables@{WorldVariables}!set@{set}}
+\index{set@{set}!WorldVariables@{WorldVariables}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void World\+Variables\+::set (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{const \mbox{\hyperlink{class_world_variables_a3ff0b505ad235dccad2a6dfa498b149c}{VariantT}} \&}]{value }\end{DoxyParamCaption})}
+

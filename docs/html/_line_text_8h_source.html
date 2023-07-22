@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>VaKon2D: lib/core/freetype-wrapper/include/LineText.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/ValeriiKoniushenko/VaKon2D" class="github-corner" title="View source on GitHub" target="_blank">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="doxyicon.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">VaKon2D
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_line_text_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">LineText.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_line_text_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// MIT License</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// Copyright (c) 2023 Valerii Koniushenko</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// copies or substantial portions of the Software.</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">// SOFTWARE.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="_copyable_and_moveable_8h.html">CopyableAndMoveable.h</a>&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &quot;<a class="code" href="_custom_shader_program_8h.html">CustomShaderProgram.h</a>&quot;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &quot;<a class="code" href="_vao_8h.html">Vao.h</a>&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;<a class="code" href="_vbo_8h.html">Vbo.h</a>&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &quot;glm/glm.hpp&quot;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">class </span><a class="code hl_class" href="class_font.html">Font</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_line_text.html">   35</a></span><span class="keyword">class </span><a class="code hl_class" href="class_line_text.html">LineText</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_utils_1_1_copyable_and_moveable.html">Utils::CopyableAndMoveable</a></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>{</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_function" href="class_line_text.html#aac9b86bba08c6d2e7fc1e09a71b6189b">LineText</a>(<span class="keywordtype">bool</span> autoPrepare);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_function" href="class_line_text.html#aac9b86bba08c6d2e7fc1e09a71b6189b">LineText</a>(<a class="code hl_class" href="class_font.html">Font</a>&amp; font, <span class="keyword">const</span> std::string&amp; text);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_line_text.html#aac9b86bba08c6d2e7fc1e09a71b6189b">   40</a></span>    <a class="code hl_function" href="class_line_text.html#aac9b86bba08c6d2e7fc1e09a71b6189b">LineText</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_line_text.html#ae4ce8c160ba9d056352da8cd1402b4f8">   41</a></span>    <a class="code hl_function" href="class_line_text.html#ae4ce8c160ba9d056352da8cd1402b4f8">~LineText</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_function" href="class_line_text.html#aac9b86bba08c6d2e7fc1e09a71b6189b">LineText</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_line_text.html">LineText</a>&amp; other);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_function" href="class_line_text.html#aac9b86bba08c6d2e7fc1e09a71b6189b">LineText</a>(<a class="code hl_class" href="class_line_text.html">LineText</a>&amp;&amp; other);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_class" href="class_line_text.html">LineText</a>&amp; <a class="code hl_function" href="class_line_text.html#aab99135ffd16c4d442f8eebd48e39de7">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_line_text.html">LineText</a>&amp; other);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_class" href="class_line_text.html">LineText</a>&amp; <a class="code hl_function" href="class_line_text.html#aab99135ffd16c4d442f8eebd48e39de7">operator=</a>(<a class="code hl_class" href="class_line_text.html">LineText</a>&amp;&amp; other);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    _NODISCARD <a class="code hl_class" href="class_font.html">Font</a>* <a class="code hl_function" href="class_line_text.html#aee4db7626d4d15875d834af687296c59">getFont</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_line_text.html#ae53158c19c501d4fd0d65aa67bb6abfe">setFont</a>(<a class="code hl_class" href="class_font.html">Font</a>&amp; font);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    _NODISCARD <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="class_line_text.html#afc8283e8e0d9a7628a67c71052e8a4fd">getText</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_line_text.html#a1caf45e7ea9fe7bf748f96563dbf6baf">setText</a>(<span class="keyword">const</span> std::string&amp; text);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    _NODISCARD <span class="keyword">const</span> glm::vec2&amp; <a class="code hl_function" href="class_line_text.html#a50e0503807a0482c1ba80334e1d3413d">getPosition</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_line_text.html#aa6a91e00f938a9daa065fbc0722e94b8">setPosition</a>(<span class="keyword">const</span> glm::vec2&amp; position);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    _NODISCARD <span class="keywordtype">float</span> <a class="code hl_function" href="class_line_text.html#a8a4566e86d199907472508e85c97990f">getTextWidth</a>();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    _NODISCARD <span class="keywordtype">float</span> <a class="code hl_function" href="class_line_text.html#a656b655a1f35b02fb7bc6760e038303e">getFontSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_line_text.html#af78a17a01cf3a394d84a44d48caad338">setFontSize</a>(<span class="keywordtype">float</span> size);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_line_text.html#aa97aed4ff3fd8399dd4e55fd80e32e89">prepare</a>();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_line_text.html#a8223eac23779ee340e767db5b9a0af62">draw</a>(<a class="code hl_class" href="class_custom_shader_program.html">CustomShaderProgram</a>&amp; shader);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> updateCache();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">float</span> getHeightOfTheBiggestLetter();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> std::size_t dataPerFrame = 16;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_class" href="class_font.html">Font</a>* font_;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    std::string text_;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    std::string lastSavedText_;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">float</span> textWidth_ = -1.f;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    glm::vec2 position_;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_class" href="class_vbo.html">Vbo</a> vbo_;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_class" href="class_vao.html">Vao</a> vao_;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">float</span> fontSize_ = 24.f;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    std::vector&lt;std::vector&lt;float&gt;&gt; cache_;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>};</div>
+<div class="ttc" id="a_copyable_and_moveable_8h_html"><div class="ttname"><a href="_copyable_and_moveable_8h.html">CopyableAndMoveable.h</a></div></div>
+<div class="ttc" id="a_custom_shader_program_8h_html"><div class="ttname"><a href="_custom_shader_program_8h.html">CustomShaderProgram.h</a></div></div>
+<div class="ttc" id="a_vao_8h_html"><div class="ttname"><a href="_vao_8h.html">Vao.h</a></div></div>
+<div class="ttc" id="a_vbo_8h_html"><div class="ttname"><a href="_vbo_8h.html">Vbo.h</a></div></div>
+<div class="ttc" id="aclass_custom_shader_program_html"><div class="ttname"><a href="class_custom_shader_program.html">CustomShaderProgram</a></div><div class="ttdef"><b>Definition</b> CustomShaderProgram.h:28</div></div>
+<div class="ttc" id="aclass_font_html"><div class="ttname"><a href="class_font.html">Font</a></div><div class="ttdef"><b>Definition</b> Font.h:35</div></div>
+<div class="ttc" id="aclass_line_text_html"><div class="ttname"><a href="class_line_text.html">LineText</a></div><div class="ttdef"><b>Definition</b> LineText.h:36</div></div>
+<div class="ttc" id="aclass_line_text_html_a1caf45e7ea9fe7bf748f96563dbf6baf"><div class="ttname"><a href="class_line_text.html#a1caf45e7ea9fe7bf748f96563dbf6baf">LineText::setText</a></div><div class="ttdeci">void setText(const std::string &amp;text)</div><div class="ttdef"><b>Definition</b> LineText.cpp:66</div></div>
+<div class="ttc" id="aclass_line_text_html_a50e0503807a0482c1ba80334e1d3413d"><div class="ttname"><a href="class_line_text.html#a50e0503807a0482c1ba80334e1d3413d">LineText::getPosition</a></div><div class="ttdeci">_NODISCARD const glm::vec2 &amp; getPosition() const</div><div class="ttdef"><b>Definition</b> LineText.cpp:72</div></div>
+<div class="ttc" id="aclass_line_text_html_a656b655a1f35b02fb7bc6760e038303e"><div class="ttname"><a href="class_line_text.html#a656b655a1f35b02fb7bc6760e038303e">LineText::getFontSize</a></div><div class="ttdeci">_NODISCARD float getFontSize() const</div><div class="ttdef"><b>Definition</b> LineText.cpp:176</div></div>
+<div class="ttc" id="aclass_line_text_html_a8223eac23779ee340e767db5b9a0af62"><div class="ttname"><a href="class_line_text.html#a8223eac23779ee340e767db5b9a0af62">LineText::draw</a></div><div class="ttdeci">void draw(CustomShaderProgram &amp;shader)</div><div class="ttdef"><b>Definition</b> LineText.cpp:143</div></div>
+<div class="ttc" id="aclass_line_text_html_a8a4566e86d199907472508e85c97990f"><div class="ttname"><a href="class_line_text.html#a8a4566e86d199907472508e85c97990f">LineText::getTextWidth</a></div><div class="ttdeci">_NODISCARD float getTextWidth()</div><div class="ttdef"><b>Definition</b> LineText.cpp:222</div></div>
+<div class="ttc" id="aclass_line_text_html_aa6a91e00f938a9daa065fbc0722e94b8"><div class="ttname"><a href="class_line_text.html#aa6a91e00f938a9daa065fbc0722e94b8">LineText::setPosition</a></div><div class="ttdeci">void setPosition(const glm::vec2 &amp;position)</div><div class="ttdef"><b>Definition</b> LineText.cpp:77</div></div>
+<div class="ttc" id="aclass_line_text_html_aa97aed4ff3fd8399dd4e55fd80e32e89"><div class="ttname"><a href="class_line_text.html#aa97aed4ff3fd8399dd4e55fd80e32e89">LineText::prepare</a></div><div class="ttdeci">void prepare()</div><div class="ttdef"><b>Definition</b> LineText.cpp:122</div></div>
+<div class="ttc" id="aclass_line_text_html_aab99135ffd16c4d442f8eebd48e39de7"><div class="ttname"><a href="class_line_text.html#aab99135ffd16c4d442f8eebd48e39de7">LineText::operator=</a></div><div class="ttdeci">LineText &amp; operator=(const LineText &amp;other)</div><div class="ttdef"><b>Definition</b> LineText.cpp:42</div></div>
+<div class="ttc" id="aclass_line_text_html_aac9b86bba08c6d2e7fc1e09a71b6189b"><div class="ttname"><a href="class_line_text.html#aac9b86bba08c6d2e7fc1e09a71b6189b">LineText::LineText</a></div><div class="ttdeci">LineText()=default</div></div>
+<div class="ttc" id="aclass_line_text_html_ae4ce8c160ba9d056352da8cd1402b4f8"><div class="ttname"><a href="class_line_text.html#ae4ce8c160ba9d056352da8cd1402b4f8">LineText::~LineText</a></div><div class="ttdeci">~LineText()=default</div></div>
+<div class="ttc" id="aclass_line_text_html_ae53158c19c501d4fd0d65aa67bb6abfe"><div class="ttname"><a href="class_line_text.html#ae53158c19c501d4fd0d65aa67bb6abfe">LineText::setFont</a></div><div class="ttdeci">void setFont(Font &amp;font)</div><div class="ttdef"><b>Definition</b> LineText.cpp:55</div></div>
+<div class="ttc" id="aclass_line_text_html_aee4db7626d4d15875d834af687296c59"><div class="ttname"><a href="class_line_text.html#aee4db7626d4d15875d834af687296c59">LineText::getFont</a></div><div class="ttdeci">_NODISCARD Font * getFont() const</div><div class="ttdef"><b>Definition</b> LineText.cpp:50</div></div>
+<div class="ttc" id="aclass_line_text_html_af78a17a01cf3a394d84a44d48caad338"><div class="ttname"><a href="class_line_text.html#af78a17a01cf3a394d84a44d48caad338">LineText::setFontSize</a></div><div class="ttdeci">void setFontSize(float size)</div><div class="ttdef"><b>Definition</b> LineText.cpp:181</div></div>
+<div class="ttc" id="aclass_line_text_html_afc8283e8e0d9a7628a67c71052e8a4fd"><div class="ttname"><a href="class_line_text.html#afc8283e8e0d9a7628a67c71052e8a4fd">LineText::getText</a></div><div class="ttdeci">_NODISCARD const std::string &amp; getText() const</div><div class="ttdef"><b>Definition</b> LineText.cpp:61</div></div>
+<div class="ttc" id="aclass_utils_1_1_copyable_and_moveable_html"><div class="ttname"><a href="class_utils_1_1_copyable_and_moveable.html">Utils::CopyableAndMoveable</a></div><div class="ttdef"><b>Definition</b> CopyableAndMoveable.h:29</div></div>
+<div class="ttc" id="aclass_vao_html"><div class="ttname"><a href="class_vao.html">Vao</a></div><div class="ttdef"><b>Definition</b> Vao.h:29</div></div>
+<div class="ttc" id="aclass_vbo_html"><div class="ttname"><a href="class_vbo.html">Vbo</a></div><div class="ttdef"><b>Definition</b> Vbo.h:31</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_a2d5e495f4b604d04f57d90095a59dd6.html">core</a></li><li class="navelem"><a class="el" href="dir_135b809e8d250589e5289cad46453686.html">freetype-wrapper</a></li><li class="navelem"><a class="el" href="dir_bc2139ecac0bbbafb0895e940bc0f2ff.html">include</a></li><li class="navelem"><a class="el" href="_line_text_8h.html">LineText.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
+  </ul>
+</div>
+</body>
+</html>

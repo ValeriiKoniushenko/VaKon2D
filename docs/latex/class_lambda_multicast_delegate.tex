@@ -1,0 +1,76 @@
+\doxysection{Lambda\+Multicast\+Delegate\texorpdfstring{$<$}{<} F \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_lambda_multicast_delegate}{}\label{class_lambda_multicast_delegate}\index{LambdaMulticastDelegate$<$ F $>$@{LambdaMulticastDelegate$<$ F $>$}}
+
+
+{\ttfamily \#include $<$Delegate.\+h$>$}
+
+Inheritance diagram for Lambda\+Multicast\+Delegate\texorpdfstring{$<$}{<} F \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_lambda_multicast_delegate}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_lambda_multicast_delegate_a55d8a0729e04ced46cf46d9788fb5ebf}{CallbackT}} = std\+::function$<$ F $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class... TArgs$>$ }\\void \mbox{\hyperlink{class_lambda_multicast_delegate_a6ab83f17018020e6af1b28b42c1adcfb}{trigger}} (TArgs \&\&... args)
+\item 
+void \mbox{\hyperlink{class_lambda_multicast_delegate_ab2a17053e915b6b6002958322f195d24}{subscribe}} (\mbox{\hyperlink{class_lambda_multicast_delegate_a55d8a0729e04ced46cf46d9788fb5ebf}{CallbackT}} \&\&callback)
+\item 
+void \mbox{\hyperlink{class_lambda_multicast_delegate_aba3d7b2c054ad33d0c3a30e7ced00d25}{reset}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Utils\+::\+Copyable\+And\+Moveable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable_ad7445ae6ca6d9c801f79ac34608dddd0}{Copyable\+And\+Moveable}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable_aa0f3cdfee10b73097be37e2a9fc8ae12}{\texorpdfstring{$\sim$}{\string~}\+Copyable\+And\+Moveable}} ()=default
+\item 
+\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable_a258acf892b4983a0da3c20baf6366b7e}{Copyable\+And\+Moveable}} (\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Copyable\+And\+Moveable}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Copyable\+And\+Moveable}} \& \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable_ac4e5e5ced4b661444cf2c56bd5ba016f}{operator=}} (\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Copyable\+And\+Moveable}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable_a39fc86feb60e5517334655cf5ad80001}{Copyable\+And\+Moveable}} (const \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Copyable\+And\+Moveable}} \&)=default
+\item 
+\mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Copyable\+And\+Moveable}} \& \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable_a7f769b2aba3ec5461ac6d33cf16f898f}{operator=}} (const \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Copyable\+And\+Moveable}} \&)=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_lambda_multicast_delegate_a55d8a0729e04ced46cf46d9788fb5ebf}\label{class_lambda_multicast_delegate_a55d8a0729e04ced46cf46d9788fb5ebf} 
+\index{LambdaMulticastDelegate$<$ F $>$@{LambdaMulticastDelegate$<$ F $>$}!CallbackT@{CallbackT}}
+\index{CallbackT@{CallbackT}!LambdaMulticastDelegate$<$ F $>$@{LambdaMulticastDelegate$<$ F $>$}}
+\doxysubsubsection{\texorpdfstring{CallbackT}{CallbackT}}
+{\footnotesize\ttfamily template$<$class F $>$ \\
+using \mbox{\hyperlink{class_lambda_multicast_delegate}{Lambda\+Multicast\+Delegate}}$<$ F $>$\+::\+CallbackT =  std\+::function$<$F$>$}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_lambda_multicast_delegate_aba3d7b2c054ad33d0c3a30e7ced00d25}\label{class_lambda_multicast_delegate_aba3d7b2c054ad33d0c3a30e7ced00d25} 
+\index{LambdaMulticastDelegate$<$ F $>$@{LambdaMulticastDelegate$<$ F $>$}!reset@{reset}}
+\index{reset@{reset}!LambdaMulticastDelegate$<$ F $>$@{LambdaMulticastDelegate$<$ F $>$}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily template$<$class F $>$ \\
+void \mbox{\hyperlink{class_lambda_multicast_delegate}{Lambda\+Multicast\+Delegate}}$<$ F $>$\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_lambda_multicast_delegate_ab2a17053e915b6b6002958322f195d24}\label{class_lambda_multicast_delegate_ab2a17053e915b6b6002958322f195d24} 
+\index{LambdaMulticastDelegate$<$ F $>$@{LambdaMulticastDelegate$<$ F $>$}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!LambdaMulticastDelegate$<$ F $>$@{LambdaMulticastDelegate$<$ F $>$}}
+\doxysubsubsection{\texorpdfstring{subscribe()}{subscribe()}}
+{\footnotesize\ttfamily template$<$class F $>$ \\
+void \mbox{\hyperlink{class_lambda_multicast_delegate}{Lambda\+Multicast\+Delegate}}$<$ F $>$\+::subscribe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_lambda_multicast_delegate_a55d8a0729e04ced46cf46d9788fb5ebf}{CallbackT}} \&\&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_lambda_multicast_delegate_a6ab83f17018020e6af1b28b42c1adcfb}\label{class_lambda_multicast_delegate_a6ab83f17018020e6af1b28b42c1adcfb} 
+\index{LambdaMulticastDelegate$<$ F $>$@{LambdaMulticastDelegate$<$ F $>$}!trigger@{trigger}}
+\index{trigger@{trigger}!LambdaMulticastDelegate$<$ F $>$@{LambdaMulticastDelegate$<$ F $>$}}
+\doxysubsubsection{\texorpdfstring{trigger()}{trigger()}}
+{\footnotesize\ttfamily template$<$class F $>$ \\
+template$<$class... TArgs$>$ \\
+void \mbox{\hyperlink{class_lambda_multicast_delegate}{Lambda\+Multicast\+Delegate}}$<$ F $>$\+::trigger (\begin{DoxyParamCaption}\item[{TArgs \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

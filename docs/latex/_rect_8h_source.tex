@@ -39,8 +39,54 @@
 \DoxyCodeLine{00035\ \{}
 \DoxyCodeLine{00036\ \ \ \ \ glm::vec2\ \mbox{\hyperlink{struct_utils_1_1_rect_a1deb13bc02d17e725417ae7a03c91698}{position}};}
 \DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{struct_utils_1_1_size2_d}{Size2D<T>}}\ \mbox{\hyperlink{struct_utils_1_1_rect_a73e6bd4640ae5d23614922bb5733b6d9}{size}};}
-\DoxyCodeLine{00038\ \};}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \}\ \ \ \ \textcolor{comment}{//\ namespace\ Utils}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \_NODISCARD\ glm::vec2\ \mbox{\hyperlink{struct_utils_1_1_rect_ab37c77e946de5013549d380945cc9cd2}{getLeftTopPoint}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00040\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\ \mbox{\hyperlink{struct_utils_1_1_rect_a1deb13bc02d17e725417ae7a03c91698}{position}}.x,\ \mbox{\hyperlink{struct_utils_1_1_rect_a1deb13bc02d17e725417ae7a03c91698}{position}}.y\ \};}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \_NODISCARD\ glm::vec2\ \mbox{\hyperlink{struct_utils_1_1_rect_ae6c8b163e9576949310438efb23552e2}{getLeftBottomPoint}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00045\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\ \mbox{\hyperlink{struct_utils_1_1_rect_a1deb13bc02d17e725417ae7a03c91698}{position}}.x,\ \mbox{\hyperlink{struct_utils_1_1_rect_a1deb13bc02d17e725417ae7a03c91698}{position}}.y\ +\ \mbox{\hyperlink{struct_utils_1_1_rect_a73e6bd4640ae5d23614922bb5733b6d9}{size}}.height\ \};}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \_NODISCARD\ glm::vec2\ \mbox{\hyperlink{struct_utils_1_1_rect_a8123eeae2cb4beb9afd7a9c6fe94c001}{getRightBottomPoint}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00050\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\ \mbox{\hyperlink{struct_utils_1_1_rect_a1deb13bc02d17e725417ae7a03c91698}{position}}.x\ +\ \mbox{\hyperlink{struct_utils_1_1_rect_a73e6bd4640ae5d23614922bb5733b6d9}{size}}.width,\ \mbox{\hyperlink{struct_utils_1_1_rect_a1deb13bc02d17e725417ae7a03c91698}{position}}.y\ +\ \mbox{\hyperlink{struct_utils_1_1_rect_a73e6bd4640ae5d23614922bb5733b6d9}{size}}.height\ \};}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \_NODISCARD\ glm::vec2\ \mbox{\hyperlink{struct_utils_1_1_rect_a882f1b62bc339350f8788e64da464deb}{getRightTopPoint}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00055\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\ \mbox{\hyperlink{struct_utils_1_1_rect_a1deb13bc02d17e725417ae7a03c91698}{position}}.x\ +\ \mbox{\hyperlink{struct_utils_1_1_rect_a73e6bd4640ae5d23614922bb5733b6d9}{size}}.width,\ \mbox{\hyperlink{struct_utils_1_1_rect_a1deb13bc02d17e725417ae7a03c91698}{position}}.y\ \};}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_utils_1_1_rect_adee70c5b2df7754f3c8b2f53c244d57c}{isCollision}}(glm::vec2\ point)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00060\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (point.x\ >=\ \mbox{\hyperlink{struct_utils_1_1_rect_a1deb13bc02d17e725417ae7a03c91698}{position}}.x\ \&\&\ point.x\ <=\ \mbox{\hyperlink{struct_utils_1_1_rect_a1deb13bc02d17e725417ae7a03c91698}{position}}.x\ +\ \mbox{\hyperlink{struct_utils_1_1_rect_a73e6bd4640ae5d23614922bb5733b6d9}{size}}.width\ \&\&}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ point.y\ >=\ \mbox{\hyperlink{struct_utils_1_1_rect_a1deb13bc02d17e725417ae7a03c91698}{position}}.y\ \&\&\ point.y\ <=\ \mbox{\hyperlink{struct_utils_1_1_rect_a1deb13bc02d17e725417ae7a03c91698}{position}}.y\ +\ \mbox{\hyperlink{struct_utils_1_1_rect_a73e6bd4640ae5d23614922bb5733b6d9}{size}}.height)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_utils_1_1_rect_a3b9f25adb0cfe0e3e39258a12a35208c}{isCollision}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_utils_1_1_rect}{Rect<T>}}\ rect)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00071\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{struct_utils_1_1_rect_adee70c5b2df7754f3c8b2f53c244d57c}{isCollision}}(rect.\mbox{\hyperlink{struct_utils_1_1_rect_ae6c8b163e9576949310438efb23552e2}{getLeftBottomPoint}}())\ ||\ \mbox{\hyperlink{struct_utils_1_1_rect_adee70c5b2df7754f3c8b2f53c244d57c}{isCollision}}(rect.\mbox{\hyperlink{struct_utils_1_1_rect_ab37c77e946de5013549d380945cc9cd2}{getLeftTopPoint}}())\ ||}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_utils_1_1_rect_adee70c5b2df7754f3c8b2f53c244d57c}{isCollision}}(rect.\mbox{\hyperlink{struct_utils_1_1_rect_a8123eeae2cb4beb9afd7a9c6fe94c001}{getRightBottomPoint}}())\ ||\ \mbox{\hyperlink{struct_utils_1_1_rect_adee70c5b2df7754f3c8b2f53c244d57c}{isCollision}}(rect.\mbox{\hyperlink{struct_utils_1_1_rect_a882f1b62bc339350f8788e64da464deb}{getRightTopPoint}}()))}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{using\ }\mbox{\hyperlink{struct_utils_1_1_rect}{FRect}}\ =\ \mbox{\hyperlink{struct_utils_1_1_rect}{Rect<float>}};}
+\DoxyCodeLine{00083\ \textcolor{keyword}{using\ }\mbox{\hyperlink{struct_utils_1_1_rect}{IRect}}\ =\ \mbox{\hyperlink{struct_utils_1_1_rect}{Rect<int>}};}
+\DoxyCodeLine{00084\ \textcolor{keyword}{using\ }\mbox{\hyperlink{struct_utils_1_1_rect}{DRect}}\ =\ \mbox{\hyperlink{struct_utils_1_1_rect}{Rect<double>}};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \}\ \ \ \ \textcolor{comment}{//\ namespace\ Utils}}
 
 \end{DoxyCode}

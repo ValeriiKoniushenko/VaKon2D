@@ -30,64 +30,94 @@
 \DoxyCodeLine{00026\ }
 \DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <functional>}}
 \DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <utility>}}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T,\ \textcolor{keyword}{class}\ CallbackT>}
-\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_delegate}{Delegate}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Utils::CopyableAndMoveable}}}
-\DoxyCodeLine{00032\ \{}
-\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}...\ TArgs>}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_delegate_ac2190cef7cc092fa41da88715fde73f4}{trigger}}(TArgs\&\&...\ args)}
-\DoxyCodeLine{00036\ \ \ \ \ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (callback\_\ \&\&\ objP)}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ std::invoke(callback\_,\ objP,\ std::forward<TArgs...>(args...));}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00041\ \ \ \ \ \}}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_delegate_a27834e9203eccf681c1c327704aeefee}{subscribe}}(T*\ obj,\ CallbackT\&\&\ callback)}
-\DoxyCodeLine{00044\ \ \ \ \ \{}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ callback\_\ =\ std::forward<CallbackT>(callback);}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ objP\ =\ obj;}
-\DoxyCodeLine{00047\ \ \ \ \ \}}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_delegate_ae7b199667d2738741306a0d747300046}{reset}}()}
-\DoxyCodeLine{00050\ \ \ \ \ \{}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ callback\_\ =\ \{\};}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ objP\ =\ \{\};}
-\DoxyCodeLine{00053\ \ \ \ \ \}}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00056\ \ \ \ \ CallbackT\ callback\_\{\};}
-\DoxyCodeLine{00057\ \ \ \ \ T*\ objP\{\};}
-\DoxyCodeLine{00058\ \};}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ F>}
-\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_lambda_delegate}{LambdaDelegate}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Utils::CopyableAndMoveable}}}
-\DoxyCodeLine{00062\ \{}
-\DoxyCodeLine{00063\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_lambda_delegate_af4b478d9db3547851a14c5fac62e66a4}{CallbackT}}\ =\ std::function<F>;}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}...\ TArgs>}
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lambda_delegate_a450a49f72ee08a020802d8c681be06bb}{trigger}}(TArgs\&\&...\ args)}
-\DoxyCodeLine{00068\ \ \ \ \ \{}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (callback\_)}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ std::invoke(callback\_,\ std::forward<TArgs>(args)...);}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00073\ \ \ \ \ \}}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lambda_delegate_a7f177ec1855f843649183915c7f48409}{subscribe}}(\mbox{\hyperlink{class_lambda_delegate_af4b478d9db3547851a14c5fac62e66a4}{CallbackT}}\&\&\ callback)}
-\DoxyCodeLine{00076\ \ \ \ \ \{}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ callback\_\ =\ std::forward<CallbackT>(callback);}
-\DoxyCodeLine{00078\ \ \ \ \ \}}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lambda_delegate_a6ea90e96732fdc1fa3f08a01237e2419}{reset}}()}
-\DoxyCodeLine{00081\ \ \ \ \ \{}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ callback\_\ =\ \{\};}
-\DoxyCodeLine{00083\ \ \ \ \ \}}
-\DoxyCodeLine{00084\ }
-\DoxyCodeLine{00085\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{class_lambda_delegate_af4b478d9db3547851a14c5fac62e66a4}{CallbackT}}\ callback\_\{\};}
-\DoxyCodeLine{00087\ \};}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T,\ \textcolor{keyword}{class}\ CallbackT>}
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_delegate}{Delegate}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Utils::CopyableAndMoveable}}}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}...\ TArgs>}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_delegate_ac2190cef7cc092fa41da88715fde73f4}{trigger}}(TArgs\&\&...\ args)}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (callback\_\ \&\&\ objP)}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ std::invoke(callback\_,\ objP,\ std::forward<TArgs>(args)...);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_delegate_a27834e9203eccf681c1c327704aeefee}{subscribe}}(T*\ obj,\ CallbackT\&\&\ callback)}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ callback\_\ =\ std::forward<CallbackT>(callback);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ objP\ =\ obj;}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_delegate_ae7b199667d2738741306a0d747300046}{reset}}()}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ callback\_\ =\ \{\};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ objP\ =\ \{\};}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00057\ \ \ \ \ CallbackT\ callback\_\{\};}
+\DoxyCodeLine{00058\ \ \ \ \ T*\ objP\{\};}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ F>}
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_lambda_delegate}{LambdaDelegate}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Utils::CopyableAndMoveable}}}
+\DoxyCodeLine{00063\ \{}
+\DoxyCodeLine{00064\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_lambda_delegate_af4b478d9db3547851a14c5fac62e66a4}{CallbackT}}\ =\ std::function<F>;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}...\ TArgs>}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lambda_delegate_a450a49f72ee08a020802d8c681be06bb}{trigger}}(TArgs\&\&...\ args)}
+\DoxyCodeLine{00069\ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (callback\_)}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ std::invoke(callback\_,\ std::forward<TArgs>(args)...);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lambda_delegate_a7f177ec1855f843649183915c7f48409}{subscribe}}(\mbox{\hyperlink{class_lambda_delegate_af4b478d9db3547851a14c5fac62e66a4}{CallbackT}}\&\&\ callback)}
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ callback\_\ =\ std::forward<CallbackT>(callback);}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lambda_delegate_a6ea90e96732fdc1fa3f08a01237e2419}{reset}}()}
+\DoxyCodeLine{00082\ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ callback\_\ =\ \{\};}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{class_lambda_delegate_af4b478d9db3547851a14c5fac62e66a4}{CallbackT}}\ callback\_\{\};}
+\DoxyCodeLine{00088\ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ F>}
+\DoxyCodeLine{00091\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_lambda_multicast_delegate}{LambdaMulticastDelegate}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_utils_1_1_copyable_and_moveable}{Utils::CopyableAndMoveable}}}
+\DoxyCodeLine{00092\ \{}
+\DoxyCodeLine{00093\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_lambda_multicast_delegate_a55d8a0729e04ced46cf46d9788fb5ebf}{CallbackT}}\ =\ std::function<F>;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}...\ TArgs>}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lambda_multicast_delegate_a6ab83f17018020e6af1b28b42c1adcfb}{trigger}}(TArgs\&\&...\ args)}
+\DoxyCodeLine{00098\ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ callback\ :\ callbacks\_)}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ std::invoke(callback,\ std::forward<TArgs>(args)...);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lambda_multicast_delegate_ab2a17053e915b6b6002958322f195d24}{subscribe}}(\mbox{\hyperlink{class_lambda_multicast_delegate_a55d8a0729e04ced46cf46d9788fb5ebf}{CallbackT}}\&\&\ callback)}
+\DoxyCodeLine{00106\ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ callbacks\_.emplace\_back(std::forward<CallbackT>(callback));}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lambda_multicast_delegate_aba3d7b2c054ad33d0c3a30e7ced00d25}{reset}}()}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ callbacks\_.clear();}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00116\ \ \ \ \ std::vector<CallbackT>\ callbacks\_\{\};}
+\DoxyCodeLine{00117\ \};}
 
 \end{DoxyCode}
