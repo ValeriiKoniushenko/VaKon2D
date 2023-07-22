@@ -145,6 +145,7 @@ void LineText::draw(CustomShaderProgram& shader)
 	shader.use();
 	shader.uniform(
 		"uResolution", static_cast<float>(GetWindow().getSize().width), static_cast<float>(GetWindow().getSize().height));
+	shader.uniform("uColor", toGlColor(color_));
 	Gl::Texture::active(0);
 	vao_.bind();
 
@@ -243,4 +244,14 @@ float LineText::getTextWidth()
 	}
 
 	return textWidth_;
+}
+
+void LineText::setColor(const Color& color)
+{
+	color_ = color;
+}
+
+const Color& LineText::getColor() const
+{
+	return color_;
 }

@@ -22,6 +22,7 @@
 
 #include "ShaderProgram.h"
 
+#include "Color.h"
 #include "Shader.h"
 
 #include <glm/gtc/type_ptr.hpp>
@@ -118,6 +119,12 @@ GLint ShaderProgram::getUniformLocation(const std::string& name)
 	}
 
 	return it->second;
+}
+
+void ShaderProgram::uniform(const std::string& name, const GlColor& color)
+{
+	const GLint location = getUniformLocation(name);
+	Gl::Program::uniform4f(location, color.r, color.g, color.b, color.a);
 }
 
 void ShaderProgram::uniform(const std::string& name, GLfloat v0)

@@ -53,7 +53,7 @@ void VaKon2D::start()
 	CustomShaderProgram textProgram("assets/shaders/text.vert", "assets/shaders/text.frag");
 	Font font("assets/fonts/Roboto-Medium.ttf");
 	LineText text(font, "Hello world");
-
+	text.setColor({255, 0, 0});
 	CustomShaderProgram mainProgram("assets/shaders/main-vertex.glsl", "assets/shaders/main-fragment.glsl");
 
 	Texture texture(Gl::Texture::Target::Texture2D, true, true);

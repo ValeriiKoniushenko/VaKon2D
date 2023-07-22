@@ -22,6 +22,7 @@
 
 #pragma once
 
+#include "Color.h"
 #include "CopyableAndMoveable.h"
 #include "CustomShaderProgram.h"
 #include "Vao.h"
@@ -57,6 +58,9 @@ public:
 	_NODISCARD float getFontSize() const;
 	void setFontSize(float size);
 
+	void setColor(const Color& color);
+	_NODISCARD const Color& getColor() const;
+
 	void prepare();
 
 	void draw(CustomShaderProgram& shader);
@@ -68,6 +72,7 @@ private:
 	inline static constexpr std::size_t dataPerFrame = 16;
 
 private:
+	Color color_;
 	Font* font_;
 	std::string text_;
 	std::string lastSavedText_;

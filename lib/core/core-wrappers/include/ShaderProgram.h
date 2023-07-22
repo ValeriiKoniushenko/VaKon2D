@@ -28,6 +28,8 @@
 
 #include <unordered_map>
 
+class GlColor;
+
 class Shader;
 
 class ShaderProgram : public Utils::NotCopyableAndNotMovable
@@ -48,6 +50,7 @@ public:
 	virtual void OnAfterLink();
 	_NODISCARD GLint getUniformLocation(const std::string& name);
 
+	void uniform(const std::string& name, const GlColor& color);
 	void uniform(const std::string& name, GLfloat v0);
 	void uniform(const std::string& name, GLfloat v0, GLfloat v1);
 	void uniform(const std::string& name, GLfloat v0, GLfloat v1, GLfloat v2);
