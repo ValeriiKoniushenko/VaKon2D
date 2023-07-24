@@ -44,7 +44,7 @@ public:
 	Widget();
 	~Widget();
 
-	void draw(CustomShaderProgram& shaderProgram) override;
+	void draw(ShaderPack& shaderProgram) override;
 	_NODISCARD std::size_t getVerticesCount() const override;
 
 	void setTexture(Texture& texture);

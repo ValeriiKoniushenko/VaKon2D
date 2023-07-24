@@ -24,12 +24,15 @@
 
 #include "ShaderProgram.h"
 
+#include <functional>
+
 class CustomShaderProgram : public ShaderProgram
 {
 public:
-	explicit CustomShaderProgram(bool shouldCreate);
-	CustomShaderProgram(std::filesystem::path pathToVertex, std::filesystem::path pathToFragment);
-	CustomShaderProgram(Shader& frag, Shader& vert);
+	explicit CustomShaderProgram(const std::string& name);
+	CustomShaderProgram(const std::string& name, bool shouldCreate);
+	CustomShaderProgram(const std::string& name, std::filesystem::path pathToVertex, std::filesystem::path pathToFragment);
+	CustomShaderProgram(const std::string& name, Shader& frag, Shader& vert);
 
 	void OnAfterLink() override;
 
@@ -40,4 +43,11 @@ public:
 		float contrast = 1.2f;
 		float saturation = 1.f;
 	} lightning;
+
+	bool operator==(const CustomShaderProgram& csp) const;
+
+	_NODISCARD const std::string& getName() const;
+
+private:
+	const std::string name_;
 };

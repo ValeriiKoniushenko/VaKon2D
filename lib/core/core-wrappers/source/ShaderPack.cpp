@@ -21,26 +21,14 @@
 // SOFTWARE.
 
 #include "ShaderPack.h"
-#include "glm/glm.hpp"
 
-#include <cstdlib>
-
-class DrawAble
+void ShaderPack::addShaderProgram(CustomShaderProgram&& csp)
 {
-public:
-	virtual void draw(ShaderPack& shaderProgram);
-	_NODISCARD virtual std::size_t getVerticesCount() const;
+	std::string key = csp.getName();
+	shaders_.emplace(std::move(key), std::move(csp));
+}
 
-	void setPosition(const glm::vec2& newPosition);
-	void move(const glm::vec2& offset);
-	_NODISCARD const glm::vec2& getPosition() const;
-
-	void setRotation(float newRotation);
-	void rotate(float offset);
-	_NODISCARD float getRotation() const;
-	virtual void update() = 0;
-
-protected:
-	glm::vec2 position_{};
-	float rotation_{};
-};
+CustomShaderProgram& ShaderPack::operator[](const std::string& name)
+{
+	return shaders_.at(name);
+}

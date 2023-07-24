@@ -41,6 +41,7 @@
 #include "Font.h"
 #include "FreeTypeLibrary.h"
 #include "LineText.h"
+#include "ShaderPack.h"
 
 #include <iostream>
 
@@ -50,11 +51,16 @@ void VaKon2D::start()
 
 	GetWindow().viewport(0, 0, 800, 600);
 
-	CustomShaderProgram textProgram("assets/shaders/text.vert", "assets/shaders/text.frag");
+	CustomShaderProgram textProgram("text", "assets/shaders/text.vert", "assets/shaders/text.frag");
 	Font font("assets/fonts/Roboto-Medium.ttf");
 	LineText text(font, "Hello world");
 	text.setColor({255, 0, 0});
-	CustomShaderProgram mainProgram("assets/shaders/main-vertex.glsl", "assets/shaders/main-fragment.glsl");
+
+	CustomShaderProgram mainProgram("widget", "assets/shaders/main-vertex.glsl", "assets/shaders/main-fragment.glsl");
+
+	ShaderPack shaderPack;
+	shaderPack.addShaderProgram(std::move(textProgram));
+	shaderPack.addShaderProgram(std::move(mainProgram));
 
 	Texture texture(Gl::Texture::Target::Texture2D, true, true);
 	Image image("assets/textures/apple.png");
@@ -75,8 +81,8 @@ void VaKon2D::start()
 		GetWindow().clearColor({0.2f, 0.3f, 0.3f});
 		GetWindow().clear(GL_COLOR_BUFFER_BIT);
 
-		text.draw(textProgram);
-		widget.draw(mainProgram);
+		// text.draw(textProgram);
+		widget.draw(shaderPack);
 
 		GetWindow().swapBuffers();
 		GetWindow().pollEvent();

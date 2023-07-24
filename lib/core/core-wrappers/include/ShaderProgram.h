@@ -23,7 +23,7 @@
 #pragma once
 
 #include "Gl.h"
-#include "NotCopyableAndNotMovable.h"
+#include "NotCopyableButMovable.h"
 #include "glm/glm.hpp"
 
 #include <unordered_map>
@@ -32,11 +32,14 @@ class GlColor;
 
 class Shader;
 
-class ShaderProgram : public Utils::NotCopyableAndNotMovable
+class ShaderProgram : public Utils::NotCopyableButMovable
 {
 public:
-	ShaderProgram(bool shouldCreate);
+	explicit ShaderProgram(bool shouldCreate);
 	ShaderProgram(Shader& frag, Shader& vert);
+
+	ShaderProgram(ShaderProgram&& other) noexcept;
+	ShaderProgram& operator=(ShaderProgram&& other) noexcept;
 
 	void recreateAndLink(Shader& frag, Shader& vert);
 	void create();
@@ -49,6 +52,8 @@ public:
 	void deleteProgram();
 	virtual void OnAfterLink();
 	_NODISCARD GLint getUniformLocation(const std::string& name);
+
+	_NODISCARD bool isValid() const;
 
 	void uniform(const std::string& name, const GlColor& color);
 	void uniform(const std::string& name, GLfloat v0);

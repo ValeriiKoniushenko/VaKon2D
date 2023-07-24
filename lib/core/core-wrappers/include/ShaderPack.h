@@ -20,27 +20,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "ShaderPack.h"
-#include "glm/glm.hpp"
+#pragma once
 
-#include <cstdlib>
+#include "CustomShaderProgram.h"
+#include "NotCopyableButMovable.h"
 
-class DrawAble
+#include <unordered_map>
+
+class ShaderPack : Utils::NotCopyableButMovable
 {
 public:
-	virtual void draw(ShaderPack& shaderProgram);
-	_NODISCARD virtual std::size_t getVerticesCount() const;
+	ShaderPack() = default;
+	void addShaderProgram(CustomShaderProgram&& csp);
+	CustomShaderProgram& operator[](const std::string& name);
 
-	void setPosition(const glm::vec2& newPosition);
-	void move(const glm::vec2& offset);
-	_NODISCARD const glm::vec2& getPosition() const;
-
-	void setRotation(float newRotation);
-	void rotate(float offset);
-	_NODISCARD float getRotation() const;
-	virtual void update() = 0;
-
-protected:
-	glm::vec2 position_{};
-	float rotation_{};
+private:
+	std::unordered_map<std::string, CustomShaderProgram> shaders_;
 };

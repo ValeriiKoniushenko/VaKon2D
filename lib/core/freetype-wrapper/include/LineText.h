@@ -24,7 +24,7 @@
 
 #include "Color.h"
 #include "CopyableAndMoveable.h"
-#include "CustomShaderProgram.h"
+#include "ShaderPack.h"
 #include "Vao.h"
 #include "Vbo.h"
 #include "glm/glm.hpp"

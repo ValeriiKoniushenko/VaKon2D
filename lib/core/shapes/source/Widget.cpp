@@ -44,7 +44,7 @@ Widget::~Widget()
 	getWidgetCollector().remove(this);
 }
 
-void Widget::draw(CustomShaderProgram& shaderProgram)
+void Widget::draw(ShaderPack& shaderPack)
 {
 	if (texture_)
 	{
@@ -56,6 +56,7 @@ void Widget::draw(CustomShaderProgram& shaderProgram)
 	trans = glm::translate(trans, glm::vec3(position_, 0.f));
 	trans = glm::rotate(trans, rotation_, glm::vec3(0.0f, 0.0f, 1.0f));
 
+	auto& shaderProgram = shaderPack["widget"];
 	shaderProgram.use();
 	shaderProgram.uniform("uTransform", false, trans);
 	shaderProgram.uniform(
@@ -68,7 +69,7 @@ void Widget::draw(CustomShaderProgram& shaderProgram)
 	shaderProgram.uniform("uBorderWidth", borderWidth);
 	shaderProgram.uniform("uIsDrawBorder", isDrawBorder_);
 
-	DrawAble::draw(shaderProgram);
+	DrawAble::draw(shaderPack);
 }
 
 std::size_t Widget::getVerticesCount() const

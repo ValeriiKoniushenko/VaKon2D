@@ -252,3 +252,25 @@ void ShaderProgram::uniform(const std::string& name, bool transpose, const glm::
 	const GLint location = getUniformLocation(name);
 	Gl::Program::uniformMatrix4x3fv(location, 1, transpose, glm::value_ptr(value));
 }
+
+ShaderProgram::ShaderProgram(ShaderProgram&& other) noexcept
+{
+	*this = std::move(other);
+}
+
+ShaderProgram& ShaderProgram::operator=(ShaderProgram&& other) noexcept
+{
+	data_ = other.data_;
+	wasLinked_ = other.wasLinked_;
+	uniforms_ = std::move(other.uniforms_);
+
+	other.data_ = Gl::Program::invalidId;
+	other.wasLinked_ = false;
+	other.uniforms_.clear();
+	return *this;
+}
+
+bool ShaderProgram::isValid() const
+{
+	return data_ != Gl::Program::invalidId;
+}

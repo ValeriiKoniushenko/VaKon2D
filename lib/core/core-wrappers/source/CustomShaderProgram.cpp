@@ -36,16 +36,18 @@ void CustomShaderProgram::OnAfterLink()
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
-CustomShaderProgram::CustomShaderProgram(bool shouldCreate) : ShaderProgram(shouldCreate)
+CustomShaderProgram::CustomShaderProgram(const std::string& name, bool shouldCreate) : ShaderProgram(shouldCreate), name_(name)
 {
 }
 
-CustomShaderProgram::CustomShaderProgram(Shader& frag, Shader& vert) : ShaderProgram(frag, vert)
+CustomShaderProgram::CustomShaderProgram(const std::string& name, Shader& frag, Shader& vert)
+	: ShaderProgram(frag, vert), name_(name)
 {
 }
 
-CustomShaderProgram::CustomShaderProgram(std::filesystem::path pathToVertex, std::filesystem::path pathToFragment)
-	: ShaderProgram(true)
+CustomShaderProgram::CustomShaderProgram(
+	const std::string& name, std::filesystem::path pathToVertex, std::filesystem::path pathToFragment)
+	: ShaderProgram(true), name_(name)
 {
 	Shader frag(pathToVertex, Gl::Shader::Type::Vertex);
 	Shader vert(pathToFragment, Gl::Shader::Type::Fragment);
@@ -53,4 +55,18 @@ CustomShaderProgram::CustomShaderProgram(std::filesystem::path pathToVertex, std
 	attachShader(vert);
 	link();
 	use();
+}
+
+CustomShaderProgram::CustomShaderProgram(const std::string& name) : ShaderProgram(false), name_(name)
+{
+}
+
+bool CustomShaderProgram::operator==(const CustomShaderProgram& csp) const
+{
+	return name_ == csp.name_;
+}
+
+const std::string& CustomShaderProgram::getName() const
+{
+	return name_;
 }
