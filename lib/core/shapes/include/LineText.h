@@ -27,16 +27,17 @@
 #include "ShaderPack.h"
 #include "Vao.h"
 #include "Vbo.h"
+#include "Widget.h"
 #include "glm/glm.hpp"
 
 #include <string>
 
 class Font;
 
-class LineText : public Utils::CopyableAndMoveable
+class LineText : public Widget
 {
 public:
-	LineText(bool autoPrepare);
+	LineText(ShaderPack& shaderPack);
 	LineText(Font& font, const std::string& text);
 	LineText() = default;
 	~LineText() = default;
@@ -51,9 +52,6 @@ public:
 	_NODISCARD const std::string& getText() const;
 	void setText(const std::string& text);
 
-	_NODISCARD const glm::vec2& getPosition() const;
-	void setPosition(const glm::vec2& position);
-
 	_NODISCARD float getTextWidth();
 	_NODISCARD float getFontSize() const;
 	void setFontSize(float size);
@@ -61,9 +59,9 @@ public:
 	void setColor(const Color& color);
 	_NODISCARD const Color& getColor() const;
 
-	void prepare();
+	void prepare(ShaderPack& shader) override;
 
-	void draw(ShaderPack& shader);
+	void draw(ShaderPack& shader) override;
 
 private:
 	void updateCache();
@@ -77,7 +75,6 @@ private:
 	std::string text_;
 	std::string lastSavedText_;
 	float textWidth_ = -1.f;
-	glm::vec2 position_;
 	Vbo vbo_;
 	Vao vao_;
 	float fontSize_ = 24.f;

@@ -18,4 +18,5 @@ target_link_libraries(
 	Glm
 	Window
 	Input-Devices
+	FreeType-Wrapper
 )

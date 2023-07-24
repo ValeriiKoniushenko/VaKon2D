@@ -20,6 +20,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#pragma once
+
 #include "Delegate.h"
 #include "DrawAble.h"
 #include "JsonPrintable.h"
@@ -61,7 +63,7 @@ public:
 	void setIsDrawBorder(bool isDraw);
 	_NODISCARD bool isDrawBorder() const;
 
-	void prepare();
+	virtual void prepare(ShaderPack& shader);
 
 	void update() override;
 

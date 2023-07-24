@@ -53,9 +53,22 @@ void VaKon2D::start()
 
 	ShaderPack shaderPack;
 	shaderPack.loadShaders("text", "assets/shaders/text.vert", "assets/shaders/text.frag");
+	shaderPack.loadShaders("widget", "assets/shaders/widget.vert", "assets/shaders/widget.frag");
 
-	Font font("assets/fonts/Roboto-Medium.ttf");
-	LineText text(font, "Hello world");
+	Texture texture(Gl::Texture::Target::Texture2D, true, true);
+	Image image("assets/textures/apple.png");
+	image.setInternalChannel(Gl::Texture::Channel::SRGBA);
+	texture.setImage(image);
+	texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
+
+	// Font font("assets/fonts/Roboto-Medium.ttf");
+	// LineText text(font, "Hello world");
+	// text.setTexture(texture);
+	// text.prepare(shaderPack);
+
+	Widget widget;
+	widget.setTexture(texture);
+	widget.prepare(shaderPack);
 
 	KeyboardInputAction iaWidgetReflector("WidgetReflector", Keyboard::Key::F1);
 	iaWidgetReflector.setFrequency(KeyboardInputAction::TimeT(100));
@@ -66,7 +79,8 @@ void VaKon2D::start()
 		GetWindow().clearColor({0.2f, 0.3f, 0.3f});
 		GetWindow().clear(GL_COLOR_BUFFER_BIT);
 
-		text.draw(shaderPack);
+		// text.draw(shaderPack);
+		widget.draw(shaderPack);
 
 		GetWindow().swapBuffers();
 		GetWindow().pollEvent();

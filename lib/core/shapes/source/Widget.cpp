@@ -46,6 +46,8 @@ Widget::~Widget()
 
 void Widget::draw(ShaderPack& shaderPack)
 {
+	DrawAble::draw(shaderPack);
+	auto& shaderProgram = shaderPack["widget"];
 	if (texture_)
 	{
 		texture_->bind();
@@ -56,7 +58,6 @@ void Widget::draw(ShaderPack& shaderPack)
 	trans = glm::translate(trans, glm::vec3(position_, 0.f));
 	trans = glm::rotate(trans, rotation_, glm::vec3(0.0f, 0.0f, 1.0f));
 
-	auto& shaderProgram = shaderPack["widget"];
 	shaderProgram.use();
 	shaderProgram.uniform("uTransform", false, trans);
 	shaderProgram.uniform(
@@ -68,8 +69,6 @@ void Widget::draw(ShaderPack& shaderPack)
 	shaderProgram.uniform("uBorderColor", borderColor.r, borderColor.g, borderColor.b, borderColor.a);
 	shaderProgram.uniform("uBorderWidth", borderWidth);
 	shaderProgram.uniform("uIsDrawBorder", isDrawBorder_);
-
-	DrawAble::draw(shaderPack);
 }
 
 std::size_t Widget::getVerticesCount() const
@@ -88,8 +87,10 @@ Texture& Widget::getTexture()
 	return *texture_;
 }
 
-void Widget::prepare()
+void Widget::prepare(ShaderPack& shader)
 {
+	shader["widget"].use();
+
 	if (!vbo_.isGenerated())
 	{
 		vbo_.generate();

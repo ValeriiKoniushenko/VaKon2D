@@ -69,16 +69,6 @@ void LineText::setText(const std::string& text)
 	updateCache();
 }
 
-const glm::vec2& LineText::getPosition() const
-{
-	return position_;
-}
-
-void LineText::setPosition(const glm::vec2& position)
-{
-	position_ = position;
-}
-
 void LineText::updateCache()
 {
 	cache_.resize(text_.size());
@@ -119,8 +109,11 @@ void LineText::updateCache()
 	BOOST_ASSERT_MSG(cache_.size() == text_.size(), "Invalid count of cache data");
 }
 
-void LineText::prepare()
+void LineText::prepare(ShaderPack& shader)
 {
+	Widget::prepare(shader);
+	shader["text"].use();
+
 	vao_.generate();
 	vao_.bind();
 
@@ -132,16 +125,15 @@ void LineText::prepare()
 	Gl::Vao::vertexAttribPointer(1, 2, Gl::Type::Float, false, 4 * sizeof(float), reinterpret_cast<void*>(2 * sizeof(float)));
 }
 
-LineText::LineText(bool autoPrepare)
+LineText::LineText(ShaderPack& shaderPack)
 {
-	if (autoPrepare)
-	{
-		prepare();
-	}
+	prepare(shaderPack);
 }
 
 void LineText::draw(ShaderPack& shaderPack)
 {
+	Widget::draw(shaderPack);
+
 	auto& shader = shaderPack["text"];
 	shader.use();
 	shader.uniform(
@@ -194,7 +186,6 @@ void LineText::setFontSize(float size)
 
 LineText::LineText(Font& font, const std::string& text)
 {
-	prepare();
 	setFont(font);
 	setText(text);
 }
