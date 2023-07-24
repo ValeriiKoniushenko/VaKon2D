@@ -32,3 +32,24 @@ CustomShaderProgram& ShaderPack::operator[](const std::string& name)
 {
 	return shaders_.at(name);
 }
+
+const CustomShaderProgram& ShaderPack::operator[](const std::string& name) const
+{
+	return shaders_.at(name);
+}
+
+CustomShaderProgram& ShaderPack::get(const std::string& name)
+{
+	return shaders_.at(name);
+}
+
+const CustomShaderProgram& ShaderPack::get(const std::string& name) const
+{
+	return shaders_.at(name);
+}
+
+void ShaderPack::loadShaders(const std::string& name, std::filesystem::path vert, std::filesystem::path frag)
+{
+	CustomShaderProgram program(name, std::move(vert), std::move(frag));
+	addShaderProgram(std::move(program));
+}

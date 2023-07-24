@@ -51,26 +51,12 @@ void VaKon2D::start()
 
 	GetWindow().viewport(0, 0, 800, 600);
 
-	CustomShaderProgram textProgram("text", "assets/shaders/text.vert", "assets/shaders/text.frag");
+	ShaderPack shaderPack;
+	shaderPack.loadShaders("text", "assets/shaders/text.vert", "assets/shaders/text.frag");
+
 	Font font("assets/fonts/Roboto-Medium.ttf");
 	LineText text(font, "Hello world");
 	text.setColor({255, 0, 0});
-
-	CustomShaderProgram mainProgram("widget", "assets/shaders/main-vertex.glsl", "assets/shaders/main-fragment.glsl");
-
-	ShaderPack shaderPack;
-	shaderPack.addShaderProgram(std::move(textProgram));
-	shaderPack.addShaderProgram(std::move(mainProgram));
-
-	Texture texture(Gl::Texture::Target::Texture2D, true, true);
-	Image image("assets/textures/apple.png");
-	image.setInternalChannel(Gl::Texture::Channel::SRGBA);
-	texture.setImage(image);
-	texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
-
-	Widget widget;
-	widget.setTexture(texture);
-	widget.prepare();
 
 	KeyboardInputAction iaWidgetReflector("WidgetReflector", Keyboard::Key::F1);
 	iaWidgetReflector.setFrequency(KeyboardInputAction::TimeT(100));
@@ -81,17 +67,23 @@ void VaKon2D::start()
 		GetWindow().clearColor({0.2f, 0.3f, 0.3f});
 		GetWindow().clear(GL_COLOR_BUFFER_BIT);
 
-		// text.draw(textProgram);
-		widget.draw(shaderPack);
+		text.draw(shaderPack["text"]);
 
 		GetWindow().swapBuffers();
 		GetWindow().pollEvent();
 	}
-}
+	/*shaderPack.loadShaders("widget", "assets/shaders/main-vertex.glsl", "assets/shaders/main-fragment.glsl");
 
-void VaKon2D::print()
-{
-	std::cout << "Hello world" << std::endl;
+	Texture texture(Gl::Texture::Target::Texture2D, true, true);
+	Image image("assets/textures/apple.png");
+	image.setInternalChannel(Gl::Texture::Channel::SRGBA);
+	texture.setImage(image);
+	texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
+
+	Widget widget;
+	widget.setTexture(texture);
+	widget.prepare();
+*/
 }
 
 void VaKon2D::initCore()
