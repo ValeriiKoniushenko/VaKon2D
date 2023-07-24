@@ -56,7 +56,6 @@ void VaKon2D::start()
 
 	Font font("assets/fonts/Roboto-Medium.ttf");
 	LineText text(font, "Hello world");
-	text.setColor({255, 0, 0});
 
 	KeyboardInputAction iaWidgetReflector("WidgetReflector", Keyboard::Key::F1);
 	iaWidgetReflector.setFrequency(KeyboardInputAction::TimeT(100));
@@ -67,7 +66,7 @@ void VaKon2D::start()
 		GetWindow().clearColor({0.2f, 0.3f, 0.3f});
 		GetWindow().clear(GL_COLOR_BUFFER_BIT);
 
-		text.draw(shaderPack["text"]);
+		text.draw(shaderPack);
 
 		GetWindow().swapBuffers();
 		GetWindow().pollEvent();

@@ -63,7 +63,7 @@ public:
 
 	void prepare();
 
-	void draw(CustomShaderProgram& shader);
+	void draw(ShaderPack& shader);
 
 private:
 	void updateCache();

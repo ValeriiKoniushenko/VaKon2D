@@ -140,8 +140,9 @@ LineText::LineText(bool autoPrepare)
 	}
 }
 
-void LineText::draw(CustomShaderProgram& shader)
+void LineText::draw(ShaderPack& shaderPack)
 {
+	auto& shader = shaderPack["text"];
 	shader.use();
 	shader.uniform(
 		"uResolution", static_cast<float>(GetWindow().getSize().width), static_cast<float>(GetWindow().getSize().height));
