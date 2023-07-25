@@ -106,6 +106,8 @@ void LineText::updateCache()
 		++vert;
 	}
 
+	setSize({getTextWidth(), getFontSize()});
+
 	BOOST_ASSERT_MSG(cache_.size() == text_.size(), "Invalid count of cache data");
 }
 

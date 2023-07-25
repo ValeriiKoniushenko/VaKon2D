@@ -69,7 +69,13 @@ void VaKon2D::start()
 
 	KeyboardInputAction iaWidgetReflector("WidgetReflector", Keyboard::Key::F1);
 	iaWidgetReflector.setFrequency(KeyboardInputAction::TimeT(100));
-	iaWidgetReflector.onAction.subscribe([]() { getWidgetReflector().toggle(); });
+	iaWidgetReflector.setIsRepeatable(false);
+	iaWidgetReflector.onAction.subscribe(
+		[]()
+		{
+			getWidgetReflector().toggle();
+			std::cout << "Toggle()" << std::endl;
+		});
 
 	while (!GetWindow().shouldClose())
 	{
@@ -78,21 +84,10 @@ void VaKon2D::start()
 
 		text.draw(shaderPack);
 
+		getUpdateableCollector().updateAll();
 		GetWindow().swapBuffers();
 		GetWindow().pollEvent();
 	}
-	/*shaderPack.loadShaders("widget", "assets/shaders/main-vertex.glsl", "assets/shaders/main-fragment.glsl");
-
-	Texture texture(Gl::Texture::Target::Texture2D, true, true);
-	Image image("assets/textures/apple.png");
-	image.setInternalChannel(Gl::Texture::Channel::SRGBA);
-	texture.setImage(image);
-	texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
-
-	Widget widget;
-	widget.setTexture(texture);
-	widget.prepare();
-*/
 }
 
 void VaKon2D::initCore()
