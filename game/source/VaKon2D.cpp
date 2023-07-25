@@ -67,10 +67,6 @@ void VaKon2D::start()
 	text.setTexture(texture);
 	text.prepare(shaderPack);
 
-	Widget widget;
-	widget.setTexture(texture);
-	widget.prepare(shaderPack);
-
 	KeyboardInputAction iaWidgetReflector("WidgetReflector", Keyboard::Key::F1);
 	iaWidgetReflector.setFrequency(KeyboardInputAction::TimeT(100));
 	iaWidgetReflector.onAction.subscribe([]() { getWidgetReflector().toggle(); });
@@ -80,8 +76,7 @@ void VaKon2D::start()
 		GetWindow().clearColor({0.2f, 0.3f, 0.3f});
 		GetWindow().clear(GL_COLOR_BUFFER_BIT);
 
-		// text.draw(shaderPack);
-		widget.draw(shaderPack);
+		text.draw(shaderPack);
 
 		GetWindow().swapBuffers();
 		GetWindow().pollEvent();

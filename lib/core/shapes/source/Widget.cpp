@@ -46,7 +46,6 @@ Widget::~Widget()
 
 void Widget::draw(ShaderPack& shaderPack)
 {
-	DrawAble::draw(shaderPack);
 	auto& shaderProgram = shaderPack["widget"];
 	vao_.bind();
 	if (texture_)
@@ -69,6 +68,8 @@ void Widget::draw(ShaderPack& shaderPack)
 	shaderProgram.uniform("uBorderColor", borderColor.r, borderColor.g, borderColor.b, borderColor.a);
 	shaderProgram.uniform("uBorderWidth", borderWidth);
 	shaderProgram.uniform("uIsDrawBorder", isDrawBorder_);
+
+	DrawAble::draw(shaderPack);
 }
 
 std::size_t Widget::getVerticesCount() const
