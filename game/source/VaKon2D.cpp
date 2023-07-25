@@ -70,12 +70,7 @@ void VaKon2D::start()
 	KeyboardInputAction iaWidgetReflector("WidgetReflector", Keyboard::Key::F1);
 	iaWidgetReflector.setFrequency(KeyboardInputAction::TimeT(100));
 	iaWidgetReflector.setIsRepeatable(false);
-	iaWidgetReflector.onAction.subscribe(
-		[]()
-		{
-			getWidgetReflector().toggle();
-			std::cout << "Toggle()" << std::endl;
-		});
+	iaWidgetReflector.onAction.subscribe([]() { getWidgetReflector().toggle(); });
 
 	while (!GetWindow().shouldClose())
 	{
