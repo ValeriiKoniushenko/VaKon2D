@@ -48,11 +48,11 @@ void Widget::draw(ShaderPack& shaderPack)
 {
 	DrawAble::draw(shaderPack);
 	auto& shaderProgram = shaderPack["widget"];
+	vao_.bind();
 	if (texture_)
 	{
 		texture_->bind();
 	}
-	vao_.bind();
 
 	glm::mat4 trans = glm::mat4(1.0f);
 	trans = glm::translate(trans, glm::vec3(position_, 0.f));
@@ -118,6 +118,7 @@ void Widget::prepare(ShaderPack& shader)
 
 	if (texture_)
 	{
+		texture_->bind();
 		texture_->loadToGpu();
 	}
 }

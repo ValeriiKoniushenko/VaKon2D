@@ -31,6 +31,13 @@
 namespace Utils
 {
 
+std::string jsonToString(const boost::property_tree::ptree& ptree)
+{
+	std::ostringstream oss;
+	boost::property_tree::json_parser::write_json(oss, ptree);
+	return oss.str();
+}
+
 std::string getFileContent(const std::filesystem::path& path)
 {
 	std::ifstream file(path);

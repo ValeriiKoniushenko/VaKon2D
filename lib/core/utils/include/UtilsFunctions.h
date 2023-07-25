@@ -21,6 +21,8 @@
 // SOFTWARE.
 
 #include "Size.h"
+#include "boost/property_tree/json_parser.hpp"
+#include "boost/property_tree/ptree.hpp"
 
 #include <filesystem>
 #include <string>
@@ -29,6 +31,7 @@
 namespace Utils
 {
 
+_NODISCARD std::string jsonToString(const boost::property_tree::ptree& ptree);
 _NODISCARD std::string getFileContent(const std::filesystem::path& path);
 void setFileContent(const std::filesystem::path& path, const std::string& data);
 void setFileContent(const std::filesystem::path& path, void* p, size_t size);

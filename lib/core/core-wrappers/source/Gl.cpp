@@ -363,6 +363,18 @@ void Gl::drawArrays(GLenum mode, GLint first, GLsizei count)
 #endif
 }
 
+Gl::State Gl::getState()
+{
+	Gl::State state;
+	state.boundVbo = Gl::Vbo::id_;
+	state.boundVao = Gl::Vao::id_;
+	state.boundTexture = Gl::Texture::boundTexture;
+	state.boundShader = Gl::Shader::id_;
+	state.boundProgram = Gl::Program::usedShaderProgram;
+
+	return state;
+}
+
 std::string Gl::Texture::channelToString(Channel channel)
 {
 	if (channel == Channel::SRGB)
@@ -1026,4 +1038,16 @@ void Gl::Program::uniformMatrix4x3fv(GLint location, GLsizei count, GLboolean tr
 #ifdef OPENGL_DEBUG
 	Gl::debugTraces();
 #endif
+}
+
+boost::property_tree::ptree Gl::State::toJson() const
+{
+	boost::property_tree::ptree ptree;
+	ptree.put("bound-vao", boundVao);
+	ptree.put("bound-vbo", boundVbo);
+	ptree.put("bound-texture", boundTexture);
+	ptree.put("bound-shader", boundShader);
+	ptree.put("bound-program", boundProgram);
+
+	return ptree;
 }

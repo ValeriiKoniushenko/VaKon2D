@@ -42,6 +42,7 @@
 #include "FreeTypeLibrary.h"
 #include "LineText.h"
 #include "ShaderPack.h"
+#include "UtilsFunctions.h"
 
 #include <iostream>
 
@@ -61,10 +62,10 @@ void VaKon2D::start()
 	texture.setImage(image);
 	texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
 
-	// Font font("assets/fonts/Roboto-Medium.ttf");
-	// LineText text(font, "Hello world");
-	// text.setTexture(texture);
-	// text.prepare(shaderPack);
+	Font font("assets/fonts/Roboto-Medium.ttf");
+	LineText text(font, "Hello world");
+	text.setTexture(texture);
+	text.prepare(shaderPack);
 
 	Widget widget;
 	widget.setTexture(texture);

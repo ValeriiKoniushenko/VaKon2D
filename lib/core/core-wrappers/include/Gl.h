@@ -23,6 +23,7 @@
 #pragma once
 
 #include "GlfwWrapper.h"
+#include "JsonPrintable.h"
 
 #include <filesystem>
 
@@ -64,6 +65,7 @@ public:
 
 	private:
 		inline static GLuint id_ = invalidId;
+		friend class Gl;
 	};
 
 	class Vbo
@@ -78,8 +80,9 @@ public:
 		static void data(GLenum target, GLsizeiptr size, const void* data, GLenum usage);
 		static void subData(GLenum target, GLintptr offset, GLsizeiptr size, const void* data);
 
-	public:
+	private:
 		inline static GLuint id_ = invalidId;
+		friend class Gl;
 	};
 
 	class Shader
@@ -103,6 +106,7 @@ public:
 
 	private:
 		inline static GLuint id_ = invalidId;
+		friend class Gl;
 	};
 
 	class Program
@@ -155,6 +159,7 @@ public:
 
 	private:
 		inline static GLuint usedShaderProgram = invalidId;
+		friend class Gl;
 	};
 
 	class Texture
@@ -233,8 +238,22 @@ public:
 		static void deleteTexture(GLuint texture);
 
 	private:
+		friend class Gl;
 		inline static GLuint boundTexture = invalidId;
 	};
+
+	struct State : public JsonPrintable
+	{
+		GLuint boundVbo = Vbo::invalidId;
+		GLuint boundVao = Vao::invalidId;
+		GLuint boundTexture = Texture::invalidId;
+		GLuint boundShader = Shader::invalidId;
+		GLuint boundProgram = Program::invalidId;
+
+		boost::property_tree::ptree toJson() const override;
+	};
+
+	static State getState();
 
 	static void viewport(GLint x, GLint y, GLsizei width, GLsizei height);
 	static void drawArrays(GLenum mode, GLint first, GLsizei count);
