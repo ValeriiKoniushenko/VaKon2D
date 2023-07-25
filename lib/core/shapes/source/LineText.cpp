@@ -27,6 +27,9 @@
 #include "boost/assert.hpp"
 #include "spdlog/spdlog.h"
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include <utility>
 
 LineText::LineText(const LineText& other)
@@ -136,11 +139,19 @@ void LineText::draw(ShaderPack& shaderPack)
 {
 	Widget::draw(shaderPack);
 
+	glm::mat4 trans = glm::mat4(1.0f);
+	trans = glm::translate(trans, glm::vec3(position_ / glm::vec2(static_cast<float>(GetWindow().getSize().width),
+															static_cast<float>(GetWindow().getSize().height)),
+									  0.f));
+	trans = glm::rotate(trans, rotation_, glm::vec3(0.0f, 0.0f, 1.0f));
+
 	auto& shader = shaderPack["text"];
 	shader.use();
 	shader.uniform(
 		"uResolution", static_cast<float>(GetWindow().getSize().width), static_cast<float>(GetWindow().getSize().height));
 	shader.uniform("uColor", toGlColor(color_));
+	shader.uniform("uTransform", false, trans);
+
 	Gl::Texture::active(0);
 	vao_.bind();
 
