@@ -65,7 +65,7 @@ void VaKon2D::start()
 	Font font("assets/fonts/Roboto-Medium.ttf");
 	LineText text(font, "Hello world");
 	text.setTexture(texture);
-	text.move({100.f, 100.f});
+	text.setPosition({100.f, 100.f});
 	text.prepare(shaderPack);
 
 	KeyboardInputAction iaWidgetReflector("WidgetReflector", Keyboard::Key::F1);

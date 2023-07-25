@@ -18,8 +18,6 @@ glm::ivec2 Mouse::getPosition(Window& wnd)
 	POINT p{};
 	GetCursorPos(&p);
 	ScreenToClient(wnd.getHwnd(), &p);
-	p.x += -wnd.getSize().width / 2;
-	p.y += -wnd.getSize().height / 2;
 	return glm::ivec2(static_cast<int>(p.x), static_cast<int>(p.y));
 }
 
