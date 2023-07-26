@@ -11,5 +11,6 @@ uniform mat4 uTransform;
 void main()
 {
     TexCoords = aUv;
-    gl_Position = uTransform * vec4(aVertex / uResolution, 0.0, 1.0);
+    vec4 offset = vec4(1.0f, -1.0f, 0.f, 0.f);
+    gl_Position = uTransform * vec4(aVertex / uResolution, 0.0, 1.0) - offset;
 }

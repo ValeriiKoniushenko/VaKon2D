@@ -140,10 +140,11 @@ void LineText::draw(ShaderPack& shaderPack)
 	Widget::draw(shaderPack);
 
 	glm::mat4 trans = glm::mat4(1.0f);
-	trans = glm::translate(trans, glm::vec3(position_ / glm::vec2(static_cast<float>(GetWindow().getSize().width),
-															static_cast<float>(GetWindow().getSize().height)),
+	trans = glm::translate(trans, glm::vec3(position_ / glm::vec2(static_cast<float>(GetWindow().getSize().width) / 2.f,
+															static_cast<float>(GetWindow().getSize().height) / 2.f),
 									  0.f));
 	trans = glm::rotate(trans, rotation_, glm::vec3(0.0f, 0.0f, 1.0f));
+	trans[3][1] = -trans[3][1];
 
 	auto& shader = shaderPack["text"];
 	shader.use();
