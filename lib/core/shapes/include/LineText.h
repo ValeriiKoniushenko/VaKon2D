@@ -52,7 +52,7 @@ public:
 	_NODISCARD const std::string& getText() const;
 	void setText(const std::string& text);
 
-	_NODISCARD float getTextWidth();
+	_NODISCARD float getTextWidth() const;
 	_NODISCARD float getFontSize() const;
 	void setFontSize(float size);
 
@@ -62,6 +62,9 @@ public:
 	void prepare(ShaderPack& shader) override;
 
 	void draw(ShaderPack& shader) override;
+
+	_NODISCARD boost::property_tree::ptree toJson() const override;
+	_NODISCARD std::string getComponentName() const override;
 
 private:
 	void updateCache();
@@ -74,7 +77,7 @@ private:
 	Font* font_;
 	std::string text_;
 	std::string lastSavedText_;
-	float textWidth_ = -1.f;
+	mutable float textWidth_ = -1.f;
 	Vbo vbo_;
 	Vao vao_;
 	float fontSize_ = 24.f;

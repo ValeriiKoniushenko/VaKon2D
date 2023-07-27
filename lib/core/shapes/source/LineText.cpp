@@ -226,7 +226,7 @@ float LineText::getHeightOfTheBiggestLetter()
 	return maxSize;
 }
 
-float LineText::getTextWidth()
+float LineText::getTextWidth() const
 {
 	if (lastSavedText_ == text_)
 	{
@@ -260,4 +260,32 @@ void LineText::setColor(const Color& color)
 const Color& LineText::getColor() const
 {
 	return color_;
+}
+
+boost::property_tree::ptree LineText::toJson() const
+{
+	auto tree = Widget::toJson();
+
+	boost::property_tree::ptree text;
+	text.put("color", std::format("{} {} {} {}", color_.r, color_.g, color_.b, color_.a));
+	text.put("text", text_);
+	text.put("text-width", getTextWidth());
+	text.put("font-size", fontSize_);
+	text.put("vbo", vbo_.getId());
+	text.put("vao", vao_.getId());
+	if (font_)
+	{
+		boost::property_tree::ptree font;
+
+		font.put("default-render-size", Font::defaultRenderSize);
+
+		text.put_child("font", font);
+	}
+	tree.put_child("text", text);
+	return tree;
+}
+
+std::string LineText::getComponentName() const
+{
+	return "line-text";
 }
