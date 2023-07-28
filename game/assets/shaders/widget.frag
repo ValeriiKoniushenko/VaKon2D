@@ -1,4 +1,4 @@
-#version 330 core
+#version 450 core
 
 out vec4 FragColor;
 
@@ -56,9 +56,25 @@ mat4 saturationMatrix(float saturation)
     0, 0, 0, 1);
 }
 
+bool canDrawBoder()
+{
+    return length(distance(1, 2)) < uBorderWidth;
+}
+
 void main()
 {
-    if (uIsDrawBorder && (ioCv.x <= uBorderWidth || ioCv.y <= uBorderWidth || 1.f - ioCv.x <= uBorderWidth || 1.f - ioCv.y <= uBorderWidth))
+    if (uIsDrawBorder && canDrawBorder()){
+        FragColor = uBorderColor;
+    }
+    else {
+        vec4 textureColor = texture(uTexture, ioCv);
+        vec3 diffuseColor = pow(texture(uTexture, ioCv).rgb, vec3(uGamma));
+        vec4 midColor = vec4(diffuseColor, textureColor.a);
+        vec4 outColor = brightnessMatrix(uBrightness) * contrastMatrix(uContrast) * saturationMatrix(uSaturation) * midColor;
+        FragColor = outColor;
+    }
+
+    /*if (uIsDrawBorder && (ioCv.x <= uBorderWidth || ioCv.y <= uBorderWidth || 1.f - ioCv.x <= uBorderWidth || 1.f - ioCv.y <= uBorderWidth))
     {
         FragColor = uBorderColor;
     }
@@ -69,5 +85,5 @@ void main()
         vec4 midColor = vec4(diffuseColor, textureColor.a);
         vec4 outColor = brightnessMatrix(uBrightness) * contrastMatrix(uContrast) * saturationMatrix(uSaturation) * midColor;
         FragColor = outColor;
-    }
+    }*/
 }

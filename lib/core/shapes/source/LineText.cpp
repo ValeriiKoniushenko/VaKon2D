@@ -37,17 +37,19 @@ LineText::LineText(const LineText& other)
 	*this = other;
 }
 
-LineText::LineText(LineText&& other)
+LineText::LineText(LineText&& other) noexcept
 {
 	*this = std::move(other);
 }
 
 LineText& LineText::operator=(const LineText& other)
 {
+	return *this;
 }
 
-LineText& LineText::operator=(LineText&& other)
+LineText& LineText::operator=(LineText&& other) noexcept
 {
+	return *this;
 }
 
 Font* LineText::getFont() const
@@ -81,19 +83,19 @@ void LineText::updateCache()
 
 	const float scale = fontSize_ / Font::defaultRenderSize * 2.f;
 	const float offsetY = getHeightOfTheBiggestLetter();
-	for (auto c = text_.begin(); c != text_.end(); ++c)
+	for (auto c : text_)
 	{
 		if (!font_)
 		{
 			spdlog::get("core")->warn("Can't render a text without font. The font wasn't found");
 			break;
 		}
-		const Font::Character& ch = font_->getCharacter(*c);
+		const Font::Character& ch = font_->getCharacter(c);
 
 		const float xpos = position.x + static_cast<float>(ch.bearing.x) * scale;
 		const float ypos = position.y - static_cast<float>(ch.size.y - ch.bearing.y) * scale - offsetY * scale;
-		const float w = ch.size.x * scale;
-		const float h = ch.size.y * scale;
+		const float w = static_cast<float>(ch.size.x) * scale;
+		const float h = static_cast<float>(ch.size.y) * scale;
 
 		// clang-format off
 		std::vector<float> vertices = {
@@ -105,7 +107,7 @@ void LineText::updateCache()
 		// clang-format on
 
 		*vert = std::move(vertices);
-		position.x += ch.advance * scale;
+		position.x += static_cast<float>(ch.advance) * scale;
 		++vert;
 	}
 
@@ -130,11 +132,6 @@ void LineText::prepare(ShaderPack& shader)
 	Gl::Vao::vertexAttribPointer(1, 2, Gl::Type::Float, false, 4 * sizeof(float), reinterpret_cast<void*>(2 * sizeof(float)));
 }
 
-LineText::LineText(ShaderPack& shaderPack)
-{
-	prepare(shaderPack);
-}
-
 void LineText::draw(ShaderPack& shaderPack)
 {
 	Widget::draw(shaderPack);
@@ -156,8 +153,6 @@ void LineText::draw(ShaderPack& shaderPack)
 	Gl::Texture::active(0);
 	vao_.bind();
 
-	glm::vec2 position = position_;
-
 	auto ch = text_.begin();
 	auto vert = cache_.begin();
 
@@ -173,7 +168,7 @@ void LineText::draw(ShaderPack& shaderPack)
 		const Font::Character& oneChar = font_->getCharacter(*ch);
 		oneChar.texture.bind();
 		vbo_.bind();
-		Gl::Vbo::subData(GL_ARRAY_BUFFER, 0, sizeof(float) * vert->size(), vert->data());
+		Gl::Vbo::subData(GL_ARRAY_BUFFER, 0, static_cast<GLsizeiptr>(sizeof(float) * vert->size()), vert->data());
 
 		Gl::drawArrays(GL_TRIANGLE_STRIP, 0, 4);
 
@@ -246,7 +241,7 @@ float LineText::getTextWidth() const
 		}
 
 		const auto& oneChar = font_->getCharacter(ch);
-		textWidth_ += oneChar.advance * scale;
+		textWidth_ += static_cast<float>(oneChar.advance) * scale;
 	}
 
 	return textWidth_;

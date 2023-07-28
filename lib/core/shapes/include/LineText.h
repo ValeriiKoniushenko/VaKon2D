@@ -37,14 +37,13 @@ class Font;
 class LineText : public Widget
 {
 public:
-	LineText(ShaderPack& shaderPack);
 	LineText(Font& font, const std::string& text);
 	LineText() = default;
 	~LineText() = default;
 	LineText(const LineText& other);
-	LineText(LineText&& other);
+	LineText(LineText&& other) noexcept;
 	LineText& operator=(const LineText& other);
-	LineText& operator=(LineText&& other);
+	LineText& operator=(LineText&& other) noexcept;
 
 	_NODISCARD Font* getFont() const;
 	void setFont(Font& font);
@@ -74,7 +73,7 @@ private:
 
 private:
 	Color color_;
-	Font* font_;
+	Font* font_ = nullptr;
 	std::string text_;
 	std::string lastSavedText_;
 	mutable float textWidth_ = -1.f;

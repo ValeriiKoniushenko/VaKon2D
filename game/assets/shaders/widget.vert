@@ -1,4 +1,4 @@
-#version 330 core
+#version 450 core
 
 layout (location = 0) in vec2 aVertex;
 layout (location = 1) in vec2 aCv;
