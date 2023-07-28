@@ -215,9 +215,6 @@ GLint Gl::Shader::getShaderiv(GLuint shader, GLenum pname)
 {
 	int value{};
 	glGetShaderiv(shader, pname, &value);
-#ifdef OPENGL_DEBUG
-	Gl::debugTraces();
-#endif
 	return value;
 }
 
@@ -226,9 +223,6 @@ std::string Gl::Shader::getShaderInfoLog(GLuint shader)
 	constexpr std::size_t logLength = 1024;
 	char infoLog[logLength];
 	glGetShaderInfoLog(shader, logLength, nullptr, infoLog);
-#ifdef OPENGL_DEBUG
-	Gl::debugTraces();
-#endif
 	return {infoLog};
 }
 

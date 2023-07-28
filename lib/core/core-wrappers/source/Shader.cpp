@@ -72,10 +72,6 @@ const std::string& Shader::getSource()
 void Shader::deleteShader()
 {
 	Gl::Shader::deleteShader(data_);
-	if (!Gl::Shader::getShaderiv(data_, GL_DELETE_STATUS))
-	{
-		throw std::runtime_error("Shader deletion was failed.\nDetails: " + std::string(Gl::Shader::getShaderInfoLog(data_)));
-	}
 
 	data_ = Gl::Shader::invalidId;
 	source_.clear();
