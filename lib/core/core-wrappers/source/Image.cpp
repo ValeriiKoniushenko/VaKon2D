@@ -165,8 +165,6 @@ GLenum Image::convertChannelToGlChannel(Image::Channel channel)
 		default:
 			throw std::runtime_error("OpenGL does not such type of the channel or was passed an invalid type of the channel");
 	}
-
-	return {};
 }
 
 void Image::loadToGpu()
@@ -193,13 +191,21 @@ std::string Image::getName() const
 std::string Image::channelToString(Image::Channel channel)
 {
 	if (channel == Channel::RGB)
+	{
 		return "RGB";
+	}
 	else if (channel == Channel::Grey)
+	{
 		return "Grey";
+	}
 	else if (channel == Channel::GreyA)
+	{
 		return "GreyA";
+	}
 	else if (channel == Channel::RGBA)
+	{
 		return "RGBA";
+	}
 
 	return "none";
 }

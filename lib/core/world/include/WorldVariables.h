@@ -42,7 +42,7 @@ public:
 	_NODISCARD const VariantT& operator[](const std::string& key) const;
 	_NODISCARD VariantT& operator[](const std::string& key);
 
-	void forceClear(std::vector<std::string> keys);
+	void forceClear(const std::vector<std::string>& keys);
 
 private:
 	std::unordered_map<std::string, VariantT> data_;

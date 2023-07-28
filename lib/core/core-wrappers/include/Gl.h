@@ -121,7 +121,7 @@ public:
 		_NODISCARD static std::string getProgramInfoLog(GLuint program);
 		static void use(GLuint program);
 		static void deleteProgram(GLuint program);
-		_NODISCARD static const GLint getUniformLocation(GLuint program, const std::string& name);
+		_NODISCARD static GLint getUniformLocation(GLuint program, const std::string& name);
 
 		static void uniform1f(GLint location, GLfloat v0);
 		static void uniform2f(GLint location, GLfloat v0, GLfloat v1);

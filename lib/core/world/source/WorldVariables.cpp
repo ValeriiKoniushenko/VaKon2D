@@ -68,7 +68,7 @@ WorldVariables::VariantT& WorldVariables::operator[](const std::string& key)
 	return get(key);
 }
 
-void WorldVariables::forceClear(std::vector<std::string> keys)
+void WorldVariables::forceClear(const std::vector<std::string>& keys)
 {
 	for (auto& key : keys)
 	{

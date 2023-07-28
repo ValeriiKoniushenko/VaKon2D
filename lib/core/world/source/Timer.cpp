@@ -44,7 +44,7 @@ const Timer::Unit& Timer::getFrequency() const
 
 void Timer::setCallback(std::function<void()> callback)
 {
-	callback_ = callback;
+	callback_ = std::move(callback);
 }
 
 void Timer::resetCallback()

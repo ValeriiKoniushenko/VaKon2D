@@ -60,7 +60,7 @@ public:
 
 private:
 	Mode mode_ = Mode::Finite;
-	Unit frequency_;
+	Unit frequency_ = Unit(1);
 	std::chrono::system_clock::time_point lastUpdate_;
 	std::function<void()> callback_;
 	bool wasCalled_ = false;

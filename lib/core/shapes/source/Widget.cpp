@@ -22,7 +22,6 @@
 
 #include "Widget.h"
 
-#include "CustomShaderProgram.h"
 #include "Image.h"
 #include "Mouse.h"
 #include "Texture.h"
@@ -114,7 +113,7 @@ void Widget::prepare(ShaderPack& shader)
 		vao_.generate();
 	}
 	vao_.bind();
-	Gl::Vao::vertexAttribPointer(0, 2, Gl::Type::Float, false, 4 * sizeof(float), (void*) 0);
+	Gl::Vao::vertexAttribPointer(0, 2, Gl::Type::Float, false, 4 * sizeof(float), nullptr);
 	Gl::Vao::enableVertexAttribArray(0);
 
 	Gl::Vao::vertexAttribPointer(1, 2, Gl::Type::Float, false, 4 * sizeof(float), reinterpret_cast<const void*>(2 * sizeof(float)));

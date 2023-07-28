@@ -32,19 +32,9 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <utility>
 
-LineText::LineText(const LineText& other)
-{
-	*this = other;
-}
-
 LineText::LineText(LineText&& other) noexcept
 {
 	*this = std::move(other);
-}
-
-LineText& LineText::operator=(const LineText& other)
-{
-	return *this;
 }
 
 LineText& LineText::operator=(LineText&& other) noexcept

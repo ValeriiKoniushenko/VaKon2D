@@ -28,7 +28,7 @@
 
 #include <unordered_map>
 
-class GlColor;
+struct GlColor;
 
 class Shader;
 

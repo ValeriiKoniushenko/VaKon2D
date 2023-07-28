@@ -23,8 +23,6 @@
 #include "Logger.h"
 #include "VaKon2D.h"
 
-#include <Windows.h>
-
 #include <stdexcept>
 
 int main()

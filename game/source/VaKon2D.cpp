@@ -22,7 +22,6 @@
 
 #include "VaKon2D.h"
 
-#include "CustomShaderProgram.h"
 #include "GladWrapper.h"
 #include "Image.h"
 #include "InputAction.h"
@@ -31,7 +30,6 @@
 #include "Shader.h"
 #include "Texture.h"
 #include "UpdateableCollector.h"
-#include "Widget.h"
 #include "WidgetReflector.h"
 #include "Window.h"
 #include "World.h"

@@ -26,7 +26,6 @@
 #include "WidgetCollector.h"
 
 #include <iostream>
-#include <sstream>
 
 void WidgetReflector::activate()
 {

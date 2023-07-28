@@ -40,9 +40,7 @@ public:
 	LineText(Font& font, const std::string& text);
 	LineText() = default;
 	~LineText() = default;
-	LineText(const LineText& other);
 	LineText(LineText&& other) noexcept;
-	LineText& operator=(const LineText& other);
 	LineText& operator=(LineText&& other) noexcept;
 
 	_NODISCARD Font* getFont() const;

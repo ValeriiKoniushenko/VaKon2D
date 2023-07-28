@@ -229,7 +229,7 @@ std::string Gl::Shader::getShaderInfoLog(GLuint shader)
 #ifdef OPENGL_DEBUG
 	Gl::debugTraces();
 #endif
-	return std::string(infoLog);
+	return {infoLog};
 }
 
 void Gl::Shader::deleteShader(GLuint shader)
@@ -314,7 +314,7 @@ std::string Gl::Program::getProgramInfoLog(GLuint program)
 #ifdef OPENGL_DEBUG
 	Gl::debugTraces();
 #endif
-	return std::string(infoLog);
+	return {infoLog};
 }
 
 void Gl::Program::use(GLuint program)
@@ -334,7 +334,7 @@ void Gl::Program::deleteProgram(GLuint program)
 #endif
 }
 
-const GLint Gl::Program::getUniformLocation(GLuint program, const std::string& basicString)
+GLint Gl::Program::getUniformLocation(GLuint program, const std::string& basicString)
 {
 	const GLint location = glGetUniformLocation(program, basicString.c_str());
 	if (location == -1)
