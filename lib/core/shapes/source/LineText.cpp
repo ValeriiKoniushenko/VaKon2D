@@ -272,5 +272,5 @@ boost::property_tree::ptree LineText::toJson() const
 
 std::string LineText::getComponentName() const
 {
-	return "line-text";
+	return componentName;
 }

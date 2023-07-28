@@ -37,6 +37,8 @@ class Font;
 class LineText : public Widget
 {
 public:
+	inline static constexpr const char* componentName = "line-text";
+
 	LineText(Font& font, const std::string& text);
 	LineText() = default;
 	~LineText() = default;
