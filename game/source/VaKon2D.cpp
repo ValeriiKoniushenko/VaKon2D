@@ -26,7 +26,6 @@
 #include "Image.h"
 #include "InputAction.h"
 #include "Keyboard.h"
-#include "Logger.h"
 #include "Shader.h"
 #include "Texture.h"
 #include "UpdateableCollector.h"
@@ -37,7 +36,7 @@
 #include "ft2build.h"
 #include FT_FREETYPE_H
 #include "Font.h"
-#include "FreeTypeLibrary.h"
+#include "Initer.h"
 #include "LineText.h"
 #include "ShaderPack.h"
 #include "UtilsFunctions.h"
@@ -61,7 +60,7 @@ void VaKon2D::start()
 	texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
 
 	Font font("assets/fonts/Roboto-Medium.ttf");
-	LineText text(font, "Hello world");
+	LineText text(font, "Hello\nworld");
 	text.setTexture(texture);
 	text.setPosition({100.f, 50.f});
 	text.prepare(shaderPack);
@@ -79,6 +78,7 @@ void VaKon2D::start()
 		text.draw(shaderPack);
 
 		getUpdateableCollector().updateAll();
+		GetWorld().update();
 		GetWindow().swapBuffers();
 		GetWindow().pollEvent();
 	}
@@ -86,12 +86,9 @@ void VaKon2D::start()
 
 void VaKon2D::initCore()
 {
-	// !!!!!! don't change an order !!!!!! -->
-	Logger::initLogger();
-	GlfwWrapper::initGlfw(3, 3);					// TODO: get versions from a config file
-	GetWindow().create({800, 600}, "Game name");	// TODO: get size & title from a config file
-	GladWrapper::initGlad();
-	GetWorld().init();
-	GetFreeTypeLibrary().init();
-	// <---------------------------------------
+	Initer::init({
+		.glfwVersion = {3, 3},
+		.windowSize = {800, 600},
+		.title = "My game"}
+ 	);
 }
