@@ -77,7 +77,7 @@ void VaKon2D::start()
 
 		text.draw(shaderPack);
 
-		getUpdateableCollector().updateAll();
+		GetUpdateableCollector().updateAll();
 		GetWorld().update();
 		GetWindow().swapBuffers();
 		GetWindow().pollEvent();
@@ -86,9 +86,5 @@ void VaKon2D::start()
 
 void VaKon2D::initCore()
 {
-	Initer::init({
-		.glfwVersion = {3, 3},
-		.windowSize = {800, 600},
-		.title = "My game"}
- 	);
+	Initer::init({.glfwVersion = {3, 3}, .windowSize = {800, 600}, .title = "My game"});
 }

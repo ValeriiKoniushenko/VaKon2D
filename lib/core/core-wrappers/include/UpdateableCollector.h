@@ -37,4 +37,4 @@ private:
 	std::vector<Updateable*> data_;
 };
 
-UpdateableCollector& getUpdateableCollector();
+UpdateableCollector& GetUpdateableCollector();

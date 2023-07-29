@@ -42,7 +42,7 @@ void UpdateableCollector::updateAll()
 	}
 }
 
-UpdateableCollector& getUpdateableCollector()
+UpdateableCollector& GetUpdateableCollector()
 {
 	return UpdateableCollector::instance();
 }

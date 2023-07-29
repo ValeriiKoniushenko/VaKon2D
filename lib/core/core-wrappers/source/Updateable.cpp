@@ -27,10 +27,10 @@
 
 Updateable::Updateable()
 {
-	getUpdateableCollector().add(this);
+	GetUpdateableCollector().add(this);
 }
 
 Updateable::~Updateable()
 {
-	getUpdateableCollector().remove(this);
+	GetUpdateableCollector().remove(this);
 }
