@@ -37,17 +37,23 @@ void TextBox::setText(const std::string& text)
 {
 	std::vector<std::string> strings;
 	boost::split(strings, text, boost::is_any_of("\n"));
-	for (auto& string : strings)
+
+	rows_.resize(strings.size());
+
+	std::size_t i = 0;
+	for (auto& lineText : rows_)
 	{
-		LineText lineText;
-		lineText.setText(string);
-		rows_.emplace_back(std::move(lineText));
+		lineText.setText(strings[i++]);
 	}
 }
 
 void TextBox::setFont(Font& font)
 {
 	font_ = &font;
+	for (auto& lineText : rows_)
+	{
+		lineText.setFont(font);
+	}
 }
 
 void TextBox::prepare(ShaderPack& shader)

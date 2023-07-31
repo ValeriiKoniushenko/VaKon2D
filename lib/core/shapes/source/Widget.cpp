@@ -51,6 +51,10 @@ void Widget::draw(ShaderPack& shaderPack)
 	{
 		texture_->bind();
 	}
+	else
+	{
+		Gl::Texture::bind(Gl::Texture::Target::Texture2D, 0);
+	}
 
 	glm::mat4 trans = glm::mat4(1.0f);
 	trans = glm::translate(trans, glm::vec3(position_ / glm::vec2(static_cast<float>(GetWindow().getSize().width) / 2.f,
@@ -60,6 +64,7 @@ void Widget::draw(ShaderPack& shaderPack)
 	trans[3][1] = -trans[3][1];
 
 	shaderProgram.use();
+	shaderProgram.uniform("uHasTexture", static_cast<bool>(texture_));
 	shaderProgram.uniform("uTransform", false, trans);
 	shaderProgram.uniform(
 		"uResolution", static_cast<float>(GetWindow().getSize().width), static_cast<float>(GetWindow().getSize().height));
@@ -251,7 +256,5 @@ Widget::Widget(Widget&& other) noexcept
 
 Widget& Widget::operator=(Widget&& other) noexcept
 {
-
-
 	return *this;
 }

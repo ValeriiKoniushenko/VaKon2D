@@ -12,6 +12,7 @@ uniform float uSaturation;
 uniform vec4 uBorderColor;
 uniform float uBorderWidth;
 uniform bool uIsDrawBorder;
+uniform bool uHasTexture;
 
 mat4 brightnessMatrix(float brightness)
 {
@@ -73,6 +74,12 @@ void main()
         vec3 diffuseColor = pow(texture(uTexture, ioCv).rgb, vec3(uGamma));
         vec4 midColor = vec4(diffuseColor, textureColor.a);
         vec4 outColor = brightnessMatrix(uBrightness) * contrastMatrix(uContrast) * saturationMatrix(uSaturation) * midColor;
+
+        if (!uHasTexture)
+        {
+            outColor.a = 0.f;
+        }
+
         FragColor = outColor;
     }
 }
