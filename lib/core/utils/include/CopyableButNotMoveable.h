@@ -22,37 +22,18 @@
 
 #pragma once
 
-#include "CopyableAndMoveable.h"
-#include "FreeTypeLibrary.h"
-#include "Gl.h"
-#include "Texture.h"
-#include "glm/glm.hpp"
+namespace Utils
+{
 
-#include <filesystem>
-#include <unordered_map>
-
-class Font : Utils::CopyableAndMoveable
+class CopyableButNotMoveable
 {
 public:
-	struct Character
-	{
-		Texture texture;
-		glm::ivec2 size;
-		glm::ivec2 bearing;
-		unsigned int advance;
-	};
-
-	inline static constexpr float defaultRenderSize = 500.f;
-
-	Font() = default;
-	Font(std::filesystem::path path);
-	~Font() override;
-	void loadFromFile(std::filesystem::path path);
-	void destroy();
-	_NODISCARD const Character& getCharacter(GLchar ch) const;
-
-private:
-	std::unordered_map<GLchar, Character> characters_;
-	FT_Face face;
-	std::string fontName_;
+	CopyableButNotMoveable() = default;
+	virtual ~CopyableButNotMoveable() = default;
+	CopyableButNotMoveable(CopyableButNotMoveable&&) = delete;
+	CopyableButNotMoveable& operator=(CopyableButNotMoveable&&) = delete;
+	CopyableButNotMoveable(const CopyableButNotMoveable&) = default;
+	CopyableButNotMoveable& operator=(const CopyableButNotMoveable&) = default;
 };
+
+}	 // namespace Utils

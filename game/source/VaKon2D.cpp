@@ -37,8 +37,8 @@
 #include FT_FREETYPE_H
 #include "Font.h"
 #include "Initer.h"
-#include "LineText.h"
 #include "ShaderPack.h"
+#include "TextBox.h"
 #include "UtilsFunctions.h"
 
 #include <iostream>
@@ -60,10 +60,13 @@ void VaKon2D::start()
 	texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
 
 	Font font("assets/fonts/Roboto-Medium.ttf");
-	LineText text(font, "Hello\nworld");
-	text.setTexture(texture);
-	text.setPosition({100.f, 50.f});
+	TextBox text;
+	text.setFont(font);
+	text.setText("Hello\nworld");
 	text.prepare(shaderPack);
+	// text.setTexture(texture);
+	// text.setPosition({100.f, 50.f});
+	// text.prepare(shaderPack);
 
 	KeyboardInputAction iaWidgetReflector("WidgetReflector", Keyboard::Key::F1);
 	iaWidgetReflector.setFrequency(KeyboardInputAction::TimeT(100));

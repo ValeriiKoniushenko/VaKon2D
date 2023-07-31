@@ -31,7 +31,7 @@
 class FreeTypeLibrary : public Singleton<FreeTypeLibrary>
 {
 public:
-	~FreeTypeLibrary();
+	virtual ~FreeTypeLibrary();
 
 	void init();
 	void destroy();

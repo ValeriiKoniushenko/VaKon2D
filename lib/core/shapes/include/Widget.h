@@ -26,6 +26,7 @@
 #include "DrawAble.h"
 #include "JsonPrintable.h"
 #include "Keyboard.h"
+#include "NotCopyableButMovable.h"
 #include "Rect.h"
 #include "Size.h"
 #include "Updateable.h"
@@ -36,7 +37,7 @@
 
 class Texture;
 
-class Widget : public DrawAble, public JsonPrintable, public Updateable
+class Widget : public DrawAble, public JsonPrintable, public Updateable, public Utils::NotCopyableButMovable
 {
 public:
 	inline static constexpr glm::vec4 borderColor = {1.f, 1.f, 0.f, 1.f};
@@ -44,7 +45,9 @@ public:
 	inline static constexpr const char* componentName = "widget";
 
 	Widget();
-	~Widget();
+	Widget(Widget&& other) noexcept;
+	Widget& operator=(Widget&& other) noexcept;
+	~Widget() override;
 
 	void draw(ShaderPack& shaderProgram) override;
 	_NODISCARD std::size_t getVerticesCount() const override;

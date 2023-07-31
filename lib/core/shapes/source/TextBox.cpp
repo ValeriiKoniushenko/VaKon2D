@@ -20,39 +20,52 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
+#include "TextBox.h"
 
-#include "CopyableAndMoveable.h"
-#include "FreeTypeLibrary.h"
-#include "Gl.h"
-#include "Texture.h"
-#include "glm/glm.hpp"
+#include "Font.h"
+#include "LineText.h"
+#include "ShaderPack.h"
 
-#include <filesystem>
-#include <unordered_map>
+#include <boost/algorithm/string.hpp>
 
-class Font : Utils::CopyableAndMoveable
+std::string TextBox::getComponentName() const
 {
-public:
-	struct Character
+	return componentName;
+}
+
+void TextBox::setText(const std::string& text)
+{
+	std::vector<std::string> strings;
+	boost::split(strings, text, boost::is_any_of("\n"));
+	for (auto& string : strings)
 	{
-		Texture texture;
-		glm::ivec2 size;
-		glm::ivec2 bearing;
-		unsigned int advance;
-	};
+		LineText lineText;
+		lineText.setText(string);
+		rows_.emplace_back(std::move(lineText));
+	}
+}
 
-	inline static constexpr float defaultRenderSize = 500.f;
+void TextBox::setFont(Font& font)
+{
+	font_ = &font;
+}
 
-	Font() = default;
-	Font(std::filesystem::path path);
-	~Font() override;
-	void loadFromFile(std::filesystem::path path);
-	void destroy();
-	_NODISCARD const Character& getCharacter(GLchar ch) const;
+void TextBox::prepare(ShaderPack& shader)
+{
+	Widget::prepare(shader);
 
-private:
-	std::unordered_map<GLchar, Character> characters_;
-	FT_Face face;
-	std::string fontName_;
-};
+	for (auto& lineText : rows_)
+	{
+		lineText.prepare(shader);
+	}
+}
+
+void TextBox::draw(ShaderPack& shaderProgram)
+{
+	Widget::draw(shaderProgram);
+
+	for (auto& lineText : rows_)
+	{
+		lineText.draw(shaderProgram);
+	}
+}

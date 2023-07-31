@@ -243,3 +243,15 @@ std::string Widget::getComponentName() const
 {
 	return componentName;
 }
+
+Widget::Widget(Widget&& other) noexcept
+{
+	*this = std::move(other);
+}
+
+Widget& Widget::operator=(Widget&& other) noexcept
+{
+
+
+	return *this;
+}

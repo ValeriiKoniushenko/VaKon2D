@@ -32,16 +32,6 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <utility>
 
-LineText::LineText(LineText&& other) noexcept
-{
-	*this = std::move(other);
-}
-
-LineText& LineText::operator=(LineText&& other) noexcept
-{
-	return *this;
-}
-
 Font* LineText::getFont() const
 {
 	return font_;
@@ -66,6 +56,11 @@ void LineText::setText(const std::string& text)
 
 void LineText::updateCache()
 {
+	if (!font_)
+	{
+		return;
+	}
+
 	cache_.resize(text_.size());
 	auto vert = cache_.begin();
 

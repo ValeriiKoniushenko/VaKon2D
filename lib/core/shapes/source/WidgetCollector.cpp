@@ -31,7 +31,10 @@ void WidgetCollector::add(Widget* widget)
 
 void WidgetCollector::remove(Widget* widget)
 {
-	widgets_.erase(std::remove(widgets_.begin(), widgets_.end(), widget));
+	if (auto it = std::find(widgets_.begin(), widgets_.end(), widget); it != widgets_.end())
+	{
+		widgets_.erase(it);
+	}
 }
 
 void WidgetCollector::foreach(std::function<void(Widget*)>&& callback)

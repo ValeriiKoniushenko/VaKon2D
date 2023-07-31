@@ -41,12 +41,12 @@ Vbo::Vbo(const std::vector<float>& vertices, GLenum usage) : Vbo(true, true)
 	data(vertices, usage);
 }
 
-Vbo::Vbo(Vbo&& other)
+Vbo::Vbo(Vbo&& other) noexcept
 {
 	*this = std::move(other);
 }
 
-Vbo& Vbo::operator=(Vbo&& other)
+Vbo& Vbo::operator=(Vbo&& other) noexcept
 {
 	id_ = other.id_;
 	isBind_ = other.isBind_;

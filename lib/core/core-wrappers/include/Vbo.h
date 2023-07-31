@@ -22,24 +22,24 @@
 
 #pragma once
 
+#include "CopyableAndMoveable.h"
 #include "Gl.h"
 #include "GlfwWrapper.h"
 
 #include <vector>
 
-class Vbo
+class Vbo : public Utils::CopyableAndMoveable
 {
 public:
 	Vbo() = default;
+	Vbo(const Vbo&) = default;
+	Vbo& operator=(const Vbo&) = default;
+	Vbo(Vbo&& Other) noexcept;
+	Vbo& operator=(Vbo&& Other) noexcept;
 	virtual ~Vbo();
 
 	Vbo(bool shouldGenerate, bool shouldBind);
 	explicit Vbo(const std::vector<float>& data, GLenum usage = GL_STATIC_DRAW);
-
-	Vbo(const Vbo&) = default;
-	Vbo(Vbo&& Other);
-	Vbo& operator=(const Vbo&) = default;
-	Vbo& operator=(Vbo&& Other);
 
 	void generate();
 	void bind();

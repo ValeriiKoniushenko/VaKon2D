@@ -22,63 +22,26 @@
 
 #pragma once
 
-#include "Color.h"
-#include "CopyableAndMoveable.h"
-#include "ShaderPack.h"
-#include "Vao.h"
-#include "Vbo.h"
+#include "LineText.h"
 #include "Widget.h"
-#include "glm/glm.hpp"
 
-#include <string>
+#include <vector>
 
 class Font;
+class ShaderPack;
 
-class LineText : public Widget
+class TextBox : public Widget
 {
 public:
-	inline static constexpr const char* componentName = "line-text";
-
-	LineText(Font& font, const std::string& text);
-	LineText() = default;
-	~LineText() = default;
-	LineText(LineText&& other) = default;
-	LineText& operator=(LineText&& other) = default;
-
-	_NODISCARD Font* getFont() const;
-	void setFont(Font& font);
-
-	_NODISCARD const std::string& getText() const;
-	void setText(const std::string& text);
-
-	_NODISCARD float getTextWidth() const;
-	_NODISCARD float getFontSize() const;
-	void setFontSize(float size);
-
-	void setColor(const Color& color);
-	_NODISCARD const Color& getColor() const;
-
-	void prepare(ShaderPack& shader) override;
-
-	void draw(ShaderPack& shader) override;
-
-	_NODISCARD boost::property_tree::ptree toJson() const override;
+	inline static constexpr const char* componentName = "text-box";
 	_NODISCARD std::string getComponentName() const override;
 
-private:
-	void updateCache();
-	float getHeightOfTheBiggestLetter();
+	void setText(const std::string& text);
+	void setFont(Font& font);
+	void prepare(ShaderPack& shader) override;
+	void draw(ShaderPack& shaderProgram) override;
 
-	inline static constexpr std::size_t dataPerFrame = 16;
-
 private:
-	Color color_;
 	Font* font_ = nullptr;
-	std::string text_;
-	std::string lastSavedText_;
-	mutable float textWidth_ = -1.f;
-	Vbo vbo_;
-	Vao vao_;
-	float fontSize_ = 24.f;
-	std::vector<std::vector<float>> cache_;
+	std::vector<LineText> rows_;
 };

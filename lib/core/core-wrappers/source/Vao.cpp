@@ -42,12 +42,12 @@ Vao::Vao(GLuint index, GLint size, Gl::Type type, bool normalized, GLsizei strid
 	Gl::Vao::enableVertexAttribArray(index);
 }
 
-Vao::Vao(Vao&& other)
+Vao::Vao(Vao&& other) noexcept
 {
 	*this = std::move(other);
 }
 
-Vao& Vao::operator=(Vao&& other)
+Vao& Vao::operator=(Vao&& other) noexcept
 {
 	id_ = other.id_;
 	isBind_ = other.isBind_;
