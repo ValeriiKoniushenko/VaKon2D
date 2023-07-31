@@ -25,6 +25,7 @@
 #include "Font.h"
 #include "LineText.h"
 #include "ShaderPack.h"
+#include "Logger.h"
 
 #include <boost/algorithm/string.hpp>
 
@@ -35,6 +36,13 @@ std::string TextBox::getComponentName() const
 
 void TextBox::setText(const std::string& text)
 {
+	if (!font_)
+	{
+		spdlog::get("core")->critical("Can't set text without a font");
+		BOOST_ASSERT_MSG(font_, "Can't set text without a font");
+		return;
+	}
+
 	std::vector<std::string> strings;
 	boost::split(strings, text, boost::is_any_of("\n"));
 
@@ -43,7 +51,13 @@ void TextBox::setText(const std::string& text)
 	std::size_t i = 0;
 	for (auto& lineText : rows_)
 	{
-		lineText.setText(strings[i++]);
+		lineText.setText(strings[i]);
+		lineText.setFont(*font_);
+		if (i != 0)
+		{
+			lineText.move({0.f, lineText.getTextHeight()});
+		}
+		++i;
 	}
 }
 

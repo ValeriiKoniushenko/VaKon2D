@@ -52,6 +52,7 @@ public:
 	void setText(const std::string& text);
 
 	_NODISCARD float getTextWidth() const;
+	_NODISCARD float getTextHeight() const;
 	_NODISCARD float getFontSize() const;
 	void setFontSize(float size);
 
@@ -77,6 +78,7 @@ private:
 	std::string text_;
 	std::string lastSavedText_;
 	mutable float textWidth_ = -1.f;
+	mutable float textHeight_ = -1.f;
 	Vbo vbo_;
 	Vao vao_;
 	float fontSize_ = 24.f;

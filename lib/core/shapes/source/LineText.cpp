@@ -81,6 +81,7 @@ void LineText::updateCache()
 		const float ypos = position.y - static_cast<float>(ch.size.y - ch.bearing.y) * scale - offsetY * scale;
 		const float w = static_cast<float>(ch.size.x) * scale;
 		const float h = static_cast<float>(ch.size.y) * scale;
+		textHeight_ = h;
 
 		// clang-format off
 		std::vector<float> vertices = {
@@ -230,6 +231,36 @@ float LineText::getTextWidth() const
 	}
 
 	return textWidth_;
+}
+
+float LineText::getTextHeight() const
+{
+	if (lastSavedText_ == text_)
+	{
+		return textHeight_;
+	}
+
+	textHeight_ = 0;
+	const float scale = fontSize_ / Font::defaultRenderSize;
+
+	for (auto ch : text_)
+	{
+		if (!font_)
+		{
+			spdlog::get("core")->warn("Can't get character without font");
+			BOOST_ASSERT_MSG(false, "Can't get character without font");
+			break;
+		}
+
+		const auto& oneChar = font_->getCharacter(ch);
+		auto height = static_cast<float>(oneChar.bearing.y) * scale;
+		if (height > textHeight_)
+		{
+			textHeight_ = height;
+		}
+	}
+
+	return textHeight_;
 }
 
 void LineText::setColor(const Color& color)

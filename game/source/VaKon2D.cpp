@@ -60,11 +60,11 @@ void VaKon2D::start()
 	texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
 
 	Font font("assets/fonts/Roboto-Medium.ttf");
-	LineText text;
-	text.setText("Hello\nworld");
+	TextBox text;
 	text.setFont(font);
+	text.setText("Hello\nworld");
 	// text.setTexture(texture);
-	text.setColor({ 255, 0, 0 });
+	// text.setColor({ 255, 0, 0 });
 	text.prepare(shaderPack);
 	// text.setPosition({100.f, 50.f});
 	// text.prepare(shaderPack);
