@@ -24,8 +24,8 @@
 
 #include "Font.h"
 #include "LineText.h"
-#include "ShaderPack.h"
 #include "Logger.h"
+#include "ShaderPack.h"
 
 #include <boost/algorithm/string.hpp>
 
@@ -48,16 +48,27 @@ void TextBox::setText(const std::string& text)
 
 	rows_.resize(strings.size());
 
+	float maxWidth = 0;
 	std::size_t i = 0;
 	for (auto& lineText : rows_)
 	{
 		lineText.setText(strings[i]);
 		lineText.setFont(*font_);
+		if (lineText.getTextWidth() > maxWidth)
+		{
+			maxWidth = lineText.getTextWidth();
+		}
+
 		if (i != 0)
 		{
 			lineText.move({0.f, lineText.getTextHeight()});
 		}
 		++i;
+	}
+
+	if (!rows_.empty())
+	{
+		5 setSize({maxWidth, rows_.front().getTextHeight() * rows_.size()});
 	}
 }
 

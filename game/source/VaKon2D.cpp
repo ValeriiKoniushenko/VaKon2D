@@ -63,7 +63,7 @@ void VaKon2D::start()
 	TextBox text;
 	text.setFont(font);
 	text.setText("Hello\nworld");
-	// text.setTexture(texture);
+	text.setTexture(texture);
 	// text.setColor({ 255, 0, 0 });
 	text.prepare(shaderPack);
 	// text.setPosition({100.f, 50.f});
