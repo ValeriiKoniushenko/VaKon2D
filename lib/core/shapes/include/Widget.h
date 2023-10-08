@@ -89,6 +89,10 @@ public:
 
     _NODISCARD boost::property_tree::ptree toJson() const override;
 
+    void setTextureRect(const Utils::Rect<int> &rect);
+
+    void calculateFitTextureSize();
+
 private:
     // clang-format off
     inline static const std::vector<float> templateVertices_ = {
@@ -98,6 +102,7 @@ private:
             1.f, -1.f, 1.f, 0.f,
     };
     // clang-format on
+    Utils::IRect textureRect_;
     Texture *texture_{};
     Vbo vbo_;
     Vao vao_;

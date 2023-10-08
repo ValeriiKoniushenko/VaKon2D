@@ -43,7 +43,11 @@ Widget::~Widget() {
 
 void Widget::draw(ShaderPack &shaderPack) {
     if (!isPrepared) {
-        throw std::runtime_error("The widget is not prepared. Use Widget::prepare before Widget::draw to resolve it.");
+        prepare(shaderPack);
+        if (!isPrepared) {
+            throw std::runtime_error(
+                    "The widget is not prepared. Use Widget::prepare before Widget::draw to resolve it.");
+        }
     }
 
     auto &shaderProgram = shaderPack["widget"];
@@ -233,6 +237,7 @@ Widget::Widget(Widget &&other) noexcept {
 Widget &Widget::operator=(Widget &&other) noexcept {
     isPrepared = false;
 
+    textureRect_ = other.textureRect_;
     texture_ = other.texture_;
     vbo_ = other.vbo_;
     vao_ = other.vao_;
@@ -242,6 +247,7 @@ Widget &Widget::operator=(Widget &&other) noexcept {
     wasHover_ = other.wasHover_;
     isPrepared = other.isPrepared;
 
+    other.textureRect_ = {};
     other.isPrepared = false;
     other.texture_ = {};
     other.vbo_ = {};
@@ -253,4 +259,16 @@ Widget &Widget::operator=(Widget &&other) noexcept {
     other.isPrepared = {};
 
     return *this;
+}
+
+void Widget::setTextureRect(const Utils::Rect<int> &rect) {
+    textureRect_ = rect;
+}
+
+void Widget::calculateFitTextureSize() {
+    if (texture_ && texture_->getImage()) {
+        auto size = texture_->getImage()->getSize();
+        size_.width = size.x;
+        size_.height = size.y;
+    }
 }

@@ -40,6 +40,7 @@
 #include "ShaderPack.h"
 #include "TextBox.h"
 #include "UtilsFunctions.h"
+#include "Rect.h"
 
 #include <iostream>
 
@@ -53,13 +54,16 @@ void VaKon2D::start() {
     shaderPack.loadShaders("widget", "assets/shaders/widget.vert", "assets/shaders/widget.frag");
 
     Texture texture(Gl::Texture::Target::Texture2D, true, true);
-    Image image("assets/textures/apple.png");
+    Image image("assets/textures/clock.png");
     image.setInternalChannel(Gl::Texture::Channel::SRGBA);
     texture.setImage(image);
     texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
+
     Widget widget;
     widget.setTexture(texture);
-    widget.prepare(shaderPack);
+    widget.calculateFitTextureSize();
+    widget.setTextureRect(Utils::IRect{{320, 0},
+                                       {32,  32}});
 
     while (!GetWindow().shouldClose()) {
         GetWindow().clearColor({0.2f, 0.3f, 0.3f});
