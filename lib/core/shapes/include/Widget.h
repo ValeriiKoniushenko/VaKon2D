@@ -37,65 +37,73 @@
 
 class Texture;
 
-class Widget : public DrawAble, public JsonPrintable, public Updateable, public Utils::NotCopyableButMovable
-{
+class Widget : public DrawAble, public JsonPrintable, public Updateable, public Utils::NotCopyableButMovable {
 public:
-	inline static constexpr glm::vec4 borderColor = {1.f, 1.f, 0.f, 1.f};
-	inline static constexpr float borderWidth = 0.05f;
-	inline static constexpr const char* componentName = "widget";
+    inline static constexpr glm::vec4 borderColor = {1.f, 1.f, 0.f, 1.f};
+    inline static constexpr float borderWidth = 0.05f;
+    inline static constexpr const char *componentName = "widget";
 
-	Widget();
-	Widget(Widget&& other) noexcept;
-	Widget& operator=(Widget&& other) noexcept;
-	~Widget() override;
+    Widget();
 
-	void draw(ShaderPack& shaderProgram) override;
-	_NODISCARD std::size_t getVerticesCount() const override;
+    Widget(Widget &&other) noexcept;
 
-	void setTexture(Texture& texture);
-	_NODISCARD Texture& getTexture();
+    Widget &operator=(Widget &&other) noexcept;
 
-	void setSize(Utils::FSize2D newSize);
-	_NODISCARD Utils::FSize2D getSize() const;
+    ~Widget() override;
 
-	void setScale(Utils::FSize2D newScale);
-	_NODISCARD Utils::FSize2D getScale() const;
+    void draw(ShaderPack &shaderProgram) override;
 
-	_NODISCARD Utils::FRect getRect() const;
+    _NODISCARD std::size_t getVerticesCount() const override;
 
-	void setIsDrawBorder(bool isDraw);
-	_NODISCARD bool isDrawBorder() const;
+    void setTexture(Texture &texture);
 
-	virtual void prepare(ShaderPack& shader);
+    _NODISCARD Texture &getTexture();
 
-	void update() override;
+    void setSize(Utils::FSize2D newSize);
 
-	_NODISCARD virtual std::string getComponentName() const;
+    _NODISCARD Utils::FSize2D getSize() const;
 
-	LambdaMulticastDelegate<void()> onMouseHover;
-	LambdaMulticastDelegate<void()> onMouseUnHover;
-	LambdaMulticastDelegate<void()> onMouseLeftClick;
-	LambdaMulticastDelegate<void()> onMouseRightClick;
-	LambdaMulticastDelegate<void()> onMouseMiddleClick;
-	LambdaMulticastDelegate<void(double)> onMouseWheel;
-	LambdaMulticastDelegate<void(unsigned int)> onTextInput;
+    void setScale(Utils::FSize2D newScale);
 
-	_NODISCARD boost::property_tree::ptree toJson() const override;
+    _NODISCARD Utils::FSize2D getScale() const;
+
+    _NODISCARD Utils::FRect getRect() const;
+
+    void setIsDrawBorder(bool isDraw);
+
+    _NODISCARD bool isDrawBorder() const;
+
+    virtual void prepare(ShaderPack &shader);
+
+    void update() override;
+
+    _NODISCARD virtual std::string getComponentName() const;
+
+    LambdaMulticastDelegate<void()> onMouseHover;
+    LambdaMulticastDelegate<void()> onMouseUnHover;
+    LambdaMulticastDelegate<void()> onMouseLeftClick;
+    LambdaMulticastDelegate<void()> onMouseRightClick;
+    LambdaMulticastDelegate<void()> onMouseMiddleClick;
+    LambdaMulticastDelegate<void(double)> onMouseWheel;
+    LambdaMulticastDelegate<void(unsigned int)> onTextInput;
+
+    _NODISCARD boost::property_tree::ptree toJson() const override;
 
 private:
-	// clang-format off
-	inline static const std::vector<float> templateVertices_ = {
-		 0.f, 0.f,  0.f, 1.f,
-		 0.f,-1.f,  0.f, 0.f,
-		 1.f, 0.f,  1.f, 1.f,
-		 1.f,-1.f,  1.f, 0.f,
-	};
-	// clang-format on
-	Texture* texture_{};
-	Vbo vbo_;
-	Vao vao_;
-	Utils::FSize2D size_ = {.width = 100.f, .height = 100.f};
-	Utils::FSize2D scale_ = {.width = 1.f, .height = 1.f};
-	bool isDrawBorder_ = false;
-	bool wasHover_ = false;
+    // clang-format off
+    inline static const std::vector<float> templateVertices_ = {
+            0.f, 0.f, 0.f, 1.f,
+            0.f, -1.f, 0.f, 0.f,
+            1.f, 0.f, 1.f, 1.f,
+            1.f, -1.f, 1.f, 0.f,
+    };
+    // clang-format on
+    Texture *texture_{};
+    Vbo vbo_;
+    Vao vao_;
+    Utils::FSize2D size_ = {.width = 100.f, .height = 100.f};
+    Utils::FSize2D scale_ = {.width = 1.f, .height = 1.f};
+    bool isDrawBorder_ = false;
+    bool wasHover_ = false;
+    bool isPrepared = false;
 };

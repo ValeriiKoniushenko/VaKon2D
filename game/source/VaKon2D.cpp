@@ -43,52 +43,37 @@
 
 #include <iostream>
 
-void VaKon2D::start()
-{
-	initCore();
+void VaKon2D::start() {
+    initCore();
 
-	GetWindow().viewport(0, 0, 800, 600);
+    GetWindow().viewport(0, 0, 800, 600);
 
-	ShaderPack shaderPack;
-	shaderPack.loadShaders("text", "assets/shaders/text.vert", "assets/shaders/text.frag");
-	shaderPack.loadShaders("widget", "assets/shaders/widget.vert", "assets/shaders/widget.frag");
+    ShaderPack shaderPack;
+    shaderPack.loadShaders("text", "assets/shaders/text.vert", "assets/shaders/text.frag");
+    shaderPack.loadShaders("widget", "assets/shaders/widget.vert", "assets/shaders/widget.frag");
 
-	Texture texture(Gl::Texture::Target::Texture2D, true, true);
-	Image image("assets/textures/apple.png");
-	image.setInternalChannel(Gl::Texture::Channel::SRGBA);
-	texture.setImage(image);
-	texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
+    Texture texture(Gl::Texture::Target::Texture2D, true, true);
+    Image image("assets/textures/apple.png");
+    image.setInternalChannel(Gl::Texture::Channel::SRGBA);
+    texture.setImage(image);
+    texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
+    Widget widget;
+    widget.setTexture(texture);
+    widget.prepare(shaderPack);
 
-	Font font("assets/fonts/Roboto-Medium.ttf");
-	TextBox text;
-	text.setFont(font);
-	text.setText("Hello\nworld");
-	text.setTexture(texture);
-	// text.setColor({ 255, 0, 0 });
-	text.prepare(shaderPack);
-	// text.setPosition({100.f, 50.f});
-	// text.prepare(shaderPack);
+    while (!GetWindow().shouldClose()) {
+        GetWindow().clearColor({0.2f, 0.3f, 0.3f});
+        GetWindow().clear(GL_COLOR_BUFFER_BIT);
 
-	KeyboardInputAction iaWidgetReflector("WidgetReflector", Keyboard::Key::F1);
-	iaWidgetReflector.setFrequency(KeyboardInputAction::TimeT(100));
-	iaWidgetReflector.setIsRepeatable(false);
-	iaWidgetReflector.onAction.subscribe([]() { getWidgetReflector().toggle(); });
+        widget.draw(shaderPack);
 
-	while (!GetWindow().shouldClose())
-	{
-		GetWindow().clearColor({0.2f, 0.3f, 0.3f});
-		GetWindow().clear(GL_COLOR_BUFFER_BIT);
-
-		text.draw(shaderPack);
-
-		GetUpdateableCollector().updateAll();
-		GetWorld().update();
-		GetWindow().swapBuffers();
-		GetWindow().pollEvent();
-	}
+        GetUpdateableCollector().updateAll();
+        GetWorld().update();
+        GetWindow().swapBuffers();
+        GetWindow().pollEvent();
+    }
 }
 
-void VaKon2D::initCore()
-{
-	Initer::init({.glfwVersion = {3, 3}, .windowSize = {800, 600}, .title = "My game"});
+void VaKon2D::initCore() {
+    Initer::init({.glfwVersion = {3, 3}, .windowSize = {800, 600}, .title = "My game"});
 }

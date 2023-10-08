@@ -33,228 +33,224 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-Widget::Widget()
-{
-	getWidgetCollector().add(this);
+Widget::Widget() {
+    getWidgetCollector().add(this);
 }
 
-Widget::~Widget()
-{
-	getWidgetCollector().remove(this);
+Widget::~Widget() {
+    getWidgetCollector().remove(this);
 }
 
-void Widget::draw(ShaderPack& shaderPack)
-{
-	auto& shaderProgram = shaderPack["widget"];
-	vao_.bind();
-	if (texture_)
-	{
-		texture_->bind();
-	}
-	else
-	{
-		Gl::Texture::bind(Gl::Texture::Target::Texture2D, 0);
-	}
+void Widget::draw(ShaderPack &shaderPack) {
+    if (!isPrepared) {
+        throw std::runtime_error("The widget is not prepared. Use Widget::prepare before Widget::draw to resolve it.");
+    }
 
-	glm::mat4 trans = glm::mat4(1.0f);
-	trans = glm::translate(trans, glm::vec3(position_ / glm::vec2(static_cast<float>(GetWindow().getSize().width) / 2.f,
-															static_cast<float>(GetWindow().getSize().height) / 2.f),
-									  0.f));
-	trans = glm::rotate(trans, rotation_, glm::vec3(0.0f, 0.0f, 1.0f));
-	trans[3][1] = -trans[3][1];
+    auto &shaderProgram = shaderPack["widget"];
+    vao_.bind();
+    if (texture_) {
+        texture_->bind();
+    } else {
+        Gl::Texture::bind(Gl::Texture::Target::Texture2D, 0);
+    }
 
-	shaderProgram.use();
-	shaderProgram.uniform("uHasTexture", static_cast<bool>(texture_));
-	shaderProgram.uniform("uTransform", false, trans);
-	shaderProgram.uniform(
-		"uResolution", static_cast<float>(GetWindow().getSize().width), static_cast<float>(GetWindow().getSize().height));
-	shaderProgram.uniform("uGamma", shaderProgram.lightning.gamma);
-	shaderProgram.uniform("uBrightness", shaderProgram.lightning.brightness);
-	shaderProgram.uniform("uContrast", shaderProgram.lightning.contrast);
-	shaderProgram.uniform("uSaturation", shaderProgram.lightning.saturation);
-	shaderProgram.uniform("uBorderColor", borderColor.r, borderColor.g, borderColor.b, borderColor.a);
-	shaderProgram.uniform("uBorderWidth", borderWidth);
-	shaderProgram.uniform("uIsDrawBorder", isDrawBorder_);
+    glm::mat4 trans = glm::mat4(1.0f);
+    trans = glm::translate(trans, glm::vec3(position_ / glm::vec2(static_cast<float>(GetWindow().getSize().width) / 2.f,
+                                                                  static_cast<float>(GetWindow().getSize().height) /
+                                                                  2.f),
+                                            0.f));
+    trans = glm::rotate(trans, rotation_, glm::vec3(0.0f, 0.0f, 1.0f));
+    trans[3][1] = -trans[3][1];
 
-	DrawAble::draw(shaderPack);
+    shaderProgram.use();
+    shaderProgram.uniform("uHasTexture", static_cast<bool>(texture_));
+    shaderProgram.uniform("uTransform", false, trans);
+    shaderProgram.uniform(
+            "uResolution", static_cast<float>(GetWindow().getSize().width),
+            static_cast<float>(GetWindow().getSize().height));
+    shaderProgram.uniform("uGamma", shaderProgram.lightning.gamma);
+    shaderProgram.uniform("uBrightness", shaderProgram.lightning.brightness);
+    shaderProgram.uniform("uContrast", shaderProgram.lightning.contrast);
+    shaderProgram.uniform("uSaturation", shaderProgram.lightning.saturation);
+    shaderProgram.uniform("uBorderColor", borderColor.r, borderColor.g, borderColor.b, borderColor.a);
+    shaderProgram.uniform("uBorderWidth", borderWidth);
+    shaderProgram.uniform("uIsDrawBorder", isDrawBorder_);
+
+    DrawAble::draw(shaderPack);
 }
 
-std::size_t Widget::getVerticesCount() const
-{
-	constexpr std::size_t countOfParts = 4;
-	return templateVertices_.size() / countOfParts;
+std::size_t Widget::getVerticesCount() const {
+    constexpr std::size_t countOfParts = 4;
+    return templateVertices_.size() / countOfParts;
 }
 
-void Widget::setTexture(Texture& texture)
-{
-	texture_ = &texture;
+void Widget::setTexture(Texture &texture) {
+    isPrepared = false;
+    texture_ = &texture;
 }
 
-Texture& Widget::getTexture()
-{
-	return *texture_;
+Texture &Widget::getTexture() {
+    return *texture_;
 }
 
-void Widget::prepare(ShaderPack& shader)
-{
-	shader["widget"].use();
+void Widget::prepare(ShaderPack &shader) {
+    shader["widget"].use();
 
-	if (!vbo_.isGenerated())
-	{
-		vbo_.generate();
-	}
+    if (!vbo_.isGenerated()) {
+        vbo_.generate();
+    }
 
-	std::vector<float> vertices = templateVertices_;
-	vertices.at(5) *= size_.height * 2.f * scale_.height;
-	vertices.at(8) *= size_.width * 2.f * scale_.width;
-	vertices.at(12) *= size_.width * 2.f * scale_.width;
-	vertices.at(13) *= size_.height * 2.f * scale_.height;
+    std::vector<float> vertices = templateVertices_;
+    vertices.at(5) *= size_.height * 2.f * scale_.height;
+    vertices.at(8) *= size_.width * 2.f * scale_.width;
+    vertices.at(12) *= size_.width * 2.f * scale_.width;
+    vertices.at(13) *= size_.height * 2.f * scale_.height;
 
-	vbo_.bind();
-	vbo_.data(vertices);
+    vbo_.bind();
+    vbo_.data(vertices);
 
-	if (!vao_.isGenerated())
-	{
-		vao_.generate();
-	}
-	vao_.bind();
-	Gl::Vao::vertexAttribPointer(0, 2, Gl::Type::Float, false, 4 * sizeof(float), nullptr);
-	Gl::Vao::enableVertexAttribArray(0);
+    if (!vao_.isGenerated()) {
+        vao_.generate();
+    }
+    vao_.bind();
+    Gl::Vao::vertexAttribPointer(0, 2, Gl::Type::Float, false, 4 * sizeof(float), nullptr);
+    Gl::Vao::enableVertexAttribArray(0);
 
-	Gl::Vao::vertexAttribPointer(1, 2, Gl::Type::Float, false, 4 * sizeof(float), reinterpret_cast<const void*>(2 * sizeof(float)));
-	Gl::Vao::enableVertexAttribArray(1);
+    Gl::Vao::vertexAttribPointer(1, 2, Gl::Type::Float, false, 4 * sizeof(float),
+                                 reinterpret_cast<const void *>(2 * sizeof(float)));
+    Gl::Vao::enableVertexAttribArray(1);
 
-	if (texture_)
-	{
-		texture_->bind();
-		texture_->loadToGpu();
-	}
+    if (texture_) {
+        texture_->bind();
+        texture_->loadToGpu();
+    }
+
+    isPrepared = true;
 }
 
-void Widget::setSize(Utils::FSize2D newSize)
-{
-	size_ = newSize;
+void Widget::setSize(Utils::FSize2D newSize) {
+    isPrepared = false;
+    size_ = newSize;
 }
 
-Utils::FSize2D Widget::getSize() const
-{
-	return size_;
+Utils::FSize2D Widget::getSize() const {
+    return size_;
 }
 
-void Widget::setScale(Utils::FSize2D newScale)
-{
-	scale_ = newScale;
+void Widget::setScale(Utils::FSize2D newScale) {
+    isPrepared = false;
+    scale_ = newScale;
 }
 
-Utils::FSize2D Widget::getScale() const
-{
-	return scale_;
+Utils::FSize2D Widget::getScale() const {
+    return scale_;
 }
 
-void Widget::update()
-{
-	if (getRect().isCollision(Mouse::getPosition(GetWindow())))
-	{
-		onMouseHover.trigger();
+void Widget::update() {
+    if (getRect().isCollision(Mouse::getPosition(GetWindow()))) {
+        onMouseHover.trigger();
 
-		if (Mouse::isKeyPressed(Mouse::Key::Left))
-		{
-			onMouseLeftClick.trigger();
-		}
-		if (Mouse::isKeyPressed(Mouse::Key::Right))
-		{
-			onMouseRightClick.trigger();
-		}
-		if (Mouse::isKeyPressed(Mouse::Key::Middle))
-		{
-			onMouseMiddleClick.trigger();
-		}
-		try
-		{
-			if (get<double>(GetWorldVariables()["mouse-wheel-y"]) != 0.)
-			{
-				onMouseWheel.trigger(get<double>(GetWorldVariables()["mouse-wheel-y"]));
-			}
-		}
-		catch (...)
-		{
-		}
-		try
-		{
-			if (get<unsigned int>(GetWorldVariables()["inputted-text"]) != 0.)
-			{
-				onTextInput.trigger(get<unsigned int>(GetWorldVariables()["inputted-text"]));
-			}
-		}
-		catch (...)
-		{
-		}
+        if (Mouse::isKeyPressed(Mouse::Key::Left)) {
+            onMouseLeftClick.trigger();
+        }
+        if (Mouse::isKeyPressed(Mouse::Key::Right)) {
+            onMouseRightClick.trigger();
+        }
+        if (Mouse::isKeyPressed(Mouse::Key::Middle)) {
+            onMouseMiddleClick.trigger();
+        }
+        try {
+            if (get<double>(GetWorldVariables()["mouse-wheel-y"]) != 0.) {
+                onMouseWheel.trigger(get<double>(GetWorldVariables()["mouse-wheel-y"]));
+            }
+        }
+        catch (...) {
+        }
+        try {
+            if (get<unsigned int>(GetWorldVariables()["inputted-text"]) != 0.) {
+                onTextInput.trigger(get<unsigned int>(GetWorldVariables()["inputted-text"]));
+            }
+        }
+        catch (...) {
+        }
 
-		wasHover_ = true;
-	}
-	else if (wasHover_)
-	{
-		onMouseUnHover.trigger();
-		wasHover_ = false;
-	}
+        wasHover_ = true;
+    } else if (wasHover_) {
+        onMouseUnHover.trigger();
+        wasHover_ = false;
+    }
 }
 
-Utils::FRect Widget::getRect() const
-{
-	return {position_, size_};
+Utils::FRect Widget::getRect() const {
+    return {position_, size_};
 }
 
-void Widget::setIsDrawBorder(bool isDraw)
-{
-	isDrawBorder_ = isDraw;
+void Widget::setIsDrawBorder(bool isDraw) {
+    isDrawBorder_ = isDraw;
 }
 
-bool Widget::isDrawBorder() const
-{
-	return isDrawBorder_;
+bool Widget::isDrawBorder() const {
+    return isDrawBorder_;
 }
 
-boost::property_tree::ptree Widget::toJson() const
-{
-	boost::property_tree::ptree ptree;
-	ptree.put("component", getComponentName());
-	ptree.put("verticies-count", templateVertices_.size());
-	ptree.put("vbo", vbo_.getId());
-	ptree.put("vao", vao_.getId());
-	ptree.put("width", size_.width);
-	ptree.put("height", size_.height);
-	ptree.put("scale-width", scale_.width);
-	ptree.put("scale-height", scale_.height);
-	ptree.put("position-x", position_.x);
-	ptree.put("position-y", position_.y);
-	if (texture_)
-	{
-		boost::property_tree::ptree texture;
-		texture.put("name", texture_->getName());
-		texture.put("mag-filter", Gl::Texture::magFilterToString(texture_->getMagFilter()));
-		texture.put("min-filter", Gl::Texture::minFilterToString(texture_->getMinFilter()));
-		texture.put("width", texture_->getImage()->getWidth());
-		texture.put("height", texture_->getImage()->getHeight());
-		texture.put("channel", Image::channelToString(texture_->getImage()->getChannel()));
-		texture.put("internal-channel", Gl::Texture::channelToString(texture_->getImage()->getInternalChannel()));
+boost::property_tree::ptree Widget::toJson() const {
+    boost::property_tree::ptree ptree;
+    ptree.put("component", getComponentName());
+    ptree.put("verticies-count", templateVertices_.size());
+    ptree.put("vbo", vbo_.getId());
+    ptree.put("vao", vao_.getId());
+    ptree.put("width", size_.width);
+    ptree.put("height", size_.height);
+    ptree.put("scale-width", scale_.width);
+    ptree.put("scale-height", scale_.height);
+    ptree.put("position-x", position_.x);
+    ptree.put("position-y", position_.y);
+    if (texture_) {
+        boost::property_tree::ptree texture;
+        texture.put("name", texture_->getName());
+        texture.put("mag-filter", Gl::Texture::magFilterToString(texture_->getMagFilter()));
+        texture.put("min-filter", Gl::Texture::minFilterToString(texture_->getMinFilter()));
+        texture.put("width", texture_->getImage()->getWidth());
+        texture.put("height", texture_->getImage()->getHeight());
+        texture.put("channel", Image::channelToString(texture_->getImage()->getChannel()));
+        texture.put("internal-channel", Gl::Texture::channelToString(texture_->getImage()->getInternalChannel()));
 
-		ptree.add_child("texture", texture);
-	}
+        ptree.add_child("texture", texture);
+    }
 
-	return ptree;
+    return ptree;
 }
 
-std::string Widget::getComponentName() const
-{
-	return componentName;
+std::string Widget::getComponentName() const {
+    return componentName;
 }
 
-Widget::Widget(Widget&& other) noexcept
-{
-	*this = std::move(other);
+Widget::Widget(Widget &&other) noexcept {
+    isPrepared = false;
+    *this = std::move(other);
 }
 
-Widget& Widget::operator=(Widget&& other) noexcept
-{
-	return *this;
+Widget &Widget::operator=(Widget &&other) noexcept {
+    isPrepared = false;
+
+    texture_ = other.texture_;
+    vbo_ = other.vbo_;
+    vao_ = other.vao_;
+    size_ = other.size_;
+    scale_ = other.scale_;
+    isDrawBorder_ = other.isDrawBorder_;
+    wasHover_ = other.wasHover_;
+    isPrepared = other.isPrepared;
+
+    other.isPrepared = false;
+    other.texture_ = {};
+    other.vbo_ = {};
+    other.vao_ = {};
+    other.size_ = {};
+    other.scale_ = {};
+    other.isDrawBorder_ = {};
+    other.wasHover_ = {};
+    other.isPrepared = {};
+
+    return *this;
 }

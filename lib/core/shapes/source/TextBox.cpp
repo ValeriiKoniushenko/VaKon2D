@@ -29,74 +29,61 @@
 
 #include <boost/algorithm/string.hpp>
 
-std::string TextBox::getComponentName() const
-{
-	return componentName;
+std::string TextBox::getComponentName() const {
+    return componentName;
 }
 
-void TextBox::setText(const std::string& text)
-{
-	if (!font_)
-	{
-		spdlog::get("core")->critical("Can't set text without a font");
-		BOOST_ASSERT_MSG(font_, "Can't set text without a font");
-		return;
-	}
+void TextBox::setText(const std::string &text) {
+    if (!font_) {
+        spdlog::get("core")->critical("Can't set text without a font");
+        BOOST_ASSERT_MSG(font_, "Can't set text without a font");
+        return;
+    }
 
-	std::vector<std::string> strings;
-	boost::split(strings, text, boost::is_any_of("\n"));
+    std::vector<std::string> strings;
+    boost::split(strings, text, boost::is_any_of("\n"));
 
-	rows_.resize(strings.size());
+    rows_.resize(strings.size());
 
-	float maxWidth = 0;
-	std::size_t i = 0;
-	for (auto& lineText : rows_)
-	{
-		lineText.setText(strings[i]);
-		lineText.setFont(*font_);
-		if (lineText.getTextWidth() > maxWidth)
-		{
-			maxWidth = lineText.getTextWidth();
-		}
+    float maxWidth = 0;
+    std::size_t i = 0;
+    for (auto &lineText: rows_) {
+        lineText.setText(strings[i]);
+        lineText.setFont(*font_);
+        if (lineText.getTextWidth() > maxWidth) {
+            maxWidth = lineText.getTextWidth();
+        }
 
-		if (i != 0)
-		{
-			lineText.move({0.f, lineText.getTextHeight()});
-		}
-		++i;
-	}
+        if (i != 0) {
+            lineText.move({0.f, lineText.getTextHeight()});
+        }
+        ++i;
+    }
 
-	if (!rows_.empty())
-	{
-		5 setSize({maxWidth, rows_.front().getTextHeight() * rows_.size()});
-	}
+    if (!rows_.empty()) {
+        setSize({maxWidth, rows_.front().getTextHeight() * rows_.size()});
+    }
 }
 
-void TextBox::setFont(Font& font)
-{
-	font_ = &font;
-	for (auto& lineText : rows_)
-	{
-		lineText.setFont(font);
-	}
+void TextBox::setFont(Font &font) {
+    font_ = &font;
+    for (auto &lineText: rows_) {
+        lineText.setFont(font);
+    }
 }
 
-void TextBox::prepare(ShaderPack& shader)
-{
-	Widget::prepare(shader);
+void TextBox::prepare(ShaderPack &shader) {
+    Widget::prepare(shader);
 
-	for (auto& lineText : rows_)
-	{
-		lineText.prepare(shader);
-	}
+    for (auto &lineText: rows_) {
+        lineText.prepare(shader);
+    }
 }
 
-void TextBox::draw(ShaderPack& shaderProgram)
-{
-	Widget::draw(shaderProgram);
+void TextBox::draw(ShaderPack &shaderProgram) {
+    Widget::draw(shaderProgram);
 
-	for (auto& lineText : rows_)
-	{
-		lineText.draw(shaderProgram);
-	}
+    for (auto &lineText: rows_) {
+        lineText.draw(shaderProgram);
+    }
 }
