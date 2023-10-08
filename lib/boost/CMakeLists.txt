@@ -5,4 +5,6 @@ endif ()
 
 add_library(Boost INTERFACE)
 
+target_compile_options(Boost INTERFACE "-w") # warnings suppressing
+
 target_include_directories(Boost INTERFACE ${BOOST_PATH})
