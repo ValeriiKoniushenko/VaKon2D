@@ -96,10 +96,10 @@ public:
 private:
     // clang-format off
     inline static const std::vector<float> templateVertices_ = {
-            0.f, 0.f, 0.f, 1.f,
-            0.f, -1.f, 0.f, 0.f,
-            1.f, 0.f, 1.f, 1.f,
-            1.f, -1.f, 1.f, 0.f,
+            0.f, 0.f, 0.f, 1.f, 0, 0,
+            0.f, -1.f, 0.f, 0.f, 0, 0,
+            1.f, 0.f, 1.f, 1.f, 0, 0,
+            1.f, -1.f, 1.f, 0.f, 0, 0,
     };
     // clang-format on
     Utils::IRect textureRect_;

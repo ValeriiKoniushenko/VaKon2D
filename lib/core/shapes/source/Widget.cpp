@@ -79,6 +79,9 @@ void Widget::draw(ShaderPack &shaderPack) {
     shaderProgram.uniform("uBorderColor", borderColor.r, borderColor.g, borderColor.b, borderColor.a);
     shaderProgram.uniform("uBorderWidth", borderWidth);
     shaderProgram.uniform("uIsDrawBorder", isDrawBorder_);
+    if (texture_ && texture_->getImage()) {
+        shaderProgram.uniform("uAtlasSize", texture_->getImage()->getSize());
+    }
 
     DrawAble::draw(shaderPack);
 }
@@ -105,10 +108,24 @@ void Widget::prepare(ShaderPack &shader) {
     }
 
     std::vector<float> vertices = templateVertices_;
-    vertices.at(5) *= size_.height * 2.f * scale_.height;
-    vertices.at(8) *= size_.width * 2.f * scale_.width;
-    vertices.at(12) *= size_.width * 2.f * scale_.width;
-    vertices.at(13) *= size_.height * 2.f * scale_.height;
+    vertices.at(7) *= size_.height * 2.f * scale_.height;   // TODO: refactor it
+    vertices.at(12) *= size_.width * 2.f * scale_.width;     // TODO: refactor it
+    vertices.at(18) *= size_.width * 2.f * scale_.width;    // TODO: refactor it
+    vertices.at(19) *= size_.height * 2.f * scale_.height;  // TODO: refactor it
+
+    vertices.at(3) *= textureRect_.size.height;
+    vertices.at(14) *= textureRect_.size.width;
+    vertices.at(15) *= textureRect_.size.height;
+    vertices.at(20) *= textureRect_.size.width;
+
+    vertices.at(4) = textureRect_.position.x;
+    vertices.at(5) = textureRect_.position.y;
+    vertices.at(10) = textureRect_.position.x;
+    vertices.at(11) = textureRect_.position.y;
+    vertices.at(16) = textureRect_.position.x;
+    vertices.at(17) = textureRect_.position.y;
+    vertices.at(22) = textureRect_.position.x;
+    vertices.at(23) = textureRect_.position.y;
 
     vbo_.bind();
     vbo_.data(vertices);
@@ -117,12 +134,16 @@ void Widget::prepare(ShaderPack &shader) {
         vao_.generate();
     }
     vao_.bind();
-    Gl::Vao::vertexAttribPointer(0, 2, Gl::Type::Float, false, 4 * sizeof(float), nullptr);
+    Gl::Vao::vertexAttribPointer(0, 2, Gl::Type::Float, false, 6 * sizeof(float), nullptr);
     Gl::Vao::enableVertexAttribArray(0);
 
-    Gl::Vao::vertexAttribPointer(1, 2, Gl::Type::Float, false, 4 * sizeof(float),
+    Gl::Vao::vertexAttribPointer(1, 2, Gl::Type::Float, false, 6 * sizeof(float),
                                  reinterpret_cast<const void *>(2 * sizeof(float)));
     Gl::Vao::enableVertexAttribArray(1);
+
+    Gl::Vao::vertexAttribPointer(2, 2, Gl::Type::Float, false, 6 * sizeof(float),
+                                 reinterpret_cast<const void *>(4 * sizeof(float)));
+    Gl::Vao::enableVertexAttribArray(2);
 
     if (texture_) {
         texture_->bind();

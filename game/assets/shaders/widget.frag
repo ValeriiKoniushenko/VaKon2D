@@ -3,6 +3,7 @@
 out vec4 FragColor;
 
 in vec2 ioCv;
+in vec2 ioTextRectSize;
 
 uniform sampler2D uTexture;
 uniform float uGamma;
@@ -70,8 +71,9 @@ void main()
     }
     else
     {
-        vec4 textureColor = texture(uTexture, ioCv);
-        vec3 diffuseColor = pow(texture(uTexture, ioCv).rgb, vec3(uGamma));
+        vec2 cv = ioCv + vec2(ioTextRectSize);
+        vec4 textureColor = texture(uTexture, cv);
+        vec3 diffuseColor = pow(texture(uTexture, cv).rgb, vec3(uGamma));
         vec4 midColor = vec4(diffuseColor, textureColor.a);
         vec4 outColor = brightnessMatrix(uBrightness) * contrastMatrix(uContrast) * saturationMatrix(uSaturation) * midColor;
 

@@ -61,8 +61,8 @@ void VaKon2D::start() {
 
     Widget widget;
     widget.setTexture(texture);
-    widget.calculateFitTextureSize();
-    widget.setTextureRect(Utils::IRect{{320, 0},
+    widget.setSize({32, 32});
+    widget.setTextureRect(Utils::IRect{{352, 0},
                                        {32,  32}});
 
     while (!GetWindow().shouldClose()) {

@@ -32,54 +32,90 @@ struct GlColor;
 
 class Shader;
 
-class ShaderProgram : public Utils::NotCopyableButMovable
-{
+class ShaderProgram : public Utils::NotCopyableButMovable {
 public:
-	explicit ShaderProgram(bool shouldCreate);
-	ShaderProgram(Shader& frag, Shader& vert);
+    explicit ShaderProgram(bool shouldCreate);
 
-	ShaderProgram(ShaderProgram&& other) noexcept;
-	ShaderProgram& operator=(ShaderProgram&& other) noexcept;
+    ShaderProgram(Shader &frag, Shader &vert);
 
-	void recreateAndLink(Shader& frag, Shader& vert);
-	void create();
-	void attachShader(Shader& shader);
-	void link();
-	void use() const;
-	_NODISCARD bool wasCreated() const;
-	_NODISCARD GLuint data();
-	_NODISCARD bool wasLinked() const;
-	void deleteProgram();
-	virtual void OnAfterLink();
-	_NODISCARD GLint getUniformLocation(const std::string& name);
+    ShaderProgram(ShaderProgram &&other) noexcept;
 
-	_NODISCARD bool isValid() const;
+    ShaderProgram &operator=(ShaderProgram &&other) noexcept;
 
-	void uniform(const std::string& name, const GlColor& color);
-	void uniform(const std::string& name, GLfloat v0);
-	void uniform(const std::string& name, GLfloat v0, GLfloat v1);
-	void uniform(const std::string& name, GLfloat v0, GLfloat v1, GLfloat v2);
-	void uniform(const std::string& name, GLfloat v0, GLfloat v1, GLfloat v2, GLfloat v3);
-	void uniform(const std::string& name, GLint v0);
-	void uniform(const std::string& name, GLint v0, GLint v1);
-	void uniform(const std::string& name, GLint v0, GLint v1, GLint v2);
-	void uniform(const std::string& name, GLint v0, GLint v1, GLint v2, GLint v3);
-	void uniform(const std::string& name, GLuint v0);
-	void uniform(const std::string& name, GLuint v0, GLuint v1);
-	void uniform(const std::string& name, GLuint v0, GLuint v1, GLuint v2);
-	void uniform(const std::string& name, GLuint v0, GLuint v1, GLuint v2, GLuint v3);
-	void uniform(const std::string& name, bool transpose, const glm::mat2& value);
-	void uniform(const std::string& name, bool transpose, const glm::mat3& value);
-	void uniform(const std::string& name, bool transpose, const glm::mat4& value);
-	void uniform(const std::string& name, bool transpose, const glm::mat2x3& value);
-	void uniform(const std::string& name, bool transpose, const glm::mat3x2& value);
-	void uniform(const std::string& name, bool transpose, const glm::mat2x4& value);
-	void uniform(const std::string& name, bool transpose, const glm::mat4x2& value);
-	void uniform(const std::string& name, bool transpose, const glm::mat3x4& value);
-	void uniform(const std::string& name, bool transpose, const glm::mat4x3& value);
+    void recreateAndLink(Shader &frag, Shader &vert);
+
+    void create();
+
+    void attachShader(Shader &shader);
+
+    void link();
+
+    void use() const;
+
+    _NODISCARD bool wasCreated() const;
+
+    _NODISCARD GLuint data();
+
+    _NODISCARD bool wasLinked() const;
+
+    void deleteProgram();
+
+    virtual void OnAfterLink();
+
+    _NODISCARD GLint getUniformLocation(const std::string &name);
+
+    _NODISCARD bool isValid() const;
+
+    void uniform(const std::string &name, const glm::ivec2 &color);
+
+    void uniform(const std::string &name, const glm::vec2 &color);
+
+    void uniform(const std::string &name, const GlColor &color);
+
+    void uniform(const std::string &name, GLfloat v0);
+
+    void uniform(const std::string &name, GLfloat v0, GLfloat v1);
+
+    void uniform(const std::string &name, GLfloat v0, GLfloat v1, GLfloat v2);
+
+    void uniform(const std::string &name, GLfloat v0, GLfloat v1, GLfloat v2, GLfloat v3);
+
+    void uniform(const std::string &name, GLint v0);
+
+    void uniform(const std::string &name, GLint v0, GLint v1);
+
+    void uniform(const std::string &name, GLint v0, GLint v1, GLint v2);
+
+    void uniform(const std::string &name, GLint v0, GLint v1, GLint v2, GLint v3);
+
+    void uniform(const std::string &name, GLuint v0);
+
+    void uniform(const std::string &name, GLuint v0, GLuint v1);
+
+    void uniform(const std::string &name, GLuint v0, GLuint v1, GLuint v2);
+
+    void uniform(const std::string &name, GLuint v0, GLuint v1, GLuint v2, GLuint v3);
+
+    void uniform(const std::string &name, bool transpose, const glm::mat2 &value);
+
+    void uniform(const std::string &name, bool transpose, const glm::mat3 &value);
+
+    void uniform(const std::string &name, bool transpose, const glm::mat4 &value);
+
+    void uniform(const std::string &name, bool transpose, const glm::mat2x3 &value);
+
+    void uniform(const std::string &name, bool transpose, const glm::mat3x2 &value);
+
+    void uniform(const std::string &name, bool transpose, const glm::mat2x4 &value);
+
+    void uniform(const std::string &name, bool transpose, const glm::mat4x2 &value);
+
+    void uniform(const std::string &name, bool transpose, const glm::mat3x4 &value);
+
+    void uniform(const std::string &name, bool transpose, const glm::mat4x3 &value);
 
 private:
-	GLuint data_ = Gl::Program::invalidId;
-	bool wasLinked_ = false;
-	std::unordered_map<std::string, GLint> uniforms_;
+    GLuint data_ = Gl::Program::invalidId;
+    bool wasLinked_ = false;
+    std::unordered_map<std::string, GLint> uniforms_;
 };
