@@ -34,6 +34,7 @@ everywhere!
 >    3. [Shader-program](#shader-program)
 >    4. [Textures](#textures)
 >       1. [Transparent background](#transparent-background)
+>       2. [Calculate correct texture size](#calculate-correct-texture-size)
 >    5. [First widget](#first-widget)
 >    6. [Main Loop](#main-loop)
 >    7. [Updateable Collector](#updateable-collector)
@@ -320,6 +321,21 @@ image.setInternalChannel(Gl::Texture::Channel::SRGBA);
 Texture texture(Gl::Texture::Target::Texture2D, true, true);
 texture.setImage(image);
 texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
+```
+
+#### Calculate correct texture size
+In the case you don't know(or just lazy to remember\set) the correct texture size you can use the function ```Widget::calculateFitTextureSize()```.
+It's getting correct texture size from an ```Image``` in the texture, and set the texture size corresponding to an image's size.
+But do it only after setting up an image!
+
+Example:
+```C++
+Texture texture(Gl::Texture::Target::Texture2D, true, true);
+texture.setImage(image);
+
+Widget widget;
+widget.setTexture(texture);
+widget.calculateFitTextureSize();
 ```
 
 ---
