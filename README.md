@@ -35,6 +35,7 @@ everywhere!
 >    4. [Textures](#textures)
 >       1. [Transparent background](#transparent-background)
 >       2. [Calculate correct texture size](#calculate-correct-texture-size)
+>       3. [Texture rect](#texture-rect)
 >    5. [First widget](#first-widget)
 >    6. [Main Loop](#main-loop)
 >    7. [Updateable Collector](#updateable-collector)
@@ -337,6 +338,14 @@ Widget widget;
 widget.setTexture(texture);
 widget.calculateFitTextureSize();
 ```
+
+#### Texture rect
+If you are using texture atlases, and you want to set one unit of it you have to use the function ```Widget::setTextureRect(const Utils::Rect<int> &rect)```
+So, just write: 
+```c++
+widget.setTextureRect(Utils::IRect{{32, 0}, {32,  32}});
+```
+And you will get the texture by the next coordinates: ```X: 32; Y: 0```; with a size: ```Width: 32; Height: 32```; 
 
 ---
 
