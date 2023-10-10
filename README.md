@@ -29,6 +29,7 @@ everywhere!
 > 5. [Docs](#-docs)
 > 6. [Code-tutorial & classes & examples](#-code-tutorial--classes--examples-)
 >    1. [Init your game environment](#init-your-game-environment)
+>       1. [Initer](#initer)
 >    2. [Write your shader](#write-your-shader)
 >    3. [Shader-program](#shader-program)
 >    4. [Textures](#textures)
@@ -45,6 +46,7 @@ everywhere!
 >    14. [Input Actions](#input-actions)
 >    15. [Text](#text)
 >    16. [Using OpenGL wrappers](#using-opengl-wrappers)
+>    17. [Coordinate System](#coordinate-system)
 > 7. [What in the future?](#-what-in-the-future)
 > 8. [Feedback & Contacts](#-feedback--contacts)
 
@@ -146,13 +148,14 @@ the major and minor versions. You can't create a window or initialize a GLAD wit
 Let's initialize your window:
 
 ```c++
-GetWindow().create({800, 600}, "Game name"); 
+GetWindow().create({800, 600}, "Game name");
 ```
 
 You can pass your values to the window's size or window's title.
 After that going forward GLAD initialization and World initialization.
 
 PS: don't forget to connect dependencies to your ```CMakeLists.txt```
+
 ```cmake
 # /game/CMakeLists.txt
 target_link_libraries(
@@ -166,6 +169,21 @@ target_link_libraries(
         glfw
     ...
 )
+```
+
+#### Initer
+To make a game environment easier you can use ```Initer```. Just write the next code to initialize your game's env:
+```c++
+Initer::init({.glfwVersion = {3, 3}, .windowSize = {800, 600}, .title = "My game"});
+```
+
+It's going to replace the previous code:
+```C++
+Logger::initLogger();
+GlfwWrapper::initGlfw(3, 3);
+GetWindow().create({800, 600}, "Game name");
+GladWrapper::initGlad();
+GetWorld().init();
 ```
 
 ---
@@ -702,6 +720,19 @@ auto vao = Gl::Vao::generate();
 Others function will be available in the
 class ```Gl```, ```Gl::Program```, ```Gl::Shader```, ```Gl::Vao```, ```Gl::Vbo```, ```Gl::Texture```
 
+---
+
+### Coordinate System
+The coordinate system is the same as in ```HTML```, ```SFML``` and others similar languages\libs.
+It's going from left to right and from top to down.
+So, you want to move a widget to right and to down you can write the next code:
+
+```c++
+Widget widget;
+widget.setTexture(texture);
+widget.move({100, 100});
+```
+
 ## 💭 What in the future?
 
 I want to implement more and more things to give abilities like:
@@ -713,7 +744,7 @@ I want to implement more and more things to give abilities like:
 - Improve working with lightning:
     - Give an ability to create different types of lighting: global, point
     - Working with gamma and post-processing
-- Pick up all the best things from an SFML(and plugins to it) in one Engine(VaKon2D)
+- Pick up all the best things from an SFML(and plugins to it) in the one Engine(VaKon2D)
 - Easy working with se\deserializing of game data
 - Adding an ability to integrate own DLC to a game
 - Supporting of all new compilers: GCC, G++, Clang, MSVC

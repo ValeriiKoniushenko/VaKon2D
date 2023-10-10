@@ -64,6 +64,7 @@ void VaKon2D::start() {
     widget.setSize({32, 32});
     widget.setTextureRect(Utils::IRect{{352, 0},
                                        {32,  32}});
+    widget.move({100, 100});
 
     while (!GetWindow().shouldClose()) {
         GetWindow().clearColor({0.2f, 0.3f, 0.3f});
