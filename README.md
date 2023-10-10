@@ -331,13 +331,25 @@ target_link_libraries(
 ### Main Loop
 
 ```c++
+Image image("assets/textures/apple.png");
+image.setInternalChannel(Gl::Texture::Channel::SRGBA);
+
+Texture texture(Gl::Texture::Target::Texture2D, true, true);
+texture.setImage(image);
+texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
+
+Widget rect;
+rect.setTexture(texture);
+rect.prepare();
+
 while (!GetWindow().shouldClose())
 {
     GetWindow().clearColor(0.2f, 0.3f, 0.3f, 1.0f);
     GetWindow().clear(GL_COLOR_BUFFER_BIT);
 
     rect.draw(program);
-
+    rect.update();
+    
     GetWindow().swapBuffers();
     GetWindow().pollEvent();
 
@@ -346,7 +358,9 @@ while (!GetWindow().shouldClose())
 ```
 
 At the start of main loop, we should work while the window is open. After that need to clear background color and clear
-ColorBufferBit.
+```ColorBufferBit```.
+
+Also, don't forget to upate a widget's data. For that we use the function ```Widget::update```.
 
 ```c++
 GetWindow().clearColor(0.2f, 0.3f, 0.3f, 1.0f);
