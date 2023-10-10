@@ -1,6 +1,7 @@
 var hierarchy =
 [
     [ "Font::Character", "struct_font_1_1_character.html", null ],
+    [ "Color", "struct_color.html", null ],
     [ "Utils::CopyableAndMoveable", "class_utils_1_1_copyable_and_moveable.html", [
       [ "LambdaMulticastDelegate< void()>", "class_lambda_multicast_delegate.html", null ],
       [ "LambdaMulticastDelegate< void(double)>", "class_lambda_multicast_delegate.html", null ],
@@ -12,28 +13,40 @@ var hierarchy =
       [ "Font", "class_font.html", null ],
       [ "LambdaDelegate< F >", "class_lambda_delegate.html", null ],
       [ "LambdaMulticastDelegate< F >", "class_lambda_multicast_delegate.html", null ],
-      [ "LineText", "class_line_text.html", null ],
-      [ "Timer", "class_timer.html", null ]
+      [ "StopMotionAnimation", "class_stop_motion_animation.html", null ],
+      [ "Timer", "class_timer.html", null ],
+      [ "Vao", "class_vao.html", null ],
+      [ "Vbo", "class_vbo.html", null ]
     ] ],
+    [ "Utils::CopyableButNotMoveable", "class_utils_1_1_copyable_but_not_moveable.html", null ],
+    [ "Initer::Data", "struct_initer_1_1_data.html", null ],
     [ "DrawAble", "class_draw_able.html", [
-      [ "Widget", "class_widget.html", null ]
+      [ "Widget", "class_widget.html", [
+        [ "LineText", "class_line_text.html", null ],
+        [ "TextBox", "class_text_box.html", null ]
+      ] ]
     ] ],
     [ "Gl", "class_gl.html", null ],
+    [ "GlColor", "struct_gl_color.html", null ],
     [ "JsonPrintable", "class_json_printable.html", [
+      [ "Gl::State", "struct_gl_1_1_state.html", null ],
       [ "Widget", "class_widget.html", null ]
     ] ],
     [ "Keyboard", "class_keyboard.html", null ],
     [ "CustomShaderProgram::Lightning", "struct_custom_shader_program_1_1_lightning.html", null ],
     [ "Mouse", "class_mouse.html", null ],
     [ "Utils::NotCopyableAndNotMovable", "class_utils_1_1_not_copyable_and_not_movable.html", [
-      [ "Shader", "class_shader.html", null ],
-      [ "ShaderProgram", "class_shader_program.html", [
-        [ "CustomShaderProgram", "class_custom_shader_program.html", null ]
-      ] ]
+      [ "Initer", "class_initer.html", null ],
+      [ "Shader", "class_shader.html", null ]
     ] ],
     [ "Utils::NotCopyableButMovable", "class_utils_1_1_not_copyable_but_movable.html", [
       [ "Image", "class_image.html", null ],
-      [ "Texture", "class_texture.html", null ]
+      [ "ShaderPack", "class_shader_pack.html", null ],
+      [ "ShaderProgram", "class_shader_program.html", [
+        [ "CustomShaderProgram", "class_custom_shader_program.html", null ]
+      ] ],
+      [ "Texture", "class_texture.html", null ],
+      [ "Widget", "class_widget.html", null ]
     ] ],
     [ "Gl::Program", "class_gl_1_1_program.html", null ],
     [ "Utils::Rect< T >", "struct_utils_1_1_rect.html", null ],
@@ -80,7 +93,5 @@ var hierarchy =
       [ "Widget", "class_widget.html", null ]
     ] ],
     [ "Gl::Vao", "class_gl_1_1_vao.html", null ],
-    [ "Vao", "class_vao.html", null ],
-    [ "Gl::Vbo", "class_gl_1_1_vbo.html", null ],
-    [ "Vbo", "class_vbo.html", null ]
+    [ "Gl::Vbo", "class_gl_1_1_vbo.html", null ]
 ];

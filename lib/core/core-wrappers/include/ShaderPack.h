@@ -32,10 +32,10 @@ class ShaderPack : Utils::NotCopyableButMovable
 public:
 	ShaderPack() = default;
 	void addShaderProgram(CustomShaderProgram&& csp);
-	_NODISCARD CustomShaderProgram& operator[](const std::string& name);
-	_NODISCARD const CustomShaderProgram& operator[](const std::string& name) const;
-	_NODISCARD CustomShaderProgram& get(const std::string& name);
-	_NODISCARD const CustomShaderProgram& get(const std::string& name) const;
+	[[nodiscard]] CustomShaderProgram& operator[](const std::string& name);
+	[[nodiscard]] const CustomShaderProgram& operator[](const std::string& name) const;
+	[[nodiscard]] CustomShaderProgram& get(const std::string& name);
+	[[nodiscard]] const CustomShaderProgram& get(const std::string& name) const;
 	void loadShaders(const std::string& name, std::filesystem::path vert, std::filesystem::path frag);
 
 private:

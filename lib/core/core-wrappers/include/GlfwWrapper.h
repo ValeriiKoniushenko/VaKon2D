@@ -35,7 +35,7 @@
 class GlfwWrapper : public Singleton<GlfwWrapper>
 {
 public:
-	virtual ~GlfwWrapper();
+	~GlfwWrapper() override;
 	void terminate();
 	void initialize(int majorVersion, int minorVersion);
 	static void initGlfw(int majorVersion, int minorVersion);

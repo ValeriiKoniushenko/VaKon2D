@@ -37,78 +37,79 @@
 
 class Texture;
 
-class Widget : public DrawAble, public JsonPrintable, public Updateable, public Utils::NotCopyableButMovable {
+class Widget : public DrawAble, public JsonPrintable, public Updateable, public Utils::NotCopyableButMovable
+{
 public:
-    inline static constexpr glm::vec4 borderColor = {1.f, 1.f, 0.f, 1.f};
-    inline static constexpr float borderWidth = 0.05f;
-    inline static constexpr const char *componentName = "widget";
+	inline static constexpr glm::vec4 borderColor = {1.f, 1.f, 0.f, 1.f};
+	inline static constexpr float borderWidth = 0.05f;
+	inline static constexpr const char* componentName = "widget";
 
-    Widget();
+	Widget();
 
-    Widget(Widget &&other) noexcept;
+	Widget(Widget&& other) noexcept;
 
-    Widget &operator=(Widget &&other) noexcept;
+	Widget& operator=(Widget&& other) noexcept;
 
-    ~Widget() override;
+	~Widget() override;
 
-    void draw(ShaderPack &shaderProgram) override;
+	void draw(ShaderPack& shaderProgram) override;
 
-    _NODISCARD std::size_t getVerticesCount() const override;
+	[[nodiscard]] std::size_t getVerticesCount() const override;
 
-    void setTexture(Texture &texture);
+	void setTexture(Texture& texture);
 
-    _NODISCARD Texture &getTexture();
+	[[nodiscard]] Texture& getTexture();
 
-    void setSize(Utils::FSize2D newSize);
+	void setSize(Utils::FSize2D newSize);
 
-    _NODISCARD Utils::FSize2D getSize() const;
+	[[nodiscard]] Utils::FSize2D getSize() const;
 
-    void setScale(Utils::FSize2D newScale);
+	void setScale(Utils::FSize2D newScale);
 
-    _NODISCARD Utils::FSize2D getScale() const;
+	[[nodiscard]] Utils::FSize2D getScale() const;
 
-    _NODISCARD Utils::FRect getRect() const;
+	[[nodiscard]] Utils::FRect getRect() const;
 
-    void setIsDrawBorder(bool isDraw);
+	void setIsDrawBorder(bool isDraw);
 
-    _NODISCARD bool isDrawBorder() const;
+	[[nodiscard]] bool isDrawBorder() const;
 
-    virtual void prepare(ShaderPack &shader);
+	virtual void prepare(ShaderPack& shader);
 
-    void update() override;
+	void update() override;
 
-    _NODISCARD virtual std::string getComponentName() const;
+	[[nodiscard]] virtual std::string getComponentName() const;
 
-    LambdaMulticastDelegate<void()> onMouseHover;
-    LambdaMulticastDelegate<void()> onMouseUnHover;
-    LambdaMulticastDelegate<void()> onMouseLeftClick;
-    LambdaMulticastDelegate<void()> onMouseRightClick;
-    LambdaMulticastDelegate<void()> onMouseMiddleClick;
-    LambdaMulticastDelegate<void(double)> onMouseWheel;
-    LambdaMulticastDelegate<void(unsigned int)> onTextInput;
+	LambdaMulticastDelegate<void()> onMouseHover;
+	LambdaMulticastDelegate<void()> onMouseUnHover;
+	LambdaMulticastDelegate<void()> onMouseLeftClick;
+	LambdaMulticastDelegate<void()> onMouseRightClick;
+	LambdaMulticastDelegate<void()> onMouseMiddleClick;
+	LambdaMulticastDelegate<void(double)> onMouseWheel;
+	LambdaMulticastDelegate<void(unsigned int)> onTextInput;
 
-    _NODISCARD boost::property_tree::ptree toJson() const override;
+	[[nodiscard]] boost::property_tree::ptree toJson() const override;
 
-    void setTextureRect(const Utils::Rect<int> &rect);
+	void setTextureRect(const Utils::Rect<int>& rect);
 
-    void calculateFitTextureSize();
+	void calculateFitTextureSize();
 
 private:
-    // clang-format off
+	// clang-format off
     inline static const std::vector<float> templateVertices_ = {
             0.f, 0.f, 0.f, 1.f, 0, 0,
             0.f, -1.f, 0.f, 0.f, 0, 0,
             1.f, 0.f, 1.f, 1.f, 0, 0,
             1.f, -1.f, 1.f, 0.f, 0, 0,
     };
-    // clang-format on
-    Utils::IRect textureRect_;
-    Texture *texture_{};
-    Vbo vbo_;
-    Vao vao_;
-    Utils::FSize2D size_ = {.width = 100.f, .height = 100.f};
-    Utils::FSize2D scale_ = {.width = 1.f, .height = 1.f};
-    bool isDrawBorder_ = false;
-    bool wasHover_ = false;
-    bool isPrepared = false;
+	// clang-format on
+	Utils::IRect textureRect_;
+	Texture* texture_{};
+	Vbo vbo_;
+	Vao vao_;
+	Utils::FSize2D size_ = {.width = 100.f, .height = 100.f};
+	Utils::FSize2D scale_ = {.width = 1.f, .height = 1.f};
+	bool isDrawBorder_ = false;
+	bool wasHover_ = false;
+	bool isPrepared = false;
 };

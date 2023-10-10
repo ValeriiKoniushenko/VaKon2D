@@ -6,5 +6,11 @@ digraph "JsonPrintable"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   Node1 [id="Node000001",label="JsonPrintable",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="Widget",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_widget.html",tooltip=" "];
+  Node2 [id="Node000002",label="Gl::State",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$struct_gl_1_1_state.html",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Widget",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_widget.html",tooltip=" "];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="LineText",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_line_text.html",tooltip=" "];
+  Node3 -> Node5 [id="edge4_Node000003_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="TextBox",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_text_box.html",tooltip=" "];
 }

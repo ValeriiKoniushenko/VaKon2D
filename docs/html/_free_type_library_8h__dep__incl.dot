@@ -6,11 +6,15 @@ digraph "lib/core/freetype-wrapper/include/FreeTypeLibrary.h"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   Node1 [id="Node000001",label="lib/core/freetype-wrapper\l/include/FreeTypeLibrary.h",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="lib/core/freetype-wrapper\l/include/Font.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_font_8h.html",tooltip=" "];
-  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="lib/core/freetype-wrapper\l/source/Font.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_font_8cpp.html",tooltip=" "];
-  Node2 -> Node4 [id="edge3_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="lib/core/freetype-wrapper\l/source/LineText.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_line_text_8cpp.html",tooltip=" "];
-  Node1 -> Node5 [id="edge4_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="lib/core/freetype-wrapper\l/source/FreeTypeLibrary.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_free_type_library_8cpp.html",tooltip=" "];
+  Node2 [id="Node000002",label="lib/core/core-wrappers\l/include/Initer.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_initer_8h.html",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="lib/core/freetype-wrapper\l/include/Font.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_font_8h.html",tooltip=" "];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="lib/core/freetype-wrapper\l/source/Font.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_font_8cpp.html",tooltip=" "];
+  Node3 -> Node5 [id="edge4_Node000003_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="lib/core/shapes/source\l/LineText.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_line_text_8cpp.html",tooltip=" "];
+  Node3 -> Node6 [id="edge5_Node000003_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="lib/core/shapes/source\l/TextBox.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_text_box_8cpp.html",tooltip=" "];
+  Node1 -> Node7 [id="edge6_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="lib/core/freetype-wrapper\l/source/FreeTypeLibrary.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_free_type_library_8cpp.html",tooltip=" "];
 }

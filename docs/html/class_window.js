@@ -1,7 +1,7 @@
 var class_window =
 [
     [ "clear", "class_window.html#af64a20e4e611ac92f8b4ea45da167a4f", null ],
-    [ "clearColor", "class_window.html#a9cbb416a1ebaa3ecbc9271b1ec0858f4", null ],
+    [ "clearColor", "class_window.html#a04a1e427024c0f8f26cc5f5868161917", null ],
     [ "create", "class_window.html#a05e6957ecc6f3d66c2bd183b583e9905", null ],
     [ "getHwnd", "class_window.html#a6355a2192781ddc99770864bc1b1e0b9", null ],
     [ "getSize", "class_window.html#a08480c4cafa521c91bc8f42c68295c42", null ],

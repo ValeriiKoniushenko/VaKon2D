@@ -36,7 +36,7 @@ void FreeTypeLibrary::destroy()
 	FT_Done_FreeType(ft);
 }
 
-bool FreeTypeLibrary::generateFace(std::filesystem::path path, FT_Long faceIndex, FT_Face& face)
+bool FreeTypeLibrary::generateFace(const std::filesystem::path& path, FT_Long faceIndex, FT_Face& face)
 {
 	return FT_New_Face(ft, path.string().c_str(), faceIndex, &face);
 }

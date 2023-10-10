@@ -5,12 +5,13 @@
 #include <Windows.h>
 
 #include <stdexcept>
+#include <utility>
 
 glm::ivec2 Mouse::getPosition()
 {
 	POINT p{};
 	GetCursorPos(&p);
-	return glm::ivec2(static_cast<int>(p.x), static_cast<int>(p.y));
+	return {static_cast<int>(p.x), static_cast<int>(p.y)};
 }
 
 glm::ivec2 Mouse::getPosition(Window& wnd)
@@ -18,7 +19,7 @@ glm::ivec2 Mouse::getPosition(Window& wnd)
 	POINT p{};
 	GetCursorPos(&p);
 	ScreenToClient(wnd.getHwnd(), &p);
-	return glm::ivec2(static_cast<int>(p.x), static_cast<int>(p.y));
+	return {static_cast<int>(p.x), static_cast<int>(p.y)};
 }
 
 bool Mouse::isKeyPressed(Key key)
@@ -55,7 +56,7 @@ void Mouse::update(Window& wnd)
 
 void Mouse::setMouseMoveDeltaCallback(std::function<void(glm::fvec2 pos)> callback)
 {
-	mouseMoveDeltaCallback_ = callback;
+	mouseMoveDeltaCallback_ = std::move(callback);
 }
 
 void Mouse::resetMouseMoveDeltaCallback()

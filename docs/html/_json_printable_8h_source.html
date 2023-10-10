@@ -149,16 +149,18 @@ $(document).ready(function(){initNavTree('_json_printable_8h_source.html',''); i
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">// SOFTWARE.</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;boost/property_tree/json_parser.hpp&quot;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;boost/property_tree/ptree.hpp&quot;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_json_printable.html">   26</a></span><span class="keyword">class </span><a class="code hl_class" href="class_json_printable.html">JsonPrintable</a></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_json_printable.html#ad88ef7acc61ef1693a6fc7548f0ef693">   29</a></span>    _NODISCARD <span class="keyword">virtual</span> boost::property_tree::ptree <a class="code hl_function" href="class_json_printable.html#ad88ef7acc61ef1693a6fc7548f0ef693">toJson</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
-<div class="ttc" id="aclass_json_printable_html"><div class="ttname"><a href="class_json_printable.html">JsonPrintable</a></div><div class="ttdef"><b>Definition</b> JsonPrintable.h:27</div></div>
-<div class="ttc" id="aclass_json_printable_html_ad88ef7acc61ef1693a6fc7548f0ef693"><div class="ttname"><a href="class_json_printable.html#ad88ef7acc61ef1693a6fc7548f0ef693">JsonPrintable::toJson</a></div><div class="ttdeci">virtual _NODISCARD boost::property_tree::ptree toJson() const =0</div></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;boost/property_tree/json_parser.hpp&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &quot;boost/property_tree/ptree.hpp&quot;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_json_printable.html">   28</a></span><span class="keyword">class </span><a class="code hl_class" href="class_json_printable.html">JsonPrintable</a></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_json_printable.html#a78018629ba8f1d50d707ae0aa656de2d">   31</a></span>    [[nodiscard]] <span class="keyword">virtual</span> boost::property_tree::ptree <a class="code hl_function" href="class_json_printable.html#a78018629ba8f1d50d707ae0aa656de2d">toJson</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
+<div class="ttc" id="aclass_json_printable_html"><div class="ttname"><a href="class_json_printable.html">JsonPrintable</a></div><div class="ttdef"><b>Definition</b> JsonPrintable.h:29</div></div>
+<div class="ttc" id="aclass_json_printable_html_a78018629ba8f1d50d707ae0aa656de2d"><div class="ttname"><a href="class_json_printable.html#a78018629ba8f1d50d707ae0aa656de2d">JsonPrintable::toJson</a></div><div class="ttdeci">virtual boost::property_tree::ptree toJson() const =0</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -6,5 +6,7 @@ digraph "lib/core/core-wrappers/include/GladWrapper.h"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   Node1 [id="Node000001",label="lib/core/core-wrappers\l/include/GladWrapper.h",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="lib/core/core-wrappers\l/source/GladWrapper.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_glad_wrapper_8cpp.html",tooltip=" "];
+  Node2 [id="Node000002",label="lib/core/core-wrappers\l/include/Initer.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_initer_8h.html",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="lib/core/core-wrappers\l/source/GladWrapper.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_glad_wrapper_8cpp.html",tooltip=" "];
 }

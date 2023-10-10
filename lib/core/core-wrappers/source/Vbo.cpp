@@ -102,7 +102,7 @@ bool Vbo::isBind() const
 	return isBind_;
 }
 
-void Vbo::data(const std::vector<float>& data, GLenum usage)
+void Vbo::data(const std::vector<float>& data, GLenum usage) const
 {
 	if (!isGenerated())
 	{
@@ -114,7 +114,7 @@ void Vbo::data(const std::vector<float>& data, GLenum usage)
 		throw std::runtime_error("You try to put data to unbound VBO. Bind it and try again");
 	}
 
-	Gl::Vbo::data(GL_ARRAY_BUFFER, sizeof(float) * data.size(), data.data(), GL_STATIC_DRAW);
+	Gl::Vbo::data(GL_ARRAY_BUFFER, sizeof(float) * data.size(), data.data(), usage);
 }
 
 GLuint Vbo::getId() const

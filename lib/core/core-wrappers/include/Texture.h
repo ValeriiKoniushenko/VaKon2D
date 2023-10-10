@@ -44,15 +44,15 @@ public:
 	void bind() const;
 	void unbind() const;
 	void destroy();
-	_NODISCARD bool wasGenerated() const;
-	_NODISCARD GLuint data();
+	[[nodiscard]] bool wasGenerated() const;
+	[[nodiscard]] GLuint data();
 	void generateMipMap();
 
-	_NODISCARD bool isDestroyAtEnd() const;
+	[[nodiscard]] bool isDestroyAtEnd() const;
 	void setIsDestroyAtEnd(bool is);
 
 	void setImage(Image& image);
-	_NODISCARD Image* getImage();
+	[[nodiscard]] Image* getImage();
 
 	void ignoreMipMapGeneration(bool ignore);
 	void loadToGpu();
@@ -60,12 +60,12 @@ public:
 	void setMagAndMinFilter(Gl::Texture::MagFilter magFilter, Gl::Texture::MinFilter minFilter);
 
 	void setMagFilter(Gl::Texture::MagFilter filter);
-	_NODISCARD Gl::Texture::MagFilter getMagFilter() const;
+	[[nodiscard]] Gl::Texture::MagFilter getMagFilter() const;
 
 	void setMinFilter(Gl::Texture::MinFilter filter);
-	_NODISCARD Gl::Texture::MinFilter getMinFilter() const;
+	[[nodiscard]] Gl::Texture::MinFilter getMinFilter() const;
 
-	_NODISCARD std::string getName() const;
+	[[nodiscard]] std::string getName() const;
 
 private:
 	void generate();

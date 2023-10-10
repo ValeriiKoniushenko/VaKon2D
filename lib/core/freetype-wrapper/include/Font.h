@@ -45,14 +45,14 @@ public:
 	inline static constexpr float defaultRenderSize = 500.f;
 
 	Font() = default;
-	Font(std::filesystem::path path);
+	explicit Font(const std::filesystem::path& path);
 	~Font() override;
-	void loadFromFile(std::filesystem::path path);
+	void loadFromFile(const std::filesystem::path& path);
 	void destroy();
-	_NODISCARD const Character& getCharacter(GLchar ch) const;
+	[[nodiscard]] const Character& getCharacter(GLchar ch) const;
 
 private:
 	std::unordered_map<GLchar, Character> characters_;
-	FT_Face face;
+	FT_Face face{};
 	std::string fontName_;
 };

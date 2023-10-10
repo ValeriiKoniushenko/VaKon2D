@@ -43,29 +43,29 @@ public:
 	};
 
 public:
-	_NODISCARD static std::string channelToString(Channel channel);
-	_NODISCARD static GLenum convertChannelToGlChannel(Channel channel);
+	[[nodiscard]] static std::string channelToString(Channel channel);
+	[[nodiscard]] static GLenum convertChannelToGlChannel(Channel channel);
 
 	explicit Image(std::filesystem::path&& path = "");
 
 	Image(Image&& obj) noexcept;
-	Image& operator=(Image&& obj);
+	Image& operator=(Image&& obj) noexcept;
 
 	~Image() override;
 
-	_NODISCARD int getWidth() const;
-	_NODISCARD int getHeight() const;
-	_NODISCARD glm::ivec2 getSize() const;
-	_NODISCARD Channel getChannel() const;
-	_NODISCARD unsigned char* data();
-	_NODISCARD const unsigned char* data() const;
+	[[nodiscard]] int getWidth() const;
+	[[nodiscard]] int getHeight() const;
+	[[nodiscard]] glm::ivec2 getSize() const;
+	[[nodiscard]] Channel getChannel() const;
+	[[nodiscard]] unsigned char* data();
+	[[nodiscard]] const unsigned char* data() const;
 	void setInternalChannel(Gl::Texture::Channel channel);
-	_NODISCARD Gl::Texture::Channel getInternalChannel() const;
+	[[nodiscard]] Gl::Texture::Channel getInternalChannel() const;
 	void loadImage(std::filesystem::path&&, bool isFlipVertically = true);
 	void loadToGpu();
 	void clear();
-	_NODISCARD bool isEmpty() const;
-	_NODISCARD std::string getName() const;
+	[[nodiscard]] bool isEmpty() const;
+	[[nodiscard]] std::string getName() const;
 
 private:
 	void init_();

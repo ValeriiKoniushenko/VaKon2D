@@ -1,5 +1,5 @@
 var _updateable_collector_8h =
 [
     [ "UpdateableCollector", "class_updateable_collector.html", "class_updateable_collector" ],
-    [ "getUpdateableCollector", "_updateable_collector_8h.html#aab398665c948e549721c414ae3941483", null ]
+    [ "GetUpdateableCollector", "_updateable_collector_8h.html#a8e31b281693216a1af3fb230eaa5c47e", null ]
 ];

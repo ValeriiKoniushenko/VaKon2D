@@ -77,7 +77,7 @@ void Shader::deleteShader()
 	source_.clear();
 }
 
-GLuint Shader::data()
+GLuint Shader::data() const
 {
 	return data_;
 }

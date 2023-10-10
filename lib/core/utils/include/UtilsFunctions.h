@@ -31,13 +31,13 @@
 namespace Utils
 {
 
-_NODISCARD std::string jsonToString(const boost::property_tree::ptree& ptree);
-_NODISCARD std::string getFileContent(const std::filesystem::path& path);
+[[nodiscard]] std::string jsonToString(const boost::property_tree::ptree& ptree);
+[[nodiscard]] std::string getFileContent(const std::filesystem::path& path);
 void setFileContent(const std::filesystem::path& path, const std::string& data);
 void setFileContent(const std::filesystem::path& path, void* p, size_t size);
-_NODISCARD std::vector<ISize2D> getAllSupportedWndSizes();
-_NODISCARD std::ifstream readFile(const std::filesystem::path& path);
-_NODISCARD bool isEqual(float n1, float n2, float E = std::numeric_limits<float>::epsilon());
-_NODISCARD bool isZero(float n, float E = std::numeric_limits<float>::epsilon());
+[[nodiscard]] std::vector<ISize2D> getAllSupportedWndSizes();
+[[nodiscard]] std::ifstream readFile(const std::filesystem::path& path);
+[[nodiscard]] bool isEqual(float n1, float n2, float E = std::numeric_limits<float>::epsilon());
+[[nodiscard]] bool isZero(float n, float E = std::numeric_limits<float>::epsilon());
 
 }	 // namespace Utils

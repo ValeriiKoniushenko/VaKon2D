@@ -8,5 +8,7 @@ digraph "lib/core/freetype-wrapper/include/Font.h"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="lib/core/freetype-wrapper\l/source/Font.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_font_8cpp.html",tooltip=" "];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="lib/core/freetype-wrapper\l/source/LineText.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_line_text_8cpp.html",tooltip=" "];
+  Node3 [id="Node000003",label="lib/core/shapes/source\l/LineText.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_line_text_8cpp.html",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="lib/core/shapes/source\l/TextBox.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_text_box_8cpp.html",tooltip=" "];
 }

@@ -38,5 +38,6 @@ var class_gl_1_1_texture =
       [ "MirroredRepeat", "class_gl_1_1_texture.html#a141ede84077cf1d1e73a5d05a0e3bd47a12ce4a5977988214a6b098b8cb0bf695", null ],
       [ "Repeat", "class_gl_1_1_texture.html#a141ede84077cf1d1e73a5d05a0e3bd47a7020426cfb0a204051be4b3053d2acc8", null ],
       [ "MirrorClamp2Edge", "class_gl_1_1_texture.html#a141ede84077cf1d1e73a5d05a0e3bd47a0187015a2c32fb414dfd77055ac8c2b2", null ]
-    ] ]
+    ] ],
+    [ "Gl", "class_gl_1_1_texture.html#a43eb3cec2e584c2e60dd7871de3c2c93", null ]
 ];

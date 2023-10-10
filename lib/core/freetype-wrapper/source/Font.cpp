@@ -25,7 +25,7 @@
 #include "Texture.h"
 #include "spdlog/spdlog.h"
 
-void Font::loadFromFile(std::filesystem::path path)
+void Font::loadFromFile(const std::filesystem::path& path)
 {
 	if (GetFreeTypeLibrary().generateFace(path, 0, face))
 	{
@@ -78,7 +78,7 @@ const Font::Character& Font::getCharacter(GLchar ch) const
 	return characters_.at(ch);
 }
 
-Font::Font(std::filesystem::path path)
+Font::Font(const std::filesystem::path& path)
 {
-	loadFromFile(std::move(path));
+	loadFromFile(path);
 }

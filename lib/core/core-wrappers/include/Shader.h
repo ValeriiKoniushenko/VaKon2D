@@ -37,12 +37,12 @@ public:
 	void create();
 	void loadFromFile(const std::filesystem::path& path);
 	void setType(Gl::Shader::Type type);
-	_NODISCARD Gl::Shader::Type getType() const;
+	[[nodiscard]] Gl::Shader::Type getType() const;
 	void compile() const;
 	void setSource(const std::string& source);
-	_NODISCARD const std::string& getSource();
+	[[nodiscard]] const std::string& getSource();
 	void deleteShader();
-	GLuint data();
+	GLuint data() const;
 
 private:
 	std::string source_;

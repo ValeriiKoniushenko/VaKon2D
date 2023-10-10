@@ -36,11 +36,11 @@ public:
 		Utils::FSize2D, const char*>;
 
 	void set(const std::string& key, const VariantT& value);
-	_NODISCARD const VariantT& get(const std::string& key) const;
-	_NODISCARD VariantT& get(const std::string& key);
+	[[nodiscard]] const VariantT& get(const std::string& key) const;
+	[[nodiscard]] VariantT& get(const std::string& key);
 
-	_NODISCARD const VariantT& operator[](const std::string& key) const;
-	_NODISCARD VariantT& operator[](const std::string& key);
+	[[nodiscard]] const VariantT& operator[](const std::string& key) const;
+	[[nodiscard]] VariantT& operator[](const std::string& key);
 
 	void forceClear(const std::vector<std::string>& keys);
 

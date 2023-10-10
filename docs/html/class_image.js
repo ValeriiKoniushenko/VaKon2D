@@ -22,6 +22,6 @@ var class_image =
     [ "isEmpty", "class_image.html#ad9b9016c9e5b309b338b12d76a09aa5f", null ],
     [ "loadImage", "class_image.html#a690d3e9bb96d4f516240fa60415afd67", null ],
     [ "loadToGpu", "class_image.html#aff0f823cc016683dcbc768813aed65d8", null ],
-    [ "operator=", "class_image.html#a4d2ee0f0f35824abd031bfa62782c174", null ],
+    [ "operator=", "class_image.html#ae398fb3e760635b444d4ca054e216778", null ],
     [ "setInternalChannel", "class_image.html#a9a862376b7877e9c1be48e91f65f923c", null ]
 ];

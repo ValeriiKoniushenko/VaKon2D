@@ -144,19 +144,19 @@ Inheritance diagram for Window:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a05e6957ecc6f3d66c2bd183b583e9905"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a05e6957ecc6f3d66c2bd183b583e9905">create</a> (<a class="el" href="namespace_utils.html#aa81b8f34f06cea4a8139492c0e1ad5da">Utils::ISize2D</a> size, const std::string &amp;title)</td></tr>
 <tr class="separator:a05e6957ecc6f3d66c2bd183b583e9905"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1caaf150558c0c35a8811f19ccac817d"><td class="memItemLeft" align="right" valign="top">_NODISCARD bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a1caaf150558c0c35a8811f19ccac817d">shouldClose</a> () const</td></tr>
+<tr class="memitem:a1caaf150558c0c35a8811f19ccac817d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a1caaf150558c0c35a8811f19ccac817d">shouldClose</a> () const</td></tr>
 <tr class="separator:a1caaf150558c0c35a8811f19ccac817d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6ffedb8d12d5551bdb4c298de87ed56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#af6ffedb8d12d5551bdb4c298de87ed56">swapBuffers</a> ()</td></tr>
 <tr class="separator:af6ffedb8d12d5551bdb4c298de87ed56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5abb541ee62c814dc7a7037140af7e8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a5abb541ee62c814dc7a7037140af7e8f">pollEvent</a> ()</td></tr>
 <tr class="separator:a5abb541ee62c814dc7a7037140af7e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cbb416a1ebaa3ecbc9271b1ec0858f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a9cbb416a1ebaa3ecbc9271b1ec0858f4">clearColor</a> (float r, float g, float b, float a)</td></tr>
-<tr class="separator:a9cbb416a1ebaa3ecbc9271b1ec0858f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04a1e427024c0f8f26cc5f5868161917"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a04a1e427024c0f8f26cc5f5868161917">clearColor</a> (const <a class="el" href="struct_gl_color.html">GlColor</a> &amp;color)</td></tr>
+<tr class="separator:a04a1e427024c0f8f26cc5f5868161917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af64a20e4e611ac92f8b4ea45da167a4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#af64a20e4e611ac92f8b4ea45da167a4f">clear</a> (int code)</td></tr>
 <tr class="separator:af64a20e4e611ac92f8b4ea45da167a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73012932887c6ab3a5547b7eb84a3045"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a73012932887c6ab3a5547b7eb84a3045">viewport</a> (GLint x, GLint y, GLsizei width, GLsizei height)</td></tr>
 <tr class="separator:a73012932887c6ab3a5547b7eb84a3045"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6355a2192781ddc99770864bc1b1e0b9"><td class="memItemLeft" align="right" valign="top">_NODISCARD HWND&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a6355a2192781ddc99770864bc1b1e0b9">getHwnd</a> ()</td></tr>
+<tr class="memitem:a6355a2192781ddc99770864bc1b1e0b9"><td class="memItemLeft" align="right" valign="top">HWND&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a6355a2192781ddc99770864bc1b1e0b9">getHwnd</a> ()</td></tr>
 <tr class="separator:a6355a2192781ddc99770864bc1b1e0b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08480c4cafa521c91bc8f42c68295c42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_utils.html#aa81b8f34f06cea4a8139492c0e1ad5da">Utils::ISize2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a08480c4cafa521c91bc8f42c68295c42">getSize</a> () const</td></tr>
 <tr class="separator:a08480c4cafa521c91bc8f42c68295c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -211,8 +211,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a9cbb416a1ebaa3ecbc9271b1ec0858f4" name="a9cbb416a1ebaa3ecbc9271b1ec0858f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cbb416a1ebaa3ecbc9271b1ec0858f4">&#9670;&#160;</a></span>clearColor()</h2>
+<a id="a04a1e427024c0f8f26cc5f5868161917" name="a04a1e427024c0f8f26cc5f5868161917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04a1e427024c0f8f26cc5f5868161917">&#9670;&#160;</a></span>clearColor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -220,31 +220,9 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void Window::clearColor </td>
           <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">const <a class="el" href="struct_gl_color.html">GlColor</a> &amp;&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>a</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -45,7 +45,7 @@ Image::Image(Image&& obj) noexcept
 	*this = std::move(obj);
 }
 
-Image& Image::operator=(Image&& obj)
+Image& Image::operator=(Image&& obj) noexcept
 {
 	clear();
 	this->data_ = obj.data_;
@@ -90,7 +90,7 @@ glm::ivec2 Image::getSize() const
 		throw std::runtime_error("Image wasn't loaded. You can't take a height without a photo");
 	}
 
-	return glm::ivec2(width_, height_);
+	return {width_, height_};
 }
 
 Image::Channel Image::getChannel() const

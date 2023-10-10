@@ -126,6 +126,7 @@ $(document).ready(function(){initNavTree('class_line_text.html',''); initResizab
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="class_line_text-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">LineText Class Reference</div></div>
 </div><!--header-->
@@ -140,79 +141,167 @@ Inheritance diagram for LineText:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a40f7f6d710ecd11e3f57fa0ffacb473f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#a40f7f6d710ecd11e3f57fa0ffacb473f">LineText</a> (bool autoPrepare)</td></tr>
-<tr class="separator:a40f7f6d710ecd11e3f57fa0ffacb473f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab0cbcd8847ac149df65f5d4b5ef0e0b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#aab0cbcd8847ac149df65f5d4b5ef0e0b">LineText</a> (<a class="el" href="class_font.html">Font</a> &amp;font, const std::string &amp;text)</td></tr>
 <tr class="separator:aab0cbcd8847ac149df65f5d4b5ef0e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac9b86bba08c6d2e7fc1e09a71b6189b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#aac9b86bba08c6d2e7fc1e09a71b6189b">LineText</a> ()=default</td></tr>
 <tr class="separator:aac9b86bba08c6d2e7fc1e09a71b6189b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4ce8c160ba9d056352da8cd1402b4f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#ae4ce8c160ba9d056352da8cd1402b4f8">~LineText</a> ()=default</td></tr>
-<tr class="separator:ae4ce8c160ba9d056352da8cd1402b4f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57cc2bf3cadcf73d5739f3cf83fddecd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#a57cc2bf3cadcf73d5739f3cf83fddecd">LineText</a> (const <a class="el" href="class_line_text.html">LineText</a> &amp;other)</td></tr>
-<tr class="separator:a57cc2bf3cadcf73d5739f3cf83fddecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a074c72c421553a54bf4fdd14839e29b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#a074c72c421553a54bf4fdd14839e29b6">LineText</a> (<a class="el" href="class_line_text.html">LineText</a> &amp;&amp;other)</td></tr>
-<tr class="separator:a074c72c421553a54bf4fdd14839e29b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab99135ffd16c4d442f8eebd48e39de7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_line_text.html">LineText</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#aab99135ffd16c4d442f8eebd48e39de7">operator=</a> (const <a class="el" href="class_line_text.html">LineText</a> &amp;other)</td></tr>
-<tr class="separator:aab99135ffd16c4d442f8eebd48e39de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a006b31af52d34bcb0421cbfaca15f990"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_line_text.html">LineText</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#a006b31af52d34bcb0421cbfaca15f990">operator=</a> (<a class="el" href="class_line_text.html">LineText</a> &amp;&amp;other)</td></tr>
-<tr class="separator:a006b31af52d34bcb0421cbfaca15f990"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee4db7626d4d15875d834af687296c59"><td class="memItemLeft" align="right" valign="top">_NODISCARD <a class="el" href="class_font.html">Font</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#aee4db7626d4d15875d834af687296c59">getFont</a> () const</td></tr>
+<tr class="memitem:a8a146b7a8c2b463b599ca791b175d700"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#a8a146b7a8c2b463b599ca791b175d700">~LineText</a> () override=default</td></tr>
+<tr class="separator:a8a146b7a8c2b463b599ca791b175d700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedf04941f7f54c6ee382d76923a60c7f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#aedf04941f7f54c6ee382d76923a60c7f">LineText</a> (<a class="el" href="class_line_text.html">LineText</a> &amp;&amp;other)=default</td></tr>
+<tr class="separator:aedf04941f7f54c6ee382d76923a60c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b92c283408e01ee10ab31867e264c29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_line_text.html">LineText</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#a3b92c283408e01ee10ab31867e264c29">operator=</a> (<a class="el" href="class_line_text.html">LineText</a> &amp;&amp;other)=default</td></tr>
+<tr class="separator:a3b92c283408e01ee10ab31867e264c29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee4db7626d4d15875d834af687296c59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_font.html">Font</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#aee4db7626d4d15875d834af687296c59">getFont</a> () const</td></tr>
 <tr class="separator:aee4db7626d4d15875d834af687296c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae53158c19c501d4fd0d65aa67bb6abfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#ae53158c19c501d4fd0d65aa67bb6abfe">setFont</a> (<a class="el" href="class_font.html">Font</a> &amp;font)</td></tr>
 <tr class="separator:ae53158c19c501d4fd0d65aa67bb6abfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc8283e8e0d9a7628a67c71052e8a4fd"><td class="memItemLeft" align="right" valign="top">_NODISCARD const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#afc8283e8e0d9a7628a67c71052e8a4fd">getText</a> () const</td></tr>
+<tr class="memitem:afc8283e8e0d9a7628a67c71052e8a4fd"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#afc8283e8e0d9a7628a67c71052e8a4fd">getText</a> () const</td></tr>
 <tr class="separator:afc8283e8e0d9a7628a67c71052e8a4fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1caf45e7ea9fe7bf748f96563dbf6baf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#a1caf45e7ea9fe7bf748f96563dbf6baf">setText</a> (const std::string &amp;text)</td></tr>
 <tr class="separator:a1caf45e7ea9fe7bf748f96563dbf6baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50e0503807a0482c1ba80334e1d3413d"><td class="memItemLeft" align="right" valign="top">_NODISCARD const glm::vec2 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#a50e0503807a0482c1ba80334e1d3413d">getPosition</a> () const</td></tr>
-<tr class="separator:a50e0503807a0482c1ba80334e1d3413d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6a91e00f938a9daa065fbc0722e94b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#aa6a91e00f938a9daa065fbc0722e94b8">setPosition</a> (const glm::vec2 &amp;position)</td></tr>
-<tr class="separator:aa6a91e00f938a9daa065fbc0722e94b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a4566e86d199907472508e85c97990f"><td class="memItemLeft" align="right" valign="top">_NODISCARD float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#a8a4566e86d199907472508e85c97990f">getTextWidth</a> ()</td></tr>
-<tr class="separator:a8a4566e86d199907472508e85c97990f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a656b655a1f35b02fb7bc6760e038303e"><td class="memItemLeft" align="right" valign="top">_NODISCARD float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#a656b655a1f35b02fb7bc6760e038303e">getFontSize</a> () const</td></tr>
+<tr class="memitem:a18257249218ec4419878deb6a817fb75"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#a18257249218ec4419878deb6a817fb75">getTextWidth</a> () const</td></tr>
+<tr class="separator:a18257249218ec4419878deb6a817fb75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22ab0462c341cf393a92e07e2cc41a9c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#a22ab0462c341cf393a92e07e2cc41a9c">getTextHeight</a> () const</td></tr>
+<tr class="separator:a22ab0462c341cf393a92e07e2cc41a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a656b655a1f35b02fb7bc6760e038303e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#a656b655a1f35b02fb7bc6760e038303e">getFontSize</a> () const</td></tr>
 <tr class="separator:a656b655a1f35b02fb7bc6760e038303e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af78a17a01cf3a394d84a44d48caad338"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#af78a17a01cf3a394d84a44d48caad338">setFontSize</a> (float size)</td></tr>
 <tr class="separator:af78a17a01cf3a394d84a44d48caad338"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa97aed4ff3fd8399dd4e55fd80e32e89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#aa97aed4ff3fd8399dd4e55fd80e32e89">prepare</a> ()</td></tr>
-<tr class="separator:aa97aed4ff3fd8399dd4e55fd80e32e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8223eac23779ee340e767db5b9a0af62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#a8223eac23779ee340e767db5b9a0af62">draw</a> (<a class="el" href="class_custom_shader_program.html">CustomShaderProgram</a> &amp;shader)</td></tr>
-<tr class="separator:a8223eac23779ee340e767db5b9a0af62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_class_utils_1_1_copyable_and_moveable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_utils_1_1_copyable_and_moveable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_utils_1_1_copyable_and_moveable.html">Utils::CopyableAndMoveable</a></td></tr>
-<tr class="memitem:ad7445ae6ca6d9c801f79ac34608dddd0 inherit pub_methods_class_utils_1_1_copyable_and_moveable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_copyable_and_moveable.html#ad7445ae6ca6d9c801f79ac34608dddd0">CopyableAndMoveable</a> ()=default</td></tr>
-<tr class="separator:ad7445ae6ca6d9c801f79ac34608dddd0 inherit pub_methods_class_utils_1_1_copyable_and_moveable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0f3cdfee10b73097be37e2a9fc8ae12 inherit pub_methods_class_utils_1_1_copyable_and_moveable"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_copyable_and_moveable.html#aa0f3cdfee10b73097be37e2a9fc8ae12">~CopyableAndMoveable</a> ()=default</td></tr>
-<tr class="separator:aa0f3cdfee10b73097be37e2a9fc8ae12 inherit pub_methods_class_utils_1_1_copyable_and_moveable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a258acf892b4983a0da3c20baf6366b7e inherit pub_methods_class_utils_1_1_copyable_and_moveable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_copyable_and_moveable.html#a258acf892b4983a0da3c20baf6366b7e">CopyableAndMoveable</a> (<a class="el" href="class_utils_1_1_copyable_and_moveable.html">CopyableAndMoveable</a> &amp;&amp;)=default</td></tr>
-<tr class="separator:a258acf892b4983a0da3c20baf6366b7e inherit pub_methods_class_utils_1_1_copyable_and_moveable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4e5e5ced4b661444cf2c56bd5ba016f inherit pub_methods_class_utils_1_1_copyable_and_moveable"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_utils_1_1_copyable_and_moveable.html">CopyableAndMoveable</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_copyable_and_moveable.html#ac4e5e5ced4b661444cf2c56bd5ba016f">operator=</a> (<a class="el" href="class_utils_1_1_copyable_and_moveable.html">CopyableAndMoveable</a> &amp;&amp;)=default</td></tr>
-<tr class="separator:ac4e5e5ced4b661444cf2c56bd5ba016f inherit pub_methods_class_utils_1_1_copyable_and_moveable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39fc86feb60e5517334655cf5ad80001 inherit pub_methods_class_utils_1_1_copyable_and_moveable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_copyable_and_moveable.html#a39fc86feb60e5517334655cf5ad80001">CopyableAndMoveable</a> (const <a class="el" href="class_utils_1_1_copyable_and_moveable.html">CopyableAndMoveable</a> &amp;)=default</td></tr>
-<tr class="separator:a39fc86feb60e5517334655cf5ad80001 inherit pub_methods_class_utils_1_1_copyable_and_moveable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f769b2aba3ec5461ac6d33cf16f898f inherit pub_methods_class_utils_1_1_copyable_and_moveable"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_utils_1_1_copyable_and_moveable.html">CopyableAndMoveable</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_copyable_and_moveable.html#a7f769b2aba3ec5461ac6d33cf16f898f">operator=</a> (const <a class="el" href="class_utils_1_1_copyable_and_moveable.html">CopyableAndMoveable</a> &amp;)=default</td></tr>
-<tr class="separator:a7f769b2aba3ec5461ac6d33cf16f898f inherit pub_methods_class_utils_1_1_copyable_and_moveable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11a5e0d4c4e114972189b84b301ce3a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#a11a5e0d4c4e114972189b84b301ce3a9">setColor</a> (const <a class="el" href="struct_color.html">Color</a> &amp;color)</td></tr>
+<tr class="separator:a11a5e0d4c4e114972189b84b301ce3a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5443badc4b465df0ee69b42ec481cb1c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_color.html">Color</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#a5443badc4b465df0ee69b42ec481cb1c">getColor</a> () const</td></tr>
+<tr class="separator:a5443badc4b465df0ee69b42ec481cb1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac302bccfdd59322cdb2156b5eeb62112"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#ac302bccfdd59322cdb2156b5eeb62112">prepare</a> (<a class="el" href="class_shader_pack.html">ShaderPack</a> &amp;shader) override</td></tr>
+<tr class="separator:ac302bccfdd59322cdb2156b5eeb62112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae64f4a040feef6b568400a032662a4b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#ae64f4a040feef6b568400a032662a4b4">draw</a> (<a class="el" href="class_shader_pack.html">ShaderPack</a> &amp;shader) override</td></tr>
+<tr class="separator:ae64f4a040feef6b568400a032662a4b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae92aa69924ec2d8dacd61ed9b2a7674f"><td class="memItemLeft" align="right" valign="top">boost::property_tree::ptree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#ae92aa69924ec2d8dacd61ed9b2a7674f">toJson</a> () const override</td></tr>
+<tr class="separator:ae92aa69924ec2d8dacd61ed9b2a7674f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8fcb9ff907a591773b4e19a70a10859"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#aa8fcb9ff907a591773b4e19a70a10859">getComponentName</a> () const override</td></tr>
+<tr class="separator:aa8fcb9ff907a591773b4e19a70a10859"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_widget"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_widget')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_widget.html">Widget</a></td></tr>
+<tr class="memitem:ab0f05949f1fa8ca233137fc4119c7401 inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#ab0f05949f1fa8ca233137fc4119c7401">Widget</a> ()</td></tr>
+<tr class="separator:ab0f05949f1fa8ca233137fc4119c7401 inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8e51caf8e88a05d421954787b438ba2 inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#ac8e51caf8e88a05d421954787b438ba2">Widget</a> (<a class="el" href="class_widget.html">Widget</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="separator:ac8e51caf8e88a05d421954787b438ba2 inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafe18d88e258d995ff8ac6f67241e660 inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_widget.html">Widget</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#aafe18d88e258d995ff8ac6f67241e660">operator=</a> (<a class="el" href="class_widget.html">Widget</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="separator:aafe18d88e258d995ff8ac6f67241e660 inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeab26ee6c28e0691e62b105b5eef3f03 inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#aeab26ee6c28e0691e62b105b5eef3f03">~Widget</a> () override</td></tr>
+<tr class="separator:aeab26ee6c28e0691e62b105b5eef3f03 inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5caaffbab31c592f891c940d1e4b9ca4 inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a5caaffbab31c592f891c940d1e4b9ca4">draw</a> (<a class="el" href="class_shader_pack.html">ShaderPack</a> &amp;shaderProgram) override</td></tr>
+<tr class="separator:a5caaffbab31c592f891c940d1e4b9ca4 inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73b15117c41fb9f5029b2e2d784bea12 inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a73b15117c41fb9f5029b2e2d784bea12">getVerticesCount</a> () const override</td></tr>
+<tr class="separator:a73b15117c41fb9f5029b2e2d784bea12 inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97970440e5b29885de5cee559dc545af inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a97970440e5b29885de5cee559dc545af">setTexture</a> (<a class="el" href="class_texture.html">Texture</a> &amp;texture)</td></tr>
+<tr class="separator:a97970440e5b29885de5cee559dc545af inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05a47ddc6170fc68c8d456d1e854553b inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_texture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a05a47ddc6170fc68c8d456d1e854553b">getTexture</a> ()</td></tr>
+<tr class="separator:a05a47ddc6170fc68c8d456d1e854553b inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84027ff8c38eb28e93a90a71ce78bd87 inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a84027ff8c38eb28e93a90a71ce78bd87">setSize</a> (<a class="el" href="namespace_utils.html#aafb5e8bb86bfd3e4b178ed45c9d3d8c0">Utils::FSize2D</a> newSize)</td></tr>
+<tr class="separator:a84027ff8c38eb28e93a90a71ce78bd87 inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e39dbbdfdc8d40e8d73fc6a67a035d7 inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_utils.html#aafb5e8bb86bfd3e4b178ed45c9d3d8c0">Utils::FSize2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a0e39dbbdfdc8d40e8d73fc6a67a035d7">getSize</a> () const</td></tr>
+<tr class="separator:a0e39dbbdfdc8d40e8d73fc6a67a035d7 inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7755d179f592cdeeceb25c6d60835a02 inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a7755d179f592cdeeceb25c6d60835a02">setScale</a> (<a class="el" href="namespace_utils.html#aafb5e8bb86bfd3e4b178ed45c9d3d8c0">Utils::FSize2D</a> newScale)</td></tr>
+<tr class="separator:a7755d179f592cdeeceb25c6d60835a02 inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb2d9e92ddd25570c77992173933a107 inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_utils.html#aafb5e8bb86bfd3e4b178ed45c9d3d8c0">Utils::FSize2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#afb2d9e92ddd25570c77992173933a107">getScale</a> () const</td></tr>
+<tr class="separator:afb2d9e92ddd25570c77992173933a107 inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea2eeadec569534db61281738d59f380 inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_utils.html#a73c8be21c2660f317f60d767cbbb169f">Utils::FRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#aea2eeadec569534db61281738d59f380">getRect</a> () const</td></tr>
+<tr class="separator:aea2eeadec569534db61281738d59f380 inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2259c919770dbbba63b985e18dbb85f inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#af2259c919770dbbba63b985e18dbb85f">setIsDrawBorder</a> (bool isDraw)</td></tr>
+<tr class="separator:af2259c919770dbbba63b985e18dbb85f inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a129679f366d3acb6d955b36fe2986ac7 inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a129679f366d3acb6d955b36fe2986ac7">isDrawBorder</a> () const</td></tr>
+<tr class="separator:a129679f366d3acb6d955b36fe2986ac7 inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d6f6462a12d4a2521e9781196e20fe0 inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a6d6f6462a12d4a2521e9781196e20fe0">prepare</a> (<a class="el" href="class_shader_pack.html">ShaderPack</a> &amp;shader)</td></tr>
+<tr class="separator:a6d6f6462a12d4a2521e9781196e20fe0 inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9febb21bc2470131d23b7dd1d940028a inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a9febb21bc2470131d23b7dd1d940028a">update</a> () override</td></tr>
+<tr class="separator:a9febb21bc2470131d23b7dd1d940028a inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29d812752a1d276ca6eac85118fd8b8c inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a29d812752a1d276ca6eac85118fd8b8c">getComponentName</a> () const</td></tr>
+<tr class="separator:a29d812752a1d276ca6eac85118fd8b8c inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae01e8ebb6235b6987ab451d3e649e440 inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top">boost::property_tree::ptree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#ae01e8ebb6235b6987ab451d3e649e440">toJson</a> () const override</td></tr>
+<tr class="separator:ae01e8ebb6235b6987ab451d3e649e440 inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c378bacb0553d5315a6779bf726969a inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a0c378bacb0553d5315a6779bf726969a">setTextureRect</a> (const <a class="el" href="struct_utils_1_1_rect.html">Utils::Rect</a>&lt; int &gt; &amp;rect)</td></tr>
+<tr class="separator:a0c378bacb0553d5315a6779bf726969a inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada15bceb2f9f2151194db5eb3e9c7c95 inherit pub_methods_class_widget"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#ada15bceb2f9f2151194db5eb3e9c7c95">calculateFitTextureSize</a> ()</td></tr>
+<tr class="separator:ada15bceb2f9f2151194db5eb3e9c7c95 inherit pub_methods_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_draw_able"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_draw_able')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_draw_able.html">DrawAble</a></td></tr>
+<tr class="memitem:ae56465b1eb4f9d9213b37b9dacd28ecb inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#ae56465b1eb4f9d9213b37b9dacd28ecb">draw</a> (<a class="el" href="class_shader_pack.html">ShaderPack</a> &amp;shaderProgram)</td></tr>
+<tr class="separator:ae56465b1eb4f9d9213b37b9dacd28ecb inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfbef64637f9cf7d68d6e04a62667baf inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">virtual std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#acfbef64637f9cf7d68d6e04a62667baf">getVerticesCount</a> () const</td></tr>
+<tr class="separator:acfbef64637f9cf7d68d6e04a62667baf inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd55542436a5f844085d1fd164e3d203 inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#acd55542436a5f844085d1fd164e3d203">setPosition</a> (const glm::vec2 &amp;newPosition)</td></tr>
+<tr class="separator:acd55542436a5f844085d1fd164e3d203 inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6da3581efe2b09c6ba7ba09d2248833b inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#a6da3581efe2b09c6ba7ba09d2248833b">move</a> (const glm::vec2 &amp;offset)</td></tr>
+<tr class="separator:a6da3581efe2b09c6ba7ba09d2248833b inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ece9c226314b8dd7caae8003ed3703 inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">const glm::vec2 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#aa5ece9c226314b8dd7caae8003ed3703">getPosition</a> () const</td></tr>
+<tr class="separator:aa5ece9c226314b8dd7caae8003ed3703 inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf5d4190394676b99e6ecef0a6956bf4 inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#acf5d4190394676b99e6ecef0a6956bf4">setRotation</a> (float newRotation)</td></tr>
+<tr class="separator:acf5d4190394676b99e6ecef0a6956bf4 inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5ab7e8690ec97edf8a717372c3cbaf7 inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#ab5ab7e8690ec97edf8a717372c3cbaf7">rotate</a> (float offset)</td></tr>
+<tr class="separator:ab5ab7e8690ec97edf8a717372c3cbaf7 inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a2e5ca6279fe6d549df0d7647a3aa6c inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#a6a2e5ca6279fe6d549df0d7647a3aa6c">getRotation</a> () const</td></tr>
+<tr class="separator:a6a2e5ca6279fe6d549df0d7647a3aa6c inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acda9ee6421373cad1286c6b59c21f240 inherit pub_methods_class_draw_able"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#acda9ee6421373cad1286c6b59c21f240">update</a> ()=0</td></tr>
+<tr class="separator:acda9ee6421373cad1286c6b59c21f240 inherit pub_methods_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78018629ba8f1d50d707ae0aa656de2d"><td class="memItemLeft" align="right" valign="top">virtual boost::property_tree::ptree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_json_printable.html#a78018629ba8f1d50d707ae0aa656de2d">toJson</a> () const =0</td></tr>
+<tr class="separator:a78018629ba8f1d50d707ae0aa656de2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_updateable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_updateable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_updateable.html">Updateable</a></td></tr>
+<tr class="memitem:aa0034c151d688ccd7a24fc734a8a2bb5 inherit pub_methods_class_updateable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updateable.html#aa0034c151d688ccd7a24fc734a8a2bb5">Updateable</a> ()</td></tr>
+<tr class="separator:aa0034c151d688ccd7a24fc734a8a2bb5 inherit pub_methods_class_updateable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36b40dd091c316e268d2191639c4291c inherit pub_methods_class_updateable"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updateable.html#a36b40dd091c316e268d2191639c4291c">~Updateable</a> ()</td></tr>
+<tr class="separator:a36b40dd091c316e268d2191639c4291c inherit pub_methods_class_updateable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6496f7a41cefcb6f949557500aacd0e inherit pub_methods_class_updateable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updateable.html#ad6496f7a41cefcb6f949557500aacd0e">update</a> ()=0</td></tr>
+<tr class="separator:ad6496f7a41cefcb6f949557500aacd0e inherit pub_methods_class_updateable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_utils_1_1_not_copyable_but_movable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_utils_1_1_not_copyable_but_movable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_utils_1_1_not_copyable_but_movable.html">Utils::NotCopyableButMovable</a></td></tr>
+<tr class="memitem:a183315c69121f8c08476d0ca84c84c1e inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_not_copyable_but_movable.html#a183315c69121f8c08476d0ca84c84c1e">NotCopyableButMovable</a> ()=default</td></tr>
+<tr class="separator:a183315c69121f8c08476d0ca84c84c1e inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ef937546e46dbfc851480f22c7f5a09 inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_not_copyable_but_movable.html#a3ef937546e46dbfc851480f22c7f5a09">~NotCopyableButMovable</a> ()=default</td></tr>
+<tr class="separator:a3ef937546e46dbfc851480f22c7f5a09 inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59b7118966f8c92de43db4b0d35f186b inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_not_copyable_but_movable.html#a59b7118966f8c92de43db4b0d35f186b">NotCopyableButMovable</a> (<a class="el" href="class_utils_1_1_not_copyable_but_movable.html">NotCopyableButMovable</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a59b7118966f8c92de43db4b0d35f186b inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad524bb1e2f7c98d33480a4c808a74d8e inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_utils_1_1_not_copyable_but_movable.html">NotCopyableButMovable</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_not_copyable_but_movable.html#ad524bb1e2f7c98d33480a4c808a74d8e">operator=</a> (<a class="el" href="class_utils_1_1_not_copyable_but_movable.html">NotCopyableButMovable</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:ad524bb1e2f7c98d33480a4c808a74d8e inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a0e37f5c567a6f25bb2edb3f1639005 inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_not_copyable_but_movable.html#a1a0e37f5c567a6f25bb2edb3f1639005">NotCopyableButMovable</a> (const <a class="el" href="class_utils_1_1_not_copyable_but_movable.html">NotCopyableButMovable</a> &amp;)=delete</td></tr>
+<tr class="separator:a1a0e37f5c567a6f25bb2edb3f1639005 inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19a7f77dbe7d422aaed9a9163c6507f5 inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_utils_1_1_not_copyable_but_movable.html">NotCopyableButMovable</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_not_copyable_but_movable.html#a19a7f77dbe7d422aaed9a9163c6507f5">operator=</a> (const <a class="el" href="class_utils_1_1_not_copyable_but_movable.html">NotCopyableButMovable</a> &amp;)=delete</td></tr>
+<tr class="separator:a19a7f77dbe7d422aaed9a9163c6507f5 inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:af95452e1b11928879a5ab3ef18f9ec30"><td class="memItemLeft" align="right" valign="top">static constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_line_text.html#af95452e1b11928879a5ab3ef18f9ec30">componentName</a> = &quot;line-text&quot;</td></tr>
+<tr class="separator:af95452e1b11928879a5ab3ef18f9ec30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_attribs_class_widget"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_class_widget')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="class_widget.html">Widget</a></td></tr>
+<tr class="memitem:a3abf765f48da6b169c7fcb1b4561f20b inherit pub_static_attribs_class_widget"><td class="memItemLeft" align="right" valign="top">static constexpr glm::vec4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a3abf765f48da6b169c7fcb1b4561f20b">borderColor</a> = {1.f, 1.f, 0.f, 1.f}</td></tr>
+<tr class="separator:a3abf765f48da6b169c7fcb1b4561f20b inherit pub_static_attribs_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2762746c9c4a59f2094030f0c4630591 inherit pub_static_attribs_class_widget"><td class="memItemLeft" align="right" valign="top">static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a2762746c9c4a59f2094030f0c4630591">borderWidth</a> = 0.05f</td></tr>
+<tr class="separator:a2762746c9c4a59f2094030f0c4630591 inherit pub_static_attribs_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0208272b52a46d937fd634957d8e45eb inherit pub_static_attribs_class_widget"><td class="memItemLeft" align="right" valign="top">static constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a0208272b52a46d937fd634957d8e45eb">componentName</a> = &quot;widget&quot;</td></tr>
+<tr class="separator:a0208272b52a46d937fd634957d8e45eb inherit pub_static_attribs_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_attribs_class_widget"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_widget')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_widget.html">Widget</a></td></tr>
+<tr class="memitem:acec52fa49a51eec7f79a1ba9983815a2 inherit pub_attribs_class_widget"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#acec52fa49a51eec7f79a1ba9983815a2">onMouseHover</a></td></tr>
+<tr class="separator:acec52fa49a51eec7f79a1ba9983815a2 inherit pub_attribs_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad95fb5392f071a7890f1190332ca53ba inherit pub_attribs_class_widget"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#ad95fb5392f071a7890f1190332ca53ba">onMouseUnHover</a></td></tr>
+<tr class="separator:ad95fb5392f071a7890f1190332ca53ba inherit pub_attribs_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eb92fc82ee47c116f869fb469c0980e inherit pub_attribs_class_widget"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a6eb92fc82ee47c116f869fb469c0980e">onMouseLeftClick</a></td></tr>
+<tr class="separator:a6eb92fc82ee47c116f869fb469c0980e inherit pub_attribs_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacdb362c9eb5017cf9863d4e93d209bd inherit pub_attribs_class_widget"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#aacdb362c9eb5017cf9863d4e93d209bd">onMouseRightClick</a></td></tr>
+<tr class="separator:aacdb362c9eb5017cf9863d4e93d209bd inherit pub_attribs_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92d731b9eac92bf3a8a8bbca95e3ba49 inherit pub_attribs_class_widget"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a92d731b9eac92bf3a8a8bbca95e3ba49">onMouseMiddleClick</a></td></tr>
+<tr class="separator:a92d731b9eac92bf3a8a8bbca95e3ba49 inherit pub_attribs_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77f878cfa21449ec6eb92d7bcf61189a inherit pub_attribs_class_widget"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt; void(double)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a77f878cfa21449ec6eb92d7bcf61189a">onMouseWheel</a></td></tr>
+<tr class="separator:a77f878cfa21449ec6eb92d7bcf61189a inherit pub_attribs_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab88565c8fce2a7c058941030cd943445 inherit pub_attribs_class_widget"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_lambda_multicast_delegate.html">LambdaMulticastDelegate</a>&lt; void(unsigned int)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#ab88565c8fce2a7c058941030cd943445">onTextInput</a></td></tr>
+<tr class="separator:ab88565c8fce2a7c058941030cd943445 inherit pub_attribs_class_widget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_class_draw_able"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_draw_able')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_draw_able.html">DrawAble</a></td></tr>
+<tr class="memitem:a1d12fd9119ad5a5026d53cc5490a0c9f inherit pro_attribs_class_draw_able"><td class="memItemLeft" align="right" valign="top">glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#a1d12fd9119ad5a5026d53cc5490a0c9f">position_</a> {}</td></tr>
+<tr class="separator:a1d12fd9119ad5a5026d53cc5490a0c9f inherit pro_attribs_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ae6ed0e957eeeb4223ee73d85c29e28 inherit pro_attribs_class_draw_able"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_able.html#a3ae6ed0e957eeeb4223ee73d85c29e28">rotation_</a> {}</td></tr>
+<tr class="separator:a3ae6ed0e957eeeb4223ee73d85c29e28 inherit pro_attribs_class_draw_able"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a40f7f6d710ecd11e3f57fa0ffacb473f" name="a40f7f6d710ecd11e3f57fa0ffacb473f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40f7f6d710ecd11e3f57fa0ffacb473f">&#9670;&#160;</a></span>LineText() <span class="overload">[1/5]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">LineText::LineText </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>autoPrepare</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aab0cbcd8847ac149df65f5d4b5ef0e0b" name="aab0cbcd8847ac149df65f5d4b5ef0e0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab0cbcd8847ac149df65f5d4b5ef0e0b">&#9670;&#160;</a></span>LineText() <span class="overload">[2/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aab0cbcd8847ac149df65f5d4b5ef0e0b">&#9670;&#160;</a></span>LineText() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -240,7 +329,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="aac9b86bba08c6d2e7fc1e09a71b6189b" name="aac9b86bba08c6d2e7fc1e09a71b6189b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac9b86bba08c6d2e7fc1e09a71b6189b">&#9670;&#160;</a></span>LineText() <span class="overload">[3/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aac9b86bba08c6d2e7fc1e09a71b6189b">&#9670;&#160;</a></span>LineText() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -264,8 +353,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae4ce8c160ba9d056352da8cd1402b4f8" name="ae4ce8c160ba9d056352da8cd1402b4f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4ce8c160ba9d056352da8cd1402b4f8">&#9670;&#160;</a></span>~LineText()</h2>
+<a id="a8a146b7a8c2b463b599ca791b175d700" name="a8a146b7a8c2b463b599ca791b175d700"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a146b7a8c2b463b599ca791b175d700">&#9670;&#160;</a></span>~LineText()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -282,36 +371,21 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a57cc2bf3cadcf73d5739f3cf83fddecd" name="a57cc2bf3cadcf73d5739f3cf83fddecd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57cc2bf3cadcf73d5739f3cf83fddecd">&#9670;&#160;</a></span>LineText() <span class="overload">[4/5]</span></h2>
+<a id="aedf04941f7f54c6ee382d76923a60c7f" name="aedf04941f7f54c6ee382d76923a60c7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedf04941f7f54c6ee382d76923a60c7f">&#9670;&#160;</a></span>LineText() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">LineText::LineText </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_line_text.html">LineText</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a074c72c421553a54bf4fdd14839e29b6" name="a074c72c421553a54bf4fdd14839e29b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a074c72c421553a54bf4fdd14839e29b6">&#9670;&#160;</a></span>LineText() <span class="overload">[5/5]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">LineText::LineText </td>
@@ -321,26 +395,85 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8223eac23779ee340e767db5b9a0af62" name="a8223eac23779ee340e767db5b9a0af62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8223eac23779ee340e767db5b9a0af62">&#9670;&#160;</a></span>draw()</h2>
+<a id="ae64f4a040feef6b568400a032662a4b4" name="ae64f4a040feef6b568400a032662a4b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae64f4a040feef6b568400a032662a4b4">&#9670;&#160;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LineText::draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_shader_pack.html">ShaderPack</a> &amp;&#160;</td>
+          <td class="paramname"><em>shader</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_draw_able.html#ae56465b1eb4f9d9213b37b9dacd28ecb">DrawAble</a>.</p>
+
+</div>
+</div>
+<a id="a5443badc4b465df0ee69b42ec481cb1c" name="a5443badc4b465df0ee69b42ec481cb1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5443badc4b465df0ee69b42ec481cb1c">&#9670;&#160;</a></span>getColor()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void LineText::draw </td>
+          <td class="memname">const <a class="el" href="struct_color.html">Color</a> &amp; LineText::getColor </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_custom_shader_program.html">CustomShaderProgram</a> &amp;&#160;</td>
-          <td class="paramname"><em>shader</em></td><td>)</td>
-          <td></td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa8fcb9ff907a591773b4e19a70a10859" name="aa8fcb9ff907a591773b4e19a70a10859"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8fcb9ff907a591773b4e19a70a10859">&#9670;&#160;</a></span>getComponentName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string LineText::getComponentName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_widget.html#a29d812752a1d276ca6eac85118fd8b8c">Widget</a>.</p>
 
 </div>
 </div>
@@ -378,23 +511,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a50e0503807a0482c1ba80334e1d3413d" name="a50e0503807a0482c1ba80334e1d3413d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50e0503807a0482c1ba80334e1d3413d">&#9670;&#160;</a></span>getPosition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const glm::vec2 &amp; LineText::getPosition </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="afc8283e8e0d9a7628a67c71052e8a4fd" name="afc8283e8e0d9a7628a67c71052e8a4fd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afc8283e8e0d9a7628a67c71052e8a4fd">&#9670;&#160;</a></span>getText()</h2>
 
@@ -412,8 +528,25 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8a4566e86d199907472508e85c97990f" name="a8a4566e86d199907472508e85c97990f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a4566e86d199907472508e85c97990f">&#9670;&#160;</a></span>getTextWidth()</h2>
+<a id="a22ab0462c341cf393a92e07e2cc41a9c" name="a22ab0462c341cf393a92e07e2cc41a9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22ab0462c341cf393a92e07e2cc41a9c">&#9670;&#160;</a></span>getTextHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float LineText::getTextHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a18257249218ec4419878deb6a817fb75" name="a18257249218ec4419878deb6a817fb75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18257249218ec4419878deb6a817fb75">&#9670;&#160;</a></span>getTextWidth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -422,36 +555,21 @@ Public Member Functions</h2></td></tr>
           <td class="memname">float LineText::getTextWidth </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="aab99135ffd16c4d442f8eebd48e39de7" name="aab99135ffd16c4d442f8eebd48e39de7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab99135ffd16c4d442f8eebd48e39de7">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+<a id="a3b92c283408e01ee10ab31867e264c29" name="a3b92c283408e01ee10ab31867e264c29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b92c283408e01ee10ab31867e264c29">&#9670;&#160;</a></span>operator=()</h2>
 
 <div class="memitem">
 <div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_line_text.html">LineText</a> &amp; LineText::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_line_text.html">LineText</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a006b31af52d34bcb0421cbfaca15f990" name="a006b31af52d34bcb0421cbfaca15f990"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a006b31af52d34bcb0421cbfaca15f990">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_line_text.html">LineText</a> &amp; LineText::operator= </td>
@@ -461,20 +579,54 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="aa97aed4ff3fd8399dd4e55fd80e32e89" name="aa97aed4ff3fd8399dd4e55fd80e32e89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa97aed4ff3fd8399dd4e55fd80e32e89">&#9670;&#160;</a></span>prepare()</h2>
+<a id="ac302bccfdd59322cdb2156b5eeb62112" name="ac302bccfdd59322cdb2156b5eeb62112"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac302bccfdd59322cdb2156b5eeb62112">&#9670;&#160;</a></span>prepare()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LineText::prepare </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_shader_pack.html">ShaderPack</a> &amp;&#160;</td>
+          <td class="paramname"><em>shader</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_widget.html#a6d6f6462a12d4a2521e9781196e20fe0">Widget</a>.</p>
+
+</div>
+</div>
+<a id="a11a5e0d4c4e114972189b84b301ce3a9" name="a11a5e0d4c4e114972189b84b301ce3a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11a5e0d4c4e114972189b84b301ce3a9">&#9670;&#160;</a></span>setColor()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void LineText::prepare </td>
+          <td class="memname">void LineText::setColor </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="struct_color.html">Color</a> &amp;&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -518,24 +670,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa6a91e00f938a9daa065fbc0722e94b8" name="aa6a91e00f938a9daa065fbc0722e94b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6a91e00f938a9daa065fbc0722e94b8">&#9670;&#160;</a></span>setPosition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void LineText::setPosition </td>
-          <td>(</td>
-          <td class="paramtype">const glm::vec2 &amp;&#160;</td>
-          <td class="paramname"><em>position</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a1caf45e7ea9fe7bf748f96563dbf6baf" name="a1caf45e7ea9fe7bf748f96563dbf6baf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1caf45e7ea9fe7bf748f96563dbf6baf">&#9670;&#160;</a></span>setText()</h2>
 
@@ -554,9 +688,59 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ae92aa69924ec2d8dacd61ed9b2a7674f" name="ae92aa69924ec2d8dacd61ed9b2a7674f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae92aa69924ec2d8dacd61ed9b2a7674f">&#9670;&#160;</a></span>toJson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::property_tree::ptree LineText::toJson </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_json_printable.html#a78018629ba8f1d50d707ae0aa656de2d">JsonPrintable</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="af95452e1b11928879a5ab3ef18f9ec30" name="af95452e1b11928879a5ab3ef18f9ec30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af95452e1b11928879a5ab3ef18f9ec30">&#9670;&#160;</a></span>componentName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const char* LineText::componentName = &quot;line-text&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>lib/core/freetype-wrapper/include/<a class="el" href="_line_text_8h_source.html">LineText.h</a></li>
-<li>lib/core/freetype-wrapper/source/<a class="el" href="_line_text_8cpp.html">LineText.cpp</a></li>
+<li>lib/core/shapes/include/<a class="el" href="_line_text_8h_source.html">LineText.h</a></li>
+<li>lib/core/shapes/source/<a class="el" href="_line_text_8cpp.html">LineText.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

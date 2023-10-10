@@ -31,15 +31,15 @@ class DrawAble
 {
 public:
 	virtual void draw(ShaderPack& shaderProgram);
-	_NODISCARD virtual std::size_t getVerticesCount() const;
+	[[nodiscard]] virtual std::size_t getVerticesCount() const;
 
 	void setPosition(const glm::vec2& newPosition);
 	void move(const glm::vec2& offset);
-	_NODISCARD const glm::vec2& getPosition() const;
+	[[nodiscard]] const glm::vec2& getPosition() const;
 
 	void setRotation(float newRotation);
 	void rotate(float offset);
-	_NODISCARD float getRotation() const;
+	[[nodiscard]] float getRotation() const;
 	virtual void update() = 0;
 
 protected:

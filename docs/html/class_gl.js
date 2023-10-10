@@ -1,10 +1,11 @@
 var class_gl =
 [
-    [ "Program", "class_gl_1_1_program.html", null ],
+    [ "Program", "class_gl_1_1_program.html", "class_gl_1_1_program" ],
     [ "Shader", "class_gl_1_1_shader.html", "class_gl_1_1_shader" ],
+    [ "State", "struct_gl_1_1_state.html", "struct_gl_1_1_state" ],
     [ "Texture", "class_gl_1_1_texture.html", "class_gl_1_1_texture" ],
-    [ "Vao", "class_gl_1_1_vao.html", null ],
-    [ "Vbo", "class_gl_1_1_vbo.html", null ],
+    [ "Vao", "class_gl_1_1_vao.html", "class_gl_1_1_vao" ],
+    [ "Vbo", "class_gl_1_1_vbo.html", "class_gl_1_1_vbo" ],
     [ "Type", "class_gl.html#a531a4c376dc639d1cef19fa05d661ad0", [
       [ "Float", "class_gl.html#a531a4c376dc639d1cef19fa05d661ad0a22ae0e2b89e5e3d477f988cc36d3272b", null ],
       [ "Double", "class_gl.html#a531a4c376dc639d1cef19fa05d661ad0ad909d38d705ce75386dd86e611a82f5b", null ],

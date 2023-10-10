@@ -9,7 +9,6 @@ digraph "lib/core/freetype-wrapper"
     graph [ bgcolor="#daedff", pencolor="grey50", label="core", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_a2d5e495f4b604d04f57d90095a59dd6.html",tooltip=""]
   dir_7424ed62543de5b0130e05639ffdcfce [label="utils", fillcolor="#4ea9ff", color="red", style="filled", URL="dir_7424ed62543de5b0130e05639ffdcfce.html",tooltip=""];
   dir_3ba74b92108d0f2a02e3c2f0f685a4ec [label="core-wrappers", fillcolor="#4ea9ff", color="red", style="filled", URL="dir_3ba74b92108d0f2a02e3c2f0f685a4ec.html",tooltip=""];
-  dir_2eb4d6a0926ce6cd9d2287e910bc6883 [label="window", fillcolor="#4ea9ff", color="red", style="filled", URL="dir_2eb4d6a0926ce6cd9d2287e910bc6883.html",tooltip=""];
   subgraph clusterdir_135b809e8d250589e5289cad46453686 {
     graph [ bgcolor="#daedff", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_135b809e8d250589e5289cad46453686.html",tooltip=""]
     dir_135b809e8d250589e5289cad46453686 [shape=plaintext, label="freetype-wrapper"];
@@ -17,9 +16,8 @@ digraph "lib/core/freetype-wrapper"
   dir_4253f9f940b99831a53352bfa0d7887f [label="source", fillcolor="#4ea9ff", color="grey25", style="filled", URL="dir_4253f9f940b99831a53352bfa0d7887f.html",tooltip=""];
   }
   }
-  dir_bc2139ecac0bbbafb0895e940bc0f2ff->dir_3ba74b92108d0f2a02e3c2f0f685a4ec [headlabel="5", labeldistance=1.5 headhref="dir_000006_000001.html" color="steelblue1" fontcolor="steelblue1"];
-  dir_bc2139ecac0bbbafb0895e940bc0f2ff->dir_7424ed62543de5b0130e05639ffdcfce [headlabel="3", labeldistance=1.5 headhref="dir_000006_000025.html" color="steelblue1" fontcolor="steelblue1"];
-  dir_4253f9f940b99831a53352bfa0d7887f->dir_2eb4d6a0926ce6cd9d2287e910bc6883 [headlabel="1", labeldistance=1.5 headhref="dir_000018_000026.html" color="steelblue1" fontcolor="steelblue1"];
-  dir_4253f9f940b99831a53352bfa0d7887f->dir_3ba74b92108d0f2a02e3c2f0f685a4ec [headlabel="1", labeldistance=1.5 headhref="dir_000018_000001.html" color="steelblue1" fontcolor="steelblue1"];
-  dir_4253f9f940b99831a53352bfa0d7887f->dir_bc2139ecac0bbbafb0895e940bc0f2ff [headlabel="4", labeldistance=1.5 headhref="dir_000018_000006.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_bc2139ecac0bbbafb0895e940bc0f2ff->dir_3ba74b92108d0f2a02e3c2f0f685a4ec [headlabel="2", labeldistance=1.5 headhref="dir_000008_000002.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_bc2139ecac0bbbafb0895e940bc0f2ff->dir_7424ed62543de5b0130e05639ffdcfce [headlabel="2", labeldistance=1.5 headhref="dir_000008_000028.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_4253f9f940b99831a53352bfa0d7887f->dir_3ba74b92108d0f2a02e3c2f0f685a4ec [headlabel="1", labeldistance=1.5 headhref="dir_000021_000002.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_4253f9f940b99831a53352bfa0d7887f->dir_bc2139ecac0bbbafb0895e940bc0f2ff [headlabel="2", labeldistance=1.5 headhref="dir_000021_000008.html" color="steelblue1" fontcolor="steelblue1"];
 }

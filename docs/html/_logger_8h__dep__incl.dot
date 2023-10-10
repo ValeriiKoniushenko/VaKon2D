@@ -6,13 +6,17 @@ digraph "lib/core/logger/include/Logger.h"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   Node1 [id="Node000001",label="lib/core/logger/include\l/Logger.h",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="lib/core/core-wrappers\l/source/GladWrapper.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_glad_wrapper_8cpp.html",tooltip=" "];
+  Node2 [id="Node000002",label="lib/core/core-wrappers\l/include/Initer.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_initer_8h.html",tooltip=" "];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="lib/core/core-wrappers\l/source/GlfwWrapper.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_glfw_wrapper_8cpp.html",tooltip=" "];
+  Node3 [id="Node000003",label="lib/core/core-wrappers\l/source/GladWrapper.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_glad_wrapper_8cpp.html",tooltip=" "];
   Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="lib/core/logger/source\l/Logger.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_logger_8cpp.html",tooltip=" "];
+  Node4 [id="Node000004",label="lib/core/core-wrappers\l/source/GlfwWrapper.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_glfw_wrapper_8cpp.html",tooltip=" "];
   Node1 -> Node5 [id="edge4_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="lib/core/window/source\l/Window.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_window_8cpp.html",tooltip=" "];
+  Node5 [id="Node000005",label="lib/core/logger/source\l/Logger.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_logger_8cpp.html",tooltip=" "];
   Node1 -> Node6 [id="edge5_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="lib/core/world/source\l/World.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_world_8cpp.html",tooltip=" "];
+  Node6 [id="Node000006",label="lib/core/shapes/source\l/TextBox.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_text_box_8cpp.html",tooltip=" "];
+  Node1 -> Node7 [id="edge6_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="lib/core/window/source\l/Window.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_window_8cpp.html",tooltip=" "];
+  Node1 -> Node8 [id="edge7_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="lib/core/world/source\l/World.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_world_8cpp.html",tooltip=" "];
 }

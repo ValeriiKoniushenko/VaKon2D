@@ -10,9 +10,7 @@ digraph "lib/core/freetype-wrapper/source"
   dir_bc2139ecac0bbbafb0895e940bc0f2ff [label="include", fillcolor="#4ea9ff", color="grey25", style="filled", URL="dir_bc2139ecac0bbbafb0895e940bc0f2ff.html",tooltip=""];
   dir_4253f9f940b99831a53352bfa0d7887f [label="source", fillcolor="#daedff", color="grey25", style="filled,bold", URL="dir_4253f9f940b99831a53352bfa0d7887f.html",tooltip=""];
   }
-  dir_2eb4d6a0926ce6cd9d2287e910bc6883 [label="window", fillcolor="#daedff", color="red", style="filled,dashed", URL="dir_2eb4d6a0926ce6cd9d2287e910bc6883.html",tooltip=""];
   dir_3ba74b92108d0f2a02e3c2f0f685a4ec [label="core-wrappers", fillcolor="#daedff", color="red", style="filled,dashed", URL="dir_3ba74b92108d0f2a02e3c2f0f685a4ec.html",tooltip=""];
-  dir_4253f9f940b99831a53352bfa0d7887f->dir_2eb4d6a0926ce6cd9d2287e910bc6883 [headlabel="1", labeldistance=1.5 headhref="dir_000018_000026.html" color="steelblue1" fontcolor="steelblue1"];
-  dir_4253f9f940b99831a53352bfa0d7887f->dir_3ba74b92108d0f2a02e3c2f0f685a4ec [headlabel="1", labeldistance=1.5 headhref="dir_000018_000001.html" color="steelblue1" fontcolor="steelblue1"];
-  dir_4253f9f940b99831a53352bfa0d7887f->dir_bc2139ecac0bbbafb0895e940bc0f2ff [headlabel="4", labeldistance=1.5 headhref="dir_000018_000006.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_4253f9f940b99831a53352bfa0d7887f->dir_3ba74b92108d0f2a02e3c2f0f685a4ec [headlabel="1", labeldistance=1.5 headhref="dir_000021_000002.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_4253f9f940b99831a53352bfa0d7887f->dir_bc2139ecac0bbbafb0895e940bc0f2ff [headlabel="2", labeldistance=1.5 headhref="dir_000021_000008.html" color="steelblue1" fontcolor="steelblue1"];
 }

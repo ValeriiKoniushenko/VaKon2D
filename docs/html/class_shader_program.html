@@ -144,6 +144,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8f0b34d44b3dadc941922d7ae678eb18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa28e24e87cb0c798d4d3a0914b32abcb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#aa28e24e87cb0c798d4d3a0914b32abcb">ShaderProgram</a> (<a class="el" href="class_shader.html">Shader</a> &amp;frag, <a class="el" href="class_shader.html">Shader</a> &amp;vert)</td></tr>
 <tr class="separator:aa28e24e87cb0c798d4d3a0914b32abcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5408d8a1b823eb40812f99cd767accf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#af5408d8a1b823eb40812f99cd767accf">ShaderProgram</a> (<a class="el" href="class_shader_program.html">ShaderProgram</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="separator:af5408d8a1b823eb40812f99cd767accf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d71b9f060d4b8520bcb24cdb1c7fd36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_shader_program.html">ShaderProgram</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a2d71b9f060d4b8520bcb24cdb1c7fd36">operator=</a> (<a class="el" href="class_shader_program.html">ShaderProgram</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="separator:a2d71b9f060d4b8520bcb24cdb1c7fd36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6006856ea179b8603cfbc6570a8971a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a6006856ea179b8603cfbc6570a8971a8">recreateAndLink</a> (<a class="el" href="class_shader.html">Shader</a> &amp;frag, <a class="el" href="class_shader.html">Shader</a> &amp;vert)</td></tr>
 <tr class="separator:a6006856ea179b8603cfbc6570a8971a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5191cdd556d4d46a64e2875f399ffd40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a5191cdd556d4d46a64e2875f399ffd40">create</a> ()</td></tr>
@@ -154,18 +158,26 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ade9890eb840126bd3f9b9db42389253c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3860ee49bab09ae3fc117da165ea73a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#aa3860ee49bab09ae3fc117da165ea73a">use</a> () const</td></tr>
 <tr class="separator:aa3860ee49bab09ae3fc117da165ea73a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6723c3585560fa5cfc469d7f21ff0d0c"><td class="memItemLeft" align="right" valign="top">_NODISCARD bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a6723c3585560fa5cfc469d7f21ff0d0c">wasCreated</a> () const</td></tr>
+<tr class="memitem:a6723c3585560fa5cfc469d7f21ff0d0c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a6723c3585560fa5cfc469d7f21ff0d0c">wasCreated</a> () const</td></tr>
 <tr class="separator:a6723c3585560fa5cfc469d7f21ff0d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bd9ffa4076385d6431e0c648221ba81"><td class="memItemLeft" align="right" valign="top">_NODISCARD GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a8bd9ffa4076385d6431e0c648221ba81">data</a> ()</td></tr>
-<tr class="separator:a8bd9ffa4076385d6431e0c648221ba81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb9dccc4b80e484f05804d8b11afc59b"><td class="memItemLeft" align="right" valign="top">_NODISCARD bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#adb9dccc4b80e484f05804d8b11afc59b">wasLinked</a> () const</td></tr>
+<tr class="memitem:a53912ad0a923bf94237d44eae43cc15c"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a53912ad0a923bf94237d44eae43cc15c">data</a> () const</td></tr>
+<tr class="separator:a53912ad0a923bf94237d44eae43cc15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb9dccc4b80e484f05804d8b11afc59b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#adb9dccc4b80e484f05804d8b11afc59b">wasLinked</a> () const</td></tr>
 <tr class="separator:adb9dccc4b80e484f05804d8b11afc59b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a519ab85627a6656c69ac6a2c05362904"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a519ab85627a6656c69ac6a2c05362904">deleteProgram</a> ()</td></tr>
 <tr class="separator:a519ab85627a6656c69ac6a2c05362904"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68b740437f9922e8ad82be4d74442b5b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a68b740437f9922e8ad82be4d74442b5b">OnAfterLink</a> ()</td></tr>
 <tr class="separator:a68b740437f9922e8ad82be4d74442b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aced0669c0c6d295ff56c239e8753a58b"><td class="memItemLeft" align="right" valign="top">_NODISCARD GLint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#aced0669c0c6d295ff56c239e8753a58b">getUniformLocation</a> (const std::string &amp;name)</td></tr>
+<tr class="memitem:aced0669c0c6d295ff56c239e8753a58b"><td class="memItemLeft" align="right" valign="top">GLint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#aced0669c0c6d295ff56c239e8753a58b">getUniformLocation</a> (const std::string &amp;name)</td></tr>
 <tr class="separator:aced0669c0c6d295ff56c239e8753a58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ba39a4886570dae81712b358ccacbf7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a4ba39a4886570dae81712b358ccacbf7">isValid</a> () const</td></tr>
+<tr class="separator:a4ba39a4886570dae81712b358ccacbf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaea756d426cfcc24540da8466cfe2c3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#aaea756d426cfcc24540da8466cfe2c3c">uniform</a> (const std::string &amp;name, const glm::ivec2 &amp;color)</td></tr>
+<tr class="separator:aaea756d426cfcc24540da8466cfe2c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8ce0a8050aecf12eb5edfbc6e321be4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#aa8ce0a8050aecf12eb5edfbc6e321be4">uniform</a> (const std::string &amp;name, const glm::vec2 &amp;color)</td></tr>
+<tr class="separator:aa8ce0a8050aecf12eb5edfbc6e321be4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e8fcf03dff5ba705a71a9e6cc560d70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a6e8fcf03dff5ba705a71a9e6cc560d70">uniform</a> (const std::string &amp;name, const <a class="el" href="struct_gl_color.html">GlColor</a> &amp;color)</td></tr>
+<tr class="separator:a6e8fcf03dff5ba705a71a9e6cc560d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04df0431b4d3a742de0f5f825a41579b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a04df0431b4d3a742de0f5f825a41579b">uniform</a> (const std::string &amp;name, GLfloat v0)</td></tr>
 <tr class="separator:a04df0431b4d3a742de0f5f825a41579b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bb35eef76c10c98783f658f0a704829"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a1bb35eef76c10c98783f658f0a704829">uniform</a> (const std::string &amp;name, GLfloat v0, GLfloat v1)</td></tr>
@@ -208,26 +220,29 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae103c37ad18dd2e47a4a350a9966a17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d4e2440b768be7f6ee54108706ab1ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a8d4e2440b768be7f6ee54108706ab1ec">uniform</a> (const std::string &amp;name, bool transpose, const glm::mat4x3 &amp;value)</td></tr>
 <tr class="separator:a8d4e2440b768be7f6ee54108706ab1ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_class_utils_1_1_not_copyable_and_not_movable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_utils_1_1_not_copyable_and_not_movable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_utils_1_1_not_copyable_and_not_movable.html">Utils::NotCopyableAndNotMovable</a></td></tr>
-<tr class="memitem:a758fa487b40911a9f3866bc8e364e66c inherit pub_methods_class_utils_1_1_not_copyable_and_not_movable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_not_copyable_and_not_movable.html#a758fa487b40911a9f3866bc8e364e66c">NotCopyableAndNotMovable</a> ()=default</td></tr>
-<tr class="separator:a758fa487b40911a9f3866bc8e364e66c inherit pub_methods_class_utils_1_1_not_copyable_and_not_movable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d95e7e9d475af7e40b179d06b00bf02 inherit pub_methods_class_utils_1_1_not_copyable_and_not_movable"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_not_copyable_and_not_movable.html#a1d95e7e9d475af7e40b179d06b00bf02">~NotCopyableAndNotMovable</a> ()=default</td></tr>
-<tr class="separator:a1d95e7e9d475af7e40b179d06b00bf02 inherit pub_methods_class_utils_1_1_not_copyable_and_not_movable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32cdbb32ab1c2f28d8f6e91ce886f23f inherit pub_methods_class_utils_1_1_not_copyable_and_not_movable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_not_copyable_and_not_movable.html#a32cdbb32ab1c2f28d8f6e91ce886f23f">NotCopyableAndNotMovable</a> (<a class="el" href="class_utils_1_1_not_copyable_and_not_movable.html">NotCopyableAndNotMovable</a> &amp;&amp;)=delete</td></tr>
-<tr class="separator:a32cdbb32ab1c2f28d8f6e91ce886f23f inherit pub_methods_class_utils_1_1_not_copyable_and_not_movable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a762cef71c1bb9398e2e49b83a1f11592 inherit pub_methods_class_utils_1_1_not_copyable_and_not_movable"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_utils_1_1_not_copyable_and_not_movable.html">NotCopyableAndNotMovable</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_not_copyable_and_not_movable.html#a762cef71c1bb9398e2e49b83a1f11592">operator=</a> (<a class="el" href="class_utils_1_1_not_copyable_and_not_movable.html">NotCopyableAndNotMovable</a> &amp;&amp;)=delete</td></tr>
-<tr class="separator:a762cef71c1bb9398e2e49b83a1f11592 inherit pub_methods_class_utils_1_1_not_copyable_and_not_movable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a4815cc7ea7ec827b886e5615276209 inherit pub_methods_class_utils_1_1_not_copyable_and_not_movable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_not_copyable_and_not_movable.html#a8a4815cc7ea7ec827b886e5615276209">NotCopyableAndNotMovable</a> (const <a class="el" href="class_utils_1_1_not_copyable_and_not_movable.html">NotCopyableAndNotMovable</a> &amp;)=delete</td></tr>
-<tr class="separator:a8a4815cc7ea7ec827b886e5615276209 inherit pub_methods_class_utils_1_1_not_copyable_and_not_movable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16b89a0e5ec6acaede01528436dd15d8 inherit pub_methods_class_utils_1_1_not_copyable_and_not_movable"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_utils_1_1_not_copyable_and_not_movable.html">NotCopyableAndNotMovable</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_not_copyable_and_not_movable.html#a16b89a0e5ec6acaede01528436dd15d8">operator=</a> (const <a class="el" href="class_utils_1_1_not_copyable_and_not_movable.html">NotCopyableAndNotMovable</a> &amp;)=delete</td></tr>
-<tr class="separator:a16b89a0e5ec6acaede01528436dd15d8 inherit pub_methods_class_utils_1_1_not_copyable_and_not_movable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_utils_1_1_not_copyable_but_movable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_utils_1_1_not_copyable_but_movable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_utils_1_1_not_copyable_but_movable.html">Utils::NotCopyableButMovable</a></td></tr>
+<tr class="memitem:a183315c69121f8c08476d0ca84c84c1e inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_not_copyable_but_movable.html#a183315c69121f8c08476d0ca84c84c1e">NotCopyableButMovable</a> ()=default</td></tr>
+<tr class="separator:a183315c69121f8c08476d0ca84c84c1e inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ef937546e46dbfc851480f22c7f5a09 inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_not_copyable_but_movable.html#a3ef937546e46dbfc851480f22c7f5a09">~NotCopyableButMovable</a> ()=default</td></tr>
+<tr class="separator:a3ef937546e46dbfc851480f22c7f5a09 inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59b7118966f8c92de43db4b0d35f186b inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_not_copyable_but_movable.html#a59b7118966f8c92de43db4b0d35f186b">NotCopyableButMovable</a> (<a class="el" href="class_utils_1_1_not_copyable_but_movable.html">NotCopyableButMovable</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a59b7118966f8c92de43db4b0d35f186b inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad524bb1e2f7c98d33480a4c808a74d8e inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_utils_1_1_not_copyable_but_movable.html">NotCopyableButMovable</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_not_copyable_but_movable.html#ad524bb1e2f7c98d33480a4c808a74d8e">operator=</a> (<a class="el" href="class_utils_1_1_not_copyable_but_movable.html">NotCopyableButMovable</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:ad524bb1e2f7c98d33480a4c808a74d8e inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a0e37f5c567a6f25bb2edb3f1639005 inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_not_copyable_but_movable.html#a1a0e37f5c567a6f25bb2edb3f1639005">NotCopyableButMovable</a> (const <a class="el" href="class_utils_1_1_not_copyable_but_movable.html">NotCopyableButMovable</a> &amp;)=delete</td></tr>
+<tr class="separator:a1a0e37f5c567a6f25bb2edb3f1639005 inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19a7f77dbe7d422aaed9a9163c6507f5 inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_utils_1_1_not_copyable_but_movable.html">NotCopyableButMovable</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_not_copyable_but_movable.html#a19a7f77dbe7d422aaed9a9163c6507f5">operator=</a> (const <a class="el" href="class_utils_1_1_not_copyable_but_movable.html">NotCopyableButMovable</a> &amp;)=delete</td></tr>
+<tr class="separator:a19a7f77dbe7d422aaed9a9163c6507f5 inherit pub_methods_class_utils_1_1_not_copyable_but_movable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8f0b34d44b3dadc941922d7ae678eb18" name="a8f0b34d44b3dadc941922d7ae678eb18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f0b34d44b3dadc941922d7ae678eb18">&#9670;&#160;</a></span>ShaderProgram() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f0b34d44b3dadc941922d7ae678eb18">&#9670;&#160;</a></span>ShaderProgram() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">ShaderProgram::ShaderProgram </td>
@@ -237,12 +252,17 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <a id="aa28e24e87cb0c798d4d3a0914b32abcb" name="aa28e24e87cb0c798d4d3a0914b32abcb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa28e24e87cb0c798d4d3a0914b32abcb">&#9670;&#160;</a></span>ShaderProgram() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa28e24e87cb0c798d4d3a0914b32abcb">&#9670;&#160;</a></span>ShaderProgram() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -265,6 +285,32 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af5408d8a1b823eb40812f99cd767accf" name="af5408d8a1b823eb40812f99cd767accf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5408d8a1b823eb40812f99cd767accf">&#9670;&#160;</a></span>ShaderProgram() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ShaderProgram::ShaderProgram </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_shader_program.html">ShaderProgram</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -305,8 +351,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8bd9ffa4076385d6431e0c648221ba81" name="a8bd9ffa4076385d6431e0c648221ba81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bd9ffa4076385d6431e0c648221ba81">&#9670;&#160;</a></span>data()</h2>
+<a id="a53912ad0a923bf94237d44eae43cc15c" name="a53912ad0a923bf94237d44eae43cc15c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53912ad0a923bf94237d44eae43cc15c">&#9670;&#160;</a></span>data()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -315,7 +361,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">GLuint ShaderProgram::data </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -351,6 +397,23 @@ Public Member Functions</h2></td></tr>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4ba39a4886570dae81712b358ccacbf7" name="a4ba39a4886570dae81712b358ccacbf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ba39a4886570dae81712b358ccacbf7">&#9670;&#160;</a></span>isValid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ShaderProgram::isValid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -401,6 +464,32 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a2d71b9f060d4b8520bcb24cdb1c7fd36" name="a2d71b9f060d4b8520bcb24cdb1c7fd36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d71b9f060d4b8520bcb24cdb1c7fd36">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_shader_program.html">ShaderProgram</a> &amp; ShaderProgram::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_shader_program.html">ShaderProgram</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a6006856ea179b8603cfbc6570a8971a8" name="a6006856ea179b8603cfbc6570a8971a8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6006856ea179b8603cfbc6570a8971a8">&#9670;&#160;</a></span>recreateAndLink()</h2>
 
@@ -430,7 +519,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="ad533912fa06b1f41da8aee2c17471c04" name="ad533912fa06b1f41da8aee2c17471c04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad533912fa06b1f41da8aee2c17471c04">&#9670;&#160;</a></span>uniform() <span class="overload">[1/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad533912fa06b1f41da8aee2c17471c04">&#9670;&#160;</a></span>uniform() <span class="overload">[1/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -464,7 +553,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a5ea7e2de9643268d0dcd40c6e5da9f52" name="a5ea7e2de9643268d0dcd40c6e5da9f52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ea7e2de9643268d0dcd40c6e5da9f52">&#9670;&#160;</a></span>uniform() <span class="overload">[2/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ea7e2de9643268d0dcd40c6e5da9f52">&#9670;&#160;</a></span>uniform() <span class="overload">[2/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -498,7 +587,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="ad39e0d51a076b089ef27024d0eedce13" name="ad39e0d51a076b089ef27024d0eedce13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad39e0d51a076b089ef27024d0eedce13">&#9670;&#160;</a></span>uniform() <span class="overload">[3/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad39e0d51a076b089ef27024d0eedce13">&#9670;&#160;</a></span>uniform() <span class="overload">[3/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -532,7 +621,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="aa1758a425068ccae138038b6c150366d" name="aa1758a425068ccae138038b6c150366d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1758a425068ccae138038b6c150366d">&#9670;&#160;</a></span>uniform() <span class="overload">[4/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1758a425068ccae138038b6c150366d">&#9670;&#160;</a></span>uniform() <span class="overload">[4/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -566,7 +655,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="ad9c750c162c10ab35736d20c71805479" name="ad9c750c162c10ab35736d20c71805479"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9c750c162c10ab35736d20c71805479">&#9670;&#160;</a></span>uniform() <span class="overload">[5/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9c750c162c10ab35736d20c71805479">&#9670;&#160;</a></span>uniform() <span class="overload">[5/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -600,7 +689,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="ae103c37ad18dd2e47a4a350a9966a17f" name="ae103c37ad18dd2e47a4a350a9966a17f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae103c37ad18dd2e47a4a350a9966a17f">&#9670;&#160;</a></span>uniform() <span class="overload">[6/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae103c37ad18dd2e47a4a350a9966a17f">&#9670;&#160;</a></span>uniform() <span class="overload">[6/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -634,7 +723,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a4bd02da21d74ef414ec4e98ef5053c9b" name="a4bd02da21d74ef414ec4e98ef5053c9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4bd02da21d74ef414ec4e98ef5053c9b">&#9670;&#160;</a></span>uniform() <span class="overload">[7/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bd02da21d74ef414ec4e98ef5053c9b">&#9670;&#160;</a></span>uniform() <span class="overload">[7/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -668,7 +757,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a2dc0898dde6431bcff502315dc007c6b" name="a2dc0898dde6431bcff502315dc007c6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2dc0898dde6431bcff502315dc007c6b">&#9670;&#160;</a></span>uniform() <span class="overload">[8/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dc0898dde6431bcff502315dc007c6b">&#9670;&#160;</a></span>uniform() <span class="overload">[8/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -702,7 +791,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a8d4e2440b768be7f6ee54108706ab1ec" name="a8d4e2440b768be7f6ee54108706ab1ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d4e2440b768be7f6ee54108706ab1ec">&#9670;&#160;</a></span>uniform() <span class="overload">[9/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d4e2440b768be7f6ee54108706ab1ec">&#9670;&#160;</a></span>uniform() <span class="overload">[9/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -735,8 +824,92 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a6e8fcf03dff5ba705a71a9e6cc560d70" name="a6e8fcf03dff5ba705a71a9e6cc560d70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e8fcf03dff5ba705a71a9e6cc560d70">&#9670;&#160;</a></span>uniform() <span class="overload">[10/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShaderProgram::uniform </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_gl_color.html">GlColor</a> &amp;&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaea756d426cfcc24540da8466cfe2c3c" name="aaea756d426cfcc24540da8466cfe2c3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaea756d426cfcc24540da8466cfe2c3c">&#9670;&#160;</a></span>uniform() <span class="overload">[11/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShaderProgram::uniform </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const glm::ivec2 &amp;&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa8ce0a8050aecf12eb5edfbc6e321be4" name="aa8ce0a8050aecf12eb5edfbc6e321be4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8ce0a8050aecf12eb5edfbc6e321be4">&#9670;&#160;</a></span>uniform() <span class="overload">[12/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShaderProgram::uniform </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const glm::vec2 &amp;&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a04df0431b4d3a742de0f5f825a41579b" name="a04df0431b4d3a742de0f5f825a41579b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04df0431b4d3a742de0f5f825a41579b">&#9670;&#160;</a></span>uniform() <span class="overload">[10/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a04df0431b4d3a742de0f5f825a41579b">&#9670;&#160;</a></span>uniform() <span class="overload">[13/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -764,7 +937,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a1bb35eef76c10c98783f658f0a704829" name="a1bb35eef76c10c98783f658f0a704829"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1bb35eef76c10c98783f658f0a704829">&#9670;&#160;</a></span>uniform() <span class="overload">[11/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bb35eef76c10c98783f658f0a704829">&#9670;&#160;</a></span>uniform() <span class="overload">[14/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -798,7 +971,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a2fd9aa33d7d1111c918c25be997c5b5d" name="a2fd9aa33d7d1111c918c25be997c5b5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fd9aa33d7d1111c918c25be997c5b5d">&#9670;&#160;</a></span>uniform() <span class="overload">[12/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fd9aa33d7d1111c918c25be997c5b5d">&#9670;&#160;</a></span>uniform() <span class="overload">[15/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -838,7 +1011,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="adfd60f52bac7bfdc091f80ca2de00a35" name="adfd60f52bac7bfdc091f80ca2de00a35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfd60f52bac7bfdc091f80ca2de00a35">&#9670;&#160;</a></span>uniform() <span class="overload">[13/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adfd60f52bac7bfdc091f80ca2de00a35">&#9670;&#160;</a></span>uniform() <span class="overload">[16/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -884,7 +1057,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="ac38e02a842fb0df81b75265b173c5cc1" name="ac38e02a842fb0df81b75265b173c5cc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac38e02a842fb0df81b75265b173c5cc1">&#9670;&#160;</a></span>uniform() <span class="overload">[14/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac38e02a842fb0df81b75265b173c5cc1">&#9670;&#160;</a></span>uniform() <span class="overload">[17/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -912,7 +1085,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a9e05191a55d4f7fb18c4438b009f7f27" name="a9e05191a55d4f7fb18c4438b009f7f27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e05191a55d4f7fb18c4438b009f7f27">&#9670;&#160;</a></span>uniform() <span class="overload">[15/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e05191a55d4f7fb18c4438b009f7f27">&#9670;&#160;</a></span>uniform() <span class="overload">[18/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -946,7 +1119,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="ac7bf9db8dc0fc99763e3add9d6655135" name="ac7bf9db8dc0fc99763e3add9d6655135"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7bf9db8dc0fc99763e3add9d6655135">&#9670;&#160;</a></span>uniform() <span class="overload">[16/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7bf9db8dc0fc99763e3add9d6655135">&#9670;&#160;</a></span>uniform() <span class="overload">[19/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -986,7 +1159,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="ab1990b42f01f0b6cf8175b4c2e13fac6" name="ab1990b42f01f0b6cf8175b4c2e13fac6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1990b42f01f0b6cf8175b4c2e13fac6">&#9670;&#160;</a></span>uniform() <span class="overload">[17/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1990b42f01f0b6cf8175b4c2e13fac6">&#9670;&#160;</a></span>uniform() <span class="overload">[20/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1032,7 +1205,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="ac9890df8d8838d8f67049dc6361ac76a" name="ac9890df8d8838d8f67049dc6361ac76a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9890df8d8838d8f67049dc6361ac76a">&#9670;&#160;</a></span>uniform() <span class="overload">[18/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9890df8d8838d8f67049dc6361ac76a">&#9670;&#160;</a></span>uniform() <span class="overload">[21/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1060,7 +1233,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a862405793dd879d2c6d55ab67c027bc7" name="a862405793dd879d2c6d55ab67c027bc7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a862405793dd879d2c6d55ab67c027bc7">&#9670;&#160;</a></span>uniform() <span class="overload">[19/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a862405793dd879d2c6d55ab67c027bc7">&#9670;&#160;</a></span>uniform() <span class="overload">[22/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1094,7 +1267,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="aed3fa98a7a790e1fc2e65b95a09ff0e7" name="aed3fa98a7a790e1fc2e65b95a09ff0e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed3fa98a7a790e1fc2e65b95a09ff0e7">&#9670;&#160;</a></span>uniform() <span class="overload">[20/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aed3fa98a7a790e1fc2e65b95a09ff0e7">&#9670;&#160;</a></span>uniform() <span class="overload">[23/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1134,7 +1307,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a4090ebd80c52e15196c9e1571075aacc" name="a4090ebd80c52e15196c9e1571075aacc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4090ebd80c52e15196c9e1571075aacc">&#9670;&#160;</a></span>uniform() <span class="overload">[21/21]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4090ebd80c52e15196c9e1571075aacc">&#9670;&#160;</a></span>uniform() <span class="overload">[24/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

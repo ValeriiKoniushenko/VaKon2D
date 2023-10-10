@@ -31,7 +31,8 @@ class CustomShaderProgram : public ShaderProgram
 public:
 	explicit CustomShaderProgram(const std::string& name);
 	CustomShaderProgram(const std::string& name, bool shouldCreate);
-	CustomShaderProgram(const std::string& name, std::filesystem::path pathToVertex, std::filesystem::path pathToFragment);
+	CustomShaderProgram(
+		const std::string& name, const std::filesystem::path& pathToVertex, const std::filesystem::path& pathToFragment);
 	CustomShaderProgram(const std::string& name, Shader& frag, Shader& vert);
 
 	void OnAfterLink() override;
@@ -46,7 +47,7 @@ public:
 
 	bool operator==(const CustomShaderProgram& csp) const;
 
-	_NODISCARD const std::string& getName() const;
+	[[nodiscard]] const std::string& getName() const;
 
 private:
 	const std::string name_;

@@ -43,10 +43,10 @@ public:
 	};
 
 	void setMode(Mode mode);
-	_NODISCARD Mode getMode() const;
+	[[nodiscard]] Mode getMode() const;
 
 	void setFrequency(Unit&& frequency);
-	_NODISCARD const Unit& getFrequency() const;
+	[[nodiscard]] const Unit& getFrequency() const;
 
 	void setCallback(std::function<void()> callback);
 	void resetCallback();
@@ -56,7 +56,7 @@ public:
 	void start();
 	void reset();
 
-	unsigned long long getId() const;
+	[[nodiscard]] unsigned long long getId() const;
 
 private:
 	Mode mode_ = Mode::Finite;

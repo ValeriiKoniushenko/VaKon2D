@@ -128,6 +128,7 @@ $(document).ready(function(){initNavTree('class_gl_1_1_shader.html',''); initRes
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="class_gl_1_1_shader-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Gl::Shader Class Reference</div></div>
 </div><!--header-->
@@ -145,13 +146,13 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ac0dc8a6e0f93a0af3ed31c610b0df827"><td class="memItemLeft" align="right" valign="top">static _NODISCARD GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gl_1_1_shader.html#ac0dc8a6e0f93a0af3ed31c610b0df827">create</a> (<a class="el" href="class_gl_1_1_shader.html#a39b65e35816cebb4c1f32694d3925019">Type</a> type)</td></tr>
+<tr class="memitem:ac0dc8a6e0f93a0af3ed31c610b0df827"><td class="memItemLeft" align="right" valign="top">static GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gl_1_1_shader.html#ac0dc8a6e0f93a0af3ed31c610b0df827">create</a> (<a class="el" href="class_gl_1_1_shader.html#a39b65e35816cebb4c1f32694d3925019">Type</a> type)</td></tr>
 <tr class="separator:ac0dc8a6e0f93a0af3ed31c610b0df827"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67e68e13f2cbc691e8d65c51f4a9512e"><td class="memItemLeft" align="right" valign="top">static _NODISCARD GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gl_1_1_shader.html#a67e68e13f2cbc691e8d65c51f4a9512e">createAndLoadShaderFromFile</a> (const std::filesystem::path &amp;path, <a class="el" href="class_gl_1_1_shader.html#a39b65e35816cebb4c1f32694d3925019">Type</a> type)</td></tr>
+<tr class="memitem:a67e68e13f2cbc691e8d65c51f4a9512e"><td class="memItemLeft" align="right" valign="top">static GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gl_1_1_shader.html#a67e68e13f2cbc691e8d65c51f4a9512e">createAndLoadShaderFromFile</a> (const std::filesystem::path &amp;path, <a class="el" href="class_gl_1_1_shader.html#a39b65e35816cebb4c1f32694d3925019">Type</a> type)</td></tr>
 <tr class="separator:a67e68e13f2cbc691e8d65c51f4a9512e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade26a962c04f84a7d70e8c08f4bab8c2"><td class="memItemLeft" align="right" valign="top">static _NODISCARD GLint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gl_1_1_shader.html#ade26a962c04f84a7d70e8c08f4bab8c2">getShaderiv</a> (GLuint shader, GLenum pname)</td></tr>
+<tr class="memitem:ade26a962c04f84a7d70e8c08f4bab8c2"><td class="memItemLeft" align="right" valign="top">static GLint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gl_1_1_shader.html#ade26a962c04f84a7d70e8c08f4bab8c2">getShaderiv</a> (GLuint shader, GLenum pname)</td></tr>
 <tr class="separator:ade26a962c04f84a7d70e8c08f4bab8c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a076efc6d3f855c5844d3e51d4daea292"><td class="memItemLeft" align="right" valign="top">static _NODISCARD std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gl_1_1_shader.html#a076efc6d3f855c5844d3e51d4daea292">getShaderInfoLog</a> (GLuint shader)</td></tr>
+<tr class="memitem:a076efc6d3f855c5844d3e51d4daea292"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gl_1_1_shader.html#a076efc6d3f855c5844d3e51d4daea292">getShaderInfoLog</a> (GLuint shader)</td></tr>
 <tr class="separator:a076efc6d3f855c5844d3e51d4daea292"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acefd73ccf7630026d4a5a2e0ba1523bf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gl_1_1_shader.html#acefd73ccf7630026d4a5a2e0ba1523bf">deleteShader</a> (GLuint shader)</td></tr>
 <tr class="separator:acefd73ccf7630026d4a5a2e0ba1523bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,6 +165,11 @@ Static Public Member Functions</h2></td></tr>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a71bb2f32884cff06a7a4da2057a200e2"><td class="memItemLeft" align="right" valign="top">static const GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gl_1_1_shader.html#a71bb2f32884cff06a7a4da2057a200e2">invalidId</a> = 0</td></tr>
 <tr class="separator:a71bb2f32884cff06a7a4da2057a200e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a43eb3cec2e584c2e60dd7871de3c2c93"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gl_1_1_shader.html#a43eb3cec2e584c2e60dd7871de3c2c93">Gl</a></td></tr>
+<tr class="separator:a43eb3cec2e584c2e60dd7871de3c2c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a39b65e35816cebb4c1f32694d3925019" name="a39b65e35816cebb4c1f32694d3925019"></a>
@@ -400,6 +406,29 @@ Static Public Attributes</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a43eb3cec2e584c2e60dd7871de3c2c93" name="a43eb3cec2e584c2e60dd7871de3c2c93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43eb3cec2e584c2e60dd7871de3c2c93">&#9670;&#160;</a></span>Gl</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="class_gl.html">Gl</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

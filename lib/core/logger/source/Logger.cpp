@@ -27,7 +27,7 @@
 
 void Logger::initLogger()
 {
-	tm newtime;
+	tm newtime{};
 	time_t now = time(nullptr);
 	localtime_s(&newtime, &now);
 

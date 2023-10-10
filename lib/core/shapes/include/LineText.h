@@ -41,30 +41,30 @@ public:
 
 	LineText(Font& font, const std::string& text);
 	LineText() = default;
-	~LineText() = default;
+	~LineText() override = default;
 	LineText(LineText&& other) = default;
 	LineText& operator=(LineText&& other) = default;
 
-	_NODISCARD Font* getFont() const;
+	[[nodiscard]] Font* getFont() const;
 	void setFont(Font& font);
 
-	_NODISCARD const std::string& getText() const;
+	[[nodiscard]] const std::string& getText() const;
 	void setText(const std::string& text);
 
-	_NODISCARD float getTextWidth() const;
-	_NODISCARD float getTextHeight() const;
-	_NODISCARD float getFontSize() const;
+	[[nodiscard]] float getTextWidth() const;
+	[[nodiscard]] float getTextHeight() const;
+	[[nodiscard]] float getFontSize() const;
 	void setFontSize(float size);
 
 	void setColor(const Color& color);
-	_NODISCARD const Color& getColor() const;
+	[[nodiscard]] const Color& getColor() const;
 
 	void prepare(ShaderPack& shader) override;
 
 	void draw(ShaderPack& shader) override;
 
-	_NODISCARD boost::property_tree::ptree toJson() const override;
-	_NODISCARD std::string getComponentName() const override;
+	[[nodiscard]] boost::property_tree::ptree toJson() const override;
+	[[nodiscard]] std::string getComponentName() const override;
 
 private:
 	void updateCache();

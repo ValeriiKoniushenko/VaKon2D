@@ -31,11 +31,11 @@
 class FreeTypeLibrary : public Singleton<FreeTypeLibrary>
 {
 public:
-	virtual ~FreeTypeLibrary();
+	~FreeTypeLibrary() override;
 
 	void init();
 	void destroy();
-	bool generateFace(std::filesystem::path path, FT_Long faceIndex, FT_Face& face);
+	bool generateFace(const std::filesystem::path& path, FT_Long faceIndex, FT_Face& face);
 
 private:
 	FT_Library ft;

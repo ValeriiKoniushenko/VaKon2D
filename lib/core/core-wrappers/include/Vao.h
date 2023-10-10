@@ -42,10 +42,10 @@ public:
 	void bind();
 	void unbind();
 	void destroy();
-	_NODISCARD bool isGenerated() const;
-	_NODISCARD bool isBind() const;
+	[[nodiscard]] bool isGenerated() const;
+	[[nodiscard]] bool isBind() const;
 
-	_NODISCARD GLuint getId() const;
+	[[nodiscard]] GLuint getId() const;
 
 private:
 	bool isBind_ = false;

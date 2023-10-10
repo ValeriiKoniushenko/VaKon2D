@@ -34,14 +34,14 @@ class Window : public Singleton<Window>
 {
 public:
 	void create(Utils::ISize2D size, const std::string& title);
-	_NODISCARD bool shouldClose() const;
+	[[nodiscard]] bool shouldClose() const;
 	void swapBuffers();
 	void pollEvent();
 	void clearColor(const GlColor& color);
 	void clear(int code);
 	void viewport(GLint x, GLint y, GLsizei width, GLsizei height);
-	_NODISCARD HWND getHwnd();
-	Utils::ISize2D getSize() const;
+	[[nodiscard]] HWND getHwnd();
+	[[nodiscard]] Utils::ISize2D getSize() const;
 
 	LambdaMulticastDelegate<void(int, int, int, int)> onKeyPressed;
 	LambdaMulticastDelegate<void(unsigned int)> onTextInput;

@@ -38,28 +38,36 @@ var NAVTREE =
       [ "📄 How to generate a docs(doxygen)", "index.html#autotoc_md9", null ],
       [ "📃 Docs", "index.html#autotoc_md10", null ],
       [ "📌 Code-tutorial & classes & examples:", "index.html#autotoc_md11", [
-        [ "Init your game environment", "index.html#autotoc_md12", null ],
-        [ "Write your shader", "index.html#autotoc_md14", null ],
-        [ "Shader-program", "index.html#autotoc_md16", null ],
-        [ "Textures", "index.html#autotoc_md18", null ],
-        [ "First widget", "index.html#autotoc_md20", null ],
-        [ "Main Loop", "index.html#autotoc_md22", null ],
-        [ "Timers", "index.html#autotoc_md24", null ],
-        [ "Keyboard", "index.html#autotoc_md26", null ],
-        [ "Mouse", "index.html#autotoc_md28", null ],
-        [ "Delegates", "index.html#autotoc_md30", [
-          [ "LambdaDelegate", "index.html#autotoc_md31", null ],
-          [ "LambdaMulticastDelegate", "index.html#autotoc_md32", null ],
-          [ "Delegate", "index.html#autotoc_md33", null ]
+        [ "Init your game environment", "index.html#autotoc_md12", [
+          [ "Initer", "index.html#autotoc_md13", null ]
         ] ],
-        [ "World variables", "index.html#autotoc_md35", null ],
-        [ "Widget reflector", "index.html#autotoc_md37", null ],
-        [ "Input actions", "index.html#autotoc_md39", null ],
-        [ "Text", "index.html#autotoc_md41", null ],
-        [ "Using OpenGL wrappers", "index.html#autotoc_md43", null ]
+        [ "Write your shader", "index.html#autotoc_md15", null ],
+        [ "Shader-program", "index.html#autotoc_md17", null ],
+        [ "Textures", "index.html#autotoc_md19", [
+          [ "Transparent background", "index.html#autotoc_md20", null ],
+          [ "Calculate correct texture size", "index.html#autotoc_md21", null ],
+          [ "Texture rect", "index.html#autotoc_md22", null ]
+        ] ],
+        [ "First widget", "index.html#autotoc_md24", null ],
+        [ "Main Loop", "index.html#autotoc_md26", null ],
+        [ "Updateable Collector", "index.html#autotoc_md28", null ],
+        [ "Timers", "index.html#autotoc_md30", null ],
+        [ "Keyboard", "index.html#autotoc_md32", null ],
+        [ "Mouse", "index.html#autotoc_md34", null ],
+        [ "Delegates", "index.html#autotoc_md36", [
+          [ "LambdaDelegate", "index.html#autotoc_md37", null ],
+          [ "LambdaMulticastDelegate", "index.html#autotoc_md38", null ],
+          [ "Delegate", "index.html#autotoc_md39", null ]
+        ] ],
+        [ "World variables", "index.html#autotoc_md41", null ],
+        [ "Widget reflector", "index.html#autotoc_md43", null ],
+        [ "Input actions", "index.html#autotoc_md45", null ],
+        [ "Text", "index.html#autotoc_md47", null ],
+        [ "Using OpenGL wrappers", "index.html#autotoc_md49", null ],
+        [ "Coordinate System", "index.html#autotoc_md51", null ]
       ] ],
-      [ "💭 What in the future?", "index.html#autotoc_md44", null ],
-      [ "📞 Feedback & Contacts", "index.html#autotoc_md46", null ]
+      [ "💭 What in the future?", "index.html#autotoc_md52", null ],
+      [ "📞 Feedback & Contacts", "index.html#autotoc_md54", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -79,7 +87,8 @@ var NAVTREE =
         [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
-        [ "Enumerations", "functions_enum.html", null ]
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Related Symbols", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -95,10 +104,10 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_copyable_and_moveable_8h.html",
-"class_image.html#aadf22a378598ecc93de197b4a6a0a753",
-"class_timer.html#a9020542d73357a4eef512eefaf57524b",
-"index.html#autotoc_md16"
+"_color_8h.html",
+"class_gl_1_1_texture.html#afb25ed64d375b7fed86b87d91d045a61a6adf97f83acf6453d4a6a4b1070f3754",
+"class_shader_program.html#aced0669c0c6d295ff56c239e8753a58b",
+"dir_8ac2bb21c4ca9302f365bfbb87d79534.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

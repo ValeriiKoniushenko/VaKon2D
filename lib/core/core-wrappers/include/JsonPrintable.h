@@ -28,5 +28,5 @@
 class JsonPrintable
 {
 public:
-	_NODISCARD virtual boost::property_tree::ptree toJson() const = 0;
+	[[nodiscard]] virtual boost::property_tree::ptree toJson() const = 0;
 };

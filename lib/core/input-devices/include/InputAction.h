@@ -47,7 +47,7 @@ public:
 	{
 	}
 
-	_NODISCARD const std::string& getName() const
+	[[nodiscard]] const std::string& getName() const
 	{
 		return name_;
 	}
@@ -62,12 +62,12 @@ public:
 		frequency_ = value;
 	}
 
-	_NODISCARD TimeT getFrequency() const
+	[[nodiscard]] TimeT getFrequency() const
 	{
 		return frequency_;
 	}
 
-	void update()
+	void update() override
 	{
 		if (isKeyPressed())
 		{
@@ -92,12 +92,12 @@ public:
 		key_ = key;
 	}
 
-	_NODISCARD Keyboard::Key getKey() const
+	[[nodiscard]] Keyboard::Key getKey() const
 	{
 		return key_;
 	}
 
-	_NODISCARD bool getIsRepeatable() const
+	[[nodiscard]] bool getIsRepeatable() const
 	{
 		return isRepeatable_;
 	}
@@ -110,7 +110,7 @@ public:
 	LambdaMulticastDelegate<void()> onAction;
 
 protected:
-	_NODISCARD virtual bool isKeyPressed() const = 0;
+	[[nodiscard]] virtual bool isKeyPressed() const = 0;
 
 protected:
 	std::string name_;
@@ -127,7 +127,7 @@ public:
 	explicit KeyboardInputAction(const std::string& name, Keyboard::Key key);
 
 protected:
-	_NODISCARD bool isKeyPressed() const override;
+	[[nodiscard]] bool isKeyPressed() const override;
 };
 
 class MouseInputAction : public InputAction<Mouse::Key>
@@ -136,5 +136,5 @@ public:
 	explicit MouseInputAction(const std::string& name, Mouse::Key key);
 
 protected:
-	_NODISCARD bool isKeyPressed() const override;
+	[[nodiscard]] bool isKeyPressed() const override;
 };

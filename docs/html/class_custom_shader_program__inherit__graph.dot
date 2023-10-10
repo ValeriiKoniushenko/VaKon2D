@@ -8,5 +8,5 @@ digraph "CustomShaderProgram"
   Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="ShaderProgram",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_shader_program.html",tooltip=" "];
   Node3 -> Node2 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="Utils::NotCopyableAndNot\lMovable",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_utils_1_1_not_copyable_and_not_movable.html",tooltip=" "];
+  Node3 [id="Node000003",label="Utils::NotCopyableButMovable",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_utils_1_1_not_copyable_but_movable.html",tooltip=" "];
 }

@@ -4,7 +4,7 @@ var searchData=
   ['wascreated_1',['wasCreated',['../class_shader_program.html#a6723c3585560fa5cfc469d7f21ff0d0c',1,'ShaderProgram']]],
   ['wasgenerated_2',['wasGenerated',['../class_texture.html#ab1abc993cbfba4e547dbf07b9963ba05',1,'Texture']]],
   ['waslinked_3',['wasLinked',['../class_shader_program.html#adb9dccc4b80e484f05804d8b11afc59b',1,'ShaderProgram']]],
-  ['widget_4',['Widget',['../class_widget.html',1,'Widget'],['../class_widget.html#ab0f05949f1fa8ca233137fc4119c7401',1,'Widget::Widget()']]],
+  ['widget_4',['Widget',['../class_widget.html',1,'Widget'],['../class_widget.html#ab0f05949f1fa8ca233137fc4119c7401',1,'Widget::Widget()'],['../class_widget.html#ac8e51caf8e88a05d421954787b438ba2',1,'Widget::Widget(Widget &amp;&amp;other) noexcept']]],
   ['widget_2ecpp_5',['Widget.cpp',['../_widget_8cpp.html',1,'']]],
   ['widget_2eh_6',['Widget.h',['../_widget_8h.html',1,'']]],
   ['widgetcollector_7',['WidgetCollector',['../class_widget_collector.html',1,'']]],
@@ -18,11 +18,12 @@ var searchData=
   ['window_15',['window',['../class_window.html#a9957db4afdad3d57e5c5b6626b44b6d0',1,'Window']]],
   ['window_2ecpp_16',['Window.cpp',['../_window_8cpp.html',1,'']]],
   ['window_2eh_17',['Window.h',['../_window_8h.html',1,'']]],
-  ['world_18',['World',['../class_world.html',1,'']]],
-  ['world_2ecpp_19',['World.cpp',['../_world_8cpp.html',1,'']]],
-  ['world_2eh_20',['World.h',['../_world_8h.html',1,'']]],
-  ['worldvariables_21',['WorldVariables',['../class_world_variables.html',1,'']]],
-  ['worldvariables_2ecpp_22',['WorldVariables.cpp',['../_world_variables_8cpp.html',1,'']]],
-  ['worldvariables_2eh_23',['WorldVariables.h',['../_world_variables_8h.html',1,'']]],
-  ['wrap_24',['Wrap',['../class_gl_1_1_texture.html#a141ede84077cf1d1e73a5d05a0e3bd47',1,'Gl::Texture']]]
+  ['windowsize_18',['windowSize',['../struct_initer_1_1_data.html#a3b3efb5a56ad6d43a2d416d34f00657e',1,'Initer::Data']]],
+  ['world_19',['World',['../class_world.html',1,'']]],
+  ['world_2ecpp_20',['World.cpp',['../_world_8cpp.html',1,'']]],
+  ['world_2eh_21',['World.h',['../_world_8h.html',1,'']]],
+  ['worldvariables_22',['WorldVariables',['../class_world_variables.html',1,'']]],
+  ['worldvariables_2ecpp_23',['WorldVariables.cpp',['../_world_variables_8cpp.html',1,'']]],
+  ['worldvariables_2eh_24',['WorldVariables.h',['../_world_variables_8h.html',1,'']]],
+  ['wrap_25',['Wrap',['../class_gl_1_1_texture.html#a141ede84077cf1d1e73a5d05a0e3bd47',1,'Gl::Texture']]]
 ];

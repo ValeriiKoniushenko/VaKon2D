@@ -1,6 +1,7 @@
 var namespace_utils =
 [
     [ "CopyableAndMoveable", "class_utils_1_1_copyable_and_moveable.html", "class_utils_1_1_copyable_and_moveable" ],
+    [ "CopyableButNotMoveable", "class_utils_1_1_copyable_but_not_moveable.html", "class_utils_1_1_copyable_but_not_moveable" ],
     [ "NotCopyableAndNotMovable", "class_utils_1_1_not_copyable_and_not_movable.html", "class_utils_1_1_not_copyable_and_not_movable" ],
     [ "NotCopyableButMovable", "class_utils_1_1_not_copyable_but_movable.html", "class_utils_1_1_not_copyable_but_movable" ],
     [ "Rect", "struct_utils_1_1_rect.html", "struct_utils_1_1_rect" ],
@@ -20,6 +21,7 @@ var namespace_utils =
     [ "getFileContent", "namespace_utils.html#a2d74380613b3476e9a37f6c90f621a78", null ],
     [ "isEqual", "namespace_utils.html#aada1f1d5896ad9952b86088c2f374764", null ],
     [ "isZero", "namespace_utils.html#ad1d64f8fa3f338df62994f318dfda9e9", null ],
+    [ "jsonToString", "namespace_utils.html#a8ad96317221c0ff7127fb8fd66095d99", null ],
     [ "readFile", "namespace_utils.html#ab87d6f2eb65d583b706df37ac67c12c7", null ],
     [ "setFileContent", "namespace_utils.html#afa4e16661ce2e7e179ef413d50a1c07d", null ],
     [ "setFileContent", "namespace_utils.html#ab74a463c922fbf79205a2dadf345a253", null ]

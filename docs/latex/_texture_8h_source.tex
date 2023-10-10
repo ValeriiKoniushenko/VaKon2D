@@ -48,15 +48,15 @@
 \DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_a4b85391c6e54686ec566ba38c62dde98}{bind}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_a451d7afac3848417bb1007d39ee7d545}{unbind}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_a9885329fec4191d5a7aee3d198519ea9}{destroy}}();}
-\DoxyCodeLine{00047\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_texture_ab1abc993cbfba4e547dbf07b9963ba05}{wasGenerated}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00048\ \ \ \ \ \_NODISCARD\ GLuint\ \mbox{\hyperlink{class_texture_a738b62dc94d3c3e79fff6c78dd415f50}{data}}();}
+\DoxyCodeLine{00047\ \ \ \ \ \[[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_texture_ab1abc993cbfba4e547dbf07b9963ba05}{wasGenerated}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ \ \ \ \ \[[nodiscard]]\ GLuint\ \mbox{\hyperlink{class_texture_a738b62dc94d3c3e79fff6c78dd415f50}{data}}();}
 \DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_afc973f7a51a79e94f0c62a14b5114ac4}{generateMipMap}}();}
 \DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_texture_a777f84aa9412503b0b174d66cbe86d24}{isDestroyAtEnd}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ \ \ \ \ \[[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_texture_a777f84aa9412503b0b174d66cbe86d24}{isDestroyAtEnd}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_ae46ea7f5c008c33c8439d29c00cfd49f}{setIsDestroyAtEnd}}(\textcolor{keywordtype}{bool}\ is);}
 \DoxyCodeLine{00053\ }
 \DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_aa3b69503543f1461d1b456d4a7fab59b}{setImage}}(\mbox{\hyperlink{class_image}{Image}}\&\ image);}
-\DoxyCodeLine{00055\ \ \ \ \ \_NODISCARD\ \mbox{\hyperlink{class_image}{Image}}*\ \mbox{\hyperlink{class_texture_a004040362c76669414d46098352329c1}{getImage}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \[[nodiscard]]\ \mbox{\hyperlink{class_image}{Image}}*\ \mbox{\hyperlink{class_texture_a004040362c76669414d46098352329c1}{getImage}}();}
 \DoxyCodeLine{00056\ }
 \DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_a76c918bb7c12179f26d2d745c486d94d}{ignoreMipMapGeneration}}(\textcolor{keywordtype}{bool}\ ignore);}
 \DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_ae77b7b64b0ffdd3a5f1a5834cb64e4d5}{loadToGpu}}();}
@@ -64,12 +64,12 @@
 \DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_a7c84027028fe1ca0c546118d89caade4}{setMagAndMinFilter}}(\mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2}{Gl::Texture::MagFilter}}\ magFilter,\ \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}{Gl::Texture::MinFilter}}\ minFilter);}
 \DoxyCodeLine{00061\ }
 \DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_a345a432339c7c9c8aec9f90dbff0c6c7}{setMagFilter}}(\mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2}{Gl::Texture::MagFilter}}\ filter);}
-\DoxyCodeLine{00063\ \ \ \ \ \_NODISCARD\ \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2}{Gl::Texture::MagFilter}}\ \mbox{\hyperlink{class_texture_a527a0db1313f53683285d32f0ca70ce6}{getMagFilter}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ \ \ \ \ \[[nodiscard]]\ \mbox{\hyperlink{class_gl_1_1_texture_a450982982a0ea4f5f5618ffe2ad921d2}{Gl::Texture::MagFilter}}\ \mbox{\hyperlink{class_texture_a527a0db1313f53683285d32f0ca70ce6}{getMagFilter}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00064\ }
 \DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_abf486b492602d4c1e7b07fbde15fc529}{setMinFilter}}(\mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}{Gl::Texture::MinFilter}}\ filter);}
-\DoxyCodeLine{00066\ \ \ \ \ \_NODISCARD\ \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}{Gl::Texture::MinFilter}}\ \mbox{\hyperlink{class_texture_a1c5e98bea9a687c9ab273ffe86bdc2ed}{getMinFilter}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ \ \ \ \ \[[nodiscard]]\ \mbox{\hyperlink{class_gl_1_1_texture_afb25ed64d375b7fed86b87d91d045a61}{Gl::Texture::MinFilter}}\ \mbox{\hyperlink{class_texture_a1c5e98bea9a687c9ab273ffe86bdc2ed}{getMinFilter}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00067\ }
-\DoxyCodeLine{00068\ \ \ \ \ \_NODISCARD\ std::string\ \mbox{\hyperlink{class_texture_addc57f2fbd865359a644291b828ddfb7}{getName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00068\ \ \ \ \ \[[nodiscard]]\ std::string\ \mbox{\hyperlink{class_texture_addc57f2fbd865359a644291b828ddfb7}{getName}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00069\ }
 \DoxyCodeLine{00070\ \textcolor{keyword}{private}:}
 \DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ generate();}

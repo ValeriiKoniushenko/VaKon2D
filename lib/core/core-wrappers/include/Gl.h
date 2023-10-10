@@ -96,10 +96,10 @@ public:
 			Geometry = GL_GEOMETRY_SHADER,
 			Vertex = GL_VERTEX_SHADER
 		};
-		_NODISCARD static GLuint create(Type type);
-		_NODISCARD static GLuint createAndLoadShaderFromFile(const std::filesystem::path& path, Type type);
-		_NODISCARD static GLint getShaderiv(GLuint shader, GLenum pname);
-		_NODISCARD static std::string getShaderInfoLog(GLuint shader);
+		[[nodiscard]] static GLuint create(Type type);
+		[[nodiscard]] static GLuint createAndLoadShaderFromFile(const std::filesystem::path& path, Type type);
+		[[nodiscard]] static GLint getShaderiv(GLuint shader, GLenum pname);
+		[[nodiscard]] static std::string getShaderInfoLog(GLuint shader);
 		static void deleteShader(GLuint shader);
 		static void compile(GLuint shader);
 		static void source(GLuint shader, const char* sources);
@@ -114,14 +114,14 @@ public:
 	public:
 		inline static const GLuint invalidId = 0;
 
-		_NODISCARD static GLint getProgramiv(GLuint program, GLenum pname);
-		_NODISCARD static GLuint create();
+		[[nodiscard]] static GLint getProgramiv(GLuint program, GLenum pname);
+		[[nodiscard]] static GLuint create();
 		static void attachShader(GLuint program, GLuint shader);
 		static void link(GLuint program);
-		_NODISCARD static std::string getProgramInfoLog(GLuint program);
+		[[nodiscard]] static std::string getProgramInfoLog(GLuint program);
 		static void use(GLuint program);
 		static void deleteProgram(GLuint program);
-		_NODISCARD static GLint getUniformLocation(GLuint program, const std::string& name);
+		[[nodiscard]] static GLint getUniformLocation(GLuint program, const std::string& name);
 
 		static void uniform1f(GLint location, GLfloat v0);
 		static void uniform2f(GLint location, GLfloat v0, GLfloat v1);
@@ -216,12 +216,12 @@ public:
 			SRGBA = GL_SRGB_ALPHA
 		};
 
-		_NODISCARD static std::string channelToString(Channel channel);
+		[[nodiscard]] static std::string channelToString(Channel channel);
 
-		_NODISCARD static MagFilter stringToMagFilter(const std::string& filter);
-		_NODISCARD static MinFilter stringToMinFilter(const std::string& filter);
-		_NODISCARD static std::string magFilterToString(MagFilter filter);
-		_NODISCARD static std::string minFilterToString(MinFilter filter);
+		[[nodiscard]] static MagFilter stringToMagFilter(const std::string& filter);
+		[[nodiscard]] static MinFilter stringToMinFilter(const std::string& filter);
+		[[nodiscard]] static std::string magFilterToString(MagFilter filter);
+		[[nodiscard]] static std::string minFilterToString(MinFilter filter);
 
 		static void setMinFilter(MinFilter filter, Target target = Target::Texture2D);
 		static void setMagFilter(MagFilter filter, Target target = Target::Texture2D);
@@ -229,8 +229,8 @@ public:
 		static void setWrapT(Wrap wrap, Target target = Target::Texture2D);
 		static void setWrapR(Wrap wrap, Target target = Target::Texture2D);
 		static void active(GLenum num);
-		_NODISCARD static size_t getMaxCountActiveTextures();
-		_NODISCARD static GLuint generate();
+		[[nodiscard]] static size_t getMaxCountActiveTextures();
+		[[nodiscard]] static GLuint generate();
 		static void bind(Target target, GLuint texture);
 		static void texImage2D(Target target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border,
 			GLenum format, GLenum type, const void* pixels);

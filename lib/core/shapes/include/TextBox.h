@@ -34,7 +34,7 @@ class TextBox : public Widget
 {
 public:
 	inline static constexpr const char* componentName = "text-box";
-	_NODISCARD std::string getComponentName() const override;
+	[[nodiscard]] std::string getComponentName() const override;
 
 	void setText(const std::string& text);
 	void setFont(Font& font);

@@ -37,44 +37,45 @@
 #include FT_FREETYPE_H
 #include "Font.h"
 #include "Initer.h"
+#include "Rect.h"
 #include "ShaderPack.h"
 #include "TextBox.h"
 #include "UtilsFunctions.h"
-#include "Rect.h"
 
 #include <iostream>
 
-void VaKon2D::start() {
-    Initer::init({.glfwVersion = {3, 3}, .windowSize = {800, 600}, .title = "My game"});
+void VaKon2D::start()
+{
+	Initer::init({.glfwVersion = {3, 3}, .windowSize = {800, 600}, .title = "My game"});
 
-    GetWindow().viewport(0, 0, 800, 600);
+	GetWindow().viewport(0, 0, 800, 600);
 
-    ShaderPack shaderPack;
-    shaderPack.loadShaders("text", "assets/shaders/text.vert", "assets/shaders/text.frag");
-    shaderPack.loadShaders("widget", "assets/shaders/widget.vert", "assets/shaders/widget.frag");
+	ShaderPack shaderPack;
+	shaderPack.loadShaders("text", "assets/shaders/text.vert", "assets/shaders/text.frag");
+	shaderPack.loadShaders("widget", "assets/shaders/widget.vert", "assets/shaders/widget.frag");
 
-    Texture texture(Gl::Texture::Target::Texture2D, true, true);
-    Image image("assets/textures/clock.png");
-    image.setInternalChannel(Gl::Texture::Channel::SRGBA);
-    texture.setImage(image);
-    texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
+	Texture texture(Gl::Texture::Target::Texture2D, true, true);
+	Image image("assets/textures/clock.png");
+	image.setInternalChannel(Gl::Texture::Channel::SRGBA);
+	texture.setImage(image);
+	texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
 
-    Widget widget;
-    widget.setTexture(texture);
-    widget.setSize({32, 32});
-    widget.setTextureRect(Utils::IRect{{352, 0},
-                                       {32,  32}});
-    widget.move({100, 100});
+	Widget widget;
+	widget.setTexture(texture);
+	widget.setSize({32, 32});
+	widget.setTextureRect(Utils::IRect{{352, 0}, {32, 32}});
+	widget.move({100, 100});
 
-    while (!GetWindow().shouldClose()) {
-        GetWindow().clearColor({0.2f, 0.3f, 0.3f});
-        GetWindow().clear(GL_COLOR_BUFFER_BIT);
+	while (!GetWindow().shouldClose())
+	{
+		GetWindow().clearColor({0.2f, 0.3f, 0.3f});
+		GetWindow().clear(GL_COLOR_BUFFER_BIT);
 
-        widget.draw(shaderPack);
+		widget.draw(shaderPack);
 
-        GetUpdateableCollector().updateAll();
-        GetWorld().update();
-        GetWindow().swapBuffers();
-        GetWindow().pollEvent();
-    }
+		GetUpdateableCollector().updateAll();
+		GetWorld().update();
+		GetWindow().swapBuffers();
+		GetWindow().pollEvent();
+	}
 }

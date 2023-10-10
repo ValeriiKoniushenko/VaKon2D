@@ -41,13 +41,15 @@ CustomShaderProgram::CustomShaderProgram(const std::string& name, bool shouldCre
 }
 
 CustomShaderProgram::CustomShaderProgram(const std::string& name, Shader& frag, Shader& vert)
-	: ShaderProgram(frag, vert), name_(name)
+	: ShaderProgram(frag, vert)
+	, name_(name)
 {
 }
 
 CustomShaderProgram::CustomShaderProgram(
-	const std::string& name, std::filesystem::path pathToVertex, std::filesystem::path pathToFragment)
-	: ShaderProgram(true), name_(name)
+	const std::string& name, const std::filesystem::path& pathToVertex, const std::filesystem::path& pathToFragment)
+	: ShaderProgram(true)
+	, name_(name)
 {
 	Shader frag(pathToVertex, Gl::Shader::Type::Vertex);
 	Shader vert(pathToFragment, Gl::Shader::Type::Fragment);
