@@ -263,8 +263,9 @@ your CMake-game dependencies(```target_link_libraries(YouGameTarget PRIVATE Core
 and use class ```Image``` too(```#include "Image.h"```)
 
 ```c++
-Texture texture(Gl::Texture::Target::Texture2D, true, true);
 Image image("assets/textures/apple.png");
+
+Texture texture(Gl::Texture::Target::Texture2D, true, true);
 texture.setImage(image);
 texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
 ```
@@ -288,6 +289,17 @@ target_link_libraries(
 	Core-Wrappers
     ...
 )
+```
+
+#### Transparent background
+If you want to add a widget with a transparent background you must use ```SRGB```.
+```c++
+Image image("assets/textures/apple.png");
+image.setInternalChannel(Gl::Texture::Channel::SRGBA);
+
+Texture texture(Gl::Texture::Target::Texture2D, true, true);
+texture.setImage(image);
+texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilter::LinearMipmapLinear);
 ```
 
 ---
