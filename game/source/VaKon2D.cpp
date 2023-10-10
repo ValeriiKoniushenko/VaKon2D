@@ -45,7 +45,7 @@
 #include <iostream>
 
 void VaKon2D::start() {
-    initCore();
+    Initer::init({.glfwVersion = {3, 3}, .windowSize = {800, 600}, .title = "My game"});
 
     GetWindow().viewport(0, 0, 800, 600);
 
@@ -77,8 +77,4 @@ void VaKon2D::start() {
         GetWindow().swapBuffers();
         GetWindow().pollEvent();
     }
-}
-
-void VaKon2D::initCore() {
-    Initer::init({.glfwVersion = {3, 3}, .windowSize = {800, 600}, .title = "My game"});
 }
