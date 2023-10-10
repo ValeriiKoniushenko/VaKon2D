@@ -32,17 +32,19 @@ everywhere!
 >    2. [Write your shader](#write-your-shader)
 >    3. [Shader-program](#shader-program)
 >    4. [Textures](#textures)
+>       1. [Transparent background](#transparent-background)
 >    5. [First widget](#first-widget)
 >    6. [Main Loop](#main-loop)
->    7. [Timers](#timers)
->    8. [Keyboard](#keyboard)
->    9. [Mouse](#mouse)
->    10. [Delegate](#delegates)
->    11. [World Variables](#world-variables)
->    12. [Widget Reflector](#widget-reflector)
->    13. [Input Actions](#input-actions)
->    14. [Text](#text)
->    15. [Using OpenGL wrappers](#using-opengl-wrappers)
+>    7. [Updateable Collector](#updateable-collector)
+>    8. [Timers](#timers)
+>    9. [Keyboard](#keyboard)
+>    10. [Mouse](#mouse)
+>    11. [Delegate](#delegates)
+>    12. [World Variables](#world-variables)
+>    13. [Widget Reflector](#widget-reflector)
+>    14. [Input Actions](#input-actions)
+>    15. [Text](#text)
+>    16. [Using OpenGL wrappers](#using-opengl-wrappers)
 > 7. [What in the future?](#-what-in-the-future)
 > 8. [Feedback & Contacts](#-feedback--contacts)
 
@@ -360,7 +362,7 @@ while (!GetWindow().shouldClose())
 At the start of main loop, we should work while the window is open. After that need to clear background color and clear
 ```ColorBufferBit```.
 
-Also, don't forget to upate a widget's data. For that we use the function ```Widget::update```.
+Also, don't forget to update a widget's data. For that we use the function ```Widget::update```.
 
 ```c++
 GetWindow().clearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -401,7 +403,24 @@ target_link_libraries(
 
 ---
 
+### Updateable Collector
+If you have a lot of widgets, and you don't want to update every of it you can use ```UpdateableCollector```. So, if you 
+create a widget it's automatically registering in the ```UpdateableCollector```. And everything you need it's to get ```UpdateableCollector``` 
+and to call ```UpdateableCollector::updateAll()```.
+
+Example:
+```c++
+while (!GetWindow().shouldClose()) {
+    // ...
+    GetUpdateableCollector().updateAll();
+    // ...
+}
+```
+
+---
+
 ### Timers
+The timers help you to call some part of a code ad many times as you need.
 
 If you want work with timers you should add a target ```World``` to you ```target_link_libraries``` of a game. Example:
 
