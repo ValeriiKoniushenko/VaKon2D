@@ -95,6 +95,9 @@ public:
 	void calculateFitTextureSize();
 
 private:
+	void recalculateVerticiesData();
+
+private:
 	// clang-format off
     inline static const std::vector<float> templateVertices_ = {
             0.f, 0.f, 0.f, 1.f, 0, 0,

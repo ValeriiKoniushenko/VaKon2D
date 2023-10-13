@@ -35,6 +35,16 @@ struct Size2D
 {
 	T width{};
 	T height{};
+
+	[[nodiscard]] bool operator==(const Size2D<T>& other) const
+	{
+		return width == other.width && height == other.height;
+	}
+
+	[[nodiscard]] bool operator!=(const Size2D<T>& other) const
+	{
+		return width != other.width || height != other.height;
+	}
 };
 
 using DSize2D = Size2D<double>;

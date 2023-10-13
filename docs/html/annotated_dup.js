@@ -19,6 +19,7 @@ var annotated_dup =
     [ "GladWrapper", "class_glad_wrapper.html", "class_glad_wrapper" ],
     [ "GlColor", "struct_gl_color.html", "struct_gl_color" ],
     [ "GlfwWrapper", "class_glfw_wrapper.html", "class_glfw_wrapper" ],
+    [ "IAnimation", "class_i_animation.html", "class_i_animation" ],
     [ "Image", "class_image.html", "class_image" ],
     [ "Initer", "class_initer.html", "class_initer" ],
     [ "InputAction", "class_input_action.html", "class_input_action" ],

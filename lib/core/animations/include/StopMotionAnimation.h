@@ -22,9 +22,42 @@
 
 #pragma once
 
-#include "CopyableAndMoveable.h"
+#include "IAnimation.h"
+#include "Rect.h"
+#include "glm/glm.hpp"
 
-class StopMotionAnimation : public Utils::CopyableAndMoveable
+#include <chrono>
+
+class Widget;
+
+class StopMotionAnimation : public IAnimation
 {
-	void f();
+public:
+	void singleShot() override;
+	void draw(ShaderPack& shaderPack) override;
+	void start() override;
+	void stop() override;
+	void pause() override;
+
+	void setupAnimation(const Utils::IRect& firstFrame, const Utils::IRect& lastFrame, Widget& widget);
+	void setFrameGap(const std::size_t& ms);
+	[[nodiscard]] std::size_t getFrameGap() const;
+
+	[[nodiscard]] std::size_t getFramesCount() const;
+
+private:
+	Widget* widget_ = nullptr;
+
+	std::size_t frameGap_{};	// ms
+
+	std::chrono::system_clock::time_point lastAnimatingFrame;
+
+	glm::ivec2 startPosition_{};
+	glm::ivec2 endPosition_{};
+	glm::ivec2 offsetPosition_{};
+	glm::ivec2 currentOffsetPosition_{};
+	std::size_t framesCount_{};
+	Utils::ISize2D textureSize_{};
+	Utils::IRect frameSize_{};
+	std::size_t currentFrame_{};
 };

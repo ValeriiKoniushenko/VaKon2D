@@ -23,15 +23,17 @@ digraph "Graphical Class Hierarchy"
   Node0 -> Node8 [id="edge34_Node000000_Node000008",dir="back",color="firebrick4",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="Font",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_font.html",tooltip=" "];
   Node0 -> Node9 [id="edge35_Node000000_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node9 [id="Node000009",label="LambdaDelegate\< F \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_lambda_delegate.html",tooltip=" "];
+  Node9 [id="Node000009",label="IAnimation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_i_animation.html",tooltip=" "];
   Node0 -> Node10 [id="edge36_Node000000_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node10 [id="Node000010",label="LambdaMulticastDelegate\< F \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_lambda_multicast_delegate.html",tooltip=" "];
+  Node10 [id="Node000010",label="LambdaDelegate\< F \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_lambda_delegate.html",tooltip=" "];
   Node0 -> Node11 [id="edge37_Node000000_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node11 [id="Node000011",label="StopMotionAnimation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_stop_motion_animation.html",tooltip=" "];
+  Node11 [id="Node000011",label="LambdaMulticastDelegate\< F \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_lambda_multicast_delegate.html",tooltip=" "];
   Node0 -> Node12 [id="edge38_Node000000_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="Timer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_timer.html",tooltip=" "];
+  Node12 [id="Node000012",label="StopMotionAnimation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_stop_motion_animation.html",tooltip=" "];
   Node0 -> Node13 [id="edge39_Node000000_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="Vao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_vao.html",tooltip=" "];
+  Node13 [id="Node000013",label="Timer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_timer.html",tooltip=" "];
   Node0 -> Node14 [id="edge40_Node000000_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="Vbo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_vbo.html",tooltip=" "];
+  Node14 [id="Node000014",label="Vao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_vao.html",tooltip=" "];
+  Node0 -> Node15 [id="edge41_Node000000_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="Vbo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_vbo.html",tooltip=" "];
 }

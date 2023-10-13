@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['r_0',['r',['../struct_gl_color.html#ac0d179424433f033ae215a09ea7a8f91',1,'GlColor::r'],['../struct_color.html#ab9a9c7134511f9b116a6fcc81a303ba6',1,'Color::r']]],
-  ['r_1',['R',['../class_keyboard.html#a79a4b804a620cfbf3acd672dae2fb7a1ae1e1d3d40573127e9ee0480caf1283d6',1,'Keyboard']]],
+  ['r_0',['R',['../class_keyboard.html#a79a4b804a620cfbf3acd672dae2fb7a1ae1e1d3d40573127e9ee0480caf1283d6',1,'Keyboard']]],
+  ['r_1',['r',['../struct_gl_color.html#ac0d179424433f033ae215a09ea7a8f91',1,'GlColor::r'],['../struct_color.html#ab9a9c7134511f9b116a6fcc81a303ba6',1,'Color::r']]],
   ['rcontrol_2',['RControl',['../class_keyboard.html#a79a4b804a620cfbf3acd672dae2fb7a1ab06196a3bdf600db4088d5ac34132d58',1,'Keyboard']]],
   ['readfile_3',['readFile',['../namespace_utils.html#ab87d6f2eb65d583b706df37ac67c12c7',1,'Utils']]],
   ['readme_2emd_4',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],

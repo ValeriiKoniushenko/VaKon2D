@@ -39,6 +39,7 @@
 #include "Initer.h"
 #include "Rect.h"
 #include "ShaderPack.h"
+#include "StopMotionAnimation.h"
 #include "TextBox.h"
 #include "UtilsFunctions.h"
 
@@ -63,15 +64,18 @@ void VaKon2D::start()
 	Widget widget;
 	widget.setTexture(texture);
 	widget.setSize({32, 32});
-	widget.setTextureRect(Utils::IRect{{352, 0}, {32, 32}});
 	widget.move({100, 100});
+
+	StopMotionAnimation animation;
+	animation.setupAnimation({{0, 0}, {32, 32}}, {{544, 0}, {32, 32}}, widget);
+	animation.setFrameGap(100);
 
 	while (!GetWindow().shouldClose())
 	{
 		GetWindow().clearColor({0.2f, 0.3f, 0.3f});
 		GetWindow().clear(GL_COLOR_BUFFER_BIT);
 
-		widget.draw(shaderPack);
+		animation.draw(shaderPack);
 
 		GetUpdateableCollector().updateAll();
 		GetWorld().update();

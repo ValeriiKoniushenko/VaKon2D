@@ -11,6 +11,7 @@ var hierarchy =
       [ "LambdaMulticastDelegate< void(double, double)>", "class_lambda_multicast_delegate.html", null ],
       [ "Delegate< T, CallbackT >", "class_delegate.html", null ],
       [ "Font", "class_font.html", null ],
+      [ "IAnimation", "class_i_animation.html", null ],
       [ "LambdaDelegate< F >", "class_lambda_delegate.html", null ],
       [ "LambdaMulticastDelegate< F >", "class_lambda_multicast_delegate.html", null ],
       [ "StopMotionAnimation", "class_stop_motion_animation.html", null ],

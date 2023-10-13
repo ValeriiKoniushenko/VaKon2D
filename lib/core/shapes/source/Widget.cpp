@@ -50,6 +50,8 @@ void Widget::draw(ShaderPack &shaderPack) {
         }
     }
 
+	recalculateVerticiesData();
+
     auto &shaderProgram = shaderPack["widget"];
     vao_.bind();
     if (texture_) {
@@ -103,32 +105,7 @@ Texture &Widget::getTexture() {
 void Widget::prepare(ShaderPack &shader) {
     shader["widget"].use();
 
-    if (!vbo_.isGenerated()) {
-        vbo_.generate();
-    }
-
-    std::vector<float> vertices = templateVertices_;
-    vertices.at(7) *= size_.height * 2.f * scale_.height;   // TODO: refactor it
-    vertices.at(12) *= size_.width * 2.f * scale_.width;     // TODO: refactor it
-    vertices.at(18) *= size_.width * 2.f * scale_.width;    // TODO: refactor it
-    vertices.at(19) *= size_.height * 2.f * scale_.height;  // TODO: refactor it
-
-    vertices.at(3) *= textureRect_.size.height;
-    vertices.at(14) *= textureRect_.size.width;
-    vertices.at(15) *= textureRect_.size.height;
-    vertices.at(20) *= textureRect_.size.width;
-
-    vertices.at(4) = textureRect_.position.x;
-    vertices.at(5) = textureRect_.position.y;
-    vertices.at(10) = textureRect_.position.x;
-    vertices.at(11) = textureRect_.position.y;
-    vertices.at(16) = textureRect_.position.x;
-    vertices.at(17) = textureRect_.position.y;
-    vertices.at(22) = textureRect_.position.x;
-    vertices.at(23) = textureRect_.position.y;
-
-    vbo_.bind();
-    vbo_.data(vertices);
+    recalculateVerticiesData();
 
     if (!vao_.isGenerated()) {
         vao_.generate();
@@ -292,4 +269,34 @@ void Widget::calculateFitTextureSize() {
         size_.width = size.x;
         size_.height = size.y;
     }
+}
+
+void Widget::recalculateVerticiesData()
+{
+	if (!vbo_.isGenerated()) {
+		vbo_.generate();
+	}
+
+	std::vector<float> vertices = templateVertices_;
+	vertices.at(7) *= size_.height * 2.f * scale_.height;   // TODO: refactor it
+	vertices.at(12) *= size_.width * 2.f * scale_.width;    // TODO: refactor it
+	vertices.at(18) *= size_.width * 2.f * scale_.width;    // TODO: refactor it
+	vertices.at(19) *= size_.height * 2.f * scale_.height;  // TODO: refactor it
+
+	vertices.at(3) *= textureRect_.size.height;
+	vertices.at(14) *= textureRect_.size.width;
+	vertices.at(15) *= textureRect_.size.height;
+	vertices.at(20) *= textureRect_.size.width;
+
+	vertices.at(4) = textureRect_.position.x;
+	vertices.at(5) = textureRect_.position.y;
+	vertices.at(10) = textureRect_.position.x;
+	vertices.at(11) = textureRect_.position.y;
+	vertices.at(16) = textureRect_.position.x;
+	vertices.at(17) = textureRect_.position.y;
+	vertices.at(22) = textureRect_.position.x;
+	vertices.at(23) = textureRect_.position.y;
+
+	vbo_.bind();
+	vbo_.data(vertices);
 }

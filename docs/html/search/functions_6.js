@@ -2,8 +2,8 @@ var searchData=
 [
   ['generate_0',['generate',['../class_gl_1_1_vao.html#a7e06fa0c4fe006ae02cf26a84e213363',1,'Gl::Vao::generate()'],['../class_gl_1_1_vbo.html#a839aef071042a02d3c6b686e52489cda',1,'Gl::Vbo::generate()'],['../class_gl_1_1_texture.html#a33ba79574900a3817e0a4613e35e13e1',1,'Gl::Texture::generate()'],['../class_vao.html#a65b51778197c231e8b9262af1d84f87b',1,'Vao::generate()'],['../class_vbo.html#ae7f9013a2ad3e0d317bf273cd29f0425',1,'Vbo::generate()']]],
   ['generateface_1',['generateFace',['../class_free_type_library.html#aaf778a97a33e72852610cc9837966179',1,'FreeTypeLibrary']]],
-  ['generatemipmap_2',['generateMipmap',['../class_gl_1_1_texture.html#a3f8e713fcc80f9cf1248ceb3399ba086',1,'Gl::Texture']]],
-  ['generatemipmap_3',['generateMipMap',['../class_texture.html#afc973f7a51a79e94f0c62a14b5114ac4',1,'Texture']]],
+  ['generatemipmap_2',['generateMipMap',['../class_texture.html#afc973f7a51a79e94f0c62a14b5114ac4',1,'Texture']]],
+  ['generatemipmap_3',['generateMipmap',['../class_gl_1_1_texture.html#a3f8e713fcc80f9cf1248ceb3399ba086',1,'Gl::Texture']]],
   ['get_4',['get',['../class_shader_pack.html#a5ec38b5d06ab3e296c5250f2ee9eabc4',1,'ShaderPack::get(const std::string &amp;name)'],['../class_shader_pack.html#aec65424236e2825c4d153b6920ad5292',1,'ShaderPack::get(const std::string &amp;name) const'],['../class_world_variables.html#a64d3fe9abada9d9788875e066eba1aa9',1,'WorldVariables::get(const std::string &amp;key) const'],['../class_world_variables.html#a183b0dd6c0668d7d72ecc7fc4efb2d64',1,'WorldVariables::get(const std::string &amp;key)']]],
   ['getallsupportedwndsizes_5',['getAllSupportedWndSizes',['../namespace_utils.html#ace72a4e40e752a1f051123baf8552953',1,'Utils']]],
   ['getchannel_6',['getChannel',['../class_image.html#aadf22a378598ecc93de197b4a6a0a753',1,'Image']]],
