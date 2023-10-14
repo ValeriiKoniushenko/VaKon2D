@@ -52,6 +52,8 @@ Image& Image::operator=(Image&& obj) noexcept
 	this->width_ = obj.width_;
 	this->height_ = obj.height_;
 	this->channel_ = obj.channel_;
+	this->internalChannel_ = obj.internalChannel_;
+
 	obj.init_();
 	return *this;
 }
