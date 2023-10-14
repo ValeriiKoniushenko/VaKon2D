@@ -96,48 +96,95 @@ std::size_t StopMotionAnimation::getFramesCount() const
 	return framesCount_;
 }
 
-void StopMotionAnimation::singleShot()
-{
-}
-
 void StopMotionAnimation::draw(ShaderPack& shaderPack)
 {
-	if (!widget_)
+	if (!widget_ || state_ == State::Stopped)
 	{
 		return;
 	}
 
-	const auto cooldown = (std::chrono::system_clock::now() - lastAnimatingFrame).count() / 1000ll;
-	if (cooldown >= frameGap_)
+	if (state_ != State::Paused)
 	{
-		if (currentFrame_ >= framesCount_)
+		switch (mode_)
 		{
-			currentOffsetPosition_ = startPosition_;
-			currentFrame_ = 0;
+			case Mode::PingPong:
+			{
+				const auto cooldown = (std::chrono::system_clock::now() - lastAnimatingFrame).count() / 10000ll;
+				if (cooldown >= frameGap_)
+				{
+					if (direction_ == PingPongDirection::ToEnd)
+					{
+						currentOffsetPosition_ += offsetPosition_;
+						++currentFrame_;
+					}
+					else if (direction_ == PingPongDirection::ToStart)
+					{
+						currentOffsetPosition_ -= offsetPosition_;
+						--currentFrame_;
+					}
+
+					if (currentFrame_ >= framesCount_)
+					{
+						if (direction_ == PingPongDirection::ToEnd)
+						{
+							currentOffsetPosition_ = endPosition_;
+							currentFrame_ = framesCount_ - 1;
+							direction_ = PingPongDirection::ToStart;
+						}
+						else if (direction_ == PingPongDirection::ToStart)
+						{
+							currentOffsetPosition_ = startPosition_;
+							currentFrame_ = 0;
+							direction_ = PingPongDirection::ToEnd;
+						}
+					}
+
+					widget_->setTextureRect(Utils::IRect{currentOffsetPosition_, textureSize_});
+
+					lastAnimatingFrame = std::chrono::system_clock::now();
+				}
+				break;
+			}
+			case Mode::Repeating:
+			{
+				const auto cooldown = (std::chrono::system_clock::now() - lastAnimatingFrame).count() / 1000ll;
+				if (cooldown >= frameGap_)
+				{
+					if (currentFrame_ >= framesCount_)
+					{
+						currentOffsetPosition_ = startPosition_;
+						currentFrame_ = 0;
+					}
+
+					currentOffsetPosition_ += offsetPosition_;
+
+					++currentFrame_;
+
+					widget_->setTextureRect(Utils::IRect{currentOffsetPosition_, textureSize_});
+
+					lastAnimatingFrame = std::chrono::system_clock::now();
+				}
+				break;
+			}
 		}
-
-		currentOffsetPosition_ += offsetPosition_;
-
-		++currentFrame_;
-
-		widget_->setTextureRect(Utils::IRect{currentOffsetPosition_, textureSize_});
-
-		lastAnimatingFrame = std::chrono::system_clock::now();
 	}
 	widget_->draw(shaderPack);
 }
 
 void StopMotionAnimation::start()
 {
-	currentOffsetPosition_ = startPosition_;
+	state_ = State::Running;
 }
 
 void StopMotionAnimation::stop()
 {
+	currentOffsetPosition_ = startPosition_;
+	state_ = State::Stopped;
 }
 
 void StopMotionAnimation::pause()
 {
+	state_ = State::Paused;
 }
 
 void StopMotionAnimation::setFrameGap(const std::size_t& ms)

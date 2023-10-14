@@ -31,9 +31,29 @@ class ShaderPack;
 class IAnimation : public Utils::CopyableAndMoveable
 {
 public:
-	virtual void singleShot() = 0;
+	enum class Mode
+	{
+		None,
+		Repeating,
+		PingPong,
+		SingleShot
+	};
+	enum class State
+	{
+		Paused,
+		Stopped,
+		Running
+	};
+
+	virtual void setMode(Mode mode) { mode_ = mode; };
 	virtual void draw(ShaderPack& shaderPack) = 0;
 	virtual void start() = 0;
 	virtual void stop() = 0;
 	virtual void pause() = 0;
+	[[nodiscard]] State getState() const { return state_; };
+	[[nodiscard]] Mode getMode() const { return mode_; };
+
+protected:
+	State state_ = State::Stopped;
+	Mode mode_ = Mode::Repeating;
 };

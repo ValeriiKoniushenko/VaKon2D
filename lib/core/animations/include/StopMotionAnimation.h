@@ -33,7 +33,6 @@ class Widget;
 class StopMotionAnimation : public IAnimation
 {
 public:
-	void singleShot() override;
 	void draw(ShaderPack& shaderPack) override;
 	void start() override;
 	void stop() override;
@@ -42,7 +41,6 @@ public:
 	void setupAnimation(const Utils::IRect& firstFrame, const Utils::IRect& lastFrame, Widget& widget);
 	void setFrameGap(const std::size_t& ms);
 	[[nodiscard]] std::size_t getFrameGap() const;
-
 	[[nodiscard]] std::size_t getFramesCount() const;
 
 private:
@@ -60,4 +58,13 @@ private:
 	Utils::ISize2D textureSize_{};
 	Utils::IRect frameSize_{};
 	std::size_t currentFrame_{};
+
+	bool isSingleShot = false;
+
+	enum class PingPongDirection	// for ping-pong
+	{
+		ToEnd,
+		ToStart
+	};
+	PingPongDirection direction_ = PingPongDirection::ToEnd;
 };
