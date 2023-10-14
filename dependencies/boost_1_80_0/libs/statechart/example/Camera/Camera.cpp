@@ -10,8 +10,7 @@
 #include "Camera.hpp"
 #include "Configuring.hpp"
 #include "Shooting.hpp"
-
-
+#include "../../../../../../lib/core/camera/include/Camera.h"
 
 //////////////////////////////////////////////////////////////////////////////
 NotShooting::NotShooting()

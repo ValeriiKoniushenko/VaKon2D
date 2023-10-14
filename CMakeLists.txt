@@ -30,6 +30,7 @@ add_subdirectory(lib/glm)
 add_subdirectory(lib/misc)
 
 add_subdirectory(lib/core/animations)
+add_subdirectory(lib/core/camera)
 add_subdirectory(lib/core/core-wrappers)
 add_subdirectory(lib/core/delegate)
 add_subdirectory(lib/core/freetype-wrapper)
