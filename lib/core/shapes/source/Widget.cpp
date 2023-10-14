@@ -96,6 +96,12 @@ std::size_t Widget::getVerticesCount() const {
 void Widget::setTexture(Texture &texture) {
     isPrepared = false;
     texture_ = &texture;
+	if (texture.getImage())
+	{
+		auto size = texture.getImage()->getSize();
+		textureRect_.position = {};
+		textureRect_.size = { size.x, size.y };
+	}
 }
 
 Texture &Widget::getTexture() {
