@@ -446,6 +446,78 @@ target_link_libraries(
 
 ---
 
+### Stop-Motion Animations
+I have implemented a stop-motion animations for the Engine. So, you can easily use it.
+
+At first be sure that you connect needed CMake target to your game:
+```cmake
+# /game/CMakeLists.txt
+target_link_libraries(
+	VaKon2D PUBLIC
+    ...
+	Animations
+    ...
+)
+```
+
+And let's look at the simple example:
+```c++
+StopMotionAnimation animation;
+animation.setupAnimation({{0, 0}, {32, 32}}, {{544, 0}, {32, 32}}, widget);
+animation.setFrameGap(100);
+animation.setMode(IAnimation::Mode::Repeating);
+animation.start();
+
+while (!GetWindow().shouldClose())
+{
+    GetWindow().clearColor({0.2f, 0.3f, 0.3f});
+    GetWindow().clear(GL_COLOR_BUFFER_BIT);
+
+    animation.draw(shaderPack);
+
+    GetUpdateableCollector().updateAll();
+    GetWorld().update();
+    GetWindow().swapBuffers();
+    GetWindow().pollEvent();
+}
+```
+So, it was easy! Just create an instance of you ```StopMotionAnimation```. After that setup animation frame-set:
+```c++
+animation.setupAnimation(
+        {   // First frame
+            {0, 0}, // position of the first frame
+            {32, 32} // texture size of the first frame
+        }, 
+        {   // Last frame
+            {544, 0}, // position of the last frame
+            {32, 32}  // texture size of the last frame
+        }, 
+        widget);
+```
+
+After that you can set animation-mode: ```Repeating```, ```Ping-Pong```, ```Single-Shot```.
+- ```Repeating```: will be infinity repeat your animation from the start, to the end. After that, it's going to the start again.
+- ```Ping-Pong```: just simple ping-pong: going from start to end and again to the start.
+- ```Sing-Shot```: just one shot of the animation.
+
+Also, don't forget about ```frameGap```. It's how much time passed after every frame. Frame, not animation!
+Just set a value in ```ms``` using the next function ```StopMotionAnimation::setFrameGap(ms)```.
+
+And let's start it! Just call a function ```StopMotionAnimation::start()```.
+
+After that, don't forget to draw your animation:
+
+```c++
+while (!GetWindow().shouldClose())
+{
+    ...
+    animation.draw(shaderPack);
+    ...
+}
+```
+
+---
+
 ### Updateable Collector
 If you have a lot of widgets, and you don't want to update every of it you can use ```UpdateableCollector```. So, if you 
 create a widget it's automatically registering in the ```UpdateableCollector```. And everything you need it's to get ```UpdateableCollector``` 
