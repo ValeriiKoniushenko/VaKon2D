@@ -109,7 +109,7 @@ void StopMotionAnimation::draw(ShaderPack& shaderPack)
 		{
 			case Mode::PingPong:
 			{
-				const auto cooldown = (std::chrono::system_clock::now() - lastAnimatingFrame).count() / 10000ll;
+				const auto cooldown = (std::chrono::system_clock::now() - lastAnimatingFrame).count() / 10'000ll;
 				if (cooldown >= frameGap_)
 				{
 					if (direction_ == PingPongDirection::ToEnd)
@@ -147,13 +147,36 @@ void StopMotionAnimation::draw(ShaderPack& shaderPack)
 			}
 			case Mode::Repeating:
 			{
-				const auto cooldown = (std::chrono::system_clock::now() - lastAnimatingFrame).count() / 1000ll;
+				const auto cooldown = (std::chrono::system_clock::now() - lastAnimatingFrame).count() / 10'000ll;
 				if (cooldown >= frameGap_)
 				{
-					if (currentFrame_ >= framesCount_)
+					if (currentFrame_ >= framesCount_ - 1)
 					{
 						currentOffsetPosition_ = startPosition_;
 						currentFrame_ = 0;
+					}
+
+					currentOffsetPosition_ += offsetPosition_;
+
+					++currentFrame_;
+
+					widget_->setTextureRect(Utils::IRect{currentOffsetPosition_, textureSize_});
+
+					lastAnimatingFrame = std::chrono::system_clock::now();
+				}
+				break;
+			}
+			case Mode::SingleShot:
+			{
+				const auto cooldown = (std::chrono::system_clock::now() - lastAnimatingFrame).count() / 10'000ll;
+				if (cooldown >= frameGap_)
+				{
+					if (currentFrame_ >= framesCount_ - 1)
+					{
+						currentOffsetPosition_ = endPosition_;
+						widget_->setTextureRect(Utils::IRect{currentOffsetPosition_, textureSize_});
+						currentFrame_ = framesCount_;
+						break;
 					}
 
 					currentOffsetPosition_ += offsetPosition_;

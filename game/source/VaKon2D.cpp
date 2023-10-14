@@ -69,7 +69,7 @@ void VaKon2D::start()
 	StopMotionAnimation animation;
 	animation.setupAnimation({{0, 0}, {32, 32}}, {{544, 0}, {32, 32}}, widget);
 	animation.setFrameGap(100);
-	animation.setMode(IAnimation::Mode::PingPong);
+	animation.setMode(IAnimation::Mode::Repeating);
 	animation.start();
 
 	while (!GetWindow().shouldClose())
