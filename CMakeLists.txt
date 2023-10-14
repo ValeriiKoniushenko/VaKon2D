@@ -15,7 +15,6 @@ if (DEFINED CMAKE_BUILD_TYPE)
     endif ()
 endif ()
 
-add_subdirectory(game)
 add_subdirectory(tests)
 add_subdirectory(benchmark)
 
