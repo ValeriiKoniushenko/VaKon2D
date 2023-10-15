@@ -55,5 +55,15 @@ void Camera::update()
 
 void Camera::zoom(float factor)
 {
+	zoomFactor_ += factor;
+}
+
+void Camera::setZoom(float factor)
+{
 	zoomFactor_ = factor;
+}
+
+float Camera::getZoom() const
+{
+	return zoomFactor_;
 }

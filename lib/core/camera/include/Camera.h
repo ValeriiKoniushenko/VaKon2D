@@ -40,6 +40,8 @@ public:
 	void update() override;
 
 	void zoom(float factor);
+	void setZoom(float factor);
+	[[nodiscard]] float getZoom() const;
 
 private:
 	Utils::ISize2D size_;

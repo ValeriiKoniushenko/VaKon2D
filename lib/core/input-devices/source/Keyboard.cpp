@@ -142,13 +142,13 @@ Keyboard::Key Keyboard::stringToKey(const std::string& key)
 	{
 		return Key::Space;
 	}
-	else if (key == "Prior")
+	else if (key == "PgDown")
 	{
-		return Key::Prior;
+		return Key::PgDown;
 	}
-	else if (key == "Next")
+	else if (key == "PgUp")
 	{
-		return Key::Next;
+		return Key::PgUp;
 	}
 	else if (key == "End")
 	{

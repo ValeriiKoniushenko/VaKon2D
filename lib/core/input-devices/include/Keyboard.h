@@ -60,8 +60,6 @@ public:
 		Z = 'Z',
 		Esc = VK_ESCAPE,
 		Space = VK_SPACE,
-		Prior = VK_PRIOR,
-		Next = VK_NEXT,
 		End = VK_END,
 		Home = VK_HOME,
 		Left = VK_LEFT,
@@ -122,7 +120,9 @@ public:
 		LMenu = VK_LMENU,
 		RMenu = VK_RMENU,
 		Back = VK_BACK,
-		Tab = VK_TAB
+		Tab = VK_TAB,
+		PgUp = VK_PRIOR,
+		PgDown = VK_NEXT,
 	};
 
 	static Key stringToKey(const std::string& key);
