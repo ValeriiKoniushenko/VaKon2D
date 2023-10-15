@@ -80,7 +80,7 @@ void TextBox::prepare(ShaderPack &shader) {
     }
 }
 
-void TextBox::draw(ShaderPack &shaderProgram) {
+void TextBox::draw(ShaderPack &shaderProgram, Camera* camera) {
     Widget::draw(shaderProgram);
 
     for (auto &lineText: rows_) {

@@ -118,7 +118,7 @@ void LineText::prepare(ShaderPack& shader)
 	Gl::Vao::vertexAttribPointer(1, 2, Gl::Type::Float, false, 4 * sizeof(float), reinterpret_cast<void*>(2 * sizeof(float)));
 }
 
-void LineText::draw(ShaderPack& shaderPack)
+void LineText::draw(ShaderPack& shaderPack, Camera* camera/* = nullptr*/)
 {
 	Widget::draw(shaderPack);
 

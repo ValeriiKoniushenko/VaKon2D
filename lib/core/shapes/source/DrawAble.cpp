@@ -21,10 +21,11 @@
 // SOFTWARE.
 
 #include "DrawAble.h"
+#include "Camera.h"
 
 #include "Gl.h"
 
-void DrawAble::draw(ShaderPack& shaderPack)
+void DrawAble::draw(ShaderPack& shaderPack, Camera* camera/* = nullptr*/)
 {
 	Gl::drawArrays(GL_TRIANGLE_STRIP, 0, getVerticesCount());
 }

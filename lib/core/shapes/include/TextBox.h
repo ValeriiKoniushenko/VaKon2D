@@ -39,7 +39,7 @@ public:
 	void setText(const std::string& text);
 	void setFont(Font& font);
 	void prepare(ShaderPack& shader) override;
-	void draw(ShaderPack& shaderProgram) override;
+	void draw(ShaderPack& shaderProgram, Camera* camera = nullptr) override;
 
 private:
 	Font* font_ = nullptr;

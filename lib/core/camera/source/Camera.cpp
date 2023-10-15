@@ -50,12 +50,13 @@ const glm::ivec2& Camera::getPosition() const
 
 void Camera::update()
 {
-	GetWindow().viewport(-position_.x, position_.y, size_.width * zoomFactor_, size_.height * zoomFactor_);
 }
 
 void Camera::zoom(float factor)
 {
 	zoomFactor_ += factor;
+	if (zoomFactor_ <= 0.001)
+		zoomFactor_ = 0.001;
 }
 
 void Camera::setZoom(float factor)

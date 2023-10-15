@@ -27,10 +27,12 @@
 
 #include <cstdlib>
 
+class Camera;
+
 class DrawAble
 {
 public:
-	virtual void draw(ShaderPack& shaderProgram);
+	virtual void draw(ShaderPack& shaderProgram, Camera* camera = nullptr);
 	[[nodiscard]] virtual std::size_t getVerticesCount() const;
 
 	void setPosition(const glm::vec2& newPosition);

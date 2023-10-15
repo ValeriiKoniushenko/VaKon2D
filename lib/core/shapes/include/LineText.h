@@ -61,7 +61,7 @@ public:
 
 	void prepare(ShaderPack& shader) override;
 
-	void draw(ShaderPack& shader) override;
+	void draw(ShaderPack& shader, Camera* camera = nullptr) override;
 
 	[[nodiscard]] boost::property_tree::ptree toJson() const override;
 	[[nodiscard]] std::string getComponentName() const override;

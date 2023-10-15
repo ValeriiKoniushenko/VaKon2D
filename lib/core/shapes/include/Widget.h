@@ -52,7 +52,7 @@ public:
 
 	~Widget() override;
 
-	void draw(ShaderPack& shaderProgram) override;
+	void draw(ShaderPack& shaderProgram, Camera* camera = nullptr) override;
 
 	[[nodiscard]] std::size_t getVerticesCount() const override;
 
