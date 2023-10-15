@@ -60,6 +60,8 @@ public:
 
 	[[nodiscard]] Texture& getTexture();
 
+	[[nodiscard]] const Texture& getTexture() const;
+
 	void setSize(Utils::FSize2D newSize);
 
 	[[nodiscard]] Utils::FSize2D getSize() const;
