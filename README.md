@@ -74,15 +74,11 @@ To start develop your own game you have to do the next steps:
 9. In the CMD run: ```cmake --build .```
 
 ### Step #2: writing a game
-
-1. After a successful build (previous point), you can write your own game
-2. Go to folder ```/game/```
-3. There you'll find three folder: ```assets```, ```include```, ```source```
-    1. What to store in the folder ```asset```: you can create your own directories to store your game data(i.e.
-       textures, audio files, shaders, etc.)
-    2. What to store in the folder ```include```: you can store your include files(.h/.hpp) for your own game
-    3. What to store in the folder ```source```: you can store your include files(.c/.cpp/.cxx) for your own game
-4. Put your sources into ```source``` directory and your headers to ```include``` directory
+After a successful build (previous point), you can write your own game
+1. At start create your own directory "Name-of-your-game"
+2. Put inside this directory all folder with an Engine
+3. After that, nearby to the Engine's folder create a folder with your game
+4. Connect it using CMake: just add ```VaKon2D``` like a subdirectory
 
 ### Step #3: getting binaries
 
