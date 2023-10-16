@@ -26,6 +26,7 @@
 void Camera::setSize(const Utils::ISize2D& size)
 {
 	size_ = size;
+	GetWindow().viewport(0,0, size.width, size.height);
 }
 
 const Utils::ISize2D& Camera::getSize() const

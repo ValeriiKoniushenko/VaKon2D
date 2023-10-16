@@ -22,13 +22,13 @@
 
 #include "Widget.h"
 
+#include "Camera.h"
 #include "Image.h"
 #include "Mouse.h"
 #include "Texture.h"
 #include "WidgetCollector.h"
 #include "Window.h"
 #include "WorldVariables.h"
-#include "Camera.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -44,7 +44,7 @@ Widget::~Widget()
 	getWidgetCollector().remove(this);
 }
 
-void Widget::draw(ShaderPack& shaderPack, Camera* camera/* = nullptr*/)
+void Widget::draw(ShaderPack& shaderPack, Camera* camera /* = nullptr*/)
 {
 	if (!isPrepared)
 	{
@@ -75,9 +75,9 @@ void Widget::draw(ShaderPack& shaderPack, Camera* camera/* = nullptr*/)
 	}
 
 	glm::mat4 trans = glm::mat4(1.0f);
-	auto translateOffset = glm::vec3(
-		fakePosition / glm::vec2(static_cast<float>(GetWindow().getSize().width) / 2.f,
-						static_cast<float>(GetWindow().getSize().height) / 2.f),0.f);
+	auto translateOffset = glm::vec3(fakePosition / glm::vec2(static_cast<float>(GetWindow().getSize().width) / 2.f,
+														static_cast<float>(GetWindow().getSize().height) / 2.f),
+		0.f);
 
 	trans = glm::translate(trans, translateOffset);
 	trans = glm::rotate(trans, rotation_, glm::vec3(0.0f, 0.0f, 1.0f));
@@ -86,6 +86,7 @@ void Widget::draw(ShaderPack& shaderPack, Camera* camera/* = nullptr*/)
 	shaderProgram.use();
 	shaderProgram.uniform("uHasTexture", static_cast<bool>(texture_));
 	shaderProgram.uniform("uTransform", false, trans);
+	shaderProgram.uniform("uCameraMatrix", false, trans);
 	shaderProgram.uniform(
 		"uResolution", static_cast<float>(GetWindow().getSize().width), static_cast<float>(GetWindow().getSize().height));
 	shaderProgram.uniform("uGamma", shaderProgram.lightning.gamma);
