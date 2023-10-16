@@ -26,6 +26,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <iostream>
 
 void Camera::setSize(const Utils::ISize2D& size)
 {
