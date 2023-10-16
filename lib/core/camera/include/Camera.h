@@ -33,9 +33,9 @@ public:
 	void setSize(const Utils::ISize2D& size);
 	[[nodiscard]] const Utils::ISize2D& getSize() const;
 
-	void setPosition(const glm::ivec2& position);
-	void move(const glm::ivec2& offset);
-	[[nodiscard]] const glm::ivec2& getPosition() const;
+	void setPosition(const glm::vec2& position);
+	void move(const glm::vec2& offset);
+	[[nodiscard]] const glm::vec2& getPosition() const;
 
 	void update() override;
 
@@ -43,8 +43,16 @@ public:
 	void setZoom(float factor);
 	[[nodiscard]] float getZoom() const;
 
+	void setOrigin(glm::vec2 origin);
+	[[nodiscard]] glm::vec2 getOrigin() const;
+
+	[[nodiscard]] glm::vec2 toGlobalCoordinates(glm::vec2 point) const;
+
+	[[nodiscard]] glm::mat4 generateMatrix(glm::vec2 windowSize) const;
+
 private:
 	Utils::ISize2D size_;
-	glm::ivec2 position_{};
+	glm::vec2 position_{};
 	float zoomFactor_ = 1.f;
+	glm::vec2 origin_ = {};
 };

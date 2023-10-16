@@ -23,6 +23,10 @@
 #include "Camera.h"
 #include "Window.h"
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 void Camera::setSize(const Utils::ISize2D& size)
 {
 	size_ = size;
@@ -34,17 +38,17 @@ const Utils::ISize2D& Camera::getSize() const
 	return size_;
 }
 
-void Camera::setPosition(const glm::ivec2& position)
+void Camera::setPosition(const glm::vec2& position)
 {
 	position_ = position;
 }
 
-void Camera::move(const glm::ivec2& offset)
+void Camera::move(const glm::vec2& offset)
 {
 	position_ += offset;
 }
 
-const glm::ivec2& Camera::getPosition() const
+const glm::vec2& Camera::getPosition() const
 {
 	return position_;
 }
@@ -68,4 +72,40 @@ void Camera::setZoom(float factor)
 float Camera::getZoom() const
 {
 	return zoomFactor_;
+}
+
+void Camera::setOrigin(glm::vec2 origin)
+{
+	origin_ = origin;
+}
+
+glm::vec2 Camera::getOrigin() const
+{
+	return origin_;
+}
+
+glm::mat4 Camera::generateMatrix(glm::vec2 windowSize) const
+{
+	auto matrix = glm::mat4(1.0);
+
+	glm::vec2 cameraPosition = glm::vec2(position_.x, position_.y);
+	cameraPosition = cameraPosition / windowSize;
+	cameraPosition.x = -cameraPosition.x;
+
+	glm::vec2 cameraOriginPosition = origin_;
+	cameraOriginPosition = cameraOriginPosition / windowSize;
+	cameraOriginPosition.y = -cameraOriginPosition.y;
+
+	matrix = glm::translate(matrix, glm::vec3(cameraPosition, 0.f));
+	matrix = glm::scale(matrix, glm::vec3(zoomFactor_, zoomFactor_, 1.f));
+	matrix = glm::translate(matrix, glm::vec3(cameraOriginPosition, 0.f));
+
+	return matrix;
+}
+
+glm::vec2 Camera::toGlobalCoordinates(glm::vec2 point) const
+{
+	point += position_;
+	point /= zoomFactor_;
+	return point;
 }

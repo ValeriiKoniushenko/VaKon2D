@@ -25,6 +25,7 @@
 #include "Gl.h"
 #include "Logger.h"
 #include "WorldVariables.h"
+#include "Camera.h"
 
 namespace
 {
@@ -112,6 +113,21 @@ HWND Window::getHwnd()
 Utils::ISize2D Window::getSize() const
 {
 	return size_;
+}
+
+void Window::setCamera(Camera& camera)
+{
+	camera_ = &camera;
+}
+
+Camera* Window::getCamera()
+{
+	return camera_;
+}
+
+const Camera* Window::getCamera() const
+{
+	return camera_;
 }
 
 Window& GetWindow()

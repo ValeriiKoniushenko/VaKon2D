@@ -22,4 +22,5 @@ target_link_libraries(
 	Logger
 	Core-Wrappers
 	World
+	Camera
 )

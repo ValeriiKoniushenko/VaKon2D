@@ -68,25 +68,24 @@ void Widget::draw(ShaderPack& shaderPack, Camera* camera /* = nullptr*/)
 		Gl::Texture::bind(Gl::Texture::Target::Texture2D, 0);
 	}
 
-	auto fakePosition = position_;
+	glm::mat4 cameraMatrix = glm::mat4(1.0f);
+	glm::vec2 windowSize = glm::vec2(static_cast<float>(GetWindow().getSize().width) / 2.f, static_cast<float>(GetWindow().getSize().height) / 2.f);
 	if (camera)
 	{
-		fakePosition += -camera->getPosition();
+		cameraMatrix = camera->generateMatrix(windowSize);
 	}
 
-	glm::mat4 trans = glm::mat4(1.0f);
-	auto translateOffset = glm::vec3(fakePosition / glm::vec2(static_cast<float>(GetWindow().getSize().width) / 2.f,
-														static_cast<float>(GetWindow().getSize().height) / 2.f),
-		0.f);
+	glm::mat4 transform = glm::mat4(1.0f);
+	auto translateOffset = glm::vec3(position_ / windowSize, 0.f);
 
-	trans = glm::translate(trans, translateOffset);
-	trans = glm::rotate(trans, rotation_, glm::vec3(0.0f, 0.0f, 1.0f));
-	trans[3][1] = -trans[3][1];
+	transform = glm::translate(transform, translateOffset);
+	transform = glm::rotate(transform, rotation_, glm::vec3(0.0f, 0.0f, 1.0f));
+	transform[3][1] = -transform[3][1];
 
 	shaderProgram.use();
 	shaderProgram.uniform("uHasTexture", static_cast<bool>(texture_));
-	shaderProgram.uniform("uTransform", false, trans);
-	shaderProgram.uniform("uCameraMatrix", false, trans);
+	shaderProgram.uniform("uTransform", false, transform);
+	shaderProgram.uniform("uCameraMatrix", false, cameraMatrix);
 	shaderProgram.uniform(
 		"uResolution", static_cast<float>(GetWindow().getSize().width), static_cast<float>(GetWindow().getSize().height));
 	shaderProgram.uniform("uGamma", shaderProgram.lightning.gamma);
@@ -184,7 +183,7 @@ Utils::FSize2D Widget::getScale() const
 
 void Widget::update()
 {
-	if (getRect().isCollision(Mouse::getPosition(GetWindow())))
+	if (getRect().isCollision(GetWindow().getCamera()->toGlobalCoordinates(Mouse::getPosition(GetWindow()))))
 	{
 		onMouseHover.trigger();
 

@@ -30,6 +30,8 @@
 
 #include <Windows.h>
 
+class Camera;
+
 class Window : public Singleton<Window>
 {
 public:
@@ -43,6 +45,10 @@ public:
 	[[nodiscard]] HWND getHwnd();
 	[[nodiscard]] Utils::ISize2D getSize() const;
 
+	void setCamera(Camera& camera);
+	[[nodiscard]] Camera* getCamera();
+	[[nodiscard]] const Camera* getCamera() const;
+
 	LambdaMulticastDelegate<void(int, int, int, int)> onKeyPressed;
 	LambdaMulticastDelegate<void(unsigned int)> onTextInput;
 	LambdaMulticastDelegate<void(int)> onCursorEntered;
@@ -52,6 +58,7 @@ protected:
 	GLFWwindow* window{};
 	Utils::ISize2D size_{};
 	std::string title_;
+	Camera* camera_ = nullptr;
 };
 
 Window& GetWindow();
