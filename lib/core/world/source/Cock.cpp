@@ -20,42 +20,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
+#include "Clock.h"
 
-#include "CopyableAndMoveable.h"
-#include "Size.h"
-#include "glm/glm.hpp"
-#include "Updateable.h"
-
-class Camera : public Utils::CopyableAndMoveable, public Updateable
+Clock::Clock(bool isStartNow)
 {
-public:
-	void setSize(const Utils::ISize2D& size);
-	[[nodiscard]] const Utils::ISize2D& getSize() const;
+	if (isStartNow)
+	{
+		start();
+	}
+}
 
-	void setPosition(const glm::vec2& position);
-	void move(const glm::vec2& offset);
-	[[nodiscard]] const glm::vec2& getPosition() const;
+void Clock::start()
+{
+	lastPoint_ = std::chrono::system_clock::now();
+}
 
-	void update() override;
+float Clock::stop()
+{
+	return (lastGap_ = static_cast<float>((std::chrono::system_clock::now() - lastPoint_).count()) / 10'000'000.f);
+}
 
-	void zoom(float factor);
-	void setZoom(float factor);
-	[[nodiscard]] float getZoom() const;
-
-	void setOrigin(glm::vec2 origin);
-	[[nodiscard]] glm::vec2 getOrigin() const;
-
-	[[nodiscard]] glm::vec2 toGlobalCoordinates(glm::vec2 point) const;
-
-	[[nodiscard]] glm::mat4 generateMatrix(glm::vec2 windowSize) const;
-
-	void setTick(float tick);
-
-private:
-	Utils::ISize2D size_;
-	glm::vec2 position_{};
-	float zoomFactor_ = 1.f;
-	glm::vec2 origin_ = {};
-	float tick_{1.f};
-};
+float Clock::getGap() const
+{
+	return lastGap_;
+}

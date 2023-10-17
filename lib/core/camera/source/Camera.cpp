@@ -46,7 +46,7 @@ void Camera::setPosition(const glm::vec2& position)
 
 void Camera::move(const glm::vec2& offset)
 {
-	position_ += offset;
+	position_ += offset * tick_;
 }
 
 const glm::vec2& Camera::getPosition() const
@@ -60,7 +60,7 @@ void Camera::update()
 
 void Camera::zoom(float factor)
 {
-	zoomFactor_ += factor;
+	zoomFactor_ += factor * tick_;
 	if (zoomFactor_ <= 0.001)
 		zoomFactor_ = 0.001;
 }
@@ -110,4 +110,9 @@ glm::vec2 Camera::toGlobalCoordinates(glm::vec2 point) const
 	point += -origin_;
 	point /= zoomFactor_;
 	return point;
+}
+
+void Camera::setTick(float tick)
+{
+	tick_ = tick;
 }

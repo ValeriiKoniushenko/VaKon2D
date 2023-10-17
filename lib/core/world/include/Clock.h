@@ -23,39 +23,19 @@
 #pragma once
 
 #include "CopyableAndMoveable.h"
-#include "Size.h"
-#include "glm/glm.hpp"
-#include "Updateable.h"
 
-class Camera : public Utils::CopyableAndMoveable, public Updateable
+#include <chrono>
+
+class Clock : public Utils::CopyableAndMoveable
 {
 public:
-	void setSize(const Utils::ISize2D& size);
-	[[nodiscard]] const Utils::ISize2D& getSize() const;
-
-	void setPosition(const glm::vec2& position);
-	void move(const glm::vec2& offset);
-	[[nodiscard]] const glm::vec2& getPosition() const;
-
-	void update() override;
-
-	void zoom(float factor);
-	void setZoom(float factor);
-	[[nodiscard]] float getZoom() const;
-
-	void setOrigin(glm::vec2 origin);
-	[[nodiscard]] glm::vec2 getOrigin() const;
-
-	[[nodiscard]] glm::vec2 toGlobalCoordinates(glm::vec2 point) const;
-
-	[[nodiscard]] glm::mat4 generateMatrix(glm::vec2 windowSize) const;
-
-	void setTick(float tick);
+	Clock(bool isStartNow = false);
+	void start();
+	float stop();
+	float getGap() const;
 
 private:
-	Utils::ISize2D size_;
-	glm::vec2 position_{};
-	float zoomFactor_ = 1.f;
-	glm::vec2 origin_ = {};
-	float tick_{1.f};
+	std::chrono::system_clock::time_point lastPoint_{};
+	float lastGap_{};
 };
+
