@@ -107,6 +107,7 @@ glm::mat4 Camera::generateMatrix(glm::vec2 windowSize) const
 glm::vec2 Camera::toGlobalCoordinates(glm::vec2 point) const
 {
 	point += position_;
+	point += -origin_;
 	point /= zoomFactor_;
 	return point;
 }
