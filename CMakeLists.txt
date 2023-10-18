@@ -40,3 +40,5 @@ add_subdirectory(lib/core/shapes)
 add_subdirectory(lib/core/utils)
 add_subdirectory(lib/core/window)
 add_subdirectory(lib/core/world)
+add_subdirectory(lib/base-game)
+

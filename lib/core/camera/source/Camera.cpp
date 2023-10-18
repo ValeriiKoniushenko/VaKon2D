@@ -60,7 +60,7 @@ void Camera::update()
 
 void Camera::zoom(float factor)
 {
-	zoomFactor_ += factor * tick_;
+	zoomFactor_ += factor * tick_ * zoomFactor_;
 	if (zoomFactor_ <= 0.001)
 		zoomFactor_ = 0.001;
 }
