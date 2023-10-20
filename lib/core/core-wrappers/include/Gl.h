@@ -257,4 +257,5 @@ public:
 
 	static void viewport(GLint x, GLint y, GLsizei width, GLsizei height);
 	static void drawArrays(GLenum mode, GLint first, GLsizei count);
+	static void drawArraysInstanced(GLenum mode, GLint first, GLsizei count, GLsizei instanceCount);
 };

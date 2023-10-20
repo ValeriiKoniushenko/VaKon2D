@@ -369,6 +369,14 @@ Gl::State Gl::getState()
 	return state;
 }
 
+void Gl::drawArraysInstanced(GLenum mode, GLint first, GLsizei count, GLsizei instanceCount)
+{
+	glDrawArraysInstanced(mode, first, count, instanceCount);
+#ifdef OPENGL_DEBUG
+	Gl::debugTraces();
+#endif
+}
+
 std::string Gl::Texture::channelToString(Channel channel)
 {
 	if (channel == Channel::SRGB)
