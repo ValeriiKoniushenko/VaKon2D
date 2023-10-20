@@ -131,15 +131,7 @@ void InstancedWidget::prepare(ShaderPack& shader)
 	Gl::Vao::vertexAttribPointer(2, 2, Gl::Type::Float, false, 6 * sizeof(float), reinterpret_cast<const void*>(4 * sizeof(float)));
 	Gl::Vao::enableVertexAttribArray(2);
 
-	if (!vboInstancing_.isGenerated())
-	{
-		vboInstancing_.generate();
-	}
-	vboInstancing_.bind();
-	glBufferData(GL_ARRAY_BUFFER, sizeof(glm::vec2) * transforms_.size(), transforms_.data(), GL_STATIC_DRAW);
-	Gl::Vao::vertexAttribPointer(3, 2, Gl::Type::Float, false, sizeof(float) * 2, (void*)(0));
-	glVertexAttribDivisor(3, 1);
-	Gl::requireNoErrors();
+	prepareInstancing();
 
 	if (texture_)
 	{
@@ -357,4 +349,17 @@ const Texture& InstancedWidget::getTexture() const
 		throw std::runtime_error("Impossible to get NULL texture");
 	}
 	return *texture_;
+}
+
+void InstancedWidget::prepareInstancing()
+{
+	if (!vboInstancing_.isGenerated())
+	{
+		vboInstancing_.generate();
+	}
+	vboInstancing_.bind();
+	glBufferData(GL_ARRAY_BUFFER, sizeof(glm::vec2) * transforms_.size(), transforms_.data(), GL_STATIC_DRAW);
+	Gl::Vao::vertexAttribPointer(3, 2, Gl::Type::Float, false, sizeof(float) * 2, (void*)(0));
+	glVertexAttribDivisor(3, 1);
+	Gl::requireNoErrors();
 }

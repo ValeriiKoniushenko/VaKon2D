@@ -116,4 +116,5 @@ private:
 	bool isDrawBorder_ = false;
 	bool wasHover_ = false;
 	bool isPrepared = false;
+	void prepareInstancing();
 };
