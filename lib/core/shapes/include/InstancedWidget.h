@@ -46,6 +46,10 @@ public:
 
 	InstancedWidget() = default;
 
+	InstancedWidget(const InstancedWidget& other) = default;
+
+	InstancedWidget& operator=(const InstancedWidget& other) = default;
+
 	InstancedWidget(InstancedWidget&& other) noexcept;
 
 	InstancedWidget& operator=(InstancedWidget&& other) noexcept;
