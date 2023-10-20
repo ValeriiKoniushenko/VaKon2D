@@ -53,6 +53,7 @@ Image& Image::operator=(Image&& obj) noexcept
 	this->height_ = obj.height_;
 	this->channel_ = obj.channel_;
 	this->internalChannel_ = obj.internalChannel_;
+	this->name_ = obj.name_;
 
 	obj.init_();
 	return *this;
@@ -63,6 +64,7 @@ void Image::init_()
 	data_ = nullptr;
 	width_ = height_ = 0;
 	channel_ = Channel::None;
+	name_.clear();
 }
 
 int Image::getWidth() const

@@ -36,7 +36,7 @@ void UpdateableCollector::remove(Updateable* object)
 
 void UpdateableCollector::updateAll()
 {
-	for (auto* data : data_)
+	for (auto* data : data_) // TODO: it needs multithreading
 	{
 		data->update();
 	}

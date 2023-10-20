@@ -44,7 +44,7 @@ public:
 	inline static constexpr float borderWidth = 0.05f;
 	inline static constexpr const char* componentName = "widget";
 
-	Widget();
+	Widget(bool isNeedUpdate = false);
 
 	Widget(Widget&& other) noexcept;
 

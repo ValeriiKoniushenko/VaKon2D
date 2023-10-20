@@ -55,7 +55,7 @@ public:
 private:
 	Utils::ISize2D size_;
 	glm::vec2 position_{};
-	float zoomFactor_ = 1.f;
+	float zoomFactor_ = 0.098f;
 	glm::vec2 origin_ = {};
 	float tick_{1.f};
 };

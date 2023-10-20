@@ -34,7 +34,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-Widget::Widget()
+Widget::Widget(bool isNeedUpdate/* = true*/) : Updateable(isNeedUpdate)
 {
 	getWidgetCollector().add(this);
 }
@@ -123,7 +123,7 @@ void Widget::setTexture(Texture& texture)
 
 Texture& Widget::getTexture()
 {
-	if (texture_)
+	if (!texture_)
 	{
 		throw std::runtime_error("Impossible to get NULL texture");
 	}

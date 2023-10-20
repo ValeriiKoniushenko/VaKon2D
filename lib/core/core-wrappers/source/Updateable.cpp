@@ -25,12 +25,18 @@
 
 #include "UpdateableCollector.h"
 
-Updateable::Updateable()
+Updateable::Updateable(bool isNeedUpdate/* = true*/) : isNeedUpdate_(isNeedUpdate)
 {
-	GetUpdateableCollector().add(this);
+	if (isNeedUpdate_)
+	{
+		GetUpdateableCollector().add(this);
+	}
 }
 
 Updateable::~Updateable()
 {
-	GetUpdateableCollector().remove(this);
+	if (isNeedUpdate_)
+	{
+		GetUpdateableCollector().remove(this);
+	}
 }

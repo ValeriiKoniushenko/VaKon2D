@@ -22,10 +22,15 @@
 
 #pragma once
 
-class Updateable
+#include "NotCopyableButMovable.h"
+
+class Updateable : public Utils::NotCopyableButMovable
 {
 public:
-	Updateable();
+	Updateable(bool isNeedUpdate = true);
 	virtual ~Updateable();
 	virtual void update() = 0;
+
+private:
+	bool isNeedUpdate_ = false;
 };
