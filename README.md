@@ -52,6 +52,7 @@ everywhere!
 >    18. [Clock or game tick](#clock-or-game-tick)
 >    19. [Camera](#camera)
 >    20. [Shader pack](#shader-pack)
+>    21. [OpenGL Debug](#opengl-debug)
 > 7. [What in the future?](#-what-in-the-future)
 > 8. [Feedback & Contacts](#-feedback--contacts)
 
@@ -951,6 +952,22 @@ Everything pretty simple, so if you will have some questions just look at the co
 PS: don't forget to connect it in your game-cmake using target ```Core-Wrappers```
 ```cmake
 target_link_libraries(YourGame PUBLIC Core-Wrappers)
+```
+
+### OpenGL Debug
+To enable OpenGL debugging you must add ```OPENGL_DEUBUG``` macros to your game. How to do it look below:
+```cmake
+if (DEFINED CMAKE_BUILD_TYPE)
+	if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+		message(STATUS "Project build type: DEBUG")
+		add_compile_definitions(OPENGL_DEBUG)
+	endif ()
+endif ()
+```
+
+or just write simple code:
+```cmake
+add_compile_definitions(OPENGL_DEBUG)
 ```
 
 ## 💭 What in the future?
