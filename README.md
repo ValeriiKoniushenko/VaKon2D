@@ -53,6 +53,7 @@ everywhere!
 >    19. [Camera](#camera)
 >    20. [Shader pack](#shader-pack)
 >    21. [OpenGL Debug](#opengl-debug)
+>    22. [Game Mode](#game-mode)
 > 7. [What in the future?](#-what-in-the-future)
 > 8. [Feedback & Contacts](#-feedback--contacts)
 
@@ -954,6 +955,8 @@ PS: don't forget to connect it in your game-cmake using target ```Core-Wrappers`
 target_link_libraries(YourGame PUBLIC Core-Wrappers)
 ```
 
+---
+
 ### OpenGL Debug
 To enable OpenGL debugging you must add ```OPENGL_DEUBUG``` macros to your game. How to do it look below:
 ```cmake
@@ -969,6 +972,56 @@ or just write simple code:
 ```cmake
 add_compile_definitions(OPENGL_DEBUG)
 ```
+
+---
+
+### Game Mode
+Like we know with ```UnrealEngine``` GameMode it's needed for:
+
+While certain fundamentals, like the number of players required to play, or the method by which those players join the
+game, are common to many types of games, limitless rule variations are possible depending on the specific game you are
+developing. Regardless of what those rules are, Game Modes are designed to define and implement them.
+
+So, if you want to create your own game mode you must inherit from base class: ```BaseGameMode```.
+
+PS: don't forget to connect it in your game-cmake using target ```BaseGame```
+```cmake
+target_link_libraries(YourGame PUBLIC BaseGame)
+```
+
+---
+
+### Game State
+Like we know with ```UnrealEngine``` GameState it's needed for:
+
+The Game State is responsible for enabling the clients to monitor the state of the game. Conceptually, the Game State 
+should manage information that is meant to be known to all connected clients and is specific to the Game Mode but is 
+not specific to any individual player. It can keep track of game-wide properties such as the list of connected players,
+team score in Capture The Flag, missions that have been completed in an open world game, and so on.
+
+So, if you want to create your own game state you must inherit from base class: ```BaseGameState```.
+
+PS: don't forget to connect it in your game-cmake using target ```BaseGame```
+```cmake
+target_link_libraries(YourGame PUBLIC BaseGame)
+```
+
+---
+
+### Player State
+Like we know with ```UnrealEngine``` PlayerState it's needed for:
+
+A PlayerState is created for every player on a server (or in a standalone game). PlayerStates are replicated to all clients, 
+and contain network game relevant information about the player, such as playername, score, etc.
+
+So, if you want to create your own player mode you must inherit from base class: ```BasePlayerState```.
+
+PS: don't forget to connect it in your game-cmake using target ```BaseGame```
+```cmake
+target_link_libraries(YourGame PUBLIC BaseGame)
+```
+
+
 
 ## 💭 What in the future?
 
