@@ -50,6 +50,8 @@ everywhere!
 >    16. [Using OpenGL wrappers](#using-opengl-wrappers)
 >    17. [Coordinate System](#coordinate-system)
 >    18. [Clock or game tick](#clock-or-game-tick)
+>    19. [Camera](#camera)
+>    20. [Shader pack](#shader-pack)
 > 7. [What in the future?](#-what-in-the-future)
 > 8. [Feedback & Contacts](#-feedback--contacts)
 
@@ -187,7 +189,7 @@ GetWorld().init();
 
 ---
 
-### Write your shader
+### Write your own shader
 
 How to include it: ```#include "Shader.h"``` and don't forget to add ```Core-Wrappers``` to your CMake-game
 At the first you can write simple shader, like the next:
@@ -262,6 +264,9 @@ And now you can use your shader program. Just write
 program.use();
 ```
 
+Also, if you want to use this shader program to draw your own ```Widget``` you must create ```ShaderPack```. Look how to do
+it below([how to create your own shader pack](#shader-pack) - it's easy).
+
 PS: don't forget to connect ```Core-Wrappers``` to your ```CMakeLists.txt```
 ```cmake
 # /game/CMakeLists.txt
@@ -311,7 +316,7 @@ target_link_libraries(
 ```
 
 #### Transparent background
-If you want to add a widget with a transparent background you must use ```SRGB```.
+If you want to add a widget with a transparent background you must use ```SRGBA``` or ```RGBA```.
 ```c++
 Image image("assets/textures/apple.png");
 image.setInternalChannel(Gl::Texture::Channel::SRGBA);
@@ -382,14 +387,14 @@ texture.setMagAndMinFilter(Gl::Texture::MagFilter::Linear, Gl::Texture::MinFilte
 
 Widget rect;
 rect.setTexture(texture);
-rect.prepare();
+rect.prepare(shaderPack);
 
 while (!GetWindow().shouldClose())
 {
     GetWindow().clearColor(0.2f, 0.3f, 0.3f, 1.0f);
     GetWindow().clear(GL_COLOR_BUFFER_BIT);
 
-    rect.draw(program);
+    rect.draw(shaderPack);
     rect.update();
     
     GetWindow().swapBuffers();
@@ -511,6 +516,12 @@ while (!GetWindow().shouldClose())
     animation.draw(shaderPack);
     ...
 }
+```
+
+
+PS: don't forget to connect it in your game-cmake using target ```Animations```
+```cmake
+target_link_libraries(YourGame PUBLIC Animations)
 ```
 
 ---
@@ -916,6 +927,29 @@ get real mouse(for example) position on your scene you must use the function ```
 PS: don't forget to connect it in your game-cmake using target ```Camera```
 ```cmake
 target_link_libraries(YourGame PUBLIC Camera)
+```
+
+---
+
+### Shader pack
+Simple program can use only one shader(frag,vert), but more complex app can use a lot of shaders. By this reason was
+ created ```ShaderPack```. It stores a lot of shader-program in one pack. To use it look at the next code:
+```c++
+ShaderPack shaderPack;
+shaderPack.loadShaders("shader-program1", "path-to-vertex-shader", "path-to-fragment-shader");
+shaderPack.loadShaders("shader-program2", "path-to-vertex-shader", "path-to-fragment-shader");
+shaderPack.loadShaders("shader-program3", "path-to-vertex-shader", "path-to-fragment-shader");
+
+CustomShaderProgram csp = shaderPack["shader-program1"];
+csp.use();
+```
+
+Everything pretty simple, so if you will have some questions just look at the code or write me([my contacts](#-feedback--contacts)).
+
+
+PS: don't forget to connect it in your game-cmake using target ```Core-Wrappers```
+```cmake
+target_link_libraries(YourGame PUBLIC Core-Wrappers)
 ```
 
 ## 💭 What in the future?
