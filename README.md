@@ -54,6 +54,9 @@ everywhere!
 >    20. [Shader pack](#shader-pack)
 >    21. [OpenGL Debug](#opengl-debug)
 >    22. [Game Mode](#game-mode)
+>    23. [Game State](#game-state)
+>    24. [Player State](#player-state)
+>    25. [BaseWorld](#baseworld)
 > 7. [What in the future?](#-what-in-the-future)
 > 8. [Feedback & Contacts](#-feedback--contacts)
 
@@ -1021,7 +1024,37 @@ PS: don't forget to connect it in your game-cmake using target ```BaseGame```
 target_link_libraries(YourGame PUBLIC BaseGame)
 ```
 
+---
 
+### BaseWorld
+To create\registry your own GameState, PlayerState, GameMode you have to registry it in the inherited class 
+```BaseWorld```.
+
+So, just create the next class:
+```c++
+class GameNameWorld : public BaseWorld, public Singleton<GameNameWorld>
+{
+public:
+	GameNameWorld();
+};
+
+GameNameWorld& GetGameNameWorld();
+```
+
+And implement it:
+```c++
+GameNameWorld& GetGameNameWorld()
+{
+	return GameNameWorld::instance();
+}
+
+GameNameWorld::GameNameWorld()
+{
+	this->gameMode = std::make_unique<GameNameGameMode>();
+	this->gameState = std::make_unique<GameNameGameState>();
+	this->playerState = std::make_unique<GameNamePlayerState>();
+}
+```
 
 ## 💭 What in the future?
 
