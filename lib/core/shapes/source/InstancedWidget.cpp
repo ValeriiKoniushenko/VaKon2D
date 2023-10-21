@@ -282,6 +282,14 @@ InstancedWidget& InstancedWidget::operator=(InstancedWidget&& other) noexcept
 	wasHover_ = other.wasHover_;
 	isPrepared = other.isPrepared;
 
+	onMouseHover = std::move(other.onMouseHover);
+	onMouseUnHover = std::move(other.onMouseUnHover);
+	onMouseLeftClick = std::move(other.onMouseLeftClick);
+	onMouseRightClick = std::move(other.onMouseRightClick);
+	onMouseMiddleClick = std::move(other.onMouseMiddleClick);
+	onMouseWheel = std::move(other.onMouseWheel);
+	onTextInput = std::move(other.onTextInput);
+
 	other.textureRect_ = {};
 	other.isPrepared = false;
 	other.texture_ = {};

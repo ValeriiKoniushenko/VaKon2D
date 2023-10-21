@@ -45,14 +45,11 @@ public:
 	inline static constexpr const char* componentName = "widget";
 
 	InstancedWidget() = default;
-
 	InstancedWidget(const InstancedWidget& other) = default;
-
 	InstancedWidget& operator=(const InstancedWidget& other) = default;
-
 	InstancedWidget(InstancedWidget&& other) noexcept;
-
 	InstancedWidget& operator=(InstancedWidget&& other) noexcept;
+	~InstancedWidget() = default;
 
 	void draw(ShaderPack& shaderProgram, Camera* camera = nullptr) override;
 
@@ -100,6 +97,7 @@ public:
 
 private:
 	void recalculateVerticiesData();
+	void prepareInstancing();
 
 private:
 	// clang-format off
@@ -120,5 +118,4 @@ private:
 	bool isDrawBorder_ = false;
 	bool wasHover_ = false;
 	bool isPrepared = false;
-	void prepareInstancing();
 };

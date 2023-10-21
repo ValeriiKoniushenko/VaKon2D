@@ -26,7 +26,7 @@
 #include "DrawAble.h"
 #include "JsonPrintable.h"
 #include "Keyboard.h"
-#include "NotCopyableButMovable.h"
+#include "CopyableAndMoveable.h"
 #include "Rect.h"
 #include "Size.h"
 #include "Updateable.h"
@@ -37,7 +37,7 @@
 
 class Texture;
 
-class Widget : public DrawAble, public JsonPrintable, public Updateable, public Utils::NotCopyableButMovable
+class Widget : public DrawAble, public JsonPrintable, public Updateable, public Utils::CopyableAndMoveable
 {
 public:
 	inline static constexpr glm::vec4 borderColor = {1.f, 1.f, 0.f, 1.f};
@@ -45,11 +45,10 @@ public:
 	inline static constexpr const char* componentName = "widget";
 
 	Widget(bool isNeedUpdate = false);
-
 	Widget(Widget&& other) noexcept;
-
 	Widget& operator=(Widget&& other) noexcept;
-
+	Widget(const Widget& other) = default;
+	Widget& operator=(const Widget& other) = default;
 	~Widget() override;
 
 	void draw(ShaderPack& shaderProgram, Camera* camera = nullptr) override;
