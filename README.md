@@ -360,7 +360,8 @@ rect.prepare();
 ```
 
 We should create our class Rectangle and set a texture to it. After that don't forget to call
-function ```Rectangle::prepare``` - to prepare all OpenGL data. This function you should call only one time.
+function ```Rectangle::prepare``` - to prepare all OpenGL data. This function you should call only one time. But you must
+know that this function very expensive, **call it only if you really need it**.
 
 PS: don't forget to connect ```Shapes``` to your ```CMakeLists.txt```
 ```cmake
