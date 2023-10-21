@@ -20,11 +20,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "BaseWorld.h"
+#pragma once
 
-void BaseWorld::clear()
+#include "NotCopyableAndNotMovable.h"
+
+class App : public Utils::NotCopyableAndNotMovable
 {
-	this->gameMode.release();
-	this->gameState.release();
-	this->playerState.release();
-}
+public:
+	~App() override;
+	virtual void clear() {}
+	virtual void start() = 0;
+private:
+};

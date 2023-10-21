@@ -20,11 +20,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "BaseWorld.h"
+#include "App.h"
 
-void BaseWorld::clear()
+App::~App()
 {
-	this->gameMode.release();
-	this->gameState.release();
-	this->playerState.release();
+	clear();
 }

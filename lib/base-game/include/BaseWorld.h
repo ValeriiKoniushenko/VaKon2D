@@ -36,6 +36,5 @@ public:
 	std::unique_ptr<BaseGameState> gameState;
 	std::unique_ptr<BasePlayerState> playerState;
 
-protected:
-private:
+	virtual void clear();
 };
