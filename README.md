@@ -910,6 +910,9 @@ Just use the next functions to do it:
 - ```setPosition``` - to set ```new``` value to the ```Camera```'s position.
 - ```move``` - to increase\decrease ```Camera```'s position. Just pass new value to append to the current.
 
+After everything we understand that zooming our ```Camera``` we will change real viewport resolution. So if you want to
+get real mouse(for example) position on your scene you must use the function ```Camera::toGlobalCoordinates(point)```.
+
 PS: don't forget to connect it in your game-cmake using target ```Camera```
 ```cmake
 target_link_libraries(YourGame PUBLIC Camera)
