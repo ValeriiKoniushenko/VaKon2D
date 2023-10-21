@@ -795,6 +795,11 @@ Now, you can print your text on the display:
 text.draw(textProgram);
 ```
 
+PS: don't forget to connect it in your game-cmake using target ```Core-Wrappers```
+```cmake
+target_link_libraries(YourGame PUBLIC Core-Wrappers)
+```
+
 ---
 
 ### Using OpenGL wrappers
@@ -852,6 +857,62 @@ while (!GetWindow().shouldClose())
     ...
     auto gap = clock.stop();
 }
+```
+
+PS: don't forget to connect it in your game-cmake using target ```Utils```
+```cmake
+target_link_libraries(YourGame PUBLIC Utils)
+```
+
+---
+
+### Camera
+Game camera is a pretty simple object. So, if you want to use it just create the ```Camera```'s object at you GameState
+(best practice) and use it. But, don't forget to registry your camera in the ```Window``` object, and don't forget to set 
+a tick for you camera. Camera tick it's frame-gap that you can use in the camera to decrease or increase camera's movement 
+speed. Let's create our own camera:
+```c++
+Camera camera;
+camera.setSize({1000, 1000});
+camera.setOrigin({1000 / 2, 1000 / 2});
+GetWindow().setCamera(camera);
+```
+Let's discuss this code: at first, we have to create new object of our ```Camera```. After that settings size and origin.
+Size of the ```Camera``` is viewport that you can see. Origin is ```Camera```'s offset to the center of your screen.
+And, don't forget to connect a camera to your window. If you don't do it then you will get undefined behaviour.
+
+In the main loop of you program you shouldn't update your camera, just call ```UpdateableCollector::updateAll()``` to 
+refresh all Updateable things in you app(```Camera``` will be updated too).
+
+Also, you can pass game-tick(frame-tick) to your ```Camera``` using method ```Camera::setTick```. Usually it's doing 
+in the end of the main loop of your program.
+
+So, finally code will be looks like that:
+```c++
+Camera camera;
+camera.setSize({1000, 1000});
+camera.setOrigin({1000 / 2, 1000 / 2});
+GetWindow().setCamera(camera);
+
+while (!GetWindow().shouldClose())
+{
+    Clock clock(true);
+    ...
+    GetUpdateableCollector().updateAll();
+    camera.setTick(clock.stop());
+}
+```
+
+Also, using camera you maybe want to zoom, set new position or(in the future) rotate it.
+Just use the next functions to do it: 
+- ```setZoom``` - to set ```new``` value to the ```Camera```'s zoom.
+- ```zoom``` - to increase\decrease ```Camera```'s zoom. Just pass new value to append to the current.
+- ```setPosition``` - to set ```new``` value to the ```Camera```'s position.
+- ```move``` - to increase\decrease ```Camera```'s position. Just pass new value to append to the current.
+
+PS: don't forget to connect it in your game-cmake using target ```Camera```
+```cmake
+target_link_libraries(YourGame PUBLIC Camera)
 ```
 
 ## 💭 What in the future?
