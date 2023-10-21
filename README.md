@@ -1056,6 +1056,11 @@ GameNameWorld::GameNameWorld()
 }
 ```
 
+PS: don't forget to connect it in your game-cmake using target ```BaseGame```
+```cmake
+target_link_libraries(YourGame PUBLIC BaseGame)
+```
+
 ## 💭 What in the future?
 
 I want to implement more and more things to give abilities like:
