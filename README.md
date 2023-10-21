@@ -49,6 +49,7 @@ everywhere!
 >    15. [Text](#text)
 >    16. [Using OpenGL wrappers](#using-opengl-wrappers)
 >    17. [Coordinate System](#coordinate-system)
+>    18. [Clock or game tick](#clock-or-game-tick)
 > 7. [What in the future?](#-what-in-the-future)
 > 8. [Feedback & Contacts](#-feedback--contacts)
 
@@ -826,6 +827,33 @@ widget.setTexture(texture);
 widget.move({100, 100});
 ```
 
+---
+
+### Clock or game tick
+Best practice is to measure the previous game frame and use this time as a game tick. So, if you want to do it you have 
+to use ```Clock```.
+
+```c++
+while (!GetWindow().shouldClose())
+{
+    Clock clock;
+    clock.start();
+    ...
+    clock.stop()
+    auto gap = clock.getGap();
+}
+```
+
+Or more brief example:
+```c++
+while (!GetWindow().shouldClose())
+{
+    Clock clock(true);
+    ...
+    auto gap = clock.stop();
+}
+```
+
 ## 💭 What in the future?
 
 I want to implement more and more things to give abilities like:
@@ -844,7 +872,6 @@ I want to implement more and more things to give abilities like:
 - The engine will be cross-platform
 - Shader builder for PRO users
 - Add working with audio
-- Working with a camera
 
 ---
 
