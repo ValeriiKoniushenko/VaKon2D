@@ -23,6 +23,7 @@
 #pragma once
 
 #include "CopyableAndMoveable.h"
+#include "Camera.h"
 
 #include <cstdio>
 
@@ -46,7 +47,7 @@ public:
 	};
 
 	virtual void setMode(Mode mode) { mode_ = mode; };
-	virtual void draw(ShaderPack& shaderPack) = 0;
+	virtual void draw(ShaderPack& shaderPack, Camera* camera = nullptr) = 0;
 	virtual void start() = 0;
 	virtual void stop() = 0;
 	virtual void pause() = 0;
